@@ -1,0 +1,3161 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="tinsir888">
+      
+      
+        <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/AIComputingSystem/Kapitel5/">
+      
+      
+        <link rel="prev" href="../Kapitel4/">
+      
+      
+        <link rel="next" href="../Kapitel6/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>智能计算系统 第五章 编程框架机理 - tinsir888's Study Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            tinsir888's Study Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              智能计算系统 第五章 编程框架机理
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    tinsir888's Study Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS@NKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS@NKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    感知技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            感知技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PerceptionTechnology/Kapite1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PerceptionTechnology/Kapite2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 传感器的性能与评价
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PerceptionTechnology/Kapite3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 电传感原理与测量方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PerceptionTechnology/Kapite4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 常用物理效应与器件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数字信号处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数字信号处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 信号分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 再探时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数字信号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 信号与系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 离散时间傅里叶变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 频谱分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DatabaseSystem/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    智能计算系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            智能计算系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 神经网络基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 编程框架使用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第五章 编程框架机理
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 编程框架机理
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-tensorflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Tensorflow 设计原则
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Tensorflow 设计原则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      高性能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      易开发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      可移植
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-tensorflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Tensorflow 计算图机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Tensorflow 计算图机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图的自动求导
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见求导方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见求导方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      手动求导法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      数值求导法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号求导法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动求导法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      检查点机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      恢复模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorFlow 中的控制流
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图本地执行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="计算图本地执行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图剪枝
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="计算图优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constfold" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量折叠 ConstFold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      算数优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      布局优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图切分和设备通信
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      容错机制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-tensorflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Tensorflow 系统实现
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Tensorflow 系统实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      整体架构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图执行模块
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      执行器逻辑
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      设备抽象和管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络和通信
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      算子实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 驱动范例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 编程框架对比
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 深度学习处理器原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度学习处理器架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 智能编程语言
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    汇编与逆向
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            汇编与逆向
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 汇编语言基本概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 IA-32 处理器体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 汇编语言基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数据传送与寻址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 PE 文件结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 区块表、输入表和输出表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 静态逆向技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 C 语言程序逆向分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 软件保护技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    网络技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            网络技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 以太网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 交换与虚拟局域网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无线局域网组网技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 互联网与 IP 协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 IP 数据报
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 IP 地址与 ARP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 路由器与路由选择
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 接入互联网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机体系结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            计算机体系结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA1%E6%A6%82%E8%BF%B020210906/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA2%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%AF%84%E4%BC%B020210918/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 量化设计与评估
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA3%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%8420210927/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 指令集体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA4%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A120211011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 存储层次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA5%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%281%2920211018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 流水线技术上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA6%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 流水线技术下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA7%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 指令级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA8%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 指令级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA9%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 数据级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA10%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 数据级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA11%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十一章 线程级并行性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA12%E4%BB%93%E5%BA%93%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十二章 仓库级计算机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerNetwork/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程信息
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerNetwork/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机网络概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerNetwork/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 应用层协议及网络编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerNetwork/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 传输层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerNetwork/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 网络层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerNetwork/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 接口层原理与协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    强化学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            强化学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel1-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 强化学习简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 马尔可夫决策过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel3-%E5%80%BC%E5%87%BD%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 值函数估计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel4-%E6%97%A0%E6%A8%A1%E5%9E%8B%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无模型控制方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel5-%E8%BF%91%E4%BC%BC%E9%80%BC%E8%BF%91%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 近似逼近方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel6-%E8%A7%84%E5%88%92%E4%B8%8E%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 规划与学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel7-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度强化学习价值方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel8-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AD%96%E7%95%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 深度强化学习策略方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel14-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十四章 多智能体强化学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-tensorflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Tensorflow 设计原则
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Tensorflow 设计原则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      高性能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      易开发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      可移植
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-tensorflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Tensorflow 计算图机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Tensorflow 计算图机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图的自动求导
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见求导方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见求导方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      手动求导法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      数值求导法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号求导法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动求导法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      检查点机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      恢复模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorFlow 中的控制流
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图本地执行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="计算图本地执行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图剪枝
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="计算图优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constfold" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量折叠 ConstFold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      算数优化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      布局优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图切分和设备通信
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      容错机制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-tensorflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Tensorflow 系统实现
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Tensorflow 系统实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      整体架构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算图执行模块
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      执行器逻辑
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      设备抽象和管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络和通信
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      算子实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 驱动范例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 编程框架对比
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">智能计算系统 第五章 编程框架机理</h1>
+<h2 id="51-tensorflow">5.1 Tensorflow 设计原则</h2>
+<p>高性能、易开发、可移植</p>
+<h3 id="_2">高性能</h3>
+<ul>
+<li>Tensorflow 中的算子，设计过程中就已经针对底层硬件架构进行了充分的优化</li>
+<li>针对生成的计算图，Tensorflow 又提供了一系列的优化操作，以提升计算图的运行效率</li>
+<li>Tensorflow 调度器可以根据网络结构的特点，并发运行没有数据依赖的节点</li>
+</ul>
+<h3 id="_3">易开发</h3>
+<ul>
+<li>针对现有的多种深度学习算法，提取了大量的共性运算，封装成算子</li>
+<li>用户使用tensorflow进行算法开发时，能够直接调用这些算子，很方便的实现算法</li>
+</ul>
+<h3 id="_4">可移植</h3>
+<ul>
+<li>可工作与各种类型的异构系统</li>
+<li>对每个算子需提供在不同设备上的不同底层实现</li>
+<li>用户程序可以在不同的硬件平台上执行</li>
+</ul>
+<h2 id="52-tensorflow">5.2 Tensorflow 计算图机制</h2>
+<h3 id="_5">计算图的自动求导</h3>
+<ul>
+<li>深度学习中通常采用梯度下降更新模型参数</li>
+<li>对于复杂模型，手动计算梯度困难</li>
+<li>大部分深度学习框架均需提供自动梯度计算功能</li>
+<li>用户只需要描述前向计算的过程，由编程框架自动推导反向计算图，完成求导</li>
+</ul>
+<h3 id="_6">常见求导方法</h3>
+<h4 id="_7">手动求导法</h4>
+<p>手动用链式法则求出梯度公式，代入数值得到梯度值
+缺点
+- 对大规模的深度学习算法，手动链式求导法则计算非常困难
+- 需要手动编写梯度求解代码
+- 每次修改算法模型，都需要修改对应的梯度求解方法</p>
+<h4 id="_8">数值求导法</h4>
+<p>利用倒数的原始定义求解
+$$
+f'(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+$$
+优点
+- 易操作
+- 可对用户隐藏求导过程</p>
+<p>缺点
+- 计算量大，速度慢
+- 可能引起舍入误差和截断误差</p>
+<h4 id="_9">符号求导法</h4>
+<p>利用求导规则对表达式自动操作，从而获得倒数
+缺点：表达式膨胀问题</p>
+<h4 id="_10">自动求导法</h4>
+<p>介于数值求导和符号求导法的方法
+计算图结构天然使用于自动求导
+优点
+- 灵活，可以隐藏求导过程
+- 只对基本函数运行符号求导法，可以灵活结合编程语言的循环结构、条件结构等</p>
+<p>tensorflow 中可注册函数的反向求导法</p>
+<p>计算步骤
+- 原始函数建立计算图，数据正向传播，计算出中间节点xi，并记录计算图中节点依赖关系
+- 反向遍历计算图，计算输出对于每个节点的倒数</p>
+<h4 id="_11">检查点机制</h4>
+<p>使用tf.train.Saver()来保存模型中的所有变量</p>
+<h4 id="_12">恢复模型</h4>
+<p>使用 restore 函数</p>
+<h3 id="tensorflow">TensorFlow 中的控制流</h3>
+<ul>
+<li>TensorFlow 中使用控制流算子来实现不同复杂控制流场景</li>
+<li>引入少量简单基础操作，为多样的 Tensorflow 应用提供丰富的控制流表达</li>
+<li>在 Tensorflow 中，每一个操作都会在一个执行帧中被执行，控制流操作负责创建和管理这些执行帧</li>
+</ul>
+<h3 id="_13">计算图本地执行</h3>
+<h4 id="_14">计算图剪枝</h4>
+<p>得到本地运行的最小子图
+- 为输入输出建立与外界交互
+  - 通过函数调用帧来解决输入输出值传递问题
+  - 在每个输入节点前插入arg节点，所有输入节点连接到Source节点上，并通过控制依赖边相连
+  - 在每个输出节点后面加入retval节点，所有输出节点连接到sink节点上，也通过依赖边相连，最终行成完整的计算图
+- 去除与最终输出节点无关的节点和边
+  - 从输出节点进行BFS，删除没有接触到的节点和边
+  - 将每个连通图入度为0的节点通过控制依赖与source节点相连，出度为0的节点通过控制依赖边和sink节点相连</p>
+<h4 id="_15">计算图分配</h4>
+<p>问题：多设备运行环境中，对计算图中每个节点如何分配计算设备
+目标：保证计算的快速执行
+对计算图中每个结点如何分配计算设备算法执行过程
+1. 从计算图起始点开始遍历
+2. 对于遍历中的每个结点，考虑其可行的设备集合
+3. 如果设备不提供实现特定操作的内核，则设备不可行
+4. 如果某个节点具有多个可行设备，则采用贪心算法，检查该节点在所有可行设备上完成的时间，将最快完成的设备分配给该节点
+5. 重复2-4直到遍历完成整个图</p>
+<h4 id="_16">计算图优化</h4>
+<ul>
+<li>tensorflow 中图的优化由 Grappler 模块来实现</li>
+<li>通过图优化，可以根据不同的硬件结构调整计算调度策略，从而获得更快的计算速度和更高的硬件效率</li>
+<li>也能减少推断过程中所需的峰值内存，从而运行更大的模型</li>
+</ul>
+<h5 id="constfold">常量折叠 ConstFold</h5>
+<p>有的常数节点可以被提前计算，用得到的结果生成新的节点来代替原来的常数节点</p>
+<h5 id="_17">算数优化</h5>
+<p>公共子表达式删除、算术简化</p>
+<h5 id="_18">布局优化</h5>
+<p>数据摆放方式的转换
+重映射
+- 算子融合，出现频率较高的子图用一个单独的算子来替代
+好处
+- 消除子图调度开销
+- 计算conv2d+biasAdd时，conv2d的数据处理是分块进行的，融合后的biasAdd也可以在片上存储里进行，降低访存开销</p>
+<h4 id="_19">计算图切分和设备通信</h4>
+<ul>
+<li>完成每个节点的设备分配后，将整个计算图按照所分配设备分成若干子图，每个设备一张子图</li>
+</ul>
+<h3 id="_20">容错机制</h3>
+<ul>
+<li>检查send和recv节点传输的正确性</li>
+<li>检查到错误时，计算图执行过程会停止并重启</li>
+<li>保存中间状态，用于立即恢复到出错前状态</li>
+</ul>
+<h2 id="53-tensorflow">5.3 Tensorflow 系统实现</h2>
+<h3 id="_21">整体架构</h3>
+<ul>
+<li>面向各个语言的语言包</li>
+<li>C/C++ API</li>
+<li>后端代码</li>
+<li>session</li>
+<li>图的优化和切分</li>
+<li>算子库</li>
+</ul>
+<h3 id="_22">计算图执行模块</h3>
+<ul>
+<li>session 是用户和 tensorflow 运行时的接口，session 接收到输入数据时，便可开始运行</li>
+<li>每个设备会有一个执行器，负责本设备上子计算图的执行</li>
+<li>run 函数是 session 执行的核心逻辑，在其中完成计算图的执行，包括传参、运行和返回</li>
+</ul>
+<h3 id="_23">执行器逻辑</h3>
+<ul>
+<li>执行流：一个能够存储计算任务的队列</li>
+<li>流间任务可以并行执行，流内任务穿行执行</li>
+</ul>
+<h3 id="_24">设备抽象和管理</h3>
+<ul>
+<li>tensorflow将设备分成本地设备和远程设备</li>
+<li>使用注册机制来管理设备，每个设备负责一个子图运算，可以通过注册接口支持自定义设备</li>
+</ul>
+<h3 id="_25">网络和通信</h3>
+<ul>
+<li>tensorflow设备间通信由send和receive节点进行，使用rendezvous机制</li>
+</ul>
+<h3 id="_26">算子实现</h3>
+<ul>
+<li>tensorflow的基本单元，OpKernel 是算子的特定执行，依赖于底层硬件</li>
+<li>tensorflow 通过注册机制来支持不同的算子和相应的OpKernel函数</li>
+</ul>
+<h2 id="54">5.4 驱动范例</h2>
+<p>构建VGG网络
+就像搭积木一样
+内部构图逻辑
+加载模型执行预测</p>
+<h2 id="55">5.5 编程框架对比</h2>
+<p>pytorch
+- 小而灵活
+- 支持python和c++
+- 学术界主要用</p>
+<p>MXNet
+- 针对效率和灵活性设计
+- 支持声明式编程以及命令式编程
+- 支持R Julia Go等语言</p>
+<p>Caffe
+- 最早出现的框架
+- 缺少灵活性、扩展性和复用性
+- 不再维护更新</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

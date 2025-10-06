@@ -1,0 +1,2499 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="tinsir888">
+      
+      
+        <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/5OutlierDetect/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>数据挖掘 5 Outlier Detection - tinsir888's Study Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#brief-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            tinsir888's Study Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数据挖掘 5 Outlier Detection
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    tinsir888's Study Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS@NKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS@NKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    感知技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            感知技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 传感器的性能与评价
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 电传感原理与测量方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 常用物理效应与器件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数字信号处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数字信号处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 信号分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 再探时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数字信号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 信号与系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 离散时间傅里叶变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 频谱分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DatabaseSystem/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    智能计算系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            智能计算系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 神经网络基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 编程框架使用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 编程框架机理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 深度学习处理器原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度学习处理器架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 智能编程语言
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    汇编与逆向
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            汇编与逆向
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 汇编语言基本概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 IA-32 处理器体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 汇编语言基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数据传送与寻址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 PE 文件结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 区块表、输入表和输出表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 静态逆向技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 C 语言程序逆向分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 软件保护技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    网络技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            网络技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 以太网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 交换与虚拟局域网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无线局域网组网技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 互联网与 IP 协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 IP 数据报
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 IP 地址与 ARP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 路由器与路由选择
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 接入互联网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机体系结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            计算机体系结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA1%E6%A6%82%E8%BF%B020210906/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA2%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%AF%84%E4%BC%B020210918/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 量化设计与评估
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA3%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%8420210927/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 指令集体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA4%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A120211011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 存储层次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA5%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%281%2920211018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 流水线技术上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA6%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 流水线技术下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA7%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 指令级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA8%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 指令级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA9%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 数据级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA10%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 数据级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA11%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十一章 线程级并行性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA12%E4%BB%93%E5%BA%93%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十二章 仓库级计算机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程信息
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机网络概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 应用层协议及网络编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 传输层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 网络层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 接口层原理与协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    强化学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            强化学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel1-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 强化学习简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 马尔可夫决策过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel3-%E5%80%BC%E5%87%BD%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 值函数估计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel4-%E6%97%A0%E6%A8%A1%E5%9E%8B%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无模型控制方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel5-%E8%BF%91%E4%BC%BC%E9%80%BC%E8%BF%91%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 近似逼近方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel6-%E8%A7%84%E5%88%92%E4%B8%8E%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 规划与学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel7-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度强化学习价值方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel8-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AD%96%E7%95%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 深度强化学习策略方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel14-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十四章 多智能体强化学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Outlier detection as the task of finding anomalous points in data.</p>
+<h1 id="brief-introduction">Brief Introduction</h1>
+<p>Outlier: definition depends on the application. "An object that deviates so much from the rest of the data as to arouse suspicion that it was generated by a different mechanism."</p>
+<p>Noise VS outliers: Noise is a measuring error. Outlier is a point that belongs to the same distribution.</p>
+<p>Different types of outliers:</p>
+<ul>
+<li><strong>Global outliers</strong>: Point that significantly deviate from the data set.</li>
+<li><strong>Contextual outliers</strong>: Points deviate from a subset of points. Context is defined as fixed values in some dimensions.</li>
+<li><strong>Collective outliers</strong>: A set of points might represent an outlier w.r.t. the rest of the points. In this case, a single point might not be an outlier, though such is the whole set.</li>
+</ul>
+<p>Methods for outlier detection: supervised and unsupervised.</p>
+<ul>
+<li>Supervised outlier detection requires labels.</li>
+<li>Unsupervised outlier detected. :white_check_mark: We are interested in this one.</li>
+</ul>
+<p>This lecture:</p>
+<ul>
+<li>Low-dimensional</li>
+<li>model-based</li>
+<li>depth-based</li>
+<li>distance-based</li>
+<li>high-dimensional</li>
+<li>angle-based</li>
+<li>local outliers</li>
+<li>clustering-based</li>
+<li>isolation forests</li>
+</ul>
+<h1 id="low-dimensional-outlier-detection">Low-dimensional Outlier Detection</h1>
+<h2 id="model-based-methods">Model-based Methods</h2>
+<p>It assumes that the data is a sample from a known distribution $P(X)$. After fitting the parameters $\theta$ of the distribution, return the points having low probability $P(\mathbb x)$, i.e., points that are unlikely to be generated by the distribution $P(X)$.</p>
+<p>The simplest model-based method: assuming data $\mathcal D$ belongs to a normal distribution
+$$
+\mathcal D\sim f(\mathbb x|\mu,\Sigma)={1\over\sqrt{(2\pi)^d|\Sigma|}}\exp(-{1\over2}(x-\mu)^T\Sigma^{-1}(x-\mu))
+$$
+A rule of thumb: $3\sigma$</p>
+<p><strong>The Grubbs' Test</strong> provides a statistical confidence whether the point is generated by the same normal distribution. But only with uni-variate 单变量 data. The test's null hypothesis $H_0$ is the absence of outliers in the data. Test works as follows:</p>
+<ol>
+<li>
+<p>Compute the Grubbs' test statistics $G={\max_{\mathbb x\in\mathcal D}|\mathbb x-\mu|\over\sigma}$</p>
+</li>
+<li>
+<p>Reject the null hypothesis $H_0$ if </p>
+</li>
+</ol>
+<p>$G\gt\frac{n-1}{\sqrt n}$$\sqrt\frac{t^2_{\alpha/n-2}}{n-1+t^2_{\alpha/n-2}}$</p>
+<p>where $t$ is the $t$-student distribution.</p>
+<p><strong>Other model-based approaches</strong> generalize to arbitrary distributions, such as Gaussian mixtures. We fit the model parameters using methods such as Expectation Maximization algorithm...</p>
+<h3 id="pros-and-cons">Pros and Cons</h3>
+<p>:thumbsup:</p>
+<ul>
+<li>Strong statistical foundation</li>
+<li>Output labels for outliers and non-outliers but can also output a score of outlierdness</li>
+<li>Efficient to compute and easy to interpret</li>
+</ul>
+<p>:thumbsdown:</p>
+<ul>
+<li>Often work only in the 1-dimensional case</li>
+<li>Require fixing a model for the data distribution</li>
+<li>The Gaussian distribution is affected by the dimensionality</li>
+</ul>
+<h2 id="depth-based-approaches">Depth-based Approaches</h2>
+<p>It search for outliers that stands at the <em>border</em> of the data. One such approach is to run the convex hull algorithm to enclose the points inside a shape. The implicit assumption is that outliers are always located at the border of the data space, while the normal points are inside a convex shape.</p>
+<p>The algorithm alternates the convex hull algorithm to the removal of the points at the border. The points are marked with the number of iteration in which they have been removed. The number represents the depth of the point.</p>
+<p>Finally, the algorithm marks as outliers all the points at the border. The points are marked with number of iteration in which they are removed. The number represents the depth of the point.</p>
+<p>Finally the algorithm marks as outliers all the points having a depth $\ge t$.</p>
+<p>Although simple, depth-based approaches have severe limitations:</p>
+<ol>
+<li>The data is assumed to lie on a <strong>convex shape</strong>. Not the case for multi-modal distributions in which the data contains many clusters.</li>
+<li>Convex hull computation is only efficient on low-dimensional data.</li>
+</ol>
+<p>For these reasons, depth-based can only be used in specific settings.</p>
+<h3 id="pros-and-cons_1">Pros and Cons</h3>
+<p>:thumbsup:</p>
+<ul>
+<li>Uses a global reference set for outlier detection</li>
+<li>Originally outputs a label, but can be extended for scoring easily, take depth as a scoring value for example.</li>
+</ul>
+<p>:thumbsdown:</p>
+<ul>
+<li>The data must be uni-modal.</li>
+<li>Convex hull computation is usually only efficient in 2D and 3D spaces.</li>
+</ul>
+<h2 id="distance-based-methods">Distance-based Methods</h2>
+<p>A direct formalization of the outlier notion by Hawkins.</p>
+<p>A point $\mathbb p$ is an outlier if most points are further than $\epsilon$ from $\mathbb p$.</p>
+<p>Definition: Given a radius $\epsilon$ and a percentage $\pi$, a point $\mathbb p$ is an outlier if at most $\pi$ percent of the points $\mathbb x\in\mathcal D$ are at distance less than $\epsilon$ from $\mathbb p$.</p>
+<p>The set of outliers $\mathcal O_\mathcal D$:
+$$
+\mathcal O_\mathcal D={\mathbb p\text{ s.t. }{|{\mathbb x\in\mathcal D|dist(\mathbb p,\mathbb x)\lt\epsilon}|\over|\mathcal D|}\le\pi}
+$$
+Convient notion of outlier score, easy to implement.</p>
+<p>However, $\epsilon,\pi$ are globally defined, distance-based outliers <strong>can not detect outliers with different densities</strong>.</p>
+<h3 id="pros-and-cons_2">Pros and Cons</h3>
+<p>:thumbsup:</p>
+<ul>
+<li>Easy to implement</li>
+<li>Highly interpret-able</li>
+</ul>
+<p>:thumbsdown:</p>
+<ul>
+<li>Effectiveness depends on the choice of distance measure $dist$</li>
+<li>Cannot detect collective outliers</li>
+<li>Sensitive to the choice of $\epsilon,\pi$</li>
+<li>Sensitive to data density</li>
+</ul>
+<h1 id="high-dimensional-outlier-detection">High-dimensional Outlier Detection</h1>
+<p>Suffers from the <strong>curse of dimensionality</strong>. In this case outliers hides within inliers and make analyses harder.</p>
+<h2 id="angel-based-outlier-detection">Angel-based Outlier Detection</h2>
+<p>abbr. ABOD</p>
+<p>Curse of dimensionality doesn't affect angles as much as distances. Because the relative positions of the points do not change in higher dimension.</p>
+<p>Idea: The angle formed with any pair of other points is typically small in variance.</p>
+<blockquote>
+<p>这个观点很有趣，一个异常值相对于其他点有偏离，所以这个异常值和其他点连线的方向都应该差别不太大。（异常值离聚类越远，连线的夹角越接近。）</p>
+</blockquote>
+<p>ABOD works as follows:</p>
+<ul>
+<li>Consider the angles formed by a point $\mathbb p$ with any point $\mathbb x,\mathbb y\in\mathcal D$</li>
+<li>Plot the angles in a chart</li>
+<li>The variance of the angles represents an indication on whether a point is an outlier or an inlier.</li>
+</ul>
+<p>ABOD measures the variance of angles, weighted by the corresponding distances by
+$$
+ABOD(\mathbb p)=VAR_{\mathbb x,\mathbb y\in\mathcal D}\left({\langle\mathbb x-\mathbb p,\mathbb y-\mathbb p\rangle}\over||\mathbb x-\mathbb p||^2\cdot||\mathbb y-\mathbb p||^2\right).
+$$
+A point with a small ABOD denotes an outlier/ The naive computation of ABOD takes $\mathcal O(n^3)$ due to the number of pairs for each point.</p>
+<p>One possible solution is to consider only a subset of pairs, to get a good approximation to exact ABOD.</p>
+<h3 id="pros-and-cons_3">Pros and Cons</h3>
+<p>:thumbsup:</p>
+<ul>
+<li>Global approach to outlier detection</li>
+<li>Performs well on high-dimensional data</li>
+</ul>
+<p>:thumbsdown:</p>
+<ul>
+<li>The naive algorithm runs in $\mathcal O(n^3)$</li>
+<li>Cannot detect collective outliers</li>
+</ul>
+<h2 id="local-methods">Local Methods</h2>
+<p>A point is a outlier if local density is larger than that of its own neighbors.</p>
+<p>Local outliers are defined in terms of nearest neighbors and require only to specify the parameter to define how many neighbor points to consider.</p>
+<p>One of local outlier methods is the <strong>Local Outlier Factor</strong>.</p>
+<p>The KNN distance is the distance $dist_k(\mathbb p)$ between a point $\mathbb p$ and its k-nearest neighbor.</p>
+<p>Reachability distance sets a lower bound between the KNN distance and the distance of a point $\mathbb x$ from a point $\mathbb p$
+$$
+rdist_k(\mathbb p,\mathbb x)=\max{dist_k(\mathbb x),dist(\mathbb p,\mathbb x)}
+$$
+The local reachability distance (lrd) of a point $\mathbb p$ is the average inverse reachability distance of a point $\mathbb p$ from its KNN. The higher the $lrd(\mathbb p)$, the closer $\mathbb p$ is to its k-nearest points.
+$$
+lrd_k(\mathbb p)={1\over|N_k(\mathbb p)|}{1\over\sum_{x\in N_k(\mathbb p)}rdist_k(\mathbb p,\mathbb x)}
+$$
+Finally the Local Outlier Factor (LOF) is the average ratio of the local reachability distances of the neighbors of $\mathbb p$ and that of $\mathbb p$. The local outlier factor measures the relative density of the neighbors of a point and point it self.
+$$
+LOF_k(\mathbb p)={1\over|N_k(\mathbb p)|}\sum_{\mathbb x\in N_k(\mathbb p)}{lrd_k(\mathbb x)\over lrd_k(\mathbb p)}
+$$
+If the density of points around $\mathbb p$ is less than the density around its neighbors, the LOF will be large.</p>
+<p>LOF solves curse of dimensionality. However, LOF <strong>struggles in regions with low-density</strong>.</p>
+<h3 id="pros-and-cons_4">Pros and Cons</h3>
+<p>:thumbsup:</p>
+<ul>
+<li>Provides a scores of outlierdness</li>
+<li>Easy interpret-ability</li>
+<li>Not affected by the curse of dimensionality</li>
+</ul>
+<p>:thumbsdown:</p>
+<ul>
+<li>Inefficient due to the computation of the neighbors</li>
+<li>Requires the correct setting of the parameter $k$</li>
+<li>Hard to detect outliers in low-density regions</li>
+</ul>
+<h2 id="clustering-based-methods">Clustering-based Methods</h2>
+<p>e.g. in DBSCAN, every object not contained in a cluster must be an outlier.</p>
+<p><strong>FindCBLOF</strong>. In order to find outliers using clustering techniques we can use a general method called FindCBLOF.</p>
+<ul>
+<li>Compute clusters using a clustering algorithm</li>
+<li>Sort the clusters in decreasing order by number of points</li>
+<li>Assign to each point a cluster-based local outlier factor (CBLOF)</li>
+<li>If point $\mathbb p$ belongs to a large cluster $C_i$, then $CBLOF(\mathbb p)=|C_i|\cdot S$, where $S$ is similarity between $\mathbb p$ and the cluster.</li>
+<li>If $\mathbb p$ belongs to a small cluster, then $CBLOF(\mathbb p)=|C_i|\cdot S$, where $S$ is the similarity between $\mathbb p$ and <strong>the closest large cluster</strong>.</li>
+</ul>
+<h3 id="pros-and-cons_5">Pros and Cons</h3>
+<p>:thumbsup:</p>
+<ul>
+<li>Detect outliers without requiring labeled data</li>
+<li>Works on several types of data</li>
+<li>Clusters can be regarded as summaries of data</li>
+</ul>
+<p>:thumbsdown:</p>
+<ul>
+<li>The effectiveness depends on the chosen clustering method</li>
+<li>High computational cost to compute the clusters</li>
+</ul>
+<h2 id="isolation-forest">Isolation Forest</h2>
+<p>abbr. IF is a method to detect outliers based on the notion of separability.</p>
+<p>$\mathbb p$ is separable if it is easy to find a random hyper-plane that separates the point from the rest. Idea is similar to a decision tree.</p>
+<p>The probability of a point $\mathbb p$ to be separated from the others in a random split of the data is higher if the point is an outlier. This means that such point with high probability, a leaf close to the root of a randomly-built decision tree.</p>
+<p>However, the point $\mathbb p$ can also be separated by chance. As such, the algorithm builds a number of trees (forest) and calculates the expected height $\mathbb E(h(\mathbb p))$ of the root-leaf path and uses such expectation to compute an outlier score
+$$
+s(\mathbb p)=2^{-\mathbb E(h(\mathbb p))/c(n)}
+$$
+where $c(n)$ is the expected path length of a balanced binary search tree with $n$ data points used for normalization. An outlier has a score close to 1, i.e. the expected length of the path from the root to the leaf $h(\mathbb p)\approx0$.</p>
+<h3 id="pros-and-cons_6">Pros and Cons</h3>
+<p>:thumbsup:</p>
+<ul>
+<li>Easy to construct avoiding difficult decisions on if data points are anomalies or not.</li>
+<li>Can achieve sublinear time complexity and a small memory footprint by exploiting sub-sampling. By eliminating major computational cost of distance calculation in all the distance and density based AD methods</li>
+<li>Can provide anomaly explanations</li>
+</ul>
+<p>:thumbsdown:</p>
+<ul>
+<li>Hyperparameter tuning required such as number of trees, sample size and heights of trees.</li>
+<li>Requires a high percentage of relevant features to identity anomalies.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

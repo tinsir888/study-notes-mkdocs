@@ -1,0 +1,2573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="tinsir888">
+      
+      
+        <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW45/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>计算机视觉 W45 Generative models - tinsir888's Study Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unsupervised-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            tinsir888's Study Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算机视觉 W45 Generative models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    tinsir888's Study Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS@NKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS@NKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    感知技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            感知技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 传感器的性能与评价
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 电传感原理与测量方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 常用物理效应与器件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数字信号处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数字信号处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 信号分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 再探时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数字信号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 信号与系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 离散时间傅里叶变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 频谱分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DatabaseSystem/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    智能计算系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            智能计算系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 神经网络基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 编程框架使用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 编程框架机理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 深度学习处理器原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度学习处理器架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 智能编程语言
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    汇编与逆向
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            汇编与逆向
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 汇编语言基本概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 IA-32 处理器体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 汇编语言基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数据传送与寻址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 PE 文件结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 区块表、输入表和输出表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 静态逆向技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 C 语言程序逆向分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 软件保护技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    网络技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            网络技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 以太网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 交换与虚拟局域网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无线局域网组网技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 互联网与 IP 协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 IP 数据报
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 IP 地址与 ARP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 路由器与路由选择
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 接入互联网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机体系结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            计算机体系结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA1%E6%A6%82%E8%BF%B020210906/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA2%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%AF%84%E4%BC%B020210918/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 量化设计与评估
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA3%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%8420210927/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 指令集体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA4%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A120211011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 存储层次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA5%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%281%2920211018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 流水线技术上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA6%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 流水线技术下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA7%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 指令级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA8%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 指令级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA9%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 数据级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA10%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 数据级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA11%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十一章 线程级并行性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA12%E4%BB%93%E5%BA%93%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十二章 仓库级计算机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程信息
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机网络概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 应用层协议及网络编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 传输层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 网络层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 接口层原理与协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    强化学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            强化学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel1-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 强化学习简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 马尔可夫决策过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel3-%E5%80%BC%E5%87%BD%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 值函数估计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel4-%E6%97%A0%E6%A8%A1%E5%9E%8B%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无模型控制方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel5-%E8%BF%91%E4%BC%BC%E9%80%BC%E8%BF%91%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 近似逼近方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel6-%E8%A7%84%E5%88%92%E4%B8%8E%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 规划与学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel7-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度强化学习价值方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel8-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AD%96%E7%95%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 深度强化学习策略方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel14-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十四章 多智能体强化学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generative-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generative-models-are-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative models are hard
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unsupervised-learning">Unsupervised learning</h1>
+<p>regression vs. classification</p>
+<p>why unsupervised learning?</p>
+<ul>
+<li>few of data are labeled</li>
+<li>pre-train an unsupervised model</li>
+<li>anomaly detection - learn what data distribution typically looks like</li>
+<li>cheaper than supervised learning</li>
+</ul>
+<h2 id="generative-models">Generative models</h2>
+<p>a generative model is a class of statistical model that contrasts with discriminative models.</p>
+<p>informally</p>
+<ul>
+<li>discriminative model - classifier $\text{data}\sim p_{data}(x)$</li>
+<li>generative model - generate new data instances $\text{generated samples}\sim p_{model}(x)$</li>
+</ul>
+<p>generative model includes the distribution of the data itself and tells you <strong>how likely a given example is</strong>.</p>
+<p>for example, models that <strong>predict the next word in a sequence</strong> are typically generative models.</p>
+<p>many kinds</p>
+<h2 id="generative-models-are-hard">Generative models are hard</h2>
+<ul>
+<li>have to model more - generative model try to model how data is placed throughout the space</li>
+<li>a generative model for images might capture some <strong>difficult correlations</strong>.</li>
+</ul>
+<h1 id="autoencoder">Autoencoder</h1>
+<h2 id="traditional-autoencoder-ae">Traditional Autoencoder (AE)</h2>
+<p>an AE is a neural network that is trained to attempt to copy its input to its output</p>
+<p>given data $x$ (no labels) we would like to learn function $f$ (encoder) and $g$ (decoder) s.t.:
+$$
+h=f(x)\
+\hat x=g(h)\
+\hat x=g(f(x))=x
+$$
+where g is an <strong>approximation</strong> of the identify function</p>
+<p>$h=f(x)=s(Wx+b)$ is the <strong>latent</strong> or <strong>hidden representation</strong> or <strong>code</strong> and $s$ is a non-linearity function.</p>
+<p>$\hat x=g(h)=s(W^Th+b')$ is $x$'s <strong>reconstruction</strong>.</p>
+<h3 id="motivation">Motivation</h3>
+<ul>
+<li>learning the identity function $g$ everywhere is not especially useful</li>
+<li>autoencoders are restricted in ways that allow them to copy only approximately.</li>
+<li>traditionally an autoencoder is used for dimensionality reduction and feature learning</li>
+</ul>
+<h3 id="training-an-encoder">Training an encoder</h3>
+<p>training set is no-label.</p>
+<p>using SGD</p>
+<p>loss function: L2 Norm</p>
+<h3 id="undercomplete-vs-overcomplete-ae">undercomplete vs overcomplete AE</h3>
+<p>AE is undercomplete if hidden representation has smaller dimensionality than the input</p>
+<ul>
+<li>good feature for the training distribution</li>
+<li>bad for other types of input</li>
+</ul>
+<p>AE is overcomplete if hidden representation has larger dimensionality than the input</p>
+<ul>
+<li>no guarantee that the hidden units will extract meaningful structure</li>
+<li>higher* dimension code helps model a more complex distribution - good for training a linear classifier.</li>
+</ul>
+<h2 id="stacked-ae-deep">Stacked AE - deep</h2>
+<p>deep is better</p>
+<ul>
+<li>more representational power</li>
+<li>easier for similar datapoints to group together.</li>
+<li>better separation of classes</li>
+</ul>
+<h2 id="latent-space">Latent space</h2>
+<p>the space in which the encoding exists is called the latent space or the hidden space</p>
+<p>if AE is undercomplete, the compressed latent representation $h$ is often called the bottleneck</p>
+<p>what if we tr to interpolate 插值 between two latent space? $h_i=\alpha h_1+(1-\alpha)h_2$</p>
+<p>我们可以发现，$\alpha$ 从 0 到 1，得到的 $h_i$ 像 $h_1$ 代表的东西变得越来越像 $h_2$ 代表的东西了</p>
+<h2 id="problem-with-simple-autoencoders">Problem with simple autoencoders</h2>
+<ul>
+<li>latent space may not be continuous</li>
+<li>容易变成 replicate</li>
+</ul>
+<p>solution: variational autoencoders</p>
+<h2 id="regularization">Regularization</h2>
+<p>motivation: learn meaningful features without altering the code's dimensions</p>
+<p>solution: imposing other constraints on the network</p>
+<h2 id="sparse-ae">Sparse AE</h2>
+<p>suppose the AE has learned this hidden representation features.</p>
+<p>It has just <em>remembered</em> the data, not <em>learned</em> it. This will not generalize well to unseen data</p>
+<p>the image is decomposed into a combination of sparse features:</p>
+<ul>
+<li>if our learned features are sparse, we can generalize better</li>
+<li>sparse means: most activations are 0 except a few that are close to 1.</li>
+</ul>
+<p>Let $h_j^{(l_{Bn})}$ denote the activation of $j$-th hidden unit of the autoencoder</p>
+<p>Let $h_j^{(l_{Bn})}(x)$ be activation of this specific node on a give input $x$.</p>
+<p>Let $\hat\rho_j=\frac{1}{n}\sum_{i=1}^n[h_j^{(l_{Bn})}(x^{i})]$ be the average activation of hidden unit $j$.</p>
+<p>we would like to enforce the constraint $\hat\rho_j=\rho$ where $\rho$ is a <em>sparsity parameter</em>, typically small.</p>
+<p>in other words, we want the average activation of each neuron $j$ to be close to $\rho$.</p>
+<p>we penalize $\hat\rho_j$ for deviating from $\rho$</p>
+<p>penalty term: $\sum_{j=1}^{S_{Bn}}KL(\rho|\hat\rho_j)$</p>
+<p>$KL$ is a Kullback-Liebler divergence function, $S_{Bn}$ is the number of units in the hidden layer</p>
+<p>$KL(\rho|\hat\rho_j)=0$ if $\hat\rho_j=\rho$</p>
+<p>overall loss function: $J_S(W)=J(W)+\beta\sum_{j=1}^{S_{Bn}}KL(\rho|\hat\rho_j)$</p>
+<p>$J(W)=\frac{1}{2}\sum_{i=1}^n||\hat x^{(i)}-x^{(i)}||$</p>
+<p>we need to know  $\hat\rho_j$ before hand, so we have to compute a forward pass on the whole training set.</p>
+<h3 id="recap">Recap</h3>
+<p>cross-entropy: $H(p,q)=-\sum_{i=1}^np_i\log_2(q_i)$</p>
+<p>KL divergence: $D_{KL}(p||q)=H(p,q)-H(p)=-\sum_{i=1}^np_i\log_2{q_i}-(-\sum_{i=1}^np_i\log_2p_i)=-\sum_{i=1}^np_i\log_2\frac{q_i}{p_i}$</p>
+<h2 id="denoising-ae">Denoising AE</h2>
+<p>aim to encode the input to learn and describe latent attributes of the data</p>
+<p>try to undo the effect of a corruption process stochastically applied to the input</p>
+<p>model isn't able to simply develop a mapping which memorizes the training data, becuase input and target output are not the same</p>
+<p>更稳定 robust 的模型：在输入的时候加上噪声，目标输出还是原图</p>
+<p>$\hat x=g(f(\widetilde x))=x$ where $\widetilde x$ is a copy of $x$ that has been corrupted by some noise process</p>
+<h3 id="example-of-noise">example of noise</h3>
+<p>random assignment of subset of inputs to 0 with probability $v$.</p>
+<p>Gaussian additive noise.</p>
+<h3 id="training">training</h3>
+<p>reconstruction $\hat x$ computed from the corrupted input $\widetilde x$</p>
+<p>loss function compares $\hat x$ reconstruction with the noiseless $x$</p>
+<p>what does it learn?</p>
+<blockquote>
+<p>the correlations of $x$'s features</p>
+<p>based on those relations we can learn a more "not prone to changes" model</p>
+<p>we are forcing the hidden layer to learn a generalized structure of the data</p>
+</blockquote>
+<p>The DAE is trained to map a corrupted data point back to the manifold. DAE 经过训练，可以将损坏的数据点映射回流形。</p>
+<h3 id="going-convolutional">Going convolutional</h3>
+<p>we can replace the fully connected layers with convolutional layers</p>
+<h1 id="variational-autoencoders">Variational autoencoders</h1>
+<p>very similar to the regular autoencoder</p>
+<p>unique property: latent space are continuous (by design), allowing random sampling and interpolation</p>
+<p>how?</p>
+<blockquote>
+<p>by making its encoder not output an encoding vector of size $n$, but rather outputting two vectors of size $n$.</p>
+<p>a vector of means $\mu$, and another vector of standard deviations $\sigma$</p>
+<p>probabilistic nature using a sampling layer</p>
+</blockquote>
+<h2 id="random-sampling-layer">Random sampling layer</h2>
+<p>the stochastic generation means, that even for the same input, while the mean and standard deviations remain the same, the actual encoding will somewhat vary on every single pass simply due to sampling.</p>
+<p>将输出整成了一个概率分布而不是一个确定的值。</p>
+<ul>
+<li>the hidden layer outputs the parameters of a vector of random variables of length $n$</li>
+<li>the $i$-th element of $\mu$ and $\sigma$ represents the mean and standard deviation of the $i$-th random variable $x_i$, from which we sample to obtain the sampled encoding, which we pass onward to the decoder</li>
+</ul>
+<h2 id="probabilistic-nature-of-vae">Probabilistic nature of VAE</h2>
+<p>not only is a single point in latent space referring to a sample of that class, but all nearby points refer to the same as well</p>
+<p>the decoder is exposed to a range of variations</p>
+<p>results in a smooth latent space</p>
+<p>Local smoothness is not enough</p>
+<ul>
+<li>
+<p>if the encoder learns to cluster samples apart, the decoder will be able to reconstruct the training data better</p>
+</li>
+<li>
+<p>we want encodings all of which are as close as possible to each other while still being distinct, allowing smooth interpolation, and enabling the construction of new samples.</p>
+</li>
+</ul>
+<p>最好这些 smooth 的类别分布能紧密挨着，分开了就不好</p>
+<p>solution:</p>
+<ul>
+<li>KL divergence in the loss function</li>
+<li>for VAEs, the KL loss is equivalent to the sum of all the KL divergences between the latent component $Z_i\sim N(\mu_i,\sigma_i^2)$ in $Z$. and the standard normal, where $\mu_i=0,\sigma_i^2=1$</li>
+<li>KL loss term: $\sum_{i=1}^n\sigma_i^2+\mu_i^2-\log\sigma_i-1$</li>
+<li>we still minimize similarity as well $\frac{1}{2}\sum||\hat x-x||^2$</li>
+</ul>
+<h3 id="effect-of-kl-loss-term">Effect of KL loss term</h3>
+<p>encourages the encoder to distribute all encoding, evenly around the center of the latent space</p>
+<p>Optimizing similarity and KL loss, results in the generation of a latent space which maintains the similarity of nearby encodings on the local scale via clustering, yet globally, is very densely packed near the latent space origin.</p>
+<h1 id="generative-adversarial-network-gan">Generative Adversarial Network (GAN)</h1>
+<h2 id="density-estimation">Density estimation</h2>
+<p>goal of probabilistic generative models: fund model s.t. $p_{data}(x)=p_{model}(x)$</p>
+<p>explicitly model density function (distribution)</p>
+<ul>
+<li>高斯分布、VAE 的 latent 计算</li>
+</ul>
+<p>implicit: GAN - just learn to generate samples from distribution</p>
+<h2 id="motivation-of-gan">motivation of GAN</h2>
+<p>problem: want to sample from complex, high-dimensional training distribution. no direct way to do this</p>
+<p>solution: sample from a simple distribution.</p>
+<p>System of 2 neural network competing against each other in a 0-sum game framework</p>
+<p>discriminator network: try to distinguish between real and fake images</p>
+<p>generator network: try to fool the discriminator by generating real-looking images</p>
+<h2 id="training-gan">Training GAN</h2>
+<p>$D(x)$ represents the probability that input $x$ came from the real data rather than the generator</p>
+<p>$G(z)$ takes random input noise vector $z$ and transforms it into an image</p>
+<p>minibatch consists of </p>
+<ul>
+<li>${x^{(i)}}_{i=1}^m$ examples from the real distribution</li>
+<li>${z^{(i)}}_{i=1}^m$ samples from a prior distribution (like Gaussian)</li>
+</ul>
+<p>then, from the discriminator's perspective, we would like to have</p>
+<p>$D(x^{(i)})=1$ (real), $D(G(z^{(i)}))=0$ (fake) $\Rightarrow\max_{W_D}\sum_{i=1}^m\log(D(x^{(i)}))+\log(1-D(G(z^{(i)})))$</p>
+<p>but for generator's perspective, we would like to have</p>
+<p>$D(G(z^{(i)}))=1$ (fool the discriminator) $\Rightarrow\min_{W_G}\sum_{i=1}^m\log(1-D(G(z^{(i)})))$</p>
+<h3 id="loss-function">Loss function</h3>
+<p>minimax game
+$$
+\min_{W_G}\max_{W_D}\mathbb E_{x\sim p_{data}}\log(D(x))+\mathbb E_{z\sim p_z}\log(1-D(G(z)))\
+=\int p_{data}(x)\log(D(x))\text dx+\int p_z\log(1-D(G(z)))\text dz
+$$
+for a fixed generator, it can be shown that this minimax game has a global optimum for $p_{data}(x)=p_{generator}(x)$</p>
+<p>in that case, the discriminator can't distinguish the real from the fake, because
+$$
+D^*(x)=\Pr(real|x)=\frac{p_{data}(x)}{p_{data}(x)+p_{generator}(x)}=\frac{1}{2}
+$$
+it works!</p>
+<ul>
+<li>$G$ has a reinforcement learning task</li>
+<li>it knows when it does good but it is not given a supervised signal</li>
+<li>RL is hard</li>
+<li>back propagation through $D$ provides $G$ with a supervised signal; the better $D$ is, the better this signal will be.</li>
+<li>Can't describe optimum via a single loss</li>
+<li>$D$ is seldom fooled</li>
+</ul>
+<h3 id="common-problems-in-training-gan">Common problems in training GAN</h3>
+<p>hard to train!</p>
+<ul>
+<li>
+<p>non-convergence: the model parameters oscillate, destabilize and never converge</p>
+</li>
+<li>
+<p>mode collapse: the generator collapses which produces limited varieties of samples</p>
+</li>
+</ul>
+<p>表现：生成器往往只生成单一类型的数据</p>
+<ul>
+<li>
+<p>diminished gradient: the discriminator gets to successful, so the generator gradient vanishes</p>
+</li>
+<li>
+<p>unbalanced between generator and discriminator causing overfitting</p>
+</li>
+<li>
+<p>highly sensitive to the hyperparameter selections</p>
+</li>
+</ul>
+<h2 id="some-variation-of-gan">Some variation of GAN</h2>
+<h3 id="deep-convolutional-gan">Deep Convolutional GAN</h3>
+<p>aka DCGAN</p>
+<p>加了卷积操作的对抗生成网络</p>
+<h3 id="conditional-gan">Conditional GAN</h3>
+<p>aka CGAN</p>
+<p>the original GAN generates data from random noise, but has no knowledge about class labels</p>
+<p>CGAN aims to solve this by telling the generator to generate images of only one particular class, like a cat or dog</p>
+<p>specifically, CGAN concatenates a one-hot vector $y$ to the random noise vector $z$ to result in an architecture.</p>
+<p>Pix2Pix</p>
+<p>CycleGAN - cycle consistency loss</p>
+<p>ProGAN - progressive growing of GAN</p>
+<p>WGAN - wasserstein GAN</p>
+<p>SAGAN - self attention GAN</p>
+<p>BigGAN</p>
+<h1 id="summary">Summary</h1>
+<p>Auto encoders</p>
+<ul>
+<li>best for dimensionality reduction / feature learning.</li>
+<li>Not good at generating new samples due to discontinuities in latent space</li>
+</ul>
+<p>variational autoencoders VAE</p>
+<ul>
+<li>useful latent representation. better at generating new samples, but current sample quality not the best.</li>
+</ul>
+<p>generative adversarial networks GAN</p>
+<ul>
+<li>game-theoretic approach, best samples</li>
+<li>but can be tricky and unstable to train</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2959 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="tinsir888">
+      
+      
+        <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M3PoFandMMS/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Fair Division 3 Price of Fairness and MMS Property - tinsir888's Study Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#paper-on-pof" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            tinsir888's Study Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fair Division 3 Price of Fairness and MMS Property
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    tinsir888's Study Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS@NKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS@NKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    感知技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            感知技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 传感器的性能与评价
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 电传感原理与测量方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 常用物理效应与器件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数字信号处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数字信号处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 信号分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 再探时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数字信号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 信号与系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 离散时间傅里叶变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 频谱分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DatabaseSystem/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    智能计算系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            智能计算系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 神经网络基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 编程框架使用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 编程框架机理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 深度学习处理器原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度学习处理器架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 智能编程语言
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    汇编与逆向
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            汇编与逆向
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 汇编语言基本概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 IA-32 处理器体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 汇编语言基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数据传送与寻址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 PE 文件结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 区块表、输入表和输出表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 静态逆向技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 C 语言程序逆向分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 软件保护技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    网络技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            网络技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 以太网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 交换与虚拟局域网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无线局域网组网技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 互联网与 IP 协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 IP 数据报
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 IP 地址与 ARP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 路由器与路由选择
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 接入互联网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机体系结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            计算机体系结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA1%E6%A6%82%E8%BF%B020210906/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA2%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%AF%84%E4%BC%B020210918/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 量化设计与评估
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA3%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%8420210927/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 指令集体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA4%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A120211011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 存储层次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA5%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%281%2920211018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 流水线技术上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA6%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 流水线技术下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA7%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 指令级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA8%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 指令级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA9%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 数据级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA10%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 数据级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA11%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十一章 线程级并行性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA12%E4%BB%93%E5%BA%93%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十二章 仓库级计算机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程信息
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机网络概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 应用层协议及网络编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 传输层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 网络层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 接口层原理与协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    强化学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            强化学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel1-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 强化学习简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 马尔可夫决策过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel3-%E5%80%BC%E5%87%BD%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 值函数估计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel4-%E6%97%A0%E6%A8%A1%E5%9E%8B%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无模型控制方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel5-%E8%BF%91%E4%BC%BC%E9%80%BC%E8%BF%91%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 近似逼近方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel6-%E8%A7%84%E5%88%92%E4%B8%8E%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 规划与学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel7-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度强化学习价值方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel8-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AD%96%E7%95%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 深度强化学习策略方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel14-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十四章 多智能体强化学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preliminaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preliminaries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#price-of-ef1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Price of EF1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Price of EF1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-absolute-welfare-guarantee" class="md-nav__link">
+    <span class="md-ellipsis">
+      An Absolute Welfare Guarantee
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="An Absolute Welfare Guarantee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code-for-algorithm-alf-ef1-abs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pseudo code for Algorithm ALF-EF1-ABS:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-case-of-high-optimal-welfare" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Case of High Optimal Welfare
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-of-theorem-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof of Theorem 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proof of Theorem 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof-for-upper-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof for upper bounds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-for-lower-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof for lower bounds
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#price-of-12-mms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Price of $1/2$-MMS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Price of $1/2$-MMS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-absolute-welfare-guarantee_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      An Absolute Welfare Guarantee
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-case-of-high-optimal-welfare_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Case of High Optimal Welfare
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-of-theorem-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof of Theorem 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Objective: Explore the concept of the Price of Fairness and Maximin Share (MMS) property.</p>
+<p>Activities: Read and present paper <a href="https://arxiv.org/abs/2007.06242"><em>Optimal Bounds on the Price of Fairness for Indivisible Goods</em></a> (2020) and <a href="https://arxiv.org/abs/1703.01851"><em>Approximation Algorithms for Maximin Fair Division</em></a> (2020).</p>
+<h1 id="paper-on-pof">Paper on PoF</h1>
+<p>Price of Fairness measures the worst-case loss of social welfare due to fairness constraints.</p>
+<p>This paper: Both EF1 and ${1\over2}$-MMS guarantees has PoF $O(\sqrt n)$, where $n$ is number of agents.</p>
+<ul>
+<li>For ${1\over2}$-MMS, this bound holds for additive valuations.</li>
+<li>For EF1, this bound holds for more general class of subadditive valuations.</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>EF family ~~omitted here~~</p>
+<p>MMS family</p>
+<ul>
+<li>$3\over4$-MMS always exist.</li>
+</ul>
+<p>Fair is not the only objective of interest, another criterion is the <em>social welfare</em>.</p>
+<p>Tradeoff between fairness and social welfare is measure by <em>price of fairness</em>, the supremum <strong>ratio</strong> of the <strong>maximum welfare of any allocation</strong> to the <strong>maximum welfare of any allocation satisfying the desired fairness notion</strong>. This measures the factor by which welfare may be lost to achieve the desired fairness.</p>
+<h3 id="related-work">Related Work</h3>
+<p>Caragiannis et al. Initiated PoF: PoF of Envy-freeness is between $\Omega(\sqrt n)$ and $O(n)$.</p>
+<p>Beretsimas et al. Closed the gap, bound the PoF to $\Theta(\sqrt n)$, matching upper bound can be achieved by maximizing the Nash welfare.</p>
+<p>For <strong>Indivisible goods and additive valuations</strong></p>
+<ul>
+<li>Bei et al. showed PoF of EF1 is between $\Omega(\sqrt n)$ and $O(n)$.</li>
+</ul>
+<h3 id="contributions">Contributions</h3>
+<p>Price of EF1 is $O(n)$: subadditive valuation function</p>
+<p>Price of PROP1: $\Theta(n)$</p>
+<p>Price of ${1\over2}$-MMS: $\Theta(\sqrt n)$. For a fixed $\epsilon\gt0$, a $(\frac{1}{2}-\epsilon)$-MMS allocation with welfare with $O(\sqrt n)$ factor of the optimal can be computed in polynomial time.</p>
+<h2 id="preliminaries">Preliminaries</h2>
+<p>Set $[m]$ of indivisible goods</p>
+<p>Set $[n]$ of agents</p>
+<p><strong>Agent valuations</strong>. Each agent $i\in[n]$ has non-negative valuation over goods.</p>
+<p>2 valuation classes:</p>
+<ul>
+<li>
+<p>Additive $v_i(A+B)=v_i(A)+v_i(B)$</p>
+</li>
+<li>
+<p>Subadditive $v_i(A+B)\le v_i(A)+v_i(B)$</p>
+</li>
+</ul>
+<p>(Additive $\subset$ Subadditive)</p>
+<p><strong>Oracle access</strong>.</p>
+<ul>
+<li>Value query: Input $i$ and $S\subset[m]$ output $v_i(S)$.</li>
+<li>Demand query: Input $i$ and price $p_g\in\mathbb R_{\ge0}$ for each $g\in[m]$, output a profit-maximizing set $S^*\in\arg\max_{S\in[m]}v_i(S)-\sum_{g\in S}p_g$.</li>
+</ul>
+<p><strong>Allocations</strong>. ~~omitted here~~</p>
+<p><strong>Fairness.</strong> ~~omitted here~~</p>
+<p><strong>Social welfare</strong>. The SW of allocation $\mathcal A$, is defined as the sum of the values that the agents derive from the allocation: $SW(\mathcal A)=\sum_{i=1}^nv_i(A_i)$. Maximum social welfare allocation: $\mathcal W^<em>=(W_1^</em>,W_2^<em>,\cdots,W_n^</em>)$.
+$$
+\mathcal W^<em>\in\arg\max_{\mathcal A\in\Pi_n([m])}SW(\mathcal A)
+$$
+$OPT$ denote the optimal social welfare, i.e., $OPT=SW(\mathcal W^</em>)$.</p>
+<p><strong>Price of fairness</strong>.
+$$
+PoF={SW(\mathcal W^<em>)\over\max_{\mathcal A\in\text{Fair Allocation}}SW(\mathcal A)}
+$$
+</em><em>Scaling</em>*. This paper considers both scaled and unscaled valuations of agents' valuations.</p>
+<p>:question:<strong>What does scaling here means</strong></p>
+<blockquote>
+<p>To ensure that agent valuations are on the same scale, much of the literature on fair division assumes that agent valuations are <em>scaled</em>, i.e. $v_i([m])=1\forall i\in[n]$. Nothing that unscaled valuations are common in other areas of social choice.</p>
+<p>In my words, <em>scaled</em> means for all agents, their valuations for all the goods are the same.</p>
+<p>==My question: Must the valuation here be additive?==</p>
+</blockquote>
+<h2 id="price-of-ef1">Price of EF1</h2>
+<p>:dart::thinking:<strong>Theorem 1</strong> The price of EF1 is $O(\sqrt n)$ for <strong>scaled</strong> subadditive valuations and $\Theta(n)$ for <strong>unscaled</strong> subadditive valuations. Both bounds are tight even when the valuations are additive.</p>
+<h3 id="an-absolute-welfare-guarantee">An Absolute Welfare Guarantee</h3>
+<p>First, we show that when agents have subadditive valuations ${v_i}<em>{i\in[n]}$ (not necessarily scaled), there always exists an EF1 allocation $\mathcal A$ with social welfare $SW(\mathcal A)\ge{1\over2n}\sum</em>{i=1}^nv_i([m])$.</p>
+<p>2 implications:</p>
+<p>$\because\sum_{i=1}^nv_i([m])$ is a trivial upper bound on the optimal social welfare OPT, the result establishes am $O(n)$ upper bound on the price of EF1.</p>
+<ul>
+<li>For unscaled valuations, this is exactly the bound.</li>
+<li>For scaled valuations, we improve this to $O(\sqrt n)$. Since $\sum_{i=1}^nv_i([m])=n$ under scaled valuations, the result gives $SW(\mathcal A)\ge1/2$. Hence, if $OPT=O(\sqrt n)$, then we have the desired $O(\sqrt n)$ upper bound.</li>
+</ul>
+<p>This paper will analyze the case when $OPT=\Omega(\sqrt n)$.</p>
+<p>This paper also give an algorithm to produce absolute welfare guarantee.</p>
+<h4 id="pseudo-code-for-algorithm-alf-ef1-abs">Pseudo code for Algorithm <code>ALF-EF1-ABS</code>:</h4>
+<p>Input: Fair-division instance $\mathcal I=\lang[n],[m],{v_i}_{i\in[n]}\rang$ with value-query oracle access to the subadditive valuations $v_i$s.</p>
+<p>Output: An EF1 allocation $\mathcal B$ with $SW(\mathcal B)\ge{1\over2n}\sum_{i\in[n]}v_i([m])$.</p>
+<ol>
+<li>Consider the weighted bipartite graph $G=([n]\cup[m],[n]\times[m])$ with weight of each edge $(i,g)\in[n]\times[m]$ set as $v_i(g)$. Let $\pi$ be a maximum-weight matching in $G$ that matches all nodes in $[n]$.</li>
+<li>Construct the partial allocation $\mathcal B'$ s.t. $\mathcal B_i'={\pi(i)}$ for each $i\in[n]$.</li>
+<li>Use the algorithm of Lipton et al to extend the partial EF1 allocation $\mathcal B'$ into a complete EF1 allocation $\mathcal B$ s.t. $v_i(B_i)\ge v_i(B_i')$ for each agent $i\in[n]$.s</li>
+<li>return allocation $\mathcal B$</li>
+</ol>
+<p>:thinking:<strong>Lemma 1</strong>. Let $\mathcal I=\lang[n],[m],{v_i}<em>{i\in[n]}\rang$ be a fair-division instance in which agent valuations are subadditive. Then, given value-query oracle access to the valuations, <code>ALG-EF1-ABS</code> algorithm efficiently computes an EF1 allocation $\mathcal B$ with social welfare $SW(\mathcal B)\ge{1\over2n}\sum</em>{i\in[n]}v_i([m])$.</p>
+<blockquote>
+<p>For each agent $i\in[n]$, sort the goods as $g_{i_1},\cdots,g_{i_m}$ in a non-decreasing order of their value to agent $i$ i.e. $v_i(g_{i_1})\ge\cdots\ge v_i(g_{i_m})$, and let $G_i={g_{i_1},\cdots,g_{i_n}}$ be the set of $n$ most valuable goods to agent $i$.</p>
+<p>Consider a subgraph $G'=([n]\cup[m],E')$ of the weighted bipartite graph $G$ constructed in line 1 of the algorithm, in which we only retain the edges $E'={(i,g):i\in[n],g\in G_i}$ (i.e. from each agent $i$ to her $n$ most valuable goods). Because $G'$ is <strong>$n$-left-regular</strong>, it can be decomposed into $n$ disjoint left-perfect matchings $M_1,\cdots,M_n$, this is an easy consequence of Halls' theorem. Due to the pigeonhole principle, one of $M_1,\cdots,M_n$ must have weight at least $1\over n$. We have
+$$
+\sum_{i\in[n]}v_i(\pi(i))=SW(\mathcal B')\ge{1\over n}\cdot\sum_{i\in[n],g\in G_i}v_i(g)
+$$
+$\mathcal B'$ assigns a single good to each agent; hence, it is trivially EF1. The algorithm makes sure that $\mathcal B$ is the extension of $\mathcal B'$ s.t. $v_i(B_i)\ge v_i(B_i')$. Thus,
+$$
+SW(\mathcal B)\ge{1\over n}\sum_{i\in[n]}\sum_{g\in G_i}v_i(g)
+$$</p>
+<p>$\mathcal B$ is EF1, thus for each $i,j\in[n]$, there exists $S_j\subseteq B_j$ with $|S_j|\le1$ s.t. $v_i(B_i)\ge v_i(B_j\diagdown S_j)\ge v_i(B_j)-v_i(S_j)$ (<strong>subadditive</strong> for last inequality). Summing this inequality over $j\in[n]$, we get
+$$
+n\cdot v_i(B_i)\ge\sum_{j\in[n]}v_i(B_j)-\sum_{j\in[n]}v_i(S_j)\
+\ge v_i([m])-\sum_{j\in[n]}v_i(S_j)\ge v_i([m])-\sum_{g\in G_i}v_i(g),
+$$
+where the penultimate inequality holds because $B_j$s form a partition of $[m]$ and the last inequality follows from subadditivity. $S_j$s are disjoint and have cardinality at most $1$, and $G_i$ is the set of $n$ most valuable goods to $i$. Summing over $i\in[n]$, we get
+$$
+n\cdot\sum_{i\in[n]}v_i(B_i)=n\cdot SW(\mathcal B)\ge\sum_{i\in[n]}v_i([m])-\sum_{i\in[n]}\sum_{g\in G_i}v_i(g).
+$$
+Substituting equation, we get the desired bound
+$$
+n\cdot SW(\mathcal B)+n\cdot SW(\mathcal B)\ge\sum_{i\in[n]}v_i([m])-\sum_{i\in[n]}\sum_{g\in G_i}v_i(g)+\sum_{i\in[n]}\sum_{g\in G_i}v_i(g)\
+=\sum_{i\in[n]}v_i([m])
+$$
+which implies $SW(\mathcal B)\ge{1\over 2n}\sum_{i\in[n]}v_i([m])$ as needed.</p>
+</blockquote>
+<h3 id="the-case-of-high-optimal-welfare">The Case of High Optimal Welfare</h3>
+<p>Lemma 1 focuses on fair division with scaled subadditive valuations in which the optimal social welfare is $\Omega(\sqrt n)$, which means we can sacrifice $O(\sqrt n)$ of the welfare in OPT, obtain $O(\sqrt n)$ approximation to the remaining welfare through an EF1 allocation, and yet achieve $O(\sqrt n)$ approximation to OPT.</p>
+<p>In particular, this paper presents an algorithm that efficiently finds an EF1 allocation $\mathcal A$ with social welfare $SW(\mathcal A)\ge{OPT-2\sqrt n\over12\sqrt n}$.</p>
+<p>$\mathcal W^*$ corresponds to optimal social welfare $OPT$.</p>
+<p>However, for subadditive valuations, computing such an allocation is NP-hard under both value queries and demand queries.</p>
+<p>Using a polynomial number of value queries, it's $\Theta(\sqrt m)$ best possible approximation to the optimal social welfare. (Too loose)</p>
+<p>Starting with high-welfare allocation $\mathcal W$ returned by Feige's Algorithm, the algorithm works as follows: It first indexes $m$ goods as $g_1,\cdots,g_m$ s.t. the goods n each $W_i$ receive consecutive indices. Alternatively, consider a line graph $L=([m],E)$ over the set of goods with edges $E={(g_k,g_{k+1}):k\in[m-1]}$. Then each $W_i$ induces a connected subgraph of $L$.</p>
+<p>Definition of <em>line graph</em>: Let $L=([m],E)$ be a line graph over the goods, we say that $S\subseteq[m]$ is a <strong>connected bundle</strong> in $L$ if $S$ induces a connected subgraph of $L$. Given a partial allocation $\mathcal P$, define $\mathcal U(\mathcal P)$ as the set of connected components of $L$ that remain after moving the allocated goods $\cup_{i\in[n]}P_i$. We refer to $U\in\mathcal U(\mathcal P)$ as an <strong>unassigned connected bundle</strong>.</p>
+<p>Algorithm <code>ALG-EF1-HIGH</code> builds a partial allocation $\mathcal P$ by giving each agent $i$ her most valuable good from $W_i$. This allocation satisfies: <strong>EF1</strong>, and <strong>each $P_i$ is a connected bundle in $L$</strong>. (trivial) The algorithm then iteratively updates $\mathcal P$ to improve its social welfare while maintaining both properties.</p>
+<p>In particular, at every iteration, the algorithm computes the set of unassigned connected bundles $\mathcal U(\mathcal P)$. Removing $n$ connected bundles from $\mathcal P$ can create at most $n+1$ unassigned connected bundles.</p>
+<p>If there is an unassigned connected bundle $U$ that some agent envies, then the algorithm finds an <em>inclusion-wise minimal</em> subset of $U$ that is envied and allocates it to an envious agent.</p>
+<ul>
+<li>This paper argues that inclusion-wise minimality preserves the EF1 of $\mathcal P$.</li>
+<li>This paper also argues that this iterative process terminates at a partial allocation $\mathcal P$ that satisfies the desired social welfare guarantee.</li>
+</ul>
+<p><code>ALG-EF1-HIGH</code> is extended from Lipton et al, which computes EF1 allocation without losing social welfare.</p>
+<p>~~Pseudo code omitted here.~~</p>
+<p>:thinking:<strong>Lemma 2</strong>. When <code>ALG-EF1-HIGH</code> is run on a fair division instance $\mathcal I=\lang[n],[m],{v_i}_{i\in[n]}\rang$ with subadditive valuations, the following hold regarding the partial allocation $\mathcal P^t$ constructed after $t$ iterations of the while loop.</p>
+<ol>
+<li>If $t\ge1$, then for each agent $i\in[n]$, either $P_i^t=P_i^{t-1}$ or $v_i(P_i^t)\ge v_i(P_i^{t-1})$.</li>
+<li>For each agent $i\in[n]$, $P_i$ is a connected bundle under the line graph $L$ constructed in checking whether there exists agent envying a $U\in\mathcal U(\mathcal P)$.</li>
+<li>$P^t$ is EF1.</li>
+</ol>
+<blockquote>
+<p>1. and 2. are trivial.</p>
+<p>For 3., using induction.</p>
+</blockquote>
+<p>:thinking:<strong>Lemma 3</strong>. When <code>ALG-EF1-HIGH</code> is run on a fair division instance $\mathcal I$ with subadditive valuations, the following hold:</p>
+<ol>
+<li>The while loop terminates after $T=O(nm^2)$ iterations.</li>
+<li>The partial allocation $\mathcal P^T$ constructed at the end of the while loop satisfies $v_i(P_i^T)\ge v_i(U)$ for every agent $i\in[n]$ and unassigned connected bundle $U\in\mathcal U(\mathcal P^T)$.</li>
+</ol>
+<blockquote>
+<p>$O(m^2)$ possible connected bundles in $L\Rarr$ an agent's assignment can only be updated $O(m^2)$ times. There are $n$ agents in total.</p>
+<p>The while loop would not have terminated if $v_i(P_i^T)\lt v_i(U)$ for any agent $i$ and any unassigned connected bundle $U$.</p>
+</blockquote>
+<p>:thinking:<strong>Lemma 4</strong>. Given a fair division instance $\mathcal I$ with <strong>scaled</strong> subadditive valuations, <code>ALG-EF1-HIGH</code> terminates in polynomial time and returns an EF1 allocation $\mathcal A$ satisfying
+$$
+SW(\mathcal A)\ge{OPT\over12\sqrt n}-{1\over6}.
+$$
+where $OPT$ is the optimal social welfare achievable in instance $\mathcal I$.</p>
+<blockquote>
+<p>Feige's algorithm satisfies $SW(\mathcal W)\ge{1\over2}OPT$. Let the while loop in <code>ALG-EF1-HIGH</code> terminate with partial allocation $\mathcal P$; that is $\mathcal P=\mathcal P^T$, where $T$ is # of iterations. Lemma 3 ensures that the while loop terminates. It suffices to show
+$$
+\sqrt n+6\sqrt n\cdot SW(\mathcal P)\ge SW(\mathcal W).
+$$
+By lemma 2, $\mathcal P$ is EF1. Also, note that the algorithm of Lipton et al can extend EF1 allocation $\mathcal P$ into a complete EF1 allocation $\mathcal A$ with $SW(\mathcal A)\ge SW(\mathcal P)$. Hence the inequality above along with $SW(\mathcal W)\ge{1\over2}OPT$ completes the proof of the lemma 4.</p>
+<p>Due to lemma 2, each $P_i$ is a connected bundle in the line graph $L$. Hence, removing the goods allocated in $\mathcal P$ creates at most $n+1$ connected components, i.e. $|\mathcal U(\mathcal P)|\lt n+1$. Let $\mathcal T(\mathcal P)={P_j:j\in[n]}\cup\mathcal U(\mathcal P)$ be the collection of the assigned and unassigned in $L$ created by $\mathcal P$. ==Hence $|\mathcal T(\mathcal P)|\lt2n+1$.== For each agent $i\in[n]$, let $\mathcal Q_i$ denote the bundles in $\mathcal T(\mathcal P)$ that intersect with $W_i$, i.e., $\mathcal Q_i={S\in\mathcal T(\mathcal P):S\cap W_i\neq\empty}$. write $q_i=|\mathcal Q_i|$.</p>
+<p>While $\mathcal W$ forms a partition of $L$ into at most $n$ connected components. This, along with the observation that $L$ is a line graph, can be used to bound the total number of intersections between the two. We can move a marker from left to right, keeping track of the bundle from $\mathcal W$ and the bundle from $\mathcal T(\mathcal P)$ that contain the current good. Every time the marker encounters a new intersection, it must have entered either a new bundle from $W$ or a new bundle from $\mathcal T(\mathcal P)$. Thus, we have
+$$
+\sum_{i\in[n]}q_i\le(2n+1)+n=3n+1.
+$$
+Next, we partition the set of agents $[n]$ based on their $q_i$ value. Let $H={i\in[n]:q_i\gt3\sqrt n}$ and $H^c={i\in[n]:q_i\le3\sqrt n}$. Above inequality implies $|H|\le\sqrt n$. This along with the observation that the valuation are scaled, gives us
+$$
+\sum_{i\in H}v_i(W_i)\le|H|\le\sqrt n
+$$
+Next, we bound $v_i(W_i)$ for $i\in H^c$. By definition of $\mathcal Q_i$, we have $v_i(W_i)=\sum_{S\in\mathcal Q_i}v_i(S\cap W_i)$. We break the sum into 2 parts, $S\in\mathcal U(\mathcal P)$ or $S\in\mathcal P$.</p>
+<ol>
+<li>If $S\in\mathcal U(\mathcal P)$, by lemma 3, we have $v_i(S\cap W_i)\le v_i(S)\le v_i(P_i)\le 2v_i(P_i)$.</li>
+<li>If $S\in\mathcal P$, then $S=P_j$ for some agent $j\in[n]$. Let $\hat P_j=P_j\cap W_i$. By definition of $\mathcal Q_i$, $\hat P_j\neq\empty$. $\because\mathcal P$ is EF1 and $v_i$ is monotone, agent $i$ does not envy the bundle $P_j$ up to one good in it. Thus, there exists a good $\hat g\in\hat P_j$ s.t. $v_i(P_i)\ge v_i(\hat P_j\diagdown{\hat g})\ge v_i(\hat P_j)-v_i(\hat g)$, where the last transition uses subadditivity of $v_i$. Further, $\hat g\in\hat P_j\subseteq W_i$. The initialization and lemma 2 ensure that $v_i(\hat g)\le v_i(P_i^0)\le v_i(P_i)$. Combining with the previous step, we have $v_i(S\cap W_i)=v_i(\hat P_j)\le2v_i(P_i)$.</li>
+</ol>
+<p>Thus, for $i\in H^c$, we have $v_i(W_i)\le|\mathcal Q_i|\cdot2v_i(P_i)\le3\sqrt n\cdot2v_i(P_i)$. Thus, we get
+$$
+SW(\mathcal W)\le\sqrt n+6\sqrt n\sum_{i\in H^c}v_i(P_i)\le\sqrt n+6\sqrt n\cdot SW(\mathcal P)
+$$
+which is desired. Q.E.D.</p>
+</blockquote>
+<h3 id="proof-of-theorem-1">Proof of Theorem 1</h3>
+<h4 id="proof-for-upper-bounds">Proof for upper bounds</h4>
+<p>For <strong>unscaled</strong> valuations, lemma 1 shows that there exists an EF1 allocation $\mathcal B$ with $SW(\mathcal B)\ge{1\over2n}\sum_{i\in[n]}v_i([m])\ge{1\over2n}OPT$, which yields the desired $O(n)$ bound.</p>
+<p>For an instance $\mathcal I$ with <strong>scaled</strong> valuations, we consider 2 cases: $OPT\le8\sqrt n$ or $OPT\gt8\sqrt n$.</p>
+<p>Case 1: $OPT\le8\sqrt n$. $\because$ valuations are scaled. Lemma 1 implies that the EF1 allocation $\mathcal B$ returned by <code>ALG-EF1-ABS</code> satisfies $SW(\mathcal B)\ge{1\over2n}\sum_{i\in[n]}v_i([m])={1\over2}$. Hence, $SW(\mathcal B)\ge{1\over16\sqrt n}OPT$,</p>
+<p>Case 2: $OPT\gt8\sqrt n$. Then ${1\over6}\lt{OPT\over48\sqrt n}$. Now lemma 4 implies that the EF1 allocation $\mathcal A$ returned by <code>ALG-EF1-HIGH</code> satisfies
+$$
+SW(\mathcal A)\ge{OPT\over12\sqrt n}-{1\over6}\ge{OPT\over12\sqrt n}-{OPT\over48\sqrt n}={OPT\over16\sqrt n}
+$$</p>
+<h4 id="proof-for-lower-bounds">Proof for lower bounds</h4>
+<p>For <strong>scaled</strong> valuations, $\Omega(\sqrt n)$ is proved by Bei et al.</p>
+<p>For <strong>unscaled</strong> valuations, consider the case $m=n$, following additive valuations: the first agent has value $n$ for each good, while the other agents have value $1/n$ for each good. The optimal social welfare is allocating all goods to the first agent, yielding $OPT=n^2$. In Contrast, any EF1 allocation gives exactly one good to each agent, thus achieving welfare less than $n+1$, this implies $\Omega(n)$ bound.</p>
+<p>$\because$ EF1 $\Rarr$ Prop1, thus the PoF also holds for Prop1. (PoF for Prop1 is $\Theta(\sqrt n)$ for scaled additive valuations and $\Theta(n)$ for unscaled additive valuations.</p>
+<h2 id="price-of-12-mms">Price of $1/2$-MMS</h2>
+<p>~~I don't want to dive deep into the mathematical proofs~~:face_with_head_bandage::sweat:</p>
+<p>~~Das ist zu schade. Ich bin sehr müde.~~</p>
+<p>:dart::thinking:<strong>Theorem 2</strong>. The price of $1\over2$-MMS is $\Theta(\sqrt n)$ for scaled additive valuations and $\Theta(n)$ for unscaled additive valuations.</p>
+<h3 id="an-absolute-welfare-guarantee_1">An Absolute Welfare Guarantee</h3>
+<p>First, this paper shows that when agents have additive valuations, there always exists a $1\over2$-MMS allocation $\mathcal A$ with social welfare $SW(\mathcal A)\ge{1\over3n}\sum_{i=1}^nv_i([m])$. Algorithm <code>ALG-MMS-ABS</code> computes such an allocation efficiently.</p>
+<p>The result is two fold</p>
+<ol>
+<li>For both scaled and unscaled valuations, this establishes that the price of $1\over2$-MMS is $O(n)$. (trivial)</li>
+<li>For unscaled valuations, this is precisely the bound.</li>
+<li>For scaled valuations, we need to improve this to $O(\sqrt n)$.</li>
+</ol>
+<p>Pseudo code for <code>ALG-MMS-ABS</code>:</p>
+<p>Input: A fair division instance $\mathcal I$, additive valuations ${v_i}_{i\in[n]}$.</p>
+<p>Output: A $1\over2$-MMS allocation $\mathcal B$ with $SW(\mathcal B)\ge{1\over3n}\sum_{i=1}^nv_i([m])$.</p>
+<ol>
+<li>Initialize set of agents $A=[n]$, set of goods $G=[m]$ and bundles $B_i=\empty$ for all $i\in[n]$.</li>
+<li>while there exists agent $i\in A$ and good $g\in G$ s.t. $v_i(g)\ge{1\over2|A|}v_i(G)$ do</li>
+<li>set $(i',g')\in\arg\max_{(i,g)\in A\times G:v_i(g)\ge{1\over2|A|}v_i(G)}v_i(g)$</li>
+<li>set $B_{i'}={g'}$ and update $A\gets A\diagdown{i'}$ along with $G\gets G\diagdown{g'}$</li>
+<li>end while</li>
+<li>efficiently compute a Prop1 allocation $(B_i)<em>{i\in A}$ of the fair division instance $\lang A,G,{v_i}</em>{i\in A}\rang$</li>
+<li>return allocation $\mathcal B=(B_1,\cdots,B_n)$.</li>
+</ol>
+<p>The algorithm is a refinement of the algorithm of Amandatidis et al. for computing a $1\over2$-MMS allocation: in while loop, we use $\arg\max$ to break ties. They had proven the algorithm always produce $1\over2$-MMS. It remains to prove that the desired welfare holds for results.</p>
+<p>To analyze the bounds, we let $t$ denote the number of iterations of the while loop in <code>ALG-MMS-ABS</code>. We re-index the agents s.t. agent $1$ through $t$ receive, in order, a good in this while loop. Each agent $i\in[t]$ is assigned a good in $i$-th iteration of the loop. The remaining $n-t$ agents receive a bundle through the Prop1 allocation computed after while loop.</p>
+<p>:thinking:<strong>Lemma 5</strong>. Consider a fair division instance $\mathcal I$ with the re-indexing of the agent method above, and $t$ denoting the number of agents assigned a good in while loop of algorithm. Let $\mathcal B=(B_1,\cdots,B_k)$ denote the allocation returned by the algorithm, then we have
+$$
+\sum_{k=1}^{i-1}{1\over n-k+1}\cdot v_k(B_k)+{1\over n-i+1}\cdot v_i([m]\diagdown\cup_{k=1}^{i-1}B_k)\ge{1\over n}\cdot v_i([m])
+$$
+for all $i\in[t]$, and
+$$
+\sum_{k=1}^t{1\over n-k+1}\cdot v_k(B_k)+{1\over n-t}\cdot v_i([m]\diagdown\cup_{k=1}^tB_k)\ge{1\over n}\cdot v_i([m])
+$$
+for all $i\in[n]\diagdown[t]$.</p>
+<blockquote>
+<p>For each agent $i\in[n]$, we establish the following inequality for every index $j\in{0,\cdots,\min{i-1,t}}$ via an ==induction== on $j$. Then instantiating $j=\min{i-1,t}$ yields the desired result.</p>
+</blockquote>
+<p>:thinking:<strong>Lemma 6</strong>. Given any fair division instance $\mathcal I$ with additive valuations, <code>ALG-MMS-ABS</code> efficiently computes $1\over2$-MMS allocation $\mathcal B$ with social welfare $SW(\mathcal B)\ge{1\over3n}\sum_{i=1}^nv_i([m])$.</p>
+<blockquote>
+<p>Proof using lemma 5.</p>
+<p>By summing the inequality in lemma 5, across all agents yields the desired welfare bound.</p>
+</blockquote>
+<h3 id="the-case-of-high-optimal-welfare_1">The Case of High Optimal Welfare</h3>
+<p>This paper proposes  new algorithm, <code>ALG-MMS-HIGH</code>, to compute $O(\sqrt n)$ welfare on $1\over2$-MMS.</p>
+<p>Computing $MMS_i$ for each agent $i$ is NP-hard, there exists a polynomial-time approximation scheme (PTAS) for it. For a fixed $\epsilon\in(0,1)$, this PTAS can compute an estimate $Z_i\in[(1-\epsilon)MMS_i,MMS_i]$ for each agent $i$ in polynomial time. We pass these estimates as input to <code>ALG-MMS-HIGH</code>, which runs in polynomial time and yields a $({1\over2}-\epsilon)$-MMS allocation with the desired welfare guarantee.</p>
+<p>:thinking:<strong>Lemma 7</strong>.</p>
+<p>Given a fair division instance $\mathcal I$ with scaled additive valuations, and, for a fixed $\epsilon\in[0,1)$. an estimate $Z_i\in[(1-\epsilon)MMS_i,MMS_i]$ for each agent $i$, <code>ALG-MMS-HIGH</code> efficiently computes a $({1\over2}-\epsilon)$-MMS allocation $\mathcal B$ with the property that $3\sqrt n\cdot SW(\mathcal B)+4\sqrt n\ge OPT$. ($OPT$ is the optimal social welfare in $\mathcal I$)</p>
+<blockquote>
+<p>Proof by lemma 9 and lemma 10.</p>
+</blockquote>
+<p>The agents are partitioned into 3 sets, $\Gamma_{MMS},\Gamma_{single},\Gamma_{hard}$, where agent $i$ is paced into a set depending on how the estimate $Z_i$ of $MMS_i$ relates to $v_i(W^<em><em>i)$.
+$$
+\Gamma</em>{MMS}={i\in[n]:Z_i\ge{2\over3\sqrt n}v_i(W^</em><em>i)}\
+\Gamma</em>{single}={i\in[n]:Z_i\lt{2\over3\sqrt n}v_i(W_i^<em>)\and\exist g\in W_i^</em>,v_i(g)\ge{1\over3\sqrt n}v_i(W^<em><em>i)}\
+\Gamma</em>{hard}={i\in[n]:Z_i\lt{2\over3\sqrt n}v_i(W_i^</em>)\and\forall g\in W_i^<em>,v_i(g)\lt{1\over3\sqrt n}v_i(W_i^</em>)}
+$$
+For an agent $i\in\Gamma_{single}$, giving her a single good from $\arg\max_{g\in W_i^<em>}v_i(g)$ gives her value at least ${1\over3\sqrt n}v_i(W_i^</em>)\gt{1\over2}Z_i$. Thus the algorithm begins by giving each such agent $i$ her most valuable good from $W_i^*$ and adding her directly in set $P$ (permanent). (another set is $T$ temporary)</p>
+<p>Next, for $i\in\Gamma_{MMS}$, giving her value at least ${1\over2}\cdot Z_i$ also guarantees that her value is at least ${1\over3\sqrt n}v_i(W_i^*)$; thus the algorithm solely aims to give such agents ${1\over2}\cdot Z_i$ value.</p>
+<p>The situation is more tricky for agents in $\Gamma_{hard}$.</p>
+<p>:thinking:<strong>Lemma 8</strong>. Let $\mathcal I$ be a fair division instance with additive valuations. Let $\ell\in[n]$ be an agent. Let ${B_a}<em>{a\in S}$ be a collection of bundles assigned to a subset of agents $S\subseteq[n]\diagdown{\ell}$ with the property that, for all $a\in S$, we either have $|B_a|=1$ or $v</em>\ell(B_a)\le MMS_\ell$. Then the value of agent $\ell$ for the unassigned goods satisfies
+$$
+v_\ell([m]\diagdown\cup_{a\in S}B_a)\ge(n-|S|)\cdot MMS_\ell
+$$</p>
+<blockquote>
+<p>~~omitted~~</p>
+</blockquote>
+<p>:thinking:<strong>Lemma 9</strong>. The following hold at any stage during the execution of <code>ALG-MMS-HIGH</code>:</p>
+<ol>
+<li>$P\cap T=\empty$.</li>
+<li>If $i\in P,v_i(B_i)\ge{1\over3\sqrt n}v_i(W_i^*)$ and $B_i$ is never updated afterwards.</li>
+<li>If $i\in P\cup T,v_i(B_i)\ge{1\over2}\cdot Z_i$, and $i$ is never removed from $P\cup T$ afterwards.</li>
+<li>$T\subseteq\Gamma_{hard}$.</li>
+</ol>
+<blockquote>
+<p>~~omitted~~</p>
+</blockquote>
+<p>:thinking:<strong>Lemma 10</strong>. <code>ALG-MMS-HIGH</code> terminates in polynomial time, and at its termination, the following hold.</p>
+<ol>
+<li>$P\cup T=[n]$</li>
+<li>$|T|\le4\sqrt n$</li>
+</ol>
+<blockquote>
+<p>Each iteration of the loop, a new agent is added to $P\cup T$, and will never be removed once added.</p>
+<p>~~proof for 2nd proposition omitted.~~</p>
+</blockquote>
+<h3 id="proof-of-theorem-2">Proof of Theorem 2</h3>
+<p>For <strong>unscaled valuations</strong>: lemma 6 shows that <code>ALG-MMS-ABS</code> returns a $1\over2$-MMS allocation $\mathcal B$ with social welfare $SW(\mathcal B)\ge{1\over3n}\sum_{i=1}^nv_i([m])$. Because OPT is trivially upper bounded as $OPT\le\sum_{i=1}^nv_i([m])$, we have that the price of $1\over2$-MMS is at most $3n=O(n)$. (To show this bound is tight, this paper gives an instance)</p>
+<p>For <strong>scaled valuations</strong>: lemma 6 implies <code>ALG-MMS-ABS</code> returns a $1\over2$-MMS allocation $\mathcal B$ with $SW(\mathcal B)\ge{1\over3n}\sum_{i=1}^nv_i([m])={1\over3}$ for scaled valuations. Hence, if $OPT\le5\sqrt n$, then the $1\over2$-MMS allocation returned by <code>ALG-MMS-ABS</code> gives a $15\sqrt n$ approximation to the optimal social welfare.</p>
+<p>Otherwise, suppose $OPT\ge5\sqrt n$. Then by lemma 7, we know that <code>ALG-MMS-HIGH</code> returns an allocation with social welfare $SW(\mathcal B)\ge{OPT-4\sqrt n\over 3\sqrt n}\ge{OPT-4/5OPT\over3\sqrt n}-{OPT\over15\sqrt n}$. Hence, in this case, the $1\over2$-MMS  allocation returned by <code>ALG-MMS-HIGH</code> provides a $15\sqrt n$ approximation to $OPT$.</p>
+<p>(For lower bound, this paper also gives an instance)</p>
+<h2 id="discussion">Discussion</h2>
+<p>Price of EF1: $O(\sqrt n)$ when valuations are subadditive</p>
+<ul>
+<li>$\Theta(\sqrt n)$ even if valuations are additive.</li>
+</ul>
+<p>Price of $1\over2$-MMS is $\Theta(\sqrt n)$ when agent valuations arer additive.</p>
+<p>Research outlook:</p>
+<ol>
+<li>Analyze the price of $1\over2$-MMS under more general valuation classes.</li>
+</ol>
+<p>Consider other combinations of fairness and efficiency guarantees:</p>
+<ul>
+<li>EF1 + PO (Pareto optimality), EF1 + fPO (fractional Pareto optimality)</li>
+<li>Price of $\alpha$-MMS for $\alpha\gt{1\over2}$. At least $3\over4$-MMS always exists.</li>
+<li>Price of $\alpha$-GMMS. GMMS $\Rarr$ MMS. $1\over2$-GMMS always exists.</li>
+<li>
+<p>Price of EFX. It remains to be solved the existence of EFX for agents more than 3.</p>
+</li>
+<li>
+<p>Analyze the PoF when the items are chores, （简单来说就是物品的估值可以为负）or a mixture of goods and chores.</p>
+</li>
+</ul>
+<p>The formal definitions fairness and corresponding prices are well-understood within fair division, but they are much less explored within other scenarios, such as social choice theory (voting or matching).</p>
+<h1 id="paper-on-mms">Paper on MMS</h1>
+<p>Additive and submodular valuation</p>
+<blockquote>
+<p>A valuation function is considered <strong>submodular</strong> if adding an item to a smaller set increases its value more than adding the same item to a larger set.</p>
+</blockquote>
+<p>$2\over3$-MMS always exists and can be found in polynomial time. This paper complement these results by developing a simple and efficient algorithm that achieves the same approximation guarantee.</p>
+<p>This paper approximates MMS under <em>submodular valuations</em>. It shows that when the valuations of agents are <strong>non-negative, monotone and submodular</strong>, then a $0.21$-MMS is guaranteed to exist.
+$$
+0.21\approx{1\over3}(1-{1\over e})
+$$</p>
+<h2 id="introduction_1">Introduction</h2>
+<p>:bulb:<strong>Personal comment</strong>: A very clear explanation <strong>original idea</strong> for the Maximin Share: Let agent $i$ partition the goods into $n$ bundles, then let others choose before $i$ choose a bundle. Then agent $i$ has incentive to <strong>maximize the the bundle with minimal value</strong> she partitioned.</p>
+<p>This paper extends the previous work into both <em>additive</em> and <em>submodular</em> valuations.</p>
+<h3 id="main-results-and-techniques">Main Results and Techniques</h3>
+<h4 id="additive-valuations">Additive Valuations</h4>
+<p>This paper presents a polynomial time algorithm that finds a $2\over3$-MMS under additive valuations. The algorithm is <em>simple</em> and <em>combinatorial</em>.</p>
+<p>The algorithm consists of two parts. First, reducing the problem of finding a maximin fair allocation to a restricted setting where the agents value goods in the same order. This reduction preserves maximin fairness in the sense that the $g$-th good in the reduced instance corresponds to the right to select a good in round $g$.</p>
+<p>With the reduction, this paper develops an efficient algorithm to find $2\over3$-MMS allocation for ordered instances. To obtain the result, do some modification on <strong>envy-graph</strong> algorithm.</p>
+<p>(An arbitrary EF1 doesn't necessarily imply approx-MMS) But with the order, an instance of the EF1 algorithm indeed finds an allocation with desired maximin fairness guarantee.</p>
+<h4 id="submodular-valuations">Submodular Valuations</h4>
+<p>When valuations are non-negative, monotone and submodular, then a $0.21$-MMS is guaranteed to exist and can be efficiently computed via a simple round-robin algorithm.</p>
+<p>This paper analyzes this simple algorithm by employing the concept of <strong>multilinear extensions</strong>.</p>
+<p>For each agent $i$, the expected value of a random subset is at least $1-{1\over e}$ times the maximin share of $i$.</p>
+<p>Since computing the maximin share is NP-hard, the algorithm works with estimates $\tau_i$ for agent $i$ of the maximin shares. Each estimate $\tau_i$ is initialized to be greater than the corresponding maximin share. The methods ensures none of them significantly smaller than the maximin shares.</p>
+<p>In our algorithm, we first perform a <strong>preprocessing step</strong> wherein high-valued goods are assigned as singleton bundles. In particular, if for an agent $i$ there exists an unallocated good of value at least $0.21\tau_i$, ==then we allocate the good to the agent and remove $i$ (and the now assigned good) from consideration.== The leftover (low-valued) goods are partitioned among the remaining agents (who have not received a good yet) in a <strong>round-robin manner</strong>. In each round, the participating agents greedily select an unallocated good one after the other, i.e. in each round, every agent $i$ is assigned a good that leads to the maximum possible increase in $i$'s valuation.</p>
+<p>Under submodular valuations, a uniformly random allocation is $(1-{1\over e})$ times $i$'s maximin share.</p>
+<p>Remark: additive $\subseteq$ submodular. We can get stronger approximation guarantee on additive valuations.</p>
+<p>Chores (goods with negative values): $4\over3$-approximate maximin fair allocation can be efficiently computed when agents have additive valuations for chores.</p>
+<p>The envy graph algorithm is applied similarly between goods version and chores version.</p>
+<h3 id="related-work-and-subsequent-work">Related Work and Subsequent Work</h3>
+<p>~~omitted~~</p>
+<h2 id="notation-and-preliminaries">Notation and Preliminaries</h2>
+<p>Agents $[n]$, goods $[m]$.</p>
+<p>Valuation of an agent $i$ over a set $S\in[m]$ goods: $v_i(S)$</p>
+<p>Additive valuations: $v_i(A+B)=v_i(A)+v_i(B),A\cap B=\empty$.</p>
+<p>Non-negative valuation: $v_i(S)\ge0,v_i(\empty)=0$.</p>
+<p>Monotonicity: $v_i(A)\le v_i(B)\forall A\subseteq B$.</p>
+<p>Submodularity: $v_i(B\cup{g})-v_i(B)\le v_i(A\cup{g})-v_i(A)\forall A\subseteq B$</p>
+<blockquote>
+<p>Allocate good in smaller bundles yields higher increase.</p>
+</blockquote>
+<p>Marginal values w.r.t. $H\subseteq[m]$: $f_H(S)=f(H\cup S)-f(H)\forall S\subseteq [m]$</p>
+<p>All the $n$-partition w.r.t. $[m]$: $\Pi_n([m])$.</p>
+<p>Definition on Maximin Share, $\alpha$ approximation on Maximin Share: ~~omitted here~~</p>
+<p>Definition on EFX: ~~omitted here~~</p>
+<h2 id="additive-valuations_1">Additive Valuations</h2>
+<p>In this section, the paper presents an <strong>new</strong> algorithm that efficiently finds a $2\over3$-MMS under <strong>additive valuations</strong>.</p>
+<p>Contribution: the algorithm is simple and combinatorial.</p>
+<p>:dart::thinking:<strong>Theorem 1</strong>. Given a set of $n$ agents with additive valuations ${v_i}_{i\in[n]}$ for a set of $m$ indivisible goods, we can find a partition $\mathcal A$ in polynomial time that satisfies
+$$
+v_i(A_i)\ge{2n\over3n-1}\mu_i
+$$
+for all $i\in[n]$. Here $\mu_i$ is the maximin share of agent $i$.</p>
+<p>Proof in two parts. First, we show the problem can be reduced to a restricted setting where the agents value the goods in the same order. Second, we develop a $2\over3$-approximation for this restricted setting.</p>
+<h3 id="the-reduction-of-bouveret-and-lemaitre">The Reduction of Bouveret and Lemaître</h3>
+<p>An instance is an <strong>ordered instance</strong> iff $\exist$ a total ordering $\prec$ over $[m]$ s.t. $\forall i\in[n]$ and $g,g'\in[m]$, s.t. $g\prec g'$, we have $v_{i,g}\ge v_{i,g'}$. i.e. $v_{i,1}\ge v_{i,2}\ge\cdots v_{i,m}$.</p>
+<p>Given a fair division $I=([n],[m],{v_i}_{i\in[n]})$, the algorithm constructs an ordered instance as follows:</p>
+<ol>
+<li>For every agent $i$, $\exist$ a permutation $\sigma_i:[m]\rarr[m]$ s.t. $\forall g,g'\in[m]$ with $g\lt g'$, we have $v_{i,\sigma_i(g)}\ge v_{i,\sigma_i(g')}$. Using these permutations, we define a new valuation function $v_i'$ for every agent $i$ by setting $v_{i,g}'=v_{i,\sigma_i(g)}$ for all $g\in[m]$.</li>
+</ol>
+<p>i.e. for $i$, the value of $g$-th good in the new instance is equal to the $g$-th largest valuation of $i$ in the original instance.</p>
+<p>Denote $I'=([n],[m],{v_i'}_{i\in[n]})$ as the ordered instance of $I$. Note that we can find the ordered instance of $I$ in $O(nm\log m)$ time.</p>
+<ol>
+<li>Bouveret and Lemaître showed that if there is an allocation $\mathcal A'$ that guarantees every agent her maximin share in $I'$, then there is an allocation $\mathcal A$ that guarantees every agent her maximin share in $I$.</li>
+</ol>
+<p>Moreover, given a maximin fair allocation $\mathcal A'$ for $I'$, a maximin fair allocation $\mathcal A$ for $I$ can be found in polynomial time.</p>
+<h4 id="pseudo-code-for-algbl">Pseudo code for <code>ALGBL</code></h4>
+<p>Input: $I$ with $\mathcal A'$ for the ordered instance $I'$.</p>
+<p>Output: $\mathcal A$</p>
+<ol>
+<li>For all $i\in[n]$ and $g\in A_i'$ set $p_g=i$. // this defines a sequence of agents</li>
+<li>Initialize allocation $\mathcal A$ with $A_i=\empty$, for all $i\in[n]$. And initialize $R\gets[m]$.</li>
+<li>for $g=1$ to $m$ do</li>
+<li>pick $k\in\arg\max_{g'\in R}{v_{p_g}(g')}$</li>
+<li>update $A_{p_g}\gets A_{p_g}\cup{k}$ and $R\gets R\diagdown{k}$</li>
+<li>return $\mathcal A$</li>
+</ol>
+<p>:dart::thinking:<strong>Theorem 2</strong>. Given a maximin fair division instance $I$ and scalars ${\alpha_i\in\mathbb R}_{i=1}^n$, let $I'$ be the ordered instance of $I$. If there exists an allocation $\mathcal A'$ that satisfies $v_i'(A_i')\ge\alpha_i$ for all $i\in[n]$, then there exists an allocation $\mathcal A$ s.t. $v_i(A_i)\ge\alpha_i$ for all $i\in[n]$. Furthermore, given $I$ and $\mathcal A'$, <code>ALGBL</code> computes the allocation $\mathcal A$ in polynomial time.</p>
+<blockquote>
+<p>Obviously polynomial time. We only need to show it computes required allocation.</p>
+<p>Let $k_g$ denote the good allocated in the $g$-th iteration of the second for-loop in <code>ALGBL</code>. Now considering agent $i$, suppose that $g\in A_i'$ then $k_g\in A_i$. Note that, for any $g\neq g'$, since a good is removed from the set $R$ after it is allocated. Before the $g$-th iteration of the second for loop in <code>ALGBL</code>, exactly $g-1$ goods had been allocated.</p>
+<p>Therefore, $k_g$ is among the top $g$ goods for agent $i$. Hence, the condition that $v_i'(A_i')\ge\alpha_i$ gives us $v_i(A_i)\ge\alpha_i$ for all $i$. Q.E.D.</p>
+</blockquote>
+<p>Corollary: Given a maximin fair division instance $I$ and $\alpha\in\mathbb R$ write $I'$ to denote the ordered instance of $I$ and $\mu_i$ to denote the maximin share of agent $i$ in $I$. If there exists an allocation $\mathcal A'$ satisfying $v_i'(A_i')\ge\alpha\mu_i'$, there also exists $\mathcal A$ satisfying $v_i(A_i)\ge\alpha\mu_i$. And can be computed in polynomial time.</p>
+<h3 id="envy-graph-algorithm">Envy Graph Algorithm</h3>
+<p>Envy-graph Elimination algorithm, ~~omitted here~~.</p>
+<p><code>ALGEG</code> algorithm returns an EFX allocation. Similar to Top Trading Cycle algorithm.</p>
+<p>Pseudo code ~~omitted here~~.</p>
+<h3 id="majorization">Majorization</h3>
+<p>The concept is sued to establishing the desired approximation guarantee.</p>
+<p>A multi-set $X$ is related to another multi-set $Y$ iff the prefix sums of the sorted version $X$ are at least as large as the prefix sums of the sorted version of $Y$.</p>
+<p>Definition of majorization: A multi-set $X={x_i\in\mathbb R|1\le i\le n}$ is said to majorize another multi-set $Y={y_i\in\mathbb R|1\le i\le n}$ iff
+$$
+\sum_{i=1}^kx_{(i)}\ge\sum_{i=1}^ky_{(i)}\forall1\le k\lt n\
+and\
+\sum_{i=1}^nx_{(i)}=\sum_{i=1}^ny_{(i)}
+$$
+Here $x_{(i)}$ and $y_{(i)}$ is the $i$-th largest element of $X$ and $Y$ respectively.</p>
+<p>:thinking:<strong>Proposition 1</strong>. (easy)</p>
+<p>Let $v,v'\in\mathbb R$ be two elements of a multi-set $A$ of real numbers. In addition, let $u,u'\in\mathbb R$ satisfy $u+u'=v+v'$ and $|u-u'|\lt|v-v'|$. Then $A$ majorizes $(A\diagdown{v,v'})\cup{u,u'}$.</p>
+<blockquote>
+<p>This is trivial and obvious.</p>
+<p>因为 $u,u'$ 中的最大值小于 $v,v'$ 中的最大值，这使得 $A$ 的前缀和加到 $v,v'$ 中最大值的时候一定会大于等于 $(A\diagdown{v,v'})\cup{u,u'}$ 加到相应的位置上的前缀和。</p>
+</blockquote>
+<h3 id="proof-of-theorem-1_1">Proof of Theorem 1</h3>
+<p>It remains to show that $v_1(A_1)\ge{2n\over3n-1}\mu_1$. (An analogous argument establishes the desired bound, $v_i(A_i)\ge{2n\over3n-1}\mu_i\forall i\in[n]$.</p>
+<p>Let $\mathcal A$ be the return of <code>ALGEG</code>. Consider the set of goods that have value $\ge{1\over2}v_i(A_1)$, specifically define $\tau=\arg\min{j|v_1(g_j\le{1\over2}v_1(A_1)}$. Let $H$ denote the set of high valued goods $H={g_1,g_2,\cdots,g_{\tau-1}}$. In addition, write $\mathcal P=(P_1,P_2,\cdots,P_n)$ to denote the partial allocation that <code>ALGEG</code> computes for $H$.</p>
+<p>Let $t$ denote the smallest iteration count at which <code>ALGEG</code> assigns a good to a bundle of size 2. Hence, every bundle in the partial allocation  of the first $t-1$ goods is of size at most 2.</p>
+<p><code>ALGEG</code> updates the partial allocation by adding goods to existing bundles. This implies that the cardinalities of bundles is always increasing. Thus for each final $A_j$, there $\exist$ $P_j$ in the partial allocation $\mathcal P$ s.t. $P_j\subseteq A_j$. $v_1(A_1)\ge v_1(P_1)$.</p>
+<p>Let $\mathcal Q$ be the partial allocation considered by <code>ALGEG</code> at the beginning of the $t$-th iteration. The definition of $t$ ensures that $|\mathcal Q_i|\le2\forall i\in[n]$. In the following, we will show that $\tau\le t$ ,then we get bound $|P_i|\lt2\forall i\in[n]$. This leas to the inequality $\tau\le2n$.</p>
+<p>......(已经有两个物品了，在添加这个物品时，由于根据算法越到后面添加的越小，所以 $v_1(A_1)\ge2v_1(g_t)$。根据定义 $g_\tau$ 是最小标号的满足不等式的，所以 $\tau\le t$)</p>
+<p>:heavy_check_mark:Claim 1. In the partial allocation returned by <code>ALGEG</code>, $\mathcal A$, the following inequality holds for all bundles $A_i$ that satisfy $A_i\cap{g_\tau,\cdots,g_m}\neq\empty$
+$$
+v_1(A_1)\ge{2\over3}v_1(A_i)
+$$</p>
+<blockquote>
+<p>Proof by property of EFX: $v_1(A_1)\ge v_1(A_i)-v_1(g_a)$. $v_1(A_1)\ge2v_1(g_\tau)\ge2v_1(g_a)$.</p>
+</blockquote>
+<p>:heavy_check_mark:Claim 2. The partial allocation $\mathcal P$ consists of the following bundles:
+$$
+{g_1},{g_2},\cdots,{g_{n-h}},{g_{n-h+1},g_{n+h}},{g_{n-h+2},g_{n+h-1}},\cdots,{g_{n-1},g_{n+2}},{g_n,g_{n+1}}
+$$</p>
+<blockquote>
+<p>Proof by analyzing behavior of the algorithm.</p>
+</blockquote>
+<p>:heavy_check_mark:Claim 3. Every partial allocation of $H$ majorizes $\mathcal P$.</p>
+<blockquote>
+<p>Proof by using proposition 1.</p>
+<p>......</p>
+<p>$\mathcal P$ minimize the sum of the largest $t$ bundles.</p>
+</blockquote>
+<p>Let $\ell$ be # of bundles in ${A_2,A_3,\cdots,A_n}$, that do not contain any good with index greater than $\tau-1$. For every such bundle $A_i$, there exists a unique bundle $P_j$ in $\mathcal P$ s.t. $A_i=P_j$. By reindexing, that $P_{n-\ell+1},P_{n-\ell+2},\cdots,P_n$ are these $\ell$ bundles in $\mathcal A$ that do not satisfy the condition in claim 1.</p>
+<p>Let $\mathcal M$ denote a partition of $[m]$ that achieves the maximin share for player $1$. Consider the partial allocation ${M_i\cap H}<em>{i=1}^n$ and index the set s.t. valuation is in ascending order. Claim 3 implies ${M_i\cap H}</em>{i=1}^n$ majorizes $\mathcal P$. Hence, $\sum_{i=n-\ell+1}^nv_1(M_i\cap H)\ge\sum_{i=n-\ell+1}^nv_1(P_i)$. This inequality and the fact the valuations are monotone lead to the following useful bound:
+$$
+\sum_{i=n-\ell+1}^nv_1(M_i)\ge\sum_{i=n-\ell+1}^nv_1(P_i)
+$$
+Recall that $P_{n-\ell+1},P_{n-\ell+2},\cdots,P_{n}$ are bundles in $\mathcal A$, and the remaining $n-\ell$ bundles of $\mathcal A$ satisfy the inequality $v_1(A_1)\ge{2\over3}v_1(A_i)$. Since $v_1$ is additive, we have $\sum_{i=1}^nv_1(M_i)=\sum_{i=1}^nv_1(A_i)$. Therefore, inequality above provides the following bound:
+$$
+\sum_{i=1}^{n-\ell}v_i(M_i)\le\sum_{i=1}^{n-\ell}v_1(A_i)\
+\le v_1(A_1)+(n-\ell-1){3\over2}v_1(A_1)
+$$
+Overall, this inequality implies that $v_1(A_1)$ is at least $2(n-\ell)\over3n-1$ times the average of the $n-\ell$ sets $M_{\ell+1},\cdots,M_n$. Hence, $v_1(A_1)]\ge{2n\over3n-1}\min_{j\in[n]}v_i(M_j)={2n\over3n-1}\mu_1$. This completes the proof.</p>
+<h2 id="submodular-valuations_1">Submodular Valuations</h2>
+<p>$0.21$-MMS is guaranteed to exist and can be found in polynomial time for submodular valuations.</p>
+<h3 id="finding-an-approximate-maximin-fair-allocation">Finding an Approximate Maximin Fair Allocation</h3>
+<p>We execute the subroutine <code>RoundRobin</code> with threshold $\tau_i$ instead of the actual maximin share $\mu_i$. </p>
+<p><code>RoundRobin</code> takes as input threshold, $\tau_i$s, allocates high-valued goods as singleton bundles. And then partition the remaining goods in a round-robin fashion.</p>
+<p>This paper argues: for each agent $i$, if $\tau_i\le\mu_i$, the bundle $P_i$ allocated to $i$ by <code>RoundRobin</code> satisfies $v_i(P_i)\ge\frac{1}{3}(1-\frac{1}{e})\tau_i$. </p>
+<p><strong>This guarantee holds independently for each agent $i$.</strong></p>
+<p>Algorithm <code>ALGSUB</code> starts by setting thresholds $\tau_i$s to be more than the maximin shares. Then, it decreases the threshold for agent $i$, if the partition returned by <code>RoundRobin</code> does not satisfy $v_i(P_i)\ge\frac{1}{3}(1-\frac{1}{e})\tau_i$ i.e. $\tau_i\gt\mu_i$, hence decreasing the threshold is justified.</p>
+<p>Pseudo code for <code>RoundRobin</code>: input include ${\tau_i}$</p>
+<p>Pseudo code for <code>ALGSUB</code>: process of decreasing $\tau_i$</p>
+<p>:question:==How to initialize $\tau_i$???==</p>
+<p>:dart::thinking:<strong>Theorem 3</strong>. Given a MMS allocation with non-negative, monotone, submodular valuations, the <code>ALGSUB</code> finds, in polynomial time, an allocation satisfies $v_i(P_i)\ge0.21\mu_i$ for all $i\in[n]$. Here $\mu_i$ is the maximin share of agent $i$.</p>
+<p>Theorem 3 is about the main result for submodular valuations.</p>
+<blockquote>
+<p>Proof by lemma 1.</p>
+</blockquote>
+<p>:thinking:<strong>Lemma 1</strong>.</p>
+<p>For a given a maximin fair division instance with $m$ indivisible goods and $n$ agents with non-negative, monotone and submodular valuations, let $\mathcal P$ be the allocation returned by <code>RoundRobin</code> with threshold $\tau_i\ge0$. Then, for each agent $i$ whose input threshold satisfies $\tau_i\le\mu_i$, it holds that
+$$
+v_i(P_i)\ge\frac{1}{3}(1-\frac{1}{e})\tau_i\ge0.21\tau_i
+$$</p>
+<blockquote>
+<p>Fix an agent $i$ and under assumption that $\tau_i\le\mu_i$.</p>
+<p>Proof by analyzing behavior of <code>RoundRobin</code>.</p>
+<p>Very sophisticated:open_mouth:</p>
+</blockquote>
+<h3 id="multilinear-extensions">Multilinear Extensions</h3>
+<p>Definition of multilinear extension: For a function $f:2^{[m]}\mapsto\mathbb R$, the multilinear extension $F:[0,1]^{[m]}\mapsto\mathbb R$ is defined as follows:
+$$
+F(x)=\mathbb E_{R\sim x}[f(R)]=\sum_{R\subseteq[m]}f(R)\left(\prod_{g\in R}x_g\prod_{g\in[m]\diagdown R}(1-x_g)\right)
+$$
+sampling from $x\in[0,1]^m$ corresponds to selecting a random subset $R\subseteq[m]$ in which each $g\in[m]$ appears independently with probability $x_g$.</p>
+<p><strong>Fractional allocation</strong>: $n$-tuple $\chi=(x^1,x^2,\cdots,x^n)$ with $x_i\in[0,1]^m$ iff $\sum_{i=1}^nx_g^i\le1$ for all $g\in[m]$.</p>
+<p>A binary fractional allocation corresponds to a partial allocation.</p>
+<p>:thinking:<strong>Lemma 2</strong>. (Proportionality) Let $v_i:2^{[m]}\mapsto\mathbb R_+$ denote non-negative, monotone, submodular valuations of agents $i\in[n]$ over $m$ indivisible goods. Then the fractional allocation $\omega=(u^1,u^2,\cdots,u^n)$ in which $u^i=(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n})\in[0,1]^m$ for all $i\in[n]$, satisfies $V_i(u^i)\ge(1-\frac{1}{e})\mu_i$ for all $i\in[n]$. Here $V_i:[0,1]^m\mapsto\mathbb R_+$ is the multilinear extension of $v_i$, and $\mu_i$ is the maximin share of agent $i$.</p>
+<blockquote>
+<p>~~hard proof, omitted~~</p>
+</blockquote>
+<h2 id="conclusion">Conclusion</h2>
+<p>Algorithm proposed in this paper: approximately fair and sequenceable.</p>
+<p>Sequenceable allocation: allocations that can be obtained by ordering the agents and then letting them select their most valued unallocated good one after the other.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

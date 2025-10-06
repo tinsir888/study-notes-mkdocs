@@ -1,4 +1,104 @@
-site_name: My Study Notes
+site_name: tinsir888's Study Notes
+site_url: https://tinsir888.codeberg.page/notes-mkdocs/site
 nav:
   - Home: index.md
+  - CS@NKU:
+    - 感知技术与应用: #"nkucs/PerceptionTechnology/*"
+      - 第一章 绪论: "nkucs/PerceptionTechnology/Kapite1.md"
+      - 第二章 传感器的性能与评价: "nkucs/PerceptionTechnology/Kapite2.md"
+      - 第三章 电传感原理与测量方法: "nkucs/PerceptionTechnology/Kapite3.md"
+      - 第四章 常用物理效应与器件: "nkucs/PerceptionTechnology/Kapite4.md"
+    - 数字信号处理: #"nkucs/DigitalSignalProcessing/*"
+      - 课程概览: "nkucs/DigitalSignalProcessing/Kapitel0.md"
+      - 第一章 时域数字信号处理: "nkucs/DigitalSignalProcessing/Kapitel1.md"
+      - 第二章 信号分类: "nkucs/DigitalSignalProcessing/Kapitel2.md"
+      - 第三章 再探时域数字信号处理: "nkucs/DigitalSignalProcessing/Kapitel3.md"
+      - 第四章 数字信号: "nkucs/DigitalSignalProcessing/Kapitel5.md"
+      - 第五章 信号与系统: "nkucs/DigitalSignalProcessing/Kapitel6.md"
+      - 第六章 离散时间傅里叶变换: "nkucs/DigitalSignalProcessing/Kapitel7.md"
+      - 第七章 频谱分析: "nkucs/DigitalSignalProcessing/Kapitel8.md"
+    - 数据库: "nkucs/DatabaseSystem/数据库期末考试复习.md"
+    - 智能计算系统: #"nkucs/AIComputingSystem/*"
+      - 第一章 绪论: "nkucs/AIComputingSystem/Kapitel1.md"
+      - 第二章 神经网络基础: "nkucs/AIComputingSystem/Kapitel2.md"
+      - 第三章 深度学习: "nkucs/AIComputingSystem/Kapitel3.md"
+      - 第四章 编程框架使用: "nkucs/AIComputingSystem/Kapitel4.md"
+      - 第五章 编程框架机理: "nkucs/AIComputingSystem/Kapitel5.md"
+      - 第六章 深度学习处理器原理: "nkucs/AIComputingSystem/Kapitel6.md"
+      - 第七章 深度学习处理器架构: "nkucs/AIComputingSystem/Kapitel7.md"
+      - 第八章 智能编程语言: "nkucs/AIComputingSystem/Kapitel8.md"
+    - 汇编与逆向: #"nkucs/Assembler&ReverseEngnieering/*"
+      - 绪论: "nkucs/Assembler&ReverseEngineering/Kapitel0.md"
+      - 第一章 汇编语言基本概念: "nkucs/Assembler&ReverseEngineering/Kapitel1.md"
+      - 第二章 IA-32 处理器体系结构: "nkucs/Assembler&ReverseEngineering/Kapitel2.md"
+      - 第三章 汇编语言基础: "nkucs/Assembler&ReverseEngineering/Kapitel3.md"
+      - 第四章 数据传送与寻址: "nkucs/Assembler&ReverseEngineering/Kapitel4.md"
+      - 第五章 过程: "nkucs/Assembler&ReverseEngineering/Kapitel5.md"
+      - 第六章 PE 文件结构: "nkucs/Assembler&ReverseEngineering/Kapitel6.md"
+      - 第七章 区块表、输入表和输出表: "nkucs/Assembler&ReverseEngineering/Kapitel7.md"
+      - 第八章 静态逆向技术: "nkucs/Assembler&ReverseEngineering/Kapitel8.md"
+      - 第九章 C 语言程序逆向分析: "nkucs/Assembler&ReverseEngineering/Kapitel9.md"
+      - 第十章 软件保护技术: "nkucs/Assembler&ReverseEngineering/Kapitel10.md"
+    - 网络技术与应用: #"nkucs/NetworkTechnology/*"
+      - 第一章 概述: "nkucs/NetworkTechnology/Kapitel1.md"
+      - 第二章 以太网: "nkucs/NetworkTechnology/Kapitel2.md"
+      - 第三章 交换与虚拟局域网: "nkucs/NetworkTechnology/Kapitel3.md"
+      - 第四章 无线局域网组网技术: "nkucs/NetworkTechnology/Kapitel4.md"
+      - 第五章 互联网与 IP 协议: "nkucs/NetworkTechnology/Kapitel5.md"
+      - 第六章 IP 数据报: "nkucs/NetworkTechnology/Kapitel6.md"
+      - 第七章 IP 地址与 ARP: "nkucs/NetworkTechnology/Kapitel7.md"
+      - 第八章 路由器与路由选择: "nkucs/NetworkTechnology/Kapitel8.md"
+      - 第九章 接入互联网: "nkucs/NetworkTechnology/Kapitel9.md"
+    - 计算机体系结构: #"nkucs/ComputerArchitecture/*"
+      - 第一章 概述: "nkucs/ComputerArchitecture/CA1概述20210906.md"
+      - 第二章 量化设计与评估: "nkucs/ComputerArchitecture/CA2量化设计与评估20210918.md"
+      - 第三章 指令集体系结构: "nkucs/ComputerArchitecture/CA3指令集体系结构20210927.md"
+      - 第四章 存储层次: "nkucs/ComputerArchitecture/CA4存储层次20211011.md"
+      - 第五章 流水线技术上: "nkucs/ComputerArchitecture/CA5流水线技术(1)20211018.md"
+      - 第六章 流水线技术下: "nkucs/ComputerArchitecture/CA6流水线技术(2).md"
+      - 第七章 指令级并行性上: "nkucs/ComputerArchitecture/CA7指令级并行性(1).md"
+      - 第八章 指令级并行性下: "nkucs/ComputerArchitecture/CA8指令级并行性(2).md"
+      - 第九章 数据级并行性上: "nkucs/ComputerArchitecture/CA9数据级并行性(1).md"
+      - 第十章 数据级并行性下: "nkucs/ComputerArchitecture/CA10数据级并行性.md"
+      - 第十一章 线程级并行性: "nkucs/ComputerArchitecture/CA11线程级并行性.md"
+      - 第十二章 仓库级计算机: "nkucs/ComputerArchitecture/CA12仓库级计算机.md"
+    - 计算机网络: #"nkucs/ComputerNetwork/*"
+      - 课程信息: "nkucs/ComputerNetwork/Kapitel0.md"
+      - 第一章 计算机网络概述: "nkucs/ComputerNetwork/Kapitel1.md"
+      - 第二章 应用层协议及网络编程: "nkucs/ComputerNetwork/Kapitel2.md"
+      - 第三章 传输层协议: "nkucs/ComputerNetwork/Kapitel3.md"
+      - 第四章 网络层协议: "nkucs/ComputerNetwork/Kapitel4.md"
+      - 第五章 接口层原理与协议: "nkucs/ComputerNetwork/Kapitel5.md"
+    - 强化学习: #"nkucs/handsonrl/*"
+      - 第一章 强化学习简介: "nkucs/handsonrl/Kapitel1-强化学习简介.md"
+      - 第二章 马尔可夫决策过程: "nkucs/handsonrl/Kapitel2-马尔可夫决策过程.md"
+      - 第三章 值函数估计: "nkucs/handsonrl/Kapitel3-值函数估计.md"
+      - 第四章 无模型控制方法: "nkucs/handsonrl/Kapitel4-无模型控制方法.md"
+      - 第五章 近似逼近方法: "nkucs/handsonrl/Kapitel5-近似逼近方法.md"
+      - 第六章 规划与学习: "nkucs/handsonrl/Kapitel6-规划与学习.md"
+      - 第七章 深度强化学习价值方法: "nkucs/handsonrl/Kapitel7-深度强化学习价值方法.md"
+      - 第八章 深度强化学习策略方法: "nkucs/handsonrl/Kapitel8-深度强化学习策略方法.md"
+      - 第十四章 多智能体强化学习: "nkucs/handsonrl/Kapitel14-多智能体强化学习.md"
+#  - Datalogi@AU:
+#    - Data Mining:
+#    - Algorithmic Game Theory:
+#    - Computational Complexity:
+#    - Computational Geometry:
+#    - Computer Vision:
+#    - Randomized Algorithms:
 
+theme:
+  name: material
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid-experimental
+          format: !!python/name:pymdownx.superfences.fence_code_format
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

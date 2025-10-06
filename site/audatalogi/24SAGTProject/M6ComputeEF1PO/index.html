@@ -1,0 +1,2656 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="tinsir888">
+      
+      
+        <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M6ComputeEF1PO/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Fair Division 6 Computing EF1 + PO - tinsir888's Study Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            tinsir888's Study Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fair Division 6 Computing EF1 + PO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    tinsir888's Study Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS@NKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS@NKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    感知技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            感知技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 传感器的性能与评价
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 电传感原理与测量方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 常用物理效应与器件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数字信号处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数字信号处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 信号分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 再探时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数字信号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 信号与系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 离散时间傅里叶变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 频谱分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DatabaseSystem/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    智能计算系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            智能计算系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 神经网络基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 编程框架使用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 编程框架机理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 深度学习处理器原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度学习处理器架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 智能编程语言
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    汇编与逆向
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            汇编与逆向
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 汇编语言基本概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 IA-32 处理器体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 汇编语言基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数据传送与寻址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 PE 文件结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 区块表、输入表和输出表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 静态逆向技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 C 语言程序逆向分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 软件保护技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    网络技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            网络技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 以太网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 交换与虚拟局域网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无线局域网组网技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 互联网与 IP 协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 IP 数据报
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 IP 地址与 ARP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 路由器与路由选择
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 接入互联网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机体系结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            计算机体系结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA1%E6%A6%82%E8%BF%B020210906/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA2%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%AF%84%E4%BC%B020210918/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 量化设计与评估
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA3%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%8420210927/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 指令集体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA4%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A120211011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 存储层次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA5%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%281%2920211018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 流水线技术上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA6%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 流水线技术下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA7%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 指令级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA8%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 指令级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA9%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 数据级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA10%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 数据级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA11%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十一章 线程级并行性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA12%E4%BB%93%E5%BA%93%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十二章 仓库级计算机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程信息
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机网络概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 应用层协议及网络编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 传输层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 网络层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 接口层原理与协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    强化学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            强化学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel1-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 强化学习简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 马尔可夫决策过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel3-%E5%80%BC%E5%87%BD%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 值函数估计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel4-%E6%97%A0%E6%A8%A1%E5%9E%8B%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无模型控制方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel5-%E8%BF%91%E4%BC%BC%E9%80%BC%E8%BF%91%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 近似逼近方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel6-%E8%A7%84%E5%88%92%E4%B8%8E%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 规划与学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel7-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度强化学习价值方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel8-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AD%96%E7%95%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 深度强化学习策略方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel14-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十四章 多智能体强化学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Techniques
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Objective: Investigate methods for computing allocations satisfying both EF1 and PO.</p>
+<p>Activities: Review the paper <a href="https://arxiv.org/abs/1707.04731"><em>Finding Fair and Efficient Allocations</em></a>.</p>
+<p>Caragiannis et al has established the result: for additive valuations, there always exists an allocation that is EF1 + PO by maximizing Nash Social Welfare.</p>
+<p>However, computing MNW is NP-Hard.</p>
+<p>This paper:</p>
+<ol>
+<li>develop a <strong>pseudo-polynomial</strong> time algorithm for finding EF1 + PO. When valuations are bounded, the algorithm is polynomial time.</li>
+<li>For additive valuations, there always exists an allocation that is EF1 and <strong>fractionally Pareto Efficient</strong>.</li>
+<li>The algorithm provides a polynomial time $1.45$-approximation to the Nash social welfare objective.</li>
+<li>The algorithm is <strong>completely combinatorial</strong>, and relies on constructing integral Fisher market wherein specific equilibria are not only efficient, but also fair.</li>
+</ol>
+<p>~~This paper is very difficult and I felt suffocated while reading it.~~🤡🤡🤡</p>
+<h1 id="introduction">Introduction</h1>
+<p>Caragiannis showed by maximizing Nash Welfare, the geometric mean of the agents' valuations is both fair (EF1) and Pareto efficient. However, maximizing the Nash welfare is an NP-hard problem (more accurately, APX-hard)</p>
+<p>This paper provides a pseudo-polynomial time algorithm for finding an EF1 and Pareto Optimal allocation of indivisible goods under additive valuations.</p>
+<p>In particular, if the valuations are scaled, the algorithm finds such an allocation in polynomial time.</p>
+<p>~~Maximizing Nash welfare remains APX-hard even for bounded valuations.~~</p>
+<p>Related problem: approximation algorithm for Nash welfare maximization. But approximating Maximal Nash welfare is not guaranteed to be EF1 or Pareto optimal.</p>
+<p>This algorithm provides a polynomial-time $1.45$-approximation to the Maximal Nash welfare problem. SOTA! It is also guaranteed to return a fair and efficient outcome.</p>
+<h2 id="contributions">Contributions</h2>
+<ol>
+<li>
+<p><strong>Pseudo-polynomial for unscaled valuation and polynomial for scaled valuation</strong>. Computing EF1 + PO allocations. This algorithm can find an approximate EF1 and approximate PO allocation without scaled valuations.</p>
+</li>
+<li>
+<p><strong>Stronger existence results</strong>. For additive valuations, there always exists an allocation that is EF1 and <strong>fractionally Pareto efficient</strong>.</p>
+</li>
+</ol>
+<p>There exists a non-deterministic polynomial time algorithm for finding EF1 + PO.</p>
+<p>Whereas even verifying whether an arbitrary allocation is PO is known to be co-NP-complete.</p>
+<ol>
+<li>Polynomial time $1.45$-approximation for the Nash social welfare maximization.</li>
+</ol>
+<p>Interesting byproduct: under same valuations, EF1 allocation provides a $1.45$-approximation to the MNW.</p>
+<h2 id="techniques">Techniques</h2>
+<p>Fisher market along with an underlying equilibrium which is integral and EF1.</p>
+<p>Start with a Pareto Optimal allocation, then iteratively modify the allocation by exchanging goods between the agents. The goal of the exchange step is to move toward a fair allocation. Stop when the equilibrium of the market satisfies <em>price envy-freeness up to one good</em>. </p>
+<p>First the algorithm works with an integral Fisher market at every step, breaking away from the standard <em>relax-and-round</em> paradigm where a fractional market equilibrium is first computed followed by round step. Second, the algorithm uses the notion of <em>price envy-freeness up to one good</em> as a measure of balanced spending in the Fisher market. The notion is novel.</p>
+<h1 id="preliminaries">Preliminaries</h1>
+<h2 id="the-fair-division-model">The Fair Division Model</h2>
+<h3 id="problem-instance">Problem Instance</h3>
+<p>~~Omitted!!!~~</p>
+<p>Valuations are non-negative, additive.</p>
+<p>For single item $j$, denote $i$'s valuation for it as $v_{i,j}=v_i({j})$</p>
+<p>Denote $v_\max=\max_{i\in[n],j\in[m]}v_i(j)=\max_{i,j}v_{i,j}$.</p>
+<h3 id="allocation">Allocation</h3>
+<p>Allocation: ~~Omitted!!!~~</p>
+<p>Fractional allocation: For all agents, no more than one unit of each good is allocated:
+$$
+\sum_{i\in[n]}x_{i,j}\le1
+$$</p>
+<h2 id="fairness-notions">Fairness Notions</h2>
+<p>EF, EF1</p>
+<p>$\epsilon$-EF1: for every pair of agent $i,k\in[n]$, there exists a good $j\in\mathbf x_k$ s.t.
+$$
+(1+\epsilon)v_i(\mathbb x_i)\ge v_i(\mathbb x_k\diagdown{j})
+$$
+Nash social welfare
+$$
+NSW(\mathbf x)=(\prod_{i\in[n]}v_i(\mathbf x_i))^{1/n}
+$$
+{% note , danger %}
+It is okay to ignore the $1/n$ power.
+{% endnote %}</p>
+<p>$\mathbf x^*\in\arg\max_{\mathbf x\in\mathcal X}NSW(\mathbf x)$</p>
+<h2 id="efficiency-notions">Efficiency Notions</h2>
+<p>Pareto Efficiency.</p>
+<p>$\mathbf x$ is Pareto dominated by another allocation $\mathbf y$ if $v_k(\mathbf y_k)\ge v_k(\mathbf x_k)$ for every agent $k\in[n]$, and some of them is $\gt$.</p>
+<p>An allocation is said to be <strong>Pareto efficient</strong> or <strong>Pareto optimal</strong> if it is not Pareto dominated by any other allocation. Similarly, $\mathbf x$ is $\epsilon$-PO if it is not $\epsilon$-PO dominated by any other allocation ($v_k(\mathbf y_k)\ge(1+\epsilon)v_k(\mathbf x_k)$, for some $k$ the inequalities are strict).</p>
+<p>Fractional Pareto Efficiency. <strong>If it is not Pareto dominated by any fractional allocation.</strong></p>
+<p>fractionally PO $\Rarr$ PO, but PO $\not\Rarr$ fractionally PO.</p>
+<h1 id="main-results">Main Results</h1>
+<h2 id="algorithm-computes-ef1-po">Algorithm computes EF1 + PO</h2>
+<p>:dart::thinking:<strong>Theorem 1</strong>.</p>
+<p>Given any fair division instance $\mathcal I$ with additive valuations, an allocation that is EF1 and PO can be found in $\mathcal O(\text{poly}(m,n,v_{\max}))$ time, where $v_\max=\max_{i,j}v_{i,j}$.</p>
+<p>Remark: If $v_\max$ is polynomial bounded by $f(m,n)$, the EF1 + PO can be computed in polynomial time.</p>
+<p>If we relax the fairness and efficiency requirements to approximate versions, then the algorithm is guaranteed to run in polynomial time.</p>
+<p>$\epsilon$-EF1 + $\epsilon$-PO in $\mathcal O(\text{poly}(m,n,\frac{1}{\epsilon},\ln v_\max))$</p>
+<h2 id="existence-for-ef1-and-fractionally-po">Existence for EF1 and fractionally PO</h2>
+<p>:dart::thinking:<strong>Theorem 2</strong>. Given any fair division instance with additive valuations, there always exists an allocation that is EF1 and fractionally PO (fPO)</p>
+<p>Remark: :sob: I don't understand. What is <a href="https://en.wikipedia.org/wiki/TFNP">TFNP</a> (Total Function Nondeterministic Polynomial)?</p>
+<blockquote>
+<p>A binary relation $P(x,y)$ is in TFNP if and only if there is a deterministic polynomial time algorithm that can determine whether $P(x,y)$ holds given both $x$ and $y$, and for every $x$, there exists a $y$ which is at most polynomially longer than $x$ such that $P(x,y)$ holds.</p>
+</blockquote>
+<h2 id="approximation-algorithm-for-nash-social-welfare">Approximation algorithm for Nash social welfare</h2>
+<p>:dart::thinking:<strong>Theorem 3</strong>. For additive valuations, there exists a polynomial-time $1.45$-approximation algorithm for the Nash social welfare maximization problem.</p>
+<p>:thinking:<strong>Lemma 1</strong>. Given a fair division instance with identical and additive valuations, any $\epsilon$-EF1 allocations provides a $e^{(1+\epsilon)e}$-approximation to Nash social welfare.</p>
+<h1 id="the-algorithm">The Algorithm</h1>
+<h2 id="market-terminology">Market Terminology</h2>
+<h3 id="fisher-market">Fisher Market</h3>
+<p>A fundamental model in the economics of resource allocation.</p>
+<p>A set of buyers enter the market with pre-specified budgets and use it to buy goods that provide maximum utility per unit of money spent.</p>
+<p>$[n]$ buyers, $[m]$ <strong>divisible</strong> goods, valuation profile $\mathcal V$.</p>
+<p>Each buyer $i\in[n]$ has an initial <strong>endowment/budget</strong> $e_i\gt0$. The endowment is only used for buying goods. Endowment vector $\mathbf e$.</p>
+<p>A <strong>market instance</strong> $\langle[n],[m],\mathcal V,\mathbf e\rangle$</p>
+<p>A <strong>market outcome</strong> is given by the pair $\langle\mathbf x,\mathbf p\rangle$, where the <strong>allocation vector</strong> $\mathbf x$ is a <strong>fractional allocation</strong> of the $m$ goods, and the price vector $\mathbf p$ associates a price $p_j\ge0$ with each good $j\in[m]$.</p>
+<p>The spending of buyer $i$ under the market outcome $\langle\mathbf x,\mathbf p\rangle$ is given by $\mathbf p(\mathbf x_i)=\sum_{j=1}^mx_{i,j}p_j$.</p>
+<p>The valuation derived by $i$ under the market outcome $\langle\mathbf x,\mathbf p\rangle$ is given by $v_i(\mathbf x_i)=\sum_{j=1}^mx_{i,j}v_{i,j}$.</p>
+<p>Given a <strong>price vector</strong> $\mathbf p$, define the <strong>bang per buck ratio</strong> of buyer $i$ for good $j$ as
+$$
+\alpha_{i,j}=v_{i,j}/p_j
+$$</p>
+<blockquote>
+<p>显然这个性价比越高，$i$ 就越高兴。</p>
+</blockquote>
+<p>The <strong>maximum bang per buck ratio</strong> is $\alpha_i=\max_j\alpha_{i,j}$.</p>
+<p>Let $MBB_i={j\in[m]:v_{i,j}/p_j=\alpha_i}$ denote the set of all goods that maximize the bang per buck ratio for buyer $i$ at the price vector $\mathbf p$. We call $MBB_i$ the <strong>maximum bang per buck set</strong> (MBB set) of buyer $i$ at the price vector $\mathbf p$.</p>
+<p><strong>Fisher market equilibrium</strong>. An outcome $\langle\mathbf x,\mathbf p\rangle$ satisfies the following conditions:</p>
+<ul>
+<li>Market clearing: Each good is either priced at zero or is completely allocated. $\forall j\in[m],p_j=0\or\sum_{i=1}^nx_{i,j}=1$.</li>
+<li>Budget exhaustion: Buyers spend their endowments completely. $\forall i\in[n],\mathbf p(\mathbf x_i)=e_i$.</li>
+<li>Maximum bang per buck allocation: Each buyer's allocation is a subset of its MBB set. $x_{i,j}\gt0\Rarr j\in MBB_i$.</li>
+</ul>
+<p>:thinking:<strong>Proposition 1</strong>. For a Fisher market with additive valuations, any equilibrium outcome is fractionally Pareto efficient (fPO).</p>
+<p>Price envy-freeness and its variants</p>
+<ul>
+<li>$\mathbf x$ is price envy-free (pEF) w.r.t. $\mathbf p$ if for every pair of buyers $i,k\in[n]$, we have $\mathbf p(\mathbf x_i)\ge\mathbf p(\mathbf x_k)$. (Equivalently, $=$)</li>
+<li>$\mathbf x$ is price envy-free up to one good (pEF1) w.r.t. $\mathbf p$ for every pair of buyers $i,k\in[n]$, there exists a good $j\in\mathbf x_k$ s.t. $\mathbf p(\mathbf x_i)\ge\mathbf p(\mathbf x_k\diagdown{j})$.</li>
+<li>$\mathbf x$ is $\epsilon$-pEF1 w.r.t. $\mathbf p$ for every pair of buyers $i,k\in[n]$, there exists a good $j\in\mathbf x_k$ s.t. $(1+\epsilon)\mathbf p(\mathbf x_i)\ge\mathbf p(\mathbf x_k\diagdown{j})$.</li>
+</ul>
+<h3 id="mbb-graph-and-alternating-paths">MBB graph and alternating paths</h3>
+<ul>
+<li>MBB graph of a Fisher market instance w.r.t. $\mathbf p$ is defined as a bipartite graph $G$ whose vertex set consists of the set of agents $[n]$ and goods $[m]$. There is an edge between agent $i$ and good $j$ if $j\in MBB_i$ (called an MBB edge).</li>
+<li>Given an allocation $\mathbf x$, we can augment the MBB graph by adding allocation edges. For an augmented MBB graph, we define an <strong>alternating path</strong> $P=(i,j_1,i_1,j_2,i_2,\cdots,i_{\ell-1},j_\ell,k)$ from agent $i$ to agent $k$ as a series of alternating MBB and allocation edges s.t. $j_1\in MBB_i\cap \mathbf x_{i_1},j_2\in MBB_{i_1}\cap\mathbf x_{i_2},\cdots,j_\ell\in MBB_{i_{\ell-1}}\cap\mathbf x_k$. If such a path exists, we say that the agent $k$ is <strong>reachable</strong> from agent $i$ via an alternating path. ==No agent or good is allowed to repeat in an alternating path==. The path $P$ is of length $2\ell$ since it consists of $\ell$ MBB edges and $\ell$ MBB edges and $\ell$ allocation edges.</li>
+</ul>
+<blockquote>
+<p>简单理解一下，MBB 图就是只含有 MBB 集合中对应关系的边。</p>
+<p>而增强 MBB 图在此基础上加入了分配边。</p>
+<p>可达性指的是在增强图上如果一个智能体节点经过一个替换路径可以到另一个智能体节点。</p>
+</blockquote>
+<h3 id="hierarchy-structure">Hierarchy structure</h3>
+<ul>
+<li>
+<p>Let $G$ denote the augmented MBB graph for a Fisher market instance with the market outcome $(\mathbf x,\mathbf p)$.</p>
+</li>
+<li>
+<p>Fix a source agent $i\in[n]$ in $G$. Define the <em>level</em> of an agent $k$ as half the length of the shortest alternating path from $i$ to $k$. The <em>level</em> of the source agent $i$ is defined to be $0$. If there is no alternating path from $i$ to some agent $k$ in $G$, then the level of $k$ is set to be $n$. The <strong>hierarchy</strong> structure $\mathcal H_i$ of agent $i$ is defined as a level-wise collection of all agents that are reachable from $i$, where $\mathcal H_i^\ell$ denotes the set of agents that are at level $\ell$ w.r.t. the agent $i$. <code>BuildHierarchy</code> is used for constructing such a hierarchy.</p>
+</li>
+</ul>
+<p>In a hierarchy cannot have edges between agents at the same level.</p>
+<h3 id="violators">Violators</h3>
+<ul>
+<li>
+<p>An agent $i$ with smallest spending money among all the agents is called <strong>least spender</strong>, i.e., $i\in\arg\min_{k\in[n]}\mathbf p(\mathbf x_k)$. An agent $k\in[n]$ is said to be a <strong>violator</strong> if for every good $j\in\mathbf x_k$, we have $\mathbf p(\mathbf x_k\diagdown{j})\gt\mathbf p(\mathbf x_i)$, where $i$ is the least spender.</p>
+</li>
+<li>
+<p>Analogously, $k$ is said to be $\epsilon$-violator if for every good $j\in\mathbf x_k$, we have $\mathbf p(\mathbf x_k\diagdown{j})\gt(1+\epsilon)\mathbf p(\mathbf x_i)$. An agent can be a violator without being an $\epsilon$ violator.</p>
+</li>
+</ul>
+<p>==所以ε-违反者比违反者更苛刻？==</p>
+<ul>
+<li>If no agent is a violator (or $\epsilon$-violator), then the allocation $\mathbf x$ is pEF1 ($\epsilon$-pEF1) w.r.t. $\mathbf p$.</li>
+</ul>
+<p>Path-violator</p>
+<ul>
+<li>Let $i$ denote the least spender, and let $\mathcal H_i$ denote the hierarchy of agent $i$. An agent $k\in\mathcal H_i$ is said to be <strong>path-violator</strong> w.r.t. the alternating path $P=(i,j_1,i_1,j_2,i_2,\cdots,i_{\ell-1},j_\ell,k)$ if $\mathbf p(\mathbf x_k\diagdown{j_\ell})\gt\mathbf p(\mathbf x_i)$.</li>
+<li>A path-violator need not be a violator, since there can be a good $j\in\mathbf x_k$ not on the path $P$ s.t. $\mathbf p(\mathbf x_k\diagdown{j})\le\mathbf p(\mathbf x_i)$. Similarly, an agent $k\in\mathcal H_i$ is said to be an $\epsilon$-path-violator w.r.t. $P$ if $\mathbf p(\mathbf x_k\diagdown{j_\ell})\gt(1+\epsilon)\mathbf p(\mathbf x_i)$.</li>
+</ul>
+<h2 id="description-of-the-algorithm">Description of the Algorithm</h2>
+<p>Given any fair division instance $I$ as input and a parameter $\epsilon\gt0$. constructs a market equilibrium $(\mathbf x,\mathbf p)$ w.r.t. a Fisher market instance $\langle[n],[m],\mathcal V,\mathbf e\rangle$. The pair $(\mathbf x,\mathbf p)$ has the following two properties:</p>
+<ol>
+<li>
+<p>$\mathbf x$ is an integral allocation.</p>
+</li>
+<li>
+<p>$\mathcal x$ is $3\epsilon$-pEF1 w.r.t. $\mathbf p$.</p>
+</li>
+</ol>
+<p>This shows that the allocation $\mathbf x$ is $3\epsilon$-EF1 for the corresponding fair division instance $\mathcal I$.</p>
+<p>By proposition 1, the allocation $\mathbf x$ is guaranteed to be fractionally Pareto Optimal   for the Fisher market instance, and consequently for the fair division instance $\mathcal I$.</p>
+<p>:thinking:<strong>Lemma 2</strong>. Let $\epsilon\gt0$, and let $\mathbf x$ and $\mathbf p$ be an allocation and a price vector respectively for a market instance $\langle[n],[m],\mathcal V,\mathbf e\rangle$ s.t.</p>
+<ol>
+<li>$\mathbf x$ is $\epsilon$-pEF1.</li>
+<li>$\mathbf x_i\in MBB_i$ for each player $i\in[n]$.</li>
+</ol>
+<p>Then, $\mathbf x$ is $\epsilon$-EF1 for the associated fair division instance $\langle[n],[m],\mathcal V\rangle$. </p>
+<blockquote>
+<p>Since $\mathbf x$ is $\epsilon$-pEF1 w.r.t. $\mathbf p$, for any pair of buyers $i,k\in[n]$, $\exist j\in\mathbf x_k$ s.t. $(1+\epsilon)\mathbf p(\mathbf x_i)\ge\mathbf p(\mathbf x_k\diagdown{j})$.</p>
+<p>Multiplying both sides with maximum bang per ratio $\alpha_i$ for agent $i$, we have
+$$
+\alpha_i(1+\epsilon)\mathbf p(\mathbf x_i)\ge\alpha_i\mathbf p(\mathbf x_k\diagdown{j})\
+\Rarr(1+\epsilon)v_i(\mathbf x_i)\ge\alpha_i\mathbf p(\mathbf x_k\diagdown{j})\because\mathbf x_i\subseteq MBB_i\
+\Rarr(1+\epsilon)v_i(\mathbf x_i)\ge v_i(\mathbf x_k\diagdown{j}),
+$$
+which is the $\epsilon$-EF1 guarantee for the allocation $\mathbf x$.</p>
+</blockquote>
+<p>The algorithm's behavior:</p>
+<ul>
+<li>
+<p>Phase 1: starts with a welfare maximizing allocation $\mathbf x$ and $\mathbf p$ s.t. $\mathbf x$ is fPO and each agent gets a subset of its MBB goods. If the allocation $\mathbf x$ is $3\epsilon$-pEF1 w.r.t. $\mathbf p$, then the algorithm terminates with the output $(\mathbf x,\mathbf p)$. Otherwise, goto phase 2.</p>
+</li>
+<li>
+<p>Phase 2: the algorithm works with hierarchy of the least spending agent, and performs a series of exchanges (or swaps) of goods between the agents in the hierarchy. The swaps are aimed at ensuring that at the end of Phase 2, no agent in the hierarchy is $\epsilon$-pEF1 envied by the least spender.</p>
+</li>
+</ul>
+<p>All exchanges happen only along the MBB edges, thus maintaining at each stage the condition that $\mathbf x$ is an equilibrium allocation, and hence fPO.</p>
+<p>If at the end of Phase 2, the current allocation $\mathbf x$ is still not $3\epsilon$-pEF1 w.r.t. the price vector $\mathbf p$, the algorithm move to Phase 3.</p>
+<ul>
+<li>Phase 3: Uniformly raising the price of the goods owned by the members of the hierarchy. The price are raised until either the allocation $\mathbf x$ becomes $3\epsilon$-pEF1 w.r.t. the new price vector $\mathbf p$, or a new agent gets added to the hierarchy. In the latter case, the algorithm goes back to the start of Phase 2.</li>
+</ul>
+<p>Establishing the time complexity for this algorithm is complicated. The stated running time bound is obtained via a number of involved arguments relying on analyzing the spending of the agents in different phases.</p>
+<h1 id="proof-of-theorem-1">Proof of Theorem 1</h1>
+<p>~~Seems that I have no time to understand the detail.~~</p>
+<p>~~I try to grasp the argument of proof.~~</p>
+<p>First we should present the analysis of algorithm for valuations that satisfy the power of $(1+\epsilon)$ property. Then extend the analysis to general valuations.</p>
+<h2 id="pseudo-code">Pseudo-code</h2>
+<p>Input: A fair division instance $\mathcal I$ s.t. valuations are power-of-$(1+\epsilon)$</p>
+<p>Output: An integral allocation $\mathbf x$ and a price vector $\mathbf p$.</p>
+<p>~~integral allocation 就是指所有的物品全部都分完的分配~~</p>
+<p>// Phase 1 initialization</p>
+<ol>
+<li>$\mathbf x\gets$ Welfare-maximizing allocation // allocate each good to the agent who has highest valuation.</li>
+<li>$\mathbf p\gets$ For each good $j\in[m]$, set $p_j=v_{i,j}$ if $j\in\mathbf x_i$. // initialize the payment vector with the highest valuation among all agents.</li>
+<li>if $(\mathbf x,\mathbf p)$ is $3\epsilon$-pEF1 then return it</li>
+</ol>
+<p>// Phase 2 Removing price-envy within hierarchy</p>
+<ol>
+<li>$i\gets$ least spender under $(\mathbf x,\mathbf p)$</li>
+<li>$\mathcal H_i\gets$ <code>BuildHierarchy</code>($i,\mathbf x,\mathbf p$)</li>
+<li>$\ell\gets1$</li>
+<li>while $\mathcal H_i^\ell$ is non-empty and $(\mathbf x,\mathbf p)$ is not $3\epsilon$-pEF1 do</li>
+<li>if $h\in\mathcal H_i^\ell$ is a $\epsilon$-path-violator along the alternating path $P={i,j_1,h_1,\cdots,j_{\ell-1},h_{\ell-1},j,h}$ then<ul>
+<li>$\mathbf x_h\gets\mathbf x_j\diagdown{j}$ and $\mathbf x_{h_{\ell-1}}\gets\mathbf x_{h_{\ell-1}}\cup{j}$</li>
+<li>repeat Phase 2 starting from line 4</li>
+</ul>
+</li>
+<li>else<ul>
+<li>$\ell\gets\ell+1$</li>
+</ul>
+</li>
+<li>if $(\mathbf x,\mathbf p)$ is $3\epsilon$-pEF1 then return it</li>
+<li>else move to Phase 3</li>
+</ol>
+<p>// Phase 3 price-rise</p>
+<ol>
+<li>
+<p>$\alpha_1\gets\min_{h\in\mathcal H_i,j\in[m]\diagdown\mathbf x_{\mathcal H_i}}\frac{\alpha_h}{v_{h,j}/p_j}$, where $\alpha_h$ is the maximum bang per ratio for agent $h$, and $\mathbf x_{\mathcal H_i}$ is the set of goods currently owned by members of the hierarchy $\mathcal H_i$.</p>
+<p>/<em> $\alpha_1$ corresponds to raising prices until a new agent gets added to the hierarchy </em>/</p>
+</li>
+<li>
+<p>$\alpha_2\gets\frac{1}{\mathbf p(\mathbf x_i)}\max_{k\in[n]\diagdown\mathcal H_i}\min_{j\in \mathbf x_k}\mathbf p(\mathbf x_k\diagdown{j})$</p>
+<p>/<em> $\alpha_2$ corresponds to raising prices until the pEF1 condition is satisfied </em>/</p>
+</li>
+<li>
+<p>$\alpha_3\gets(1+\epsilon)^s$, where $s$ is the smallest integral power of $(1+\epsilon)$ s.t. $(1+\epsilon)^s\gt\frac{\mathbf p(\mathbf x_h)}{\mathbf p(\mathbf x_i)}$. here $i$ is the least spender and $h\in\arg\min_{k\in[n]\diagdown\mathcal H_i}\mathbf p(\mathbf x_k)$.</p>
+<p>/<em> $\alpha_3$ corresponds to raising prices in multiples of $(1+\epsilon)$ until the identity of the least spender changes </em>/ </p>
+</li>
+<li>
+<p>$\alpha\gets\min(\alpha_1,\alpha_2,\alpha_3)$</p>
+</li>
+<li>
+<p>for each good $j\in\mathbf x_\mathcal H$, do</p>
+<ul>
+<li>$p_j\gets\alpha\cdot p_j$</li>
+</ul>
+</li>
+<li>
+<p>if $\alpha=\alpha_2$ then return $(\mathbf x,\mathbf p)$ else repeat Phase 2 starting from line 4</p>
+</li>
+</ol>
+<h2 id="analysis-of-alg-when-the-valuations-are-power-of-1">Analysis of ALG when the Valuations are power-of-(1+ε)</h2>
+<p>power-of-$(1+\epsilon)$: $\exist\epsilon\gt0$, s.t. $\forall i\in[n],j\in[m]:v_{i,j}\in{0,(1+\epsilon)^a}$ for some natural number $a$.</p>
+<p><strong>Time step and events</strong>. 4 events:</p>
+<ol>
+<li><code>Swap</code> in Phase 2</li>
+<li><code>Change</code> in the identity of least spender in Phase 2</li>
+<li><code>Prise-rise</code> by a factor of $\alpha$ in Phase 3</li>
+<li><code>Termination</code> step.</li>
+</ol>
+<p>Denote <strong>time step</strong> the indexing of any execution of ALG.</p>
+<p>:thinking:<strong>Lemma 3</strong>. Given any power-of-($1+\epsilon$) instance as input, the allocation returned by ALG is $3\epsilon$-EF1 and fPO.</p>
+<blockquote>
+<p>fPO: observation: at each step, the allocation of any agent is a subset of its MMB goods.</p>
+<p>Step 1: true (by way of setting prices).</p>
+<p>Step 2: swap operation only happens along an alternating MBB-allocation edge which maintains MBB condition.</p>
+<p>Step 3: raising the prices of goods owned by the members of hierarchy $\mathcal H_i$ without changing the allocation. <strong>ARGUMENT</strong></p>
+<p>Then define a Fisher market where each agent's endowment equals its spending under $\mathbf x$. Since $(\mathbf x,\mathbf p)$ is an equilibrium, $\mathbf x$ is fPO.</p>
+<p>Next, argue that $\mathbf x$ is $3\epsilon$-EF1. The ALG terminates only if either $3\epsilon$-pEF1, or $\alpha=\alpha_2$. If $\alpha=\alpha_2$, we need to argue it's $3\epsilon$-pEF1. ~~omitted~~</p>
+</blockquote>
+<p>:thinking:<strong>Lemma 4</strong>. Given any power-of-$(1+\epsilon)$ instance as input, ALG terminates in time $\mathcal O(\text{poly}(m,n,\frac{1}{\epsilon},\ln v_\max))$ where $v_\max=\max_{i,j}v_{i,j}$.</p>
+<blockquote>
+<p>~~Proof omitted.~~</p>
+</blockquote>
+<h2 id="analysis-of-alg-for-general-valuations-proof-of-theorem-1">Analysis of ALG for General Valuations: Proof of Theorem 1</h2>
+<p>Show that for any given fair division instance $\mathcal I$ with integral valuations, EF1 + PO allocation can be found in pseudo-polynomial time.</p>
+<p>Proof by running ALG on $\epsilon$-rounded version $\mathcal I'=\langle[n],[m],\mathcal V'\rangle$ of the given instance $\mathcal I$ for some parameter $\epsilon\gt0$. The $\mathcal I'$ is a power-of-($1+\epsilon$) instance constructed by <em>rounding up</em> the valuations in $\mathcal I$ to the nearest integer power of $(1+\epsilon)$. From Lemma 3, we know this allocation is $3\epsilon$-EF1 and fPO w.r.t. $\mathcal I'$. Then it remians to show that for an appropriate choice of $\epsilon$, the same allocation turns out to be EF1 + PO w.r.t. $\mathcal I$.</p>
+<p>In addition, the running time bound in Lemma 4 instantiated for the choice of $\epsilon$ shows that ALG runs in pseudo-polynomial time.</p>
+<p>$\epsilon$-rounded version:</p>
+<p>for each agent $i$, the valuation is replaced by
+$$
+v'<em>{i,j}=\begin{cases}
+(1+\epsilon)^{\lceil\log</em>{1+\epsilon}v_{i,j}\rceil}\text{ if }v_{i,j}\gt0\
+0\text{ if }v_{i,j}=0
+\end{cases}
+$$
+$v_{i,j}\le v'<em>{i,j}\le(1+\epsilon)v</em>{i,j}$ for each $i,j$.</p>
+<p>:thinking:<strong>Lemma 5</strong>. Let $\mathcal I$ be a fair division instance. Let $\epsilon\le\frac{1}{6m^3v^4_\max}$. Then, an allocation $\mathbf x$ that is fPO for $\mathcal I'$ is PO for $\mathcal I$.</p>
+<p>Lemma 5 establishes for an appropriate choice of $\epsilon$, an allocation that is fPO for the $\epsilon$-rounded instance $\mathcal I'$ is PO w.r.t. the original instance $\mathcal I$.</p>
+<p>:thinking:<strong>Lemma 6</strong>. Let $\mathcal I$ be a fair division instance, and let $0\lt\delta\lt\frac{1}{2mv_\max}$ Then, an allocation $\mathbf x$ is $\delta$-EF1 for $\mathcal I$ iff it is EF1 for $\mathcal I$.</p>
+<blockquote>
+<p>~~Omitted~~.</p>
+</blockquote>
+<p>The proof of Theorem 1:</p>
+<ul>
+<li>$\mathcal I'$ is $\epsilon$-rounded version of $\mathcal I$ with $\epsilon=\frac{1}{14m^3v^4_\max}$. From Lemma 3 and 4, $\mathcal x$ is $3\epsilon$-EF1 and fPO for $\mathcal I'$ can be found in $\mathcal O(\text{poly}(m,n,\frac{1}{\epsilon},\ln v_\max))$ time.</li>
+<li>Under this choice, by lemma 5, $\mathbf x$ must be PO for $\mathcal I$. Thus $\mathbf x$ is EF1.</li>
+</ul>
+<p>:thinking:<strong>Lemma 7</strong>. Given the $\epsilon$-rounded version $\mathcal I'$ as input, ALG finds a $7\epsilon$-EF1 and $\epsilon$-PO allocation for $\mathcal I$ in $\mathcal O(\text{poly}(m,n,\frac{1}{\epsilon},\ln v_\max))$ time.</p>
+<blockquote>
+<p>~~I am lost.~~</p>
+</blockquote>
+<h1 id="theorem-2-ef1fpo">Theorem 2 EF1+fPO</h1>
+<p>:dart::thinking:<strong>Theorem 2</strong>. Given any fair division instance with additive valuations, there <em>always exists</em> an allocation that is EF1 and fPO.</p>
+<blockquote>
+<p>$\epsilon_z=\frac{1}{14zm^3v^4_\max},z\in\mathbb N$.</p>
+<p>~~Suffocating~~.</p>
+</blockquote>
+<h1 id="theorem-3-nash-social-welfare-approximation">Theorem 3 Nash Social Welfare Approximation</h1>
+<p>ALG provides $1.45\approx e^{1/e}$-approximation for Nash social welfare maximization in polynomial time.</p>
+<p>Use lemma 8 to prove lemma 1.</p>
+<p>:thinking:<strong>Lemma 8</strong>. Let $\mathcal I$ be an instance with additive and <strong>identical</strong> valuation functions s.t. $m\ge n$. Let $B\sub[m]$ be a subset of goods s.t. $|B|\lt n$. Then, there is a partially-fractional allocation $\omega\in\mathcal F_B$ that maximize Nash social welfare among allocations in $\mathcal F_B$ s.t.</p>
+<ol>
+<li>Each agent gets at most one goods from $B$ under $\omega$.</li>
+<li>Any agent with strictly-better-than-the-worst allocation under $\omega$ gets exactly one integral good. That is, for any agent $i\in[n]$ s.t. $v(\omega_i)\gt\min_kv(\omega_k)$, we have $\omega_{i,j}=1$ for some $j\in B$ and $\omega_{i,j'}=0$ for all $j'\neq j$.</li>
+</ol>
+<blockquote>
+<p>Property 2. proved by contradiction.</p>
+<p>Property 1. proved by <code>swap</code> operation.</p>
+</blockquote>
+<p>Proof of lemma 1: Too difficult.</p>
+<p>:dart::thinking:<strong>Theorem 3</strong>. For additive valuations, there exists a polynomial-time $1.45$-approximation algorithm for the Nash social welfare maximization problem.</p>
+<blockquote>
+<p>~~omitted~~.</p>
+</blockquote>
+<h1 id="conclusion">Conclusion</h1>
+<p>Based on integral Fisher markets and approximate pEF condition</p>
+<p>Psudo-polynomial algorithm for finding EF1 and PO</p>
+<p>Poly time $1.45$-approximation algorithm for Nash social welfare.</p>
+<p>Future work:</p>
+<ul>
+<li>Does there exist polynomial time algorithm for EF1 + PO?</li>
+<li>How about more general classes of valuations?</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

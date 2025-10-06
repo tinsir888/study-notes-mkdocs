@@ -1,0 +1,2479 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="tinsir888">
+      
+      
+        <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FFairAI/3_PropFairRevisited/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Fair AI/ML 3 PROP Fair Clustering Revisited - tinsir888's Study Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            tinsir888's Study Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fair AI/ML 3 PROP Fair Clustering Revisited
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    tinsir888's Study Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS@NKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS@NKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    感知技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            感知技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 传感器的性能与评价
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 电传感原理与测量方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 常用物理效应与器件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数字信号处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数字信号处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 信号分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 再探时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数字信号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 信号与系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 离散时间傅里叶变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 频谱分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DatabaseSystem/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    智能计算系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            智能计算系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 神经网络基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 编程框架使用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 编程框架机理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 深度学习处理器原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度学习处理器架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 智能编程语言
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    汇编与逆向
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            汇编与逆向
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 汇编语言基本概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 IA-32 处理器体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 汇编语言基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数据传送与寻址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 PE 文件结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 区块表、输入表和输出表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 静态逆向技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 C 语言程序逆向分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 软件保护技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    网络技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            网络技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 以太网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 交换与虚拟局域网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无线局域网组网技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 互联网与 IP 协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 IP 数据报
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 IP 地址与 ARP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 路由器与路由选择
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 接入互联网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机体系结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            计算机体系结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA1%E6%A6%82%E8%BF%B020210906/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA2%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%AF%84%E4%BC%B020210918/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 量化设计与评估
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA3%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%8420210927/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 指令集体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA4%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A120211011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 存储层次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA5%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%281%2920211018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 流水线技术上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA6%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 流水线技术下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA7%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 指令级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA8%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 指令级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA9%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 数据级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA10%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 数据级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA11%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十一章 线程级并行性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA12%E4%BB%93%E5%BA%93%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十二章 仓库级计算机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程信息
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机网络概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 应用层协议及网络编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 传输层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 网络层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 接口层原理与协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    强化学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            强化学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel1-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 强化学习简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 马尔可夫决策过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel3-%E5%80%BC%E5%87%BD%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 值函数估计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel4-%E6%97%A0%E6%A8%A1%E5%9E%8B%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无模型控制方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel5-%E8%BF%91%E4%BC%BC%E9%80%BC%E8%BF%91%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 近似逼近方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel6-%E8%A7%84%E5%88%92%E4%B8%8E%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 规划与学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel7-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度强化学习价值方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel8-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AD%96%E7%95%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 深度强化学习策略方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel14-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十四章 多智能体强化学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contribution
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Read the paper <a href="https://www.semanticscholar.org/paper/Proportionally-Fair-Clustering-Revisited-Micha-Shah/c8ac6968a2d26acbd0316f3f9da81a2f8037901a">Proportionally Fair Clustering Revisited</a> by Micha et Shah.</p>
+<p>$k$ cluster centers must be placed given $n$ points in a metric space.</p>
+<p>The cost to each point is its distance to the nearest cluster center.</p>
+<p>This paper: Focus on the case where <strong>cluster centers can be placed anywhere in metric space</strong>.</p>
+<p>E.g. $L^2$ distance over $\mathbb R^t$, the approximation ratio of greedy capture improves to $2$.</p>
+<p>For $L^1,L^\infty$ metric, the approximation ratio remains $1+\sqrt 2$.</p>
+<p>The paper gives universal lower bounds which apply to all algorithms.</p>
+<h1 id="introduction">Introduction</h1>
+<p>Points $\mathcal N$, possible cluster centers $\mathcal M$.</p>
+<p>Given $k\in\mathbb N$, task is to select a set $X\subseteq\mathcal M$ consisting of $|X|=k$ cluster centers.</p>
+<p>Group fairness.</p>
+<p>Proportional fairness.</p>
+<h2 id="contribution">Contribution</h2>
+<p>Focus on the case where the metric consists of usual distance functions such as $L^1,L^2,L^\infty$ over $\mathbb R^t$.</p>
+<p>:warning:<strong>Cluster centers can be placed anywhere in the infinite metric space</strong>. $\mathcal M=\mathbb R^t$:heavy_exclamation_mark:</p>
+<p>{% note warning modern %}</p>
+<p>请注意此处，候选聚类中心和上一篇论文不一样，所以得出的近似下界不一样。</p>
+<p>{% endnote %}</p>
+<p>Greedy Capture by Chen et al. where $d\in{L^1,L^2,L^\infty}$ and $\mathcal M=\mathbb R^t$.</p>
+<p>For $d=L^2,\mathcal M=\mathbb R^t$, GC provides $2$-PROP. The approximation is obtained by <strong>Apollonius radius</strong>.</p>
+<p>For $L^1,L^\infty$, the approximation ratio can not be better than $1+\sqrt2$.</p>
+<p>Universal lower bounds: for $d=L^2$ and $\mathcal M=\mathbb R^t$, no algorithm achieves better than $\frac{2}{\sqrt 3}\approx1.155$-PROP, whereas for $d\in{L^1,L^\infty}$ and $\mathcal M=\mathbb R^t$, the lower bound is $1.4$.</p>
+<p>Also, this paper consider the case where $\mathcal M$ is the set of nodes of an unweighted graph, and $d$ measures the shortest distance between two nodes on the graph.</p>
+<ul>
+<li>If the graph is a tree, then PROP must exist. And there are an efficient algorithm.</li>
+<li>If the graph is arbitrary, $k\ge n/2$. PROP must exist and can be computed efficiently.</li>
+<li>Open problem: Whether an exact PROP exists for all graphs.</li>
+</ul>
+<p>For $d=L^2$ and $\mathcal M=\mathbb R^t$ for $t\ge2$, checking whether a clustering is PROP is NP-hard.</p>
+<p>When $t$ is large,even greedy capture is NP-hard. When $t$ is constant, the problem becomes efficiently solvable.</p>
+<p>When $t$ is large, using a $PTAS$ as sub-routine of greedy capture, we can efficiently compute $2(1+\epsilon)$-PROP fair clustering for any fixed $\epsilon\gt0$</p>
+<p>Problem of generalization: Would a clustering that is PROP w.r.t. samples drawn from $\mathcal N$ remain approximately PROP w.r.t. entire set $\mathcal N$? Chen et al. proved that the answer is yes when $|\mathcal M|$ is finite. Using the VC dimension, the answer is also yes for $\mathcal M=\mathbb R^t$.</p>
+<h1 id="preliminaries">Preliminaries</h1>
+<p>$\mathcal N$: the set of $n$ data points lie in a metric space $(\mathcal X,d)$, where $d:\mathcal X\times\mathcal X\to\mathbb R$ is a distance function satisfying the triangle inequality.</p>
+<p>Consider $\mathcal X=\mathbb R^t$ for $t\in\mathbb N$.</p>
+<p>Distance function: $L^2,L^1,L^\infty$.</p>
+<p>$\mathcal M$: set of candidate cluster centers. <strong>In this paper</strong> $\mathcal M=\mathcal X$.</p>
+<p>Given $k\in\mathbb N$, a $k$-clustering is a set $X\in\mathcal M^k$.</p>
+<p>Each $x\in X$ is called the open cluster center.</p>
+<p>Cost to agent $i\in\mathcal N$ induced by a cluster center $x\in\mathcal M$ is the distance $d(i,x)$. The cost to agent $i$ should be the minimal distance.
+$$
+d(i,X)=\min_{x\in X}d(i,x)
+$$
+Agent $i$ is interested in minimizing the cost.</p>
+<p>A set of points $S\subseteq N$ containing at least $\lceil n/k\rceil$, if they can find a new cluster that is better for each of them, it is a violation of fairness (block coalition)</p>
+<p>:book:Definition 1. $\rho$-PROP, block coalition. Omitted.</p>
+<p>PROP on graphs: given an undirected graph $G=(V,E)$, $\mathcal N\subseteq V,\mathcal M=V$. Distance between $u,v\in V$ is the length of the shortest path.</p>
+<h1 id="greedy-capture">Greedy Capture</h1>
+<p>Detail is omitted here.</p>
+<p>$(1+\sqrt2)$-PROP </p>
+<p>This paper gives a refined analysis of Greedy Capture.</p>
+<p>:book:Definition 2 (Apollonius radius) Given $\rho\ge1$, the $\rho$-Apollonius radius of a metric $(\mathcal X,d)$ is defined as $A_{\mathcal X,d}(\rho)=\sup_{x,y\in\mathcal X}\Delta(\rho,x,y)/d(x,y)$, where $\Delta(\rho,x,y)$ is the radius of the smallest ball centered at some point in $\mathcal X$ that contains the entire set ${p\in\mathcal X:\rho\cdot d(p,y)\le d(p,x)}$.</p>
+<p>When $\rho\gt1$, the set is a ball.</p>
+<p>:dart:Theorem 3. For any metric $(\mathcal X,d)$ and $\mathcal M=\mathcal X$, greedy capture finds a $\rho$-PROP clustering, where $\rho\ge1$ is the smallest positive number satisfying $A_{\mathcal X,d}(\rho)\cdot\frac{\rho+1}{\rho}\le1$.</p>
+<p>{% note warning modern %}</p>
+<p>$\mathcal M=\mathcal X$: 候选聚类中心可以是空间上任意一点。</p>
+<p>{% endnote %}</p>
+<blockquote>
+<p>Proof by triangle inequality. Proof that if $X$ is not $\rho$-PROP, then $A_{\mathcal X,d}(\rho)\cdot\frac{\rho+1}{\rho}\gt1$.</p>
+</blockquote>
+<p>:dart:Theorem 4. For any metric $(\mathcal X,d)$, the $\rho$-Apollonius radius is $A_{\mathcal X,d}(\rho)\le\frac{1}{\rho-1}$. Hence, greedy capture finds a $(1+\sqrt2)$-PROP fair clustering for every metric.</p>
+<p>{% note info modern %}</p>
+<p>在我看来，本篇论文定义了一个复杂的概念——阿波罗尼乌斯半径，来形式化证明算法结果的下界。</p>
+<p>但是这个阿波罗尼乌斯半径的定义过于复杂了。</p>
+<p>{% endnote %}</p>
+<p>Next, the paper shows for $d=L^2$, the $\rho$-Apollonius radius is better, $2$-PROP guarantee.</p>
+<p>:dart:Theorem 5. For the metric space $(\mathbb R^2,L^2)$, where $t\in\mathbb N$, the $\rho$-Apollonius radius $A_{\mathbb R^2,L^2}(\rho)\le\frac{\rho}{\rho^2-1}$, and hence, greedy capture finds a $2$-PROP clustering.</p>
+<blockquote>
+<p>Proof omitted.</p>
+</blockquote>
+<p>Whether the introduction of Apollonius improves approximation bound for other distance metrics. For $L^1,L^\infty$, the answer is unfortunately <strong>NO</strong>. The approximation remains $1+\sqrt 2$.</p>
+<p>:dart:Theorem 6. For the metric space $(\mathbb R^t,d)$ where $t\ge2$ and $d\in{L^1,L^\infty}$, and $\mathcal M=\mathbb R^t$, there exists an example in which the clustering produced by greedy capture is not $\rho$-PROP for $\rho\lt1+\sqrt2$.</p>
+<h1 id="universal-lower-bounds">Universal Lower Bounds</h1>
+<p>This paper generalizes lower bounds on approximation to PROP that apply to <strong>ALL ALGORITHMS</strong>.</p>
+<p>Chen et al. showed that $\rho&lt;2$ is not guaranteed. For $\mathcal N=\mathcal M$, the weaker lower bound $1.5$.</p>
+<p>This paper: for the case where $\mathcal M=\mathcal X=\mathbb R^t$ and $d\in{L^1,L^2,L^\infty}$.</p>
+<p>{% note warning modern %}</p>
+<p>再次提醒：$\mathcal M=\mathcal X$: 候选聚类中心可以是空间上任意一点。</p>
+<p>{% endnote %}</p>
+<ul>
+<li>When $t=1$, it's easy to see that there always exist PROP clusterings.</li>
+<li>When $t\ge2$, a lower bound $2/\sqrt3$ for $d=L^2$ and a lower bound $1.4$ for $d\in{L^1,L^\infty}$.</li>
+</ul>
+<p>:dart:Theorem 7. For the metric space $(\mathbb R^t,L^2)$ where $t\ge2$ and $\mathcal M=\mathbb R^t$, there is an example in which no clustering is $\rho$-PROP for $p\lt2/\sqrt3\approx1.155$.</p>
+<p>Closing the gap between lower bound $1.155$ and upper bound $2$ for $L^2$ is an open problem.</p>
+<p>:dart:Theorem 8. For the metric space $(\mathbb R^t,d)$, where $t\ge2$ and $d\in{L^1,L^\infty}$, and $\mathcal M=\mathbb R^t$, there is an example in which no clustering is $\rho$-PROP for $\rho\lt1.4$.</p>
+<h1 id="clustering-in-graphs">Clustering in Graphs</h1>
+<p>In this section, we consider the special case where the metric space $(\mathcal X,d)$ is induced by an undirected graph $G=(V,E)$.</p>
+<p>Consider the case of $\mathcal M=\mathcal X=V$. Distance $d(x,y)$ is the length of the shortest path between $x,y$.</p>
+<p>{% note warning modern %}</p>
+<p>所有节点都是候选聚类中心，距离定义为最短路长度。</p>
+<p>{% endnote %}</p>
+<p>When $G$ is a tree, an exact PROP clustering always exists, and can be computed by an efficient algorithm.</p>
+<h2 id="prop-clustering-for-trees">PROP Clustering for Trees</h2>
+<p>First root the tree at an arbitrary node $r$ to obtain a rooted tree $(G,r)$.</p>
+<p>Denote with $h$ the height of the rooted rooted tree, and with $level(x)$ the height of node $x$ relative to root $r$ with $level(r)=1$.</p>
+<p>Let $ST(x)$ denote the sub-tree of node $x$</p>
+<p>The algorithm starts from the leaves, opens a center every time it finds a node whose sub-tree contains at least $\lceil n/k\rceil$ nodes, then deletes this sub-tree from the graph. At the end, the cost to each node is still defined using the closest node at which a center is opened by the algorithm.</p>
+<h2 id="pseudo-code-prop-clustering-for-trees">Pseudo Code - PROP Clustering for Trees</h2>
+<ol>
+<li>Root the tree $G$ at an arbitrary node $r$.</li>
+<li>$X\gets\empty$</li>
+<li>$G^d\gets G$.</li>
+<li>for $\ell=d$ to $1$ do</li>
+<li>$G^{\ell-1}=G^\ell$</li>
+<li>for every $x\in V$ with $level(x)=l$ and $|ST(x)|\ge\lceil n/k\rceil$ do<ul>
+<li>$X\gets X\cup{x}$</li>
+<li>$G^{\ell-1}\gets G^{\ell-1}\diagdown ST(x)$</li>
+</ul>
+</li>
+<li>if $G^0\neq\empty$ then $X\gets X\cup{r}$</li>
+<li>return $X$</li>
+</ol>
+<p>:dart:Theorem 9. Let $G=(V,E)$ be an undirected tree, $(V,d)$ be the metric induced by $G$, $\mathcal N\subseteq V,\mathcal M=V$, and $k\in\mathbb N$. Then, the algorithm yields a PROP clustering.</p>
+<blockquote>
+<p>Hard proof by contradiction.</p>
+</blockquote>
+<h2 id="what-about-non-tree">What about Non-tree</h2>
+<p>Consider the universal lower bound for $(\mathbb R^2,L^1)$ metric from Theorem 8.</p>
+<p>If the graph is dense enough, we can derive same lower bound of $1.4$.</p>
+<p>:question:Whether better lower bounds exist is an open problem.</p>
+<p>:question:For special case where $\mathcal N=V$, we do not know whether PROP always exists</p>
+<p>If $G$ is connected and we want to place a large number of clusters $k\ge n/2$, then PROP always exists. This is because a dominating set of any size $k\ge n/2$ is guaranteed to exist in a graph with $n$ nodes and can be computed efficiently.</p>
+<p>Definition of dominating set: A set of nodes is called a <em>dominating set</em> if every node in the graph is either in this set or adjacent to a node in this set.</p>
+<p>Thus the problem of finding a PROP clustering in general graphs with $\mathcal N=\mathcal M=V$ is trivial when $k\ge n/2$, but remains open when $k\lt n/2$.</p>
+<h1 id="computational-aspects">Computational Aspects</h1>
+<p>Two problems:</p>
+<ol>
+<li>Checking whether a PROP clustering exits.</li>
+<li>Implementing the Greedy Capture when $\mathcal M=\mathbb R^t$.</li>
+</ol>
+<p>:dart:Theorem 10, Given a finite $\mathcal N$, finite $\mathcal M$, $k\in\mathbb N$, and $d=L^2$, checking whether a PROP clustering exists is NP-hard.</p>
+<blockquote>
+<p>Polynomial-time reduction from the planar monotone rectilinear 3-SAT problem.</p>
+<p>Planar monotone rectilinear 3-SAT problem: Given a 3-SAT formula, each clause $c_j$ consists of only positive or only negative literals, the graph connecting clauses to literals they contain is planar, and this graph has a planar embedding in which each variable $v_i$ is represented by a rectangle on the $x$-axis and each positive/negative clause is represented by a rectangle above/below $x$-axis with 3 vertical lines or legs to its 3 variables.</p>
+</blockquote>
+<p>{% note warning modern %}</p>
+<p>~~什么玩意啊，什么乱七八糟的 NP-hard 问题。欺负我不会证规约是吧。~~</p>
+<p>{% endnote %}</p>
+<p>:dart:Theorem 11. Let $t\in\mathbb N$, finite $\mathcal N\subset\mathbb R^t$, and $k\in\mathbb N$ be given as input. Suppose $\mathcal M=\mathbb R^t$ and $d=L^2$. Then, the following hold:</p>
+<ol>
+<li>The clustering returned by Greedy Capture algorithm cannot be computed in polynomial time unless $P=NP$.</li>
+<li>If $t$ is constant, then it can be computed in polynomial time.</li>
+<li>Even if $t$ is not constant, for any constant $\epsilon&gt;0$, there exists a polynomial time algorithm which finds a $(2+\epsilon)$-PROP clustering.</li>
+</ol>
+<h1 id="learning-fair-clustering-by-sampling">Learning Fair Clustering by Sampling</h1>
+<p>VERY DIFFICULT!</p>
+<p>Is a clustering that is approximately PROP w.r.t. random samples taken from an underlying population would remain approximately PROP w.r.t. the whole population.</p>
+<p>YES!</p>
+<p>:book:Definition 12. We say that a $k$-clustering $X$ is $\rho$-PROP fair to $(1+\epsilon)$-deviations w.r.t. $\mathcal N$ if for all $S\subseteq\mathcal N$ with $|S|\ge|\mathcal N|\cdot(1+\epsilon)/k$ and all $y\in\mathcal M$, there exists at least one $i\in S$ s.t. $\rho\cdot d(i,y)\ge d(i,X)$.</p>
+<p>:book:Definition 13. Given a set of points $\mathcal N$, a $k$-clustering $X$, and $y\in\mathcal M$, define the binary classifier $h_{X,y}:\mathcal N\to{0,1}$ s.t. $h_{X,y}(i)=1$ iff $\rho\cdot d(i,y)\lt d(i,X)$. Define the error of this classifier on a set of points $S\subseteq\mathcal N$ as $err_S(h_{X,y})=(1/|S|)\cdot\sum_{i\in S}h_{X,y}(i)$.</p>
+<p>The classifier equals $1$ iff $i$ can be part of a coalition that complains about the unfairness of $X$ by demonstrating $y$ as a location that provides them $\rho$-improvement.</p>
+<p>$X$ is $\rho$-PROP to $(1+\epsilon)$-deviations w.r.t. $\mathcal N$ iff $err_\mathcal N(X,y)\le\frac{1+\epsilon}{k}$ for all $y\in\mathcal M$.</p>
+<p>Goal: Show that given a large enough random simple $N\subseteq\mathcal N$, if we have clustering $X$ that is $\rho$-PROP w.r.t. $N$, then it is $\rho$-PROP to $(1+\epsilon)$-deviations w.r.t. $\mathcal N$ with high probability. But there is no control over $X,y$. Because of the uniform convergence guarantee.</p>
+<p>$|err_N(h_{X,y})-err_\mathcal N(h_{X,y})|$ is bounded for all $X,y$.</p>
+<p>:book:Definition 14 (VC Dimension). Let $\mathcal N$ be a set of points. Let $\mathcal H$ be a family of binary classifier over $\mathcal N$. We say that $\mathcal H$ shatters $S\subseteq\mathcal N$ if for every labeling $\ell:S\to{0,1}$, there exists a classifier $h\in\mathcal H$ s.t. $h(i)=\ell(i)$ for all $i\in S$. The VC dimension of $\mathcal H$, denoted $dim^{VC}(\mathcal H)$, is the size of the largest $S$ that can be shattered by $\mathcal H$.</p>
+<p>:thinking:Proposition 15. Let $\mathcal H$ be a family of binary classifier over a set of points $\mathcal N$. If $N\subseteq N$ is a uniformly random sample with $|N|\ge\Omega\left(\frac{dim^{VC}(\mathcal H)+\ln(1/\delta)}{\epsilon^2}\right)$, then with probability at least $1-\delta$, $|err_N(h)-err_\mathcal N(h)|\le\epsilon$ for all $h\in\mathcal H$.</p>
+<p>:dart:Theorem 16. Fix $\epsilon,\delta\gt0,\rho\ge1,k,t\in\N$, and metric $(\mathcal X,d)$ where $\mathcal X=\R^t$ and $d=L^2$. Let $\mathcal N$ be a set of points and $\mathcal M=\R^t$ be the set of candidate centers. Let $N\subseteq\mathcal N$ be sampled uniformly at random with $|N|\ge\Omega\left(\frac{k^2\cdot(tk\ln k+\ln(1/\delta))}{\epsilon^2}\right)$. Then with probability at least $1-\delta$, every $k$-clustering $X\in\mathcal M^k$ that is $\rho$-PROP w.r.t. $N$ is $\rho$-PROP to $(1+\epsilon)$-deviation w.r.t. $\mathcal N$.</p>
+<h1 id="open-questions">Open Questions</h1>
+<p>This paper mainly consider $\mathcal M$ is entire metric space.</p>
+<p>There are some open questions.</p>
+<h2 id="bridging-gaps">Bridging Gaps</h2>
+<p>Can we bridge the lower $(1+\sqrt2)$ and upper bounds on the approximation ratio to PROP.</p>
+<p>Conjecture for $L^2$, the lower bound $2/\sqrt3$ may be achievable.</p>
+<p>Maybe by Jung's theorem, for $L^2$ distance in $\R^2$, any set of points with diameter at most $1$ is contained in a ball of radius at most $1/\sqrt3$. This could be useful in closing the gap for $L^2$.</p>
+<h2 id="on-graphs">On Graphs</h2>
+<p>Does PROP clustering always exist for all graphs when $\mathcal N=\mathcal M$ is the set of all nodes of the graph?</p>
+<h2 id="computational-hardness">Computational Hardness</h2>
+<p>What is the computational hardness for other distance metrics?</p>
+<h2 id="other-ml-models">Other ML Models</h2>
+<p>Can we adapt this PROP to other machine learning settings such as regression or classification?</p>
+<h1 id="some-personal-unremarkable-rants">Some Personal Unremarkable Rants</h1>
+<p>This paper revisit Greedy Capture. But remember $\mathcal M=$ whole metric space, this gives different bounds.</p>
+<p>Some dazzling new concepts like "Apollonius radius", "shatter" etc.</p>
+<p>Impressive spectacular showmanship on hardness proof.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4332 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="tinsir888">
+      
+      
+        <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerNetwork/Kapitel2/">
+      
+      
+        <link rel="prev" href="../Kapitel1/">
+      
+      
+        <link rel="next" href="../Kapitel3/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>计算机网络 第二章 应用层协议及网络编程 - tinsir888's Study Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            tinsir888's Study Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算机网络 第二章 应用层协议及网络编程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    tinsir888's Study Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS@NKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS@NKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    感知技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            感知技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PerceptionTechnology/Kapite1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PerceptionTechnology/Kapite2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 传感器的性能与评价
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PerceptionTechnology/Kapite3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 电传感原理与测量方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PerceptionTechnology/Kapite4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 常用物理效应与器件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数字信号处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数字信号处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 信号分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 再探时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数字信号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 信号与系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 离散时间傅里叶变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DigitalSignalProcessing/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 频谱分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DatabaseSystem/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    智能计算系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            智能计算系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AIComputingSystem/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AIComputingSystem/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 神经网络基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AIComputingSystem/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AIComputingSystem/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 编程框架使用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AIComputingSystem/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 编程框架机理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AIComputingSystem/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 深度学习处理器原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AIComputingSystem/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度学习处理器架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AIComputingSystem/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 智能编程语言
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    汇编与逆向
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            汇编与逆向
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 汇编语言基本概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 IA-32 处理器体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 汇编语言基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数据传送与寻址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 PE 文件结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 区块表、输入表和输出表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 静态逆向技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 C 语言程序逆向分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Assembler%26ReverseEngineering/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 软件保护技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    网络技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            网络技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 以太网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 交换与虚拟局域网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无线局域网组网技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 互联网与 IP 协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 IP 数据报
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 IP 地址与 ARP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 路由器与路由选择
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetworkTechnology/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 接入互联网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机体系结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            计算机体系结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA1%E6%A6%82%E8%BF%B020210906/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA2%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%AF%84%E4%BC%B020210918/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 量化设计与评估
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA3%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%8420210927/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 指令集体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA4%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A120211011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 存储层次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA5%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%281%2920211018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 流水线技术上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA6%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 流水线技术下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA7%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 指令级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA8%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 指令级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA9%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 数据级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA10%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 数据级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA11%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十一章 线程级并行性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ComputerArchitecture/CA12%E4%BB%93%E5%BA%93%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十二章 仓库级计算机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程信息
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机网络概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第二章 应用层协议及网络编程
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 应用层协议及网络编程
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      回顾 TCP/IP 体系结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="回顾 TCP/IP 体系结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      从上往下介绍
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-1 应用层协议与进程通信模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-1 应用层协议与进程通信模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用与应用层协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用与应用层协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用：可进行通信的，分布式进程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层协议：应用层实体之间的通信规范
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程间通信
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程间通信">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程：主机中运行的程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cs" class="md-nav__link">
+    <span class="md-ellipsis">
+      客户/服务器（C/S）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2p" class="md-nav__link">
+    <span class="md-ellipsis">
+      对等计算（P2P模型）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      客户/服务器进程交互模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户/服务器进程交互模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      服务器进程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      客户进程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2p_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      纯 P2P 进程交互模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2p_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      客户/服务器 与 P2P 的结合
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户/服务器 与 P2P 的结合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      即时消息
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程的地址表示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层协议定义的内容
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-2 传输层服务对应用的支持
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-2 传输层服务对应用的支持">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用需要什么样的传输层服务？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      互联网传输层提供的服务
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="互联网传输层提供的服务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp-p60" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP 服务（书上 P60）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-p62" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP 服务（书上 P62）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UDP 服务（书上 P62）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么需要 UDP？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p62" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见应用使用的传输层服务（书上 P62 下方）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-3-socket" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-3 Socket 编程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-3 Socket 编程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络编程界面
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sockets 套接字
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sockets 套接字">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      套接字分为两种
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      利用 UDP 服务的应用程序编写步骤
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      利用 TCP 服务的应用程序编写步骤
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket-c-socket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socket 编程—— C 中常用的 Socket 函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-4 电子邮件服务与协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-4 电子邮件服务与协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smtppop" class="md-nav__link">
+    <span class="md-ellipsis">
+      邮件客户/服务器模型（SMTP/POP）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMTP：简单邮件传输协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      邮件访问协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-5 文件传输服务与协议
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-6 域名系统
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-6 域名系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      域名系统概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="域名系统概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 域名体系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 域名解析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 服务器组织
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 域名服务器缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      主机缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 资源记录
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-7-web-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-7 Web 服务与 HTTP 协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-7 Web 服务与 HTTP 协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web 客户/服务器模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP 协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP 协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http10" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP1.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http11" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP1.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP报文类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户-服务器交互：认证
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cookies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web缓存机制：客户端缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web缓存机制：代理服务器缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http11_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP1.1存在的问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http20" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP2.0协议基本原理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-8-cdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-8 内容分发网络 CDN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-8 内容分发网络 CDN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      内容分发网络概述
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-9-dash" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-9 动态自适应流媒体协议 DASH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-9 动态自适应流媒体协议 DASH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本原理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 传输层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 网络层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 接口层原理与协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    强化学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            强化学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel1-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 强化学习简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 马尔可夫决策过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel3-%E5%80%BC%E5%87%BD%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 值函数估计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel4-%E6%97%A0%E6%A8%A1%E5%9E%8B%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无模型控制方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel5-%E8%BF%91%E4%BC%BC%E9%80%BC%E8%BF%91%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 近似逼近方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel6-%E8%A7%84%E5%88%92%E4%B8%8E%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 规划与学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel7-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度强化学习价值方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel8-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AD%96%E7%95%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 深度强化学习策略方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handsonrl/Kapitel14-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十四章 多智能体强化学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      回顾 TCP/IP 体系结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="回顾 TCP/IP 体系结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      从上往下介绍
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-1 应用层协议与进程通信模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-1 应用层协议与进程通信模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用与应用层协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用与应用层协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用：可进行通信的，分布式进程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层协议：应用层实体之间的通信规范
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程间通信
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程间通信">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程：主机中运行的程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cs" class="md-nav__link">
+    <span class="md-ellipsis">
+      客户/服务器（C/S）模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2p" class="md-nav__link">
+    <span class="md-ellipsis">
+      对等计算（P2P模型）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      客户/服务器进程交互模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户/服务器进程交互模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      服务器进程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      客户进程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2p_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      纯 P2P 进程交互模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2p_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      客户/服务器 与 P2P 的结合
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户/服务器 与 P2P 的结合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      即时消息
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程的地址表示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层协议定义的内容
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-2 传输层服务对应用的支持
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-2 传输层服务对应用的支持">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用需要什么样的传输层服务？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      互联网传输层提供的服务
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="互联网传输层提供的服务">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp-p60" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP 服务（书上 P60）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-p62" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP 服务（书上 P62）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UDP 服务（书上 P62）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么需要 UDP？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p62" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见应用使用的传输层服务（书上 P62 下方）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-3-socket" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-3 Socket 编程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-3 Socket 编程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络编程界面
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sockets 套接字
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sockets 套接字">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      套接字分为两种
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      利用 UDP 服务的应用程序编写步骤
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      利用 TCP 服务的应用程序编写步骤
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket-c-socket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socket 编程—— C 中常用的 Socket 函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-4 电子邮件服务与协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-4 电子邮件服务与协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smtppop" class="md-nav__link">
+    <span class="md-ellipsis">
+      邮件客户/服务器模型（SMTP/POP）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMTP：简单邮件传输协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      邮件访问协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-5 文件传输服务与协议
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-6 域名系统
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-6 域名系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      域名系统概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="域名系统概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 域名体系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 域名解析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 服务器组织
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 域名服务器缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      主机缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 资源记录
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-7-web-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-7 Web 服务与 HTTP 协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-7 Web 服务与 HTTP 协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web 客户/服务器模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP 协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP 协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http10" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP1.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http11" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP1.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP报文类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户-服务器交互：认证
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cookies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web缓存机制：客户端缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web缓存机制：代理服务器缓存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http11_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP1.1存在的问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http20" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP2.0协议基本原理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-8-cdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-8 内容分发网络 CDN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-8 内容分发网络 CDN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      内容分发网络概述
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-9-dash" class="md-nav__link">
+    <span class="md-ellipsis">
+      2-9 动态自适应流媒体协议 DASH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-9 动态自适应流媒体协议 DASH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本原理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">计算机网络 第二章 应用层协议及网络编程</h1>
+<h2 id="tcpip">回顾 TCP/IP 体系结构</h2>
+<p>对等层通信，执行相关协议</p>
+<p>接口层包括数据链路层和物理层</p>
+<h5 id="_2">从上往下介绍</h5>
+<h2 id="2-1">2-1 应用层协议与进程通信模型</h2>
+<h3 id="_3">应用与应用层协议</h3>
+<h4 id="_4">应用：可进行通信的，分布式进程</h4>
+<ul>
+<li>运行于主机的<strong>用户空间</strong></li>
+<li>通过交换<strong>消息（Message）</strong>实现应用之间的交互</li>
+<li>例如：Email、Web 等</li>
+</ul>
+<h4 id="_5">应用层协议：应用层实体之间的通信规范</h4>
+<ul>
+<li>定义应用<strong>交换的消息</strong>和收到消息后<strong>采取的行动</strong></li>
+<li>使用下层协议（TCP、UDP）提供的通信服务</li>
+</ul>
+<p>在不同层数据叫法：消息、段、数据报、数据帧、比特</p>
+<h3 id="_6">进程间通信</h3>
+<h4 id="_7">进程：主机中运行的程序</h4>
+<ul>
+<li>同一台主机中，两个进程之间按照<strong>进程间通信方式</strong>进行交互通信（OS定义）</li>
+<li>不同的主机上的进程通信，需要通过<strong>交换消息</strong>来完成</li>
+</ul>
+<h4 id="cs">客户/服务器（C/S）模型</h4>
+<ul>
+<li>客户向服务器发出服务请求，并接收服务器的响应；服务器等待客户的请求并为客户提供服务</li>
+<li>例如：Web 浏览器/ Web 服务器；Email 客户端 / Email 服务器</li>
+</ul>
+<h4 id="p2p">对等计算（P2P模型）</h4>
+<ul>
+<li>最小化（或不同）专用服务器</li>
+<li>例如：Skype、BitTorrent</li>
+</ul>
+<h3 id="_8">客户/服务器进程交互模型</h3>
+<h4 id="_9">服务器进程</h4>
+<ul>
+<li>被动等待</li>
+<li>长久在线</li>
+<li>固定 IP 地址</li>
+<li>利用云/集群提供扩展性</li>
+</ul>
+<h4 id="_10">客户进程</h4>
+<ul>
+<li>启动与服务器的通信</li>
+<li>可能为间歇性连接</li>
+<li>可能使用动态 IP 地址</li>
+<li>不与其它客户进行直接通信</li>
+</ul>
+<h3 id="p2p_1">纯 P2P 进程交互模型</h3>
+<ul>
+<li><strong>无</strong>长久在线的服务器</li>
+<li>任意的终端系统之间都可能进行<strong>直接</strong>通信</li>
+<li>端系统之间可能间歇性地进行连接</li>
+<li>端系统可能使用动态的 IP 地址</li>
+<li>==高扩展性但维护困难==</li>
+</ul>
+<h3 id="p2p_2">客户/服务器 与 P2P 的结合</h3>
+<h4 id="skype">Skype</h4>
+<ul>
+<li>VoIP P2P 应用</li>
+<li>中心服务器：远程客服的地址发现</li>
+<li>端-端连接：直连（不通过服务器）</li>
+</ul>
+<h4 id="_11">即时消息</h4>
+<ul>
+<li>用户间利用 P2P 模式进行消息发送与聊天</li>
+<li>中心服务器：用户呈现探测与位置发现</li>
+<li>当在线时，用户向消息中心服务器注册其 IP 地址</li>
+<li>用户利用中心服务器搜索对方用户的 IP 地址</li>
+</ul>
+<h3 id="_12">进程的地址表示</h3>
+<ul>
+<li>为了发送和接受消息，进程必须具有一个<strong>标识符</strong></li>
+<li>主机拥有一个唯一的 32 位 IPv4 地址（或128位 IPv6 地址）</li>
+<li>利用主机的 IP 地址表示主机中的进程是否可以？（不可以）</li>
+<li>进程标识符：包括 <strong>IP 地址</strong>和<strong>端口号</strong></li>
+<li>端口号举例：</li>
+<li>Web 服务进程：80</li>
+<li>Email（SMTP）服务器进程：25</li>
+<li>为了向 Web 服务器发送消息，Web 浏览器需要使用进程标识符</li>
+<li>IP 地址：202.113.16.33</li>
+<li>端口号：80</li>
+</ul>
+<h3 id="_13">应用层协议定义的内容</h3>
+<ul>
+<li>消息类型，如请求request、响应response</li>
+<li>消息的语法，如消息包含哪些字段，字段之间如何分割等（how to do）</li>
+<li>消息的语义，如字段中信息代表的具体含义（what to do）</li>
+<li>消息的处理，进程何时发送消息、收到消息后的动作等（when to do）</li>
+<li>公共协议</li>
+<li>RFC 中定义的协议</li>
+<li>可相互兼容</li>
+<li>如：HTTP、SMTP等</li>
+<li>专有协议</li>
+<li>公司或组织拥有</li>
+<li>例如：Skype、QQ等</li>
+</ul>
+<h2 id="2-2">2-2 传输层服务对应用的支持</h2>
+<h3 id="_14">应用需要什么样的传输层服务？</h3>
+<p>数据丢失率</p>
+<ul>
+<li>音视频等应用可以容忍一定的数据丢失</li>
+<li>文件传输、远程登录等应用要求100%的数据可靠</li>
+</ul>
+<p>时延</p>
+<ul>
+<li>网络电话、交互游戏等应用对时延有一定要求</li>
+</ul>
+<p>带宽</p>
+<ul>
+<li>多媒体等应用需要一定的带宽保证</li>
+<li>有些应用是弹性的</li>
+</ul>
+<p>常见应用对传输层的要求（教材上P61）</p>
+<h3 id="_15">互联网传输层提供的服务</h3>
+<h4 id="tcp-p60">TCP 服务（书上 P60）</h4>
+<ul>
+<li>面向连接：客户与服务器之间需要建立连接</li>
+<li>可靠传输：可保证传递数据无差错</li>
+<li>流量控制：发送数据不会超过接受端的容纳容量</li>
+<li>拥塞控制：提供拥塞解决方案</li>
+<li>不能提供：时延和带宽保证</li>
+</ul>
+<h4 id="udp-p62">UDP 服务（书上 P62）</h4>
+<ul>
+<li>不可靠：不可靠的数据投递</li>
+<li>不能提供：连接建立、可靠性、流量控制、拥塞控制、时延和带宽保证</li>
+</ul>
+<h5 id="udp">为什么需要 UDP？</h5>
+<p>设计简单，容易实现。</p>
+<h4 id="p62">常见应用使用的传输层服务（书上 P62 下方）</h4>
+<p>趋势：UDP 应用逐渐增多</p>
+<h2 id="2-3-socket">2-3 Socket 编程</h2>
+<h3 id="_16">网络编程界面</h3>
+<ul>
+<li>TCP/IP 协议通常在操作系统的<strong>内核</strong>中实现</li>
+<li>编程界面：由操作系统提供的功能调用，可以使应用程序方便地使用内核的功能</li>
+<li>最常用的就是 Socket（套接字）：支持 TCP/IP 的操作系统为网络程序开发提供的典型网络编程界面</li>
+</ul>
+<h3 id="sockets">Sockets 套接字</h3>
+<ul>
+<li>进程通过<strong>套接字</strong>发送消息和接受消息</li>
+<li>套接字可以看成一道“门”</li>
+<li>发送进程把消息从“门”推出去</li>
+<li>发送进程推出去的消息利用下层通信设施传递到接收进程的“门”</li>
+<li>接收进程再从“门”把消息拉进来</li>
+<li>API：选择使用的传输层协议；对套接字的一些参数进行修改</li>
+</ul>
+<h4 id="_17">套接字分为两种</h4>
+<ul>
+<li><strong>数据报套接字（datagram sockets）</strong>：使用 UDP 协议，支持主机之间面向非连接，不可靠的数据传输</li>
+<li><strong>流式套接字（stream sockets）</strong>：使用 TCP 协议，支持主机之间面向连接的、顺序的、可靠的、全双工的字节流传输服务</li>
+<li>支持 socket 的操作系统：Windows、UNIX、Linux、iOS、Android等</li>
+<li>支持 socket 的编程语言：==C、C++==、Python、Java、VB等</li>
+</ul>
+<h3 id="udp_1">利用 UDP 服务的应用程序编写步骤</h3>
+<p>socket-&gt;bind(绑定端口，客户端可以不用)-&gt;sendto/receivefrom-&gt;close</p>
+<h3 id="tcp">利用 TCP 服务的应用程序编写步骤</h3>
+<p>麻烦，复杂。上层必须保障可靠性</p>
+<h3 id="socket-c-socket">Socket 编程—— C 中常用的 Socket 函数</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">//WSAStartup</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">WSAAPI</span><span class="w"> </span><span class="n">WSAStartup</span><span class="p">(</span><span class="c1">//成功返回0，否则错误代码</span>
+<span class="w">    </span><span class="n">WORD</span><span class="w"> </span><span class="n">wVersionRequested</span><span class="p">,</span><span class="c1">//调用者希望使用的版本</span>
+<span class="w">    </span><span class="n">LPWSADATA</span><span class="w"> </span><span class="n">lpWSAData</span><span class="c1">//可用Socket的详细信息</span>
+<span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>功能：初始化 Socket DLL，协商使用的Socket版本</li>
+<li>WSADATA：</li>
+<li>wVersion：推荐调用者使用的Socket版本号</li>
+<li>wHighVersion：系统实现的Socket最高版本号</li>
+<li>如果调用成功，不在使用时需要调用WSACleanup释放Socket的DLL资源</li>
+</ul>
+<p>……见PPT</p>
+<p>作业：</p>
+<p>下层使用 TCP（流式套接字），聊天程序。</p>
+<p>最基本的：客户端和服务器端的聊天。</p>
+<p>互相发送的信息能正确显示，要能显示正确的日期时间</p>
+<ul>
+<li>应用层协议设计</li>
+<li>程序设计</li>
+<li>程序的实现</li>
+<li>程序如何使用</li>
+</ul>
+<p>要求：必须要完成一对一聊天，可选群聊</p>
+<p>参考代码：孙一丁学长的代码</p>
+<p>https://emanual20.github.io/2020/12/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9Clab1-TCPsocket%E8%81%8A%E5%A4%A9%E5%AE%A4/</p>
+<h2 id="2-4">2-4 电子邮件服务与协议</h2>
+<ul>
+<li>
+<p>电子邮件系统的三个主要组件</p>
+</li>
+<li>
+<p>用户代理（接口）</p>
+<ul>
+<li>编辑和发送邮件</li>
+<li>接受、读取和管理邮件</li>
+<li>管理地址薄</li>
+<li>无统一标准</li>
+</ul>
+</li>
+<li>
+<p>邮件服务器</p>
+<ul>
+<li>邮箱：保存用户收到的消息</li>
+<li>消息输出队列：消息的发送队列</li>
+<li>SMTP 协议：邮件服务器之间传递邮件使用的协议</li>
+<li>smtp 客户：发送邮件端</li>
+<li>smtp 服务器：接收邮件端</li>
+</ul>
+</li>
+<li>
+<p>简单邮件传输协议：SMTP</p>
+</li>
+</ul>
+<h3 id="smtppop">邮件客户/服务器模型（SMTP/POP）</h3>
+<ul>
+<li>
+<p><strong>用户接口</strong>: 编辑和阅读邮件</p>
+</li>
+<li>
+<p><strong>邮件传输进程</strong> (SMTP客户): 向SMTP服务器发起连接与传递邮件 </p>
+</li>
+<li>
+<p><strong>邮件服务进程</strong> (SMTP服务器): 从SMTP客户接收邮件和转发邮件，并将邮件分发至用户邮箱</p>
+</li>
+<li>
+<p><strong>POP</strong><strong>客户</strong>: 连接POP服务器, 发起读取邮件请求</p>
+</li>
+<li>
+<p><strong>POP</strong><strong>服务器</strong>: 接收POP客户请求，从用户邮箱读取邮件</p>
+</li>
+</ul>
+<h3 id="smtp">SMTP：简单邮件传输协议</h3>
+<ul>
+<li>
+<p>利用TCP可靠地从客户向服务器传递邮件</p>
+</li>
+<li>
+<p><strong>直接投递</strong>: 发送端直接到接收端</p>
+</li>
+<li>
+<p>SMTP的3个阶段：连接建立、邮件传送、连接关闭</p>
+</li>
+<li>
+<p>命令/响应</p>
+</li>
+<li>命令: ASCII字符串</li>
+<li>
+<p>响应: 状态码+短语</p>
+</li>
+<li>
+<p>消息为7位ASCII</p>
+</li>
+<li>
+<p>RFC 821: SMTP</p>
+</li>
+</ul>
+<h3 id="smtp_1">SMTP</h3>
+<ul>
+<li>
+<p>SMTP服务器在TCP的25端口进行监听</p>
+</li>
+<li>
+<p>SMTP客户与SMTP服务器的25端口建立TCP连接，并等待服务器的响应</p>
+</li>
+<li>
+<p>如果服务希望接收邮件，邮件客户端会告知邮件的发件人和邮件的收件人</p>
+</li>
+<li>
+<p>如果服务器可以处理收件人的邮件，服务器通知客户发送邮件内容</p>
+</li>
+<li>
+<p>客户发送邮件内容，服务器对其进行响应</p>
+</li>
+<li>
+<p>所有交互完成后，关闭连接</p>
+</li>
+</ul>
+<h3 id="_18">邮件访问协议</h3>
+<ul>
+<li>
+<p>SMTP: 向服务器传递邮件</p>
+</li>
+<li>
+<p>邮件访问协议: 从邮件服务器的邮箱中获取邮件</p>
+</li>
+<li>POP: 邮局协议[RFC 1939]</li>
+<li>IMAP: Internet邮件访问协议</li>
+<li>[RFC 2060]HTTP: 超文本传输协议</li>
+</ul>
+<h2 id="2-5">2-5 文件传输服务与协议</h2>
+<h2 id="2-6">2-6 域名系统</h2>
+<h3 id="_19">域名系统概述</h3>
+<ul>
+<li>
+<p>互联网中使用IP地址寻址主机（例如：IP数据包转发）</p>
+</li>
+<li>
+<p>为了方便记忆，每台提供服务的主机通常会有一个或多个名字</p>
+</li>
+<li>
+<p>例如：访问学院网站，输入名字cc.nankai.edu.cn</p>
+<p>对应的IPv4地址：222.30.45.190</p>
+<p>对应的IPv6地址：2001:250:401:d450::190</p>
+</li>
+<li>
+<p>如何将名字映射到地址？</p>
+</li>
+<li>
+<p>早期的集中式管理和发布</p>
+<ul>
+<li>本地存储Hosts文件，实现名字到地址的静态映射</li>
+<li>可以通过FTP服务为连入Internet的主机提供域名的发布和下载</li>
+</ul>
+</li>
+<li>
+<p>存在的问题</p>
+<ul>
+<li>扩展性差</li>
+</ul>
+</li>
+<li>
+<p>DNS（Domain Name System）：自动实现名字到地址映射的系统</p>
+</li>
+<li>
+<p>DNS基本思想</p>
+</li>
+<li>
+<p>名字和地址映射关系分布式存放，形成具有层次结构的分布式数据库系统（分布式管理）</p>
+</li>
+<li>
+<p>通过查询分布式数据库，获得名字到地址的映射，或相反</p>
+</li>
+<li>
+<p>关键</p>
+</li>
+<li>
+<p>如何组织分布式数据库</p>
+</li>
+<li>如何在分布式数据库中查找</li>
+</ul>
+<h4 id="dns">DNS 域名体系</h4>
+<p>按组织类别命名、顶级域名、二级域名、按国家或区域、域名已成为互联网的重要基础性资源</p>
+<p>优点：可以支持大规模、快速扩展，不需要中心节点支持；通过部分名字空间的授权实现非集中式管理；名字到地址的映射可以通过分布方式实现</p>
+<p>层级命名、逐级授权、多级管理</p>
+<ul>
+<li>顶级域名：由互联网名称与数字地址分配机构(ICANN)负责管理</li>
+</ul>
+<p>ICANN 与域名注册商签订合同， 准许其受理顶级域名.com、.net、.org 下的域名注册</p>
+<h4 id="dns_1">DNS 域名解析</h4>
+<ul>
+<li>域名解析：名字到地址映射（通过名字查地址）</li>
+<li>分布式：层级的服务器组织，协同实现解析</li>
+<li>有效性：大多数解析可以在本地完成，一部分会产生互联网流量</li>
+<li>可靠性：通过冗余设置，避免单点失效</li>
+<li>客户-服务器模式</li>
+<li>域名服务器：保存名字到地址映射关系（数据库）；接收客户端请求，并给出响应</li>
+<li>域名解析器：请求域名解析的客户进程；向域名服务器发起解析请求，并等待服务器的响应</li>
+</ul>
+<h4 id="dns_2">DNS 服务器组织</h4>
+<ul>
+<li>每台域名服务器包含一个或多个区域的信息</li>
+<li>父节点服务器已知子节点服务器的地址</li>
+</ul>
+<p>根域名服务器对互联网发展至关重要，除IPv4时代的13个根服务器，目前在16个国家设立了25台IPv6根服务器，我国部署了4台，打破了我国无根服务器的困境</p>
+<ul>
+<li>根域名服务器：全球13个逻辑根域名服务器（a~m），每个根服务器都有多个镜像，实际的服务器数量目前达1326个（中国：大陆13个，台湾6个，香港9个）</li>
+<li>顶级域名服务器（Top-Level Domain, TLD）：负责顶级域名的解析</li>
+<li>授权域名服务器</li>
+<li>对于名字与地址映射，保留其初始数据来源的服务器</li>
+<li>主要区分名字与地址映射是原始的还是被缓存的（非授权）</li>
+<li>本地域名服务器（或称默认域名服务器）</li>
+<li>一般每个ISP都部署有域名服务器，其用户可将该服务器设置成本地域名服务器（或默认域名服务器）</li>
+<li>当进行域名解析时，查询请求首先发送到本地域名服务器（即查询的起点）</li>
+</ul>
+<h4 id="dns_3">DNS 域名服务器缓存</h4>
+<ul>
+<li>目的：降低非本地名字查询开销及查询延时</li>
+<li>通常地址与名字的绑定变化不频繁</li>
+<li>服务器缓存名字与地址映射关系</li>
+<li>服务器学习到某个名字和地址的映射关系时，便进行缓存</li>
+<li>记录名字和地址的映射从何处获取</li>
+<li>基于授权服务器中的TTL值设置超时时间，缓存的映射关系经过一定时间会超时</li>
+<li>TLD服务器通常会被本地域名服务器缓存，可以有效减少根域名服务器的访问频度</li>
+<li>服务器使用缓存的映射关系响应客户端的请求</li>
+<li>标记为非授权（nonauthoritative）映射</li>
+<li>给出获取映射的服务器的域名和IP地址</li>
+<li>客户机接收服务器响应</li>
+<li>映射有可能过时</li>
+<li>如果注重效率，客户端接受非授权响应</li>
+<li>如果注重准确性，客户机可以再联系授权服务器，验证映射是否仍有效</li>
+</ul>
+<h4 id="_20">主机缓存</h4>
+<ul>
+<li>基本方法</li>
+<li>在启动时从本地域名服务器下载名字-地址映射数据库</li>
+<li>定期获取新的映射</li>
+<li>缓存最近用过的名字和地址映射</li>
+<li>优点</li>
+<li>无需访问域名服务器，名字解析速度快</li>
+<li>本地服务器的故障不影响名字解析</li>
+<li>减低服务器的负载</li>
+<li>缺点</li>
+</ul>
+<h4 id="dns_4">DNS 资源记录</h4>
+<ul>
+<li>DNS使用区域数据库存储名字与地址映射关系，区域数据库由资源记录（Resource Records，RR）组成</li>
+<li>资源记录结构：名字、TTL、类型、类、值</li>
+</ul>
+<h2 id="2-7-web-http">2-7 Web 服务与 HTTP 协议</h2>
+<h3 id="web">Web 客户/服务器模型</h3>
+<ul>
+<li>服务器</li>
+<li>Web页面（HTML文档）：包含到多种对象的链接</li>
+<li>对象：可以是HTML文档、图像文件、视频文件、声音文件、脚本文件等</li>
+<li>对象用URL（统一资源定位符）编址：协议类型://主机名//路径和文件名</li>
+<li>客户端</li>
+<li>发出请求、接收响应、解释HTML文档并显示；</li>
+<li>有些对象需要浏览器安装插件</li>
+</ul>
+<h3 id="http">HTTP 协议</h3>
+<ul>
+<li>HTTP（ HyperText Transfer Protocol）</li>
+<li>传输层通常使用TCP协议，缺省使用TCP的80端口</li>
+<li>HTTP为无状态协议，服务器端不保留之前请求的状态信息<ul>
+<li>无状态协议：效率低、但简单</li>
+<li>有状态协议：维护状态相对复杂，需要维护历史信息，在客户端或服务器出现故障时，需要保持状态的一致性等</li>
+</ul>
+</li>
+<li>HTTP标准</li>
+</ul>
+<h4 id="http10">HTTP1.0</h4>
+<p>非持久连接，一个get请求要一次tcp连接，三次握手，对象请求和传输，关闭连接</p>
+<h4 id="http11">HTTP1.1</h4>
+<p>持久连接，按序响应、停等机制、流水线机制</p>
+<h4 id="http_1">HTTP报文类型</h4>
+<p>HTTP两种报文：请求、响应</p>
+<p>HTTP请求报文：采用ASCII 数据部分采用MIME格式</p>
+<p>HTTP响应报文：数据部分采用MIME格式</p>
+<p>响应行、响应头、响应体</p>
+<p>HTTP1.1请求方法：get post head put delete</p>
+<ul>
+<li>典型的状态码</li>
+<li>200 OK 请求成功，被请求的对象包含在该响应的数据部分</li>
+<li>301 Moved Permanently 请求的对象被移走，新的位置在响应中通过Location: 给出</li>
+<li>400 Bad Request 服务器不能解释请求报文</li>
+<li>404 Not Found 服务器中找不到请求的文档</li>
+<li>505 HTTP Version Not Supported 服务器不支持相应的HTTP版本</li>
+</ul>
+<h3 id="-">用户-服务器交互：认证</h3>
+<ul>
+<li>认证：控制对服务器内容的访问</li>
+<li>认证方法：通常使用“名字-口令”</li>
+<li>无状态：客户端需要在每个请求中携带认证信息</li>
+<li>每个请求头中包含authorization:</li>
+<li>如果请求头中无authorization: 则服务器拒绝访问，并在响应头中包含WWW authenticate：</li>
+</ul>
+<h3 id="cookies">Cookies</h3>
+<p>服务器使用cookies保持状态</p>
+<ul>
+<li>HTTP响应头中使用set-cookie：选择的cookie号具有唯一性</li>
+<li>后继的HTTP请求中使用cookie：</li>
+<li>Cookie文件保存在用户的主机中，由用户主机中的浏览器管理</li>
+<li>Web服务器建立后端数据库，记录用户信息</li>
+</ul>
+<h3 id="web_1">Web缓存机制：客户端缓存</h3>
+<p>目标：如果被请求的对象在客户端缓存有最近版本，则不需要发送该对象</p>
+<p>客户端：在发送的HTTP请求中指定缓存的时间，请求头包含</p>
+<p>服务器：如果缓存的对象是最新的，在响应时无需包含该对象，响应头包含</p>
+<h3 id="web_2">Web缓存机制：代理服务器缓存</h3>
+<p>目标：由代理服务器进行缓存，尽量减少原始服务器参与</p>
+<p>用户设置浏览器：通过代理服务器进行Web访问</p>
+<p>浏览器将所有的HTTP请求发送到代理服务器</p>
+<ul>
+<li>如果缓存中有被请求的对象，则直接返回对象</li>
+<li>否则，代理服务器向原始服务器请求对象，再将对象返回给客户端</li>
+</ul>
+<h3 id="http11_1">HTTP1.1存在的问题</h3>
+<ul>
+<li>HTTP1.1的问题</li>
+<li>队头阻塞问题<ul>
+<li>基于文本协议的问答有序模式，先请求的必须先响应</li>
+</ul>
+</li>
+<li>传输效率问题<ul>
+<li>文本格式，冗长重复的头部</li>
+</ul>
+</li>
+<li>HTTP1.1队头阻塞问题解决</li>
+<li>浏览器建立多个TCP连接<ul>
+<li>一般最多建立6个TCP连接</li>
+<li>通过不同TCP连接传送请求没有响应顺序的要求</li>
+<li>耗费比较多的计算和存储资源</li>
+</ul>
+</li>
+</ul>
+<h3 id="http20">HTTP2.0协议基本原理</h3>
+<ul>
+<li>二进制分帧传输</li>
+<li>不改变HTTP原有的语义</li>
+<li>将HTTP请求和响应分割成帧，采用二进制编码</li>
+<li><strong>帧</strong>为最小传输单位</li>
+<li>
+<p>最常用的HTTP请求/响应的帧形式</p>
+</li>
+<li>
+<p>TCP 连接复用：提高连接利用率，解决HTTP队头阻塞问题</p>
+</li>
+<li>消息message：HTTP一次响应或请求包含一个或多个帧</li>
+<li>流stream：简单看成一次请求和应答，包含多个帧</li>
+<li>每个TCP连接中可以承载多个流，不同流的帧可以交替穿插传输</li>
+<li>流的创建与表示<ul>
+<li>stream ID：表示一个流。客户端创建的流，ID为奇数；服务器创建的流，ID为偶数；0x00和0x01用于特定场景；Stream ID 不能重复使用，如果一条连接上ID分配完，会新建一条连接。接收端通过Stream ID进行消息的组装。</li>
+<li>流创建：发送和接收到HEADERS帧（包括新的stream ID）时创建</li>
+<li>流优先级：可以依据重要性为流设置不同的优先级（1~256），在headers帧中承载</li>
+</ul>
+</li>
+<li>服务器推送：提高响应速度</li>
+<li>服务器在请求之前先推送响应信息到客户端，推送的响应信息可以在客户端被缓存</li>
+<li>HTTP头压缩（HPACK）</li>
+<li>请求头由大量的键值组成，多个请求的键值重复程度很高</li>
+<li>静态表：定义通用HTTP头域，常用键值无需重复传送，直接引用内部字典的整数索引</li>
+<li>动态表： 两边交互发现新的头域，添加到动态表</li>
+<li>自定义键值：采用Huffman编码</li>
+<li>HTTP 2.0协议解决的问题</li>
+<li>通过引入流机制，解决了HTTP队头阻塞问题，提高了传输效率</li>
+<li>通过二进制编码、头压缩机制提高了网络带宽利用率</li>
+<li>通过服务器推送，加快了页面响应速度</li>
+<li>HTTP 2.0协议没有解决的问题</li>
+<li>TCP+TLS的多次交互，造成<strong>启动延迟问题</strong></li>
+<li>对移动主机和多宿主机的连接迁移问题（从wifi切到蜂窝网络会断开）</li>
+<li>TCP队头阻塞问题</li>
+</ul>
+<h2 id="2-8-cdn">2-8 内容分发网络 CDN</h2>
+<h3 id="_21">内容分发网络概述</h3>
+<ul>
+<li>基本思想源于MIT对Web服务瞬间拥塞问题的解决（1998）</li>
+<li>一种Web缓存系统，靠近网络边缘（用户）提供内容服务</li>
+<li>目前提供更丰富的服务，包括静态内容、流媒体、用户上传视频等</li>
+<li>主要优点</li>
+<li>降低响应时延，避免网络拥塞</li>
+<li>避免原始服务器过载及防止DDoS攻击</li>
+<li>分布式架构，具有良好的可扩展性</li>
+<li>对用户透明，无需用户感知 </li>
+<li>关键问题</li>
+<li>CDN服务器如何布局</li>
+<li>在哪里缓存、缓存哪些内容</li>
+<li>如何进行重定向，将请求调度到较近或负载较轻的CDN服务器</li>
+<li>CDN服务提供</li>
+<li>CDN服务提供商：Akamai、蓝讯、世纪互联、网宿等</li>
+<li>互联网内容提供商（ICP）：腾讯、百度等</li>
+<li>互联网服务提供商（ISP）：移动、联通、电信等</li>
+</ul>
+<h2 id="2-9-dash">2-9 动态自适应流媒体协议 DASH</h2>
+<h3 id="_22">概述</h3>
+<ul>
+<li>
+<p>DASH (Dynamic Adaptive Streaming over HTTP)</p>
+</li>
+<li>
+<p>MPEG组织制定的标准（标准号ISO/IEC 23009-1）</p>
+</li>
+<li>
+<p>基于HTTP的流媒体传输协议</p>
+<p>基于HTTP渐进式下载（类流媒体）</p>
+</li>
+<li>
+<p>类似协议</p>
+<ul>
+<li>HTTP Live Streaming（HLS），苹果公司</li>
+<li>HTTP Dynamic Streaming（HDS），Adobe公司</li>
+<li>Microsoft Smooth Streaming （MSS） ，微软公司</li>
+</ul>
+</li>
+<li>
+<p>基本思想</p>
+</li>
+<li>
+<p>完整视频被拆分为固定时长(2s-10s)、不同码率的视频片段(segment)</p>
+</li>
+<li>视频片段与媒体表示描述(Media Presentation Description, MPD) 文件一同存放于DASH服务器</li>
+<li>客户端根据自身设备性能、当前网络条件、客户端缓冲大小等自适应选择一种视频码率进行下载</li>
+</ul>
+<h3 id="_23">基本原理</h3>
+<p>例如：HTTP服务器中保存有高中低三种质量的视频片段，DASH客户端评估网络状况，通常在保证视频流畅的前提下，获取最高质量的视频片段</p>
+<ul>
+<li>
+<p>MPD (Media Presentation Description) 文件</p>
+</li>
+<li>
+<p>一种XML 文件，描述了DASH流媒体中视频/音频文件信息</p>
+</li>
+<li>
+<p>自适应码率（Adaptive bitrate，ABR）规则</p>
+</li>
+<li>
+<p>2个主要码率切换规则</p>
+<ul>
+<li>基于吞吐量的算法</li>
+</ul>
+<p>例如：使用滑动窗口平均估计未来吞吐量，选择不高于估计值的最大码率视频</p>
+<ul>
+<li>基于缓冲的算法</li>
+</ul>
+<p>例如：使用缓冲区满的级别来决定下一个segment的请求码率</p>
+</li>
+<li>
+<p>放弃请求规则(AbandonRequestsRule)</p>
+<ul>
+<li>在下载视频块的过程中，如果算法检测到下载该视频块的过程过有卡顿，则终止当前请求，转而重新下载相应的低码率视频块。</li>
+</ul>
+</li>
+<li>
+<p>扩展：考虑多DASH服务器同时传输</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2679 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="tinsir888">
+      
+      
+        <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M2RelationsofFairnessProperties/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Fair Division 2 Relations of Fairness Properties - tinsir888's Study Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#abstract" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            tinsir888's Study Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fair Division 2 Relations of Fairness Properties
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    tinsir888's Study Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CS@NKU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS@NKU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    感知技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            感知技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 传感器的性能与评价
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 电传感原理与测量方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/PerceptionTechnology/Kapite4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 常用物理效应与器件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数字信号处理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数字信号处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 信号分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 再探时域数字信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数字信号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 信号与系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 离散时间傅里叶变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DigitalSignalProcessing/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 频谱分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/DatabaseSystem/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    智能计算系统
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            智能计算系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 神经网络基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 深度学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 编程框架使用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 编程框架机理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 深度学习处理器原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度学习处理器架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/AIComputingSystem/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 智能编程语言
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    汇编与逆向
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            汇编与逆向
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 汇编语言基本概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 IA-32 处理器体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 汇编语言基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 数据传送与寻址
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 PE 文件结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 区块表、输入表和输出表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 静态逆向技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 C 语言程序逆向分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/Assembler%26ReverseEngineering/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 软件保护技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    网络技术与应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            网络技术与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 以太网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 交换与虚拟局域网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无线局域网组网技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 互联网与 IP 协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 IP 数据报
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 IP 地址与 ARP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 路由器与路由选择
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/NetworkTechnology/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 接入互联网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机体系结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            计算机体系结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA1%E6%A6%82%E8%BF%B020210906/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA2%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%AF%84%E4%BC%B020210918/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 量化设计与评估
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA3%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%8420210927/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 指令集体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA4%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A120211011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 存储层次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA5%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%281%2920211018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 流水线技术上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA6%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 流水线技术下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA7%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 指令级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA8%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%282%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 指令级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA9%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第九章 数据级并行性上
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA10%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十章 数据级并行性下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA11%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十一章 线程级并行性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerArchitecture/CA12%E4%BB%93%E5%BA%93%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十二章 仓库级计算机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    课程信息
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机网络概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 应用层协议及网络编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 传输层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 网络层协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/ComputerNetwork/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 接口层原理与协议
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    强化学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            强化学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel1-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 强化学习简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 马尔可夫决策过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel3-%E5%80%BC%E5%87%BD%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 值函数估计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel4-%E6%97%A0%E6%A8%A1%E5%9E%8B%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 无模型控制方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel5-%E8%BF%91%E4%BC%BC%E9%80%BC%E8%BF%91%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 近似逼近方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel6-%E8%A7%84%E5%88%92%E4%B8%8E%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章 规划与学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel7-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章 深度强化学习价值方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel8-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AD%96%E7%95%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第八章 深度强化学习策略方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nkucs/handsonrl/Kapitel14-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第十四章 多智能体强化学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Objective: Investigate relations between several fairness properties and their approximations.</p>
+<p>Activities: Read and present the paper <em>Multiple birds with one stone</em> (2020).</p>
+<h1 id="abstract">Abstract</h1>
+<p>Algorithm proposed, achieves $(\phi-1)$-EFX and $\frac{2}{\phi+2}$-GMMS. ($\phi={\sqrt5+1\over2}$)</p>
+<blockquote>
+<p>Previous work: $1\over2$-EFX. $1\over2$-GMMS. EF1 + $2\over3$-PMMS.</p>
+</blockquote>
+<p>GMMS PMMS EFX allocation always exist when # of goods $\le2\times$# of agents.</p>
+<h1 id="introduction">Introduction</h1>
+<p>Relaxation of fairness notion: EF → EFX, EF1</p>
+<p>Approximation of relaxed fairness notion: $\alpha$-EFX...</p>
+<p><em>A good approximation of any one of EF1, EFX, MMS, PMMS doesn't necessarily imply particularly strong guarantees for any of the others.</em> Thus it's desirable to achieve approximation of several fairness notions simultaneously.</p>
+<h2 id="main-contribution">Main Contribution</h2>
+<p>Algorithm proposed in this paper:</p>
+<ol>
+<li>$0.618$-EFX</li>
+<li>$0.553$-GMMS</li>
+<li>EF1</li>
+<li>$0.667$-PMMS</li>
+</ol>
+<p>Algorithm is based on draft algorithm, envy-cycle elimination. (parametric version)</p>
+<p>GMMS PMMS EFX always exist and can be found efficiently when # of goods $\le2\times$# of agents. non-trivial problem</p>
+<h2 id="related-work">Related Work</h2>
+<p>~~Skipped here~~</p>
+<h1 id="preliminaries">Preliminaries</h1>
+<p>$N={1,2,\cdots,n}$ set of $n$ agents.</p>
+<p>$M$ set of $m$ indivisible items.</p>
+<p>Valuation function should be monotone and additive: $\forall S\subseteq M,v_i(S)=\sum_{g\in S}v_i(g)$ and $(\forall i\in N)\and(\forall g\in M),v_i(g)\ge0$.</p>
+<p>Assume that we have already know the valuation function for each agent.</p>
+<p><strong>All the goods should be allocated</strong>, i.e., no free disposal.</p>
+<p>Allocation: $\mathcal A=(A_1,\cdots,A_n)$ where $A_i\cap A_j\neq\emptyset$ and $\bigcup_iA_i=M$.</p>
+<ul>
+<li>$A_i$ is the bundle allocated to agent $i$,</li>
+</ul>
+<p>$\Pi_n(M)$: set of all partitions of a set $M$ into $n$ bundles.</p>
+<h2 id="fairness-concepts-review">Fairness Concepts (Review)</h2>
+<p>Family of Envy-freeness</p>
+<ul>
+<li>
+<p>EF, EF1, EFX, $\alpha$-EFX</p>
+</li>
+<li>
+<p>EF → EFX</p>
+</li>
+</ul>
+<p>Family of Maximin Share (worst-case guarantee)</p>
+<ul>
+<li>
+<p>Maximin Share $\mu_i$</p>
+</li>
+<li>
+<p>To find an allocation $\mathcal A$ s.t., for each agent $i$ it maximizes $\min_{A_j\in\mathcal A}v_i(A_j)$</p>
+<p>$\Lrarr\mu_i(n,S)=\max_{\mathcal A\in\Pi_n(S)}\min_{A_j\in\mathcal A}v_i(A_j)$</p>
+</li>
+<li>
+<p>$\alpha$-MMS $\forall i\in N,v_i(A_i)\ge\alpha\cdot\mu_i(n,M)$</p>
+</li>
+<li>
+<p>$\alpha$-P(Pairwise)MMS: For each pair $i,j\in N,v_i(A_i)\ge\alpha\cdot\mu_i(2,A_i\cup A_j)$</p>
+</li>
+<li>
+<p>$\alpha$-G(Groupwise)MMS: For each subset $N'\subseteq N$, $\forall i\in N',v_i(A_i)\ge\alpha\cdot\mu_i(|N'|,\cup_{j\in N'}A_j)$</p>
+</li>
+</ul>
+<p>Thus, <strong>GMMS$\Rarr$MMS, MMS$\not\rarr$PMMS</strong> (GMMS is for all the subset of agents, MMS is only for all the agents)</p>
+<h2 id="known-ef1-algorithms">Known EF1 Algorithms</h2>
+<h3 id="envy-cycle-elimination-algorithm">Envy-cycle Elimination Algorithm</h3>
+<p>Partial allocation $\mathcal P\subsetneq M$.</p>
+<p>Envy graph $G_\mathcal P=(N,E_\mathcal P)$ where $(i,j)\in E_\mathcal P$ iff agent $i$ currently envies agent $j$.</p>
+<p>In each step, an agent that no one envies receives the next available good. </p>
+<p>Tie-breaking: lexicographically order.</p>
+<p>:heavy_exclamation_mark::thinking:Theorem 1: Let $\mathcal P$ be any EF1 partial allocation and $M'=M\diagdown\cup_{i=1}^nP_i$. Then,</p>
+<blockquote>
+<p>(a) <strong>At the end of each iteration of the for loop, the resulting partial allocation is EF1.</strong> Thus the algorithm terminates with EF1 allocation.</p>
+<p>(b) Fix an agent $i$, let $A_i$ be the bundle assigned to $i$ at the end of some iteration of the for loop. If $A_i'$ is assigned to $i$ at the end of a future iteration, then $v_i(A_i')\ge v_i(A_i)$ <strong>MONOTONICITY!</strong></p>
+<p>(Proof by additive and monotone valuation function.)</p>
+</blockquote>
+<p>Pseudo code for Envy-cycle Elimination$(N,\mathcal P,M')$ $M'$ denotes set of unallocated goods.</p>
+<ol>
+<li>
+<p>Construct the envy graph $G_\mathcal P$.</p>
+</li>
+<li>
+<p>for every $g\in M'$, in lexicographic order do</p>
+</li>
+<li>
+<p>While there is no node of in-degree 0 in $G_\mathcal P$ do</p>
+<ul>
+<li>Find a cycle $j_1\rarr j_2\rarr\cdots\rarr j_r\rarr j_1$ in $G_\mathcal P$</li>
+<li>$B=P_{j1}$</li>
+<li>for $k=1$ to $r-1$ do</li>
+<li>$P_{jk}=P_{jk+1}$</li>
+<li>$P_{jr}=B$.</li>
+</ul>
+<p>// find a envy-cycle and eliminate it iteratively.</p>
+</li>
+<li>
+<p>Let $i\in N$ be a node of in-degree $=0$</p>
+</li>
+<li>
+<p>$P_i=P_i\cup{g}$</p>
+</li>
+<li>
+<p>Update $G_\mathcal P$</p>
+</li>
+<li>
+<p>return $\mathcal P$</p>
+</li>
+</ol>
+<h3 id="round-robin-algorithm">Round Robin Algorithm</h3>
+<p>Round-robin$(N,\mathcal P,M',\ell,\tau)$ also outputs EF1 allocation: $\ell$ denotes an order of $N$, $\tau$ denotes number of steps</p>
+<ol>
+<li>
+<p>$k=1$</p>
+</li>
+<li>
+<p>while $M'\neq\emptyset$ and $\tau\gt0$ do</p>
+</li>
+<li>
+<p>$g=\arg\max_{h\in M'}v_{\ell[k]}(h)$</p>
+<p><strong>In the while loop, each round player $\ell[k]$ get currently the maximal value of good.</strong></p>
+</li>
+<li>
+<p>$P_{\ell[k]}=P_{\ell[k]}\cup{g}$</p>
+</li>
+<li>
+<p>$M'=M'\diagdown{g}$</p>
+</li>
+<li>
+<p>$k=(k+1)\mod n$</p>
+</li>
+<li>
+<p>$\tau=\tau-1$</p>
+</li>
+<li>
+<p>return $(\mathcal P,M')$</p>
+</li>
+</ol>
+<h3 id="draft-and-eliminate-algorithm">Draft and Eliminate Algorithm</h3>
+<p>Draft and Eliminate$(N,M)$ also outputs EF1 allocation: <strong>Combination of ECE &amp; RR</strong></p>
+<ol>
+<li>$(\ell,n')=$ Preprocessing$(N,M)$</li>
+<li>Let $\mathcal A=(A_1,\cdots,A_n)$ with $A_i=\empty$ for each $i\in N$</li>
+<li>$(\mathcal A,M')=$ Round-robin$(N,\mathcal A,M,\ell,n)$</li>
+<li>Reverse $\ell$: $\ell^R=(\ell[n],\ell[n-1],\cdots,\ell[1])$</li>
+<li>$(\mathcal A,M')=$ Round-robin$(N,\mathcal A,M',\ell^R,n-n')$</li>
+<li>$\mathcal A=$ Envy-cycle Elimination$(N,\mathcal A,M')$</li>
+<li>return $\mathcal A$</li>
+</ol>
+<p>:heavy_exclamation_mark::thinking:Theorem 2</p>
+<blockquote>
+<p>Let $\ell$ be any ordering of $N$ and $\mathcal P_\empty=(\empty,\cdots,\empty)$, Round-robin algorithm produces an EF1 allocation in polynomial time.</p>
+<p>:raised_hand:Time complexity analysis:</p>
+<ul>
+<li>
+<p>Number of loop iterative is $\le\min(m,\tau)\le O(m)$</p>
+</li>
+<li>
+<p>$\arg\max$ is $O(|M'|)=O(m)$,</p>
+</li>
+<li>
+<p>The rest part in the loop should be $O(1)$.</p>
+</li>
+</ul>
+<p>Thus total complexity should be $O(m^2)$</p>
+</blockquote>
+<h1 id="a-simple-universally-fair-algorithm">A Simple Universally Fair Algorithm</h1>
+<p>Draft and Eliminate Algorithm. It suffices to run only two rounds of the round-robin algorithm, once w.r.t. $\ell$ and once w.r.t. reverse of $\ell$. <strong>(WHY?)</strong> Finally it runs the envy-cycle elimination algorithm on the remaining instance.</p>
+<h2 id="preprocessing">Preprocessing</h2>
+<p>Preprocessing$(N,M)$ step is facilitate the presentation and the analysis of the algorithm:</p>
+<ol>
+<li>$L=\empty;A=N;k=1$</li>
+</ol>
+<p><strong>//$L$ contains the agents that get to pick first in 1st round-robin at the expense of not choosing a second good in 2nd round-robin.</strong></p>
+<ol>
+<li>
+<p>while $A\neq\empty$ do</p>
+</li>
+<li>
+<p>Let $i$ be the lexicographically first agent of $A$</p>
+</li>
+<li>
+<p>$h_i=\arg\max_{g\in M}v_i(g)$</p>
+</li>
+<li>
+<p>$t_i=m-|M|+1$</p>
+</li>
+<li>
+<p>Let $R=(N\diagdown(A\cup L))\cup{i}$</p>
+</li>
+<li>
+<p>$j=\arg\max_{t\in R}v_i(h_t)$</p>
+</li>
+<li>
+<p>if $\phi\cdot v_i(h_i)\lt v_i(h_j)$ then <strong>here: $\phi=\frac{\sqrt5+1}{2}\approx1.618$</strong></p>
+<p><strong>//If an agent envies someone that chose before her by a factor grater than $\phi$, then she is moved to a position of high priority in the ordering that is created.</strong></p>
+<p><strong>//The agents moved to the first positions during this process are guaranteed a good of high value in first round-robin. To counterbalance their advantage, they are not allowed to pick a second good later in second round-robin.</strong></p>
+<ul>
+<li>$h_i=h_j$</li>
+<li>$L=L\cup{i}$</li>
+<li>$\ell[k]=i$</li>
+<li>$k=k+1$</li>
+<li>$A=(A\diagdown{i})\cup{j}$</li>
+</ul>
+</li>
+<li>
+<p>else</p>
+<ul>
+<li>$A=A\diagdown{i}$</li>
+<li>$M=M\diagdown{h_i}$</li>
+</ul>
+</li>
+<li>
+<p>for every $i\in N\diagdown L$ in order of increasing time stamp $t_i$ do</p>
+</li>
+<li>
+<p>$\ell[k]=i$</p>
+</li>
+<li>
+<p>$k=k+1$</p>
+</li>
+<li>
+<p>return $(\ell,[L])$</p>
+</li>
+</ol>
+<p>:question: After preprocessing, have we $A\cup L=N$?</p>
+<p>This preprocessing part reorders $N$ so that the first few agents are quite happy with their pick in the first round of the round-robin subroutine. For the remaining agents, we make sure that they get a second good before we move to the envy-cycle elimination algorithm. To do so in a balanced way, these agents pick goods in reverse order.</p>
+<p>The resulting partial allocation, where everyone receives one or two goods, turns out to have all the fairness properties we want to achieve at the end e.g. it's $(\phi-1)$-EFX w.r.t. currently allocated goods. Starting from there and then applying the envy-cycle elimination algorithm on the remaining instance maintains these properties.</p>
+<h1 id="fairness-guarantees-of-draft-and-eliminate">Fairness Guarantees of Draft-and-Eliminate</h1>
+<h2 id="about-preprocessing-step">About Preprocessing Step</h2>
+<p>:heavy_exclamation_mark::thinking:Lemma 1: At the end of the execution of preprocessing with input $(N,M)$, each agent $i$ is associated with a single good $h_i$, so that</p>
+<p>a) $v_i(h_i)\gt\phi\cdot v_i(g)$, for any $i\in L$ and $g\in M\diagdown\cup_{k=1}^n{h_k}$.</p>
+<blockquote>
+<p>Fix some $i\in L$ and consider the last iteration of the while loop where $i$ was the lexicographically first agent of $A$. During which $i$ was added to $L$.</p>
+<p>The initial good associated with $i$: $h_i^{old}$ during this iteration.</p>
+<p>The final good associated with $i$: $h_i$.</p>
+<p>$\because$ $i$ was added to $L$ eventually. $\therefore$ condition "$\phi\cdot v_i(h_i)\lt v_i(h_j)$" was true, i.e.,</p>
+<p>$i$'s favorite good among the ones associated to an agent not in $L$, say $h_j$, was more than $\phi$ times more valuable than $h_i^{old}$, we have $v_i(h_j)\gt\phi\cdot v_i(h_i^{old})\ge\phi\cdot v_i(g)$ for any good $g$ that was not associated to an agent at the time.</p>
+<p>Number of unassociated goods during the execution only decreases, thus the last inequality also holds for any good $g$ that was not associated to any agent till the end.</p>
+<p>By $h_i=h_j$, we conclude that $v_i(h_i)\gt\phi\cdot v_i(g)$ $\forall g\in M\diagdown\cup_{k=1}^n{h_k}$.</p>
+</blockquote>
+<p>b) $\phi\cdot v_i(h_i)\ge v_i(h_j)$ for any $i,j\in N\diagdown L$.</p>
+<blockquote>
+<p>Fix some $i,j\in N\diagdown L$. Note that both $i,j$ may be considered multiple times during preprocessing, i.e., they may be removed and added back to $A$ in several times.</p>
+<p>Consider 2 cases:</p>
+<ol>
+<li>Last time $i$ was considered before last time $j$ was considered ($t_i\lt t_j$ at the end)</li>
+</ol>
+<p>the desire inequality is obvious as agent $i$ is associated with her favorite good among the available goods, $h_i$, before agent $j$, i.e., $v_i(h_i)\ge v_i(h_j)$.</p>
+<ol>
+<li>Last time $i$ was considered after last time $j$ was considered ($t_i\gt t_j$ at the end)</li>
+</ol>
+<p>suppose that $\phi\cdot v_i(h_i)\lt v_i(h_j)$. Then during the last iteration that $i$ was considered, the if statement is true and $i$ would be irrevocably added to $L$, which contradicts the choice of $i$.</p>
+<p>Q. E. D.</p>
+</blockquote>
+<p>:heavy_exclamation_mark::thinking:Lemma 2: The partial allocation produced in first round-robin is $\mathcal ({h_1},{h_2},\cdots,{h_n})$, where $h_i$s are in Lemma 1.</p>
+<p>==The preprocessing step can be combined with 1st round-robin!==</p>
+<blockquote>
+<p>Observation: $\ell$ is used in first round-robin subroutine is not the same with the order that goods get assigned to agents during the preprocessing step, even when one takes into account that moving agents into $L$ is similar to changing their order.</p>
+<p>First, using <strong>induction</strong>, we show that agents in $L$ get assigned to them the same goods they would if there were to choose first according to $\ell$.</p>
+<p>For agents in $N\diagdown L$. First observe that, on termination, agents in $N\diagdown L$ all have distinct time stamp assigned in second round-robin. </p>
+<p>By time stamp of agent $i$, name the final value of $t_i$. Now fix some $i\in N\diagdown L$. </p>
+<ul>
+<li>
+<p>In <strong>preprocessing</strong>, agent $i$ gets assigned her favorite good available if we exclude the goods assigned to <strong>some agents</strong> in $L$, and to all the agents in $N\diagdown L$ with time stamp less than $t_i$.</p>
+</li>
+<li>
+<p>In <strong>round-robin</strong>, agent $i$ receives her favorite good available if we exclude the goods allocated to <strong>all the agents</strong> in $L$, and to all the agents in $N\diagdown L$ with time stamp less than $t_i$. However, in this scenario the extra agents from $L$ that pick before $i$ choose goods that $i$ does not find attractive enough. Indeed those goods are available in the first scenario, yet $i$ does not prefer them to $h_i$.</p>
+</li>
+</ul>
+<p>Therefore, in this scenario $i$ also picks $h_i$ and $A_i={h_i}$ after first round-robin.</p>
+</blockquote>
+<p>:thinking:Proposition: Draft-and-elimination returns an EF1 allocation.</p>
+<blockquote>
+<p>By Theorem 2, it suffices to show that the partial allocation produced after second round-robin is EF1. Fix two distinct agents $i,j\in N$. If $j\in L$, then $A_j={h_j}$. Clearly, $v_i(A_i)\ge v_i(A_j\diagdown{h_j})=0$. On the other hand, if $j\in N\diagdown L$, then $A_j={h_j,h_j'}$. Since agent $i$ picked $h_i$ when $h_j'$ was still available, $v_i(h_i)\ge v_i(h_j')$. So we have $v_i(A_i)\ge v_i(h_i)\ge v_i(A_j\diagdown{h_j})$.</p>
+</blockquote>
+<h2 id="envy-freeness-up-to-any-good">Envy-freeness up to Any Good</h2>
+<p>:heavy_exclamation_mark::thinking:Theorem 3: The allocation $\mathcal A$ returned by Draft-and-elimination is a $(\phi-1)$-EFX allocation. :warning:</p>
+<blockquote>
+<p>Consider the allocation $\mathcal A$ returned by algorithm, and fix two distinct agents $i,j\in N$. If $|A_j|=1$, then clearly, $v_i(A_i)\ge\max_{g\in A_j}v_i(A_j\diagdown{g})=0$.</p>
+<p>So assume that $|A_j|\ge2$ and let $h$ be the last good added to $A_j$. At time this happened, $A_j$ may belonged to an agent $j'$ other than $j$. Finally, let $A_i^{old},A_{j‘}^{old}$ be bundles of $i$ and $j'$ respectively, right before $h$ was allocated. (i.e. $h\in A_{j'}^{old}$ at first)</p>
+<p>Note that $A_i^{old}$ may not necessarily be a subset of $A_i$ due to the possible swaps imposed by envy-cycle elimination. But part (b) of theorem 1 implies $v_i(A_i)\ge v_i(A_i^{old})$.</p>
+<p>We consider 4 cases, depending on whether $i\in L$ and on the type of step during which $h$ was added to $A_{j'}^{old}$.</p>
+<ol>
+<li>$i\in L$ and $h$ added in second round-robin.</li>
+</ol>
+<p>We have $A_i^{old}={h_i}$, as well as $j'\in N\diagdown L$ and $A_j={h_{j'},h'<em>{j'}}$. This immediately implies that $v_i(A_i^{old})\ge\max{v_i(h</em>{j'}),v_i(h'<em>{j'})}$. Thus $v_i(A_i)\ge\max</em>{g\in A_j}v_i(A_j\diagdown{g})$.</p>
+<ol>
+<li>$i\in L$ and $h$ added in envy-cycle elimination.</li>
+</ol>
+<p>By the way that envy-cycle-elimination chooses who to give the next good to, we know that right before $h$ was added, no one envied $j'$. In particular, $v_i(A_i^{old})\ge v_i(A_{j'}^{old})$. We further have $v_i(A_i^{old})\ge v_i(h_i)\gt\phi\cdot v_i(h)$, where the last inequality directly follows from part (a) of lemma 1. Putting everything together,
+$$
+  v_i(A_j)=v_i(A_{j'}^{old})+v_i(h)\le(1+\phi-1)v_i(A_i^{old})\le\phi\cdot v_i(A_i)\
+  \Lrarr v_i(A_i)\ge(\phi-1)\cdot v_i(A_j)
+$$</p>
+<ol>
+<li>$i\not\in L$ and $h$ added in second round-robin.</li>
+</ol>
+<p>We have $i,j'\in N\diagdown L$ and $A_j={h_{j'},h'<em>{j'}}$. If $\ell[i]\lt\ell[j']$, then we proceed in a way similar to case 1:
+$$
+  v_i(A_i)\ge v_i(A_i^{old})\ge v_i(h_i)\ge\max{v_i(h</em>{j'}),v_i(h'<em>{j'})}.
+$$
+  So, assume that $\ell[i]\gt\ell[j']$. This means $v_i(h_i')\ge v_i(h</em>{j'}')$. We have
+$$
+  v_i(A_i)\ge v_i(A_i^{old})\ge v_i(h_i)+v_i(h_i')\ge{1\over\phi}v_i(h_{j'})+v_i(h'<em>{j'})\
+  \ge{1\over\phi}(V_i(h</em>{j'})+v_i(h'_{j'}))=(\phi-1)v_i(A_j)
+$$
+  where the third inequality directly follows from part (b) from lemma 1.</p>
+<ol>
+<li>$i\not\in L$ and $h$ added in envy-cycle elimination.</li>
+</ol>
+<p>Arguing like in case 2, we have $v_i(A_i^{old})\ge v_i(A_{j'}^{old})$. Moreover, by the way round-robin works, we know that $v_i(h_i)\ge v_i(h'<em>i)\ge v_i(h)$. In particular, $v_i(h)\le{1\over2}v_i({h_i,h_i'})\le{1\over2}v_i(A_i^{old})$. Putting things together, we have
+$$
+  v_i(A_j)=v_i(A</em>{j'}^{old})+v_i(h)\le(1+\frac{1}{2})v_i(A_i^{old})\le\phi\cdot v_i(A_i)\
+  \Lrarr v_i(A_i)\ge(\phi-1)v_i(A_j)
+$$</p>
+<p>The analysis is tight.</p>
+</blockquote>
+<h2 id="groupwise-maximin-share-fairness">Groupwise Maximin Share Fairness</h2>
+<p>Every exact EFX allocation is also a $4\over7$-GMMS allocation. (Amanatidis et al.)</p>
+<p>:heavy_exclamation_mark::thinking:Lemma 3: Suppose $\mathcal T\in\Pi_n(M)$ is an $n$-maximin share defining partition for agent $i$. Then, for any set of goods $S$, such that there exists some $j$ with $S\subseteq T_j$, it holds that $\mu_i(n-1,M\diagdown S)\ge\mu_i(n,M)$.</p>
+<p>:heavy_exclamation_mark::thinking:Theorem 4: The allocation $\mathcal A=(A_1,\cdots,A_n)$ returned by Draft and Eliminate Algorithm is a $2\over\phi+2$-GMMS allocation.</p>
+<blockquote>
+<p>~~To difficult for me!~~ :sob:</p>
+<p>Omitted</p>
+</blockquote>
+<p>:heavy_exclamation_mark::thinking: Theorem 5: Suppose we modified Draft and Eliminate Algorithm by changing $\phi$ in preprocessing to $3\over2$. Then the resulting allocation is a $4/7$-GMMS allocation. It is also a $3/5$-EFX, $2/3$-PMMS, and EF1 allocation.</p>
+<blockquote>
+<p>~~To difficult for me!~~ :sob:</p>
+<p>Omitted</p>
+</blockquote>
+<p>Analysis are probably not tight, because both theorems is heavily based on EF and EFX guarantees we get in the various different cases.</p>
+<p>:question:Suspect: modified draft and eliminate algorithm produces $2/3$-GMMS.</p>
+<h2 id="pairwise-maximin-share-fairness">Pairwise Maximin Share Fairness</h2>
+<p>:heavy_exclamation_mark::thinking:Theorem 6: The allocation $\mathcal A=(A_1,\cdots,A_n)$ returned by Draft and Eliminate Algorithm is a $2/3$-PMMS allocation.</p>
+<blockquote>
+<p>Proof based on proof of theorem 3.</p>
+</blockquote>
+<p>$2/3$ factor is tight. But if we manipulate envy-graph as following, the approximation ratio goes up to ${2\over\phi+1}\approx0.764$: ~~Detail omitted~~</p>
+<p>:heavy_exclamation_mark::thinking:Theorem 7: Supposed we modified Draft and Eliminate Algorithm by using the $\phi-{1\over2}$-adjusted envy graph in Envy-graph Elimination. Then the resulting allocation is a $4\phi-2\over2\phi+3$-PMMS and a $2\over2\phi-1$-EF1 allocation. Moreover, the theorem 3 and theorem 4 are not affected.</p>
+<blockquote>
+<p>Proof omitted.</p>
+</blockquote>
+<h1 id="gmms-pmms-and-efx-with-a-few-goods">GMMS, PMMS, and EFX with a few Goods</h1>
+<p>For the exact versions of fairness notions,</p>
+<h2 id="draft-pack-and-eliminate-pseudo-code">Draft Pack and Eliminate Pseudo Code</h2>
+<ol>
+<li>Let $\ell=(1,2,\cdots,n)$ and $\mathcal A=(\empty,\cdots,\empty)$</li>
+<li>$(\mathcal A,M')=$ Round-Robin$(N,\mathcal A,M,\ell,n-1)$</li>
+<li>Create 2 virtual goods $p,q$, s.t. $\forall i\in N:v_i(q)=\min_{g\in M'}$ and $v_i(p)=v_i(M')-v_i(q)$</li>
+<li>Allocate $p$ to agent $n$</li>
+<li>$\mathcal A=$ Envy-Cycle Elimination$(N,\mathcal A,{q})$</li>
+<li>Give to the final owner of $p$ her two favorite goods from $M'$ and to the final owner of $q$ the remaining good</li>
+<li>return $\mathcal A$.</li>
+</ol>
+<p>:heavy_exclamation_mark::thinking:Theorem 8: For instances with $m\le n+2$, a GMMS allocation always exists and can be efficiently computed.</p>
+<blockquote>
+<p>When $m\le n$, we arbitrarily allocate one good to each agent, till there are no goods left, to produce $\mathcal A=(A_1,\cdots,A_n)$. Fix a subset $S$ of agents, and let $i\in N$. Then combined bundle of all agents in $S$ either contains strictly less than $|S|$ goods or exactly $|S|$ goods.</p>
+<ul>
+<li>
+<p>In the first case, we trivially have $\mu_i(|S|,\cup_{j\in S}A_j)=0$.</p>
+</li>
+<li>
+<p>In the second case, we have $\mu_i(|S|,\cup_{j\in S}A_j)=\min_{g\in\cup_{j\in S}A_j}v_i(g)$.</p>
+</li>
+</ul>
+<p>In both cases, we have $v_i(A_i)\ge\mu_i(|S|,\cup_{j\in S}A_j)$, and $\mathcal A$ is a GMMS allocation.</p>
+</blockquote>
+<p>For $m\gt n$, there are some simple observations.</p>
+<p>:heavy_exclamation_mark::thinking:Lemma 4: Let $Q\subseteq N$ and $T\subseteq M$ s.t. $|T|=2|Q|-1$. Then, for any $i\in Q$, we have $\max_{g\in T}v_i(g)\ge\mu_i(|Q|,T)$.</p>
+<blockquote>
+<p>By the pigeonhole principle, in any possible partition of $T$ in $|Q|$ parts, at least one bundle will have at most $1$ goods. So, in any $|Q|$-maximin share partition of $T$ for an agent $i\in Q$, her worst bundle's worth is upper bounded by $\max_{g\in T}v_i(g)$.</p>
+</blockquote>
+<p>:heavy_exclamation_mark::thinking:Lemma 5: Let $i\in N$ and $T={g_1,g_2,g_3,g_4}\subseteq M$ s.t. $v_i(g_1)\ge v_i(g_2)\ge v_i(g_3)\ge v_i(g_4)$. Then</p>
+<ol>
+<li>$v_i({g_1,g_4})\ge\mu_i(2,T)$</li>
+<li>$\max{v_i(g_1),v_i({g_2,g_3})}\ge\mu_i(2,T)$</li>
+</ol>
+<blockquote>
+<p>Long proof...</p>
+</blockquote>
+<p>Corollary: When $m\le n+2$, we can efficiently find PMMS and EFX allocations.</p>
+<blockquote>
+<p>Proof omitted...</p>
+</blockquote>
+<h1 id="what-should-i-get-from-this-paper">What should I get from this paper?</h1>
+<p>EF1$\Larr$EFX$\Larr$PMMS, GMMS</p>
+<p>EF1: Always exist.</p>
+<p>EFX: $0.618$</p>
+<p>PMMS: $2/3$</p>
+<p>GMMS: Not always exist.</p>
+<p>We are trying to relax the properties as less as possible so that a single allocation satisfies all relaxation, and if possible, with allocation computed is <strong>polynomial</strong> time.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
