@@ -31,7 +31,7 @@ Hashing with Chaining: A data structure solves the dictionary problems: Construc
 
   Assumption: $h$ is truly random and can be evaluated in constant time, i.e.,
 
-  1. $\forall$ set of distinct elements $\{x_1,\cdots,x_k\}\subseteq[U]$ and $\forall$ set of values $v_1,\cdots,v_k\in[m]$, we have $\Pr_h[h(x_1)=v_1\and\cdots\and h(x_k)=v_k]=\frac{1}{m^k}$.
+  1. $\forall$ set of distinct elements $\{x_1,\cdots,x_k\}\subseteq[U]$ and $\forall$ set of values $v_1,\cdots,v_k\in[m]$, we have $\Pr_h[h(x_1)=v_1\land\cdots\land h(x_k)=v_k]=\frac{1}{m^k}$.
   2. we can compute $h(x)$ in $O(1)$ time.
 
 - After choosing $h$, we process $x_1,\cdots,x_n$ of $S$. For element $x_i$, we compute $h(x_i)$ and append $x_i$ to the list $List(A[h(x_i)])$.
@@ -156,8 +156,8 @@ Conclusion: we spend more than $O(t)$ time with probability decreasing as fast a
 > Analogously, we have
 > $$
 > \forall t\gt0:\Pr(x\lt a)=\Pr(e^{-tX}\gt e^{-ta})\lt\frac{\mathbb E[e^{-tX}]}{e^{-ta}}\\
-> \Rarr\cdots\Rarr\cdots\\
-> \Rarr\Pr[X\lt(1-\delta)\mu]\lt(\frac{e^{e^{-t}-1}}{e^{-t(1-\delta)}})^\mu(**)\\
+> \Rightarrow\cdots\Rightarrow\cdots\\
+> \Rightarrow\Pr[X\lt(1-\delta)\mu]\lt(\frac{e^{e^{-t}-1}}{e^{-t(1-\delta)}})^\mu(**)\\
 > $$
 > Let $t=-\ln(1-\delta)\gt0$,
 > $$

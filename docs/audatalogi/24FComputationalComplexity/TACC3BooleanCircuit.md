@@ -25,7 +25,7 @@ Boolean circuit: Fixed number of inputs. To study computation of arbitrary input
 :book:Definition of **Boolean circuit**. A Boolean circuit $C$ with $n$ inputs and $m$ outputs consists of:
 
 1. A directed ==acyclic== graph $D=(V,A)$ where the in-degree of every node is at most $2$.
-2. A labeling $\ell$ of all nodes $g\in V$ with $\ell(g)\in\{0,1,x_1,\cdots,x_n,\overline{x_1},\cdots,\overline{x_n},\and,\or,\neg\}$.
+2. A labeling $\ell$ of all nodes $g\in V$ with $\ell(g)\in\{0,1,x_1,\cdots,x_n,\overline{x_1},\cdots,\overline{x_n},\land,\lor,\neg\}$.
 3. A choice of $m$ output gates $o_1,\cdots, o_m\in V$.
 
 The nodes of $D$ is the gates of $C$, the arcs of $D$ is the wires of $C$.
@@ -38,9 +38,9 @@ The size of $C$ is the number of gates.
 
 Labeling function should satisfy: For all gates $g$:
 
-1. If the fanin is $0$, then $\ell(g)\in\{0,1,x_1,\cdots,x_n,\overline{x_1},\cdots,\overline{x_n},\and,\or,\neg\}$.
+1. If the fanin is $0$, then $\ell(g)\in\{0,1,x_1,\cdots,x_n,\overline{x_1},\cdots,\overline{x_n},\land,\lor,\neg\}$.
 2. If the fanin is $1$, then $\ell(g)=\neg$.
-3. If the fanin is $2$, then $\ell(g)\in\{\and,\or\}$.
+3. If the fanin is $2$, then $\ell(g)\in\{\land,\lor\}$.
 
 
 
@@ -50,11 +50,11 @@ Implicit negation such as $\overline{x_i}$ can be made explicit by introducing a
 
 :book:Definition of **family of Boolean circuits**. A family $(C_n)_{n=0}^\infty$ of Boolean circuits, where $C_n$ is a circuit with $n$ inputs computes the Boolean function $f:\{0,1\}^*\to\{0,1\}$ given by $f(x)=C_{|x|}(x)$. We say that $(C_n)_{n=0}^\infty$ **computes the language** $L\subseteq\{0,1\}^\star$ if  $(C_n)_{n=0}^\infty$ computes the characteristic function $\chi_L:\{0,1\}^\star\to\{0,1\}$ of $L$ given by  $\chi_L(x)=1$ iff $x\in L$.
 
-{% note info flat %}
+!!! info
 
-直白一点：我们说一个布尔电路族 $(C_n)_{n=0}^\infty$ 计算~~（接受？）~~语言 $L$，当且仅当该布尔电路族的输入 $x$ 属于语言 $L$时，输出结果为 $1$。
+    直白一点：我们说一个布尔电路族 $(C_n)_{n=0}^\infty$ 计算~~（接受？）~~语言 $L$，当且仅当该布尔电路族的输入 $x$ 属于语言 $L$时，输出结果为 $1$。
 
-{% endnote %}
+
 
 If we want to apply non-Boolean alphabet, we just encode these letters into $\{0,1\}^k$ for some fixed $k$.
 
@@ -104,7 +104,7 @@ Shannon proved that $L(n)=\Theta(2^n/n)$.
 > For $s\ge n+1$ we have
 > $$
 > 2n+2+s+2s^2\le4s^2\\
-> \Rarr(2n+2+s+2s^2)^s\le(2s)^{2s}.
+> \Rightarrow(2n+2+s+2s^2)^s\le(2s)^{2s}.
 > $$
 > Each of these at most $(2s)^{2s}$ circuits computes precisely one Boolean function. There are exactly $2^{2^n}$ different Boolean functions on $n$ inputs.
 >

@@ -18,21 +18,21 @@ abbrlink: 4f31c6f5
 
 $GF(p^m)$: Galois field of order $p^m$, $p$ is prime.
 
-{% note info modern %}
+!!! info
 
-伽罗瓦域是一个包含加法和乘法的代数结构，满足加法和乘法的交换律、结合律、分配律，每个元素都有逆元。
+    伽罗瓦域是一个包含加法和乘法的代数结构，满足加法和乘法的交换律、结合律、分配律，每个元素都有逆元。
 
-{% endnote %}
+
 
 $\Z_n$: Integers modulo $n\ge1$.
 
 $M_{m,n}(R)$: $m$ by $n$ matrices over a ring $R$.
 
-{% note info modern %}
+!!! info
 
-这个玩意是一个矩阵，只是其中每一个元素都来自环。**乘法通常不满足交换律**。
+    这个玩意是一个矩阵，只是其中每一个元素都来自环。**乘法通常不满足交换律**。
 
-{% endnote %}
+
 
 $M_n(R)$: $M_{n,n}(R)$.
 
@@ -167,7 +167,7 @@ Analysis of FFT:
 
 - Step 2 and 3 take $n$ multiplications and $n$ additions respectively.
 
-Thus, $T(n)=2T(n/2)+2n\Rarr T(n)=2n\log n$ for $n$ is a power of $2$.
+Thus, $T(n)=2T(n/2)+2n\Rightarrow T(n)=2n\log n$ for $n$ is a power of $2$.
 
 :dart:Theorem of FFT's complexity. Assuming the availability of a primitive $n$-th root of unity, the discrete Fourier transform $DFT_n$ and its inverse can be computed in $O(n\log n)$ complex arithmetic operations.
 

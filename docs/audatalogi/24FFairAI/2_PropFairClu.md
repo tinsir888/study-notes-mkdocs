@@ -55,19 +55,19 @@ Different measures, different objectives:
 
 Individuals prefer to be closer to their center in terms of distance.
 
-:book:**Definition 1.** Let $X\subseteq\mathcal M$ with $|X|=k$. $S\subseteq N$ is a **blocking coalition** against $X$ if $|S|\ge\lceil\frac{n}{k}\rceil$ and $\exist y\in\mathcal M$ s.t. $\forall i\in S,d(i,y)\lt D_i(X)$. $X\subseteq \mathcal N$ is **proportional** if there is no blocking coalition against $X$.
+:book:**Definition 1.** Let $X\subseteq\mathcal M$ with $|X|=k$. $S\subseteq N$ is a **blocking coalition** against $X$ if $|S|\ge\lceil\frac{n}{k}\rceil$ and $\exists y\in\mathcal M$ s.t. $\forall i\in S,d(i,y)\lt D_i(X)$. $X\subseteq \mathcal N$ is **proportional** if there is no blocking coalition against $X$.
 
-{% note info modern %}
+!!! info
 
-阻塞联盟：存在一个候选中心点 $y$，存在一组数据点 $S$ 满足其点数要比簇平均点数多：使得 $S$ 中任意一点到 $y$ 的距离，都比这组数据点到原来分配的对应簇中心点的距离近。
+    阻塞联盟：存在一个候选中心点 $y$，存在一组数据点 $S$ 满足其点数要比簇平均点数多：使得 $S$ 中任意一点到 $y$ 的距离，都比这组数据点到原来分配的对应簇中心点的距离近。
 
-比例公平：一组簇分配中不包含阻塞联盟，则该簇分配是比例公平的。
+    比例公平：一组簇分配中不包含阻塞联盟，则该簇分配是比例公平的。
 
-{% endnote %}
+
 
 Equivalently, $X$ is **proportional** if $\forall S \subseteq N$ with $|S| \ge\lceil\frac{n}{k}\rceil$ and for all $y \in M$, there exists $i \in S$ with $d(i, y) \ge D_i(X)$.
 
-:heavy_exclamation_mark:The quantification is over **all** subset of **sufficient** size. Do not consider a single $i\in S$ and ignore all of the other points.
+:book:The quantification is over **all** subset of **sufficient** size. Do not consider a single $i\in S$ and ignore all of the other points.
 
 ### Advantages of PROP
 
@@ -131,12 +131,12 @@ Let $B(x,\delta)=\{i\in\mathcal N:d(i,x)\le\delta\}$ (The ball of distance $\del
 
 ### Pseudo Code - Greedy Capture
 
-1. $\delta\gets0,X\gets\empty,N\gets\mathcal N$
-2. while $N\neq\empty$, do
+1. $\delta\gets0,X\gets\emptyset,N\gets\mathcal N$
+2. while $N\neq\emptyset$, do
    - Smoothly increase $\delta$
-   - while $\exist x\in X$ s.t. $|B(x,\delta)\cap N|\ge1$ do
+   - while $\exists x\in X$ s.t. $|B(x,\delta)\cap N|\ge1$ do
      - $N\gets N\diagdown B(x,\delta)$.
-   - while $\exist x\in(\mathcal M\diagdown X)$ s.t. $|B(x,\delta)\cap N|\ge\lceil\frac{n}{k}\rceil$ do
+   - while $\exists x\in(\mathcal M\diagdown X)$ s.t. $|B(x,\delta)\cap N|\ge\lceil\frac{n}{k}\rceil$ do
      - $X\gets X\cup\{x\}$
      - $N\gets N\diagdown B(x,\delta)$
 3. return $X$
@@ -167,11 +167,11 @@ Difference between $k$-means and $k$-median: Balls grow around data points in $k
 >
 > - Greedy Capture will open $x_2$ and $x_4$. The coalition $\{a_1,a_2\}$ can each reduce their distance by factor $1+\sqrt2$ and $\epsilon\to0$ by deviating to $x_1$.
 
-{% note warning modern %}
+!!! warning
 
-I strongly suspect that the PROP fairness notion in clustering is thought after the algorithm.🤐
+    I strongly suspect that the PROP fairness notion in clustering is thought after the algorithm.🤐
 
-{% endnote %}
+
 
 :question:Open Problem: Can we fill the gap between $1+\sqrt 2$ and $2$ by inventing new algorithm? Or can we invent a new algorithm that has a better bound than $1+\sqrt2$?
 
@@ -279,17 +279,19 @@ A random sample approximately preserves this fraction for all solution $X$ and d
 Proof sketch: we take a **union bound** over all possible solutions and deviations, and there are only $k\cdot C_m^k$ such combinations.
 
 :thinking::dart:Theorem 3. Given $\mathcal N,\mathcal M$ and parameter $\rho\ge1$, fix parameters $\epsilon,\delta\in[0,1]$. Let $N\subseteq\mathcal N$ of size $\Omega(\frac{k^3}{\epsilon^2}\log\frac{m}{\delta})$ be chosen uniformly at random. Then, with probability at least $1-\delta$, the following holds for all $(X,y)$:
+
 $$
 \left\vert
 \frac{\vert R(N,X,y)\vert}{\vert N\vert}-\frac{\vert R(\mathcal N,X,y)\vert}{\vert\mathcal N\vert}
 \right\vert
 \le\frac{\epsilon}{k}
 $$
-{% note warning modern %}
 
-已经对 $1-\delta$，$O/\Omega(\frac{1}{\epsilon}\log\frac{1}{\delta})$, Chernoff, Hoeffding 这样的东西 PTSD 了谢谢
+!!! bug
 
-{% endnote %}
+    已经对 $1-\delta$，$O/\Omega(\frac{1}{\epsilon}\log\frac{1}{\delta})$, Chernoff, Hoeffding 这样的东西 PTSD 了谢谢
+
+
 
 > $N$ is a random sample of $\mathcal N$. Hoeffding's inequality implies that for any fixed $(X,y)$, a sample of size $|N|=O(\frac{1}{\hat\epsilon^2}\log\frac{1}{\hat\delta})$ is sufficient to achieve
 > $$
@@ -373,8 +375,8 @@ Input: $k,\mathcal N,\mathcal M$.
 Output: a set of $X$ containing at most $k$ cluster centers.
 
 1. $\Delta_j\gets0\forall j\in\mathcal M$
-2. $X\gets\empty,N\gets\mathcal N,C\gets\empty$
-3. While $N\neq\empty$ do
+2. $X\gets\emptyset,N\gets\mathcal N,C\gets\emptyset$
+3. While $N\neq\emptyset$ do
    1. Let $i\in\mathcal M,x\in N\diagdown C$ s.t. $d(i,x)-\Delta_i$ is minimum
    2. $\Delta_i\gets d(i,x)$
    3. $C\gets C\cup\{x\}$

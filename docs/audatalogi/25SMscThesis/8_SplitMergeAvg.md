@@ -46,21 +46,25 @@ Those three conditions is equivalent to **APPROVAL VOTING**.
 The maximum and average costs are therefore defined equivalently and accordingly.
 
 The maximum cost:
+
 $$
 cost(i)=\begin{cases}
-1\text{ if }\exist j\in C_i,i\text{ doesn't approve }j\\
+1\text{ if }\exists j\in C_i,i\text{ doesn't approve }j\\
 0\text{ otherwise}
 \end{cases}
 $$
+
 The minimum cost:
+
 $$
 cost(i)=\frac{\#j\in C_i\text{, s.t. }i\text{ doesn't approve}}{|C_i|}
 $$
-{% note success modern %}
 
-It's not hard to prove that Split and Merge algorithm also computes a clustering in the core with **BINARY, ASYMMETRIC, NON-METRIC** "distance".
+!!! success
 
-{% endnote %}
+    It's not hard to prove that Split and Merge algorithm also computes a clustering in the core with **BINARY, ASYMMETRIC, NON-METRIC** "distance".
+
+
 
 # On Average Cost
 

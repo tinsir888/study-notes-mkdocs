@@ -168,7 +168,7 @@ abbrlink: a15fe612
 
 根据 $\epsilon_t=\{\pi_t^i|i=1,2,...,n\}$ 探索 $\epsilon_{t+1}=\{\pi_t^i|i=1,...,n\}\cup\{\pi_e^j|j=1,...,m\}$
 
-$\exist V^*(\cdot|\pi_t^i\sim\epsilon_t)\leq V^*(\cdot|\pi_{t+1}^i\sim\epsilon_{t+1})$，其中，$\pi_{t+1}^i\sim\{\pi_e^i|i=1,...,m\}$
+$\exists V^*(\cdot|\pi_t^i\sim\epsilon_t)\leq V^*(\cdot|\pi_{t+1}^i\sim\epsilon_{t+1})$，其中，$\pi_{t+1}^i\sim\{\pi_e^i|i=1,...,m\}$
 
 探索：**可能**发现更好策略
 

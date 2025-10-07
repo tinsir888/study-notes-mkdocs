@@ -120,7 +120,7 @@ Assume without loss of generality that $d$ is a power of $2$. Let $H_d$ be the $
 
 The crucial part about WH matrices is that one can compute the matrix-vector product $\bar H_{d}x$ efficiently.
 
-Write $x$ as $(\begin{array}{cc}x_1\\x_2\end{array})$ where $x_1$ is the first $d/2$ coordinates of $x$ and $x_2$ is the last $d/2$ coordinates.
+Write $x$ as $(\begin{array}{cc}x_1\\ x_2\end{array})$ where $x_1$ is the first $d/2$ coordinates of $x$ and $x_2$ is the last $d/2$ coordinates.
 
 Then $\bar H_dx=(\begin{array}{cc}\bar H_{d/2}x+\bar H_{d/2}x_2\\\bar H_{d/2}x_1-\bar H_{d/2}x_2\end{array})$. Thus if we compute $\bar H_{d/2}x_1$ and $\bar H_{d/2}x_2$ recursively, we can compute $\bar H_{d}x$ in $O(d)$ time. The total time to compute $\bar H_{d}x$ thus satisfies the recurrence $T(d)=2T(d/2)+O(d)$, by Master's Theorem it resolves to $O(d\log d)$.
 

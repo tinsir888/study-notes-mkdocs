@@ -44,7 +44,7 @@ A point $\mathbf p$ is density reachable from $\mathbf x$ if $\mathbf p$ is dire
 - Maximality: If a point $\mathbf x\in S$ and $\mathbf y$ is density-reachable from $\mathbf x$, then $\mathbf y\in S$.
 - Connectivity: Each object in $S$ is density-connected to all other objects.
 
-A density-based clustering of a database $\mathcal D$ is a partition $\{C_1,\cdots,C_k;N\}$ s.t. $\bigcup_{i=1}^kC_i\cup N=\mathcal D$, $C_i\cap C_j=\empty,j\gt i,i,j\in[1,k]$, and $C_i\cap N=\empty$, where $C_1,\cdots,C_k$ are the density-based clusters. $N=\mathcal D\diagdown\{C_1,\cdots,C_k\}$ is the noise cluster of objects that do not belong to any cluster.
+A density-based clustering of a database $\mathcal D$ is a partition $\{C_1,\cdots,C_k;N\}$ s.t. $\bigcup_{i=1}^kC_i\cup N=\mathcal D$, $C_i\cap C_j=\emptyset,j\gt i,i,j\in[1,k]$, and $C_i\cap N=\emptyset$, where $C_1,\cdots,C_k$ are the density-based clusters. $N=\mathcal D\diagdown\{C_1,\cdots,C_k\}$ is the noise cluster of objects that do not belong to any cluster.
 
 ## DBSCAN Algorithm
 
@@ -58,13 +58,13 @@ Input: dataset $\mathcal D,\epsilon,MinPts$
 
     - if $\mathbf x$ is a core project then
 
-      $C\larr$ Compute the density-reachable points from $\mathbf x$
+      $C\leftarrow$ Compute the density-reachable points from $\mathbf x$
 
       Create a new cluster $C$.
 
     - else
 
-      $N\larr N\cup\{x\}$
+      $N\leftarrow N\cup\{x\}$
 
 
 
@@ -136,15 +136,19 @@ In one dimension, we can model the data as a random variable $X$.
 Unidimensional data points can be treated as $n$ samples or observations $\{x_i\}$ from such a random variable.
 
 We can estimate the cumulative density function CDF by counting the number of points less than a certain value $v$
+
 $$
 \hat F(v)=\frac{1}{n}\sum_{i=1}^nI(x_i\le v)
 $$
+
 where $I$ is the indicator functions. which is $1$ if the conditions inside the $(\cdot)$ is satisfied and $0$ otherwise.
 
 The density function is then estimated by taking the derivative of the CDF
+
 $$
 \hat f(x)=\frac{\hat F(x+{h\over2})-\hat F(x-{h\over2})}{h}={k/n\over h}={k\over nh}
 $$
+
 where $k$ is the number of points in a window of width $h$ centered on $x$. The density estimate is ratio of points in the window $(k/n)$ to the volume of the window $h$.
 
 **Kernel density estimation**: We need to be careful on the window size $h$. We define a **kernel function** $K$ that is a probability density function: :warning:~~Don't mess up with kernel in k-means~~
@@ -154,44 +158,57 @@ where $k$ is the number of points in a window of width $h$ centered on $x$. The 
 - integrates to $1$, i.e., $\int K(x)dx=1$.
 
 The discrete kernel is the simplest kernel and it corresponds to a degenerate uniform probability density function
+
 $$
 K(z)=\begin{cases}
 1\text{ if }|z|\le{1\over2}\\
 0\text{ otherwise}
 \end{cases}
 $$
+
 when $|z|=\frac{x-x_i}{h}\le{1\over2}$, the point $x_i$ is inside a window of size $h$ centered at point $x$. We can then rewrite the density estimator as
+
 $$
 \hat f(x)=\frac{1}{nh}\sum_{i=1}^nK({x-x_i\over h})
 $$
+
 The discrete kernel is not smooth, meaning that the kernel estimate looks again like a histogram with the consequence that many useful calculus operator cannot be comfortably performed.
 
 **Gaussian kernel**: Kernel used in DENCLUE. The Gaussian kernel is one of the most popular kernels and represents a Gaussian distribution centered around a point.
+
 $$
 K(z)=\frac{1}{\sqrt{2\pi}}\exp(-{z^2\over2}).
 $$
+
 As usual, by $z={x-x_i\over h}$ we obtain
+
 $$
 K({x-x_i\over h})=\frac{1}{\sqrt{2\pi}}\exp(-{(x-x_i)^2\over2h^2})
 $$
+
 where $x$ at the center of the window plays the role of the mean, and the window size $h$ becomes standard deviation.
 
 ### Multivariate density estimation
 
 For $d$-dimensional data $\mathbf x=(x_1,\cdots,x_d)$, the window $h$ becomes a hypercube centered at $x$ with volume $h$, that is $vol(H_d(h))=h^d$. Density estimation is the same:
+
 $$
 \hat f(x)=\frac{1}{nh^d}\sum_{i=1}^nK({x-x_i\over h})
 $$
+
 where the multivariate kernel must preserve non-negativity, symmetry, and integrate to 1. It is then straightforward to redefine the discrete and Gaussian kernels.
 
 **Discrete multivariate kernel** Similar to univariate counterpart, the multivariate kernel is
+
 $$
 K(z)=\begin{cases}
 1\text{ if }|z|\le{1\over2}\text{ for all dimensions}\\
 0\text{ otherwise}
 \end{cases}
 $$
+
 The Gaussian kernel uses a equi-variate covariance matrix which translates into using the identity matrix $\Sigma=\mathbf I$
+
 $$
 K(\mathbf z)=\frac{1}{(2\pi)^{d\over2}}\exp(-{\mathbf z^T\mathbf z\over2})
 $$
@@ -206,9 +223,11 @@ KNN proceeds:
 2. Compute the volume $vol(S_d(h_\mathbf x))$ as a function of $k$.
 
 Given $k$, we estimate density at $\mathbf x$ as
+
 $$
 \hat f(\mathbf x)={k\over n\cdot vol(S_d(h_\mathbf x))}
 $$
+
 where $h_\mathbf x$ is the distance from $\mathbf x$ to its $k$-nearest neighbor. The volume is the volume of the $d$-dimensional hypersphere centered at $\mathbf x$.
 
 ## Density Attractors
@@ -220,17 +239,23 @@ How can we find dense clusters?
 **Density attractor**: A point $\mathbf x^*$ is a density attractor if it is a local maxima of the probability density function $f$.
 
 In order to discover these peaks in the density function, we need to compute its gradient.
+
 $$
-\nabla\hat f(\mathbf x)={\part\over\part\mathbf x}\hat f(\mathbf x)={1\over nh^d}\sum_{i=1}^n{\part\over\part\mathbf x}K({\mathbf x-\mathbf x_i\over h})
+\nabla\hat f(\mathbf x)={\partial\over\partial\mathbf x}\hat f(\mathbf x)={1\over nh^d}\sum_{i=1}^n{\partial\over\partial\mathbf x}K({\mathbf x-\mathbf x_i\over h})
 $$
+
 For the Gaussian kernel, the gradient takes a particularly neat form
+
 $$
-{\part\over\part\mathbf x}K({\mathbf x-\mathbf x_i\over h})=K({\mathbf x-\mathbf x_i\over h})\cdot({\mathbf x-\mathbf x_i\over h})\cdot({1\over h})
+{\partial\over\partial\mathbf x}K({\mathbf x-\mathbf x_i\over h})=K({\mathbf x-\mathbf x_i\over h})\cdot({\mathbf x-\mathbf x_i\over h})\cdot({1\over h})
 $$
+
 which yields
+
 $$
 \nabla\hat f(\mathbf x)={1\over nh^{d+2}}\sum_{i=1}^nK({\mathbf x-\mathbf x_i\over h})\cdot(\mathbf x_i-\mathbf x)
 $$
+
 **Density-based cluster**: A set of $C$ of data points from a data set $\mathcal D$ is a density-based cluster w.r.t. some threshold $\xi$ if there exist a set of attractors $\mathbf x_1^*,\cdots,\mathbf x_k^*$ if
 
 - Each point $\mathbf x$ in $C$ attracted to some attractor $\mathbf x_i^*$.
@@ -242,10 +267,15 @@ Not all points will be part of a cluster. We treat them as noise.
 The DENCLUE algorithm: For each point in the data, it finds a candidate attractor. If the attractor's density is above the threshold $\xi$, it is added to the set $A$ of attractors and the point is added to the set $R$ of points attracted by $\mathbf x^*$. Then all the maximal sets of mutually density reachable attractors computed.
 
 To find an attractor for a point $\mathbf x$ we can solve $\nabla\hat f(\mathbf x)=0$, thus
+
 $$
 {1\over nh^{d+2}}\sum_{i=1}^nK({\mathbf x-\mathbf x_i\over h})\cdot(\mathbf x_i-\mathbf x)=0\\
-\Rarr\mathbf x=\frac{\sum_{i=1}^nK({\mathbf x-\mathbf x_i\over h})\mathbf x_i}{\sum_{i=1}^nK({\mathbf x-\mathbf x_i\over h})}
 $$
+
+$$
+\Rightarrow\mathbf x=\frac{\sum_{i=1}^nK({\mathbf x-\mathbf x_i\over h})\mathbf x_i}{\sum_{i=1}^nK({\mathbf x-\mathbf x_i\over h})}
+$$
+
 We can use it as iterative rule until convergence. The algorithm runs in $\mathcal O(n^2T)$ where $T$ is the number of iterations.
 
 ## DENCLUE vs DBSCAN
@@ -277,18 +307,23 @@ Take criteria into account that are not part of the clustering data.
 ### Contingency Table
 
 A $r\times k$ matrix $\mathbf N$ s.t. (cluster $C$, ground-truth clustering $T$)
+
 $$
 \mathbf N_{ij}=|C_i\cap T_j|
 $$
+
 Computing the contingency table takes $\mathcal O(nrk)$
 
 ### Purity
 
 To what extent a cluster $C_i$ contains points **only** from one ground truth cluster.
+
 $$
 \text{purity}_i=\frac{1}{|C_i|}\max_{j=1,\cdots,k}\{n_{ij}\}
 $$
+
 The purity of a clustering is the weighted sum of the purity of each cluster.
+
 $$
 \text{purity}=\sum_i\text{purity}_i
 $$

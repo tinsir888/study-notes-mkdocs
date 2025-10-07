@@ -20,10 +20,10 @@ NP-completeness: by polynomial-time many-one reductions (aka Karp reductions)
 
 Studying completeness of P and NL: by log-space many-one reduction. Also too powerful for completeness inside L.
 
-:book:Definition 14 (Log-space reductions). Let $L_1\subseteq\Sigma_1^*$ and $L_2\subseteq\Sigma_2^*$ be languages. A **log-space many-one** reduction from $L_1$ to $L_2$ is a function $f:\Sigma_1^*\rarr\Sigma_2^*$ s.t.
+:book:Definition 14 (Log-space reductions). Let $L_1\subseteq\Sigma_1^*$ and $L_2\subseteq\Sigma_2^*$ be languages. A **log-space many-one** reduction from $L_1$ to $L_2$ is a function $f:\Sigma_1^*\rightarrow\Sigma_2^*$ s.t.
 
 1. There exists a ==log-space== Turing machine computing $f$.
-2. For all $x\in\Sigma_1^*$, we have $x\in L_1\Lrarr f(x)\in L_2$.
+2. For all $x\in\Sigma_1^*$, we have $x\in L_1\Leftrightarrow f(x)\in L_2$.
 
 Denote: $L_1\le_m^{\log}L_2$
 
@@ -33,7 +33,7 @@ The definition of **polynomial-time many-one** reduction ($L_1\le_m^pL_2$) is si
 
 Reduction has property of **transitivity**.
 
-:thinking:Lemma 1. $L_1\le_m^{\log}L_2, L_2\le_m^{\log}L_3\Rarr L_1\le_m^{\log}L_3$.
+:thinking:Lemma 1. $L_1\le_m^{\log}L_2, L_2\le_m^{\log}L_3\Rightarrow L_1\le_m^{\log}L_3$.
 
 > Let $M_1$ and $M_2$ be log-space Turing machines computing $f_1:L_1\to L_2,f_2:L_2\to L_3$, respectively. It suffices to show that $f=f_2\circ f_1$ is computable by log-space Turing machine $M$.
 >
@@ -133,13 +133,13 @@ Question: Does $\varphi$ have a satisfying assigment?
 
 Basic PSPACE-completeness is given by the problem of deciding validity of true quantified Boolean formulas as shown by Stockmeyer and Meyer. ($TQBF$)
 
-Instance: Quantified Boolean formula with no free variable $\psi=Q_1x_1Q_2x_2\cdots Q_nx_n\varphi(x_1,\cdots,x_n)$, where $Q_i\in\{\forall,\exist\}$ and $x_i\in\{0,1\}$ for all $i$.
+Instance: Quantified Boolean formula with no free variable $\psi=Q_1x_1Q_2x_2\cdots Q_nx_n\varphi(x_1,\cdots,x_n)$, where $Q_i\in\{\forall,\exists\}$ and $x_i\in\{0,1\}$ for all $i$.
 
 Question: Is $\psi$ true?
 
 :dart:Theorem 24. $TQBF$ is complete for $PSPACE$.
 
-> To see $TQBF\in PSPACE$: The algorithm is a recursion. At the bottom of the recursion, if $Q_i=\forall$, return $1$ iff both returned $1$; if $Q_i=\exist$, return $0$ iff both returned $0$. We of course need a stack with length $O(n)$ for evaluating $\varphi$.
+> To see $TQBF\in PSPACE$: The algorithm is a recursion. At the bottom of the recursion, if $Q_i=\forall$, return $1$ iff both returned $1$; if $Q_i=\exists$, return $0$ iff both returned $0$. We of course need a stack with length $O(n)$ for evaluating $\varphi$.
 >
 > To show hardness, proof similar to Savitch's theorem.
 >

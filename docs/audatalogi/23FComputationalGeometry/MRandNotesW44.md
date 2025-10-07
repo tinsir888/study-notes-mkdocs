@@ -25,18 +25,30 @@ claim: if $p$ is on(below/above) $l\Leftrightarrow l^*$ is on(below/above) $p^*$
 
 
 > Proof:
+> 
 > $$
 > p(p_x,p_y),l:y=ax+b\\
+> $$
+>
+> $$
 > \text{p is on l}\Rightarrow p_y=ap_x+b\\
+> $$
+>
+> $$
 > l^*(a,-b),p^*:y=p_xx-p_y\\
+> $$
+> 
+> $$
 > \text{we plug }l^*\text{ into }p^*:p_xa-(-b)=ap_x+b=p_y\\
+> $$
+> 
 > Q.E.D.
 > $$
 
 observation: the duality transform has the following properties:
 
-- it is incidence preserving: $q\in l\Lrarr l^*\in q^*$.
-- order preserving: $p$ below $l\Lrarr l^*$ below $p^*$.
+- it is incidence preserving: $q\in l\Leftrightarrow l^*\in q^*$.
+- order preserving: $p$ below $l\Leftrightarrow l^*$ below $p^*$.
 
 ## Dual point for line segment
 

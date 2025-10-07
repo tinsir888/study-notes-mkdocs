@@ -41,7 +41,7 @@ Input: Graph $G=(V,E)$, $k$
 
 Output: Clustering $C=(C_1,\cdots,C_k)$ in the actual core
 
-1. $n\gets\#V,C\gets\empty,X\gets\empty$
+1. $n\gets\#V,C\gets\emptyset,X\gets\emptyset$
 2. while $X\neq V$, do // SPLIT PHASE
    - $C'\gets MAXCLIQUE(V\diagdown X,E)$
    - $C\gets C\cup\{C'\}$
@@ -63,7 +63,7 @@ Since Split&Merge uses $MAXCLIQUE$ as an oracle, it is a NP solution.
 >
 > Thus before merging, any subset of $V$ that intersects at least two item-sets in $C$, can not be a clique.
 >
-> :heavy_exclamation_mark:By pigeonhole principle, before merging, any item-set in $C$ with size already greater than $\lceil n/k\rceil$ would not be picked in the merge phase! All data points in these clusters have no incentive to deviate.
+> :book:By pigeonhole principle, before merging, any item-set in $C$ with size already greater than $\lceil n/k\rceil$ would not be picked in the merge phase! All data points in these clusters have no incentive to deviate.
 >
 > In the merge phase, every point who would have been merged have the cost $2$. But they can not find other points to form a clique with size at least $\lceil n/k\rceil$.
 >
@@ -86,7 +86,7 @@ The extended version of Split&Merge:
 Input: $k$ and the distance between each pair of points
 
 1. construct a graph $G=(V,E)$, where $V$ corresponds to the set of data points. For a pair $i,j\in V$, there is an edge $(i,j)\in E$ if the distance between $i$ and $j$ is $1$.
-2. $X\gets V,C\gets\empty$
+2. $X\gets V,C\gets\emptyset$
 3. $c\gets MAXCLIQUE(X,E)$
 4. while $|c|\ge\lceil n/k\rceil$ do // find the clique of distance $1$ with large enough size
    - $C\gets C\cup\{c\}$

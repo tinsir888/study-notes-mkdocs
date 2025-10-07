@@ -81,13 +81,17 @@ Objects $\mathbf x=(x_1,\cdots,x_d)$ are points in a d-dimensional vector space
 Centroid $\mu_c$: Means of all points in a cluster $C$: $\mu_c=\frac{1}{C}\sum_{x_j\in C}x_j$.
 
 Measure of the compactness (aka total distance) of a cluster $C_i$:
+
 $$
 TD(C_i)=\sqrt{\sum_{x_j\in C_i}dist(x_j,\mu_{C_i})^2}
 $$
+
 Measure of the compactness of a clustering:
+
 $$
 TD=\sqrt{\sum_{i=1}^kTD^2(C_i)}
 $$
+
 **The ideal clustering minimizes this objective function.**
 
 ### Lloyd's Algorithm
@@ -192,10 +196,15 @@ Map every point $x_j$ into a different space $\phi(x_j)$
 Recall that a kernel is a dot-product $K(x_i,x_j)=\phi(x_i)^T\phi(x_j)$
 
 Thus,
+
 $$
 \min_C\sum_{i=1}^k\sum_{x_j\in C_i}||\phi(x_j)-\phi(\mu_i)||^2\\
+$$
+
+$$
 =\sum_{j=1}^nK(x_j,x_j)-\sum_{i=1}^k\frac{1}{n_i}\sum_{x_a\in C_i}\sum_{x_b\in C_i}K(x_a,x_b)
 $$
+
 Kernel K-means can generates non-linear boundaries.
 
 ## Pro and Cons
@@ -226,9 +235,11 @@ More robust to noise :thumbsup:
 ### L~p~ Norms
 
 General L~p~-Metric (Minkowski-Distance)
+
 $$
 d_p(x,y)=(\sum_{i=1}^d|x_i-y_i|^p)^{1\over p}
 $$
+
 $p=2$: Euclidean Distance used in K-means
 
 $p=1$ Manhattan Distance used in K-medoids
@@ -246,10 +257,13 @@ Requires arbitrary objects and a distance function
 Medoid $m_C$: representative object in a cluster $C$
 
 Measure for the compactness of a cluster $C$:
+
 $$
 TD(C)=\sum_{x\in C}dist(x,m_C)
 $$
+
 Measure for the compactness of a clustering
+
 $$
 TD=\sum_{i=1}^kTD(C_i)
 $$
@@ -259,11 +273,11 @@ $$
 Given $k$
 
 1. Select $k$ objects arbitrarily as medoids; assign each remaining object to the cluster with the nearest representative, and compute current $TD$.
-2. For each pair medoid M and non-medoid N, compute the value $TD_{M\lrarr N}$.
-3. Select the non-medoid $N$ for which $TD_{M\lrarr N}$ is minimum.
-4. If $TD_{M\lrarr N}$ is smaller than current $TD$
+2. For each pair medoid M and non-medoid N, compute the value $TD_{M\leftrightarrow N}$.
+3. Select the non-medoid $N$ for which $TD_{M\leftrightarrow N}$ is minimum.
+4. If $TD_{M\leftrightarrow N}$ is smaller than current $TD$
    - Swap $M$ with $N$
-   - Set current $TD=TD_{M\lrarr N}$.
+   - Set current $TD=TD_{M\leftrightarrow N}$.
    - Go back to step 2.
 5. Else stop
 
@@ -318,16 +332,22 @@ f(\mathbf x|\mu_i,\Sigma_i)=\frac{1}{\sqrt{(2\pi)^d|\Sigma_i|}}e^{-\frac{1}{2}(\
 $$
 
 The density for the clustering
+
 $$
 f(\mathbf x)=\sum_{i=1}^kf(\mathbf x|\mu_i,\Sigma_i)P(C_i),\sum_{i=1}^kP(C_i)=1
 $$
+
 :question: How do we find the parameters $\theta_i=\mu_i,\Sigma_i,P(C_i)$? Maximize the log-likelihood (MLE)
+
 $$
 \arg\max_{\theta_1,\cdots,\theta_k}\ln P(\mathbf D|\theta_1,\cdots,\theta_k)
 $$
+
 where $\ln P(\mathbf D|\theta_1,\cdots,\theta_k)=\ln\prod_{j=1}^nf(\mathbf x_j)=\sum_{j=1}^n\ln f(\mathbf x_js)$
 
-$=\sum_{j=1}^n\sum_{i=1}^k\ln f(x_j|\mu_i,\Sigma_i)P(C_i)$
+$$
+=\sum_{j=1}^n\sum_{i=1}^k\ln f(x_j|\mu_i,\Sigma_i)P(C_i)
+$$
 
 ## EM algorithm
 

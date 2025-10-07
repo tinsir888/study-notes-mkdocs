@@ -185,7 +185,7 @@ I Danmark spiller naturen en vigtig rolle. I skal nu tale om, hvordan naturen ha
 
 将句子与 7 条文本进行匹配。
 
-~~刷完了 [modultest.dk](modultest.dk) 上的真题，感觉心态有点小炸……~~
+~~刷完了 [modultest.dk](https://modultest.dk) 上的真题，感觉心态有点小炸……~~
 
 # 写作 ca. 90 min
 
@@ -301,4 +301,4 @@ Energiforbruget i Danmark er højt, og det er både dyrt og dårligt for miljøe
 
 # 考试结果
 
-![](/pic/danskpic/du34res.png)
+![](../danskpic/du34res.png)

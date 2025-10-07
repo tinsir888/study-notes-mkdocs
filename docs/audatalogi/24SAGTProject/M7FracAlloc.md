@@ -80,7 +80,7 @@ Impossibility of ex-ante EF + ex-post EF1 + ex-ante PO.
 
 But with relaxation of ex-post fairness, awe are able to achieve **ex-ante group fairness** (GF) (aka EF + PO), in conjunction with Prop1 or EF~1~^1^ (**envy-freeness up to one good more-and-less**)
 
-> $EF1\Rarr EF_1^1,EF1\Rarr PROP1$.
+> $EF1\Rightarrow EF_1^1,EF1\Rightarrow PROP1$.
 
 ## Related Work
 
@@ -112,15 +112,15 @@ The **support** of $\mathbf X$ is the set of integral allocations.
 
 **Preferences**
 
-$g_j\succcurlyeq_i g_k\Lrarr v_{i,j}\ge v_{i,k}$
+$g_j\succcurlyeq_i g_k\Leftrightarrow v_{i,j}\ge v_{i,k}$
 
-$g_j\succ_i g_k\Lrarr v_{i,j}\gt v_{i,k}$
+$g_j\succ_i g_k\Leftrightarrow v_{i,j}\gt v_{i,k}$
 
 The utility of agent $i$ under $X\in\mathcal X$ is $v_i(X_i)=\sum_{j\in M}X_{i,j}\cdot v_{i,j}$.
 
 **Allocation rule**
 
-$f:\mathcal I\rarr2^\mathcal X$
+$f:\mathcal I\rightarrow2^\mathcal X$
 
 **Fractional Maximum Nash Welfare Rule**. Given an instance $I\in\mathcal I$, the fractional MNW returns all fractional allocations that maximize the product of agents' utilities, i.e., $MNW(I)=\arg\max_{X\in\mathcal X}\prod_{i\in N}v_i(X_i)$. We refer to an allocation $A\in MNW(I)$ as a fractional MNW allocation.
 
@@ -134,30 +134,50 @@ EF: ~~Omitted~~
 
 SD-EF: An allocation is SD-EF if for every pair of agents $i,h\in N$, we have $X_i\succcurlyeq_i^{SD}X_h$
 
-:heavy_exclamation_mark:$X_i\succcurlyeq_i^{SD}Y_i$ means agent $i$ is **SD-prefer**s $X_i$ to $Y_i$, if for every good $g\in M$, we have
+:book:$X_i\succcurlyeq_i^{SD}Y_i$ means agent $i$ is **SD-prefer**s $X_i$ to $Y_i$, if for every good $g\in M$, we have
 $$
 \sum_{g_j\in\{g'\in M:g'\succcurlyeq_ig\}}X_{i,j}\ge\sum_{g_j\in\{g'\in M:g'\succcurlyeq_ig\}}Y_{i,j}
 $$
 > For example: $3$ agents, $4$ goods.
+>
 > $$
 > agent_1:g_1\succcurlyeq g_2\succcurlyeq g_3\succcurlyeq g_4\\
+> $$
+>
+> $$
 > agent_2:g_2\succcurlyeq g_3\succcurlyeq g_4\succcurlyeq g_1\\
+> $$
+>
+> $$
 > agent_3:g_3\succcurlyeq g_4\succcurlyeq g_1\succcurlyeq g_2\\
+> $$
+>
+> $$
 > \text{allocation }X:
+> $$
+>
+> $$
 > \begin{array}{cc}
 > X&g_1&g_2&g_3&g_4\\
 > 1&20\%&30\%&20\%&10\%\\
 > 2&30\%&50\%&30\%&40\%\\
 > 3&40\%&20\%&50\%&50\%\\
 > \end{array}
-> \\
-> \text{allocation }Y:\begin{array}{cc}
+> $$
+> 
+> $$
+> \text{allocation }Y:
+> $$
+> 
+> $$
+> \begin{array}{cc}
 > Y&g_1&g_2&g_3&g_4\\
 > 1&100\%&0&0&0\\
 > 2&0&100\%&0&0\\
 > 3&0&0&100\%&100\%\\
 > \end{array}
 > $$
+> 
 > Let's take agent $1$ as example:
 >
 > - for good $g_1$: agent $1$ gets $100\%$ in $Y$, $20\%$ in $X$. $i$ SD-prefers $Y_i$ to $X_i$ property holds w.r.t. $g_1$ ($100\%\ge0$)
@@ -172,7 +192,7 @@ $$
 
 SD abbr. for first-order *Stochastic Dominance*.
 
-$EF\Rarr SD-EF$
+$EF\Rightarrow SD-EF$
 
 fPO and PO: ~~Omitted~~
 
@@ -182,19 +202,19 @@ fPO and PO: ~~Omitted~~
 
 **Group Fairness (GF)**. An allocation $X$ is **group fair** if for all non-empty subsets of agents $S,T\subseteq N$, there is no fractional allocation $Y$ of $\cup_{i\in T}X_i$ to the agents in $S$ s.t. $\frac{|S|}{|T|}\cdot v_i(Y_i)\ge v_i(X_i)$ for all $i\in S$ and at least one inequality is strict.
 
-:heavy_exclamation_mark:By imposing constraints on $(S,T)$ pair can recover properties such as PROP $(|S|=1,T=N)$, EF $(|S|=|T|=1)$ and fPO $(S=T=N)$.
+:book:By imposing constraints on $(S,T)$ pair can recover properties such as PROP $(|S|=1,T=N)$, EF $(|S|=|T|=1)$ and fPO $(S=T=N)$.
 
 PROP1, EF1: ~~Omitted~~
 
-**SD-Envy-Freeness up to One Good (SD-EF1)**. An integral allocation is SD-EF1 if for every pair of agents $i,h\in N$ s.t. $A_h\neq\empty$, we have $A_i\succcurlyeq_i^{SD}A_h\diagdown\{j\}$ for some good $j\in A_h$.
+**SD-Envy-Freeness up to One Good (SD-EF1)**. An integral allocation is SD-EF1 if for every pair of agents $i,h\in N$ s.t. $A_h\neq\emptyset$, we have $A_i\succcurlyeq_i^{SD}A_h\diagdown\{j\}$ for some good $j\in A_h$.
 
 (This is equivalent to agent $i$ not envying agent $h$ up to one good under every additive valuation consistent with the ordinal preference relation $\succcurlyeq_i$)
 
-**Envy-Freeness up to One Good More-and-Less (EF~1~^1^)**. An integral allocation $A$ is EF~1~^1^ if for every pair of agents $i,h\in N$ s.t. $A_h\neq\empty$, we have $v_i(A_i\cup\{j_i\})\ge v_i(A_h\diagdown\{j_h\})$ for some goods $j_i\not\in A_i$ and $j_h\in A_h$.
+**Envy-Freeness up to One Good More-and-Less (EF~1~^1^)**. An integral allocation $A$ is EF~1~^1^ if for every pair of agents $i,h\in N$ s.t. $A_h\neq\emptyset$, we have $v_i(A_i\cup\{j_i\})\ge v_i(A_h\diagdown\{j_h\})$ for some goods $j_i\not\in A_i$ and $j_h\in A_h$.
 
 Relations:
 $$
-SD-EF1\Rarr EF1\Rarr\begin{cases}
+SD-EF1\Rightarrow EF1\Rightarrow\begin{cases}
 EF_1^1\\
 PROP1
 \end{cases}
@@ -242,14 +262,14 @@ Let $X^t=eating(M',t)$ denote the partial allocation obtained when the algorithm
 
 :dart::thinking:**Theorem 1**. (Brikhoff-von Neumann) Let $X$ be a real-valued $n\times m$ matrix s.t.
 
-1. $X_{ij}\in[0,1]\forall i\in[n]\and j\in[m]$
+1. $X_{ij}\in[0,1]\forall i\in[n]\land j\in[m]$
 2. $\sum_{j=1}^mX_{ij}\le1\forall i\in[n]$
 3. $\sum_{i=1}^nX_{ij}\le1\forall j\in[m]$
 
 Then, in strongly polynomial time, one can compute integral matrices $A^1,A^2,\cdots,A^q$ and weights $w^1,w^2,\cdots,w^q\in[0,1]$ s.t.
 
 1. $\sum_{k=1}^qw^k=1$ and $X=\sum_{k=1}^qw^kA^k$
-2. For each integral matrix $A^k$, we have $A^k_{ij}\in\{0,1\}\forall i\in[n]\and j\in[m]$
+2. For each integral matrix $A^k$, we have $A^k_{ij}\in\{0,1\}\forall i\in[n]\land j\in[m]$
 3. For every $k\in[q]$, we have
    - $\lfloor\sum_{j=1}^mX_{ij}\rfloor\le\sum_{j=1}^mA^k_{ij}\le\lceil\sum_{j=1}^mX_{ij}\rceil$
    - $\lfloor\sum_{i=1}^nX_{ij}\rfloor\le\sum_{i=1}^nA^k_{ij}\le\lceil\sum_{i=1}^nX_{ij}\rceil$
@@ -268,7 +288,7 @@ In the final stage of the algorithm, fewer than $n$ goods might remain, in which
 
 Ex-ante EF + ex-post EF1
 
-1. $B\gets(\empty,\cdots,\empty)$
+1. $B\gets(\emptyset,\cdots,\emptyset)$
 2. $M^0\gets M$
 3. for $t=1$ to $\lceil\frac{m}{n}\rceil$ do
    - $X^t\gets$ `eating`$(M^t,1)$ // eating protocol for one unit of time
@@ -322,7 +342,7 @@ Every step of branching out can increase the support size of $mn+1$ to $(nm+1)\c
 
  Notice that at the end of the first iteration $t=1$, the fractional partial allocation $X^1$ consists of a polynomial number of integral allocations in its support, i.e., $X^1=\sum_{k=1}^\ell w^{1,k}A^{1,k}$, where $\ell=p(m,n)$ for some polynomial $p$. Consider the polytope $\mathcal P^1$ formed by the convex hull of the integral allocations $A^{1,1},\cdots,A^{1,\ell}$ as follows
 $$
-\mathcal P^1=\{z:z=\sum_k\alpha_kA^{1,k}\text{ where }(\alpha_k\ge0\forall k\in[\ell])\and(\sum_k\alpha_k=1)\}
+\mathcal P^1=\{z:z=\sum_k\alpha_kA^{1,k}\text{ where }(\alpha_k\ge0\forall k\in[\ell])\land(\sum_k\alpha_k=1)\}
 $$
 
 > polytope 多胞体
@@ -345,7 +365,7 @@ Like algorithm 1, this algorithm produces the same **ex-ante SD-EF + ex-post SD-
 
 The previous lacks efficiency.
 
-ex-ante PO $\Rarr$ ex-post fPO $\Rarr$ ex-post PO
+ex-ante PO $\Rightarrow$ ex-post fPO $\Rightarrow$ ex-post PO
 
 ex-ante EF + ex-post PO + ex-post EF1? Not solve...
 
@@ -390,9 +410,9 @@ However the agents have **non-positive** valuation functions. There are differen
 
 **PROP1**, aka proportionality up to one bad. An **integral** allocation $A$ is PROP1 if for every agent $i$, either $v_i(A_i)\ge v_i(M)/n$ or there exists a bad $j\in A_i$ s.t. $v_i(A_i\diagdown\{j\})\ge v_i(M)/n$, where $v_i(M)$ is $i$'s valuation for all bads.
 
-**EFk**, aka envy-freeness up to $k$ bads. An **integral** allocation $A$ is EFk if for every pair of agent $i,h$, there $\exist S_i\subseteq A_i$ with $|S_i|\le k$ s.t. $v_i(A_i\diagdown S_i)\ge v_i(A_h)$.
+**EFk**, aka envy-freeness up to $k$ bads. An **integral** allocation $A$ is EFk if for every pair of agent $i,h$, there $\exists S_i\subseteq A_i$ with $|S_i|\le k$ s.t. $v_i(A_i\diagdown S_i)\ge v_i(A_h)$.
 
-**EF~1~^1^**, aka envy-freeness up to one bad more-and-less. An integral allocation $A$ is EF~1~^1^ if for every pair of agent $i,h$ s.t. $A_i\neq\empty$, we have $v_i(A_i\diagdown\{j_i\})\ge v_i(A_h\cup\{j_h\})$ for some bads $j_i\in A_i$ and $j_h\not\in A_h$.
+**EF~1~^1^**, aka envy-freeness up to one bad more-and-less. An integral allocation $A$ is EF~1~^1^ if for every pair of agent $i,h$ s.t. $A_i\neq\emptyset$, we have $v_i(A_i\diagdown\{j_i\})\ge v_i(A_h\cup\{j_h\})$ for some bads $j_i\in A_i$ and $j_h\not\in A_h$.
 
 ## Ex-ante EF + Ex-post EF1 for Bads
 

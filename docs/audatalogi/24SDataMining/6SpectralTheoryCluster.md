@@ -49,23 +49,30 @@ Consider undirected graphs. Their adjacency matrix is symmetric.
 
 By multiplying a vector $\mathbf x\in\mathbb R^n$ with a adjacency matrix.
 
-$\mathbf x$ can be thought as the vector form of a function $f:V\rarr\mathbb R$.
+$\mathbf x$ can be thought as the vector form of a function $f:V\rightarrow\mathbb R$.
+
 $$
 \mathbf{Ax}=\mathbf{y}\\
-\Rarr
+$$
+
+$$
+\Rightarrow
 \left( \begin{array}{cc}a_{1,1} & \cdots & a_{1,n}\\
 \vdots & \ddots & \vdots\\
 a_{n,1} & \cdots& a_{n,n} \end{array} \right)
-\left({\begin{array}{cc}x_1\\ \vdots\\x_n\end{array}}\right)
+\left({\begin{array}{cc}x_1\\ \vdots\\ x_n\end{array}}\right)
 =
-\left({\begin{array}{cc}y_1\\ \vdots\\y_n\end{array}}\right)
+\left({\begin{array}{cc}y_1\\ \vdots\\ y_n\end{array}}\right)
 $$
+
 The vector $\mathbf y$'s $i$-th element is $y_i=\sum_{(i,j)\in E}x_j$. Therefore, the entry $y_i$ is the sum of labels $x_j$ of neighbors of $i$. This means that $\mathbf A$ is a matrix that transforms the value of a node as a sum of the value of the neighbors. If we repeat this aggregation multiple times we obtain a propagation of the initial labels $\mathbf x$ over the network $\mathbf x^{(t)}=\mathbf{Ax}^{(t-1)}$
 
 There exists a fixed-point in this iteration:
+
 $$
-\exist\lambda,\mathbf{Ax}=\lambda\mathbf{x}
+\exists\lambda,\mathbf{Ax}=\lambda\mathbf{x}
 $$
+
 We want to find an eigenvector $\mathbf x$ and eigenvalue $\lambda$ for the matrix $\mathbf A$.
 
 # Spectral Graph Theory
@@ -74,17 +81,17 @@ Analyzing properties of the graph by inspecting the eigenvalues and eigenvectors
 
 Given a graph $G$ and a matrix $\mathbf M$ that describes the graph's structure, the **graph spectrum** is the set of $\mathbf M$'s eigenvalues $\Lambda=\{\lambda_1,\cdots,\lambda_n\}$ sorted in descending order $\lambda_1\ge\lambda\ge\cdots\ge\lambda_n$
 
-$\lambda\in\mathbb C^1$ is an eigenvalue if there exists a vector $\mathbf x\in\mathbb C^n,\mathbf x\neq0$ s.t. $\mathbf{Ax}=\lambda\mathbf x\Lrarr(\mathbf A-\lambda\mathbf I)\mathbf x=0\Rarr\mathbf\det(A-\lambda\mathbf I)=0$
+$\lambda\in\mathbb C^1$ is an eigenvalue if there exists a vector $\mathbf x\in\mathbb C^n,\mathbf x\neq0$ s.t. $\mathbf{Ax}=\lambda\mathbf x\Leftrightarrow(\mathbf A-\lambda\mathbf I)\mathbf x=0\Rightarrow\mathbf\det(A-\lambda\mathbf I)=0$
 
 For symmetric matrices. $\mathbf A$ is symmetric, This means $a_{j,i}=a_{i,j}\forall i,j$. Thus,
 
 - All eigenvalues are positive $\lambda\ge0$
 - The matrix is positive semi-definite, $\mathbf x^\top\mathbf{Ax}\ge0\forall\mathbf x$.
-- $\exist$ matrix $\mathbf N$, s.t. $\mathbf A=\mathbf N^\top\mathbf N$
+- $\exists$ matrix $\mathbf N$, s.t. $\mathbf A=\mathbf N^\top\mathbf N$
 
 - All eigenvalues are real numbers, all eigenvectors are orthogonal ($\mathbf u^\top\mathbf v=0$).
 
-In a $d$-regular graph, that $\mathbf 1$ is an eigenvector. That means all the eigenvectors $\mathbf u$ should be $\mathbf 1^\top\mathbf u=0\Rarr\sum_iu_i=0$. This is a very important fact that will be used later.
+In a $d$-regular graph, that $\mathbf 1$ is an eigenvector. That means all the eigenvectors $\mathbf u$ should be $\mathbf 1^\top\mathbf u=0\Rightarrow\sum_iu_i=0$. This is a very important fact that will be used later.
 
 > A graph is $d$-regular, if the degree for every vertex is $d$.
 

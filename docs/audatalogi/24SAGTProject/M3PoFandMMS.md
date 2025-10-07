@@ -89,9 +89,11 @@ $$
 $OPT$ denote the optimal social welfare, i.e., $OPT=SW(\mathcal W^*)$.
 
 **Price of fairness**.
+
 $$
 PoF={SW(\mathcal W^*)\over\max_{\mathcal A\in\text{Fair Allocation}}SW(\mathcal A)}
 $$
+
 **Scaling**. This paper considers both scaled and unscaled valuations of agents' valuations.
 
 :question:**What does scaling here means**
@@ -123,7 +125,7 @@ This paper also give an algorithm to produce absolute welfare guarantee.
 
 #### Pseudo code for Algorithm `ALF-EF1-ABS`:
 
-Input: Fair-division instance $\mathcal I=\lang[n],[m],\{v_i\}_{i\in[n]}\rang$ with value-query oracle access to the subadditive valuations $v_i$s.
+Input: Fair-division instance $\mathcal I=\langle[n],[m],\{v_i\}_{i\in[n]}\rangle$ with value-query oracle access to the subadditive valuations $v_i$s.
 
 Output: An EF1 allocation $\mathcal B$ with $SW(\mathcal B)\ge{1\over2n}\sum_{i\in[n]}v_i([m])$.
 
@@ -134,7 +136,7 @@ Output: An EF1 allocation $\mathcal B$ with $SW(\mathcal B)\ge{1\over2n}\sum_{i\
 
 
 
-:thinking:**Lemma 1**. Let $\mathcal I=\lang[n],[m],\{v_i\}_{i\in[n]}\rang$ be a fair-division instance in which agent valuations are subadditive. Then, given value-query oracle access to the valuations, `ALG-EF1-ABS` algorithm efficiently computes an EF1 allocation $\mathcal B$ with social welfare $SW(\mathcal B)\ge{1\over2n}\sum_{i\in[n]}v_i([m])$.
+:thinking:**Lemma 1**. Let $\mathcal I=\langle[n],[m],\{v_i\}_{i\in[n]}\rangle$ be a fair-division instance in which agent valuations are subadditive. Then, given value-query oracle access to the valuations, `ALG-EF1-ABS` algorithm efficiently computes an EF1 allocation $\mathcal B$ with social welfare $SW(\mathcal B)\ge{1\over2n}\sum_{i\in[n]}v_i([m])$.
 
 > For each agent $i\in[n]$, sort the goods as $g_{i_1},\cdots,g_{i_m}$ in a non-decreasing order of their value to agent $i$ i.e. $v_i(g_{i_1})\ge\cdots\ge v_i(g_{i_m})$, and let $G_i=\{g_{i_1},\cdots,g_{i_n}\}$ be the set of $n$ most valuable goods to agent $i$.
 >
@@ -193,7 +195,7 @@ If there is an unassigned connected bundle $U$ that some agent envies, then the 
 
 ~~Pseudo code omitted here.~~
 
-:thinking:**Lemma 2**. When `ALG-EF1-HIGH` is run on a fair division instance $\mathcal I=\lang[n],[m],\{v_i\}_{i\in[n]}\rang$ with subadditive valuations, the following hold regarding the partial allocation $\mathcal P^t$ constructed after $t$ iterations of the while loop.
+:thinking:**Lemma 2**. When `ALG-EF1-HIGH` is run on a fair division instance $\mathcal I=\langle[n],[m],\{v_i\}_{i\in[n]}\rangle$ with subadditive valuations, the following hold regarding the partial allocation $\mathcal P^t$ constructed after $t$ iterations of the while loop.
 
 1. If $t\ge1$, then for each agent $i\in[n]$, either $P_i^t=P_i^{t-1}$ or $v_i(P_i^t)\ge v_i(P_i^{t-1})$.
 2. For each agent $i\in[n]$, $P_i$ is a connected bundle under the line graph $L$ constructed in checking whether there exists agent envying a $U\in\mathcal U(\mathcal P)$.
@@ -208,7 +210,7 @@ If there is an unassigned connected bundle $U$ that some agent envies, then the 
 1. The while loop terminates after $T=O(nm^2)$ iterations.
 2. The partial allocation $\mathcal P^T$ constructed at the end of the while loop satisfies $v_i(P_i^T)\ge v_i(U)$ for every agent $i\in[n]$ and unassigned connected bundle $U\in\mathcal U(\mathcal P^T)$.
 
-> $O(m^2)$ possible connected bundles in $L\Rarr$ an agent's assignment can only be updated $O(m^2)$ times. There are $n$ agents in total.
+> $O(m^2)$ possible connected bundles in $L\Rightarrow$ an agent's assignment can only be updated $O(m^2)$ times. There are $n$ agents in total.
 >
 > The while loop would not have terminated if $v_i(P_i^T)\lt v_i(U)$ for any agent $i$ and any unassigned connected bundle $U$.
 
@@ -224,7 +226,7 @@ where $OPT$ is the optimal social welfare achievable in instance $\mathcal I$.
 > $$
 > By lemma 2, $\mathcal P$ is EF1. Also, note that the algorithm of Lipton et al can extend EF1 allocation $\mathcal P$ into a complete EF1 allocation $\mathcal A$ with $SW(\mathcal A)\ge SW(\mathcal P)$. Hence the inequality above along with $SW(\mathcal W)\ge{1\over2}OPT$ completes the proof of the lemma 4.
 >
-> Due to lemma 2, each $P_i$ is a connected bundle in the line graph $L$. Hence, removing the goods allocated in $\mathcal P$ creates at most $n+1$ connected components, i.e. $|\mathcal U(\mathcal P)|\lt n+1$. Let $\mathcal T(\mathcal P)=\{P_j:j\in[n]\}\cup\mathcal U(\mathcal P)$ be the collection of the assigned and unassigned in $L$ created by $\mathcal P$. ==Hence $|\mathcal T(\mathcal P)|\lt2n+1$.== For each agent $i\in[n]$, let $\mathcal Q_i$ denote the bundles in $\mathcal T(\mathcal P)$ that intersect with $W_i$, i.e., $\mathcal Q_i=\{S\in\mathcal T(\mathcal P):S\cap W_i\neq\empty\}$. write $q_i=|\mathcal Q_i|$.
+> Due to lemma 2, each $P_i$ is a connected bundle in the line graph $L$. Hence, removing the goods allocated in $\mathcal P$ creates at most $n+1$ connected components, i.e. $|\mathcal U(\mathcal P)|\lt n+1$. Let $\mathcal T(\mathcal P)=\{P_j:j\in[n]\}\cup\mathcal U(\mathcal P)$ be the collection of the assigned and unassigned in $L$ created by $\mathcal P$. ==Hence $|\mathcal T(\mathcal P)|\lt2n+1$.== For each agent $i\in[n]$, let $\mathcal Q_i$ denote the bundles in $\mathcal T(\mathcal P)$ that intersect with $W_i$, i.e., $\mathcal Q_i=\{S\in\mathcal T(\mathcal P):S\cap W_i\neq\emptyset\}$. write $q_i=|\mathcal Q_i|$.
 >
 > While $\mathcal W$ forms a partition of $L$ into at most $n$ connected components. This, along with the observation that $L$ is a line graph, can be used to bound the total number of intersections between the two. We can move a marker from left to right, keeping track of the bundle from $\mathcal W$ and the bundle from $\mathcal T(\mathcal P)$ that contain the current good. Every time the marker encounters a new intersection, it must have entered either a new bundle from $W$ or a new bundle from $\mathcal T(\mathcal P)$. Thus, we have
 > $$
@@ -237,7 +239,7 @@ where $OPT$ is the optimal social welfare achievable in instance $\mathcal I$.
 > Next, we bound $v_i(W_i)$ for $i\in H^c$. By definition of $\mathcal Q_i$, we have $v_i(W_i)=\sum_{S\in\mathcal Q_i}v_i(S\cap W_i)$. We break the sum into 2 parts, $S\in\mathcal U(\mathcal P)$ or $S\in\mathcal P$.
 >
 > 1. If $S\in\mathcal U(\mathcal P)$, by lemma 3, we have $v_i(S\cap W_i)\le v_i(S)\le v_i(P_i)\le 2v_i(P_i)$.
-> 2. If $S\in\mathcal P$, then $S=P_j$ for some agent $j\in[n]$. Let $\hat P_j=P_j\cap W_i$. By definition of $\mathcal Q_i$, $\hat P_j\neq\empty$. $\because\mathcal P$ is EF1 and $v_i$ is monotone, agent $i$ does not envy the bundle $P_j$ up to one good in it. Thus, there exists a good $\hat g\in\hat P_j$ s.t. $v_i(P_i)\ge v_i(\hat P_j\diagdown\{\hat g\})\ge v_i(\hat P_j)-v_i(\hat g)$, where the last transition uses subadditivity of $v_i$. Further, $\hat g\in\hat P_j\subseteq W_i$. The initialization and lemma 2 ensure that $v_i(\hat g)\le v_i(P_i^0)\le v_i(P_i)$. Combining with the previous step, we have $v_i(S\cap W_i)=v_i(\hat P_j)\le2v_i(P_i)$.
+> 2. If $S\in\mathcal P$, then $S=P_j$ for some agent $j\in[n]$. Let $\hat P_j=P_j\cap W_i$. By definition of $\mathcal Q_i$, $\hat P_j\neq\emptyset$. $\because\mathcal P$ is EF1 and $v_i$ is monotone, agent $i$ does not envy the bundle $P_j$ up to one good in it. Thus, there exists a good $\hat g\in\hat P_j$ s.t. $v_i(P_i)\ge v_i(\hat P_j\diagdown\{\hat g\})\ge v_i(\hat P_j)-v_i(\hat g)$, where the last transition uses subadditivity of $v_i$. Further, $\hat g\in\hat P_j\subseteq W_i$. The initialization and lemma 2 ensure that $v_i(\hat g)\le v_i(P_i^0)\le v_i(P_i)$. Combining with the previous step, we have $v_i(S\cap W_i)=v_i(\hat P_j)\le2v_i(P_i)$.
 >
 > Thus, for $i\in H^c$, we have $v_i(W_i)\le|\mathcal Q_i|\cdot2v_i(P_i)\le3\sqrt n\cdot2v_i(P_i)$. Thus, we get
 > $$
@@ -268,7 +270,7 @@ For **unscaled** valuations, consider the case $m=n$, following additive valuati
 
 
 
-$\because$ EF1 $\Rarr$ Prop1, thus the PoF also holds for Prop1. (PoF for Prop1 is $\Theta(\sqrt n)$ for scaled additive valuations and $\Theta(n)$ for unscaled additive valuations.
+$\because$ EF1 $\Rightarrow$ Prop1, thus the PoF also holds for Prop1. (PoF for Prop1 is $\Theta(\sqrt n)$ for scaled additive valuations and $\Theta(n)$ for unscaled additive valuations.
 
 ## Price of $1/2$-MMS
 
@@ -296,12 +298,12 @@ Input: A fair division instance $\mathcal I$, additive valuations $\{v_i\}_{i\in
 
 Output: A $1\over2$-MMS allocation $\mathcal B$ with $SW(\mathcal B)\ge{1\over3n}\sum_{i=1}^nv_i([m])$.
 
-1. Initialize set of agents $A=[n]$, set of goods $G=[m]$ and bundles $B_i=\empty$ for all $i\in[n]$.
+1. Initialize set of agents $A=[n]$, set of goods $G=[m]$ and bundles $B_i=\emptyset$ for all $i\in[n]$.
 2. while there exists agent $i\in A$ and good $g\in G$ s.t. $v_i(g)\ge{1\over2|A|}v_i(G)$ do
    - set $(i',g')\in\arg\max_{(i,g)\in A\times G:v_i(g)\ge{1\over2|A|}v_i(G)}v_i(g)$
    - set $B_{i'}=\{g'\}$ and update $A\gets A\diagdown\{i'\}$ along with $G\gets G\diagdown\{g'\}$
 3. end while
-4. efficiently compute a Prop1 allocation $(B_i)_{i\in A}$ of the fair division instance $\lang A,G,\{v_i\}_{i\in A}\rang$
+4. efficiently compute a Prop1 allocation $(B_i)_{i\in A}$ of the fair division instance $\langle A,G,\{v_i\}_{i\in A}\rangle$
 5. return allocation $\mathcal B=(B_1,\cdots,B_n)$.
 
 The algorithm is a refinement of the algorithm of Amandatidis et al. for computing a $1\over2$-MMS allocation: in while loop, we use $\arg\max$ to break ties. They had proven the algorithm always produce $1\over2$-MMS. It remains to prove that the desired welfare holds for results.
@@ -339,11 +341,19 @@ Given a fair division instance $\mathcal I$ with scaled additive valuations, and
 > Proof by lemma 9 and lemma 10.
 
 The agents are partitioned into 3 sets, $\Gamma_{MMS},\Gamma_{single},\Gamma_{hard}$, where agent $i$ is paced into a set depending on how the estimate $Z_i$ of $MMS_i$ relates to $v_i(W^*_i)$.
+
 $$
 \Gamma_{MMS}=\{i\in[n]:Z_i\ge{2\over3\sqrt n}v_i(W^*_i)\}\\
-\Gamma_{single}=\{i\in[n]:Z_i\lt{2\over3\sqrt n}v_i(W_i^*)\and\exist g\in W_i^*,v_i(g)\ge{1\over3\sqrt n}v_i(W^*_i)\}\\
-\Gamma_{hard}=\{i\in[n]:Z_i\lt{2\over3\sqrt n}v_i(W_i^*)\and\forall g\in W_i^*,v_i(g)\lt{1\over3\sqrt n}v_i(W_i^*)\}
 $$
+
+$$
+\Gamma_{single}=\{i\in[n]:Z_i\lt{2\over3\sqrt n}v_i(W_i^*)\land\exists g\in W_i^*,v_i(g)\ge{1\over3\sqrt n}v_i(W^*_i)\}\\
+$$
+
+$$
+\Gamma_{hard}=\{i\in[n]:Z_i\lt{2\over3\sqrt n}v_i(W_i^*)\land\forall g\in W_i^*,v_i(g)\lt{1\over3\sqrt n}v_i(W_i^*)\}
+$$
+
 For an agent $i\in\Gamma_{single}$, giving her a single good from $\arg\max_{g\in W_i^*}v_i(g)$ gives her value at least ${1\over3\sqrt n}v_i(W_i^*)\gt{1\over2}Z_i$. Thus the algorithm begins by giving each such agent $i$ her most valuable good from $W_i^*$ and adding her directly in set $P$ (permanent). (another set is $T$ temporary)
 
 Next, for $i\in\Gamma_{MMS}$, giving her value at least ${1\over2}\cdot Z_i$ also guarantees that her value is at least ${1\over3\sqrt n}v_i(W_i^*)$; thus the algorithm solely aims to give such agents ${1\over2}\cdot Z_i$ value.
@@ -359,7 +369,7 @@ $$
 
 :thinking:**Lemma 9**. The following hold at any stage during the execution of `ALG-MMS-HIGH`:
 
-1. $P\cap T=\empty$.
+1. $P\cap T=\emptyset$.
 2. If $i\in P,v_i(B_i)\ge{1\over3\sqrt n}v_i(W_i^*)$ and $B_i$ is never updated afterwards.
 3. If $i\in P\cup T,v_i(B_i)\ge{1\over2}\cdot Z_i$, and $i$ is never removed from $P\cup T$ afterwards.
 4. $T\subseteq\Gamma_{hard}$.
@@ -401,7 +411,7 @@ Research outlook:
 
    - EF1 + PO (Pareto optimality), EF1 + fPO (fractional Pareto optimality)
    - Price of $\alpha$-MMS for $\alpha\gt{1\over2}$. At least $3\over4$-MMS always exists.
-   - Price of $\alpha$-GMMS. GMMS $\Rarr$ MMS. $1\over2$-GMMS always exists.
+   - Price of $\alpha$-GMMS. GMMS $\Rightarrow$ MMS. $1\over2$-GMMS always exists.
    - Price of EFX. It remains to be solved the existence of EFX for agents more than 3.
 
 2. Analyze the PoF when the items are chores, （简单来说就是物品的估值可以为负）or a mixture of goods and chores.
@@ -472,9 +482,9 @@ Agents $[n]$, goods $[m]$.
 
 Valuation of an agent $i$ over a set $S\in[m]$ goods: $v_i(S)$
 
-Additive valuations: $v_i(A+B)=v_i(A)+v_i(B),A\cap B=\empty$.
+Additive valuations: $v_i(A+B)=v_i(A)+v_i(B),A\cap B=\emptyset$.
 
-Non-negative valuation: $v_i(S)\ge0,v_i(\empty)=0$.
+Non-negative valuation: $v_i(S)\ge0,v_i(\emptyset)=0$.
 
 Monotonicity: $v_i(A)\le v_i(B)\forall A\subseteq B$.
 
@@ -506,11 +516,11 @@ Proof in two parts. First, we show the problem can be reduced to a restricted se
 
 ### The Reduction of Bouveret and Lemaître
 
-An instance is an **ordered instance** iff $\exist$ a total ordering $\prec$ over $[m]$ s.t. $\forall i\in[n]$ and $g,g'\in[m]$, s.t. $g\prec g'$, we have $v_{i,g}\ge v_{i,g'}$. i.e. $v_{i,1}\ge v_{i,2}\ge\cdots v_{i,m}$.
+An instance is an **ordered instance** iff $\exists$ a total ordering $\prec$ over $[m]$ s.t. $\forall i\in[n]$ and $g,g'\in[m]$, s.t. $g\prec g'$, we have $v_{i,g}\ge v_{i,g'}$. i.e. $v_{i,1}\ge v_{i,2}\ge\cdots v_{i,m}$.
 
 Given a fair division $I=([n],[m],\{v_i\}_{i\in[n]})$, the algorithm constructs an ordered instance as follows:
 
-1. For every agent $i$, $\exist$ a permutation $\sigma_i:[m]\rarr[m]$ s.t. $\forall g,g'\in[m]$ with $g\lt g'$, we have $v_{i,\sigma_i(g)}\ge v_{i,\sigma_i(g')}$. Using these permutations, we define a new valuation function $v_i'$ for every agent $i$ by setting $v_{i,g}'=v_{i,\sigma_i(g)}$ for all $g\in[m]$.
+1. For every agent $i$, $\exists$ a permutation $\sigma_i:[m]\rightarrow[m]$ s.t. $\forall g,g'\in[m]$ with $g\lt g'$, we have $v_{i,\sigma_i(g)}\ge v_{i,\sigma_i(g')}$. Using these permutations, we define a new valuation function $v_i'$ for every agent $i$ by setting $v_{i,g}'=v_{i,\sigma_i(g)}$ for all $g\in[m]$.
 
    i.e. for $i$, the value of $g$-th good in the new instance is equal to the $g$-th largest valuation of $i$ in the original instance.
 
@@ -527,7 +537,7 @@ Input: $I$ with $\mathcal A'$ for the ordered instance $I'$.
 Output: $\mathcal A$
 
 1. For all $i\in[n]$ and $g\in A_i'$ set $p_g=i$. // this defines a sequence of agents
-2. Initialize allocation $\mathcal A$ with $A_i=\empty$, for all $i\in[n]$. And initialize $R\gets[m]$.
+2. Initialize allocation $\mathcal A$ with $A_i=\emptyset$, for all $i\in[n]$. And initialize $R\gets[m]$.
 3. for $g=1$ to $m$ do
    - pick $k\in\arg\max_{g'\in R}\{v_{p_g}(g')\}$
    - update $A_{p_g}\gets A_{p_g}\cup\{k\}$ and $R\gets R\diagdown\{k\}$
@@ -558,11 +568,17 @@ The concept is sued to establishing the desired approximation guarantee.
 A multi-set $X$ is related to another multi-set $Y$ iff the prefix sums of the sorted version $X$ are at least as large as the prefix sums of the sorted version of $Y$.
 
 Definition of majorization: A multi-set $X=\{x_i\in\mathbb R|1\le i\le n\}$ is said to majorize another multi-set $Y=\{y_i\in\mathbb R|1\le i\le n\}$ iff
+
 $$
 \sum_{i=1}^kx_{(i)}\ge\sum_{i=1}^ky_{(i)}\forall1\le k\lt n\\
-and\\
+$$
+
+and
+
+$$
 \sum_{i=1}^nx_{(i)}=\sum_{i=1}^ny_{(i)}
 $$
+
 Here $x_{(i)}$ and $y_{(i)}$ is the $i$-th largest element of $X$ and $Y$ respectively.
 
 :thinking:**Proposition 1**. (easy)
@@ -581,13 +597,13 @@ Let $\mathcal A$ be the return of `ALGEG`. Consider the set of goods that have v
 
 Let $t$ denote the smallest iteration count at which `ALGEG` assigns a good to a bundle of size 2. Hence, every bundle in the partial allocation  of the first $t-1$ goods is of size at most 2.
 
-`ALGEG` updates the partial allocation by adding goods to existing bundles. This implies that the cardinalities of bundles is always increasing. Thus for each final $A_j$, there $\exist$ $P_j$ in the partial allocation $\mathcal P$ s.t. $P_j\subseteq A_j$. $v_1(A_1)\ge v_1(P_1)$.
+`ALGEG` updates the partial allocation by adding goods to existing bundles. This implies that the cardinalities of bundles is always increasing. Thus for each final $A_j$, there $\exists$ $P_j$ in the partial allocation $\mathcal P$ s.t. $P_j\subseteq A_j$. $v_1(A_1)\ge v_1(P_1)$.
 
 Let $\mathcal Q$ be the partial allocation considered by `ALGEG` at the beginning of the $t$-th iteration. The definition of $t$ ensures that $|\mathcal Q_i|\le2\forall i\in[n]$. In the following, we will show that $\tau\le t$ ,then we get bound $|P_i|\lt2\forall i\in[n]$. This leas to the inequality $\tau\le2n$.
 
 ......(已经有两个物品了，在添加这个物品时，由于根据算法越到后面添加的越小，所以 $v_1(A_1)\ge2v_1(g_t)$。根据定义 $g_\tau$ 是最小标号的满足不等式的，所以 $\tau\le t$)
 
-:heavy_check_mark:Claim 1. In the partial allocation returned by `ALGEG`, $\mathcal A$, the following inequality holds for all bundles $A_i$ that satisfy $A_i\cap\{g_\tau,\cdots,g_m\}\neq\empty$
+:heavy_check_mark:Claim 1. In the partial allocation returned by `ALGEG`, $\mathcal A$, the following inequality holds for all bundles $A_i$ that satisfy $A_i\cap\{g_\tau,\cdots,g_m\}\neq\emptyset$
 $$
 v_1(A_1)\ge{2\over3}v_1(A_i)
 $$
@@ -614,14 +630,18 @@ $$
 Let $\ell$ be # of bundles in $\{A_2,A_3,\cdots,A_n\}$, that do not contain any good with index greater than $\tau-1$. For every such bundle $A_i$, there exists a unique bundle $P_j$ in $\mathcal P$ s.t. $A_i=P_j$. By reindexing, that $P_{n-\ell+1},P_{n-\ell+2},\cdots,P_n$ are these $\ell$ bundles in $\mathcal A$ that do not satisfy the condition in claim 1.
 
 Let $\mathcal M$ denote a partition of $[m]$ that achieves the maximin share for player $1$. Consider the partial allocation $\{M_i\cap H\}_{i=1}^n$ and index the set s.t. valuation is in ascending order. Claim 3 implies $\{M_i\cap H\}_{i=1}^n$ majorizes $\mathcal P$. Hence, $\sum_{i=n-\ell+1}^nv_1(M_i\cap H)\ge\sum_{i=n-\ell+1}^nv_1(P_i)$. This inequality and the fact the valuations are monotone lead to the following useful bound:
+
 $$
 \sum_{i=n-\ell+1}^nv_1(M_i)\ge\sum_{i=n-\ell+1}^nv_1(P_i)
 $$
+
 Recall that $P_{n-\ell+1},P_{n-\ell+2},\cdots,P_{n}$ are bundles in $\mathcal A$, and the remaining $n-\ell$ bundles of $\mathcal A$ satisfy the inequality $v_1(A_1)\ge{2\over3}v_1(A_i)$. Since $v_1$ is additive, we have $\sum_{i=1}^nv_1(M_i)=\sum_{i=1}^nv_1(A_i)$. Therefore, inequality above provides the following bound:
+
 $$
 \sum_{i=1}^{n-\ell}v_i(M_i)\le\sum_{i=1}^{n-\ell}v_1(A_i)\\
 \le v_1(A_1)+(n-\ell-1){3\over2}v_1(A_1)
 $$
+
 Overall, this inequality implies that $v_1(A_1)$ is at least $2(n-\ell)\over3n-1$ times the average of the $n-\ell$ sets $M_{\ell+1},\cdots,M_n$. Hence, $v_1(A_1)]\ge{2n\over3n-1}\min_{j\in[n]}v_i(M_j)={2n\over3n-1}\mu_1$. This completes the proof.
 
 ## Submodular Valuations

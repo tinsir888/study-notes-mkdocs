@@ -24,7 +24,7 @@ abbrlink: 42781bf6
 
 Danskuddannelser 有三个级别，分别为 DU 1，DU 2 和 DU 3。
 
-![丹麦语课程对应欧标语言等级图](/pic/danskpic/model-danskuddannelser-CEFR.jpg)
+![丹麦语课程对应欧标语言等级图](../danskpic/model-danskuddannelser-CEFR.jpg)
 
 - DU 1 是给小孩学的，全部学完了大概能差不多到 B1 的水平（对应考试 Prøve i Dansk 1）
 

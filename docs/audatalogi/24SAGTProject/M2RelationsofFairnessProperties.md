@@ -57,7 +57,7 @@ $N=\{1,2,\cdots,n\}$ set of $n$ agents.
 
 $M$ set of $m$ indivisible items.
 
-Valuation function should be monotone and additive: $\forall S\subseteq M,v_i(S)=\sum_{g\in S}v_i(g)$ and $(\forall i\in N)\and(\forall g\in M),v_i(g)\ge0$.
+Valuation function should be monotone and additive: $\forall S\subseteq M,v_i(S)=\sum_{g\in S}v_i(g)$ and $(\forall i\in N)\land(\forall g\in M),v_i(g)\ge0$.
 
 Assume that we have already know the valuation function for each agent.
 
@@ -83,7 +83,7 @@ Family of Maximin Share (worst-case guarantee)
 
   - To find an allocation $\mathcal A$ s.t., for each agent $i$ it maximizes $\min_{A_j\in\mathcal A}v_i(A_j)$
 
-    $\Lrarr\mu_i(n,S)=\max_{\mathcal A\in\Pi_n(S)}\min_{A_j\in\mathcal A}v_i(A_j)$
+    $\Leftrightarrow\mu_i(n,S)=\max_{\mathcal A\in\Pi_n(S)}\min_{A_j\in\mathcal A}v_i(A_j)$
 
 - $\alpha$-MMS $\forall i\in N,v_i(A_i)\ge\alpha\cdot\mu_i(n,M)$
 
@@ -91,7 +91,7 @@ Family of Maximin Share (worst-case guarantee)
 
 - $\alpha$-G(Groupwise)MMS: For each subset $N'\subseteq N$, $\forall i\in N',v_i(A_i)\ge\alpha\cdot\mu_i(|N'|,\cup_{j\in N'}A_j)$
 
-  Thus, **GMMS$\Rarr$MMS, MMS$\not\rarr$PMMS** (GMMS is for all the subset of agents, MMS is only for all the agents)
+  Thus, **GMMS$\Rightarrow$MMS, MMS$\not\rightarrow$PMMS** (GMMS is for all the subset of agents, MMS is only for all the agents)
 
 ## Known EF1 Algorithms
 
@@ -105,7 +105,7 @@ In each step, an agent that no one envies receives the next available good.
 
 Tie-breaking: lexicographically order.
 
-:heavy_exclamation_mark::thinking:Theorem 1: Let $\mathcal P$ be any EF1 partial allocation and $M'=M\diagdown\cup_{i=1}^nP_i$. Then,
+:book::thinking:Theorem 1: Let $\mathcal P$ be any EF1 partial allocation and $M'=M\diagdown\cup_{i=1}^nP_i$. Then,
 
 > (a) **At the end of each iteration of the for loop, the resulting partial allocation is EF1.** Thus the algorithm terminates with EF1 allocation.
 >
@@ -121,7 +121,7 @@ Pseudo code for Envy-cycle Elimination$(N,\mathcal P,M')$ $M'$ denotes set of un
 
    - While there is no node of in-degree 0 in $G_\mathcal P$ do
 
-     - Find a cycle $j_1\rarr j_2\rarr\cdots\rarr j_r\rarr j_1$ in $G_\mathcal P$
+     - Find a cycle $j_1\rightarrow j_2\rightarrow\cdots\rightarrow j_r\rightarrow j_1$ in $G_\mathcal P$
      - $B=P_{j1}$
      - for $k=1$ to $r-1$ do
        - $P_{jk}=P_{jk+1}$
@@ -164,16 +164,16 @@ Round-robin$(N,\mathcal P,M',\ell,\tau)$ also outputs EF1 allocation: $\ell$ den
 Draft and Eliminate$(N,M)$ also outputs EF1 allocation: **Combination of ECE & RR**
 
 1. $(\ell,n')=$ Preprocessing$(N,M)$
-2. Let $\mathcal A=(A_1,\cdots,A_n)$ with $A_i=\empty$ for each $i\in N$
+2. Let $\mathcal A=(A_1,\cdots,A_n)$ with $A_i=\emptyset$ for each $i\in N$
 3. $(\mathcal A,M')=$ Round-robin$(N,\mathcal A,M,\ell,n)$
 4. Reverse $\ell$: $\ell^R=(\ell[n],\ell[n-1],\cdots,\ell[1])$
 5. $(\mathcal A,M')=$ Round-robin$(N,\mathcal A,M',\ell^R,n-n')$
 6. $\mathcal A=$ Envy-cycle Elimination$(N,\mathcal A,M')$
 7. return $\mathcal A$
 
-:heavy_exclamation_mark::thinking:Theorem 2
+:book::thinking:Theorem 2
 
-> Let $\ell$ be any ordering of $N$ and $\mathcal P_\empty=(\empty,\cdots,\empty)$, Round-robin algorithm produces an EF1 allocation in polynomial time.
+> Let $\ell$ be any ordering of $N$ and $\mathcal P_\emptyset=(\emptyset,\cdots,\emptyset)$, Round-robin algorithm produces an EF1 allocation in polynomial time.
 >
 > :raised_hand:Time complexity analysis:
 >
@@ -193,11 +193,11 @@ Draft and Eliminate Algorithm. It suffices to run only two rounds of the round-r
 
 Preprocessing$(N,M)$ step is facilitate the presentation and the analysis of the algorithm:
 
-1. $L=\empty;A=N;k=1$
+1. $L=\emptyset;A=N;k=1$
 
    **//$L$ contains the agents that get to pick first in 1st round-robin at the expense of not choosing a second good in 2nd round-robin.**
 
-2. while $A\neq\empty$ do
+2. while $A\neq\emptyset$ do
 
    - Let $i$ be the lexicographically first agent of $A$
 
@@ -243,7 +243,7 @@ The resulting partial allocation, where everyone receives one or two goods, turn
 
 ## About Preprocessing Step
 
-:heavy_exclamation_mark::thinking:Lemma 1: At the end of the execution of preprocessing with input $(N,M)$, each agent $i$ is associated with a single good $h_i$, so that
+:book::thinking:Lemma 1: At the end of the execution of preprocessing with input $(N,M)$, each agent $i$ is associated with a single good $h_i$, so that
 
 a) $v_i(h_i)\gt\phi\cdot v_i(g)$, for any $i\in L$ and $g\in M\diagdown\cup_{k=1}^n\{h_k\}$.
 
@@ -277,7 +277,7 @@ b) $\phi\cdot v_i(h_i)\ge v_i(h_j)$ for any $i,j\in N\diagdown L$.
 >
 >Q. E. D.
 
-:heavy_exclamation_mark::thinking:Lemma 2: The partial allocation produced in first round-robin is $\mathcal (\{h_1\},\{h_2\},\cdots,\{h_n\})$, where $h_i$s are in Lemma 1.
+:book::thinking:Lemma 2: The partial allocation produced in first round-robin is $\mathcal (\{h_1\},\{h_2\},\cdots,\{h_n\})$, where $h_i$s are in Lemma 1.
 
 ==The preprocessing step can be combined with 1st round-robin!==
 
@@ -301,7 +301,7 @@ b) $\phi\cdot v_i(h_i)\ge v_i(h_j)$ for any $i,j\in N\diagdown L$.
 
 ## Envy-freeness up to Any Good
 
-:heavy_exclamation_mark::thinking:Theorem 3: The allocation $\mathcal A$ returned by Draft-and-elimination is a $(\phi-1)$-EFX allocation. :warning:
+:book::thinking:Theorem 3: The allocation $\mathcal A$ returned by Draft-and-elimination is a $(\phi-1)$-EFX allocation. :warning:
 
 >Consider the allocation $\mathcal A$ returned by algorithm, and fix two distinct agents $i,j\in N$. If $|A_j|=1$, then clearly, $v_i(A_i)\ge\max_{g\in A_j}v_i(A_j\diagdown\{g\})=0$.
 >
@@ -318,30 +318,36 @@ b) $\phi\cdot v_i(h_i)\ge v_i(h_j)$ for any $i,j\in N\diagdown L$.
 >2. $i\in L$ and $h$ added in envy-cycle elimination.
 >
 >   By the way that envy-cycle-elimination chooses who to give the next good to, we know that right before $h$ was added, no one envied $j'$. In particular, $v_i(A_i^{old})\ge v_i(A_{j'}^{old})$. We further have $v_i(A_i^{old})\ge v_i(h_i)\gt\phi\cdot v_i(h)$, where the last inequality directly follows from part (a) of lemma 1. Putting everything together,
+> 
 > $$
 >   v_i(A_j)=v_i(A_{j'}^{old})+v_i(h)\le(1+\phi-1)v_i(A_i^{old})\le\phi\cdot v_i(A_i)\\
->   \Lrarr v_i(A_i)\ge(\phi-1)\cdot v_i(A_j)
+>   \Leftrightarrow v_i(A_i)\ge(\phi-1)\cdot v_i(A_j)
 > $$
 >
 >3. $i\not\in L$ and $h$ added in second round-robin.
 >
 >   We have $i,j'\in N\diagdown L$ and $A_j=\{h_{j'},h'_{j'}\}$. If $\ell[i]\lt\ell[j']$, then we proceed in a way similar to case 1:
+>
 > $$
 >   v_i(A_i)\ge v_i(A_i^{old})\ge v_i(h_i)\ge\max\{v_i(h_{j'}),v_i(h'_{j'})\}.
 > $$
+>
 >   So, assume that $\ell[i]\gt\ell[j']$. This means $v_i(h_i')\ge v_i(h_{j'}')$. We have
+>
 > $$
 >   v_i(A_i)\ge v_i(A_i^{old})\ge v_i(h_i)+v_i(h_i')\ge{1\over\phi}v_i(h_{j'})+v_i(h'_{j'})\\
 >   \ge{1\over\phi}(V_i(h_{j'})+v_i(h'_{j'}))=(\phi-1)v_i(A_j)
 > $$
+>
 >   where the third inequality directly follows from part (b) from lemma 1.
 >
 >4. $i\not\in L$ and $h$ added in envy-cycle elimination.
 >
 >   Arguing like in case 2, we have $v_i(A_i^{old})\ge v_i(A_{j'}^{old})$. Moreover, by the way round-robin works, we know that $v_i(h_i)\ge v_i(h'_i)\ge v_i(h)$. In particular, $v_i(h)\le{1\over2}v_i(\{h_i,h_i'\})\le{1\over2}v_i(A_i^{old})$. Putting things together, we have
+>
 > $$
 >   v_i(A_j)=v_i(A_{j'}^{old})+v_i(h)\le(1+\frac{1}{2})v_i(A_i^{old})\le\phi\cdot v_i(A_i)\\
->   \Lrarr v_i(A_i)\ge(\phi-1)v_i(A_j)
+>   \Leftrightarrow v_i(A_i)\ge(\phi-1)v_i(A_j)
 > $$
 >
 >The analysis is tight.
@@ -350,15 +356,15 @@ b) $\phi\cdot v_i(h_i)\ge v_i(h_j)$ for any $i,j\in N\diagdown L$.
 
 Every exact EFX allocation is also a $4\over7$-GMMS allocation. (Amanatidis et al.)
 
-:heavy_exclamation_mark::thinking:Lemma 3: Suppose $\mathcal T\in\Pi_n(M)$ is an $n$-maximin share defining partition for agent $i$. Then, for any set of goods $S$, such that there exists some $j$ with $S\subseteq T_j$, it holds that $\mu_i(n-1,M\diagdown S)\ge\mu_i(n,M)$.
+:book::thinking:Lemma 3: Suppose $\mathcal T\in\Pi_n(M)$ is an $n$-maximin share defining partition for agent $i$. Then, for any set of goods $S$, such that there exists some $j$ with $S\subseteq T_j$, it holds that $\mu_i(n-1,M\diagdown S)\ge\mu_i(n,M)$.
 
-:heavy_exclamation_mark::thinking:Theorem 4: The allocation $\mathcal A=(A_1,\cdots,A_n)$ returned by Draft and Eliminate Algorithm is a $2\over\phi+2$-GMMS allocation.
+:book::thinking:Theorem 4: The allocation $\mathcal A=(A_1,\cdots,A_n)$ returned by Draft and Eliminate Algorithm is a $2\over\phi+2$-GMMS allocation.
 
 > ~~To difficult for me!~~ :sob:
 >
 > Omitted
 
-:heavy_exclamation_mark::thinking: Theorem 5: Suppose we modified Draft and Eliminate Algorithm by changing $\phi$ in preprocessing to $3\over2$. Then the resulting allocation is a $4/7$-GMMS allocation. It is also a $3/5$-EFX, $2/3$-PMMS, and EF1 allocation.
+:book::thinking: Theorem 5: Suppose we modified Draft and Eliminate Algorithm by changing $\phi$ in preprocessing to $3\over2$. Then the resulting allocation is a $4/7$-GMMS allocation. It is also a $3/5$-EFX, $2/3$-PMMS, and EF1 allocation.
 
 > ~~To difficult for me!~~ :sob:
 >
@@ -370,13 +376,13 @@ Analysis are probably not tight, because both theorems is heavily based on EF an
 
 ## Pairwise Maximin Share Fairness
 
-:heavy_exclamation_mark::thinking:Theorem 6: The allocation $\mathcal A=(A_1,\cdots,A_n)$ returned by Draft and Eliminate Algorithm is a $2/3$-PMMS allocation.
+:book::thinking:Theorem 6: The allocation $\mathcal A=(A_1,\cdots,A_n)$ returned by Draft and Eliminate Algorithm is a $2/3$-PMMS allocation.
 
 > Proof based on proof of theorem 3.
 
 $2/3$ factor is tight. But if we manipulate envy-graph as following, the approximation ratio goes up to ${2\over\phi+1}\approx0.764$: ~~Detail omitted~~
 
-:heavy_exclamation_mark::thinking:Theorem 7: Supposed we modified Draft and Eliminate Algorithm by using the $\phi-{1\over2}$-adjusted envy graph in Envy-graph Elimination. Then the resulting allocation is a $4\phi-2\over2\phi+3$-PMMS and a $2\over2\phi-1$-EF1 allocation. Moreover, the theorem 3 and theorem 4 are not affected.
+:book::thinking:Theorem 7: Supposed we modified Draft and Eliminate Algorithm by using the $\phi-{1\over2}$-adjusted envy graph in Envy-graph Elimination. Then the resulting allocation is a $4\phi-2\over2\phi+3$-PMMS and a $2\over2\phi-1$-EF1 allocation. Moreover, the theorem 3 and theorem 4 are not affected.
 
 > Proof omitted.
 
@@ -386,7 +392,7 @@ For the exact versions of fairness notions,
 
 ## Draft Pack and Eliminate Pseudo Code
 
-1. Let $\ell=(1,2,\cdots,n)$ and $\mathcal A=(\empty,\cdots,\empty)$
+1. Let $\ell=(1,2,\cdots,n)$ and $\mathcal A=(\emptyset,\cdots,\emptyset)$
 2. $(\mathcal A,M')=$ Round-Robin$(N,\mathcal A,M,\ell,n-1)$
 3. Create 2 virtual goods $p,q$, s.t. $\forall i\in N:v_i(q)=\min_{g\in M'}$ and $v_i(p)=v_i(M')-v_i(q)$
 4. Allocate $p$ to agent $n$
@@ -394,7 +400,7 @@ For the exact versions of fairness notions,
 6. Give to the final owner of $p$ her two favorite goods from $M'$ and to the final owner of $q$ the remaining good
 7. return $\mathcal A$.
 
-:heavy_exclamation_mark::thinking:Theorem 8: For instances with $m\le n+2$, a GMMS allocation always exists and can be efficiently computed.
+:book::thinking:Theorem 8: For instances with $m\le n+2$, a GMMS allocation always exists and can be efficiently computed.
 
 > When $m\le n$, we arbitrarily allocate one good to each agent, till there are no goods left, to produce $\mathcal A=(A_1,\cdots,A_n)$. Fix a subset $S$ of agents, and let $i\in N$. Then combined bundle of all agents in $S$ either contains strictly less than $|S|$ goods or exactly $|S|$ goods.
 >
@@ -406,11 +412,11 @@ For the exact versions of fairness notions,
 
 For $m\gt n$, there are some simple observations.
 
-:heavy_exclamation_mark::thinking:Lemma 4: Let $Q\subseteq N$ and $T\subseteq M$ s.t. $|T|=2|Q|-1$. Then, for any $i\in Q$, we have $\max_{g\in T}v_i(g)\ge\mu_i(|Q|,T)$.
+:book::thinking:Lemma 4: Let $Q\subseteq N$ and $T\subseteq M$ s.t. $|T|=2|Q|-1$. Then, for any $i\in Q$, we have $\max_{g\in T}v_i(g)\ge\mu_i(|Q|,T)$.
 
 > By the pigeonhole principle, in any possible partition of $T$ in $|Q|$ parts, at least one bundle will have at most $1$ goods. So, in any $|Q|$-maximin share partition of $T$ for an agent $i\in Q$, her worst bundle's worth is upper bounded by $\max_{g\in T}v_i(g)$.
 
-:heavy_exclamation_mark::thinking:Lemma 5: Let $i\in N$ and $T=\{g_1,g_2,g_3,g_4\}\subseteq M$ s.t. $v_i(g_1)\ge v_i(g_2)\ge v_i(g_3)\ge v_i(g_4)$. Then
+:book::thinking:Lemma 5: Let $i\in N$ and $T=\{g_1,g_2,g_3,g_4\}\subseteq M$ s.t. $v_i(g_1)\ge v_i(g_2)\ge v_i(g_3)\ge v_i(g_4)$. Then
 
 1. $v_i(\{g_1,g_4\})\ge\mu_i(2,T)$
 2. $\max\{v_i(g_1),v_i(\{g_2,g_3\})\}\ge\mu_i(2,T)$
@@ -423,7 +429,7 @@ Corollary: When $m\le n+2$, we can efficiently find PMMS and EFX allocations.
 
 # What should I get from this paper?
 
-EF1$\Larr$EFX$\Larr$PMMS, GMMS
+EF1$\Leftarrow$EFX$\Leftarrow$PMMS, GMMS
 
 EF1: Always exist.
 

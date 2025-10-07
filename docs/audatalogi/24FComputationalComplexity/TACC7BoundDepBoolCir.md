@@ -30,11 +30,11 @@ These circuit classes is restrict to polynomial size and **poly-logarithmic** de
 
 By definition, $NC\subseteq P/poly$, hence $U_L-NC\subseteq P$.
 
-{% note info flat %}
+!!! info
 
-为什么呢？回顾定义 $P/poly=\bigcup_{k\gt0}SIZE(n^k)$，发现它的多了一个深度的限制。
+    为什么呢？回顾定义 $P/poly=\bigcup_{k\gt0}SIZE(n^k)$，发现它的多了一个深度的限制。
 
-{% endnote %}
+
 
 In fact $P\not\subseteq NC$ is expected to hold. This means not all languages in $P$ can benefit greatly from parallelism.
 
@@ -59,8 +59,8 @@ $C$ compute a Boolean function $f:\{0,1\}^n\to\{0,1\}^m$ in a natural way.
 ## Boolean functions with k-ary
 
 $$
-AND(z_1,\cdots,z_k)=z_1\and\cdots\and z_k\\
-OR(z_1,\cdots,z_k)=z_1\or\cdots\or z_k\\
+AND(z_1,\cdots,z_k)=z_1\land\cdots\land z_k\\
+OR(z_1,\cdots,z_k)=z_1\lor\cdots\lor z_k\\
 MOD_m(z_1,\cdots,z_k)=\begin{cases}
 1\ if\ \sum_{i=1}^kz_i\not\equiv0\mod m\\
 0\ if\ \sum_{i=1}^kz_i\equiv0\mod m
@@ -107,11 +107,11 @@ $AC^i$ is similar to $NC^i$.
 
 :book:Definition of $TC^0$. $TC^0$ is the class of languages computed by families of Boolean circuits of polynomial size and depth $O(1)$ using unbounded fanin $MAJ$ gates only.
 
-{% note info flat %}
+!!! info
 
-语言类 $TC^0$ 可以被看做神经网络。
+    语言类 $TC^0$ 可以被看做神经网络。
 
-{% endnote %}
+
 
 # Logarithmic Space and Logarithmic Depth Circuits
 
@@ -123,15 +123,15 @@ $AC^i$ is similar to $NC^i$.
 
 :book:Definition of Boolean product of matrices. $A=(a_{ij})\in\{0,1\}^{m\times r},B=(b_{ij})\in\{0,1\}^{r\times n}$. The Boolean product $AB$ is the $m\times n$ Boolean matrix $C=(c_{ij})$ s.t.
 $$
-c_{ij}=\bigvee_{k=1}^ra_{ik}\and a_{kj}.
+c_{ij}=\bigvee_{k=1}^ra_{ik}\land a_{kj}.
 $$
 A $n\times n$ Boolean matrix corresponds to a directed graph. The transitive closure of the graph gives rise to the transitive closure of the matrix.
 
-{% note info flat %}
+!!! info
 
-回想起大二学的离散数学了吗？邻接矩阵的闭包与可达性。
+    回想起大二学的离散数学了吗？邻接矩阵的闭包与可达性。
 
-{% endnote %}
+
 
 :book:Definition of transitive closure. Transitive closure $A^*$ of $A$ is the $n\times n$ Boolean matrix given by $A^*=\bigvee_{i\ge0}A^i$, where $A^0$ is the identity matrix $I$.
 
@@ -141,17 +141,17 @@ A $n\times n$ Boolean matrix corresponds to a directed graph. The transitive clo
 
 :thinking:Corollary 6. $U_L-NC^1\subseteq L\subseteq NL\subseteq U_L-AC^1$.
 
-{% note info flat %}
+!!! info
 
-其实这里也存在层次结构：$NL\subseteq U_L-AC^1\subseteq U_L-NC^2\subseteq L^2(=DSPACE(\log^2n))$.
+    其实这里也存在层次结构：$NL\subseteq U_L-AC^1\subseteq U_L-NC^2\subseteq L^2(=DSPACE(\log^2n))$.
 
-{% endnote %}
+
 
 # Functions and Reductions
 
 Boolean circuit is fixed number of inputs, we consider output is also a bounded function of the length of input.
 
-:book:Definition of **length-respecting**. A function $f:\{0,1\}^*\to\{0,1\}^*$ is length-respecting if for all $x,y\in\{0,1\}^*$, we have $|x|=|y|\Rarr|f(x)|=|f(y)|$.
+:book:Definition of **length-respecting**. A function $f:\{0,1\}^*\to\{0,1\}^*$ is length-respecting if for all $x,y\in\{0,1\}^*$, we have $|x|=|y|\Rightarrow|f(x)|=|f(y)|$.
 
 :book:Definition of $AC^0$ **Turing reduction**. Let $f$ and $g$ be length-respecting Boolean functions. We say $f$ reduces to $g$ by an $AC^0$ Turing reduction if $f$ is computed by a family of Boolean functions of polynomial size and depth $O(1)$ using unbounded fanin $AND$ and $OR$ gates as well as gates computing any coordinate function of $g$.
 

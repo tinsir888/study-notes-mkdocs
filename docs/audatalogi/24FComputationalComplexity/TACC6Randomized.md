@@ -53,16 +53,16 @@ Thus everything related to the Turing machines becomes a random variable.
 - $M$ computes $L$ with one-sided error if for all $x\in L$ we have $\Pr[M(x)=yes]\ge\frac{3}{4}$ and for all $x\not\in L$ we have $M(x)=no$.
 - $M$ computes $L$ with two-sided error if for all $x\in L$ we have $\Pr[M(x)=yes]\ge\frac{3}{4}$ and for all $x\not\in L$ we have $\Pr[M(x)=no]\ge\frac{3}{4}$.
 
-:book:Definition 20. Let $T:\mathbb N\rarr\mathbb N$ and $S:\mathbb N\rarr\mathbb N$ be functions with $T(n)\ge n$.
+:book:Definition 20. Let $T:\mathbb N\rightarrow\mathbb N$ and $S:\mathbb N\rightarrow\mathbb N$ be functions with $T(n)\ge n$.
 
 - Then $ZPTIME(T(n))$, $RTIME(T(n))$ and $BPTIME(T(n))$ are the classes of languages computed by a $O(T(n))$ time-bounded probabilistic Turing machine with zero-sided error, one-sided error and two-sided error respectively.
 - $ZPSPACE(S(n))$, $RSPACE(S(n))$ and $BPSPACE(S(n))$ are the classes of languages computed by a $O(S(n))$ space-bounded probabilistic Turing machine **that always halt** having zero-sided error, one-sided error and two-sided error respectively.
 
-{% note info flat %}
+!!! info
 
-For space bounded randomized classes, we assume that the Turing machine always halts! Because otherwise these three classes would end up containing $NSPACE(S(n))$!
+    For space bounded randomized classes, we assume that the Turing machine always halts! Because otherwise these three classes would end up containing $NSPACE(S(n))$!
 
-{% endnote %}
+
 
 Define log-space/polynomial time bounded classes:
 $$
@@ -121,11 +121,11 @@ $$
 $$
 using $\mu_L=\frac{k}{2}+k\epsilon$. Instead of have error probability $1/4$, we assume error probability for once just less than $1/2-1/p(n)$ and achieve error probability $\exp(-q(n))$ by running $k=\frac{p(n)^2q(n)}{2}$ independent trials.
 
-{% note info flat %}
+!!! info
 
-These analysis applies to both polynomial-time bounded and log-space bounded randomized complexity classes.
+    These analysis applies to both polynomial-time bounded and log-space bounded randomized complexity classes.
 
-{% endnote %}
+
 
 # Polynomial Identity Testing
 
@@ -155,11 +155,11 @@ Nodes $V$ corresponds to gates, edges $A$ corresponds to wires. Nodes of in-degr
 
 Such an arithmetic circuit compute a polynomial $p\in R[x_1,\cdots,x_n]$ for any Abelian ring $R$. ~~阿贝尔环~~
 
-{% note info flat %}
+!!! info
 
-Usually we consider arithmetic circuits w.r.t. *ring*.
+    Usually we consider arithmetic circuits w.r.t. *ring*.
 
-{% endnote %}
+
 
 ## AFIT
 
@@ -218,8 +218,8 @@ We have alternative characterization of $BPP$. Also there are similar alternativ
 
 Proposition 4. Let $L$ be a language. Then $L\in BPP$ iff there is a polynomial $q$ and another language $L'\in P$ s.t. $\forall x$:
 $$
-x\in L\Rarr\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge\frac{3}{4}\\
-x\not\in L\Rarr\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\not\in L']\ge\frac{3}{4}
+x\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge\frac{3}{4}\\
+x\not\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\not\in L']\ge\frac{3}{4}
 $$
 We say that the randomized computation uses $q(|x|)$ random bits.
 
@@ -241,18 +241,18 @@ But we can prove that $BPP$ is contained in **the second level of polynomial-tim
 >
 > - Let $L\in BPP$. We have a polynomial $q(n)$ and a language $L'\in P$ s.t. for all $x$ we have
 >   $$
->   x\in L\Rarr\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge1-\frac{1}{2q(|x|)},\\
->   x\not\in L\Rarr\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']<1-\frac{1}{2q(|x|)}.
+>   x\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge1-\frac{1}{2q(|x|)},\\
+>   x\not\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']<1-\frac{1}{2q(|x|)}.
 >   $$
 >
 > - Let $m=q(|x|)$. For given $x$, we define $S_x=\{y\in\{0,1\}^m|\langle x,y\rangle\in L'\}$. Thus, for all $x$ we have
 >   $$
->   x\in L\Rarr|S_x|\ge(1-\frac{1}{2m})2^m,\\
->   x\not\in L\Rarr|S_x|<\frac{1}{2m}2^m.
+>   x\in L\Rightarrow|S_x|\ge(1-\frac{1}{2m})2^m,\\
+>   x\not\in L\Rightarrow|S_x|<\frac{1}{2m}2^m.
 >   $$
 >   Claim that $x\in L$ iff
 >   $$
->   \exist u_1,\cdots, u_m\in\{0,1\}^m\forall r\in\{0,1\}^m:\\
+>   \exists u_1,\cdots, u_m\in\{0,1\}^m\forall r\in\{0,1\}^m:\\
 >   \bigvee_{i=1}^m\langle x,u_i\oplus r\rangle\in L',
 >   $$
 >   where $u_i\oplus r$ denote the coordinate-wise exclusive-or. ~~什么是坐标或运算？~~

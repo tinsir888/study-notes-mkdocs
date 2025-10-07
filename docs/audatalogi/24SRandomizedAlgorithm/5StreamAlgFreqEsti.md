@@ -56,7 +56,7 @@ The following algorithm estimates frequencies of all items up to an additive err
 
 The algorithm works as follows:
 
-1. Maintain $t$ arrays $A[i]$ each having $k$ counters, hash function $h_i:U\rarr[k]$ drawn from a $2$-wise independent family $\mathcal H$ is associated to array $A[i]$.
+1. Maintain $t$ arrays $A[i]$ each having $k$ counters, hash function $h_i:U\rightarrow[k]$ drawn from a $2$-wise independent family $\mathcal H$ is associated to array $A[i]$.
 
 2. For element $(j,c_j)$ in the stream, update counters as follows:
    $$
@@ -94,7 +94,7 @@ The relation between the $\ell_1$ and $\ell_2$ norm is ${1\over\sqrt n}|f|_1\le|
 
 The algorithm works as follows:
 
-1. Maintain $t$ arrays $A[i]$ each having $k$ counters, hash function: $g_i:U\rarr\{-1,1\}$ and $h_i:U\rarr[k]$ drawn uniformly at random from a pair-wise independent families are associated to array $A[i]$.
+1. Maintain $t$ arrays $A[i]$ each having $k$ counters, hash function: $g_i:U\rightarrow\{-1,1\}$ and $h_i:U\rightarrow[k]$ drawn uniformly at random from a pair-wise independent families are associated to array $A[i]$.
 
 2. For element $(j,c_j)$ in the stream, update counters as follows
    $$

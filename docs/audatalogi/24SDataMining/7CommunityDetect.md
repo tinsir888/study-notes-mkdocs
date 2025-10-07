@@ -17,7 +17,7 @@ Community detection finds sets of nodes, i.e., that are highly connected inside 
 
 Community: a group of individuals sharing common interests.
 
-A community is a subset $C\subseteq V$ of the nodes $V$. Non-overlapping communities or partitions are pairwise disjoint set $C_i,C_j$ s.t. $C_i\cap C_j=\empty$ for each $i,j$. Overlapping communities are not necessarily pairwise disjoint.
+A community is a subset $C\subseteq V$ of the nodes $V$. Non-overlapping communities or partitions are pairwise disjoint set $C_i,C_j$ s.t. $C_i\cap C_j=\emptyset$ for each $i,j$. Overlapping communities are not necessarily pairwise disjoint.
 
 # Non-overlapping Community Detection
 
@@ -93,8 +93,8 @@ In order to compute the partition $\mathbf c$, we relax the vector $\mathbf c$ t
 $$
 \max_\mathbf c \mathbf{c^\top Bc}\\
 \text{s.t. }\mathbf{c^\top c}=n\\
-\Rarr\frac{\partial}{\partial\mathbf c}\mathbf{c^\top Bc}=0\\
-\Rarr\frac{\partial}{\partial\mathbf c}[\mathbf{c^\top Bc}-\beta(n-\mathbf{c^\top c})]\Rarr2\mathbf{Bc}=2\beta c
+\Rightarrow\frac{\partial}{\partial\mathbf c}\mathbf{c^\top Bc}=0\\
+\Rightarrow\frac{\partial}{\partial\mathbf c}[\mathbf{c^\top Bc}-\beta(n-\mathbf{c^\top c})]\Rightarrow2\mathbf{Bc}=2\beta c
 $$
 The last equality is an eigenvalue - eigenvalue equation, where $\beta$ is an eigenvalue for the eigenvector $\mathbf c$. If we substitute $\mathbf{Bc}=\beta\mathbf c$, we will obtain
 $$

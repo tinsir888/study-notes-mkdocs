@@ -1,7 +1,124 @@
 site_name: tinsir888's Study Notes
 site_url: https://tinsir888.codeberg.page/notes-mkdocs/site
+repo_url: https://codeberg.org/tinsir888/notes-mkdocs
 nav:
   - Home: index.md
+  - Datalogi@AU: #"audatalogi/*"
+    - Algorithmic Game Theory: #"audatalogi/23FAlgorithmicGameTheory/*"
+      - 1 Introduction and examples: "audatalogi/23FAlgorithmicGameTheory/W35.md"
+      - 2 Mechanism design basics: "audatalogi/23FAlgorithmicGameTheory/W36.md"
+      - 3 Myerson's lemma: "audatalogi/23FAlgorithmicGameTheory/W37.md"
+      - 4 Algorithmic mechanism design: "audatalogi/23FAlgorithmicGameTheory/W38.md"
+      - 5 Revenue-maximizing auctions: "audatalogi/23FAlgorithmicGameTheory/W39.md"
+      - 6 Simple Near-Optimal: "audatalogi/23FAlgorithmicGameTheory/W40.md"
+      - 7 Exercise, examples, Q&A: "audatalogi/23FAlgorithmicGameTheory/W41.md"
+      - 8 Multi-parameter mechanism design: "audatalogi/23FAlgorithmicGameTheory/W43.md"
+      - 9 Mechanism design with payment constraints: "audatalogi/23FAlgorithmicGameTheory/W44.md"
+      - 10 Mechanism design without money: "audatalogi/23FAlgorithmicGameTheory/W45.md"
+      - 11 Non-atomic selfish routing and price of anarchy: "audatalogi/23FAlgorithmicGameTheory/W46.md"
+      - 12 Congestion games, potential functions: "audatalogi/23FAlgorithmicGameTheory/W47.md"
+      - 13 Potential games and price of stability: "audatalogi/23FAlgorithmicGameTheory/W48.md"
+    - Computational Geometry: #"audatalogi/23FComputationalGeometry/*"
+      - 1 Introduction to Algorithm Engineering: "audatalogi/23FComputationalGeometry/MRandNotesW35.md"
+      - 2 Introduction to Parallel Computation: "audatalogi/23FComputationalGeometry/MRandNotesW36.md"
+      - 3 Sorting and Searching in Parallel: "audatalogi/23FComputationalGeometry/MRandNotesW37.md"
+      - 4 I/O Model and Permutation Lower Bound: "audatalogi/23FComputationalGeometry/MRandNotesW38.md"
+      - 5 Introduction to Computational Geometry: "audatalogi/23FComputationalGeometry/MRandNotesW39.md"
+      - 6 Linear Programming: "audatalogi/23FComputationalGeometry/MRandNotesW40.md"
+      - 7 Polygon Triangulation: "audatalogi/23FComputationalGeometry/MRandNotesW41.md"
+      - 8 Point Location: "audatalogi/23FComputationalGeometry/MRandNotesW43.md"
+      - 9 Arrangements and Duality, Zone Theorem: "audatalogi/23FComputationalGeometry/MRandNotesW44.md"
+      - 10 Orthogonal Range Searching: "audatalogi/23FComputationalGeometry/MRandNotesW45.md"
+      - 11 More Orthogonal problems: "audatalogi/23FComputationalGeometry/MRandNotesW46.md"
+      - 12 Voronoi Diagrams and 3D Convex Hull: "audatalogi/23FComputationalGeometry/MRandNotesW47.md"
+      - 13 Robot Motion Planning and Visibility: "audatalogi/23FComputationalGeometry/MRandNotesW48.md"
+    - Computer Vision: #"audatalogi/23FComputerVision/*"
+      - 1 Introduction: "audatalogi/23FComputerVision/NotesW35.md"
+      - 2 Machine Learning fundamentals: "audatalogi/23FComputerVision/NotesW36.md"
+      - 3 Neural Networks: "audatalogi/23FComputerVision/NotesW37.md"
+      - 4 Convolutional Neural Networks: "audatalogi/23FComputerVision/NotesW38.md"
+      - 5 Backpropagation: "audatalogi/23FComputerVision/NotesW39.md"
+      - 6 Training ConvNet (1): "audatalogi/23FComputerVision/NotesW40.md"
+      - 7 Training ConvNet (2): "audatalogi/23FComputerVision/NotesW41.md"
+      - 8 CNN architectures: "audatalogi/23FComputerVision/NotesW43.md"
+      - 9 Object detection and segmentation: "audatalogi/23FComputerVision/NotesW44.md"
+      - 10 Generative models: "audatalogi/23FComputerVision/NotesW45.md"
+      - 11 Visualizing and understanding CNNs: "audatalogi/23FComputerVision/NotesW46.md"
+      - 12 Sequence models (NLP): "audatalogi/23FComputerVision/NotesW47.md"
+      - 13 Roundup - Uncovered Areas: "audatalogi/23FComputerVision/NotesW48.md"
+    - Fair Division (Project): #"audatalogi/24SAGTProject/*"
+      - 1 Survey Study: "audatalogi/24SAGTProject/M1FairnessNotion.md"
+      - 2 Relations of Fairness Properties: "audatalogi/24SAGTProject/M2RelationsofFairnessProperties.md"
+      - 3 Price of Fairness and MMS Property: "audatalogi/24SAGTProject/M3PoFandMMS.md"
+      - 4 Alternatives to EFX: "audatalogi/24SAGTProject/M4Alternativ2EFX.md"
+      - 5 EF1-Pareto Optimality Compatibility: "audatalogi/24SAGTProject/M5EF1+PO.md"
+      - 6 Computing EF1 + PO: "audatalogi/24SAGTProject/M6ComputeEF1PO.md"
+      - 7 Ex-ante and Ex-post Fairness: "audatalogi/24SAGTProject/M7FracAlloc.md"
+      - 8 Strategic Aspects of Fair Divison: "audatalogi/24SAGTProject/M8StrategicAspects.md"
+      - 9 My Conjectures on Price of Fairness for EEFX/MXS: "audatalogi/24SAGTProject/Bonus_PoF_EEFX.md"
+    - Data Mining: #"audatalogi/24SDataMining/*"
+      - 1 Introduction: "audatalogi/24SDataMining/1Intro.md"
+      - 2 Representation-based Clustering: "audatalogi/24SDataMining/2RepresentCluster.md"
+      - 3 Densiy-based Clustering: "audatalogi/24SDataMining/3DensityBased.md"
+      - 4 Hierarchical and Subspace Clustering: "audatalogi/24SDataMining/4HierarchicalSubspace.md"
+      - 5 Outlier Detection: "audatalogi/24SDataMining/5OutlierDetect.md"
+      - 6 Spectral Theory and Clustering: "audatalogi/24SDataMining/6SpectralTheoryCluster.md"
+      - 7 Community Detection: "audatalogi/24SDataMining/7CommunityDetect.md"
+      - 8 Link Analysis: "audatalogi/24SDataMining/8LinkAnalysis.md"
+      - 9 Graph Embedding: "audatalogi/24SDataMining/9GraphEmbed.md"
+      - 10 Graph Neural Networks: "audatalogi/24SDataMining/10GNN.md"
+      - 11 Frequent Subgraph Mining: "audatalogi/24SDataMining/11FrequentSubgraphMining.md"
+      - 12 Frequent Itemsets and Association Rules: "audatalogi/24SDataMining/12FequentItemsets.md"
+      - 13 Sequence Segmentation and Similarities: "audatalogi/24SDataMining/13SequenceSeg.md"
+    - Randomized Algorithms: #"audatalogi/24SRandomizedAlgorithm/*"
+      - 1 Examples of Randomized Algorithm: "audatalogi/24SRandomizedAlgorithm/1ExampleQuicksort.md"
+      - 2 Probabilistic Inequalities, Hashing with Chaining: "audatalogi/24SRandomizedAlgorithm/2ProbIneqHash.md"
+      - 3 Hash Functions: "audatalogi/24SRandomizedAlgorithm/3HashFunc.md"
+      - 4 Karger's Min Cut Algorithm: "audatalogi/24SRandomizedAlgorithm/4MinCutAlg.md"
+      - 5 Streaming Algorithms for Frequency Estimation: "audatalogi/24SRandomizedAlgorithm/5StreamAlgFreqEsti.md"
+      - 6 Streaming Heavy Hitters: "audatalogi/24SRandomizedAlgorithm/6HeavyHitters.md"
+      - 7 Dimensionality Reduction: "audatalogi/24SRandomizedAlgorithm/7DimRed.md"
+      - 8 Faster Dimensionality Reduction: "audatalogi/24SRandomizedAlgorithm/8FasterDimRed.md"
+      - 9 Prophets, Secretaries and Martingales: "audatalogi/24SRandomizedAlgorithm/9ProphetIneq.md"
+      - 10 Invertible Bloom Filters: "audatalogi/24SRandomizedAlgorithm/10InvertibleBloomFilters.md"
+      - 11 Randomized Rounding for MAX SAT: "audatalogi/24SRandomizedAlgorithm/11RandomizedRounding.md"
+      - 12 Nearest Neighbor Search and Locality Sensitive Hashing: "audatalogi/24SRandomizedAlgorithm/12NearNeighbor&LocalitySensitiveHashing.md"
+      - 13 Nearest Neighbor Search with Different Distance Metrics: "audatalogi/24SRandomizedAlgorithm/13NearNeighborSearch2.md"
+      - 14 Markov Chains and Random Walks: "audatalogi/24SRandomizedAlgorithm/14MarkovChains.md"
+    - Computational Complexity: #"audatalogi/24FComputationalComplexity/*"
+      - 1 Turing Machines, Time and Space: "audatalogi/24FComputationalComplexity/TACC1TuringMachine.md"
+      - 2 Nondeterminism and Determinism: "audatalogi/24FComputationalComplexity/TACC2Nondeterministic.md"
+      - 3 Boolean Circuits: "audatalogi/24FComputationalComplexity/TACC3BooleanCircuit.md"
+      - 4 Reductions and Completeness: "audatalogi/24FComputationalComplexity/TACC4ReductionCompleteness.md"
+      - 5 The Polynomoial-Time Hierarchy: "audatalogi/24FComputationalComplexity/TACC5PolyHierarchy.md"
+      - 6 Randomized Computation: "audatalogi/24FComputationalComplexity/TACC6Randomized.md"
+      - 7 Bounded Depth Boolean Circuits: "audatalogi/24FComputationalComplexity/TACC7BoundDepBoolCir.md"
+      - 8 Branching Programs and Barrington's Theorem: "audatalogi/24FComputationalComplexity/TACC8BranchProgram.md"
+      - 9 Circuit Lower Bounds: "audatalogi/24FComputationalComplexity/TACC9CircuitLowerBound.md"
+      - 10 Interactive Proofs: "audatalogi/24FComputationalComplexity/TACC10InteractiveProof.md"
+      - 11 Probabilistic Checkable Proofs: "audatalogi/24FComputationalComplexity/TACC11PCP.md"
+      - 12 PCP-based Inapproximability: "audatalogi/24FComputationalComplexity/TACC12PCPInapprox.md"
+      - 13 Random Access Machine: "audatalogi/24FComputationalComplexity/TACC13RAM.md"
+      - 14 SAT Problem: "audatalogi/24FComputationalComplexity/TACC14SATExp.md"
+      - 15 Fine-grained and Parameterized Complexity: "audatalogi/24FComputationalComplexity/TACC15ParametrizedComplexity.md"
+      - 16 Fast Fourier Transform: "audatalogi/24FComputationalComplexity/TACC16FFT.md"
+      - 17 LLL Algorithm: "audatalogi/24FComputationalComplexity/TACC17LLL.md"
+    - Efficient ReliK (Project): #"audatalogi/24FEfficientReliK/*"
+      - 1 Investigating the Original ReliK: "audatalogi/24FEfficientReliK/1ReadPaperReliK.md"
+      - 2 Possible Parallelization Idea: "audatalogi/24FEfficientReliK/2PossibleAccIdea.md"
+      - 3 Parallel For Loop: "audatalogi/24FEfficientReliK/3ParallelFor.md"
+      - 4 Sampling Optimization: "audatalogi/24FEfficientReliK/4Sampling.md"
+    - Fair Clustering (Project&Thesis): #"audatalogi/24FFairAI/*" + "25SMscThesis/*"
+      - 0 Fairness in AI/ML: "audatalogi/24FFairAI/0_Fair_AIML.md"
+      - 1 Core-Stability Federated Learning: "audatalogi/24FFairAI/1_CoreFed.md"
+      - 2 PROP Fair Clustering (1): "audatalogi/24FFairAI/2_PropFairClu.md"
+      - 3 PROP Fair Clustering (2): "audatalogi/24FFairAI/3_PropFairRevisited.md"
+      - 4 Endeavor to Bridge Gap between 2 and 2.414: "audatalogi/24FFairAI/4_EndeavorPROPGap.md"
+      - 5 PROP in Non-Centroid Clustering: "audatalogi/24FFairAI/5_PROPNonCentroid.md"
+      - 6 Some Open Problems about Non-centroid Clustering: "audatalogi/24FFairAI/6_CoreNonCen.md"
+      - 7 The Existence of Core for Max Distance Loss: "audatalogi/24FFairAI/7_CoreExistence.md"
+      - 8 Split and Merge Algorithm on Average Cost: "audatalogi/25SMscThesis/8_SplitMergeAvg.md"
+      - 9 On Fully Justified Representation: "audatalogi/25SMscThesis/9_OnFJR.md"
   - CS@NKU:
     - 感知技术与应用: #"nkucs/PerceptionTechnology/*"
       - 第一章 绪论: "nkucs/PerceptionTechnology/Kapite1.md"
@@ -79,26 +196,199 @@ nav:
       - 第七章 深度强化学习价值方法: "nkucs/handsonrl/Kapitel7-深度强化学习价值方法.md"
       - 第八章 深度强化学习策略方法: "nkucs/handsonrl/Kapitel8-深度强化学习策略方法.md"
       - 第十四章 多智能体强化学习: "nkucs/handsonrl/Kapitel14-多智能体强化学习.md"
-#  - Datalogi@AU:
-#    - Data Mining:
-#    - Algorithmic Game Theory:
-#    - Computational Complexity:
-#    - Computational Geometry:
-#    - Computer Vision:
-#    - Randomized Algorithms:
+  - Informatik für APS: #"APS/*"
+    - 重点复习课程: #"APS/core/*"
+      - Assembly Language and Reverse Engineering: "APS/core/Assembly Language and Reverse Engineering.md"
+      - Computer Architecture: "APS/core/Computer Architecture.md"
+      - Computer Networks: "APS/core/Computer Networks.md"
+      - Data Structure: "APS/core/Data Structure.md"
+      - Database System: "APS/core/Database System.md"
+      - Deep Learning and Application: "APS/core/Deep Learning and Application.md"
+      - Introduction to Algorithm: "APS/core/Introduction to Algorithm.md"
+      - Introduction to Artificial Intelligence: "APS/core/Introduction to Artificial Intelligence.md"
+      - Introduction to Parallel Programming: "APS/core/Introduction to Parallel Programming.md"
+      - Operation System: "APS/core/Operation System.md"
+      - Principles of Compliers: "APS/core/Principles of Compilers.md"
+      - Principles of Computer Organization: "APS/core/Principles of Computer Organization.md"
+      - Probability and Mathematical Statistics: "APS/core/Probability and Mathematical Statistics.md"
+      - Software Engineering: "APS/core/Software Engineering.md"
+    - 非重点复习课程: #"APS/noncore/*"
+      - College Physics: "APS/noncore/College Physics.md"
+      - Computer System Design: "APS/noncore/Computer System Design.md"
+      - Digital Logic: "APS/noncore/Digital Logic.md"
+      - Digital Signal Processing: "APS/noncore/Digital Signal Processing.md"
+      - Discrete Mathematics: "APS/noncore/Discrete Mathematics.md"
+      - C++: "APS/noncore/High Level Language Program Design.md"
+      - Intelligent Computing System: "APS/noncore/Intelligent Computing System.md"
+      - Internet Database Development: "APS/noncore/Internet Database Development.md"
+      - Introduction to Python Programming: "APS/noncore/Introduction to Python Programming.md"
+      - Linear Algebra: "APS/noncore/Linear Algebra.md"
+      - Mathematical Analysis: "APS/noncore/Mathematical Analysis.md"
+      - Methods of Computing: "APS/noncore/Methods of Computing.md"
+      - Network Security Technology: "APS/noncore/Network Security Technology.md"
+      - Network Technology and Application: "APS/noncore/Network Technology and Application.md"
+      - Sensing Technology and Application: "APS/noncore/Sensing Technology and Application.md"
+      - Visual Technology Basis: "APS/noncore/Visual Technology Basis.md"
+  - Languages:
+    - Dansk: #"lingua/Dansknote/*"
+      - Andersens Eventyr: #"lingua/Dansknote/AndersensEventyr/*"
+        - 新坑预告: "lingua/Dansknote/AndersensEventyr/0新坑预告.md"
+      - Dansk Uddannelse 3 Modul 1: #"lingua/Dansknote/DU3.1/*"
+        - 在丹麦免费学丹麦语: "lingua/Dansknote/DU3.1/Lek0.md"
+        - 1 Præsentation: "lingua/Dansknote/DU3.1/Lek1.md"
+        - 2 I klassen: "lingua/Dansknote/DU3.1/Lek2.md"
+        - 3 Familie, Klokken og Dato: "lingua/Dansknote/DU3.1/Lek3.md"
+        - 4 将来时/过去时: "lingua/Dansknote/DU3.1/Lek4.md"
+        - 5 Sundhed og livsstil: "lingua/Dansknote/DU3.1/Lek5.md"
+        - 6 Bolig og lokalområde: "lingua/Dansknote/DU3.1/Lek6.md"
+        - 7 Geografi og vejr, Danmark: "lingua/Dansknote/DU3.1/Lek7.md"
+      - Dansk Uddannelse 3 Modul 2: #"lingua/Dansknote/DU3.2/*"
+        - 1 Invitationer (1): "lingua/Dansknote/DU3.2/Lek1.md"
+        - 2 Invitationer (2): "lingua/Dansknote/DU3.2/Lek2.md"
+        - 3 Bolig: "lingua/Dansknote/DU3.2/Lek3.md"
+        - 4 Humør og følelser: "lingua/Dansknote/DU3.2/Lek4.md"
+        - 5 Venskab: "lingua/Dansknote/DU3.2/Lek5.md"
+        - 6 Relationer - Venner, evaluering: "lingua/Dansknote/DU3.2/Lek6.md"
+        - 7 Sundhed og livsstil: "lingua/Dansknote/DU3.2/Lek7-8.md"
+        - 8 Arbejde og studieliv: "lingua/Dansknote/DU3.2/Lek9-10.md"
+        - 9 Planer for ferie og fridage: "lingua/Dansknote/DU3.2/Lek11-12.md"
+        - 10 Fortæl om ferier og oplevelser: "lingua/Dansknote/DU3.2/Lek13-14.md"
+      - Dansk Uddannelse 3 Modul 3: #"lingua/Dansknote/DU3.3/*"
+        - 1 Ligheder og forskelle: "lingua/Dansknote/DU3.3/Lek1.md"
+        - 2 Normer og uskrevne regler: "lingua/Dansknote/DU3.3/Lek2.md"
+        - 3 Sammenligning af forskellige kulturer: "lingua/Dansknote/DU3.3/Lek3.md"
+        - 4 Højskoler: "lingua/Dansknote/DU3.3/Lek4.md"
+        - 5 At beskrive: "lingua/Dansknote/DU3.3/Lek5.md"
+        - 6 Foreninger og klubber: "lingua/Dansknote/DU3.3/Lek6.md"
+        - 7 Arbejdspladskultur: "lingua/Dansknote/DU3.3/Lek7og8.md"
+        - 8 Jobsøgning: "lingua/Dansknote/DU3.3/Lek9.md"
+        - 9 Job og kompetencer: "lingua/Dansknote/DU3.3/Lek10.md"
+        - 10 Skriv en jobansøgning: "lingua/Dansknote/DU3.3/Lek11.md"
+        - 11 Jobansøgning og arbejdsmarked: "lingua/Dansknote/DU3.3/Lek12.md"
+        - 12 Smalltalk i hverdags- og arbejdsliv: "lingua/Dansknote/DU3.3/Lek13.md"
+        - 13 Bliv klar til 3.3-testen: "lingua/Dansknote/DU3.3/Lek14.md"
+      - Dansk Uddannelse 3 Modul 4: #"lingua/Dansknote/DU3.4/*"
+        - 1 De fire årstider: "lingua/Dansknote/DU3.4/Lek1.md"
+        - 2 Noget om skole og uddannelse: "lingua/Dansknote/DU3.4/Lek2.md"
+        - 3 Noget om musik: "lingua/Dansknote/DU3.4/Lek3.md"
+        - 4 Noget om køn og lidt om alder: "lingua/Dansknote/DU3.4/Lek4.md"
+        - 5 Noget om arbejde: "lingua/Dansknote/DU3.4/Lek5.md"
+        - 6 Noget om tøj, budskaber og bæredygtighed: "lingua/Dansknote/DU3.4/Lek6.md"
+        - 7 Forberedelse til modultest 4: "lingua/Dansknote/DU3.4/Lek7.md"
+    - Deutsch: #"lingua/DeutscheStudiennotizen/*"
+      - A1: #"lingua/DeutscheStudiennotizen/A1/*"
+        - 发音入门: "lingua/DeutscheStudiennotizen/A1/Kapitel0.md"
+        - 1 bis 3 省略: "lingua/DeutscheStudiennotizen/A1/Kapitel1bis3.md"
+        - 4 Wie spät ist es?: "lingua/DeutscheStudiennotizen/A1/Kapitel4.md"
+        - 5 Was darf's sein?: "lingua/DeutscheStudiennotizen/A1/Kapitel5.md"
+        - 6 Familienleben: "lingua/DeutscheStudiennotizen/A1/Kapitel6.md"
+        - 7 Wilkommen in Berlin: "lingua/DeutscheStudiennotizen/A1/Kapitel7.md"
+        - 8 Zimmer, Küche, Bad: "lingua/DeutscheStudiennotizen/A1/Kapitel8.md"
+        - 9 Was ist passiert?: "lingua/DeutscheStudiennotizen/A1/Kapitel9.md"
+        - 10 Ich arbeite bei...: "lingua/DeutscheStudiennotizen/A1/Kapitel10.md"
+        - 11 Gesund und fit: "lingua/DeutscheStudiennotizen/A1/Kapitel11.md"
+        - 12 Schönes Wochenende!: "lingua/DeutscheStudiennotizen/A1/Kapitel12.md"
+      - A2: #"lingua/DeutscheStudiennotizen/A2/*"
+        - 1 Das steht dir gut!: "lingua/DeutscheStudiennotizen/A2/Kapitel13.md"
+        - 2 Feste, Freunde, Familie: "lingua/DeutscheStudiennotizen/A2/Kapitel14.md"
+        - 3 Miteinander leben: "lingua/DeutscheStudiennotizen/A2/Kapitel15.md"
+        - 4 Schule und danach: "lingua/DeutscheStudiennotizen/A2/Kapitel16.md"
+        - 5 Die neue Wohnung: "lingua/DeutscheStudiennotizen/A2/Kapitel17.md"
+        - 6 Mobil in der Stadt: "lingua/DeutscheStudiennotizen/A2/Kapitel18.md"
+        - 7 Das finde ich schön: "lingua/DeutscheStudiennotizen/A2/Kapitel19.md"
+        - 8 Komm doch mit!: "lingua/DeutscheStudiennotizen/A2/Kapitel20.md"
+        - 9 Arbeitssuche: "lingua/DeutscheStudiennotizen/A2/Kapitel21.md"
+        - 10 Alltag und Medien: "lingua/DeutscheStudiennotizen/A2/Kapitel22.md"
+        - 11 Politik und ich: "lingua/DeutscheStudiennotizen/A2/Kapitel23.md"
+        - 12 Bei uns und bei euch: "lingua/DeutscheStudiennotizen/A2/Kapitel24.md"
+      - B1: #"lingua/DeutscheStudiennotizen/B1/*"
+        - 1 Kennen lernen: "lingua/DeutscheStudiennotizen/B1/Lektion1.md"
+        - 2 Orte: "lingua/DeutscheStudiennotizen/B1/Lektion2.md"
+        - 3 Freizeit und Fitness: "lingua/DeutscheStudiennotizen/B1/Lektion3.md"
+        - 4 Tägliches Leben: "lingua/DeutscheStudiennotizen/B1/Lektion4.md"
+        - 5 Ausbildung und Beruf: "lingua/DeutscheStudiennotizen/B1/Lektion5.md"
+        - 6 Lernen: "lingua/DeutscheStudiennotizen/B1/Lektion6.md"
+        - 7 Zwischenmenschliche Beziehungen: "lingua/DeutscheStudiennotizen/B1/Lektion7.md"
+        - 8 Konsum: "lingua/DeutscheStudiennotizen/B1/Lektion8.md"
+        - 9 Neue Medien: "lingua/DeutscheStudiennotizen/B1/Lektion9.md"
+        - 10 Reise und Mobilität: "lingua/DeutscheStudiennotizen/B1/Lektion10.md"
+      - B2: #"lingua/DeutscheStudiennotizen/B2/*"
+        - 1 Heimat ist ...: "lingua/DeutscheStudiennotizen/B2/Kapitel1.md"
+        - 2 Sprich mit mir!: "lingua/DeutscheStudiennotizen/B2/Kapitel2.md"
+        - 3 Arbeit ist das halbe Leben?: "lingua/DeutscheStudiennotizen/B2/Kapitel3.md"
+        - 4 Zusammen leben: "lingua/DeutscheStudiennotizen/B2/Kapitel4.md"
+        - 5 Wer Wissen schafft, macht Wissenschaft: "lingua/DeutscheStudiennotizen/B2/Kapitel5.md"
+        - 6 Fit für ...: "lingua/DeutscheStudiennotizen/B2/Kapitel6.md"
+        - 7 Kulturwelten: "lingua/DeutscheStudiennotizen/B2/Kapitel7.md"
+        - 8 Das machte Geschichte: "lingua/DeutscheStudiennotizen/B2/Kapitel8.md"
+      - 德语阴阳性总结: "lingua/DeutscheStudiennotizen/德语阴阳中性的辨别.md"
+    - Français: #"lingua/FrenchNotes/*"
+      - A1: #"lingua/FrenchNotes/A1/*"
+        - 0 Phonétique: "lingua/FrenchNotes/A1/Unité0.md"
+        - 1 Rencontres: "lingua/FrenchNotes/A1/Unité1.md"
+        - 2 Portraits: "lingua/FrenchNotes/A1/Unité2.md"
+        - 3 Ça se trouve où?: "lingua/FrenchNotes/A1/Unité3.md"
+        - 4 Au rythme du temps: "lingua/FrenchNotes/A1/Unité4.md"
+    - Italiano: #"lingua/ItalianoAppunti/*"
+      - A1: #"lingua/ItalianoAppunti/A1/*"
+        - 语音入门: "lingua/ItalianoAppunti/A1/语音.md"
+        - 1 Benvenuti!: "lingua/ItalianoAppunti/A1/Unità1.md"
+        - 2 Un nuovo inizio: "lingua/ItalianoAppunti/A1/Unità2.md"
+    - Español: #"lingua/SpanishNotas/*"
+      - A1: #"lingua/SpanishNotas/A1/*"
+        - 语音入门: "lingua/SpanishNotas/A1/语音.md"
+        - 1 ¿Quiénes somos?: "lingua/SpanishNotas/A1/Unidad1.md"
+        - 2 ¿Cómo estás?: "lingua/SpanishNotas/A1/Unidad2.md"
 
 theme:
   name: material
+  features:
+    - navigation.footer
+    - header.autohide
+    - content.code.copy
+    - navigation.tabs
+    - navigation.top
+  palette:
+    - primary: indigo
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 markdown_extensions:
-  - pymdownx.arithmatex:
+  - pymdownx.arithmatex: # for LaTeX math support
       generic: true
-markdown_extensions:
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid-experimental
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  #- pymdownx.superfences:
+  #    custom_fences:
+  #      - name: mermaid
+  #        class: mermaid-experimental
+  #        format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji: # emoji support
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+plugins:
+    - search
+    - mermaid2
+    #- info
+    #- git-authors
 extra_javascript:
   - javascripts/config.js
+  - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

@@ -2,1078 +2,1190 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Assembly%20Language%20and%20Reverse%20Engineering/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Computer%20Architecture/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Computer%20Networks/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Data%20Structure/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Database%20System/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Deep%20Learning%20and%20Application/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Introduction%20to%20Algorithm/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Introduction%20to%20Artificial%20Intelligence/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Introduction%20to%20Parallel%20Programming/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Operation%20System/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Principles%20of%20Compilers/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Principles%20of%20Computer%20Organization/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Probability%20and%20Mathematical%20Statistics/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/core/Software%20Engineering/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/College%20Physics/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Computer%20System%20Design/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Digital%20Logic/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Digital%20Signal%20Processing/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Discrete%20Mathematics/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/High%20Level%20Language%20Program%20Design/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Intelligent%20Computing%20System/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Internet%20Database%20Development/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Introduction%20to%20Python%20Programming/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Linear%20Algebra/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Mathematical%20Analysis/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Methods%20of%20Computing/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Network%20Security%20Technology/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Network%20Technology%20and%20Application/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Sensing%20Technology%20and%20Application/</loc>
+         <lastmod>2025-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/APS/noncore/Visual%20Technology%20Basis/</loc>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W35/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W36/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W37/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W38/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W39/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W40/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W41/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W43/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W44/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W45/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W46/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W47/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FAlgorithmicGameTheory/W48/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW35/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW36/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW37/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW38/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW39/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW40/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW41/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW43/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW44/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW45/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW46/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW47/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputationalGeometry/MRandNotesW48/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW35/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW36/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW37/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW38/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW39/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW40/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW41/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW43/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW44/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW45/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW46/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW47/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/23FComputerVision/NotesW48/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC10InteractiveProof/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC11PCP/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC12PCPInapprox/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC13RAM/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC14SATExp/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC15ParametrizedComplexity/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC16FFT/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC17LLL/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC1TuringMachine/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC2Nondeterministic/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC3BooleanCircuit/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC4ReductionCompleteness/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC5PolyHierarchy/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC6Randomized/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC7BoundDepBoolCir/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC8BranchProgram/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC9CircuitLowerBound/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FEfficientReliK/1ReadPaperReliK/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FEfficientReliK/2PossibleAccIdea/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FEfficientReliK/3ParallelFor/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FEfficientReliK/4Sampling/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FFairAI/0_Fair_AIML/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FFairAI/1_CoreFed/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FFairAI/2_PropFairClu/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FFairAI/3_PropFairRevisited/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FFairAI/4_EndeavorPROPGap/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FFairAI/5_PROPNonCentroid/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FFairAI/6_CoreNonCen/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FFairAI/7_CoreExistence/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/Bonus_PoF_EEFX/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M1FairnessNotion/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M2RelationsofFairnessProperties/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M3PoFandMMS/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M4Alternativ2EFX/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M5EF1%2BPO/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M6ComputeEF1PO/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M7FracAlloc/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/M8StrategicAspects/</loc>
-         <lastmod>2025-10-06</lastmod>
-    </url>
-    <url>
-         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SAGTProject/PaperReading/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/10GNN/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/11FrequentSubgraphMining/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/12FequentItemsets/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/13SequenceSeg/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/1Intro/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/2RepresentCluster/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/3DensityBased/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/4HierarchicalSubspace/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/5OutlierDetect/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/6SpectralTheoryCluster/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/7CommunityDetect/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/8LinkAnalysis/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SDataMining/9GraphEmbed/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/10InvertibleBloomFilters/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/11RandomizedRounding/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/12NearNeighbor%26LocalitySensitiveHashing/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/13NearNeighborSearch2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/14MarkovChains/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/1ExampleQuicksort/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/2ProbIneqHash/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/3HashFunc/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/4MinCutAlg/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/5StreamAlgFreqEsti/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/6HeavyHitters/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/7DimRed/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/8FasterDimRed/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/9ProphetIneq/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/25SMscThesis/8_SplitMergeAvg/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/25SMscThesis/9_OnFJR/</loc>
-         <lastmod>2025-10-06</lastmod>
-    </url>
-    <url>
-         <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/%E7%96%91%E4%BC%BC2025%E9%AB%98%E8%80%83%E5%A4%96%E8%AF%AD%E8%AF%95%E5%8D%B7%E6%B5%81%E5%87%BA/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/AndersensEventyr/0%E6%96%B0%E5%9D%91%E9%A2%84%E5%91%8A/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.1/Lek0/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.1/Lek1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.1/Lek2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.1/Lek3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.1/Lek4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.1/Lek5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.1/Lek6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.1/Lek7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek11-12/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek13-14/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek7-8/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.2/Lek9-10/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek10/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek11/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek12/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek13/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek14/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek7og8/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.3/Lek9/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.4/Lek1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.4/Lek2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.4/Lek3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.4/Lek4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.4/Lek5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.4/Lek6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/Dansknote/DU3.4/Lek7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/%E5%BE%B7%E8%AF%AD%E9%98%B4%E9%98%B3%E4%B8%AD%E6%80%A7%E7%9A%84%E8%BE%A8%E5%88%AB/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel0/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel10/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel11/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel12/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel1bis3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel8/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A1/Kapitel9/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel13/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel14/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel15/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel16/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel17/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel18/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel19/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel20/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel21/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel22/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel23/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/A2/Kapitel24/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion10/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion8/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B1/Lektion9/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B2/Kapitel1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B2/Kapitel2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B2/Kapitel3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B2/Kapitel4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B2/Kapitel5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B2/Kapitel6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B2/Kapitel7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/DeutscheStudiennotizen/B2/Kapitel8/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/FrenchNotes/A1/Unit%C3%A90/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/FrenchNotes/A1/Unit%C3%A91/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/FrenchNotes/A1/Unit%C3%A92/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/FrenchNotes/A1/Unit%C3%A93/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/FrenchNotes/A1/Unit%C3%A94/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/ItalianoAppunti/A1/Unit%C3%A01/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/ItalianoAppunti/A1/Unit%C3%A02/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/ItalianoAppunti/A1/%E8%AF%AD%E9%9F%B3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/SpanishNotas/A1/Unidad1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/SpanishNotas/A1/Unidad2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/lingua/SpanishNotas/A1/%E8%AF%AD%E9%9F%B3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/AIComputingSystem/Kapitel1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/AIComputingSystem/Kapitel2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/AIComputingSystem/Kapitel3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/AIComputingSystem/Kapitel4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/AIComputingSystem/Kapitel5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/AIComputingSystem/Kapitel6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/AIComputingSystem/Kapitel7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/AIComputingSystem/Kapitel8/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel0/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel10/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel8/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/Assembler%26ReverseEngineering/Kapitel9/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA10%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA11%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA12%E4%BB%93%E5%BA%93%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA1%E6%A6%82%E8%BF%B020210906/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA2%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%AF%84%E4%BC%B020210918/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA3%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%8420210927/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA4%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A120211011/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA5%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%281%2920211018/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA6%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF%282%29/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA7%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA8%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%282%29/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerArchitecture/CA9%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%80%A7%281%29/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerNetwork/Kapitel0/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerNetwork/Kapitel1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerNetwork/Kapitel2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerNetwork/Kapitel3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerNetwork/Kapitel4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/ComputerNetwork/Kapitel5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/DatabaseSystem/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/DigitalSignalProcessing/Kapitel0/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/DigitalSignalProcessing/Kapitel1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/DigitalSignalProcessing/Kapitel2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/DigitalSignalProcessing/Kapitel3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/DigitalSignalProcessing/Kapitel5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/DigitalSignalProcessing/Kapitel6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/DigitalSignalProcessing/Kapitel7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/DigitalSignalProcessing/Kapitel8/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/NetworkTechnology/Kapitel1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/NetworkTechnology/Kapitel2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/NetworkTechnology/Kapitel3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/NetworkTechnology/Kapitel4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/NetworkTechnology/Kapitel5/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/NetworkTechnology/Kapitel6/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/NetworkTechnology/Kapitel7/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/NetworkTechnology/Kapitel8/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/NetworkTechnology/Kapitel9/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/PerceptionTechnology/Kapite1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/PerceptionTechnology/Kapite2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/PerceptionTechnology/Kapite3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/PerceptionTechnology/Kapite4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/handsonrl/Kapitel1-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/handsonrl/Kapitel14-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/handsonrl/Kapitel2-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/handsonrl/Kapitel3-%E5%80%BC%E5%87%BD%E6%95%B0%E4%BC%B0%E8%AE%A1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/handsonrl/Kapitel4-%E6%97%A0%E6%A8%A1%E5%9E%8B%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/handsonrl/Kapitel5-%E8%BF%91%E4%BC%BC%E9%80%BC%E8%BF%91%E6%96%B9%E6%B3%95/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/handsonrl/Kapitel6-%E8%A7%84%E5%88%92%E4%B8%8E%E5%AD%A6%E4%B9%A0/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/handsonrl/Kapitel7-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%BB%B7%E5%80%BC%E6%96%B9%E6%B3%95/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
     <url>
          <loc>https://tinsir888.codeberg.page/notes-mkdocs/site/nkucs/handsonrl/Kapitel8-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AD%96%E7%95%A5%E6%96%B9%E6%B3%95/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-07</lastmod>
     </url>
 </urlset>

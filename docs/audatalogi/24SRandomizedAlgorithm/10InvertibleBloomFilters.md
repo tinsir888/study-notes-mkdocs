@@ -41,11 +41,11 @@ Start with table with $k\ge3$ rows, $m=2\times t$ columns.
 
 In each row, we have a hash function $h_1,\cdots,h_k$.
 
-{% note success modern %}
+!!! success
 
-$h_i$ is universal.
+    $h_i$ is universal.
 
-{% endnote %}
+
 
 Each of the entry, called cell, stores values:
 
@@ -65,11 +65,11 @@ Each of the entry, called cell, stores values:
 
 "undo" insert operation
 
-{% note danger modern %}
+!!! danger
 
-We must know the pair is there before deletion.
+    We must know the pair is there before deletion.
 
-{% endnote %}
+
 
 1. for $i=1$ to $k$
    - $c=A[i][h_i(x)]$
@@ -129,21 +129,21 @@ $$
   =\frac{n(n-1)}{2m^2}\le\frac{t^2}{2m^2}\le\frac{t^2}{8t^2}=\frac{1}{8}
   $$
 
-{% note success modern %}
+!!! success
 
-If we choose $k=\log_2t+\log_2\frac{1}{\delta}$, the probability of failure is at most $\delta$.
+    If we choose $k=\log_2t+\log_2\frac{1}{\delta}$, the probability of failure is at most $\delta$.
 
-{% endnote %}
+
 
 ### How to Avoid False Deletion?
 
-another set of universal hash function $g_1,\cdots,g_k:U\rarr[R]$
+another set of universal hash function $g_1,\cdots,g_k:U\rightarrow[R]$
 
 while query, check whether $c.hash\_sum==g(c.key\_sum)$
 
 ## ListEntries Operation
 
-1. $Q=\empty$
+1. $Q=\emptyset$
 
 2. for $c$ in IBLT
 

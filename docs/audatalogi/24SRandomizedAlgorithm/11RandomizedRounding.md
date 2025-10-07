@@ -22,7 +22,7 @@ randomized ½ approximation for each problem
 aka maximum satisfiability problem
 
 - Input consists of $n$ Boolean variables $x_1,\cdots,x_n$, $m$ clauses $C_1,\cdots,C_m$.
-  - Clauses $C_j$ consist of some number of variables and $\or$ and a non-negative weight $w_j$.
+  - Clauses $C_j$ consist of some number of variables and $\lor$ and a non-negative weight $w_j$.
 - The objective of the problem is to find an assignment of $x_i$ that maximizes the weight of the satisfied clauses.
 - A clause is said to be satisfied if one of the unnegated variables is set to `true`, or one of the negated variables is set to `false`.
 
@@ -122,7 +122,7 @@ Suppose we set each $x_i$ to be `true` independently with probability $p\gt\frac
 > $$
 > 现在就需要将 $\min(p,1-p^2)$ 最大化。
 
-Best performance is $p=1-p^2\Rarr p\approx0.618$.
+Best performance is $p=1-p^2\Rightarrow p\approx0.618$.
 
 :thinking:**Theorem 4**. Setting each $x_i$ to `true` with probability $p$ independently gives a randomized $\min(p,1-p^2)$-approximation algorithm for MAX SAT instances with no negated unit clauses.
 
@@ -153,7 +153,7 @@ For MAX SAT problem, in addition to the variables $y_i$, we introduce a variable
 
 We denote the clause $C_j$ by
 $$
-\bigvee_{i\in P_j}x_i\or\bigvee_{i\in N_j}\bar x_i.
+\bigvee_{i\in P_j}x_i\lor\bigvee_{i\in N_j}\bar x_i.
 $$
 Then the inequality
 $$
@@ -164,7 +164,7 @@ must hold for $C_j$ since if each variable that occurs positively in the clause 
 This yields **integer programming** formulation of MAX SAT problem:
 
 - maximize $\sum_{j=1}^mw_jz_j$
-- subject to $\sum_{i\in P_j}y_i+\sum_{i\in N_j}(1-y_i)\ge z_j$, $\forall C_j=\bigvee_{i\in P_j}x_i\or\bigvee_{i\in N_j}\bar x_i$,
+- subject to $\sum_{i\in P_j}y_i+\sum_{i\in N_j}(1-y_i)\ge z_j$, $\forall C_j=\bigvee_{i\in P_j}x_i\lor\bigvee_{i\in N_j}\bar x_i$,
 - $y_i\in\{0,1\},i=1,\cdots,n$
 - $0\le z_j\le 1,j=1,\cdots,m$
 
@@ -208,13 +208,13 @@ If $f''(x)\le0\forall x\in[0,1],f(0)=a,f(1)=b+a$, then $f(x)\ge bx+a\forall x\in
 >$$
 >This randomized rounding algorithm can be derandomized in the standard way using the method of conditional expectations.
 
-{% note info flat %}
+!!! info
 
-这个证明不太优雅，其实可以用 $e^x\ge x+1$ 进行放缩，将乘积化为 $e$ 的指数和的形式。
+    这个证明不太优雅，其实可以用 $e^x\ge x+1$ 进行放缩，将乘积化为 $e$ 的指数和的形式。
 
-然后再用线性规划的结果至少优于整数线性规划的结果，得到 $\Pr[C_i(x)=1]\ge1-\exp(-z_j^*)$。
+    然后再用线性规划的结果至少优于整数线性规划的结果，得到 $\Pr[C_i(x)=1]\ge1-\exp(-z_j^*)$。
 
-{% endnote %}
+
 
 # Choosing the Better of 2 Solutions
 

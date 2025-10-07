@@ -67,7 +67,7 @@ FJR in centroid clustering by Aziz et al.
 
 $[t]=\{1,\cdots,t\}$ for $t\in\N$. Given a set $N$ of $n$ agents, and the desired number of clusters $k$.
 
-Each agent $i\in N$ has an associated loss function $\ell_i:2^N\diagdown2^{N\diagdown i}\to\R_{\ge0}$, where $\ell_i(S)$ is the cost to agent $i$ for being part of group $S$. A $k$-clustering $C=(C_1,\cdots,C_k)$ is a partition of $N$ into $k$ clusters, where $C_t\cap C_{t'}=\empty$ for $t\neq t'$ and $\cup_{t=1}^kC_t=N$. For simplicity, $C(i)$ is the cluster containing $i$.
+Each agent $i\in N$ has an associated loss function $\ell_i:2^N\diagdown2^{N\diagdown i}\to\R_{\ge0}$, where $\ell_i(S)$ is the cost to agent $i$ for being part of group $S$. A $k$-clustering $C=(C_1,\cdots,C_k)$ is a partition of $N$ into $k$ clusters, where $C_t\cap C_{t'}=\emptyset$ for $t\neq t'$ and $\cup_{t=1}^kC_t=N$. For simplicity, $C(i)$ is the cluster containing $i$.
 
 The loss of $i$ is $\ell_i(C(i))$.
 
@@ -117,11 +117,11 @@ Output: $k$-clustering $C$
 
 1. $N'\gets N$ // remaining set of agents
 2. $j\gets 1$ // current cluster member
-3. while $N'\neq\empty$ do
+3. while $N'\neq\emptyset$ do
    - $C_j\gets\mathcal A(N',d,\lceil n/k\rceil)$ // find and remove the next cohesive cluster
    - $N'\gets N'\diagdown C_j$
    - $j\gets j+1$
-4. $C_j,C_{j+1},\cdots,C_k\gets\empty$
+4. $C_j,C_{j+1},\cdots,C_k\gets\emptyset$
 5. return $C=(C_1,\cdots,C_k)$
 
 ### Pseudo code for SmallestAgentBall

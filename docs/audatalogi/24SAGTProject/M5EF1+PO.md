@@ -64,7 +64,7 @@ $\mathcal M=[m]$ indivisible goods.
 
 Each player has a valuation function $v_i$ for the goods.
 
-- $v_i(\empty)=0$
+- $v_i(\emptyset)=0$
 - additive (main results can be generalized to submodular valuations)
 
 $\Pi_k(S)$ denote the set of ordered partitions of $S$ into $k$ bundles. $S\subseteq \mathcal M$.
@@ -75,7 +75,7 @@ Definition of Envy Freeness (EF), EF1, MMS: ~~omitted~~
 
 Definition of Pareto Optimality (PO): An allocation $\mathbf A$ is called PO  if no alternative allocation $\mathbf A'\in\Pi_n(\mathcal M)$ can make some players strictly better off without making any player strictly worse off. Formally,
 $$
-\forall\mathbf A'\in\Pi_n(\mathcal M),(\exist i\in\mathcal N,v_i(A_i')\gt v_i(A_i))\Rarr(\exist j\in\mathcal N,v_j(A_j')\lt v_j(A_j)).
+\forall\mathbf A'\in\Pi_n(\mathcal M),(\exists i\in\mathcal N,v_i(A_i')\gt v_i(A_i))\Rightarrow(\exists j\in\mathcal N,v_j(A_j')\lt v_j(A_j)).
 $$
 
 # Maximum Nash Welfare is EF1 and PO
@@ -111,16 +111,16 @@ Input: $\mathcal N,\mathcal M,\{v_i\}_{i\in\mathcal N}$
 
 Output: $\mathbf A^{MNW}$
 
-1. $S\in\arg\max_{T\subseteq\mathcal N:\exist\mathbf A\in\Pi_n(\mathcal M),\forall i\in T,v_i(A_i)\gt0}|T|$; // a largest set of players that can be simultaneously given a positive utility
+1. $S\in\arg\max_{T\subseteq\mathcal N:\exists\mathbf A\in\Pi_n(\mathcal M),\forall i\in T,v_i(A_i)\gt0}|T|$; // a largest set of players that can be simultaneously given a positive utility
 2. $\mathbf A^*\gets\arg\max_{\mathbf A\in\Pi_{|S|}(\mathcal M)}\prod_{i\in S}v_i(A_i)$; // The MNW allocation to players in $S$
 3. $\mathbf A_i^{MNW}\gets A_i^*,\forall i\in S$;
-4. $\mathbf A_i^{MNW}\gets\empty,\forall i\in\mathcal N\diagdown S$; // Players in $\mathcal N\diagdown S$ do not receive any goods
+4. $\mathbf A_i^{MNW}\gets\emptyset,\forall i\in\mathcal N\diagdown S$; // Players in $\mathcal N\diagdown S$ do not receive any goods
 
 An allocation is a MNW allocation if it can be selected by the MNW solution.
 
 :dart::thinking:**Theorem 1**. Every MNW allocation is EF1 and PO for additive valuations over indivisible goods.
 
-> Never copy proof from paper again:heavy_exclamation_mark:Try to capture the main argument of proof.
+> Never copy proof from paper again:book:Try to capture the main argument of proof.
 >
 > PO is trivial. Because increase some $v_i$ without decreasing any $v_j$ violates optimality of Nash welfare under $\mathbf A$.
 >
@@ -149,17 +149,17 @@ Is EF1 and PO can be achieved simultaneously for
 
 **This paper didn't solve this question for ==submodular== valuations.** It only shows MNW is not EF1 + PO for submodular valuations. The paper relaxes the EF1 condition, Marginal Envy Freeness up to One Good (MEF1), showing that every MNW allocation satisfies MEF1 + PO.
 
-> subadditive: $\forall A\cap B=\empty,v(A)+v(B)\ge v(A\cup B)$.
+> subadditive: $\forall A\cap B=\emptyset,v(A)+v(B)\ge v(A\cup B)$.
 >
-> submodular: $\forall B\subseteq A\and g\notin A,v(A\cup\{g\})-v(A)\le v(B\cup\{g\})-v(B)$
+> submodular: $\forall B\subseteq A\land g\notin A,v(A\cup\{g\})-v(A)\le v(B\cup\{g\})-v(B)$
 >
-> superadditive: $\forall A\cap B=\empty,v(A)+v(B)\le v(A\cup B)$.
+> superadditive: $\forall A\cap B=\emptyset,v(A)+v(B)\le v(A\cup B)$.
 >
-> supermodular: $\forall B\subseteq A\and g\notin A,v(A\cup\{g\})-v(A)\ge v(B\cup\{g\})-v(B)$
+> supermodular: $\forall B\subseteq A\land g\notin A,v(A\cup\{g\})-v(A)\ge v(B\cup\{g\})-v(B)$
 
 **Definition of MEF1**. An allocation $A\in\Pi_n(\mathcal M)$ is MEF1 if
 $$
-\forall i,j\in\mathcal N,\exist g\in A_j,v_i(A_i)\ge v_i(A_i\cup A_j\diagdown\{g\})-v_i(A_i)
+\forall i,j\in\mathcal N,\exists g\in A_j,v_i(A_i)\ge v_i(A_i\cup A_j\diagdown\{g\})-v_i(A_i)
 $$
 For additive valuations, trivially MEF1 = EF1. For submodular valuations, the marginal value $v_i(A_i\cup A_j\diagdown\{g\})-v_i(A_i)\le v_i(A_j\diagdown\{g\})$.
 
@@ -200,7 +200,7 @@ This factor $\pi_n$ is tight, i.e., for every $n\in\mathbb N$ and $\epsilon\gt0$
 >
 > :bomb::skull: :bomb::skull: :bomb::skull:Finding upper bound on MMS guarantee.
 >
->   - Assume all the goods except goods in $T=\{g_j^*|v_i(g_j^*)\gt MMS_i\and j\in\mathcal N\diagdown\{i\}\}$ become divisible.
+>   - Assume all the goods except goods in $T=\{g_j^*|v_i(g_j^*)\gt MMS_i\land j\in\mathcal N\diagdown\{i\}\}$ become divisible.
 >
 >     Let each item in $T$ be a bundle itself, let others divided into $n-|T|$ equal-valued (w.r.t $i$) bundles.
 >
@@ -230,8 +230,8 @@ Definition of EFX: ~~omitted~~.
 
 :dart::thinking:**Theorem 5**. For additive valuation over indivisible goods:
 $$
-EF\stackrel{(1)}\Rarr PMMS\stackrel{(2)}\Rarr EFX\stackrel{(3)}\Rarr EF1\\
-PMMS\stackrel{(4)}\Rarr\frac{1}{2}-MMS
+EF\stackrel{(1)}\Rightarrow PMMS\stackrel{(2)}\Rightarrow EFX\stackrel{(3)}\Rightarrow EF1\\
+PMMS\stackrel{(4)}\Rightarrow\frac{1}{2}-MMS
 $$
 
 > (1) (3) is easy.

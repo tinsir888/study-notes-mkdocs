@@ -41,7 +41,7 @@ for all $x\in\{0,1\}^n$.
 
 ## Reduce to Hitting Set Problem
 
-Recall $HittingSet$ problem. Consider a universe $U$ of elements and a collection $\mathcal S$ of subsets of $\mathcal U$. We say that $T\subseteq\mathcal U$ is a hitting set for $\mathcal S$ if $S\cap T\neq\empty$ for all $S\in\mathcal S$. We denote by $\sigma(\mathcal S)$ the collection of all hitting sets of $\mathcal S$.
+Recall $HittingSet$ problem. Consider a universe $U$ of elements and a collection $\mathcal S$ of subsets of $\mathcal U$. We say that $T\subseteq\mathcal U$ is a hitting set for $\mathcal S$ if $S\cap T\neq\emptyset$ for all $S\in\mathcal S$. We denote by $\sigma(\mathcal S)$ the collection of all hitting sets of $\mathcal S$.
 
 $kHittingSet$ problem:
 
@@ -63,11 +63,11 @@ Any collection of subsets $\mathcal T$ over $\mathcal U$ can be viewed as a CNF 
 
 :book:Definition 57. Let $\mathcal T$ and $\mathcal S$ be collections of subsets. We say that $\mathcal T$ is a **restriction** of $\mathcal S$ if for every $S\in\mathcal S$ there exists $T\in\mathcal T$ s.t. $T\subseteq S$.
 
-{% note info modern %}
+!!! info
 
-也就是集合的集合 $\mathcal S$ 中的每一个元素（是一个集合）是集合的集合 $\mathcal T$ 中对应有一个元素（是一个集合）的子集。
+    也就是集合的集合 $\mathcal S$ 中的每一个元素（是一个集合）是集合的集合 $\mathcal T$ 中对应有一个元素（是一个集合）的子集。
 
-{% endnote %}
+
 
 ~~很绕，不是吗？~~
 
@@ -85,19 +85,19 @@ To branch, the algorithm looks for a large collection of subsets of the **same s
 
 :book:Definition 58. Let $S_1,\cdots,S_c$ be $j$-sets.
 
-- We say that these sets are a **flower** if $H=\bigcap_{i=1}^cS_i\neq\empty$.
+- We say that these sets are a **flower** if $H=\bigcap_{i=1}^cS_i\neq\emptyset$.
 - We call $H$ the **heart** of the flower and sets $(S_1\diagdown H),\cdots,(S_c\diagdown H)$ the **petals**.
 - Note that all petals have the same size $j-|H|$, which we denote as **petal-size**.
 
-{% note info modern %}
+!!! info
 
-定义一朵花：一组大小为 $j$ 的集合，它们的交集为空。
+    定义一朵花：一组大小为 $j$ 的集合，它们的交集为空。
 
-花心：这组集合的交集。对应定义花心的大小。
+    花心：这组集合的交集。对应定义花心的大小。
 
-花瓣：每个集合去除花心。对应定义花瓣的大小。
+    花瓣：每个集合去除花心。对应定义花瓣的大小。
 
-{% endnote %}
+
 
 The algorithm will be controlled by integer parameters $2=\theta_0\lt\theta_1\lt\cdots\lt\theta_{k-1}$. We make $\theta_i$ increase rapidly as a parameter of $i$.
 
@@ -108,13 +108,13 @@ The algorithm will be controlled by integer parameters $2=\theta_0\lt\theta_1\lt
   - it is a large flower chosen s.t. $j$ is chosen minimally
   - and if more than one large flower of $j$-sets exists then chosen s.t. $i$ is chosen minimally.
 
-{% note info modern %}
+!!! info
 
-如果一朵花含有集合的个数足够大，则称这朵花是“大”的。
+    如果一朵花含有集合的个数足够大，则称这朵花是“大”的。
 
-如果一朵花是“大”的，并且其中包含的集合大小、花瓣大小都是最小的，则称这朵花是“好”的。
+    如果一朵花是“大”的，并且其中包含的集合大小、花瓣大小都是最小的，则称这朵花是“好”的。
 
-{% endnote %}
+
 
 ~~很形象的定义，但还是很绕~~
 
@@ -143,7 +143,7 @@ Output: Restrictions $\mathcal T_1,\cdots,\mathcal T_t$ of s.t. $\sigma(\mathcal
 >
 > Note that $\sigma(\pi(\mathcal T))=\sigma(\mathcal T)$ for any collection $\mathcal T$. It follows that eliminating sets from $\mathcal S$ does not eliminate any hitting sets of $\mathcal S$.
 >
-> Suppose that $T$ is a hitting set of $\mathcal S$ and let $S_1,\cdots, S_c$ be a flower of $\mathcal S$ with heart $H$. If $T\cap H\neq\empty$, then $T$ is a hitting set of $S\cup\{H\}$. If $T\cap H=\empty$ then $T$ must be a hitting set of $\mathcal S\cup\{S_1\diagdown H,\cdots,S_c\diagdown H\}$. Thus any hitting set of $\mathcal S$ is preserved in at least one recursive branch.
+> Suppose that $T$ is a hitting set of $\mathcal S$ and let $S_1,\cdots, S_c$ be a flower of $\mathcal S$ with heart $H$. If $T\cap H\neq\emptyset$, then $T$ is a hitting set of $S\cup\{H\}$. If $T\cap H=\emptyset$ then $T$ must be a hitting set of $\mathcal S\cup\{S_1\diagdown H,\cdots,S_c\diagdown H\}$. Thus any hitting set of $\mathcal S$ is preserved in at least one recursive branch.
 
 It's easy to see that `Reduce` always terminates.
 
@@ -181,7 +181,7 @@ When $\gamma\le1/2$ we have $H(\gamma)\le2\gamma\log_2(1/\gamma)$, thus we use t
 We set $\theta_i$ in such a way that the ratio $\theta_i/\beta_i$ is equal to an integer constant $\alpha$, to be fixed later, for $1\le i\le k$. Thus
 $$
 \beta_i=4\beta_{i-1}\theta_{i-1}=4\alpha(\beta_{i-1})^2\\
-\Rarr \beta_i=(4\alpha)^{2^{i-1}-1},\theta_i=\alpha(4\alpha)^{2^{i-1}-1}\forall 1\le i\le k
+\Rightarrow \beta_i=(4\alpha)^{2^{i-1}-1},\theta_i=\alpha(4\alpha)^{2^{i-1}-1}\forall 1\le i\le k
 $$
 :thinking:Corollary 16. Along any path of the recursion tree of `Reduce` at most $kn/\alpha$ families are created by adding petals.
 

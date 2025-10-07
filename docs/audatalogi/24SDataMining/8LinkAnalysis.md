@@ -215,7 +215,7 @@ Each page $i$ starts with hub score $1$. The iteration works in alternating mann
 
    until $\sum_i(h_i^t-h_i^{t-1})^2\lt\epsilon$ and $\sum_i(a_i^t-a_i^{t-1})^2\lt\epsilon$
 
-**HITS converges to a single stable point**. We can see that HITS indeed converge by considering the authority vector $\mathbf a$ and the hub vector $\mathbf h$. In this way we can rewrite $h_i=\sum_jA_{ij}a_j\Rarr\mathbf{Aa}$ and $a_i=\sum_{j,i\in E}h_j=\sum_jA_{ji}h_j\Rarr\mathbf{A^\top h}$. For two consecutive iterations HITS iterations we obtain
+**HITS converges to a single stable point**. We can see that HITS indeed converge by considering the authority vector $\mathbf a$ and the hub vector $\mathbf h$. In this way we can rewrite $h_i=\sum_jA_{ij}a_j\Rightarrow\mathbf{Aa}$ and $a_i=\sum_{j,i\in E}h_j=\sum_jA_{ji}h_j\Rightarrow\mathbf{A^\top h}$. For two consecutive iterations HITS iterations we obtain
 $$
 \mathbf a=(\mathbf{A^\top A})\mathbf a\\
 \mathbf h=(\mathbf{AA^\top})\mathbf h

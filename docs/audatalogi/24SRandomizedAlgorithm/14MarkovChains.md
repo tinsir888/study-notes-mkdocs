@@ -47,11 +47,11 @@ A *lazy random walk* is similar but $Q_{i,i}=1/2$.
 
 Given a 2-CNF formula, either find a satisfying assignment or determine that no such assignment exists.
 
-> CNF aka conjunctive normal form，合取范式，形如 $()\and()\and()$
+> CNF aka conjunctive normal form，合取范式，形如 $()\land()\land()$
 >
-> ==2==-CNF 就是 $()\and()\and()\cdots\and()$，括号内里面是==两==个布尔变量的析取。
+> ==2==-CNF 就是 $()\land()\land()\cdots\land()$，括号内里面是==两==个布尔变量的析取。
 >
-> DNF aka disjunctive normal form，析取范式，形如 $()\or()\or()$
+> DNF aka disjunctive normal form，析取范式，形如 $()\lor()\lor()$
 
 2-SAT is solvable in polynomial time (in fact linear time).
 
@@ -271,7 +271,7 @@ Definition of *period*: The period of a state $i$ in a Markov chain is defined t
 
 A Markov chain is irreducible and aperiodic iff there exists some power of the transition matrix $P$ with all entries strictly positive.
 
-Theorem: Consider a finite, irreducible, aperiodic Markov chain with stationary distribution $\pi$. Then $\lim_{n\rarr\infty}Q^n$ is the matrix
+Theorem: Consider a finite, irreducible, aperiodic Markov chain with stationary distribution $\pi$. Then $\lim_{n\rightarrow\infty}Q^n$ is the matrix
 $$
 Q^\infty=\left[
 \begin{array}{cc}
@@ -282,7 +282,7 @@ Q^\infty=\left[
 \end{array}
 \right]
 $$
-If follows that for any initial distribution $x$ we have $xQ^b\rarr xQ^\infty=\pi$ as $n\rarr\infty$, i.e., the chain converges to the stationary distribution from any starting point.
+If follows that for any initial distribution $x$ we have $xQ^b\rightarrow xQ^\infty=\pi$ as $n\rightarrow\infty$, i.e., the chain converges to the stationary distribution from any starting point.
 
 ## Random walks on undirected graphs
 

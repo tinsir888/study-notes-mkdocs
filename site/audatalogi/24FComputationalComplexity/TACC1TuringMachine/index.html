@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24FComputationalComplexity/TACC1TuringMachine/">
       
       
+        <link rel="prev" href="../../24SRandomizedAlgorithm/14MarkovChains/">
+      
+      
+        <link rel="next" href="../TACC2Nondeterministic/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -25,6 +29,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +60,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,9 +88,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
       
@@ -104,6 +116,38 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -151,6 +195,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://codeberg.org/tinsir888/notes-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Codeberg
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -159,6 +215,168 @@
       
       
         
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../23FAlgorithmicGameTheory/W35/" class="md-tabs__link">
+          
+  
+  
+  Datalogi@AU
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../nkucs/PerceptionTechnology/Kapite1/" class="md-tabs__link">
+          
+  
+  
+  CS@NKU
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../APS/core/Assembly%20Language%20and%20Reverse%20Engineering/" class="md-tabs__link">
+          
+  
+  
+  Informatik für APS
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../lingua/Dansknote/AndersensEventyr/0%E6%96%B0%E5%9D%91%E9%A2%84%E5%91%8A/" class="md-tabs__link">
+          
+  
+  
+  Languages
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
           
         
       
@@ -173,8 +391,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
       
@@ -184,6 +404,18 @@
     </a>
     tinsir888's Study Notes
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://codeberg.org/tinsir888/notes-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Codeberg
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -213,21 +445,2968 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Datalogi@AU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Datalogi@AU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
   
   
     
     
     
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithmic Game Theory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithmic Game Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Introduction and examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Mechanism design basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Myerson's lemma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Algorithmic mechanism design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Revenue-maximizing auctions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Simple Near-Optimal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W41/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Exercise, examples, Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W43/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Multi-parameter mechanism design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W44/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Mechanism design with payment constraints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W45/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Mechanism design without money
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W46/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Non-atomic selfish routing and price of anarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W47/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Congestion games, potential functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W48/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Potential games and price of stability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computational Geometry
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computational Geometry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Introduction to Algorithm Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Introduction to Parallel Computation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Sorting and Searching in Parallel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 I/O Model and Permutation Lower Bound
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Introduction to Computational Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Linear Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW41/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Polygon Triangulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW43/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Point Location
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW44/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Arrangements and Duality, Zone Theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW45/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Orthogonal Range Searching
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW46/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 More Orthogonal problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW47/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Voronoi Diagrams and 3D Convex Hull
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW48/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Robot Motion Planning and Visibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Machine Learning fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Convolutional Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Backpropagation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Training ConvNet (1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW41/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Training ConvNet (2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW43/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 CNN architectures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW44/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Object detection and segmentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW45/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Generative models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW46/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Visualizing and understanding CNNs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW47/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Sequence models (NLP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW48/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Roundup - Uncovered Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fair Division (Project)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Fair Division (Project)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M1FairnessNotion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Survey Study
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M2RelationsofFairnessProperties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Relations of Fairness Properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M3PoFandMMS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Price of Fairness and MMS Property
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M4Alternativ2EFX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Alternatives to EFX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M5EF1%2BPO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 EF1-Pareto Optimality Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M6ComputeEF1PO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Computing EF1 + PO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M7FracAlloc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Ex-ante and Ex-post Fairness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M8StrategicAspects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Strategic Aspects of Fair Divison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/Bonus_PoF_EEFX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 My Conjectures on Price of Fairness for EEFX/MXS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Mining
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data Mining
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/1Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/2RepresentCluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Representation-based Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/3DensityBased/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Densiy-based Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/4HierarchicalSubspace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Hierarchical and Subspace Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/5OutlierDetect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Outlier Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/6SpectralTheoryCluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Spectral Theory and Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/7CommunityDetect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Community Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/8LinkAnalysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Link Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/9GraphEmbed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Graph Embedding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/10GNN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Graph Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/11FrequentSubgraphMining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Frequent Subgraph Mining
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/12FequentItemsets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Frequent Itemsets and Association Rules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/13SequenceSeg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Sequence Segmentation and Similarities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Randomized Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Randomized Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/1ExampleQuicksort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Examples of Randomized Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/2ProbIneqHash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Probabilistic Inequalities, Hashing with Chaining
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/3HashFunc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Hash Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/4MinCutAlg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Karger's Min Cut Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/5StreamAlgFreqEsti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Streaming Algorithms for Frequency Estimation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/6HeavyHitters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Streaming Heavy Hitters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/7DimRed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Dimensionality Reduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/8FasterDimRed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Faster Dimensionality Reduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/9ProphetIneq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Prophets, Secretaries and Martingales
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/10InvertibleBloomFilters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Invertible Bloom Filters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/11RandomizedRounding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Randomized Rounding for MAX SAT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/12NearNeighbor%26LocalitySensitiveHashing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Nearest Neighbor Search and Locality Sensitive Hashing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/13NearNeighborSearch2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Nearest Neighbor Search with Different Distance Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SRandomizedAlgorithm/14MarkovChains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14 Markov Chains and Random Walks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computational Complexity
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Computational Complexity
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Turing Machines, Time and Space
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC2Nondeterministic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Nondeterminism and Determinism
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC3BooleanCircuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Boolean Circuits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC4ReductionCompleteness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Reductions and Completeness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC5PolyHierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 The Polynomoial-Time Hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC6Randomized/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Randomized Computation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC7BoundDepBoolCir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Bounded Depth Boolean Circuits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC8BranchProgram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Branching Programs and Barrington's Theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC9CircuitLowerBound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Circuit Lower Bounds
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC10InteractiveProof/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Interactive Proofs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC11PCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Probabilistic Checkable Proofs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC12PCPInapprox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 PCP-based Inapproximability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC13RAM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Random Access Machine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC14SATExp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14 SAT Problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC15ParametrizedComplexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15 Fine-grained and Parameterized Complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC16FFT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16 Fast Fourier Transform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TACC17LLL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    17 LLL Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Efficient ReliK (Project)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Efficient ReliK (Project)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FEfficientReliK/1ReadPaperReliK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Investigating the Original ReliK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FEfficientReliK/2PossibleAccIdea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Possible Parallelization Idea
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FEfficientReliK/3ParallelFor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Parallel For Loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FEfficientReliK/4Sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Sampling Optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fair Clustering (Project&Thesis)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Fair Clustering (Project&Thesis)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/0_Fair_AIML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0 Fairness in AI/ML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/1_CoreFed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Core-Stability Federated Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/2_PropFairClu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 PROP Fair Clustering (1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/3_PropFairRevisited/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 PROP Fair Clustering (2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/4_EndeavorPROPGap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Endeavor to Bridge Gap between 2 and 2.414
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/5_PROPNonCentroid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 PROP in Non-Centroid Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/6_CoreNonCen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Some Open Problems about Non-centroid Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/7_CoreExistence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 The Existence of Core for Max Distance Loss
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../25SMscThesis/8_SplitMergeAvg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Split and Merge Algorithm on Average Cost
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../25SMscThesis/9_OnFJR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 On Fully Justified Representation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -240,8 +3419,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             CS@NKU
           </label>
@@ -257,15 +3436,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   
@@ -278,8 +3460,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             感知技术与应用
           </label>
@@ -395,15 +3577,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   
@@ -416,8 +3601,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             数字信号处理
           </label>
@@ -648,15 +3833,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
             
   
   
@@ -669,8 +3857,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             智能计算系统
           </label>
@@ -878,15 +4066,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
   
@@ -899,8 +4090,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             汇编与逆向
           </label>
@@ -1177,15 +4368,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
   
@@ -1198,8 +4392,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             网络技术与应用
           </label>
@@ -1430,15 +4624,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
             
   
   
@@ -1451,8 +4648,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             计算机体系结构
           </label>
@@ -1752,15 +4949,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
         
           
-          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
             
   
   
@@ -1773,8 +4973,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             计算机网络
           </label>
@@ -1936,15 +5136,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
         
           
-          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
             
   
   
@@ -1957,8 +5160,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             强化学习
           </label>
@@ -2186,6 +5389,3839 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Informatik für APS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Informatik für APS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    重点复习课程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            重点复习课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Assembly%20Language%20and%20Reverse%20Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assembly Language and Reverse Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Computer%20Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Computer%20Networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Data%20Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Database%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Deep%20Learning%20and%20Application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deep Learning and Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Introduction%20to%20Algorithm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Introduction%20to%20Artificial%20Intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Artificial Intelligence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Introduction%20to%20Parallel%20Programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Parallel Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Operation%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operation System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Principles%20of%20Compilers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Principles of Compliers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Principles%20of%20Computer%20Organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Principles of Computer Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Probability%20and%20Mathematical%20Statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Probability and Mathematical Statistics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Software%20Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    非重点复习课程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            非重点复习课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/College%20Physics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    College Physics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Computer%20System%20Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Digital%20Logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Digital Logic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Digital%20Signal%20Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Digital Signal Processing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Discrete%20Mathematics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discrete Mathematics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/High%20Level%20Language%20Program%20Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Intelligent%20Computing%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intelligent Computing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Internet%20Database%20Development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Internet Database Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Introduction%20to%20Python%20Programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Python Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Linear%20Algebra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Algebra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Mathematical%20Analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mathematical Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Methods%20of%20Computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Methods of Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Network%20Security%20Technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Security Technology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Network%20Technology%20and%20Application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Technology and Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Sensing%20Technology%20and%20Application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensing Technology and Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Visual%20Technology%20Basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visual Technology Basis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Languages
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Languages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_1" id="__nav_5_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Andersens Eventyr
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Andersens Eventyr
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/AndersensEventyr/0%E6%96%B0%E5%9D%91%E9%A2%84%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    新坑预告
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk Uddannelse 3 Modul 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk Uddannelse 3 Modul 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    在丹麦免费学丹麦语
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Præsentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 I klassen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Familie, Klokken og Dato
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 将来时/过去时
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Sundhed og livsstil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Bolig og lokalområde
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Geografi og vejr, Danmark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk Uddannelse 3 Modul 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk Uddannelse 3 Modul 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Invitationer (1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Invitationer (2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Bolig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Humør og følelser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Venskab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Relationer - Venner, evaluering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek7-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Sundhed og livsstil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek9-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Arbejde og studieliv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek11-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Planer for ferie og fridage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek13-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Fortæl om ferier og oplevelser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_4" id="__nav_5_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk Uddannelse 3 Modul 3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk Uddannelse 3 Modul 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Ligheder og forskelle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Normer og uskrevne regler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Sammenligning af forskellige kulturer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Højskoler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 At beskrive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Foreninger og klubber
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek7og8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Arbejdspladskultur
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Jobsøgning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Job og kompetencer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Skriv en jobansøgning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Jobansøgning og arbejdsmarked
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Smalltalk i hverdags- og arbejdsliv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Bliv klar til 3.3-testen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_5" id="__nav_5_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk Uddannelse 3 Modul 4
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk Uddannelse 3 Modul 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 De fire årstider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Noget om skole og uddannelse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Noget om musik
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Noget om køn og lidt om alder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Noget om arbejde
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Noget om tøj, budskaber og bæredygtighed
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Forberedelse til modultest 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deutsch
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Deutsch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_1" id="__nav_5_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            A1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    发音入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel1bis3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 bis 3 省略
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Wie spät ist es?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Was darf's sein?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Familienleben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Wilkommen in Berlin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Zimmer, Küche, Bad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Was ist passiert?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Ich arbeite bei...
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Gesund und fit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Schönes Wochenende!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            A2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Das steht dir gut!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Feste, Freunde, Familie
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Miteinander leben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Schule und danach
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Die neue Wohnung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Mobil in der Stadt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Das finde ich schön
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Komm doch mit!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Arbeitssuche
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Alltag und Medien
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Politik und ich
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Bei uns und bei euch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    B1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            B1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Kennen lernen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Orte
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Freizeit und Fitness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Tägliches Leben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Ausbildung und Beruf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Lernen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Zwischenmenschliche Beziehungen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Konsum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Neue Medien
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Reise und Mobilität
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_4" id="__nav_5_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    B2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            B2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Heimat ist ...
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Sprich mit mir!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Arbeit ist das halbe Leben?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Zusammen leben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Wer Wissen schafft, macht Wissenschaft
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Fit für ...
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Kulturwelten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Das machte Geschichte
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/%E5%BE%B7%E8%AF%AD%E9%98%B4%E9%98%B3%E4%B8%AD%E6%80%A7%E7%9A%84%E8%BE%A8%E5%88%AB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    德语阴阳性总结
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Français
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Français
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_1" id="__nav_5_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            A1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0 Phonétique
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Rencontres
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Portraits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Ça se trouve où?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Au rythme du temps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Italiano
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Italiano
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1" id="__nav_5_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            A1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    语音入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Benvenuti!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Un nuovo inizio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Español
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Español
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5_1" id="__nav_5_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            A1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/SpanishNotas/A1/%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    语音入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/SpanishNotas/A1/Unidad1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 ¿Quiénes somos?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/SpanishNotas/A1/Unidad2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 ¿Cómo estás?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2222,7 +9258,7 @@
 
 <p>Theory of Algorithms and Computational Complexity</p>
 <p>Lecturer: Kristoffer Arnsfelt Hansen</p>
-<p>:skull_and_crossbones::skull_and_crossbones::skull_and_crossbones:The <strong>most difficult</strong> (no "one of") course in my master's study.:skull_and_crossbones::skull_and_crossbones::skull_and_crossbones:</p>
+<p><img alt="☠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2620.svg" title=":skull_and_crossbones:" /><img alt="☠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2620.svg" title=":skull_and_crossbones:" /><img alt="☠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2620.svg" title=":skull_and_crossbones:" />The <strong>most difficult</strong> (no "one of") course in my master's study.<img alt="☠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2620.svg" title=":skull_and_crossbones:" /><img alt="☠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2620.svg" title=":skull_and_crossbones:" /><img alt="☠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2620.svg" title=":skull_and_crossbones:" /></p>
 <h1 id="brief-intro-to-tacc">Brief Intro to TACC</h1>
 <p>Study of efficient computation</p>
 <p>1960s Hartmanis, Stearns - Time Hierarchy Theorem.</p>
@@ -2236,156 +9272,159 @@
 <p>Consider "offline multi-tape sequential Turing machine"</p>
 <p>Turing machine is a finite-state machine that can access and modify chars written on "tapes" according to some rules.</p>
 <h2 id="formal-definition">Formal Definition</h2>
-<p>Turing machine $M$ with one input tape and $k$ work tapes. It includes:</p>
+<p>Turing machine <span class="arithmatex">\(M\)</span> with one input tape and <span class="arithmatex">\(k\)</span> work tapes. It includes:</p>
 <ul>
 <li>
-<p>Finite set $Q$: set of states</p>
+<p>Finite set <span class="arithmatex">\(Q\)</span>: set of states</p>
 </li>
 <li>
-<p>Element $s\in Q$: <strong>start</strong> state</p>
+<p>Element <span class="arithmatex">\(s\in Q\)</span>: <strong>start</strong> state</p>
 </li>
-<li>Element $yes\in Q$: <strong>accept</strong> state</li>
+<li>Element <span class="arithmatex">\(yes\in Q\)</span>: <strong>accept</strong> state</li>
 <li>
-<p>Element $no\in Q$: <strong>reject</strong> state</p>
-</li>
-<li>
-<p>Finite set $\Gamma$: the tape alphabet</p>
+<p>Element <span class="arithmatex">\(no\in Q\)</span>: <strong>reject</strong> state</p>
 </li>
 <li>
-<p>non-empty finite set $\Sigma\subseteq\Gamma$: <strong>input alphabet</strong></p>
+<p>Finite set <span class="arithmatex">\(\Gamma\)</span>: the tape alphabet</p>
 </li>
 <li>
-<p>Element $\Delta\in\Gamma\diagdown\Sigma$: <strong>blank symbol</strong></p>
+<p>non-empty finite set <span class="arithmatex">\(\Sigma\subseteq\Gamma\)</span>: <strong>input alphabet</strong></p>
+</li>
+<li>
+<p>Element <span class="arithmatex">\(\Delta\in\Gamma\diagdown\Sigma\)</span>: <strong>blank symbol</strong></p>
 </li>
 <li>
 <p>Function
   $$
-  \delta:(Q\diagdown{yes,no})\times(\Sigma\cup{\Delta})\times\Gamma^k\rarr Q\times(\Gamma\diagdown{\Delta})^k\times{L,S,R}^{k+1}
+  \delta:(Q\diagdown{yes,no})\times(\Sigma\cup{\Delta})\times\Gamma^k\rightarrow Q\times(\Gamma\diagdown{\Delta})<sup>k\times{L,S,R}</sup>{k+1}
   $$
   is the <strong>transition function</strong>.</p>
 </li>
 </ul>
-<p>{% note info flat %}</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>状态转移方程的意思：</p>
-<p>转移前：$(Q\diagdown{yes,no})$ 代表转移前状态，不能是接受或拒绝态（因为接受或拒绝就停机了）；$(\Sigma\cup{\Delta})$ 代表输入字符；$\Gamma^k$ 代表之前当前针头分别指 $k$ 个工作纸带对应位置的字符。</p>
-<p>转移后：$Q$ 代表转移后的状态，可以是接受或拒绝态；$(\Gamma\diagdown{\Delta})^k$ 表示针头分别在 $k$ 个工作纸带上对应位置写入的字符；${L,S,R}^{k+1}$ 表示接下了输入纸带和 $k$ 个工作纸带应该左移（$L$）、右移（$R$），还是不动（$S$）。</p>
-<p>{% endnote %}</p>
+<p>转移前：<span class="arithmatex">\((Q\diagdown\{yes,no\})\)</span> 代表转移前状态，不能是接受或拒绝态（因为接受或拒绝就停机了）；<span class="arithmatex">\((\Sigma\cup\{\Delta\})\)</span> 代表输入字符；<span class="arithmatex">\(\Gamma^k\)</span> 代表之前当前针头分别指 <span class="arithmatex">\(k\)</span> 个工作纸带对应位置的字符。</p>
+<p>转移后：<span class="arithmatex">\(Q\)</span> 代表转移后的状态，可以是接受或拒绝态；<span class="arithmatex">\((\Gamma\diagdown\{\Delta\})^k\)</span> 表示针头分别在 <span class="arithmatex">\(k\)</span> 个工作纸带上对应位置写入的字符；<span class="arithmatex">\(\{L,S,R\}^{k+1}\)</span> 表示接下了输入纸带和 <span class="arithmatex">\(k\)</span> 个工作纸带应该左移（<span class="arithmatex">\(L\)</span>）、右移（<span class="arithmatex">\(R\)</span>），还是不动（<span class="arithmatex">\(S\)</span>）。</p>
+</div>
 <p>Transition Function has following properties:</p>
 <ol>
-<li>$M$ will stop operation when entering $yes$ or $no$ state.</li>
-<li>$M$ marks all cells visited on its work tapes</li>
+<li><span class="arithmatex">\(M\)</span> will stop operation when entering <span class="arithmatex">\(yes\)</span> or <span class="arithmatex">\(no\)</span> state.</li>
+<li><span class="arithmatex">\(M\)</span> marks all cells visited on its work tapes</li>
 </ol>
-<p>The <strong>operation</strong> of $M$:</p>
+<p>The <strong>operation</strong> of <span class="arithmatex">\(M\)</span>:</p>
 <ul>
-<li>$k+1$ two-way infinite tapes. One for input, the rest for work.</li>
-<li>The cells of each work tape are numbered by the set $\mathbb Z$.</li>
-<li>Input tape on which the cell $1,\cdots,|x|$ are filled with char $x_i$. The other cells are filled with $\Delta$.</li>
-<li>Each tape has a tape head, which initially stays at position $0$.</li>
-<li>The machine $M$ maintain an element of $A$ as its internal state.</li>
+<li><span class="arithmatex">\(k+1\)</span> two-way infinite tapes. One for input, the rest for work.</li>
+<li>The cells of each work tape are numbered by the set <span class="arithmatex">\(\mathbb Z\)</span>.</li>
+<li>Input tape on which the cell <span class="arithmatex">\(1,\cdots,|x|\)</span> are filled with char <span class="arithmatex">\(x_i\)</span>. The other cells are filled with <span class="arithmatex">\(\Delta\)</span>.</li>
+<li>Each tape has a tape head, which initially stays at position <span class="arithmatex">\(0\)</span>.</li>
+<li>The machine <span class="arithmatex">\(M\)</span> maintain an element of <span class="arithmatex">\(A\)</span> as its internal state.</li>
 </ul>
-<p>The <strong>computation</strong> of $M$:</p>
+<p>The <strong>computation</strong> of <span class="arithmatex">\(M\)</span>:</p>
 <ul>
 <li>Move the tapes according to transition function</li>
-<li>If input head is called to "move left" at position $0$, or "move right" at position $|x|+1$, let $M$ "crash". (So there are $|x|+2$ legal cell for input tape head)</li>
-<li>When $M$ enters $yes$ or $no$, it stops. We called $M$ <strong>halts</strong>. ($M(x)=yes$ or $M(x)=no$)</li>
+<li>If input head is called to "move left" at position <span class="arithmatex">\(0\)</span>, or "move right" at position <span class="arithmatex">\(|x|+1\)</span>, let <span class="arithmatex">\(M\)</span> "crash". (So there are <span class="arithmatex">\(|x|+2\)</span> legal cell for input tape head)</li>
+<li>When <span class="arithmatex">\(M\)</span> enters <span class="arithmatex">\(yes\)</span> or <span class="arithmatex">\(no\)</span>, it stops. We called <span class="arithmatex">\(M\)</span> <strong>halts</strong>. (<span class="arithmatex">\(M(x)=yes\)</span> or <span class="arithmatex">\(M(x)=no\)</span>)</li>
 </ul>
-<p>Turing machine can be seen as <em>language acceptor</em> useful for <em>decision problems</em> whether the language is <em>formal language</em>, i.e., the language computed by $M$ is $L(M)={x\in\Sigma|M(x)="yes"}$.</p>
+<p>Turing machine can be seen as <em>language acceptor</em> useful for <em>decision problems</em> whether the language is <em>formal language</em>, i.e., the language computed by <span class="arithmatex">\(M\)</span> is <span class="arithmatex">\(L(M)=\{x\in\Sigma|M(x)="yes"\}\)</span>.</p>
 <h2 id="an-extension-on-turing-machine">An Extension on Turing Machine</h2>
 <p>Add an additional <em>output tape</em> which is <em>write-only</em>.</p>
-<p>$\Lambda$: non-empty finite set, <em>output alphabet</em>. (Usually $\Lambda=\Sigma$)</p>
-<p>In each step of computation $M$ can choose to write a single symbol to the output tape. Then transition function:
+<p><span class="arithmatex">\(\Lambda\)</span>: non-empty finite set, <em>output alphabet</em>. (Usually <span class="arithmatex">\(\Lambda=\Sigma\)</span>)</p>
+<p>In each step of computation <span class="arithmatex">\(M\)</span> can choose to write a single symbol to the output tape. Then transition function:
 $$
 \delta:(Q\diagdown{yes,no})\times(\Sigma\cup{\Delta})\times\Gamma^k\
-\rarr Q\times(\Gamma\diagdown{\Delta})^k\times(\Lambda\cup{\epsilon})\times{L,S,R}^{k+1}
+\rightarrow Q\times(\Gamma\diagdown{\Delta})<sup>k\times(\Lambda\cup{\epsilon})\times{L,S,R}</sup>{k+1}
 $$
-$\epsilon$ here means write nothing.</p>
+<span class="arithmatex">\(\epsilon\)</span> here means write nothing.</p>
 <p>Such a Turing machine is also called a <em>transducer</em>.</p>
 <h1 id="time-and-space-complexity">Time and Space Complexity</h1>
-<p>For a given input $x\in\Sigma^*$:</p>
+<p>For a given input <span class="arithmatex">\(x\in\Sigma^*\)</span>:</p>
 <ul>
-<li>$time_M(x)$ is the number of computational steps that $M$ performs on input $x$ until <strong>halting</strong>.</li>
-<li>$space_M(x)$ is the total number of cells on the <em>work tapes</em> that are at some point scanned by a tape head during computation on input $x$.</li>
+<li><span class="arithmatex">\(time_M(x)\)</span> is the number of computational steps that <span class="arithmatex">\(M\)</span> performs on input <span class="arithmatex">\(x\)</span> until <strong>halting</strong>.</li>
+<li><span class="arithmatex">\(space_M(x)\)</span> is the total number of cells on the <em>work tapes</em> that are at some point scanned by a tape head during computation on input <span class="arithmatex">\(x\)</span>.</li>
 </ul>
-<p>Both time and space can be infinite. Space can be infinite when $M$ does not halt.</p>
-<p>:book:Definition of <strong>time/space-bounded</strong>: let $T:\mathbb N\rarr\mathbb N$ and $S:\mathbb N\rarr\mathbb N$ be functions with $T(n)\ge n$. We say $M$ is $T(n)$ time-bounded, if for every $x\in\Sigma^<em>$ we have $time_M(x)\le T(|x|)$. Similarly, $M$ is $S(n)$ space-bounded, if for every $x\in\Sigma^</em>$ we have $space_M(x)\le S(|x|)$.</p>
+<p>Both time and space can be infinite. Space can be infinite when <span class="arithmatex">\(M\)</span> does not halt.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>time/space-bounded</strong>: let <span class="arithmatex">\(T:\mathbb N\rightarrow\mathbb N\)</span> and <span class="arithmatex">\(S:\mathbb N\rightarrow\mathbb N\)</span> be functions with <span class="arithmatex">\(T(n)\ge n\)</span>. We say <span class="arithmatex">\(M\)</span> is <span class="arithmatex">\(T(n)\)</span> time-bounded, if for every <span class="arithmatex">\(x\in\Sigma^*\)</span> we have <span class="arithmatex">\(time_M(x)\le T(|x|)\)</span>. Similarly, <span class="arithmatex">\(M\)</span> is <span class="arithmatex">\(S(n)\)</span> space-bounded, if for every <span class="arithmatex">\(x\in\Sigma^*\)</span> we have <span class="arithmatex">\(space_M(x)\le S(|x|)\)</span>.</p>
 <p>Then define the first <strong>complexity classes</strong> based on time/space bounds.</p>
-<p>:book:Definition of $DTIME,DSPACE$: $DTIME(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded Turing machine and $DSPACE(S(n))$ is the class of languages computed by a $O(S(n))$ space Turing machine.</p>
-<p>{% note warning modern %}</p>
-<p>$D$ 代表 deterministic （确定）。确定性图灵机每次状态转移只有一种。</p>
-<p>$N$ 代表 non-deterministic （非确定）。非确定性图灵机每次状态转移可能有多种，机器随机选择其中的一种进行转移。</p>
-<p>{% endnote %}</p>
-<p>Why $O$ notation here?</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(DTIME,DSPACE\)</span>: <span class="arithmatex">\(DTIME(T(n))\)</span> is the class of languages computed by a <span class="arithmatex">\(O(T(n))\)</span> time-bounded Turing machine and <span class="arithmatex">\(DSPACE(S(n))\)</span> is the class of languages computed by a <span class="arithmatex">\(O(S(n))\)</span> space Turing machine.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><span class="arithmatex">\(D\)</span> 代表 deterministic （确定）。确定性图灵机每次状态转移只有一种。</p>
+<p><span class="arithmatex">\(N\)</span> 代表 non-deterministic （非确定）。非确定性图灵机每次状态转移可能有多种，机器随机选择其中的一种进行转移。</p>
+</div>
+<p>Why <span class="arithmatex">\(O\)</span> notation here?</p>
 <ol>
 <li>
 <p>Compressing several tapes symbols to one class by an arbitrary linear factor.</p>
 </li>
 <li>
-<p>WLOG, one work tape can simulate $k$ work tapes by special marking char.</p>
+<p>WLOG, one work tape can simulate <span class="arithmatex">\(k\)</span> work tapes by special marking char.</p>
 </li>
 </ol>
-<p>也就是说可以用一个标记字符把一个工作纸带分成 $k$ 份。</p>
-<p>:book:Definition of <strong>time/space-constructible</strong>: $T$ is time-constructible if there is a $O(T(n))$ time-bounded Turing machine computing the function $1^n\mapsto 1^{T(n)}$. $S$ is space-constructible if there is a $O(S(n))$ time-bounded Turing machine computing the function $1^n\mapsto 1^{S(n)}$.</p>
+<p>也就是说可以用一个标记字符把一个工作纸带分成 <span class="arithmatex">\(k\)</span> 份。</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>time/space-constructible</strong>: <span class="arithmatex">\(T\)</span> is time-constructible if there is a <span class="arithmatex">\(O(T(n))\)</span> time-bounded Turing machine computing the function <span class="arithmatex">\(1^n\mapsto 1^{T(n)}\)</span>. <span class="arithmatex">\(S\)</span> is space-constructible if there is a <span class="arithmatex">\(O(S(n))\)</span> time-bounded Turing machine computing the function <span class="arithmatex">\(1^n\mapsto 1^{S(n)}\)</span>.</p>
 <h1 id="universal-turing-machines">Universal Turing Machines</h1>
 <p>Universal Turing machine has a fixed amount of work tapes and a fixed tape alphabet.</p>
-<p>Set of states $Q$ is identified with positive integers from $1$ to $|Q|$.</p>
-<p>$\Sigma$ and $\Gamma$ is also identified with positive integers.</p>
-<p>$\delta$ can be encoded by its function table.</p>
-<p>Given: encoding of a Turing machine $M$ with $k$ work tapes with an encoding of an input $x$ to $M$. (encoding of $x$ is concatenation of each char in $x$).</p>
-<p>:dart:Theorem 1. For any $k\ge1$, there exist a Turing machine $U_k$ with $k+1$ work tapes s.t. when given as input an encoding of a Turing machine $M$ with $k$ work tapes together with an encoding of an input $x$, simulates the computation of $M$ on input $x$ using time $O(time_M(x))$ and space $O(space_M(x))$.</p>
-<p>"Simulates" here means $U_{k+1}$ provides same output, terminal state as $M$.</p>
+<p>Set of states <span class="arithmatex">\(Q\)</span> is identified with positive integers from <span class="arithmatex">\(1\)</span> to <span class="arithmatex">\(|Q|\)</span>.</p>
+<p><span class="arithmatex">\(\Sigma\)</span> and <span class="arithmatex">\(\Gamma\)</span> is also identified with positive integers.</p>
+<p><span class="arithmatex">\(\delta\)</span> can be encoded by its function table.</p>
+<p>Given: encoding of a Turing machine <span class="arithmatex">\(M\)</span> with <span class="arithmatex">\(k\)</span> work tapes with an encoding of an input <span class="arithmatex">\(x\)</span> to <span class="arithmatex">\(M\)</span>. (encoding of <span class="arithmatex">\(x\)</span> is concatenation of each char in <span class="arithmatex">\(x\)</span>).</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 1. For any <span class="arithmatex">\(k\ge1\)</span>, there exist a Turing machine <span class="arithmatex">\(U_k\)</span> with <span class="arithmatex">\(k+1\)</span> work tapes s.t. when given as input an encoding of a Turing machine <span class="arithmatex">\(M\)</span> with <span class="arithmatex">\(k\)</span> work tapes together with an encoding of an input <span class="arithmatex">\(x\)</span>, simulates the computation of <span class="arithmatex">\(M\)</span> on input <span class="arithmatex">\(x\)</span> using time <span class="arithmatex">\(O(time_M(x))\)</span> and space <span class="arithmatex">\(O(space_M(x))\)</span>.</p>
+<p>"Simulates" here means <span class="arithmatex">\(U_{k+1}\)</span> provides same output, terminal state as <span class="arithmatex">\(M\)</span>.</p>
 <h1 id="sublogarithmic-space">Sublogarithmic Space</h1>
-<p>Usually assume that $S(n)\ge\log n$.</p>
-<p>What if $S(n)=o(\log n)$? In this case Turing machine can't even be able to describe the position of the input tape head.</p>
-<p>$O(1)$ space-bounded Turing machine is equivalent to a two-way finite automaton.</p>
-<p>To accept non-regular language, the minimal space should be $O(\log\log n)$.</p>
-<p><strong>Storage configuration</strong>: a state of $M$, position of tape heads, non-black portions of the work tapes. # storage configuration: at most $|Q|s^k|\Gamma|^{s+k-1}=2^{O(s)}$.</p>
-<p>:dart:Theorem 2. Let $M$ be a $S(n)$ space-bounded Turing machine for a function $S(n)=o(\log\log n)$. Then $M$ is in fact $O(1)$ space-bounded.</p>
+<p>Usually assume that <span class="arithmatex">\(S(n)\ge\log n\)</span>.</p>
+<p>What if <span class="arithmatex">\(S(n)=o(\log n)\)</span>? In this case Turing machine can't even be able to describe the position of the input tape head.</p>
+<p><span class="arithmatex">\(O(1)\)</span> space-bounded Turing machine is equivalent to a two-way finite automaton.</p>
+<p>To accept non-regular language, the minimal space should be <span class="arithmatex">\(O(\log\log n)\)</span>.</p>
+<p><strong>Storage configuration</strong>: a state of <span class="arithmatex">\(M\)</span>, position of tape heads, non-black portions of the work tapes. # storage configuration: at most <span class="arithmatex">\(|Q|s^k|\Gamma|^{s+k-1}=2^{O(s)}\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 2. Let <span class="arithmatex">\(M\)</span> be a <span class="arithmatex">\(S(n)\)</span> space-bounded Turing machine for a function <span class="arithmatex">\(S(n)=o(\log\log n)\)</span>. Then <span class="arithmatex">\(M\)</span> is in fact <span class="arithmatex">\(O(1)\)</span> space-bounded.</p>
 <blockquote>
 <p>Proof via contradiction.</p>
 <p>Storage configuration is periodic.</p>
-<p>$M$ will produce at most $2^{2^{O(s)}}$ crossing sequences.</p>
+<p><span class="arithmatex">\(M\)</span> will produce at most <span class="arithmatex">\(2^{2^{O(s)}}\)</span> crossing sequences.</p>
 </blockquote>
 <h1 id="turing-machine-configurations">Turing Machine Configurations</h1>
-<p>~~Configuration 被翻译为“格局”……无力吐槽~~</p>
-<p>A configuration of a Turing machine $M$ with $k$ work tapes:</p>
+<p><del>Configuration 被翻译为“格局”……无力吐槽</del></p>
+<p>A configuration of a Turing machine <span class="arithmatex">\(M\)</span> with <span class="arithmatex">\(k\)</span> work tapes:</p>
 <ol>
-<li>State of $M$</li>
-<li>Positions of $k+1$ tapes head</li>
+<li>State of <span class="arithmatex">\(M\)</span></li>
+<li>Positions of <span class="arithmatex">\(k+1\)</span> tapes head</li>
 <li>Non-blank portions of the work tapes</li>
 </ol>
 <p>Observation: If a Turing machine repeats a configuration, it will enter an infinite loop, infinitely repeating the computation taking place between two repeating configurations.</p>
 <h1 id="the-space-hierarchy-theorem">The Space Hierarchy Theorem</h1>
 <p>Idea: More resources means more can be computed.</p>
-<p>:dart:Theorem 3: Let $S_2(n)\ge\log n$ be space constructible. If $S_1(n)=o(S_2(n))$, then
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 3: Let <span class="arithmatex">\(S_2(n)\ge\log n\)</span> be space constructible. If <span class="arithmatex">\(S_1(n)=o(S_2(n))\)</span>, then
 $$
 DSPACE(S_1(n))\subsetneq DSPACE(S_2(n)).
 $$</p>
-<p>{% note info flat %}</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>中文简单解释一下：图灵机的可用渐进存储空间越多，那么解决的问题也就越多。</p>
-<p>{% endnote %}</p>
+</div>
 <blockquote>
-<p>It suffices to construct a $O(S_2(n))$ space bounded Turing machine $M$ s.t. $L(M)\not\in DSPACE(S_1(n))$.</p>
-<p>Input $x$ of length $n=|x|$:</p>
+<p>It suffices to construct a <span class="arithmatex">\(O(S_2(n))\)</span> space bounded Turing machine <span class="arithmatex">\(M\)</span> s.t. <span class="arithmatex">\(L(M)\not\in DSPACE(S_1(n))\)</span>.</p>
+<p>Input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n=|x|\)</span>:</p>
 <ol>
-<li>Mark $S_2(n)$ cells of work tape using the space constructability of $S_2$. During the remaining computation:</li>
-<li>Ensuring that computation does not use more than $S_2(n)$ additional cells of work tape. This is done by immediately halting (reject).</li>
-<li>Ensuring that computation does not run for more than $2^{2S_2(n)}$ steps, by keeping time with a binary counter on $2S_2(n)$ bits. (accept)</li>
-<li>Check if the input is on the form $x=0^i1w$, here $w$ is an encoding of a Turing machine with a single work tape. Otherwise halt by rejecting.</li>
-<li>Simulate $M'$ on input $x$ using the universal Turing machine $U_1$. If this causes $M'$ to halt, halt and reject if $M'$ accepts. Otherwise accept.</li>
+<li>Mark <span class="arithmatex">\(S_2(n)\)</span> cells of work tape using the space constructability of <span class="arithmatex">\(S_2\)</span>. During the remaining computation:</li>
+<li>Ensuring that computation does not use more than <span class="arithmatex">\(S_2(n)\)</span> additional cells of work tape. This is done by immediately halting (reject).</li>
+<li>Ensuring that computation does not run for more than <span class="arithmatex">\(2^{2S_2(n)}\)</span> steps, by keeping time with a binary counter on <span class="arithmatex">\(2S_2(n)\)</span> bits. (accept)</li>
+<li>Check if the input is on the form <span class="arithmatex">\(x=0^i1w\)</span>, here <span class="arithmatex">\(w\)</span> is an encoding of a Turing machine with a single work tape. Otherwise halt by rejecting.</li>
+<li>Simulate <span class="arithmatex">\(M'\)</span> on input <span class="arithmatex">\(x\)</span> using the universal Turing machine <span class="arithmatex">\(U_1\)</span>. If this causes <span class="arithmatex">\(M'\)</span> to halt, halt and reject if <span class="arithmatex">\(M'\)</span> accepts. Otherwise accept.</li>
 </ol>
-<p>Then analysis $M$ and $M'$......</p>
+<p>Then analysis <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(M'\)</span>......</p>
 </blockquote>
 <h1 id="tape-reduction-and-oblivious-turing-machines">Tape Reduction and Oblivious Turing Machines</h1>
-<p>A $T(n)$ time-bounded computation of a Turing machine with <strong>any number</strong> of work tapes can be simulated by a $O(T(n)^2)$ time-bounded Turing machine with a <strong>single</strong> work tape. (Simple divide work tape into $k$ tracks.)</p>
-<p>This is used to prove $DTIME(T_1(n))\subsetneq DTIME(T_2(n))$ when $T_2(n)&gt;n$ is time-constructible and $(T_1(n))^2=o(T_2(n))$.</p>
-<p>:book:Definition of <strong>oblivious</strong>: Let $M$ be a Turing Machine. $M$ is oblivious if for any $n\ge1$ and any input $x$ of length $n=|x|$, during computation with input $x$ and until $M$ halts, the location of all tape heads of $M$ is a function of $n$ and the number $t$ of steps of the computation so far.</p>
-<p>It is easy to modify the $O(T(n)^2)$ to be oblivious by first copying the input to an additional track, and thereafter keeping the input head stationary.</p>
-<p>:dart:Theorem 4: Let $T(n)\ge n$ and suppose $M$ is a $T(n)$ time-bounded Turing machine with $k$ work tapes. Then there exist a $O(T(n)\log T(n))$ time-bounded oblivious Turing machine $M'$ with $2$ work tapes s.t. $L(M)=L(M')$.</p>
+<p>A <span class="arithmatex">\(T(n)\)</span> time-bounded computation of a Turing machine with <strong>any number</strong> of work tapes can be simulated by a <span class="arithmatex">\(O(T(n)^2)\)</span> time-bounded Turing machine with a <strong>single</strong> work tape. (Simple divide work tape into <span class="arithmatex">\(k\)</span> tracks.)</p>
+<p>This is used to prove <span class="arithmatex">\(DTIME(T_1(n))\subsetneq DTIME(T_2(n))\)</span> when <span class="arithmatex">\(T_2(n)&gt;n\)</span> is time-constructible and <span class="arithmatex">\((T_1(n))^2=o(T_2(n))\)</span>.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>oblivious</strong>: Let <span class="arithmatex">\(M\)</span> be a Turing Machine. <span class="arithmatex">\(M\)</span> is oblivious if for any <span class="arithmatex">\(n\ge1\)</span> and any input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n=|x|\)</span>, during computation with input <span class="arithmatex">\(x\)</span> and until <span class="arithmatex">\(M\)</span> halts, the location of all tape heads of <span class="arithmatex">\(M\)</span> is a function of <span class="arithmatex">\(n\)</span> and the number <span class="arithmatex">\(t\)</span> of steps of the computation so far.</p>
+<p>It is easy to modify the <span class="arithmatex">\(O(T(n)^2)\)</span> to be oblivious by first copying the input to an additional track, and thereafter keeping the input head stationary.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 4: Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose <span class="arithmatex">\(M\)</span> is a <span class="arithmatex">\(T(n)\)</span> time-bounded Turing machine with <span class="arithmatex">\(k\)</span> work tapes. Then there exist a <span class="arithmatex">\(O(T(n)\log T(n))\)</span> time-bounded oblivious Turing machine <span class="arithmatex">\(M'\)</span> with <span class="arithmatex">\(2\)</span> work tapes s.t. <span class="arithmatex">\(L(M)=L(M')\)</span>.</p>
 <blockquote>
 <p>Hard proof.</p>
 </blockquote>
 <h1 id="the-time-hierarchy-theorem">The Time Hierarchy Theorem</h1>
-<p>:dart:Theorem 5: Let $T_2(n)\ge n$ be time constructible. If $T_1(n)\ge n$ satisfies $T_1(n)\log T_1(n)=o(T_2(n))$, then
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 5: Let <span class="arithmatex">\(T_2(n)\ge n\)</span> be time constructible. If <span class="arithmatex">\(T_1(n)\ge n\)</span> satisfies <span class="arithmatex">\(T_1(n)\log T_1(n)=o(T_2(n))\)</span>, then
 $$
 DTIME(T_1(n))\subsetneq DTIME(T_2(n)).
 $$</p>
@@ -2398,16 +9437,16 @@ $$
 L=DSPACE(\log n)\
 P=\bigcup_{k&gt;0}DTIME(n^k)\
 PSPACE=\bigcup_{k&gt;0}DSPACE(n^k)\
-EXP=\bigcup_{k&gt;0}DTIME(2^{n^k})
+EXP=\bigcup_{k&gt;0}DTIME(2<sup>{n</sup>k})
 $$
-Trivially, $L\subseteq P\subseteq PSPACE\subseteq EXP$.</p>
-<p>A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus $DSPACE(S(n))\subseteq DTIME(2^{O(S(n))})$ for $S(n)&gt;\log n$.</p>
-<p><strong>Unknown: whether any of the inclusions are strict.</strong> But time and space hierarchy theorems give that $L\subsetneq PSPACE$ and $P\subsetneq EXP$.</p>
-<p>$L$ means $LOGSPACE$, $P$ denotes $PTIME$, $EXP$ denotes $EXPTIME$.</p>
-<p>Obviously(???really???), $DTIME(T(n))\subseteq DSPACE(T(n))$, showing that space is more "valuable than" time. More precisely, $DTIME(T(n))\subseteq DSPACE(T(n)/\log T(n))$ for $T(n)\ge n$.</p>
+Trivially, <span class="arithmatex">\(L\subseteq P\subseteq PSPACE\subseteq EXP\)</span>.</p>
+<p>A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus <span class="arithmatex">\(DSPACE(S(n))\subseteq DTIME(2^{O(S(n))})\)</span> for <span class="arithmatex">\(S(n)&gt;\log n\)</span>.</p>
+<p><strong>Unknown: whether any of the inclusions are strict.</strong> But time and space hierarchy theorems give that <span class="arithmatex">\(L\subsetneq PSPACE\)</span> and <span class="arithmatex">\(P\subsetneq EXP\)</span>.</p>
+<p><span class="arithmatex">\(L\)</span> means <span class="arithmatex">\(LOGSPACE\)</span>, <span class="arithmatex">\(P\)</span> denotes <span class="arithmatex">\(PTIME\)</span>, <span class="arithmatex">\(EXP\)</span> denotes <span class="arithmatex">\(EXPTIME\)</span>.</p>
+<p>Obviously(???really???), <span class="arithmatex">\(DTIME(T(n))\subseteq DSPACE(T(n))\)</span>, showing that space is more "valuable than" time. More precisely, <span class="arithmatex">\(DTIME(T(n))\subseteq DSPACE(T(n)/\log T(n))\)</span> for <span class="arithmatex">\(T(n)\ge n\)</span>.</p>
 <h1 id="the-padding-technique">The Padding Technique</h1>
-<p>Whether $L\subseteq P$ and $PSPACE\subseteq EXP$ are strict is related.</p>
-<p>:dart:Theorem 6: If $L=P$, then $PSPACE=EXP$.</p>
+<p>Whether <span class="arithmatex">\(L\subseteq P\)</span> and <span class="arithmatex">\(PSPACE\subseteq EXP\)</span> are strict is related.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 6: If <span class="arithmatex">\(L=P\)</span>, then <span class="arithmatex">\(PSPACE=EXP\)</span>.</p>
 
 
 
@@ -2431,9 +9470,55 @@ Trivially, $L\subseteq P\subseteq PSPACE\subseteq EXP$.</p>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../24SRandomizedAlgorithm/14MarkovChains/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 14 Markov Chains and Random Walks">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                14 Markov Chains and Random Walks
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../TACC2Nondeterministic/" class="md-footer__link md-footer__link--next" aria-label="Next: 2 Nondeterminism and Determinism">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2 Nondeterminism and Determinism
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2459,12 +9544,14 @@ Trivially, $L\subseteq P\subseteq PSPACE\subseteq EXP$.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "header.autohide", "content.code.copy", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="../../../javascripts/config.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

@@ -43,13 +43,13 @@ Proportional fairness.
 
 Focus on the case where the metric consists of usual distance functions such as $L^1,L^2,L^\infty$ over $\mathbb R^t$.
 
-:warning:**Cluster centers can be placed anywhere in the infinite metric space**. $\mathcal M=\mathbb R^t$:heavy_exclamation_mark:
+:warning:**Cluster centers can be placed anywhere in the infinite metric space**. $\mathcal M=\mathbb R^t$:book:
 
-{% note warning modern %}
+!!! warning
 
-请注意此处，候选聚类中心和上一篇论文不一样，所以得出的近似下界不一样。
+    请注意此处，候选聚类中心和上一篇论文不一样，所以得出的近似下界不一样。
 
-{% endnote %}
+
 
 Greedy Capture by Chen et al. where $d\in\{L^1,L^2,L^\infty\}$ and $\mathcal M=\mathbb R^t$.
 
@@ -113,23 +113,23 @@ When $\rho\gt1$, the set is a ball.
 
 :dart:Theorem 3. For any metric $(\mathcal X,d)$ and $\mathcal M=\mathcal X$, greedy capture finds a $\rho$-PROP clustering, where $\rho\ge1$ is the smallest positive number satisfying $A_{\mathcal X,d}(\rho)\cdot\frac{\rho+1}{\rho}\le1$.
 
-{% note warning modern %}
+!!! warning
 
-$\mathcal M=\mathcal X$: 候选聚类中心可以是空间上任意一点。
+    $\mathcal M=\mathcal X$: 候选聚类中心可以是空间上任意一点。
 
-{% endnote %}
+
 
 > Proof by triangle inequality. Proof that if $X$ is not $\rho$-PROP, then $A_{\mathcal X,d}(\rho)\cdot\frac{\rho+1}{\rho}\gt1$.
 
 :dart:Theorem 4. For any metric $(\mathcal X,d)$, the $\rho$-Apollonius radius is $A_{\mathcal X,d}(\rho)\le\frac{1}{\rho-1}$. Hence, greedy capture finds a $(1+\sqrt2)$-PROP fair clustering for every metric.
 
-{% note info modern %}
+!!! info
 
-在我看来，本篇论文定义了一个复杂的概念——阿波罗尼乌斯半径，来形式化证明算法结果的下界。
+    在我看来，本篇论文定义了一个复杂的概念——阿波罗尼乌斯半径，来形式化证明算法结果的下界。
 
-但是这个阿波罗尼乌斯半径的定义过于复杂了。
+    但是这个阿波罗尼乌斯半径的定义过于复杂了。
 
-{% endnote %}
+
 
 Next, the paper shows for $d=L^2$, the $\rho$-Apollonius radius is better, $2$-PROP guarantee.
 
@@ -149,11 +149,11 @@ Chen et al. showed that $\rho<2$ is not guaranteed. For $\mathcal N=\mathcal M$,
 
 This paper: for the case where $\mathcal M=\mathcal X=\mathbb R^t$ and $d\in\{L^1,L^2,L^\infty\}$.
 
-{% note warning modern %}
+!!! warning
 
-再次提醒：$\mathcal M=\mathcal X$: 候选聚类中心可以是空间上任意一点。
+    再次提醒：$\mathcal M=\mathcal X$: 候选聚类中心可以是空间上任意一点。
 
-{% endnote %}
+
 
 - When $t=1$, it's easy to see that there always exist PROP clusterings.
 - When $t\ge2$, a lower bound $2/\sqrt3$ for $d=L^2$ and a lower bound $1.4$ for $d\in\{L^1,L^\infty\}$.
@@ -170,11 +170,11 @@ In this section, we consider the special case where the metric space $(\mathcal 
 
 Consider the case of $\mathcal M=\mathcal X=V$. Distance $d(x,y)$ is the length of the shortest path between $x,y$.
 
-{% note warning modern %}
+!!! warning
 
-所有节点都是候选聚类中心，距离定义为最短路长度。
+    所有节点都是候选聚类中心，距离定义为最短路长度。
 
-{% endnote %}
+
 
 When $G$ is a tree, an exact PROP clustering always exists, and can be computed by an efficient algorithm.
 
@@ -191,14 +191,14 @@ The algorithm starts from the leaves, opens a center every time it finds a node 
 ## Pseudo Code - PROP Clustering for Trees
 
 1. Root the tree $G$ at an arbitrary node $r$.
-2. $X\gets\empty$
+2. $X\gets\emptyset$
 3. $G^d\gets G$.
 4. for $\ell=d$ to $1$ do
    1. $G^{\ell-1}=G^\ell$
    2. for every $x\in V$ with $level(x)=l$ and $|ST(x)|\ge\lceil n/k\rceil$ do
       - $X\gets X\cup\{x\}$
       - $G^{\ell-1}\gets G^{\ell-1}\diagdown ST(x)$
-5. if $G^0\neq\empty$ then $X\gets X\cup\{r\}$
+5. if $G^0\neq\emptyset$ then $X\gets X\cup\{r\}$
 6. return $X$
 
 
@@ -236,11 +236,11 @@ Two problems:
 >
 > Planar monotone rectilinear 3-SAT problem: Given a 3-SAT formula, each clause $c_j$ consists of only positive or only negative literals, the graph connecting clauses to literals they contain is planar, and this graph has a planar embedding in which each variable $v_i$ is represented by a rectangle on the $x$-axis and each positive/negative clause is represented by a rectangle above/below $x$-axis with 3 vertical lines or legs to its 3 variables.
 
-{% note warning modern %}
+!!! warning
 
-~~什么玩意啊，什么乱七八糟的 NP-hard 问题。欺负我不会证规约是吧。~~
+    ~~什么玩意啊，什么乱七八糟的 NP-hard 问题。欺负我不会证规约是吧。~~
 
-{% endnote %}
+
 
 :dart:Theorem 11. Let $t\in\mathbb N$, finite $\mathcal N\subset\mathbb R^t$, and $k\in\mathbb N$ be given as input. Suppose $\mathcal M=\mathbb R^t$ and $d=L^2$. Then, the following hold:
 

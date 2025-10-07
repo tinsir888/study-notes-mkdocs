@@ -41,9 +41,9 @@ We represent the robot by a point in the parameter space (configuration space) $
 
 **partition** the configuration space in *free space* and *forbidden space*
 
-$p$ in forbidden space $\Lrarr R(p)$ intersects an obstacle.
+$p$ in forbidden space $\Leftrightarrow R(p)$ intersects an obstacle.
 
-$R$ can move from $s$ to $t\Lrarr$ there is a path from $s$ to $t$ in the free space.
+$R$ can move from $s$ to $t\Leftrightarrow$ there is a path from $s$ to $t$ in the free space.
 
 对于机器人上的一个参考点，在图上都有一个 free space 图。如果 free space 联通起始点，那么就存在一个路径使得机器人可以从起点移动到终点。
 
@@ -65,7 +65,7 @@ $V$: set of all **centers of all trapezoids** $\Delta$ and all **midpoints of al
 
 梯形的中位线中点+所有梯形顶边和底边线段的中点
 
-$(\Delta,s)\in E\Lrarr s$ is a vertical segment bounding $\Delta$.
+$(\Delta,s)\in E\Leftrightarrow s$ is a vertical segment bounding $\Delta$.
 
 add $s$ and $t$ to $G$ and connect them to the trapezoids containing them.
 
@@ -81,7 +81,7 @@ we can compute a path from $s$ to $t$ in $\mathcal O(n\log n)$  expected time.
 
 Let $P$ and $R$ be two sets in $\mathbb R^2$
 
-$P\oplus R=\{p+r|p\in R\and r\in R\}$ is the Minkowski sum of $P$ and $R$.
+$P\oplus R=\{p+r|p\in R\land r\in R\}$ is the Minkowski sum of $P$ and $R$.
 
 where $p+r=\{p_x+r_x,p_y+r_y\}$
 
@@ -120,8 +120,8 @@ Charge every pseudo-disk vertex to itself.
 
 For an intersection point $q=e\cap f$, by observation: either
 
-- $e$ has no other boundary crossing with $\part R$.
-- $f$ has no other boundary crossing with $\part P$, or both
+- $e$ has no other boundary crossing with $\partial R$.
+- $f$ has no other boundary crossing with $\partial P$, or both
 
 Let $e$ be the edge without other boundary crossings, and let $v$ be the endpoint of $e$ in $R$.
 
@@ -137,7 +137,7 @@ Claim: Every vertex $v$ (of a pseudo-disk $P$) is charged at most twice.
 
   Same for the other edge $\overline{vu}$
 
-- Case 3: $v,v\in\part R$ lies on the boundary of the union. As in case 2 $v$ is charged only by its incident edges $e$ and $f$ and by $v$ itself
+- Case 3: $v,v\in\partial R$ lies on the boundary of the union. As in case 2 $v$ is charged only by its incident edges $e$ and $f$ and by $v$ itself
 
   $v$ can not be charged by both its incident edges at the same time.
 
@@ -152,15 +152,15 @@ Then either
 
 **Let $P$ and $Q$ be two convex polygons with disjoint interiors, and let $R$ be another convex polygon. Then $P\oplus R$ and $Q\oplus R$ are pseudo-discs**.
 
-To show: $\part P\oplus R\cap int(Q\oplus R)$ is connected.
+To show: $\partial P\oplus R\cap int(Q\oplus R)$ is connected.
 
-Proof by contradiction. Assume $\part P\oplus R\cap int(Q\oplus R)$ is not connected.
+Proof by contradiction. Assume $\partial P\oplus R\cap int(Q\oplus R)$ is not connected.
 
 By observation, an extreme point on $P\oplus R$ corresponds to a extreme point on $P$. Same for $Q$.
 
-$\Rarr P$ more extreme on $d_p$ and $d_q$ than $Q$
+$\Rightarrow P$ more extreme on $d_p$ and $d_q$ than $Q$
 
-$\Rarr Q$ more extreme on $d_s$ and $d_r$ than $P$
+$\Rightarrow Q$ more extreme on $d_s$ and $d_r$ than $P$
 
 What if $P$ is not convex?
 
@@ -170,7 +170,7 @@ What if $P$ is not convex?
 >
 > Triangulate $P$
 >
-> $\Rarr$ this produces a collection of disjoint convex polygons, so the collection of Minkowski sums is a collection of pseudo-disks.
+> $\Rightarrow$ this produces a collection of disjoint convex polygons, so the collection of Minkowski sums is a collection of pseudo-disks.
 
 **Let $P$ be a polygon with $n$ vertices, and let $R$ be a convex polygon with $m$ vertices. Then complexity of $P\oplus R$ is $\Theta(mn)$**.
 
@@ -194,9 +194,9 @@ In direction:
 
 suppose $q\in P\cap R(x,y)$
 $$
-q\in R(x,y)\Rarr q-(x,y)\in R(0,0)\\
+q\in R(x,y)\Rightarrow q-(x,y)\in R(0,0)\\
 -q+(x,y)\in-R(0,0)\\
-q\in P\Rarr(x,y)\in P\oplus-(R(0,0))
+q\in P\Rightarrow(x,y)\in P\oplus-(R(0,0))
 $$
 Only if direction: similar.
 
@@ -218,7 +218,7 @@ Question: how do we compute a shortest path between $s$ and $t$?
 >
 > $V=$ the set of obstacle vertex $v$ and $s$ and $t$
 >
-> $(u,v)\in E\Lrarr u$ and $v$ can see each other
+> $(u,v)\in E\Leftrightarrow u$ and $v$ can see each other
 >
 > $w(u,v)=||uv||$
 

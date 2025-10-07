@@ -29,7 +29,7 @@ Let $M$ be a non-deterministic Turing machine. For given input $x\in\Sigma^*$,
 
 :book:Definition of *non-deterministic* complexity classes:
 
-> Let $T:\mathbb N\rarr\mathbb N$ and $S:\mathbb N\rarr N$ be functions with $T(n)\ge n$.
+> Let $T:\mathbb N\rightarrow\mathbb N$ and $S:\mathbb N\rightarrow N$ be functions with $T(n)\ge n$.
 >
 > $NTIME(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded non-deterministic Turing machine.
 >
@@ -38,14 +38,16 @@ Let $M$ be a non-deterministic Turing machine. For given input $x\in\Sigma^*$,
 # Non-deterministic Hierarchy Theorems
 
 :dart:Theorem 7 (Non-deterministic Space Hierarchy Theorem). Let $S_2(n)\ge\log n$ be space constructible. If $S_1(n)=o(S_2(n))$, then
+
 $$
 NSPACE(S_1(n))\subsetneq NSPACE(S_2(n)).
 $$
-{% note info flat %}
 
-和 [上一课](https://tinsir888.github.io/posts/7f7103e4.html) 的定理 3 一样。存储空间越多，“识别的语言”也就越多。
+!!! info
 
-{% endnote %}
+   和 [上一课](https://tinsir888.github.io/posts/7f7103e4.html) 的定理 3 一样。存储空间越多，“识别的语言”也就越多。
+
+
 
 ~~Proof by  Immerman–Szelepcsényi theorem.~~
 
@@ -54,14 +56,16 @@ For non-deterministic time: rely on technique "delayed diagonalization". 延迟�
 :dart:Theorem 8 (Time-bounded non-deterministic Turing machine). Let $T(n)\ge n$ and suppose $M$ is a $T(n)$ time-bounded non-deterministic Turing machine with $k$ work tapes. Then there exists a $O(T(n))$ time-bounded non-deterministic Turing machine with $2$ work tapes s.t. $L(M)=L(M')$.
 
 :dart:Theorem 9 (Non-deterministic Time Hierarchy Theorem). Let $T_2(n)\ge n$ be time constructible and non-decreasing. If $T_1(n)$ satisfies $T_1(n+1)=o(T_2(n))$, then
+
 $$
 NTIME(T_1(n))\subsetneq NTIME(T_2(n))
 $$
-{% note info flat %}
 
-~~花的时间越长，解决问题就越多。~~
+!!! info
 
-{% endnote %}
+    花的时间越长，解决问题就越多。
+
+
 
 Proof by constructing $M$ s.t. $L(M)\not\in NTIME(T_1(n))$.
 

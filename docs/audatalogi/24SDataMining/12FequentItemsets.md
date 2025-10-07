@@ -51,7 +51,7 @@ Input: Data $\mathcal D$, items $\mathcal I$, minimum support $minsup$.
 
 2. $C_1\gets\mathcal I$
 
-3. while $C_k\neq\empty$ do
+3. while $C_k\neq\emptyset$ do
 
    // frequent itemset generation
 
@@ -90,9 +90,9 @@ Once a new candidate is generated, we can check whether all the ordered subsets 
 
 # Association Rule Mining
 
-It is a refinement of frequent itemsets, in which an itemset is frequent conditionally to another itemset. E.g. $\{a,b\}\Rarr\{c,d,e\}$ means when items $a,b$ occurs, also $c,d,e$ occur.
+It is a refinement of frequent itemsets, in which an itemset is frequent conditionally to another itemset. E.g. $\{a,b\}\Rightarrow\{c,d,e\}$ means when items $a,b$ occurs, also $c,d,e$ occur.
 
-**Definition of association rule**. It is an implication of the form $X\Rarr Y$ as the number of items $Y$ appears in transactions that contain $X$, i.e., $\gamma(X\Rarr Y)=\frac{\sigma(X\cup Y)}{\sigma(X)}$.
+**Definition of association rule**. It is an implication of the form $X\Rightarrow Y$ as the number of items $Y$ appears in transactions that contain $X$, i.e., $\gamma(X\Rightarrow Y)=\frac{\sigma(X\cup Y)}{\sigma(X)}$.
 
 The association rule mining task finds all rules at least with support $minsup$ and confidence $min con\ f$. The algorithm is apriori + additional step to generate the rules. The algorithm proceeds:
 
@@ -103,13 +103,13 @@ So the pending issue for new algorithm is ==how do we generate such rules==.
 
 ## Rule Generation
 
-The naive way: enumerate all the LHS and RHS. The process takes for each frequent itemset $S$ all subsets $L\subset S$ and generates rules of the form $S-L\Rarr L$ that satisfy minimum confidence.
+The naive way: enumerate all the LHS and RHS. The process takes for each frequent itemset $S$ all subsets $L\subset S$ and generates rules of the form $S-L\Rightarrow L$ that satisfy minimum confidence.
 
 Does confidence posses the desired apriori property? Not in the strict sense.
 
 Luckily, the apriori property holds for rules generated from the same itemset.
 
-If we move items from LHS to RHS as the support in the denominator of the confidence increases. As such, if a rule $X\Rarr Y$ from the same item has confidence $\le minconf$ all rules in which the RHS is a superset of $Y$ also have low confidence and can be pruned.
+If we move items from LHS to RHS as the support in the denominator of the confidence increases. As such, if a rule $X\Rightarrow Y$ from the same item has confidence $\le minconf$ all rules in which the RHS is a superset of $Y$ also have low confidence and can be pruned.
 
 So we generate a candidate rule by merging 2 rules that share the same prefix on RHS. This process is essentially the apriori algorithm on RHS.
 
@@ -147,11 +147,11 @@ Output: The FP-tree, minimum support $minsup$
 
 The meta-algorithm works bottom-up. This means that for each possible last item, consider itemsets with last items one of items preceding it in the ordering.
 
-{% note warning modern %}
+!!! warning
 
-The items are lexicographically ordered and the header-table contains the first occurrence of an item.
+    The items are lexicographically ordered and the header-table contains the first occurrence of an item.
 
-{% endnote %}
+
 
 ### FP-Growth
 
@@ -167,30 +167,25 @@ Output: The FP-tree, minimum support $minsup$
      - Prune infrequent items
      - Prune leaves and recur
 
-{% note warning modern %}
+!!! warning
 
-However, the items counter of the items need to be updated as the global FP-tree contains the counters for all transactions, including those not ending with the considered suffix. The counters propagates bottom-up from the leaves to the root.
+    However, the items counter of the items need to be updated as the global FP-tree contains the counters for all transactions, including those not ending with the considered suffix. The counters propagates bottom-up from the leaves to the root.
 
-{% endnote %}
+
 
 Once the counters are updated, if any of the labels have support less than $minsup$ the node is pruned and the subtree of the node is attacked to the node's father. After pruning, the suffix is removed from the tree and the computation proceeds recursively bottom-up.
 
 ## Pros and Cons
 
-{% note success modern %}
+!!! success
 
-:thumbsup:
+    - Efficient
+    - Allows to compute support along with the frequent items.
 
-- Efficient
-- Allows to compute support along with the frequent items.
 
-{% endnote %}
 
-{% note danger modern %}
+!!! failure
 
-:thumbsdown:
+    Efficiency depends on the compaction factor
+    If the tree is bushy, the number of sub-problems to solve is large
 
-- Efficiency depends on the compaction factor
-- If the tree is bushy, the number of sub-problems to solve is large
-
-{% endnote %}

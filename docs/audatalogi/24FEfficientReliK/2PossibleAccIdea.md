@@ -62,8 +62,7 @@ GPUs are very efficient at handling this kind of parallel computation, especiall
 
 :white_check_mark:I will be working on this.
 
-{% note info flat %}
+!!! info
 
-Will there be some write-after-write or read-after-write issues? Should I add some write-lock?
+    Will there be some write-after-write or read-after-write issues? Should I add some write-lock?
 
-{% endnote %}

@@ -149,4 +149,4 @@ Når du arbejder med eksemplerne, skal du lægge godt mærke til de sproghandlin
 
 必须懂得许多 *Sproghandlinger* 和良好的表达方式。
 
-:heavy_exclamation_mark:禁止使用谷歌翻译来写句子，因为谷歌翻译不擅长表达和 *Sproghandlinger*
+:book:禁止使用谷歌翻译来写句子，因为谷歌翻译不擅长表达和 *Sproghandlinger*

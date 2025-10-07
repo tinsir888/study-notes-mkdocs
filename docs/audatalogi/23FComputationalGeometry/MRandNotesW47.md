@@ -157,8 +157,8 @@ Theorem: $\mathcal D(P)$ is a plane graph
 
 Theorem:
 
-1. $p,q,r\in P$ are vertices of the same face of $\mathcal D(P)\Lrarr$ circle through $p,q,r$ contains no other point of $P$ in its interior.
-2. $p,q\in P$ from an edge of $\mathcal D(P)\Lrarr$ there is a closed disk $C$ that contains $p$ and $q$ on its boundary and doesn't contain any other point of $P$
+1. $p,q,r\in P$ are vertices of the same face of $\mathcal D(P)\Leftrightarrow$ circle through $p,q,r$ contains no other point of $P$ in its interior.
+2. $p,q\in P$ from an edge of $\mathcal D(P)\Leftrightarrow$ there is a closed disk $C$ that contains $p$ and $q$ on its boundary and doesn't contain any other point of $P$
 
 
 
@@ -218,7 +218,7 @@ to find the visible faces
 
 
 
-the points that can see $f$, $l(f)$ is a subset of points that can see $f_1$ and $f_2$, $l(f)\sub l(f_1)\cup l(f_2)$
+the points that can see $f$, $l(f)$ is a subset of points that can see $f_1$ and $f_2$, $l(f)\subset l(f_1)\cup l(f_2)$
 
 如果一个点能同时看到两个相邻的面，那么这个点一定在这两个面延长面共同的上方。
 

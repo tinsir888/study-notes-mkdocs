@@ -47,14 +47,14 @@ But redistributed entitlements shouldn't be a **Pareto improvement**.
 
    No group of agents $S$ should be able to find any allocation $B$ of their proportionally entitled share of the resources that is Pareto improvement.
    $$
-   \not\exist S\subseteq N,\frac{|S|}{|N|}\cdot M\to B:u_i(B_i)\gt u_i(A_i)\forall i\in S
+   \not\exists S\subseteq N,\frac{|S|}{|N|}\cdot M\to B:u_i(B_i)\gt u_i(A_i)\forall i\in S
    $$
 
 2. Utility-scaling version
 
    No group of agents $S$ should be able to find any allocation $B$ of the resources that is a Pareto improvement even after proportional utility-scaling.
    $$
-   \not\exist S\subseteq N,M\to B:\frac{|S|}{|N|}\cdot u_i(B_i)\gt u_i(A_i)\forall i\in S
+   \not\exists S\subseteq N,M\to B:\frac{|S|}{|N|}\cdot u_i(B_i)\gt u_i(A_i)\forall i\in S
    $$
 
 - Two versions are equivalent for some setting.
@@ -169,7 +169,7 @@ Similar individuals shouldn't envy each other too much.
 
 Classifier is PIIF if
 $$
-\forall x,y\in N,\exist z\in Y,D(z,f(y))\le d(x,y)\and u_x(f(x))\ge u_x(z).
+\forall x,y\in N,\exists z\in Y,D(z,f(y))\le d(x,y)\land u_x(f(x))\ge u_x(z).
 $$
 
 ### Approximate EF
@@ -217,11 +217,11 @@ Envy-freeness: $\forall x,x'\in X,u_x(\pi_x)\ge u_x(\pi_{x'})-\epsilon$
 
 ### Two-Sided Fairness
 
-{% note info modern %}
+!!! info
 
-为什么是 two-sided 呢？因为可以给用户定义效用函数，也可以给要推荐的商品定义效用函数。
+    为什么是 two-sided 呢？因为可以给用户定义效用函数，也可以给要推荐的商品定义效用函数。
 
-{% endnote %}
+
 
 \[Biswas, Patro, Ganguly, Gummadi, Chakraborty, 2023\]
 
@@ -246,7 +246,7 @@ Two-sided fairness
 
 - Fairness for users: EF1
   $$
-  \forall x,x'\in X,\exist y\in\pi_{x'}:u_x(\pi_x)\ge u_x(\pi_{x'}\diagdown\{y\})
+  \forall x,x'\in X,\exists y\in\pi_{x'}:u_x(\pi_x)\ge u_x(\pi_{x'}\diagdown\{y\})
   $$
 
 - Fairness for products: minimum exposure $\overline E$

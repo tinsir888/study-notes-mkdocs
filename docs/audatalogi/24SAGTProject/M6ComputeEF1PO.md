@@ -97,16 +97,20 @@ $$
 EF, EF1
 
 $\epsilon$-EF1: for every pair of agent $i,k\in[n]$, there exists a good $j\in\mathbf x_k$ s.t.
+
 $$
 (1+\epsilon)v_i(\mathbb x_i)\ge v_i(\mathbb x_k\diagdown\{j\})
 $$
+
 Nash social welfare
+
 $$
 NSW(\mathbf x)=(\prod_{i\in[n]}v_i(\mathbf x_i))^{1/n}
 $$
-{% note , danger %}
-It is okay to ignore the $1/n$ power.
-{% endnote %}
+
+!!! info
+    It is okay to ignore the $1/n$ power.
+
 
 $\mathbf x^*\in\arg\max_{\mathbf x\in\mathcal X}NSW(\mathbf x)$
 
@@ -120,7 +124,7 @@ An allocation is said to be **Pareto efficient** or **Pareto optimal** if it is 
 
 Fractional Pareto Efficiency. **If it is not Pareto dominated by any fractional allocation.**
 
-fractionally PO $\Rarr$ PO, but PO $\not\Rarr$ fractionally PO.
+fractionally PO $\Rightarrow$ PO, but PO $\not\Rightarrow$ fractionally PO.
 
 # Main Results
 
@@ -185,9 +189,9 @@ Let $MBB_i=\{j\in[m]:v_{i,j}/p_j=\alpha_i\}$ denote the set of all goods that ma
 
 **Fisher market equilibrium**. An outcome $\langle\mathbf x,\mathbf p\rangle$ satisfies the following conditions:
 
-- Market clearing: Each good is either priced at zero or is completely allocated. $\forall j\in[m],p_j=0\or\sum_{i=1}^nx_{i,j}=1$.
+- Market clearing: Each good is either priced at zero or is completely allocated. $\forall j\in[m],p_j=0\lor\sum_{i=1}^nx_{i,j}=1$.
 - Budget exhaustion: Buyers spend their endowments completely. $\forall i\in[n],\mathbf p(\mathbf x_i)=e_i$.
-- Maximum bang per buck allocation: Each buyer's allocation is a subset of its MBB set. $x_{i,j}\gt0\Rarr j\in MBB_i$.
+- Maximum bang per buck allocation: Each buyer's allocation is a subset of its MBB set. $x_{i,j}\gt0\Rightarrow j\in MBB_i$.
 
 :thinking:**Proposition 1**. For a Fisher market with additive valuations, any equilibrium outcome is fractionally Pareto efficient (fPO).
 
@@ -250,13 +254,13 @@ By proposition 1, the allocation $\mathbf x$ is guaranteed to be fractionally Pa
 
 Then, $\mathbf x$ is $\epsilon$-EF1 for the associated fair division instance $\langle[n],[m],\mathcal V\rangle$. 
 
-> Since $\mathbf x$ is $\epsilon$-pEF1 w.r.t. $\mathbf p$, for any pair of buyers $i,k\in[n]$, $\exist j\in\mathbf x_k$ s.t. $(1+\epsilon)\mathbf p(\mathbf x_i)\ge\mathbf p(\mathbf x_k\diagdown\{j\})$.
+> Since $\mathbf x$ is $\epsilon$-pEF1 w.r.t. $\mathbf p$, for any pair of buyers $i,k\in[n]$, $\exists j\in\mathbf x_k$ s.t. $(1+\epsilon)\mathbf p(\mathbf x_i)\ge\mathbf p(\mathbf x_k\diagdown\{j\})$.
 >
 > Multiplying both sides with maximum bang per ratio $\alpha_i$ for agent $i$, we have
 > $$
 > \alpha_i(1+\epsilon)\mathbf p(\mathbf x_i)\ge\alpha_i\mathbf p(\mathbf x_k\diagdown\{j\})\\
-> \Rarr(1+\epsilon)v_i(\mathbf x_i)\ge\alpha_i\mathbf p(\mathbf x_k\diagdown\{j\})\because\mathbf x_i\subseteq MBB_i\\
-> \Rarr(1+\epsilon)v_i(\mathbf x_i)\ge v_i(\mathbf x_k\diagdown\{j\}),
+> \Rightarrow(1+\epsilon)v_i(\mathbf x_i)\ge\alpha_i\mathbf p(\mathbf x_k\diagdown\{j\})\because\mathbf x_i\subseteq MBB_i\\
+> \Rightarrow(1+\epsilon)v_i(\mathbf x_i)\ge v_i(\mathbf x_k\diagdown\{j\}),
 > $$
 > which is the $\epsilon$-EF1 guarantee for the allocation $\mathbf x$.
 
@@ -336,7 +340,7 @@ Output: An integral allocation $\mathbf x$ and a price vector $\mathbf p$.
 
 ## Analysis of ALG when the Valuations are power-of-(1+ε)
 
-power-of-$(1+\epsilon)$: $\exist\epsilon\gt0$, s.t. $\forall i\in[n],j\in[m]:v_{i,j}\in\{0,(1+\epsilon)^a\}$ for some natural number $a$.
+power-of-$(1+\epsilon)$: $\exists\epsilon\gt0$, s.t. $\forall i\in[n],j\in[m]:v_{i,j}\in\{0,(1+\epsilon)^a\}$ for some natural number $a$.
 
 **Time step and events**. 4 events:
 
@@ -415,7 +419,7 @@ ALG provides $1.45\approx e^{1/e}$-approximation for Nash social welfare maximiz
 
 Use lemma 8 to prove lemma 1.
 
-:thinking:**Lemma 8**. Let $\mathcal I$ be an instance with additive and **identical** valuation functions s.t. $m\ge n$. Let $B\sub[m]$ be a subset of goods s.t. $|B|\lt n$. Then, there is a partially-fractional allocation $\omega\in\mathcal F_B$ that maximize Nash social welfare among allocations in $\mathcal F_B$ s.t.
+:thinking:**Lemma 8**. Let $\mathcal I$ be an instance with additive and **identical** valuation functions s.t. $m\ge n$. Let $B\subset[m]$ be a subset of goods s.t. $|B|\lt n$. Then, there is a partially-fractional allocation $\omega\in\mathcal F_B$ that maximize Nash social welfare among allocations in $\mathcal F_B$ s.t.
 
 1. Each agent gets at most one goods from $B$ under $\omega$.
 2. Any agent with strictly-better-than-the-worst allocation under $\omega$ gets exactly one integral good. That is, for any agent $i\in[n]$ s.t. $v(\omega_i)\gt\min_kv(\omega_k)$, we have $\omega_{i,j}=1$ for some $j\in B$ and $\omega_{i,j'}=0$ for all $j'\neq j$.

@@ -105,9 +105,9 @@ Fair division instance $\mathcal I$:
 
 Ordered instance: The valuations of all agents for the items have a common ordering, i.e.,
 $$
-\forall i,i'\in[n]\and g,g'\in[m],v_i(g)\ge v_i(g')\Lrarr v_{i'}(g)\ge v_{i'}(g')
+\forall i,i'\in[n]\land g,g'\in[m],v_i(g)\ge v_i(g')\Leftrightarrow v_{i'}(g)\ge v_{i'}(g')
 $$
-An allocation $X=(X_1,X_2,\cdots,X_n)$ in which $X_i\cap X_j=\empty\forall i\neq j$ and $\bigcup_{i=1}^nX_i=[m]$.
+An allocation $X=(X_1,X_2,\cdots,X_n)$ in which $X_i\cap X_j=\emptyset\forall i\neq j$ and $\bigcup_{i=1}^nX_i=[m]$.
 
 $\Gamma$ denotes the set of all allocations of a given instance.
 
@@ -139,21 +139,21 @@ $$
 MMS\stackrel{\text{Theorem 2}}\Longrightarrow EEFX\stackrel{\text{Theorem 1}}\Longrightarrow MXS\stackrel{\text{Theorem 3}}\Longrightarrow PROP1
 $$
 
-:dart::thinking:**Theorem 1**. $EEFX\Rarr MXS$.
+:dart::thinking:**Theorem 1**. $EEFX\Rightarrow MXS$.
 
 >Let $X$ denote an EEFX allocation.
 >
 >Fixing an agent $i$, we will prove $v_i(X_i)$ is at least as high as her minimum EFX share.
 >
->By definition, $X$ is EEFX, $\exist$ an EEFX certificate $Y=(Y_1,\cdots,Y_n)$ for agent $i$ s.t. $Y_i=X_i$ and $Y\in EFX_i$, thus
+>By definition, $X$ is EEFX, $\exists$ an EEFX certificate $Y=(Y_1,\cdots,Y_n)$ for agent $i$ s.t. $Y_i=X_i$ and $Y\in EFX_i$, thus
 >$$
 >v_i(X_i)=v_i(Y_i)\ge\min_{Z\in EFX_i}v_i(Z_i)=MXS_i.
 >$$
 >Q. E. D.
 
-$MXS\not\Rarr EEFX$. ~~By giving an example.~~
+$MXS\not\Rightarrow EEFX$. ~~By giving an example.~~
 
-:dart::thinking:**Theorem 2**. $MMS\Rarr EEFX$.
+:dart::thinking:**Theorem 2**. $MMS\Rightarrow EEFX$.
 
 > For an allocation $Z$ and an agent $i$.
 >
@@ -184,9 +184,9 @@ EEFX allocations always exist, but not for MMS.
 >
 >Assume otherwise: $v_i(X_i)\lt PS_i-v_i(g)$ for every item $g\in[m]\diagdown X_i$. Let $Y$ be an allocation in $EFX_i$ s.t. $v_i(Y_i)=MXS_i\lt PS_i$:
 >
->- Since $\sum_{j\in[n]}v_i(Y_j)=n\cdot PS_i$, there $\exist k\in[n]\diagdown\{i\}$ s.t. $v_i(Y_k)\gt PS_i$.
+>- Since $\sum_{j\in[n]}v_i(Y_j)=n\cdot PS_i$, there $\exists k\in[n]\diagdown\{i\}$ s.t. $v_i(Y_k)\gt PS_i$.
 >
->- By assumption inequality, we have $v_i(Y_k)\gt v_i(X_i)$, meaning that $\exist g^*$ that belongs to $Y_k$ but not to $X_i$. By the definition of $EFX_i$, we have
+>- By assumption inequality, we have $v_i(Y_k)\gt v_i(X_i)$, meaning that $\exists g^*$ that belongs to $Y_k$ but not to $X_i$. By the definition of $EFX_i$, we have
 > $$
 >  MXS_i=v_i(Y_i)\ge v_i(Y_k)-v_i(g^*)\gt PS_i-v_i(g^*)
 > $$
@@ -239,12 +239,12 @@ To prove theorem 4, we need lemma 1,2 and 3.
 
 >The application of the envy cycle elimination algorithm on ordered fair division instances produces an EFX allocation.
 
-:thinking:**Lemma 2**. For every agent $i\in[n]$, there exists a bijection $\pi_i:[m]\rarr[m]$ s.t. the following are true:
+:thinking:**Lemma 2**. For every agent $i\in[n]$, there exists a bijection $\pi_i:[m]\rightarrow[m]$ s.t. the following are true:
 
 - $\pi_i(g)\in X_i$ and $v_i(\pi_i(g))\ge v_i'(g)\forall g\in X_i'$.
 - $\pi_i(g)\not\in X_i$ and $v_i(\pi_i(g))\le v_i'(g)\forall g\notin X_i'$.
 
->Let $i\in[n]$ be an agent. We will refer to the item using the remaining $g_1,\cdots,g_m$ used by routine `Order`. Let $\sigma_i:[m]\rarr[m]$ be a permutation s.t. $g_{\sigma_i(j)}$ is agent $i$'s $j$-th most valuable item according to valuation function $v_i$.
+>Let $i\in[n]$ be an agent. We will refer to the item using the remaining $g_1,\cdots,g_m$ used by routine `Order`. Let $\sigma_i:[m]\rightarrow[m]$ be a permutation s.t. $g_{\sigma_i(j)}$ is agent $i$'s $j$-th most valuable item according to valuation function $v_i$.
 >
 >Formally, for every $j_1,j_2\in[m]$ s.t. $j_1\lt j_2$, we have $v_i(g_{\sigma_i(j_1)})\ge v_i(g_{\sigma_i(j_2)})$, the tie between items $g_{\sigma_i(j_1)}$ and $g_{\sigma_i(j_2)}$ is resolved in favour of $g_{\sigma_i(j_1)}$ during the execution of routine `Pick` in step 4 of algorithm. By the difinition of the ordered instance $\mathcal I'$, it holds that $v_i(g_{\sigma_i(j)})=v_i'(g_j)$ for every $j\in[m]$.
 >

@@ -45,9 +45,9 @@ Agglomerative hierarchical clustering takes a **bottom-up** approach.
 
 Input: dataset $\mathcal D$, clustering distance $dist$
 
-- $t\larr1$
+- $t\leftarrow1$
 
-- $\mathcal C^t\larr\{\{\mathbb x\}_{\mathbb x\in\mathcal D}\}$
+- $\mathcal C^t\leftarrow\{\{\mathbb x\}_{\mathbb x\in\mathcal D}\}$
 
 - while $\mathcal C^t\neq\mathcal D$ do
 
@@ -56,12 +56,12 @@ Input: dataset $\mathcal D$, clustering distance $dist$
 
   // merge the clusters with the minimum distance
 
-  - $C_i,C_j\larr\arg\min_{C_i,C_j\in\mathcal C^t}dist(C_i,C_j)$
+  - $C_i,C_j\leftarrow\arg\min_{C_i,C_j\in\mathcal C^t}dist(C_i,C_j)$
 
   // Create a new level in the dendrogram
 
-  - $\mathcal C^{t+1}\larr(\mathcal C^t\diagdown C_i)\diagdown C_j\cup C_j\cup(C_i\cup C_j)$
-  - $t\larr t+1$
+  - $\mathcal C^{t+1}\leftarrow(\mathcal C^t\diagdown C_i)\diagdown C_j\cup C_j\cup(C_i\cup C_j)$
+  - $t\leftarrow t+1$
 
 - return $\mathcal C$
 
@@ -82,13 +82,16 @@ OPTICS abbr. for *Ordering Points To Identify the Clustering Structure*, solves 
 DBSCAN have fixed value of $\epsilon$, a point might have a very large $\epsilon$-neighborhood $N_\epsilon(\mathbb x)$. Observation: the possibility to define the minimum distance under which a point is a core point. This distance is called the core distance $cdist$.
 
 **Core distance**: the smallest distance s.t. $\mathbb x$ is a core point
+
 $$
 cdist(\mathbb x)=\begin{cases}
 MinPts-th\text{ smallest distance }dist(\mathbb x,\mathbb y)\text{ if }|N_\epsilon(\mathbb x)|\ge MinPts
 \\?\text{ otherwise}
 \end{cases}
 $$
+
 **Reachability distance**: the distance of the closest point reachable to $\mathbb x$.
+
 $$
 rdist(\mathbb x)=\begin{cases}
 dist(\mathbb x,\mathbb y)\text{ if }dist(\mathbb x,\mathbb y)\gt cdist(\mathbb y)\\
@@ -96,6 +99,7 @@ cdist(\mathbb y)\text{ if }dist(\mathbb x,\mathbb y)\lt cdist(\mathbb y)\\
 ?\text{ if }dist(\mathbb x,\mathbb y)\gt\epsilon
 \end{cases}
 $$
+
 OPTICS is built upon the idea of core distance and reachability distance.
 
 - OPTICS maintains a basic data structure that stores the shortest reachability-distance seen so far
@@ -110,13 +114,13 @@ OPTICS is built upon the idea of core distance and reachability distance.
 
     - insert $(\mathbb x,?)$ into $CL$
 
-  - while $CL\neq\empty$ do
+  - while $CL\neq\emptyset$ do
 
     - select first element $(\mathbb x,rdist)\in CL$
 
-    - retrieve $N_\epsilon(\mathbb x)$ and $cdist\larr cdist(\mathbb x)$
+    - retrieve $N_\epsilon(\mathbb x)$ and $cdist\leftarrow cdist(\mathbb x)$
 
-    - $\mathbb x.processed\larr True$
+    - $\mathbb x.processed\leftarrow True$
 
     - Write $(\mathbb x,rdist,cdist)$ to file
 
@@ -282,22 +286,22 @@ The greedy algorithm in CLIQUE first finds 1-dimensional $R_1$ candidate regions
 
 Input: dataset $\mathcal D$, regions size $h$, density threshold $\xi$
 
-- $R_1\larr$ Candidate regions in 1-dimension
+- $R_1\leftarrow$ Candidate regions in 1-dimension
 
-- $d\larr2$
+- $d\leftarrow2$
 
 - repeat
 
-  - $R_d\larr$ Generate all candidate $d$-dimensional cells from $R_{d-1}$
+  - $R_d\leftarrow$ Generate all candidate $d$-dimensional cells from $R_{d-1}$
 
   // Prune cells with fewer than $\xi$ points
 
-  - $R_d\larr\{R:|R|\ge\xi\}$
-  - $d\larr d+1$
+  - $R_d\leftarrow\{R:|R|\ge\xi\}$
+  - $d\leftarrow d+1$
 
-- until $R_d\neq\empty$
+- until $R_d\neq\emptyset$
 
-- $\mathcal C\larr$ Compute clusters from each $R_i$
+- $\mathcal C\leftarrow$ Compute clusters from each $R_i$
 
 - Summarize cluster
 
@@ -365,9 +369,11 @@ PROCLUS uses $k$-medoid algorithm to find clusters.
 **Projection cluster**: a set of objects $C$ and a set of dimension $D$, s.t. the objects in $C$ are closely clustered in the subspace defined $D$.
 
 **Closely clustered**: A cluster $C$ is closely clustered if it is compact under the Manhattan segmental distance
+
 $$
 d(\mathbb x,\mathbb y)={1\over|D_C|}\sum_{i\in D_C}|x_i-y_i|
 $$
+
 that measures the Manhattan distance of the objects in the projected dimensions $D$ of cluster $C$.
 
 PROCLUS requires the specification of the number $k$ of clusters and the average number $\hat d$ of dimensions. PROCLUS follows a multi-step approach in three phases
@@ -394,9 +400,9 @@ PROCLUS requires the specification of the number $k$ of clusters and the average
    For each medoid $\mathbb m_i$ calculate the average distance $X_{ij}$ on dimension $j$ of objects in the hyper-sphere $\mathcal L_i$ with radius the distance from $\mathbb m_i$ to its nearest medoid. The dispersion of cluster $i$ is the average distance $X_{ij}$ for all the dimensions $Y_i={1\over d}\sum_{j=1}^dX_{ij}$. The deviation $X_{ij}-Y_i$ is negative if the clusters on dimension $j$ are correlated to those in the full dimension
 
    The score $Z_{ij}$ is normalized deviation $X_{ij}-Y_i$: $Z_{ij}={1\over\sigma_i}(X_{ij}-Y_i)$ where $\sigma_i$ is the empirical standard deviation of $X$ in cluster $i$.
-   $$
-   \sigma_i=\sqrt{{1\over d-1}\sum_{j=1}^d(X_{ij}-Y_i)^2}
-   $$
+   
+   $\sigma_i=\left({{\frac{1}{d-1}}\sum_{j=1}^d(X_{ij}-Y_i)^2}\right)^{1/2}$
+
    Small values indicate better dimensions to find clusters. The score $Z$ allows to assign each cluster to the best dimensions. PROCLUS assigns greedily each cluster to $k(\hat d-1)$ dimension and computes the set of projected dimensions $D_i$ for cluster $i$.
 
    After determining the set of dimensions $D_1,\cdots,D_k$ for each medoid $\mathbb m_1,\cdots,\mathbb m_k$, PROCLUS assigns the points to the nearest medoid using the Manhattan segmental distance.

@@ -40,7 +40,7 @@ Then we need to define oracle versions of complexity classes. Straightforward to
 
 $DTIME^A(T(n)),DSPACE^A(S(n)),NTIME^A(T(n))$.
 
-:heavy_exclamation_mark:Problem for non-deterministic space-bounded oracle Turing machine: it may write very long strings to the oracle tape. 
+:book:Problem for non-deterministic space-bounded oracle Turing machine: it may write very long strings to the oracle tape. 
 
 Solution: Requiring the oracle Turing machine to behave deterministically in the time between writing the first symbol to the oracle tape and making the oracle query. (deterministic oracle access)
 
@@ -68,8 +68,8 @@ It also satisfies **transitivity**.
 
 :thinking:Lemma 2. Transitivity.
 
-- $L_1\le_T^{\log}L_2,L_2\le_T^{\log}L_3\Rarr L_1\le_T^{\log}L_3$
-- $L_1\le_T^{P}L_2,L_2\le_T^{P}L_3\Rarr L_1\le_T^{P}L_3$
+- $L_1\le_T^{\log}L_2,L_2\le_T^{\log}L_3\Rightarrow L_1\le_T^{\log}L_3$
+- $L_1\le_T^{P}L_2,L_2\le_T^{P}L_3\Rightarrow L_1\le_T^{P}L_3$
 
 :thinking:Proposition 3. The class $L,NL,P,PSPACE,EXP$ are all closed under log-space Turing reductions. The class $P,PSPACE,EXP$ are all closed under polynomial-time Turing machine.
 
@@ -99,24 +99,24 @@ Then prove an equivalent definition of the classes $\Sigma_i^P$ and $\Pi_i^P$ in
 
 :dart:Theorem 28. Let $L$ be any language and let $i\ge1$. Then $L\in\Sigma_i^P$ iff there is a polynomial $q$ and another language $L'\in\Pi_{i-1}^P$  s.t.
 $$
-\forall x:[x\in L\Lrarr\exist y:|y|\le q(|x|)\and\langle x,y\rangle\in L'].
+\forall x:[x\in L\Leftrightarrow\exists y:|y|\le q(|x|)\land\langle x,y\rangle\in L'].
 $$
 
 > 看不懂了。
 
 :thinking:Corollary 3. Let $L$ be any language and let $i\ge1$. Then $L\in\Pi_i^P$ iff there is a polynomial $q$ and another language $L'\in\Sigma_{i-1}^P$  s.t.
 $$
-\forall x:[x\in L\Lrarr\forall y:|y|\le q(|x|)\Rarr\langle x,y\rangle\in L'].
+\forall x:[x\in L\Leftrightarrow\forall y:|y|\le q(|x|)\Rightarrow\langle x,y\rangle\in L'].
 $$
 :thinking:Corollary 4. Let $L$ be any language and let $i\ge1$. Then $L\in\Sigma_i^P$ iff there is a polynomial $q$ and another language $L'\in P$  s.t.
 $$
-\forall x:[x\in L\Lrarr\exist^qy_1\forall^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
+\forall x:[x\in L\Leftrightarrow\exists^qy_1\forall^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
 $$
-where $Q_i$ is $\exist$ if $i$ is odd, and $\forall$ if $i$ is even. Likewise, $L\in\Pi_i^P$ iff there is a polynomial $q$ and another language $L'\in P$ s.t.
+where $Q_i$ is $\exists$ if $i$ is odd, and $\forall$ if $i$ is even. Likewise, $L\in\Pi_i^P$ iff there is a polynomial $q$ and another language $L'\in P$ s.t.
 $$
-\forall x:[x\in L\Lrarr\forall^qy_1\exist^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
+\forall x:[x\in L\Leftrightarrow\forall^qy_1\exists^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
 $$
-where $Q_i$ is $\exist$ if $i$ is even, and $\forall$ if $i$ is odd.
+where $Q_i$ is $\exists$ if $i$ is even, and $\forall$ if $i$ is odd.
 
 Generalize whether $P=NP,NP=coNP$ to question whether $\Delta_i^P=\Sigma_i^P,\Sigma_i^P=\Pi_i^P$ for $i\gt1$.
 
@@ -128,7 +128,7 @@ Generalize whether $P=NP,NP=coNP$ to question whether $\Delta_i^P=\Sigma_i^P,\Si
 
 $\Sigma_iSAT$ Problem
 
-Instance: Quantified Boolean formula with no free variables $\psi=\exist x_1\forall x_2\cdots Q_ix_i\varphi(x_1,\cdots,x_i)$, where $x_j\in\{0,1\}^{n_j}$ for all $j$ and $Q_i=\forall$ for even $i$ and $\exist$ for odd $i$.
+Instance: Quantified Boolean formula with no free variables $\psi=\exists x_1\forall x_2\cdots Q_ix_i\varphi(x_1,\cdots,x_i)$, where $x_j\in\{0,1\}^{n_j}$ for all $j$ and $Q_i=\forall$ for even $i$ and $\exists$ for odd $i$.
 
 Question: Is $\psi$ true?
 
@@ -136,7 +136,7 @@ Question: Is $\psi$ true?
 
 $\Pi_iSAT$ Problem
 
-Instance: Quantified Boolean formula with no free variables $\psi=\forall x_1\exist x_2\cdots Q_ix_i\varphi(x_1,\cdots,x_i)$, where $x_j\in\{0,1\}^{n_j}$ for all $j$ and $Q_i=\forall$ for odd $i$ and $\exist$ for even $i$.
+Instance: Quantified Boolean formula with no free variables $\psi=\forall x_1\exists x_2\cdots Q_ix_i\varphi(x_1,\cdots,x_i)$, where $x_j\in\{0,1\}^{n_j}$ for all $j$ and $Q_i=\forall$ for odd $i$ and $\exists$ for even $i$.
 
 Question: Is $\psi$ true?
 
@@ -146,13 +146,13 @@ Question: Is $\psi$ true?
 
 > 前面的推论 4 都没懂……这个证明就更不懂了
 
-{% note info flat %}
+!!! info
 
-In case of $Q_i=\exist$, we ended up with a CNF formula $\varphi$.
+    In case of $Q_i=\exists$, we ended up with a CNF formula $\varphi$.
 
-In case of $Q_i=\forall$, we ended up with a DNF formula $\varphi$.
+    In case of $Q_i=\forall$, we ended up with a DNF formula $\varphi$.
 
-{% endnote %}
+
 
 :dart:Theorem 31. If $PH$ has a complete language, then $PH$ collapses.
 

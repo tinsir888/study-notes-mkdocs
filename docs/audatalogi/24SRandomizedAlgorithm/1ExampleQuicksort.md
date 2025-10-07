@@ -36,7 +36,7 @@ More complicated operations
 - Selection of a random point in the interval $[0,1]$
 - Selection from a finite or infinite set according to a non-uniform probability distribution
 
-**We don't care about implementation issues in this course:heavy_exclamation_mark:**
+**We don't care about implementation issues in this course:book:**
 
 ## Main Characteristics
 

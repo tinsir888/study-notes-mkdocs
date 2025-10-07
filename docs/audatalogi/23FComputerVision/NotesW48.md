@@ -16,10 +16,15 @@ abbrlink: 48cec433
 # Cross-entropy revisited
 
 Binary cross-entropy loss
+
 $$
 J(w)=-\sum_{i=1}^n(y^{(i)}\log(h_w(x^{(i)}))+(1-y^{(i)})\log(1-h_w(x^{(i)})))\\
+$$
+
+$$
 =-\sum_{i=1}^n\sum_{k=0}^1\mathbf 1\{y^{(i)}=k\}\log(\Pr(y^{(i)}=k|x^{(i)}))
 $$
+
 categorical cross entropy loss is used for multi-class classification. similar
 
 Where does loss function actually come from?

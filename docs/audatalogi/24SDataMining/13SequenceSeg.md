@@ -70,11 +70,11 @@ Input: Sequence $\mathcal D,k,E(\cdot)$
    - for each $i=s+1,\cdots,n$ do
      - $A[k,i]=\min_{j\lt i}(A[s-1,j]+E(D[j+1\cdots i]))$
 
-{% note warning flat %}
+!!! warning
 
-To recover the actual segmentation, the matrix $A$ should store also the values $j$ minimizing the error.
+    To recover the actual segmentation, the matrix $A$ should store also the values $j$ minimizing the error.
 
-{% endnote %}
+
 
 ### Complexity
 
@@ -98,7 +98,7 @@ With Locality-Sensitive Hashing, we can get rid of $\mathcal O(n^2)$.
 
 > LSH 不是 [今天上午的随机算法课](https://tinsir888.github.io/posts/b29af35a.html) 才讲的么……这下闭环了。
 
-Definition of Jaccard similarity: of two sets is the size of their intersection $sim(C_1,C_2)=|C_1\and C_2|/|C_1\or C_2|$. The Jaccard distance is then $d(C_1,C_2)=1-|C_1\and C_2|/|C_1\or C_2|$.
+Definition of Jaccard similarity: of two sets is the size of their intersection $sim(C_1,C_2)=|C_1\land C_2|/|C_1\lor C_2|$. The Jaccard distance is then $d(C_1,C_2)=1-|C_1\land C_2|/|C_1\lor C_2|$.
 
 A large number of documents do not fit into memory and we need a representation of each document that allows for preserving the distances while considerably reducing the memory footprint. In order to achieve such a gold, we use the 3 steps:
 
@@ -116,11 +116,11 @@ For instance, the set of $2$-shingle for document $D_1=abcab$ is $S(D_1)=\{ab,bc
 
 Long shingles can be easily compressed by hashing. Documents are compared through the hash values. Finally each document is a binary vector in the space of $k$-shingle in which a shingle is a dimension.
 
-{% note warning flat %}
+!!! warning
 
-We assume that documents have a large number of common shingles if they are similar. However, $k$ is a critical choice to compare documents. A small $k$ leads to a large number of similar documents. As rule of thumb $k=5,10$ is a reasonable choice for short/large documents.
+    We assume that documents have a large number of common shingles if they are similar. However, $k$ is a critical choice to compare documents. A small $k$ leads to a large number of similar documents. As rule of thumb $k=5,10$ is a reasonable choice for short/large documents.
 
-{% endnote %}
+
 
 Shingling doesn't solve the problem of a large number of similarity computation.
 
@@ -177,20 +177,17 @@ As such the probability that no band is identical is $(1-r^t)^b$ that leads to $
 
 ## Pros and Cons
 
-{% note success flat %}
+!!! success
 
-:thumbsup:Finds similar items in linear time
+    :thumbsup:Finds similar items in linear time
+    
+    :thumbsup:Easy and fast to implement
 
-:thumbsup:Easy and fast to implement
+    :thumbsup:Generalizes to other similarity measures
 
-:thumbsup:Generalizes to other similarity measures
 
-{% endnote %}
+!!! failure
+    
+    :thumbsdown:Performance depend on the choice of $b,r$
 
-{% note danger flat %}
-
-:thumbsdown:Performance depend on the choice of $b,r$
-
-:thumbsdown:Requres a fairly large number of buckets
-
-{% endnote %}
+    :thumbsdown:Requres a fairly large number of buckets

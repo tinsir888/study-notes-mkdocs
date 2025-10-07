@@ -211,14 +211,24 @@ $$
 T_3(n)=O(1)+T_3(\frac{n}{2})\\
 T_3(n)=O(1)+2T_2(\frac{n}{2})
 \end{cases}
-\\
+$$
+
+$$
 \begin{cases}
 T_2(n)=O(1)+T_2(\frac{n}{2})\\
 T_2(n)=O(1)+T_2(\frac{n}{2})+T_1(\frac{n}{2})
 \end{cases}
-\\
+$$
+
+$$
 T_1(n)=O(\text{output size})\\
+$$
+
+$$
 T_2(n)=O(\log n+k)\\
+$$
+
+$$
 T_3(n)=O(\log n+k)
 $$
 

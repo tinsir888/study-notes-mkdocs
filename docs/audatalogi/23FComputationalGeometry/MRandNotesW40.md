@@ -122,13 +122,27 @@ step 2.2 might run n times $O(n^2)$ time in total.
 backward analysis (a claim): the probability that step 3.2 runs during the i-th iteration of the for loop is $\le\frac{2}{i}$
 
 expected running time:
+
 $$
-\mathbb E[\sum_{i=1}^nRunning\ Time\ of\ i-th\ Iteration]\\
-=\sum_{i=1}^n\mathbb E[Running\ Time\ of\ the\ i-th\ Iteration]\\
-=\sum_{i=1}^n(\Pr[Step\ 3.2\ runs\ at\ the\ i-th\ Iteration]\cdot O(i)+O(1))\\
+\mathbb E[\sum_{i=1}^n\text{Running Time of i-th Iteration}]\\
+$$
+
+$$
+=\sum_{i=1}^n\mathbb E[\text{Running Time of i-th Iteration}]\\
+$$
+
+$$
+=\sum_{i=1}^n(\Pr[\text{Step 3.2 runs at the i-th Iteration}]\cdot O(i)+O(1))\\
+$$
+
+$$
 =\sum_{i=1}^n(\frac{2}{i}\cdot O(i)+O(1))=\sum_{i=1}^nO(1)\\
+$$
+
+$$
 =O(n)
 $$
+
 how to shuffle?
 
 > Place i in a random non-empty spot for i = 1 to n
@@ -173,9 +187,13 @@ To proof the claim:
   假设最终凸包上的点数为 $h$，那么最多测试 $\log\log h$ 次。
 
   所以总的时间复杂度为
+
   $$
-  \sum_{i=1}^{\log\log h}O(n\log(2^{2^i}))\\
-  =\sum_{i=1}^{\log\log h}O(n2^i)=O(n2^{\log\log h})=O(n\log h)
+  \sum_{i=1}^{\log\log h}O({2^i}n\log(2))\\
+  $$
+
+  $$
+  =\sum_{i=1}^{\log\log h}O(n2^i)=O(n 2^{\log\log h})=O(n\log h)
   $$
   
 

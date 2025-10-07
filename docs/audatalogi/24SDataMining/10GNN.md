@@ -22,10 +22,15 @@ Intuition: how to propagate information over the neighbors in a non-linear manne
 Linear embeddings correspond to SVD of the similarity matrices chosen in the objective.
 
 For adjacency-based similarity, the best linear $d$-dimensional embedding corresponds to the projection of the dataset into the $d$ directions associated to the top-$d$ singular values:
+
 $$
 \text{if }SVD(\mathbf A)=\mathbf U\Sigma\mathbf V^\top\\
+$$
+
+$$
 \text{then the embedding matrix }\mathbf Z=\mathbf U_d\Sigma_d
 $$
+
 Question: Does there exist a matrix that, once factorized, would be approximately equivalent to run gradient descent over the non-linear objective?
 
 ## NetMF
@@ -51,38 +56,38 @@ Pseudo-code:
 The first vertex of the random-walk $w_1^n$ is sampled from a prior distribution $p(w_1)$ that in undirected, connected bipartite graphs correspond to $p(i)=d_i/2|E|$.
 
 This process and the relative transformation through softmax corresponds to a similarity matrix. We can represent the similarity among two nodes $i,j$ as
+
 $$
 \log\left(\frac{\text{(# of RW between i and j)}\cdot\text{(# of node/context pairs)}}{k\text{(# of occurrences of i)}\cdot\text{(# of occurrences of j)}}\right)\\
+$$
+
+$$
 =\log\left(\frac{\#(i,j)|\mathcal D|}{k\#(i)\#(j)}\right)
 $$
+
 where $k$ is the number of negative samples.
 
 Understand this formula:
 
-- First partition the set of multi-set $\mathcal D$ of pairs of nodes co-occurring in walks into two set $\mathcal D_{r\rarr}$ and $\mathcal D_{r\larr}$
-  $$
-  \mathcal D_{r\rarr}=\{(w,c):(w,c)\in\mathcal D,w=w_j^n,c=w_{j+r}^n\}\\
-  \mathcal D_{r\larr}=\{(w,c):(w,c)\in\mathcal D,c=w_{j+r}^n,w=w_j^n\}
-  $$
+- First partition the set of multi-set $\mathcal D$ of pairs of nodes co-occurring in walks into two set $\mathcal D_{r\rightarrow}$ and $\mathcal D_{r\leftarrow}$: $\mathcal D_{r\rightarrow}=$$\{(w,c):(w,c)\in\mathcal D,w=w_j^n,c=w_{j+r}^n\}$, $\mathcal D_{r\leftarrow}=$$\{(w,c):(w,c)\in\mathcal D,c=w_{j+r}^n,w=w_j^n\}$.
 
-- Then observe that
-  $$
-  \log\left(\frac{\#(i,j)|\mathcal D|}{k\#(i)\#(j)}\right)=\log\left(\frac{\#(i,j)\div|\mathcal D|}{k(\#(i)\div|\mathcal D|)(\#(j)\div|\mathcal D|)}\right)\\
-  \#(i,j)\div|\mathcal D|=\frac{1}{2T}\sum_{r=1}^T\left(\frac{\#(i,j)_{r\rarr}}{|\mathcal D|_{r\rarr}}+\frac{\#(i,j)_{r\larr}}{|\mathcal D|_{r\larr}}\right)
-  $$
-  where the latter observation comes from $|\mathcal D_{r\rarr}|/|\mathcal D|=|\mathcal D_{r\larr}|/|\mathcal D|=\frac{1}{2T}$.
+- Then observe that $\log\left(\frac{\#(i,j)|\mathcal D|}{k\#(i)\#(j)}\right)$
+  $=\log\left(\frac{\#(i,j)\div|\mathcal D|}{k(\#(i)\div|\mathcal D|)(\#(j)\div|\mathcal D|)}\right)$
 
-- The observe what happens as the length of random walk $L\rarr\infty%$. We first define the random walk matrix $\mathbf P=\mathbf\Delta^{-1}\mathbf A$. The volume of a graph $G$ is the sum of the entries of adjacency matrix $\text{vol}(G)=\sum_i\sum_ja_{i,j}$. There are 3 important Lemmas:
-  $$
-  \frac{\#(i,j)_{r\rarr}}{|\mathcal D|_{r\rarr}}\stackrel{p}\rarr\frac{d_i}{\text{vol(G)}}(\mathbf P^r)_{i,j}\and \frac{\#(i,j)_{r\larr}}{|\mathcal D|_{r\larr}}\stackrel{p}\rarr\frac{d_i}{\text{vol(G)}}(\mathbf P^r)_{j,i}\\
-  \frac{\#(i,j)}{|\mathcal D|}\stackrel{p}\rarr\frac{1}{2T}\sum_{r=1}^T\left(\frac{d_i}{\text{vol(G)}}(\mathbf P^r)_{i,j}+\frac{d_i}{\text{vol(G)}}(\mathbf P^r)_{j,i}\right)\\
-  \frac{\#(i,j)|D|}{\#(w),\#(c)}\stackrel{p}\rarr\frac{\text{vol}(G)}{2T}\left(\frac{1}{d_j}\sum_{r=1}^T(\mathbf P^r)_{i,j}+\frac{1}{d_i}\sum_{r=1}^T(\mathbf P^r)_{j,i}\right)
-  $$
+    $\#(i,j)\div|\mathcal D|=\frac{1}{2T}\sum_{r=1}^T\left(\frac{\#(i,j)_{r\rightarrow}}{|\mathcal D|_{r\rightarrow}}+\frac{\#(i,j)_{r\leftarrow}}{|\mathcal D|_{r\leftarrow}}\right)$
 
-- Putting all together we obtain DeepWalk with infinite length random walks converges to
-  $$
-  \log\left(\frac{\text{vol}(G)}{k}(\frac{1}{T}\sum_{r=1}^T(\mathbf\Delta^{-1}\mathbf A)^r)\mathbf\Delta^{-1}\right)
-  $$
+  where the latter observation comes from $|\mathcal D_{r\rightarrow}|/|\mathcal D|=|\mathcal D_{r\leftarrow}|/|\mathcal D|=\frac{1}{2T}$.
+
+- The observe what happens as the length of random walk $L\rightarrow\infty%$. We first define the random walk matrix $\mathbf P=\mathbf\Delta^{-1}\mathbf A$. The volume of a graph $G$ is the sum of the entries of adjacency matrix $\text{vol}(G)=\sum_i\sum_ja_{i,j}$. There are 3 important Lemmas:
+
+    $\frac{\#(i,j)_{r\rightarrow}}{|\mathcal D|_{r\rightarrow}}\stackrel{p}\rightarrow\frac{d_i}{\text{vol(G)}}(\mathbf P^r)_{i,j}\land \frac{\#(i,j)_{r\leftarrow}}{|\mathcal D|_{r\leftarrow}}\stackrel{p}\rightarrow\frac{d_i}{\text{vol(G)}}(\mathbf P^r)_{j,i}\\$
+
+    $\frac{\#(i,j)}{|\mathcal D|}\stackrel{p}\rightarrow\frac{1}{2T}\sum_{r=1}^T\left(\frac{d_i}{\text{vol(G)}}(\mathbf P^r)_{i,j}+\frac{d_i}{\text{vol(G)}}(\mathbf P^r)_{j,i}\right)\\$
+
+    $\frac{\#(i,j)|D|}{\#(w),\#(c)}\stackrel{p}\rightarrow\frac{\text{vol}(G)}{2T}\left(\frac{1}{d_j}\sum_{r=1}^T(\mathbf P^r)_{i,j}+\frac{1}{d_i}\sum_{r=1}^T(\mathbf P^r)_{j,i}\right)$
+
+- Putting all together we obtain DeepWalk with infinite length random walks converges to $\log\left(\frac{\text{vol}(G)}{k}(\frac{1}{T}\sum_{r=1}^T(\mathbf\Delta^{-1}\mathbf A)^r)\mathbf\Delta^{-1}\right)$
+
   Notice that the internal sum reminds close to a random walk iteration as the power of matrix $\mathbf \Delta^{-1}\mathbf A$ encodes the probability of reaching nodes in $r$ steps through random walking the graph. By factorizing such a similarity with SVD we can obtain the desired result that approximates the embeddings of a random-walk approach.
 
 # Graph Neural Network
@@ -134,9 +139,11 @@ $$
 The main idea is node with a large number of connections should be less important. There is no need for the bias term $\mathbf B$ and the per-neighbor normalization.
 
 Normalization empirically attains better results and better parameter sharing. We can efficiently compute the embeddings using sparse batch operations
+
 $$
 \mathbf Z^{l+1}=\sigma(\mathbf\Delta^{-1/2}\tilde{\mathbf A}\mathbf\Delta^{-1/2}\mathbf Z^l\mathbf W_l)
 $$
+
 where $\tilde{\mathbf A}=\mathbf A+\mathbf I$ and $\delta$ is the diagonal degree matrix. The time complexity to propagate the information is $\mathcal O(|E|)$.
 
 ## GraphSAGE

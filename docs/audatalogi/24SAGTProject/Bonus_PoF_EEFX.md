@@ -19,8 +19,9 @@ After reading the paper [*Optimal Bounds on the Price of Fairness for Indivisibl
 # The Relation between EFX, EEFX, MXS, PROP1
 
 It is not hard to say that
+
 $$
-EFX\sub EEFX\sub MXS\sub PROP1
+EFX\subset EEFX\subset MXS\subset PROP1
 $$
 
 - Every EFX allocation is EEFX allocation.
@@ -64,15 +65,15 @@ Break down my conjectures.
 
 We consider unscaled valuations first.
 
-$\forall$ instance, $\exist$ EEFX (or MXS) allocations $X$ with $SW(X)\ge\frac{1}{cn}SW(X^*)$, i.e., Price of EEFX (or MXS) is $O(n)$. ==This one is easy.==
+$\forall$ instance, $\exists$ EEFX (or MXS) allocations $X$ with $SW(X)\ge\frac{1}{cn}SW(X^*)$, i.e., Price of EEFX (or MXS) is $O(n)$. ==This one is easy.==
 
-$\exist$ instance, in which any EEFX (or MXS) allocation has $SW(X)\le\frac{1}{cn}SW(X^*)$, i.e., Price of EEFX (or MXS) is $\Omega(n)$. ==This one is not easy. Not solved!==
+$\exists$ instance, in which any EEFX (or MXS) allocation has $SW(X)\le\frac{1}{cn}SW(X^*)$, i.e., Price of EEFX (or MXS) is $\Omega(n)$. ==This one is not easy. Not solved!==
 
 ### Scaled valuations
 
-$\forall$ instance, $\exist$ EEFX (or MXS) allocations $X$ with $SW(X)\ge\frac{1}{c\sqrt n}SW(X^*)$, i.e., Price of EEFX (or MXS) is $O(\sqrt n)$.
+$\forall$ instance, $\exists$ EEFX (or MXS) allocations $X$ with $SW(X)\ge\frac{1}{c\sqrt n}SW(X^*)$, i.e., Price of EEFX (or MXS) is $O(\sqrt n)$.
 
-$\exist$ instance, in which any EEFX (or MXS) allocation has $SW(X)\le\frac{1}{c\sqrt n}SW(X^*)$, i.e., Price of EEFX (or MXS) is $\Omega(\sqrt n)$.
+$\exists$ instance, in which any EEFX (or MXS) allocation has $SW(X)\le\frac{1}{c\sqrt n}SW(X^*)$, i.e., Price of EEFX (or MXS) is $\Omega(\sqrt n)$.
 
 For scaled valuations, we have not got the idea yet. ==Not solved!==
 
@@ -145,7 +146,7 @@ Consider such an instance:
 - Each agent has same preference on the same item
 
 $$
-\epsilon\rarr0\\
+\epsilon\rightarrow0\\
 \begin{array}{cc}
   & g_1 & g_2 & g_3&g_4&g_5& \cdots & g_n & g_{n+1}\\
 1 & 1 & \frac{\epsilon}{n} & \frac{\epsilon}{n}&\frac{\epsilon}{n}&\frac{\epsilon}{n}&\cdots&\frac{\epsilon}{n}&\frac{\epsilon}{n}\\
@@ -161,18 +162,31 @@ $$
 :fist_oncoming:
 
 - The maximum social welfare is
+
   $$
-  SW(\mathcal A^*)=1+1\times\frac{1}{2}+2\times\frac{1}{4}+4\times\frac{1}{8}+\cdots+2^{\log_2n-1}\times\frac{1}{n}+\epsilon\\
+  SW(\mathcal A^*)=1+1\times\frac{1}{2}+2\times\frac{1}{4}+4\times\frac{1}{8}+\cdots
+  $$
+  
+  $$
+  +2^{\log_2 n-1}\times\frac{1}{n}+\epsilon\\
+  $$
+  
+  $$
   =1+\frac{\log_2n}{2}
   $$
   
 
 - The maximum social welfare on fair allocation (EF1, EFX, EEFX are the same) is
+
   $$
   \max_{\mathcal A\text{ is fair allocation}}SW(\mathcal A)=1+\frac{1}{2}+\frac{1}{4}+\cdots+\frac{1}{2^{\log_2n}}+(n-\log_2n-1)\frac{1}{n}+\epsilon\\
+  $$
+
+  $$
   \le2+1+\epsilon-(\log_2n+1)\frac{1}{n}
   $$
-  By $\epsilon\rarr0$, this quantity $\le3$.
+
+  By $\epsilon\rightarrow0$, this quantity $\le3$.
 
 - In this case,
   $$

@@ -30,9 +30,9 @@ Suppose that $V$ enters query states and $m_1,\cdots,m_i$ is the list of all mes
 
 :book:Definition 45 (interactive proof system). Let $v$ be a polynomial time interactive Turing machine $V$, $P:\Lambda^*\to\Lambda^*$, and let $0\le s\lt c\le1$. We say that the pair $(V,P)$ is an interactive proof system for $L$ with completeness $c$ and soundness error $s$ if:
 $$
-x\in L\Rarr\Pr[(V,P)(x)=yes]\ge c\\
-\and\\
-x\not\in L\Rarr\Pr[(V,\hat P)(x)=yes]\le s\forall \hat P
+x\in L\Rightarrow\Pr[(V,P)(x)=yes]\ge c\\
+\land\\
+x\not\in L\Rightarrow\Pr[(V,\hat P)(x)=yes]\le s\forall \hat P
 $$
 Define $IP$ as the class of all languages that has an interactive proof system with completeness $3/4$ and soundness error $1/4$. We say that $V$ is the verifier and $P$ the prover of the interactive proof system $(V,P)$.
 
@@ -98,7 +98,7 @@ A weaker result: $coNP\subseteq IP$.
 
 The method can be generalized to show $PSPACE\subseteq IP$.
 
-:book:Definition 46 (Arithmetization). Let $\varphi$ be a $3CNF$ formula with $m$ classes $C_1,\cdots,C_m$ and $n$ variables $x_1,\cdots,x_n$. We define the arithmetic formula $A_\varphi$, aka arithmetization of $\varphi$, recursively. For a variable $x_i$ we let $A(x_i)=x_i$, for a negated variable $\neg x_i$ we let $A(\neg x_i)=1-x_i$. For a clause $C_j=(\ell_{j,1}\or\ell_{j,2}\or\ell_{j,3})$ we let
+:book:Definition 46 (Arithmetization). Let $\varphi$ be a $3CNF$ formula with $m$ classes $C_1,\cdots,C_m$ and $n$ variables $x_1,\cdots,x_n$. We define the arithmetic formula $A_\varphi$, aka arithmetization of $\varphi$, recursively. For a variable $x_i$ we let $A(x_i)=x_i$, for a negated variable $\neg x_i$ we let $A(\neg x_i)=1-x_i$. For a clause $C_j=(\ell_{j,1}\lor\ell_{j,2}\lor\ell_{j,3})$ we let
 $$
 A(C_j)=1-A(\neg C_j)=1-A(\neg \ell_{j,1})A(\neg \ell_{j,2})A(\neg \ell_{j,3})\\
 =1-(1-A(\ell_{j,1}))(1-A(\ell_{j,2}))(1-A(\ell_{j,3}))
@@ -135,7 +135,7 @@ $PSPACE\subseteq IP$
 
 Consider $PSPACE$-complete $TQBF$.
 
-Consider whether $\psi=\exist x_1\in\{0,1\}\forall x_2\in\{0,1\}\cdots\exist x_n\in\{0,1\}\varphi(x_1,\cdots,x_n)$ is true.
+Consider whether $\psi=\exists x_1\in\{0,1\}\forall x_2\in\{0,1\}\cdots\exists x_n\in\{0,1\}\varphi(x_1,\cdots,x_n)$ is true.
 
 WLOG, quantifiers are strictly alternating, $\varphi$ is a $3CNF$ formula with $n$ variables and $m$ clauses.
 

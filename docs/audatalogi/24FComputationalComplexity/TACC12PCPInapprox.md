@@ -18,13 +18,13 @@ For $MAXCLIQUE$ problem. A constant factor **polynomial-time** approximation alg
 
 Use a different approach the final $PCP$ theorem implies that a constant factor polynomial-time approximation algorithm for $MAXE3SAT$ doesn't exist unless $P=NP$.
 
-Optimization is hard $\Rarr$ A corresponding **gap** version of decision problem is hard.
+Optimization is hard $\Rightarrow$ A corresponding **gap** version of decision problem is hard.
 
 :book:Definition 53. An $NP$-optimization problem $\Pi$ is given by a polynomial $p$, a language $L\in P$, a polynomial-time computable function $val$ called **objective function**, and a choice of being either a maximization problem or a minimization problem. For a given $x$, define the set $F(x)$ of **feasible** solution by
 $$
-F(x)=\{y:|y|\le p(|x|)\and\langle x,y\rangle\in L\}.
+F(x)=\{y:|y|\le p(|x|)\land\langle x,y\rangle\in L\}.
 $$
-Assume that $F(x)\neq\empty$ for any $x$. The function $val$ takes as input $x$ and $y\in F(x)$ and assigns a value $val(x,y)\ge0$ to the feasible solution $y$ to instance $x$.
+Assume that $F(x)\neq\emptyset$ for any $x$. The function $val$ takes as input $x$ and $y\in F(x)$ and assigns a value $val(x,y)\ge0$ to the feasible solution $y$ to instance $x$.
 
 Denote $val_x(y)$ for $val(x,y)$.
 
@@ -78,11 +78,11 @@ A **clique** in $G(x)$ must consist of vertices $(y_1,z_1),\cdots,(y_k,z_k)$ for
 
 Now define $MAXCLIQUE$
 
-{% note info modern %}
+!!! info
 
-Clique，中文翻译为“完全子图”。最大完全子图就是要找包含点数最多的完全子图。这个问题是 NP-complete 的。
+    Clique，中文翻译为“完全子图”。最大完全子图就是要找包含点数最多的完全子图。这个问题是 NP-complete 的。
 
-{% endnote %}
+
 
 - Instance: A graph $G$.
 - Output: Clique in $G$ of maximum size.

@@ -250,7 +250,7 @@ For multiprocessing optimization, it takes around **123 seconds**.
 
 For raw implementation, it takes around **12900 seconds** = 215 minutes ≈ 3.58 hours.
 
-For multiprocessing optimization, it takes around **1610 second** ≈26.8 minutes:heavy_exclamation_mark::thumbsup:
+For multiprocessing optimization, it takes around **1610 second** ≈26.8 minutes:book::thumbsup:
 
 **Speedup: Around 8.0x**
 

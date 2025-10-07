@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://tinsir888.codeberg.page/notes-mkdocs/site/audatalogi/24SRandomizedAlgorithm/9ProphetIneq/">
       
       
+        <link rel="prev" href="../8FasterDimRed/">
+      
+      
+        <link rel="next" href="../10InvertibleBloomFilters/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -25,6 +29,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +60,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,9 +88,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-header__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
       
@@ -104,6 +116,38 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -151,6 +195,18 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://codeberg.org/tinsir888/notes-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Codeberg
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -159,6 +215,168 @@
       
       
         
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../23FAlgorithmicGameTheory/W35/" class="md-tabs__link">
+          
+  
+  
+  Datalogi@AU
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../nkucs/PerceptionTechnology/Kapite1/" class="md-tabs__link">
+          
+  
+  
+  CS@NKU
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../APS/core/Assembly%20Language%20and%20Reverse%20Engineering/" class="md-tabs__link">
+          
+  
+  
+  Informatik für APS
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../lingua/Dansknote/AndersensEventyr/0%E6%96%B0%E5%9D%91%E9%A2%84%E5%91%8A/" class="md-tabs__link">
+          
+  
+  
+  Languages
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
           
         
       
@@ -173,8 +391,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="tinsir888&#39;s Study Notes" class="md-nav__button md-logo" aria-label="tinsir888's Study Notes" data-md-component="logo">
       
@@ -184,6 +404,18 @@
     </a>
     tinsir888's Study Notes
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://codeberg.org/tinsir888/notes-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Codeberg
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -213,21 +445,3033 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Datalogi@AU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Datalogi@AU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
   
   
     
     
     
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithmic Game Theory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithmic Game Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Introduction and examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Mechanism design basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Myerson's lemma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Algorithmic mechanism design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Revenue-maximizing auctions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Simple Near-Optimal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W41/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Exercise, examples, Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W43/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Multi-parameter mechanism design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W44/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Mechanism design with payment constraints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W45/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Mechanism design without money
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W46/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Non-atomic selfish routing and price of anarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W47/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Congestion games, potential functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FAlgorithmicGameTheory/W48/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Potential games and price of stability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computational Geometry
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computational Geometry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Introduction to Algorithm Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Introduction to Parallel Computation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Sorting and Searching in Parallel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 I/O Model and Permutation Lower Bound
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Introduction to Computational Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Linear Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW41/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Polygon Triangulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW43/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Point Location
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW44/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Arrangements and Duality, Zone Theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW45/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Orthogonal Range Searching
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW46/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 More Orthogonal problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW47/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Voronoi Diagrams and 3D Convex Hull
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputationalGeometry/MRandNotesW48/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Robot Motion Planning and Visibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Machine Learning fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Convolutional Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Backpropagation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Training ConvNet (1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW41/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Training ConvNet (2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW43/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 CNN architectures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW44/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Object detection and segmentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW45/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Generative models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW46/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Visualizing and understanding CNNs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW47/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Sequence models (NLP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../23FComputerVision/NotesW48/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Roundup - Uncovered Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fair Division (Project)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Fair Division (Project)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M1FairnessNotion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Survey Study
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M2RelationsofFairnessProperties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Relations of Fairness Properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M3PoFandMMS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Price of Fairness and MMS Property
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M4Alternativ2EFX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Alternatives to EFX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M5EF1%2BPO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 EF1-Pareto Optimality Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M6ComputeEF1PO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Computing EF1 + PO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M7FracAlloc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Ex-ante and Ex-post Fairness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/M8StrategicAspects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Strategic Aspects of Fair Divison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SAGTProject/Bonus_PoF_EEFX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 My Conjectures on Price of Fairness for EEFX/MXS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Mining
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data Mining
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/1Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/2RepresentCluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Representation-based Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/3DensityBased/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Densiy-based Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/4HierarchicalSubspace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Hierarchical and Subspace Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/5OutlierDetect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Outlier Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/6SpectralTheoryCluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Spectral Theory and Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/7CommunityDetect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Community Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/8LinkAnalysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Link Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/9GraphEmbed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Graph Embedding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/10GNN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Graph Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/11FrequentSubgraphMining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Frequent Subgraph Mining
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/12FequentItemsets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Frequent Itemsets and Association Rules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24SDataMining/13SequenceSeg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Sequence Segmentation and Similarities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Randomized Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Randomized Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1ExampleQuicksort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Examples of Randomized Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2ProbIneqHash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Probabilistic Inequalities, Hashing with Chaining
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3HashFunc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Hash Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4MinCutAlg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Karger's Min Cut Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5StreamAlgFreqEsti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Streaming Algorithms for Frequency Estimation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6HeavyHitters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Streaming Heavy Hitters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7DimRed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Dimensionality Reduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8FasterDimRed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Faster Dimensionality Reduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    9 Prophets, Secretaries and Martingales
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Prophets, Secretaries and Martingales
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-computational-aspect" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Computational Aspect
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions-picking-multiple-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensions: Picking Multiple Items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extensions: Picking Multiple Items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#better" class="md-nav__link">
+    <span class="md-ellipsis">
+      Better
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10InvertibleBloomFilters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Invertible Bloom Filters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11RandomizedRounding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Randomized Rounding for MAX SAT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12NearNeighbor%26LocalitySensitiveHashing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Nearest Neighbor Search and Locality Sensitive Hashing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13NearNeighborSearch2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Nearest Neighbor Search with Different Distance Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14MarkovChains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14 Markov Chains and Random Walks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computational Complexity
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Computational Complexity
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC1TuringMachine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Turing Machines, Time and Space
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC2Nondeterministic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Nondeterminism and Determinism
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC3BooleanCircuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Boolean Circuits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC4ReductionCompleteness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Reductions and Completeness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC5PolyHierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 The Polynomoial-Time Hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC6Randomized/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Randomized Computation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC7BoundDepBoolCir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Bounded Depth Boolean Circuits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC8BranchProgram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Branching Programs and Barrington's Theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC9CircuitLowerBound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Circuit Lower Bounds
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC10InteractiveProof/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Interactive Proofs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC11PCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Probabilistic Checkable Proofs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC12PCPInapprox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 PCP-based Inapproximability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC13RAM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Random Access Machine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC14SATExp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14 SAT Problem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC15ParametrizedComplexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15 Fine-grained and Parameterized Complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC16FFT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16 Fast Fourier Transform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FComputationalComplexity/TACC17LLL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    17 LLL Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Efficient ReliK (Project)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Efficient ReliK (Project)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FEfficientReliK/1ReadPaperReliK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Investigating the Original ReliK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FEfficientReliK/2PossibleAccIdea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Possible Parallelization Idea
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FEfficientReliK/3ParallelFor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Parallel For Loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FEfficientReliK/4Sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Sampling Optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fair Clustering (Project&Thesis)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Fair Clustering (Project&Thesis)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/0_Fair_AIML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0 Fairness in AI/ML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/1_CoreFed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Core-Stability Federated Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/2_PropFairClu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 PROP Fair Clustering (1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/3_PropFairRevisited/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 PROP Fair Clustering (2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/4_EndeavorPROPGap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Endeavor to Bridge Gap between 2 and 2.414
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/5_PROPNonCentroid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 PROP in Non-Centroid Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/6_CoreNonCen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Some Open Problems about Non-centroid Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24FFairAI/7_CoreExistence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 The Existence of Core for Max Distance Loss
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../25SMscThesis/8_SplitMergeAvg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Split and Merge Algorithm on Average Cost
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../25SMscThesis/9_OnFJR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 On Fully Justified Representation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -240,8 +3484,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             CS@NKU
           </label>
@@ -257,15 +3501,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   
@@ -278,8 +3525,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             感知技术与应用
           </label>
@@ -395,15 +3642,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   
@@ -416,8 +3666,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             数字信号处理
           </label>
@@ -648,15 +3898,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
             
   
   
@@ -669,8 +3922,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             智能计算系统
           </label>
@@ -878,15 +4131,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
   
@@ -899,8 +4155,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             汇编与逆向
           </label>
@@ -1177,15 +4433,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
   
@@ -1198,8 +4457,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             网络技术与应用
           </label>
@@ -1430,15 +4689,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
             
   
   
@@ -1451,8 +4713,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             计算机体系结构
           </label>
@@ -1752,15 +5014,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
         
           
-          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
             
   
   
@@ -1773,8 +5038,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             计算机网络
           </label>
@@ -1936,15 +5201,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
         
           
-          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
             
   
   
@@ -1957,8 +5225,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             强化学习
           </label>
@@ -2186,6 +5454,3839 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Informatik für APS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Informatik für APS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    重点复习课程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            重点复习课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Assembly%20Language%20and%20Reverse%20Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assembly Language and Reverse Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Computer%20Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Computer%20Networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Data%20Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Database%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Deep%20Learning%20and%20Application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deep Learning and Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Introduction%20to%20Algorithm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Introduction%20to%20Artificial%20Intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Artificial Intelligence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Introduction%20to%20Parallel%20Programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Parallel Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Operation%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operation System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Principles%20of%20Compilers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Principles of Compliers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Principles%20of%20Computer%20Organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Principles of Computer Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Probability%20and%20Mathematical%20Statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Probability and Mathematical Statistics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/core/Software%20Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    非重点复习课程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            非重点复习课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/College%20Physics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    College Physics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Computer%20System%20Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer System Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Digital%20Logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Digital Logic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Digital%20Signal%20Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Digital Signal Processing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Discrete%20Mathematics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discrete Mathematics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/High%20Level%20Language%20Program%20Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Intelligent%20Computing%20System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intelligent Computing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Internet%20Database%20Development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Internet Database Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Introduction%20to%20Python%20Programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Python Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Linear%20Algebra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Algebra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Mathematical%20Analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mathematical Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Methods%20of%20Computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Methods of Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Network%20Security%20Technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Security Technology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Network%20Technology%20and%20Application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Technology and Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Sensing%20Technology%20and%20Application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensing Technology and Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APS/noncore/Visual%20Technology%20Basis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visual Technology Basis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Languages
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Languages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_1" id="__nav_5_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Andersens Eventyr
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Andersens Eventyr
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/AndersensEventyr/0%E6%96%B0%E5%9D%91%E9%A2%84%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    新坑预告
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk Uddannelse 3 Modul 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk Uddannelse 3 Modul 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    在丹麦免费学丹麦语
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Præsentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 I klassen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Familie, Klokken og Dato
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 将来时/过去时
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Sundhed og livsstil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Bolig og lokalområde
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.1/Lek7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Geografi og vejr, Danmark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk Uddannelse 3 Modul 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk Uddannelse 3 Modul 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Invitationer (1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Invitationer (2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Bolig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Humør og følelser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Venskab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Relationer - Venner, evaluering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek7-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Sundhed og livsstil
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek9-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Arbejde og studieliv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek11-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Planer for ferie og fridage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.2/Lek13-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Fortæl om ferier og oplevelser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_4" id="__nav_5_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk Uddannelse 3 Modul 3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk Uddannelse 3 Modul 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Ligheder og forskelle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Normer og uskrevne regler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Sammenligning af forskellige kulturer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Højskoler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 At beskrive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Foreninger og klubber
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek7og8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Arbejdspladskultur
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Jobsøgning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Job og kompetencer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Skriv en jobansøgning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Jobansøgning og arbejdsmarked
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Smalltalk i hverdags- og arbejdsliv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.3/Lek14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 Bliv klar til 3.3-testen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_5" id="__nav_5_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dansk Uddannelse 3 Modul 4
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Dansk Uddannelse 3 Modul 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 De fire årstider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Noget om skole og uddannelse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Noget om musik
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Noget om køn og lidt om alder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Noget om arbejde
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Noget om tøj, budskaber og bæredygtighed
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/Dansknote/DU3.4/Lek7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Forberedelse til modultest 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deutsch
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Deutsch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_1" id="__nav_5_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            A1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    发音入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel1bis3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 bis 3 省略
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Wie spät ist es?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Was darf's sein?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Familienleben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Wilkommen in Berlin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Zimmer, Küche, Bad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Was ist passiert?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Ich arbeite bei...
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Gesund und fit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A1/Kapitel12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Schönes Wochenende!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            A2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Das steht dir gut!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Feste, Freunde, Familie
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Miteinander leben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Schule und danach
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Die neue Wohnung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Mobil in der Stadt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Das finde ich schön
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Komm doch mit!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Arbeitssuche
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Alltag und Medien
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 Politik und ich
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/A2/Kapitel24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 Bei uns und bei euch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    B1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            B1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Kennen lernen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Orte
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Freizeit und Fitness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Tägliches Leben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Ausbildung und Beruf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Lernen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Zwischenmenschliche Beziehungen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Konsum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Neue Medien
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B1/Lektion10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 Reise und Mobilität
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_4" id="__nav_5_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    B2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            B2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Heimat ist ...
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Sprich mit mir!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Arbeit ist das halbe Leben?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Zusammen leben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Wer Wissen schafft, macht Wissenschaft
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Fit für ...
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Kulturwelten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/B2/Kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 Das machte Geschichte
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/DeutscheStudiennotizen/%E5%BE%B7%E8%AF%AD%E9%98%B4%E9%98%B3%E4%B8%AD%E6%80%A7%E7%9A%84%E8%BE%A8%E5%88%AB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    德语阴阳性总结
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Français
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Français
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_1" id="__nav_5_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            A1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0 Phonétique
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Rencontres
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Portraits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Ça se trouve où?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/FrenchNotes/A1/Unit%C3%A94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Au rythme du temps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Italiano
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Italiano
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1" id="__nav_5_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            A1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    语音入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 Benvenuti!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Un nuovo inizio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Español
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Español
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5_1" id="__nav_5_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    A1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            A1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/SpanishNotas/A1/%E8%AF%AD%E9%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    语音入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/SpanishNotas/A1/Unidad1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 ¿Quiénes somos?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/SpanishNotas/A1/Unidad2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 ¿Cómo estás?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2266,65 +9367,65 @@
 <p>Here are some results, proofs and techniques about them.</p>
 <h1 id="the-prophet-inequality">The Prophet Inequality</h1>
 <p>在之前的算法博弈论课上学过，具体可以参考我的对应 <a href="https://tinsir888.github.io/posts/ec43f770.html">课堂笔记</a></p>
-<p>$n$ random variables $X_1,\cdots,X_n$. We know their distributions up-front, but not their realizations. The realizations are revealed one-by-one.</p>
-<p>We want to give a strategy that, upon seeing the value $X_i$ decides either to choose $i$ in which case we get reward $X_i$ and the process stops. Or we can pass, in which case we move on to the next random variables, and are not allowed to come back to $i$ every again. We want to maximize our expected reward. If $X_\max=\max{X_1,X_2,\cdots,X_n}$, it is clear that our reward can't exceed $\mathbb E[X_\max]$.</p>
-<p><strong>Theorem 1</strong> by Krengel, Sucheston and Garling. There exists a strategy with expected reward $\frac{1}{2}\mathbb E[X_\max]$.</p>
+<p><span class="arithmatex">\(n\)</span> random variables <span class="arithmatex">\(X_1,\cdots,X_n\)</span>. We know their distributions up-front, but not their realizations. The realizations are revealed one-by-one.</p>
+<p>We want to give a strategy that, upon seeing the value <span class="arithmatex">\(X_i\)</span> decides either to choose <span class="arithmatex">\(i\)</span> in which case we get reward <span class="arithmatex">\(X_i\)</span> and the process stops. Or we can pass, in which case we move on to the next random variables, and are not allowed to come back to <span class="arithmatex">\(i\)</span> every again. We want to maximize our expected reward. If <span class="arithmatex">\(X_\max=\max\{X_1,X_2,\cdots,X_n\}\)</span>, it is clear that our reward can't exceed <span class="arithmatex">\(\mathbb E[X_\max]\)</span>.</p>
+<p><strong>Theorem 1</strong> by Krengel, Sucheston and Garling. There exists a strategy with expected reward <span class="arithmatex">\(\frac{1}{2}\mathbb E[X_\max]\)</span>.</p>
 <blockquote>
-<p>Let $\tau$ be the median of the distribution of $X_\max$, i.e., $\Pr[X_\max\ge\tau]=1/2$.</p>
-<p>Now the strategy is simple: pick the first $X_i$ which exceeds $\tau$. Clearly, we will pick an item with probability exactly $1\over2$, then notice that
+<p>Let <span class="arithmatex">\(\tau\)</span> be the median of the distribution of <span class="arithmatex">\(X_\max\)</span>, i.e., <span class="arithmatex">\(\Pr[X_\max\ge\tau]=1/2\)</span>.</p>
+<p>Now the strategy is simple: pick the first <span class="arithmatex">\(X_i\)</span> which exceeds <span class="arithmatex">\(\tau\)</span>. Clearly, we will pick an item with probability exactly <span class="arithmatex">\(1\over2\)</span>, then notice that
 $$
 \mathbb E[X_\max]\le\tau+\mathbb E[(X_\max-\tau)^+]\
-\le\tau+\mathbb E[\sum_{i=1}^n(X_i-\tau)^+].
+\le\tau+\mathbb E[\sum_{i=1}<sup>n(X_i-\tau)</sup>+].
 $$
 Then for algorithm:
 $$
 ALG\ge\tau\cdot\Pr[X_\max\ge\tau]+\sum_{i=1}^n\mathbb E[(X_i-\tau)^+]\cdot\Pr[\bigwedge_{j\le i}(X_j\lt\tau)]\
 \ge\tau\cdot\Pr[X_\max\ge\tau]+\sum_{i=1}^n\mathbb E[(X_i-\tau)^+]\cdot\Pr[X_\max\lt\tau]
 $$
-By letting $\Pr[X_\max\lt\tau]=\Pr[X_\max\ge\tau]=1/2$, we have
+By letting <span class="arithmatex">\(\Pr[X_\max\lt\tau]=\Pr[X_\max\ge\tau]=1/2\)</span>, we have
 $$
 ALG\ge\frac{1}{2}\mathbb E[X_\max]
 $$</p>
 </blockquote>
-<p><em>The proof is beautiful, but hard to generalize. What if we can choose $k$ variables?</em></p>
+<p><em>The proof is beautiful, but hard to generalize. What if we can choose <span class="arithmatex">\(k\)</span> variables?</em></p>
 <p>There are <strong>LP-based</strong> version of proof, which can be generalized:</p>
 <blockquote>
-<p>Define $p_i$ as the probability that element $X_i$ takes on the highest value. Hence $\sum_ip_i=1$. Moreover, suppose $\tau_i$ is s.t. $\Pr[X_i\ge\tau_i]=p_i$, i.e., the $p_i$-th percentile for $X_i$. Define
+<p>Define <span class="arithmatex">\(p_i\)</span> as the probability that element <span class="arithmatex">\(X_i\)</span> takes on the highest value. Hence <span class="arithmatex">\(\sum_ip_i=1\)</span>. Moreover, suppose <span class="arithmatex">\(\tau_i\)</span> is s.t. <span class="arithmatex">\(\Pr[X_i\ge\tau_i]=p_i\)</span>, i.e., the <span class="arithmatex">\(p_i\)</span>-th percentile for <span class="arithmatex">\(X_i\)</span>. Define
 $$
 v_i(p_i)=\mathbb E[X_i|X_i\ge\tau_i]
 $$
-as value of $X_i$ conditioned on it lying in the top $p_i$-th percentile. Clearly, $\mathbb E[X_\max]\le\sum_iv_i(p_i)\cdot p_i$.</p>
-<p><strong>A simpler weaker bound</strong>. Here's a simple algorithm that gets value $\frac{1}{4}\sum_iv_i(p_i)\cdot p_i\ge\frac{1}{4}\mathbb E[X_\max]$.</p>
-<p>If we haven't chosen an item among $1,\cdots,i-1$, when looking at item $i$, pass with probability half without even looking at $X_i$, else accept it if $X_i\ge\tau_i$.</p>
-<p>Definition: we "reach" item $i$ if we have not picked an item before $i$. The expected value of the algorithm is
+as value of <span class="arithmatex">\(X_i\)</span> conditioned on it lying in the top <span class="arithmatex">\(p_i\)</span>-th percentile. Clearly, <span class="arithmatex">\(\mathbb E[X_\max]\le\sum_iv_i(p_i)\cdot p_i\)</span>.</p>
+<p><strong>A simpler weaker bound</strong>. Here's a simple algorithm that gets value <span class="arithmatex">\(\frac{1}{4}\sum_iv_i(p_i)\cdot p_i\ge\frac{1}{4}\mathbb E[X_\max]\)</span>.</p>
+<p>If we haven't chosen an item among <span class="arithmatex">\(1,\cdots,i-1\)</span>, when looking at item <span class="arithmatex">\(i\)</span>, pass with probability half without even looking at <span class="arithmatex">\(X_i\)</span>, else accept it if <span class="arithmatex">\(X_i\ge\tau_i\)</span>.</p>
+<p>Definition: we "reach" item <span class="arithmatex">\(i\)</span> if we have not picked an item before <span class="arithmatex">\(i\)</span>. The expected value of the algorithm is
 $$
 ALG\ge\sum_{i=1}^n\Pr[\text{reach item }i]\cdot\frac{1}{2}\cdot\Pr[X_i\ge\tau_i]\cdot\mathbb E[X_i|X_i\ge\tau_i]\
 =\sum_{i=1}^n\Pr[\text{reach item }i]\cdot\frac{1}{2}\cdot p_i\cdot v_i(p_i)
 $$
-Since we pick each item with probability $\frac{1}{2}p_i$, the expected number of items we choose is half. So, by Markov's inequality, the probability we pick no item at all is at least half. Hence, the probability we reach item $i$ is at least one half too, the above expression is $\frac{1}{4}\cdot\sum_iv_i(p_i)\cdot p_i$ as claimed.</p>
-<p><strong>The bound of 2</strong>. To improve the algorithm, suppose we denote the probability of reaching item $i$ by $r_i$ and suppose we reject item $i$ outright with probability $1-q_i$. Then inequality shows that
+Since we pick each item with probability <span class="arithmatex">\(\frac{1}{2}p_i\)</span>, the expected number of items we choose is half. So, by Markov's inequality, the probability we pick no item at all is at least half. Hence, the probability we reach item <span class="arithmatex">\(i\)</span> is at least one half too, the above expression is <span class="arithmatex">\(\frac{1}{4}\cdot\sum_iv_i(p_i)\cdot p_i\)</span> as claimed.</p>
+<p><strong>The bound of 2</strong>. To improve the algorithm, suppose we denote the probability of reaching item <span class="arithmatex">\(i\)</span> by <span class="arithmatex">\(r_i\)</span> and suppose we reject item <span class="arithmatex">\(i\)</span> outright with probability <span class="arithmatex">\(1-q_i\)</span>. Then inequality shows that
 $$
 ALG\ge\sum_{i=1}^nr_i\cdot q_i\cdot p_i\cdot v_i(p_i)
 $$
-Above, we ensured that $q_i=r_i=\frac{1}{2}$, and hence lost a factor of $\frac{1}{4}$. But if we ensures that $r_i\cdot q_i=1/2$, we would get the desired result of $\frac{1}{2}\mathbb E[X_\max]$. For the first item $r_1=1$ and hence we can set $q_1=\frac{1}{2}$.</p>
+Above, we ensured that <span class="arithmatex">\(q_i=r_i=\frac{1}{2}\)</span>, and hence lost a factor of <span class="arithmatex">\(\frac{1}{4}\)</span>. But if we ensures that <span class="arithmatex">\(r_i\cdot q_i=1/2\)</span>, we would get the desired result of <span class="arithmatex">\(\frac{1}{2}\mathbb E[X_\max]\)</span>. For the first item <span class="arithmatex">\(r_1=1\)</span> and hence we can set <span class="arithmatex">\(q_1=\frac{1}{2}\)</span>.</p>
 <p>For future items, since
 $$
 r_{i+1}=r_i(1-q_i\cdot p_i)
 $$
-we can just set $q_{i+1}=\frac{1}{2r_{i+1}}$. A simple induction shows that $r_{i+1}\ge\frac{1}{2}$. Summing up this equation to get $r_{i+1}=r_1-\sum_{j\le i}p_i/2$, so that $q_{i+1}\in[0,1]$ and is well-defined.</p>
+we can just set <span class="arithmatex">\(q_{i+1}=\frac{1}{2r_{i+1}}\)</span>. A simple induction shows that <span class="arithmatex">\(r_{i+1}\ge\frac{1}{2}\)</span>. Summing up this equation to get <span class="arithmatex">\(r_{i+1}=r_1-\sum_{j\le i}p_i/2\)</span>, so that <span class="arithmatex">\(q_{i+1}\in[0,1]\)</span> and is well-defined.</p>
 </blockquote>
 <h2 id="the-computational-aspect">The Computational Aspect</h2>
-<p>If the distribution of the random variable stream $X_i$ is explicitly given, the proofs above immediately give us algorithms. But what if $X_i$ are given via a black-box (we can only access via samples)?</p>
-<p>The first proof merely relies on finding the median: finding an approximate median $\hat\tau$ s.t. $\Pr[X_\max\lt\hat\tau]\in(\frac{1}{2}-\epsilon,\frac{1}{2}+\epsilon)$ gives us expected reward $\frac{1}{2+\epsilon/2}\mathbb E[X_\max]$. To do this, sample from $X_\max O(\epsilon^{-2}\log\delta^{-1})$ times and take $\hat\tau$ is an approximate median with probability at least $1-\delta$.</p>
-<p>For the second proof, there are 2 ways of making it algorithmic. Firstly, if the quantities are polynomially bounded, estimate $p_i$ and $v_i$ by sampling. Alternatively, solve the convex program
+<p>If the distribution of the random variable stream <span class="arithmatex">\(X_i\)</span> is explicitly given, the proofs above immediately give us algorithms. But what if <span class="arithmatex">\(X_i\)</span> are given via a black-box (we can only access via samples)?</p>
+<p>The first proof merely relies on finding the median: finding an approximate median <span class="arithmatex">\(\hat\tau\)</span> s.t. <span class="arithmatex">\(\Pr[X_\max\lt\hat\tau]\in(\frac{1}{2}-\epsilon,\frac{1}{2}+\epsilon)\)</span> gives us expected reward <span class="arithmatex">\(\frac{1}{2+\epsilon/2}\mathbb E[X_\max]\)</span>. To do this, sample from <span class="arithmatex">\(X_\max O(\epsilon^{-2}\log\delta^{-1})\)</span> times and take <span class="arithmatex">\(\hat\tau\)</span> is an approximate median with probability at least <span class="arithmatex">\(1-\delta\)</span>.</p>
+<p>For the second proof, there are 2 ways of making it algorithmic. Firstly, if the quantities are polynomially bounded, estimate <span class="arithmatex">\(p_i\)</span> and <span class="arithmatex">\(v_i\)</span> by sampling. Alternatively, solve the convex program
 $$
 \max{\sum_iy_i\cdot v_i(y_i)|\sum_iy_i=1}
 $$
-and use the $y_i$'s from its solution in lieu of $p_i$'s in the algorithm above.</p>
-<p>Since getting samples from the distributions may be expensive, there are method to get a constant fraction of $\mathbb E[X_\max]$ via taking just one sample from each of the $X_i$s.</p>
+and use the <span class="arithmatex">\(y_i\)</span>'s from its solution in lieu of <span class="arithmatex">\(p_i\)</span>'s in the algorithm above.</p>
+<p>Since getting samples from the distributions may be expensive, there are method to get a constant fraction of <span class="arithmatex">\(\mathbb E[X_\max]\)</span> via taking just one sample from each of the <span class="arithmatex">\(X_i\)</span>s.</p>
 <h2 id="extensions-picking-multiple-items">Extensions: Picking Multiple Items</h2>
-<p>What if we are allowed to choose $k$ variables from among the $n$?</p>
-<p>If $p_i$ is the probability that $X_i$ is among the top $k$ values, we have
+<p>What if we are allowed to choose <span class="arithmatex">\(k\)</span> variables from among the <span class="arithmatex">\(n\)</span>?</p>
+<p>If <span class="arithmatex">\(p_i\)</span> is the probability that <span class="arithmatex">\(X_i\)</span> is among the top <span class="arithmatex">\(k\)</span> values, we have
 $$
 \sum_ip_i=k.
 $$
@@ -2332,171 +9433,171 @@ The upper bound on our quantity of interest remains essentially unchanged
 $$
 \mathbb E[\text{sum of top }k\text{ r.v.s}]\le\sum_iv_i(p_i)\cdot p_i
 $$
-What about an algorithm to get value $1/4$ of the value in this inequality? Then same: reject each item outright with probability $1/2$, else pick $i$ if $X_i\ge\tau_i$. Proof goes through unchanged.</p>
+What about an algorithm to get value <span class="arithmatex">\(1/4\)</span> of the value in this inequality? Then same: reject each item outright with probability <span class="arithmatex">\(1/2\)</span>, else pick <span class="arithmatex">\(i\)</span> if <span class="arithmatex">\(X_i\ge\tau_i\)</span>. Proof goes through unchanged.</p>
 <h3 id="better">Better</h3>
-<p>One can get within $(1-\frac{1}{\sqrt{k+3}})$ of the value. For $k=1$, this matches $1/2$. One can, however, get a fractor of $1-O(\sqrt{\frac{\log k}{k}})$ using a simple concentration bound.</p>
+<p>One can get within <span class="arithmatex">\((1-\frac{1}{\sqrt{k+3}})\)</span> of the value. For <span class="arithmatex">\(k=1\)</span>, this matches <span class="arithmatex">\(1/2\)</span>. One can, however, get a fractor of <span class="arithmatex">\(1-O(\sqrt{\frac{\log k}{k}})\)</span> using a simple concentration bound.</p>
 <blockquote>
-<p>Suppose we reduce the rejection probability to $\delta$. Then the probability that we reach some item $i$ without having picked $k$ items already is lower-bounded by the probability that we pick at most $k$ elements in the entire process. Since we reject items with probability $\delta$, the expected number of elements we pick is $(1-\delta)k$.</p>
-<p>Hence, the probability that we pick less than $k$ items is at least $1-e^{-\Theta(\delta^2k)}$, by a Hoeffding bound for sums of independent random variables. Now setting $\delta=O(\sqrt{\frac{\log k}{k}})$ ensures that the probability of reaching each item is at least $(1-1/k)$, and a argument similar to that in Proof shows that
+<p>Suppose we reduce the rejection probability to <span class="arithmatex">\(\delta\)</span>. Then the probability that we reach some item <span class="arithmatex">\(i\)</span> without having picked <span class="arithmatex">\(k\)</span> items already is lower-bounded by the probability that we pick at most <span class="arithmatex">\(k\)</span> elements in the entire process. Since we reject items with probability <span class="arithmatex">\(\delta\)</span>, the expected number of elements we pick is <span class="arithmatex">\((1-\delta)k\)</span>.</p>
+<p>Hence, the probability that we pick less than <span class="arithmatex">\(k\)</span> items is at least <span class="arithmatex">\(1-e^{-\Theta(\delta^2k)}\)</span>, by a Hoeffding bound for sums of independent random variables. Now setting <span class="arithmatex">\(\delta=O(\sqrt{\frac{\log k}{k}})\)</span> ensures that the probability of reaching each item is at least <span class="arithmatex">\((1-1/k)\)</span>, and a argument similar to that in Proof shows that
 $$
 ALG\ge\sum_{i=1}^n\Pr[\text{reach item }i]\cdot\Pr[\text{not reject item }i]\cdot\Pr[X_i\ge\tau_i]\cdot\mathbb E[X_i|X_i\ge\tau_i]\
 =\sum_{i=1}^n(1-1/k)\cdot(1-O(\sqrt{\frac{\log k}{k}}))\cdot p_i\cdot v_i(p_i)
 $$</p>
-<p>which gives the claimed bound of $(1-O(\sqrt{\frac{\log k}{k}}))$.</p>
+<p>which gives the claimed bound of <span class="arithmatex">\((1-O(\sqrt{\frac{\log k}{k}}))\)</span>.</p>
 </blockquote>
 <h1 id="secretary-problems">Secretary Problems</h1>
-<p>$n$ items, each has some intrinsic non-negative value.</p>
+<p><span class="arithmatex">\(n\)</span> items, each has some intrinsic non-negative value.</p>
 <p>Assume the values are distinct, but we know nothing about their ranges.</p>
-<p>We only know $n$.</p>
+<p>We only know <span class="arithmatex">\(n\)</span>.</p>
 <p>The item are presented one by one. Upon seeing an item, we can either pick it or we can pass. The goal is to maximize the probability of picking the item with the highest value.</p>
 <p>If an adversary chooses the order in which the items are presented, every deterministic strategy must fail.</p>
-<p>:question:Secretary problem: what if the items are presented in uniformly random order? For this setting, it seems surprising that one can prove the following theorem:</p>
-<p><strong>Theorem 2.1</strong>. There is a strategy to pick the best item with probability at least $\frac{1}{e}$.</p>
+<p><img alt="❓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2753.svg" title=":question:" />Secretary problem: what if the items are presented in uniformly random order? For this setting, it seems surprising that one can prove the following theorem:</p>
+<p><strong>Theorem 2.1</strong>. There is a strategy to pick the best item with probability at least <span class="arithmatex">\(\frac{1}{e}\)</span>.</p>
 <blockquote>
-<p>A simple algorithm and proof showing probability of $\frac{1}{4}$: ignore the first $n/2$ items, and then pick the next item that is better than all the ones seen so far. Note that this algorithm succeeds if the best item is in the second half of the items (happens with probability $1/2$). Hence $1/4$. Rejecting the first half of the items is not optimal, and there are other cases where the algorithm succeeds that this simple analysis does not account for.</p>
+<p>A simple algorithm and proof showing probability of <span class="arithmatex">\(\frac{1}{4}\)</span>: ignore the first <span class="arithmatex">\(n/2\)</span> items, and then pick the next item that is better than all the ones seen so far. Note that this algorithm succeeds if the best item is in the second half of the items (happens with probability <span class="arithmatex">\(1/2\)</span>). Hence <span class="arithmatex">\(1/4\)</span>. Rejecting the first half of the items is not optimal, and there are other cases where the algorithm succeeds that this simple analysis does not account for.</p>
 <p>First, the algorithm should never pick an element that is not the best so far. Moreover, if we define
 $$
 f(i)=\Pr[i^{th}\text{ item is global best}|i^{th}\text{ is best so far}]\
 =\frac{\Pr[i^{th}\text{ item is global best}]}{\Pr[i^{th}\text{ is best so far}]}=\frac{1/n}{1/i}=\frac{i}{n}\
 g(i)=\Pr[\text{picking global best using optimal strategy from item i onwards}]
 $$
-then $g(i)$ is a non-increasing and $f(i)$ is increasing.</p>
-<p>Any optimal strategy should pass at times $i$ where $f(i)\lt g(i+1)$ and pick at other times if we see an element that is best so far. i.e., a strategy of the type used in the simple proof of $1/4$ is optimal.</p>
-<p>So if we reject the first $\tau$ items, then the probability we succeed in picking the global best is
+then <span class="arithmatex">\(g(i)\)</span> is a non-increasing and <span class="arithmatex">\(f(i)\)</span> is increasing.</p>
+<p>Any optimal strategy should pass at times <span class="arithmatex">\(i\)</span> where <span class="arithmatex">\(f(i)\lt g(i+1)\)</span> and pick at other times if we see an element that is best so far. i.e., a strategy of the type used in the simple proof of <span class="arithmatex">\(1/4\)</span> is optimal.</p>
+<p>So if we reject the first <span class="arithmatex">\(\tau\)</span> items, then the probability we succeed in picking the global best is
 $$
-\sum_{t=\tau+1}^n\Pr[t^{th}\text{ item is global best}]\cdot\Pr[\text{best of first }t-1\text{ items in first }\tau\text{ positions}]\
+\sum_{t=\tau+1}<sup>n\Pr[t</sup>{th}\text{ item is global best}]\cdot\Pr[\text{best of first }t-1\text{ items in first }\tau\text{ positions}]\
 =\sum_{t=\tau+1}^n\frac{1}{n}\cdot\frac{\tau}{t-1}=\frac{\tau}{n}(H_{n-1}-H_{\tau-1}).
 $$
-This is $g(\tau+1)$. So the first position where $f(\tau)=\tau/n\ge g(\tau+1)$ is given by the smallest $\tau$ s.t. $1\ge H_{n-1}-H_{\tau-1}$, i.e., $\tau\approx n/e$ for large $n$, hence $g(\tau+1)\approx1/e$.</p>
+This is <span class="arithmatex">\(g(\tau+1)\)</span>. So the first position where <span class="arithmatex">\(f(\tau)=\tau/n\ge g(\tau+1)\)</span> is given by the smallest <span class="arithmatex">\(\tau\)</span> s.t. <span class="arithmatex">\(1\ge H_{n-1}-H_{\tau-1}\)</span>, i.e., <span class="arithmatex">\(\tau\approx n/e\)</span> for large <span class="arithmatex">\(n\)</span>, hence <span class="arithmatex">\(g(\tau+1)\approx1/e\)</span>.</p>
 </blockquote>
 <p>There is an alternate proof that uses a convex-programming. We will write down an LP that captures some properties of any feasible solution, optimize this LP and show a strategy whose success probability is comparable to the objective of this LP.</p>
 <blockquote>
 <p>Fix an optimal strategy. Assume w.l.o.g（不失一般性） that it does not pick any item that is not the best so far.</p>
-<p>Let $p_i$ be the probability that this strategy picks an item at position $i$. Let $q_i$ be the probability that we pick an item at position $i$, conditioned on it being the best so far. So $q_i=\frac{p_i}{1/i}=i\cdot p_i$.</p>
+<p>Let <span class="arithmatex">\(p_i\)</span> be the probability that this strategy picks an item at position <span class="arithmatex">\(i\)</span>. Let <span class="arithmatex">\(q_i\)</span> be the probability that we pick an item at position <span class="arithmatex">\(i\)</span>, conditioned on it being the best so far. So <span class="arithmatex">\(q_i=\frac{p_i}{1/i}=i\cdot p_i\)</span>.</p>
 <p>Now the probability of picking the best item is
 $$
 \sum_i\Pr[i^{th}\text{ position is global best and we pick it}]\
 =\sum_i\Pr[i^{th}\text{ position is global best}]\cdot q_i\
 =\sum_i\frac{1}{n}q_i=\sum_{i}\frac{i}{n}p_i
 $$
-Constraints: $p_i\in[0,1]$. But also
+Constraints: <span class="arithmatex">\(p_i\in[0,1]\)</span>. But also
 $$
 p_i=\Pr[\text{pick item }i|i\text{ best so far}]\cdot\Pr[i\text{ best so far}]\
 \le\Pr[\text{didn't pick 1,...,i-1}|i\text{ best so far}]\cdot(1/i)
 $$
-But not picking the first $i-1$ items is independent of $i$ being the best so far, so we get
+But not picking the first <span class="arithmatex">\(i-1\)</span> items is independent of <span class="arithmatex">\(i\)</span> being the best so far, so we get
 $$
 p_i\le\frac{1}{i}(1-\sum_{j\lt i}p_j).
 $$
-Hence the success probability of any strategy is upper-bounded by the following LP in variables $p_i$:
+Hence the success probability of any strategy is upper-bounded by the following LP in variables <span class="arithmatex">\(p_i\)</span>:
 $$
 \max\sum_i\frac{i}{n}\cdot p_i\
 i\cdot p_i\le1-\sum_{j\lt i}p_j\
 p_i\in[0,1]
 $$
-Now it can be checked that the solution $p_i=0$ for $i\le\tau$ and $p_i\frac{\tau}{n}(\frac{1}{i-1}-\frac{1}{i})$ for $\tau\le i\le n$ is a feasible solution, where $\tau$ is defined by the smallest value s.t. $H_{n-1}-H_{\tau-1}\le1$.</p>
+Now it can be checked that the solution <span class="arithmatex">\(p_i=0\)</span> for <span class="arithmatex">\(i\le\tau\)</span> and <span class="arithmatex">\(p_i\frac{\tau}{n}(\frac{1}{i-1}-\frac{1}{i})\)</span> for <span class="arithmatex">\(\tau\le i\le n\)</span> is a feasible solution, where <span class="arithmatex">\(\tau\)</span> is defined by the smallest value s.t. <span class="arithmatex">\(H_{n-1}-H_{\tau-1}\le1\)</span>.</p>
 <p>Finally we can get a stopping strategy whose success probability matches that of the LP. Indeed solve the LP.</p>
 </blockquote>
-<p>For $i^{th}$ position if we've not picked an item already and if this item is the best so far, pick it with probability $\frac{ip_i}{1-\sum_{j\lt i}p_j}$. By the LP constraint, this probability $\in[0,1]$. More over, removing the conditioning shows we pick an item at location $i$ with probability $p_i$, and a calculation similar to the one above shows that the algorithm's success probability is $\sum_iip_i/n$, the same as the LP.</p>
+<p>For <span class="arithmatex">\(i^{th}\)</span> position if we've not picked an item already and if this item is the best so far, pick it with probability <span class="arithmatex">\(\frac{ip_i}{1-\sum_{j\lt i}p_j}\)</span>. By the LP constraint, this probability <span class="arithmatex">\(\in[0,1]\)</span>. More over, removing the conditioning shows we pick an item at location <span class="arithmatex">\(i\)</span> with probability <span class="arithmatex">\(p_i\)</span>, and a calculation similar to the one above shows that the algorithm's success probability is <span class="arithmatex">\(\sum_iip_i/n\)</span>, the same as the LP.</p>
 <h2 id="extension-game-theoretic-issues">Extension: Game-Theoretic Issues</h2>
-<p>In the optimal strategy, we don't pick any items in the first $n/e$ timesteps, and then we pick items with quite varying probabilities.</p>
-<p>Suppose we insist that for each position $i$, the probability of picking the item at position $i$ is the same.</p>
-<p>Let's fix any such strategy, and write an LP capturing the success probbailities of this strategy with uniformity condition as a constraint. Suppose $p\le1/n$ is this uniform probability. Again, let $q_i$ be the probability of picking an item at position $i$, conditioned on it being the best so far. Note that we may pick items even if they are not the best so far, just to satisfy the uniformity condition; hence instead of $q_i=i\cdot p$, we have $q_i\le ip$.</p>
-<p>By same argument constraint in LP, we know that $q_i\le1-(i-1)p$.</p>
-<p>And the strategy's success probability is again $\sum q_i/n$. So we can now solve the LP
+<p>In the optimal strategy, we don't pick any items in the first <span class="arithmatex">\(n/e\)</span> timesteps, and then we pick items with quite varying probabilities.</p>
+<p>Suppose we insist that for each position <span class="arithmatex">\(i\)</span>, the probability of picking the item at position <span class="arithmatex">\(i\)</span> is the same.</p>
+<p>Let's fix any such strategy, and write an LP capturing the success probbailities of this strategy with uniformity condition as a constraint. Suppose <span class="arithmatex">\(p\le1/n\)</span> is this uniform probability. Again, let <span class="arithmatex">\(q_i\)</span> be the probability of picking an item at position <span class="arithmatex">\(i\)</span>, conditioned on it being the best so far. Note that we may pick items even if they are not the best so far, just to satisfy the uniformity condition; hence instead of <span class="arithmatex">\(q_i=i\cdot p\)</span>, we have <span class="arithmatex">\(q_i\le ip\)</span>.</p>
+<p>By same argument constraint in LP, we know that <span class="arithmatex">\(q_i\le1-(i-1)p\)</span>.</p>
+<p>And the strategy's success probability is again <span class="arithmatex">\(\sum q_i/n\)</span>. So we can now solve the LP
 $$
 \max\sum_i\frac{1}{n}\cdot q_i\
 q_i\le1-(i-1)\cdot p\
 q_i\le i\cdot p\
 q_i\in[0,1],p\ge0
 $$
-Buchbinder et al. shows the optimal value of this LP is at least $1-1/\sqrt 2\approx 0.29$.</p>
+Buchbinder et al. shows the optimal value of this LP is at least <span class="arithmatex">\(1-1/\sqrt 2\approx 0.29\)</span>.</p>
 <h2 id="extension-multiple-items">Extension: Multiple Items</h2>
-<p>Suppose we want $k$ items, maximizing the expected sum of these $k$ values.</p>
-<p>Suppose the set of $k$ largest values is $S^<em>\subseteq[n]$, and their total value is $V^</em>=\sum_{i\in S}v_i$. It is easy to get an algorithm with expected value $\Omega(V^*)$.</p>
-<p>E.g., split the $n$ items into $k$ groups of $n/k$ items, and run the single-item algorithm separately on each of these. Or ignore the first half of the elements, look at the value $\hat v$ of the $(1-\epsilon)k/2^{th}$ highest value item in this set, and pick all items in the second half with values grater than $\hat v$. And indeed, ignoring half the items must lose a constant factor in expectation.</p>
-<p>But here's an algorithm that gives value $V^*(1-\delta)$ where $\delta\rarr 0$ as $k\rarr\infty$. We set $\delta=O(k^{-1/3}\log k)$ and $\epsilon=\delta/2$. Ignore the first $\delta n$ items.</p>
-<p>Now look at the value $\hat v$ of the $(1-\epsilon)\delta k^{th}$-highest valued item in this ignored set, and pick the first $k$ elements with values grater than $\hat v$ among the remaining $(1-\delta)n$ elements.</p>
+<p>Suppose we want <span class="arithmatex">\(k\)</span> items, maximizing the expected sum of these <span class="arithmatex">\(k\)</span> values.</p>
+<p>Suppose the set of <span class="arithmatex">\(k\)</span> largest values is <span class="arithmatex">\(S^*\subseteq[n]\)</span>, and their total value is <span class="arithmatex">\(V^*=\sum_{i\in S}v_i\)</span>. It is easy to get an algorithm with expected value <span class="arithmatex">\(\Omega(V^*)\)</span>.</p>
+<p>E.g., split the <span class="arithmatex">\(n\)</span> items into <span class="arithmatex">\(k\)</span> groups of <span class="arithmatex">\(n/k\)</span> items, and run the single-item algorithm separately on each of these. Or ignore the first half of the elements, look at the value <span class="arithmatex">\(\hat v\)</span> of the <span class="arithmatex">\((1-\epsilon)k/2^{th}\)</span> highest value item in this set, and pick all items in the second half with values grater than <span class="arithmatex">\(\hat v\)</span>. And indeed, ignoring half the items must lose a constant factor in expectation.</p>
+<p>But here's an algorithm that gives value <span class="arithmatex">\(V^*(1-\delta)\)</span> where <span class="arithmatex">\(\delta\rightarrow 0\)</span> as <span class="arithmatex">\(k\rightarrow\infty\)</span>. We set <span class="arithmatex">\(\delta=O(k^{-1/3}\log k)\)</span> and <span class="arithmatex">\(\epsilon=\delta/2\)</span>. Ignore the first <span class="arithmatex">\(\delta n\)</span> items.</p>
+<p>Now look at the value <span class="arithmatex">\(\hat v\)</span> of the <span class="arithmatex">\((1-\epsilon)\delta k^{th}\)</span>-highest valued item in this ignored set, and pick the first <span class="arithmatex">\(k\)</span> elements with values grater than <span class="arithmatex">\(\hat v\)</span> among the remaining <span class="arithmatex">\((1-\delta)n\)</span> elements.</p>
 <p>Second part of lecture notes on martingales is by Elias Koutsoupias (Oxford)</p>
 <h1 id="martingales">Martingales</h1>
-<p>~~中文翻译：”鞅“，之前从来没听说过。~~</p>
+<p><del>中文翻译：”鞅“，之前从来没听说过。</del></p>
 <p>Chernoff bounds cannot be used for sums of dependent variables.</p>
 <p>If the dependency of particular type, the Azuma-Hoeffding inequality provides a general concentration bound.</p>
-<p><strong>Definition of martingale</strong>: A martingale is a sequence of random variables $X_0,X_1,\cdots$ of bounded expectation s.t. for every $i\ge0$,
+<p><strong>Definition of martingale</strong>: A martingale is a sequence of random variables <span class="arithmatex">\(X_0,X_1,\cdots\)</span> of bounded expectation s.t. for every <span class="arithmatex">\(i\ge0\)</span>,
 $$
 \mathbb E[X_{i+1}|X_0,\cdots,X_i]=X_i.
 $$
-More generally, a sequence of random variables $Z_0,Z_1,\cdots$ is a martingale w.r.t. the sequence $X_0,X_1,\cdots$ if for all $n\gt0$ the following conditions hold:</p>
+More generally, a sequence of random variables <span class="arithmatex">\(Z_0,Z_1,\cdots\)</span> is a martingale w.r.t. the sequence <span class="arithmatex">\(X_0,X_1,\cdots\)</span> if for all <span class="arithmatex">\(n\gt0\)</span> the following conditions hold:</p>
 <ul>
-<li>$Z_n$ is a function of $X_0,\cdots,X_n$</li>
-<li>$\mathbb E[|Z_n|]\le\infty$</li>
-<li>$\mathbb E[Z_{n+1}|X_0,\cdots,X_n]=Z_n$</li>
+<li><span class="arithmatex">\(Z_n\)</span> is a function of <span class="arithmatex">\(X_0,\cdots,X_n\)</span></li>
+<li><span class="arithmatex">\(\mathbb E[|Z_n|]\le\infty\)</span></li>
+<li><span class="arithmatex">\(\mathbb E[Z_{n+1}|X_0,\cdots,X_n]=Z_n\)</span></li>
 </ul>
 <p>Here are some example of martingales.</p>
 <h2 id="gamblers-fortune">Gambler's Fortune</h2>
-<p>A gambler plays a sequence of <em>fair</em> games. Let $X_i$ be the amount that the gambler's total winnings immediately after the $i$-th game. Since the games are fair, $\mathbb E[X_i]=0$ and $\mathbb E[Z_{i+1}|X_0,\cdots, X_i]=Z_i+\mathbb E[X_{i+1}]=Z_i$, which shows that very finite sequence $Z_0,Z_1,\cdots,Z_n$ is a martingale. This is a generalization of the simple random walk on a line. The gambler can use the past outcomes and any algorithm to calculate the amount of the next bet.</p>
+<p>A gambler plays a sequence of <em>fair</em> games. Let <span class="arithmatex">\(X_i\)</span> be the amount that the gambler's total winnings immediately after the <span class="arithmatex">\(i\)</span>-th game. Since the games are fair, <span class="arithmatex">\(\mathbb E[X_i]=0\)</span> and <span class="arithmatex">\(\mathbb E[Z_{i+1}|X_0,\cdots, X_i]=Z_i+\mathbb E[X_{i+1}]=Z_i\)</span>, which shows that very finite sequence <span class="arithmatex">\(Z_0,Z_1,\cdots,Z_n\)</span> is a martingale. This is a generalization of the simple random walk on a line. The gambler can use the past outcomes and any algorithm to calculate the amount of the next bet.</p>
 <h2 id="balls-and-bins">Balls and Bins</h2>
-<p>Suppose that we throw $m$ balls into $n$ bins independently and uniformly at random.</p>
-<p>Consider the expected number of empty bins. Let $X_i$ be the random variable representing the bin into which the $i$-th ball falls. Let $Y$ be a random variable representing the number of empty bins. Then the sequence of random variables
+<p>Suppose that we throw <span class="arithmatex">\(m\)</span> balls into <span class="arithmatex">\(n\)</span> bins independently and uniformly at random.</p>
+<p>Consider the expected number of empty bins. Let <span class="arithmatex">\(X_i\)</span> be the random variable representing the bin into which the <span class="arithmatex">\(i\)</span>-th ball falls. Let <span class="arithmatex">\(Y\)</span> be a random variable representing the number of empty bins. Then the sequence of random variables
 $$
 Z_i=\mathbb E[Y|X_1,\cdots,X_i]
 $$
-is a martingale. Clearly $Z_i$ is a function of the $X_1,\cdots,X_i$'s and has bounded expectation. Furthermore
+is a martingale. Clearly <span class="arithmatex">\(Z_i\)</span> is a function of the <span class="arithmatex">\(X_1,\cdots,X_i\)</span>'s and has bounded expectation. Furthermore
 $$
 \mathbb E[Z_{i+1}|X_1,\cdots,X_i]=\mathbb E[\mathbb E[Y|X_1,\cdots,X_i,X_{i+1}]|X_1,\cdots,X_i]\
 =\mathbb E[Y|X_1,\cdots,X_i]=Z_i
 $$
-We can view $Z_i$ as an estimate of $Y$ after having observed the outcomes $X_1,\cdots,X_i$. At the beginning $Z_0$ is a crude estimate, simply the expectation of $Y$. As we add more balls to the bins. $Z_i$'s give improved estimates of $Y$, and at the end we get the exact value $Z_m=Y$.</p>
+We can view <span class="arithmatex">\(Z_i\)</span> as an estimate of <span class="arithmatex">\(Y\)</span> after having observed the outcomes <span class="arithmatex">\(X_1,\cdots,X_i\)</span>. At the beginning <span class="arithmatex">\(Z_0\)</span> is a crude estimate, simply the expectation of <span class="arithmatex">\(Y\)</span>. As we add more balls to the bins. <span class="arithmatex">\(Z_i\)</span>'s give improved estimates of <span class="arithmatex">\(Y\)</span>, and at the end we get the exact value <span class="arithmatex">\(Z_m=Y\)</span>.</p>
 <h2 id="doob-martingales">Doob Martingales</h2>
-<p>The balls and bins is a typical <strong>doob martingale</strong>. Doob martingales are processes in which we obtain a sequence of improved estimates of the value of a random variable as information about it is revealed progressively. More precisely, suppose $Y$ is a r.v. that is a function of random variables $X_0,X_1,\cdots$. As we observe the sequence of random variables $X_0,\cdots,X_n$, we improve our estimates of $Y$. The sequence of the mean estimates
+<p>The balls and bins is a typical <strong>doob martingale</strong>. Doob martingales are processes in which we obtain a sequence of improved estimates of the value of a random variable as information about it is revealed progressively. More precisely, suppose <span class="arithmatex">\(Y\)</span> is a r.v. that is a function of random variables <span class="arithmatex">\(X_0,X_1,\cdots\)</span>. As we observe the sequence of random variables <span class="arithmatex">\(X_0,\cdots,X_n\)</span>, we improve our estimates of <span class="arithmatex">\(Y\)</span>. The sequence of the mean estimates
 $$
 Z_t=\mathbb E[Y|X_0,\cdots,X_t]
 $$
-form a martingale w.r.t. the sequence $X_0,\cdots,X_n$ (provided that $Z_t$'s bounded). Indeed, when we argued that the balls and bins process is a martingale, we used no property of the experiment, therefore the following holds in general
+form a martingale w.r.t. the sequence <span class="arithmatex">\(X_0,\cdots,X_n\)</span> (provided that <span class="arithmatex">\(Z_t\)</span>'s bounded). Indeed, when we argued that the balls and bins process is a martingale, we used no property of the experiment, therefore the following holds in general
 $$
 \mathbb E[Z_{t+1}|X_0,\cdots,X_t]\
 =\mathbb E[\mathbb E[Y|X_0,\cdots,X_t,X_{t+1}]|X_0,\cdots,X_t]\
 =\mathbb E[Y|X_0,\cdots,X_t]=Z_t
 $$</p>
 <h1 id="azuma-hoeffding-inequality">Azuma-Hoeffding Inequality</h1>
-<p>Let $X_0,\cdots,X_n$ be a martingale s.t. $|X_i-X_{i-1}|\le c_i$.</p>
-<p>Then for any $\lambda\gt0$,
+<p>Let <span class="arithmatex">\(X_0,\cdots,X_n\)</span> be a martingale s.t. <span class="arithmatex">\(|X_i-X_{i-1}|\le c_i\)</span>.</p>
+<p>Then for any <span class="arithmatex">\(\lambda\gt0\)</span>,
 $$
-\mathbb P(X_n-X_0\ge\lambda)\le\exp(-\frac{\lambda^2}{2\sum_{i=1}^nc_i^2}),
+\mathbb P(X_n-X_0\ge\lambda)\le\exp(-\frac{\lambda<sup>2}{2\sum_{i=1}</sup>nc_i^2}),
 $$
 and
 $$
-\mathbb P(X_n-X_0\le-\lambda)\le\exp(-\frac{\lambda^2}{2\sum_{i=1}^nc_i^2}).
+\mathbb P(X_n-X_0\le-\lambda)\le\exp(-\frac{\lambda<sup>2}{2\sum_{i=1}</sup>nc_i^2}).
 $$
 Proof of the first inequality, (similar proof for second inequality):</p>
 <blockquote>
 <p>By applying Markov's inequality to an appropriate random variable and it is similar to the proof of Chernoff's bounds.</p>
-<p>We use the variables $Y_i=X_i-X_{i-1}$. The step of the proof:</p>
+<p>We use the variables <span class="arithmatex">\(Y_i=X_i-X_{i-1}\)</span>. The step of the proof:</p>
 <ol>
 <li>
-<p>We use Chernoff bounds and instead of bounding $\mathbb P(X_n-X_0\ge\lambda)$, we bound $\mathbb P(\exp(t(X_n-X_0))\ge\exp(t\lambda))$:
+<p>We use Chernoff bounds and instead of bounding <span class="arithmatex">\(\mathbb P(X_n-X_0\ge\lambda)\)</span>, we bound <span class="arithmatex">\(\mathbb P(\exp(t(X_n-X_0))\ge\exp(t\lambda))\)</span>:
 $$
   \mathbb P(\exp(t(X_n-X_0))\ge\exp(t\lambda))\le\exp(-t\lambda)\mathbb E[\exp(t(X_n-X_0))].
 $$
-  Then focus on $\mathbb E[\exp(t(X_n-X_0))]$, which can be replaced by $Y_i$'s
+  Then focus on <span class="arithmatex">\(\mathbb E[\exp(t(X_n-X_0))]\)</span>, which can be replaced by <span class="arithmatex">\(Y_i\)</span>'s
 $$
   \mathbb E[\exp(t(X_n-X_0))]=\mathbb E[\prod_{i=1}^n\exp(tY_i)],
 $$
-  by telescoping, $X_n-X_0\sum_{i=1}^n(X_i-X_{i-1})=\sum_{i=1}^nY_i$.</p>
+  by telescoping, <span class="arithmatex">\(X_n-X_0\sum_{i=1}^n(X_i-X_{i-1})=\sum_{i=1}^nY_i\)</span>.</p>
 </li>
 <li>
-<p>We can't use $\mathbb E[Y_1Y_2]=\mathbb E[Y_1]\mathbb E[Y_2]$ since $Y_i$s are not independent. Consider the conditional expectation.
+<p>We can't use <span class="arithmatex">\(\mathbb E[Y_1Y_2]=\mathbb E[Y_1]\mathbb E[Y_2]\)</span> since <span class="arithmatex">\(Y_i\)</span>s are not independent. Consider the conditional expectation.
 $$
   \mathbb E[\prod_{i=1}^n\exp(tY_i)|X_0,\cdots,X_{n-1}]\
   =(\prod_{i=1}^{n-1}\exp(tY_i))\mathbb E[\exp(tY_n)|X_0,\cdots,X_{n-1}]
 $$
-  because for fixed $X_0,\cdots,X_{n-1}$, all but the last factor in the product are constant and can be moved out.</p>
+  because for fixed <span class="arithmatex">\(X_0,\cdots,X_{n-1}\)</span>, all but the last factor in the product are constant and can be moved out.</p>
 </li>
 </ol>
-<p>Then find an upper bound on $\mathbb E[\exp(tY_n)|X_0,\cdots,X_{n-1}]$.</p>
+<p>Then find an upper bound on <span class="arithmatex">\(\mathbb E[\exp(tY_n)|X_0,\cdots,X_{n-1}]\)</span>.</p>
 <ul>
 <li>
-<p>Observe that $\mathbb E[Y_i|X_0,\cdots,X_{i-1}]=0$ by martingale property.
+<p>Observe that <span class="arithmatex">\(\mathbb E[Y_i|X_0,\cdots,X_{i-1}]=0\)</span> by martingale property.
     $$
     \mathbb E[Y_i|X_0,\cdots,X_{i-1}]\
     =\mathbb E[X_i-X_{i-1}|X_0,\cdots,X_{i-1}]\
@@ -2505,13 +9606,13 @@ $$
     $$</p>
 </li>
 <li>
-<p>Then by the condition $|Y_i|\le c_i$,
+<p>Then by the condition <span class="arithmatex">\(|Y_i|\le c_i\)</span>,
     $$
     \exp(tY_i)\le\beta_i+\gamma_iY_i
     $$
-    for $\beta_i=(e^{tc_i}+e^{-tc_i})/2\le\exp((tc_i)^2/2)$, $\gamma_i=(e^{tc_i}+e^{-tc_i})/(2c_i)$. Then rewrite $Y_i$ as $Y_i=rc_i+(1-r)(-c_i)$, where $r=\frac{1+Y_i/c_i}{2}\in[0,1]$, then use the convexity of $e^{tx}$ to get
+    for <span class="arithmatex">\(\beta_i=(e^{tc_i}+e^{-tc_i})/2\le\exp((tc_i)^2/2)\)</span>, <span class="arithmatex">\(\gamma_i=(e^{tc_i}+e^{-tc_i})/(2c_i)\)</span>. Then rewrite <span class="arithmatex">\(Y_i\)</span> as <span class="arithmatex">\(Y_i=rc_i+(1-r)(-c_i)\)</span>, where <span class="arithmatex">\(r=\frac{1+Y_i/c_i}{2}\in[0,1]\)</span>, then use the convexity of <span class="arithmatex">\(e^{tx}\)</span> to get
     $$
-    e^{tY_i}\le re^{tc_i}+(1-r)e^{-tc_i}\
+    e^{tY_i}\le re<sup>{tc_i}+(1-r)e</sup>{-tc_i}\
     =\beta_i+\gamma_iY_i.
     $$</p>
 </li>
@@ -2526,30 +9627,30 @@ $$
 <p>It follows that
 $$
   \mathbb E[\prod_{i=1}^n\exp(tY_i)]=\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)\times\exp(tY_n)|X_0,\cdots,X_{n-1}]\
-  \le\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)]\exp((tc_n)^2/2).
+  \le\mathbb E[\prod_{i=1}<sup>{n-1}\exp(tY_i)]\exp((tc_n)</sup>2/2).
 $$</p>
 <ol>
 <li>
 <p>Then take expectations on both sides to get rid of the conditional expectation:
 $$
   \mathbb E[\prod_{i=1}^n\exp(tY_i)]=\mathbb E[\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)|X_0,\cdots,X_{n-1}]]\
-  \le\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)]\exp((tc_n)^2/2).
+  \le\mathbb E[\prod_{i=1}<sup>{n-1}\exp(tY_i)]\exp((tc_n)</sup>2/2).
 $$</p>
 </li>
 <li>
 <p>Then use same standard techniques</p>
 </li>
 <li>
-<p>By induction: $\mathbb E[\prod_{i=1}^n\exp(tY_i)]\le\prod_{i=1}^n\exp((tc_i^2)/2)=\exp(t^2\sum_{i=1}^nc_i^2/2)$</p>
+<p>By induction: <span class="arithmatex">\(\mathbb E[\prod_{i=1}^n\exp(tY_i)]\le\prod_{i=1}^n\exp((tc_i^2)/2)=\exp(t^2\sum_{i=1}^nc_i^2/2)\)</span></p>
 </li>
-<li>Therefore $\mathbb P(\exp(t(X_n-X_0))\ge\exp(\lambda t))\le\exp(-\lambda t)\exp(t^2\sum_{i=1}^nc_i^2/2)$</li>
-<li>Set $t=\lambda/\sum_{i=1}^nc_i^2$ to minimize the above expression and get the bound of the theorem.</li>
+<li>Therefore <span class="arithmatex">\(\mathbb P(\exp(t(X_n-X_0))\ge\exp(\lambda t))\le\exp(-\lambda t)\exp(t^2\sum_{i=1}^nc_i^2/2)\)</span></li>
+<li>Set <span class="arithmatex">\(t=\lambda/\sum_{i=1}^nc_i^2\)</span> to minimize the above expression and get the bound of the theorem.</li>
 </ol>
 </blockquote>
 <h2 id="apply-ah-bounds-on-gamblers-fortune">Apply AH Bounds on Gambler's Fortune</h2>
-<p>A gambler plays a sequence of fair games. We have seen that if $Z_i$ denotes the gambler's total winnings immediately after the $i$-th game, the sequence $Z_0,\cdots,Z_n$ is a martingale. Suppose that the gambler has a very sophisticated algorithm to decide the amount that he bets every day that takes into account past bets and outcomes. Since the games are fair, the expected gain $Z_n$ is zero.</p>
+<p>A gambler plays a sequence of fair games. We have seen that if <span class="arithmatex">\(Z_i\)</span> denotes the gambler's total winnings immediately after the <span class="arithmatex">\(i\)</span>-th game, the sequence <span class="arithmatex">\(Z_0,\cdots,Z_n\)</span> is a martingale. Suppose that the gambler has a very sophisticated algorithm to decide the amount that he bets every day that takes into account past bets and outcomes. Since the games are fair, the expected gain <span class="arithmatex">\(Z_n\)</span> is zero.</p>
 <p>Winning is not concentrated around the mean value in general.</p>
-<p>For example, the case that gambler puts higher and higher bets. Suppose now that there is a bound on the size of bets, By AH inequality, the final winnings are concentrated with high probability in $[-k,k]$ where $k=O(\sqrt{n\log n})$.</p>
+<p>For example, the case that gambler puts higher and higher bets. Suppose now that there is a bound on the size of bets, By AH inequality, the final winnings are concentrated with high probability in <span class="arithmatex">\([-k,k]\)</span> where <span class="arithmatex">\(k=O(\sqrt{n\log n})\)</span>.</p>
 
 
 
@@ -2573,9 +9674,55 @@ $$</p>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../8FasterDimRed/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8 Faster Dimensionality Reduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                8 Faster Dimensionality Reduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../10InvertibleBloomFilters/" class="md-footer__link md-footer__link--next" aria-label="Next: 10 Invertible Bloom Filters">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                10 Invertible Bloom Filters
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2601,12 +9748,14 @@ $$</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "header.autohide", "content.code.copy", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="../../../javascripts/config.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

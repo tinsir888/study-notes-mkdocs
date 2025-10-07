@@ -21,7 +21,7 @@ Karger's min cut algorithm and its extension. It's simple for finding the *minim
 
 # Clustering via Graph Cuts
 
-The *minimum cut* of an undirected graph $G=(V,E)$ is a partition of the nodes into two groups $V_1,V_2$ (s.t. $V=V_1\cup V_2$ and $V_1\cap V_2=\empty$) so that the number of edges between $V_1$ and $V_2$ is minimized.
+The *minimum cut* of an undirected graph $G=(V,E)$ is a partition of the nodes into two groups $V_1,V_2$ (s.t. $V=V_1\cup V_2$ and $V_1\cap V_2=\emptyset$) so that the number of edges between $V_1$ and $V_2$ is minimized.
 
 Variant of cut problem:
 
@@ -90,7 +90,7 @@ The size of the minimum cut is at most $2|E|\over n$.
 > Consider the partition of $V$ into two pieces, one containing a single node $u$, and the other containing the remaining $n-1$ nodes. The size of this cut is $degree(u)$. Since this is a valid cut, the minimum cut cannot be bigger than this. i.e.,
 > $$
 > \forall u\in V, mincut\le degree(u)\\
-> \Rarr mincut\le\min_{u\in V}(degree(u))\le\text{avg}_{u\in V}(degree(u))=\frac{2|E|}{n}.
+> \Rightarrow mincut\le\min_{u\in V}(degree(u))\le\text{avg}_{u\in V}(degree(u))=\frac{2|E|}{n}.
 > $$
 
 ## Fact 4

@@ -15,7 +15,7 @@ abbrlink: 70458c40
 
 # Recall
 
-Recall the problem of **nearest neighbor search**: Randomized $c$-approximate $R$-near neighbor search. Recall that given a set $P$ of $n$ points in $\mathbb R^d$ and parameters $R\gt0,\delta\gt0$. Also given a distance function $dist:\mathbb R^d\times\mathbb R^d\rarr\mathbb R$. For a query point $q$, if there is an $R$-near neighbor $p$ of $q$ ($dist(p,q)\le R$), we must report some point $p'$ that is a $cR$-near neighbor of $q$ ($dist(p',q)\le cR$) with probability $1-\delta$.
+Recall the problem of **nearest neighbor search**: Randomized $c$-approximate $R$-near neighbor search. Recall that given a set $P$ of $n$ points in $\mathbb R^d$ and parameters $R\gt0,\delta\gt0$. Also given a distance function $dist:\mathbb R^d\times\mathbb R^d\rightarrow\mathbb R$. For a query point $q$, if there is an $R$-near neighbor $p$ of $q$ ($dist(p,q)\le R$), we must report some point $p'$ that is a $cR$-near neighbor of $q$ ($dist(p',q)\le cR$) with probability $1-\delta$.
 
 **Sensitive Hash Functions**. Family of hash functions $\mathcal H$ to be $(R,cR,P_1,P_2)$-sensitive for $dist$ if
 
@@ -66,7 +66,7 @@ Assume first that $\forall i:|p_i-q_i|\le w$. Then the above equals
 $$
 1-\frac{\sum_{i=1}^d|p_i-q_i|}{dw}=1-\frac{dist(p,q)}{dw}\le1-\frac{cR}{dw}
 $$
-On the other hand, assume $\exist i:|p_i-q_i|\gt w$, then the above has upper bound:
+On the other hand, assume $\exists i:|p_i-q_i|\gt w$, then the above has upper bound:
 $$
 \Pr_{h\sim\mathcal H}[h(p)=h(q)]=1-\frac{\sum_{i=1}^d\min\{w,|p_i-q_i|\}}{dw}\\
 \le 1-\frac{w}{dw}\le1-\frac{cR}{dw}
@@ -98,13 +98,13 @@ Goal: Use the LSH. For LSH we need to distance metric. Which is the opposite of 
 $$
 dist_J(A,B)=1-J(A,B)
 $$
-How to define LSH function for this distance metric? Use *min-wise independent* families of hash function. A family of hash functions $\mathcal H:U\rarr\mathbb R$ is **min-wise independent** if $\forall x\in U,S\subset U$ with $x\notin S$, it holds that
+How to define LSH function for this distance metric? Use *min-wise independent* families of hash function. A family of hash functions $\mathcal H:U\rightarrow\mathbb R$ is **min-wise independent** if $\forall x\in U,S\subset U$ with $x\notin S$, it holds that
 $$
 \Pr_{h\sim\mathcal H}[h(x)\lt\min_{y\in S}h(y)]=\frac{1}{|S|+1}.
 $$
 The above definition means that in any set, each element has exactly the same probability of receiving the smallest hash value. We assume that any $h\in\mathcal H$ returns distinct values for all $x\in U$ i.e. $h(x)\neq h(y)$ for any $x\neq y$ and any $h\in\mathcal H$.
 
-Assume that we have a min-wise independent family of hash functions $\mathcal H$ and define from it a new family of hash function $\mathcal G_\mathcal H\subset 2^U\rarr U:$
+Assume that we have a min-wise independent family of hash functions $\mathcal H$ and define from it a new family of hash function $\mathcal G_\mathcal H\subset 2^U\rightarrow U:$
 $$
 \mathcal G_\mathcal H=\{g_h(A)=\arg\min_{x\in A}h(x)|h\in\mathcal H\}.
 $$
@@ -212,7 +212,7 @@ Then consider the distribution of $\langle p-q,u\rangle$:
 $$
 \langle p-q,u\rangle=\sum_{i=1}^d(p_i-q_i)u_i\sim\mathcal N(0,\sum_i(p_i-q_i)^2)\\
 \sim\mathcal N(0,dist(p,q)^2)\sim dist(p,q)\cdot\mathcal N(0,1)\\
-\Rarr \langle p-q,u\rangle/w\sim (dist(p,q)/w)\cdot\mathcal N(0,1)\\
+\Rightarrow \langle p-q,u\rangle/w\sim (dist(p,q)/w)\cdot\mathcal N(0,1)\\
 $$
 By probability density function $f$ or $\mathcal N(0,1)$:
 $$

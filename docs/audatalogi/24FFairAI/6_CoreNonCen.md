@@ -33,11 +33,11 @@ There are some open problems and I am trying to answer.
 
 :question:What is the time complexity for verifying whether a given clustering is in the exact core?
 
-{% note danger flat %}
+!!! danger
 
-TL;DR It is a **NP-hard** problem.
+    TL;DR It is a **NP-hard** problem.
 
-{% endnote %}
+
 
 The analysis of verifying problem:
 

@@ -57,19 +57,19 @@ Turing machine $M$ with one input tape and $k$ work tapes. It includes:
 
 - Function
   $$
-  \delta:(Q\diagdown\{yes,no\})\times(\Sigma\cup\{\Delta\})\times\Gamma^k\rarr Q\times(\Gamma\diagdown\{\Delta\})^k\times\{L,S,R\}^{k+1}
+  \delta:(Q\diagdown\{yes,no\})\times(\Sigma\cup\{\Delta\})\times\Gamma^k\rightarrow Q\times(\Gamma\diagdown\{\Delta\})^k\times\{L,S,R\}^{k+1}
   $$
   is the **transition function**.
 
-{% note info flat %}
+!!! info
 
-状态转移方程的意思：
+    状态转移方程的意思：
 
-转移前：$(Q\diagdown\{yes,no\})$ 代表转移前状态，不能是接受或拒绝态（因为接受或拒绝就停机了）；$(\Sigma\cup\{\Delta\})$ 代表输入字符；$\Gamma^k$ 代表之前当前针头分别指 $k$ 个工作纸带对应位置的字符。
+    转移前：$(Q\diagdown\{yes,no\})$ 代表转移前状态，不能是接受或拒绝态（因为接受或拒绝就停机了）；$(\Sigma\cup\{\Delta\})$ 代表输入字符；$\Gamma^k$ 代表之前当前针头分别指 $k$ 个工作纸带对应位置的字符。
 
-转移后：$Q$ 代表转移后的状态，可以是接受或拒绝态；$(\Gamma\diagdown\{\Delta\})^k$ 表示针头分别在 $k$ 个工作纸带上对应位置写入的字符；$\{L,S,R\}^{k+1}$ 表示接下了输入纸带和 $k$ 个工作纸带应该左移（$L$）、右移（$R$），还是不动（$S$）。
+    转移后：$Q$ 代表转移后的状态，可以是接受或拒绝态；$(\Gamma\diagdown\{\Delta\})^k$ 表示针头分别在 $k$ 个工作纸带上对应位置写入的字符；$\{L,S,R\}^{k+1}$ 表示接下了输入纸带和 $k$ 个工作纸带应该左移（$L$）、右移（$R$），还是不动（$S$）。
 
-{% endnote %}
+
 
 Transition Function has following properties:
 
@@ -101,7 +101,7 @@ $\Lambda$: non-empty finite set, *output alphabet*. (Usually $\Lambda=\Sigma$)
 In each step of computation $M$ can choose to write a single symbol to the output tape. Then transition function:
 $$
 \delta:(Q\diagdown\{yes,no\})\times(\Sigma\cup\{\Delta\})\times\Gamma^k\\
-\rarr Q\times(\Gamma\diagdown\{\Delta\})^k\times(\Lambda\cup\{\epsilon\})\times\{L,S,R\}^{k+1}
+\rightarrow Q\times(\Gamma\diagdown\{\Delta\})^k\times(\Lambda\cup\{\epsilon\})\times\{L,S,R\}^{k+1}
 $$
 $\epsilon$ here means write nothing.
 
@@ -116,19 +116,19 @@ For a given input $x\in\Sigma^*$:
 
 Both time and space can be infinite. Space can be infinite when $M$ does not halt.
 
-:book:Definition of **time/space-bounded**: let $T:\mathbb N\rarr\mathbb N$ and $S:\mathbb N\rarr\mathbb N$ be functions with $T(n)\ge n$. We say $M$ is $T(n)$ time-bounded, if for every $x\in\Sigma^*$ we have $time_M(x)\le T(|x|)$. Similarly, $M$ is $S(n)$ space-bounded, if for every $x\in\Sigma^*$ we have $space_M(x)\le S(|x|)$.
+:book:Definition of **time/space-bounded**: let $T:\mathbb N\rightarrow\mathbb N$ and $S:\mathbb N\rightarrow\mathbb N$ be functions with $T(n)\ge n$. We say $M$ is $T(n)$ time-bounded, if for every $x\in\Sigma^*$ we have $time_M(x)\le T(|x|)$. Similarly, $M$ is $S(n)$ space-bounded, if for every $x\in\Sigma^*$ we have $space_M(x)\le S(|x|)$.
 
 Then define the first **complexity classes** based on time/space bounds.
 
 :book:Definition of $DTIME,DSPACE$: $DTIME(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded Turing machine and $DSPACE(S(n))$ is the class of languages computed by a $O(S(n))$ space Turing machine.
 
-{% note warning modern %}
+!!! warning
 
-$D$ 代表 deterministic （确定）。确定性图灵机每次状态转移只有一种。
+    $D$ 代表 deterministic （确定）。确定性图灵机每次状态转移只有一种。
 
-$N$ 代表 non-deterministic （非确定）。非确定性图灵机每次状态转移可能有多种，机器随机选择其中的一种进行转移。
+    $N$ 代表 non-deterministic （非确定）。非确定性图灵机每次状态转移可能有多种，机器随机选择其中的一种进行转移。
 
-{% endnote %}
+
 
 Why $O$ notation here?
 
@@ -197,11 +197,11 @@ $$
 DSPACE(S_1(n))\subsetneq DSPACE(S_2(n)).
 $$
 
-{% note info flat %}
+!!! info
 
-中文简单解释一下：图灵机的可用渐进存储空间越多，那么解决的问题也就越多。
+    中文简单解释一下：图灵机的可用渐进存储空间越多，那么解决的问题也就越多。
 
-{% endnote %}
+
 
 > It suffices to construct a $O(S_2(n))$ space bounded Turing machine $M$ s.t. $L(M)\not\in DSPACE(S_1(n))$.
 >

@@ -216,7 +216,7 @@ Suppose the set of $k$ largest values is $S^*\subseteq[n]$, and their total valu
 
 E.g., split the $n$ items into $k$ groups of $n/k$ items, and run the single-item algorithm separately on each of these. Or ignore the first half of the elements, look at the value $\hat v$ of the $(1-\epsilon)k/2^{th}$ highest value item in this set, and pick all items in the second half with values grater than $\hat v$. And indeed, ignoring half the items must lose a constant factor in expectation.
 
-But here's an algorithm that gives value $V^*(1-\delta)$ where $\delta\rarr 0$ as $k\rarr\infty$. We set $\delta=O(k^{-1/3}\log k)$ and $\epsilon=\delta/2$. Ignore the first $\delta n$ items.
+But here's an algorithm that gives value $V^*(1-\delta)$ where $\delta\rightarrow 0$ as $k\rightarrow\infty$. We set $\delta=O(k^{-1/3}\log k)$ and $\epsilon=\delta/2$. Ignore the first $\delta n$ items.
 
 Now look at the value $\hat v$ of the $(1-\epsilon)\delta k^{th}$-highest valued item in this ignored set, and pick the first $k$ elements with values grater than $\hat v$ among the remaining $(1-\delta)n$ elements.
 

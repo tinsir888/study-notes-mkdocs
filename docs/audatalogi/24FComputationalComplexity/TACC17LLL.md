@@ -104,13 +104,13 @@ Define $y+K=\{x+y|x\in K\}$ as the translate of $K$ by $y$.
 
 Minkowski's theorem says that every large enough symmetric convex set must contain a non-zero lattice point.
 
-:dart:Theorem 4 (Minkowski). Let $K\subseteq\R^n$ be a bounded symmetric convex set with $vol(K)\gt2^n$. Then $K\cap(\Z^n\diagdown\{\mathbf 0\})\neq\empty$.
+:dart:Theorem 4 (Minkowski). Let $K\subseteq\R^n$ be a bounded symmetric convex set with $vol(K)\gt2^n$. Then $K\cap(\Z^n\diagdown\{\mathbf 0\})\neq\emptyset$.
 
 :dart:Theorem 5 (Blichfeldt). Let $S\subseteq\R^n$ be a measurable set with $vol(S)\gt1$. Then there are $\mathbf s_1,\mathbf s_2\in S$ with $\mathbf s_1-\mathbf s_2\in\Z^n$.
 
 ## Minkowski's Theorem for General Lattices
 
-:dart:Theorem 6. (Minkowski's first theorem). Let $\Lambda$ be a lattice and $K$ be a symmetric convex set with $vol(K)\gt2^n\det(\Lambda)$. Then $K\cap(\Lambda\diagdown\{\mathbf 0\})\neq\empty$.
+:dart:Theorem 6. (Minkowski's first theorem). Let $\Lambda$ be a lattice and $K$ be a symmetric convex set with $vol(K)\gt2^n\det(\Lambda)$. Then $K\cap(\Lambda\diagdown\{\mathbf 0\})\neq\emptyset$.
 
 ## Shortest Vector
 
@@ -153,9 +153,9 @@ Input: $\mathbf b_1,\cdots,\mathbf b_n\in\R^n$
 Output: Orthogonal basis $\mathbf b^*_1,\cdots,\mathbf b^*_n$
 
 1. $\mathbf b_1^*\gets\mathbf b_1$
-2. $\mathbf b_2^*\gets\mathbf b_2-\mu_{1,2}\mathbf b_1^*$ with $\mu_{1,2}\gets\frac{\lang\mathbf b_2,\mathbf b_1^*\rang}{||\mathbf b_1^*||_2^2}$
+2. $\mathbf b_2^*\gets\mathbf b_2-\mu_{1,2}\mathbf b_1^*$ with $\mu_{1,2}\gets\frac{\langle\mathbf b_2,\mathbf b_1^*\rangle}{||\mathbf b_1^*||_2^2}$
 3. ...
-4. $\mathbf b_j^*\gets\mathbf b_j-\sum_{i\lt j}\mu_{i,j}\mathbf b_i^*$ with $\mu_{i,j}\gets\frac{\lang\mathbf b_j,\mathbf b_i^*\rang}{||\mathbf b_i^*||_2^2}\forall j=1,\cdots,n$
+4. $\mathbf b_j^*\gets\mathbf b_j-\sum_{i\lt j}\mu_{i,j}\mathbf b_i^*$ with $\mu_{i,j}\gets\frac{\langle\mathbf b_j,\mathbf b_i^*\rangle}{||\mathbf b_i^*||_2^2}\forall j=1,\cdots,n$
 
 施密特正交化，属于是复习大一上学的线性代数了。
 

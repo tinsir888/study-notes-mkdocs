@@ -32,7 +32,7 @@ Assume the distance between query point and its nearest neighbor is $R$, $c$-app
 
 abbr. LSH
 
-Distance: $dist:\mathbb R^d\times\mathbb R^d\rarr\mathbb R$. $\ell_1,\ell_2$, Manhattan, Hamming.....
+Distance: $dist:\mathbb R^d\times\mathbb R^d\rightarrow\mathbb R$. $\ell_1,\ell_2$, Manhattan, Hamming.....
 
 Hash function $h$ is $(R,cR,P_1,P_2)$-sensitive w.r.t. $dist$ if
 
@@ -127,13 +127,13 @@ Two types of failure:
 
 $E_1=\{\forall_i:g_i(q)\ne g_i(p^*)\}$
 
-$E_2=\{\sum_{i=1}^L|\{p:dist(p,q)\gt cR\and g_i(q)=g_i(p)\}|\gt3L\}$
+$E_2=\{\sum_{i=1}^L|\{p:dist(p,q)\gt cR\land g_i(q)=g_i(p)\}|\gt3L\}$
 
 If none of them happens, the results is correct.
 
 We want $\Pr[E_1\cup E_2]\le\Pr[E_1]+\Pr[E_2]\le1/2$.
 $$
-\Pr[E_2]\le\mathbb E[\sum_{i=1}^L|\{p:dist(p,q)\gt cR\and g_i(q)=g_i(p)\}|]/3L\\
+\Pr[E_2]\le\mathbb E[\sum_{i=1}^L|\{p:dist(p,q)\gt cR\land g_i(q)=g_i(p)\}|]/3L\\
 =\sum_{i=1}^L....\\
 \le L/3L=1/3\\
 \Pr[E_1]=\Pr[\forall i:g_i(p)\neq g_i(p^*)]\\
@@ -212,7 +212,7 @@ An LSH family $\mathcal H$ is used for efficient algorithm for approximate near 
 
 We need to amplify the gap between $P_1$ ad $P_2$.
 
-For parameters $k$ and $L$, we choose $L$ functions $g_j(q)=(h_{1,j}(q),\cdots,h_{k,j}(q))$, where $h_{t,j}(1\lt t\lt k,1\lt j\lt L)$ are chosen independently and uniformly at random from $\mathcal H$. We are also given a distance function dist: $\mathbb R^d\times\mathbb R^d\rarr\mathbb R$. These are the actual functions that we use to hash the data points.
+For parameters $k$ and $L$, we choose $L$ functions $g_j(q)=(h_{1,j}(q),\cdots,h_{k,j}(q))$, where $h_{t,j}(1\lt t\lt k,1\lt j\lt L)$ are chosen independently and uniformly at random from $\mathcal H$. We are also given a distance function dist: $\mathbb R^d\times\mathbb R^d\rightarrow\mathbb R$. These are the actual functions that we use to hash the data points.
 
 The data structure is constructed by placing each point $p$ from the input set into a bucket $g_j(p)$. This way the data structure uses only $O(nL)$ memory. It suffices that buckets store the pointers to data points, not the points themselves.
 

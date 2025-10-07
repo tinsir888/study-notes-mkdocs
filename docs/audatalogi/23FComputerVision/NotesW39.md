@@ -58,7 +58,7 @@ derivative r.w.t. $a_j^{(L)}$: $\frac{\partial J(W,b)}{\partial a_j^{(L)}}=a_j^{
 define error of unit j in layer l is: 
 $$
 \delta_j^{(l)}=\frac{\partial J(W,b)}{\partial z_j^{(l)}}\\
-=\sum_k\frac{\part J}{\part a_j^{(l)}}\times\frac{\partial a_j^{(l)}}{\partial z_j^{(l)}}\\
+=\sum_k\frac{\partial J}{\partial a_j^{(l)}}\times\frac{\partial a_j^{(l)}}{\partial z_j^{(l)}}\\
 =(a_j^{l}-y_j)\sigma'(z_j^{(l)})
 $$
 *proof of intermediate layers is the same*

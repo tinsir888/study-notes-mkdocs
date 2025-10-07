@@ -21,15 +21,15 @@ Lecture notes is based on *High Speed Hashing for Integers and Strings* by Mikke
 
 Universe $U$. Mapping randomly to a range $[m]=\{0,\cdots,m-1\}$.
 
-Truly random hash function $h:U\rarr[m]$.
+Truly random hash function $h:U\rightarrow[m]$.
 
 $h$ is idealized, can not be implemented. To represent a truly random hash functions, we need to store at least $|U|\log_2m$ bits. (too large, impossible!)
 
-Idea: hash functions contain only a small element or seed of randomness so that the hash function is sufficiently random for the desired application. e.g. Prime number $p$, for random hash function $h:[p]\rarr[0,\cdots,p-1]$ could be $h(x)=(ax+b)\mod p$ where $a,b$ are random numbers that together form the random seed describing the function.
+Idea: hash functions contain only a small element or seed of randomness so that the hash function is sufficiently random for the desired application. e.g. Prime number $p$, for random hash function $h:[p]\rightarrow[0,\cdots,p-1]$ could be $h(x)=(ax+b)\mod p$ where $a,b$ are random numbers that together form the random seed describing the function.
 
 ## Definition and Properties
 
-Definition 1: A hash function $h:U\rarr[m]$ is a random variable in the class of all functions $U\rarr[m]$, i.e., it consists of a random variable $h(x)$ for each $x\in U$.
+Definition 1: A hash function $h:U\rightarrow[m]$ is a random variable in the class of all functions $U\rightarrow[m]$, i.e., it consists of a random variable $h(x)$ for each $x\in U$.
 
 3 things we care about $h$:
 
@@ -39,7 +39,7 @@ Definition 1: A hash function $h:U\rarr[m]$ is a random variable in the class of
 
 # Universal Hashing
 
-To generate a random hash function $h:U\rarr[m]$ from a key universe $U$ to a set of hash values $[m]=\{0,\cdots,m-1\}$. We think of $h$ as a random variable following some distribution over functions $U\rarr[m]$. We want $h$ to be **universal** which means that for any given distinct keys $x,y\in U$, when $h$ is picked at random, we have low collision probability:
+To generate a random hash function $h:U\rightarrow[m]$ from a key universe $U$ to a set of hash values $[m]=\{0,\cdots,m-1\}$. We think of $h$ as a random variable following some distribution over functions $U\rightarrow[m]$. We want $h$ to be **universal** which means that for any given distinct keys $x,y\in U$, when $h$ is picked at random, we have low collision probability:
 $$
 \Pr_h[h(x)=h(y)]\le{1\over m}
 $$
@@ -49,11 +49,11 @@ $$
 $$
 Then $h$ is called **c-approximately universal**.
 
-Exercise 2.1 Is the truly independent hash function $h : U \rarr [m]$ universal?
+Exercise 2.1 Is the truly independent hash function $h : U \rightarrow [m]$ universal?
 
 > Yes.
 
-Exercise 2.2 If a hash function $h : U \rarr [m]$ has collision probability 0, how large must $m$ be?
+Exercise 2.2 If a hash function $h : U \rightarrow [m]$ has collision probability 0, how large must $m$ be?
 
 > $m\ge|U|$.
 
@@ -69,7 +69,7 @@ Exercise 2.3 Let $u \le m$. Is the identity function $f (x) = x$ a universal has
 
 Assume $m\lt u$ and $m\gt1$.
 
-The classic universal hash function is based on a prime number $p\ge u$. We pick a uniformly random $a\in[p]_+=\{1,\cdots,p-1\}$ and $b\in[p]=\{1,\cdots,p-1\}$, and define $h_{a,b}:[u]\rarr[m]$ by
+The classic universal hash function is based on a prime number $p\ge u$. We pick a uniformly random $a\in[p]_+=\{1,\cdots,p-1\}$ and $b\in[p]=\{1,\cdots,p-1\}$, and define $h_{a,b}:[u]\rightarrow[m]$ by
 $$
 h_{a,b}(x)=((ax+b)\text{ mod }p)\text{ mod }m
 $$
@@ -105,7 +105,7 @@ Lemma: These two equations define a 1-1 correspondence between pairs $(a,b)$ and
 >
 > Thus its bijection.
 
-Since $x\neq y$, by Fact above, $r=q\Lrarr a=0$. Thus when we pick $(a,b)\in[p]_+\times[p]$, we get $r\neq q$.
+Since $x\neq y$, by Fact above, $r=q\Leftrightarrow a=0$. Thus when we pick $(a,b)\in[p]_+\times[p]$, we get $r\neq q$.
 
 Why the inequality is strict?
 
@@ -140,7 +140,7 @@ if(y>=p) y-=p;
 
 Hashing from $w$-bit integers to $\ell$-bit integers.
 
-We pick a uniformly random odd $w$-bit integer $a$, and then we compute $h_a:[2^w]\rarr[2^\ell]$, as
+We pick a uniformly random odd $w$-bit integer $a$, and then we compute $h_a:[2^w]\rightarrow[2^\ell]$, as
 $$
 h_a(x)=\lfloor(ax\text{ mod }2^w)/2^{w-\ell}\rfloor.
 $$
@@ -169,11 +169,11 @@ Fact: If $\alpha$ is odd and $\beta\in[2^q]_+$, then $\alpha\beta\not\equiv0(\te
 
 # Strong Universality
 
-**Strong universality**: For $h:[u]\rarr[m]$, we consider pairwise events of the form that for given distinct keys $x,y\in[u]$ and possibly non-distinct hash values $q,r\in[m]$, we have $h(x)=q$ and $h(y)=r$. We say a random hash function $h:[u]\rarr[m]$ is strongly universal if the probability of every pairwise event is $1/m^2$.
+**Strong universality**: For $h:[u]\rightarrow[m]$, we consider pairwise events of the form that for given distinct keys $x,y\in[u]$ and possibly non-distinct hash values $q,r\in[m]$, we have $h(x)=q$ and $h(y)=r$. We say a random hash function $h:[u]\rightarrow[m]$ is strongly universal if the probability of every pairwise event is $1/m^2$.
 
 We note that if $h$ is strongly universal, it is also universal since
 $$
-\Pr[h(x)=h(y)]=\sum_{q\in[m]}\Pr[h(x)=q\and h(y)=q]=m/m^2=1/m
+\Pr[h(x)=h(y)]=\sum_{q\in[m]}\Pr[h(x)=q\land h(y)=q]=m/m^2=1/m
 $$
 Observation: An equivalent definition of strong universality is that each key is hashed uniformly into $[m]$, and that every two distinct keys are hashed independently.
 
@@ -181,7 +181,7 @@ Observation: An equivalent definition of strong universality is that each key is
 
 Emphasizing the independence, strong universality is also called **2-independence**, as it concerns a pair of two events. As for universality, we may accept some relaxed notion of strong universality e.g. *3-independence, k-independence*
 
-**c-approximately strongly universality**: $h:[U]\rarr[m]$ is c-approximately strongly universal if
+**c-approximately strongly universality**: $h:[U]\rightarrow[m]$ is c-approximately strongly universal if
 
 1. $h$ is c-approximately uniform, meaning for every $x\in U$ and for every hash value $q\in[m]$, we have $\Pr[h(x)=q]\le c/m$;
 2. Every pair of distinct keys hash independently.
@@ -192,7 +192,7 @@ Emphasizing the independence, strong universality is also called **2-independenc
 
 Basic idea: small samples can reason about the similarity of huge sets.
 
-First we consider sampling from a single set $A\subseteq U$ using a strongly universal hash function $h:U\rarr[m]$ and a threshold $t\in\{0,\cdots,m\}$. We now sample $x$ if $h(x)\lt t$, which by uniformity happens with probability $t/m$ for any $x$.
+First we consider sampling from a single set $A\subseteq U$ using a strongly universal hash function $h:U\rightarrow[m]$ and a threshold $t\in\{0,\cdots,m\}$. We now sample $x$ if $h(x)\lt t$, which by uniformity happens with probability $t/m$ for any $x$.
 
 Let $S_{h,t}(A)=\{x\in A|h(x)\lt t\}$ denote the resulting sample from $A$. Then by linearity of expectation, $\mathbb E[|S_{h,t}(A)|]=|A|\cdot t/m$. Conversely, this means that if we have $S_{h,t}(A)$, then we can estimate $|A|$ as $|S_{h,t}(A)|\cdot m/t$.
 
@@ -207,7 +207,7 @@ Sampling from different sets can be done in a distributed way.
 
 Application: In machine learning, we can store the samples of many different large sets; On the Internet, routers can store samples of the packets passing through.
 
-To get a fixed sampling probability $t/m$ for each $x\in U$, we only need that $h:U\rarr[m]$ is uniform. This ensures that the estimate $|S_{h,t}(A)|\cdot m/t$ of $A$ is unbiased.
+To get a fixed sampling probability $t/m$ for each $x\in U$, we only need that $h:U\rightarrow[m]$ is uniform. This ensures that the estimate $|S_{h,t}(A)|\cdot m/t$ of $A$ is unbiased.
 
 For $a\in A$, let $X_a=[h(a)\lt t],X=\sum_{a\in A}X_a$. Then $X=|S_{h,t}(A)|$, but the reasoning below applies when $X_a$ is any 0-1 indicator variable that depends only $h(a)$.
 
@@ -222,7 +222,7 @@ $$
 
 ## Multiply-mod-prime
 
-The classic strongly universal hash scheme is a multiply-mod-prime scheme. For some prime $p$, uniformly at random we pick $(a,b)\in[p]^2$ and define $h_{a,b}:[p]\rarr[p]$ by
+The classic strongly universal hash scheme is a multiply-mod-prime scheme. For some prime $p$, uniformly at random we pick $(a,b)\in[p]^2$ and define $h_{a,b}:[p]\rightarrow[p]$ by
 $$
 h_{a,b}(x)=(ax+b)\text{ mod }p.
 $$
@@ -234,7 +234,7 @@ For any bit-string $z$ and integers $j\gt i\ge0,z[i,j)=z[i,j-1]$ denotes the num
 $$
 z[i,j)=\lfloor(z\text{ mod }2^j)/2^i\rfloor.
 $$
-To get strongly universal hashing $[2^w]\rarr[2^\ell]$, we may pick any $\overline w\ge w+\ell-1$. For any pair $(a,b)\in[\overline w]^2$, we define $h_{a,b}:[2^w]\rarr[2^\ell]$ by
+To get strongly universal hashing $[2^w]\rightarrow[2^\ell]$, we may pick any $\overline w\ge w+\ell-1$. For any pair $(a,b)\in[\overline w]^2$, we define $h_{a,b}:[2^w]\rightarrow[2^\ell]$ by
 $$
 h_{a,b}(x)=(ax+b)[\overline w-\ell,\overline w).
 $$
@@ -244,9 +244,9 @@ It is strongly universal, proof omitted.
 
 There are more advanced algorithmic applications that need more powerful hash functions.
 
-**k-independent hash functions**: A hash random function $H:U\rarr[m]$ is k-independent if for any distinct keys $x_1,\cdots,x_k\in[u]$, the hash values $H(x_1),\cdots,H(x_k)$ are independent random variables, each uniformly distributed in $[m]$.
+**k-independent hash functions**: A hash random function $H:U\rightarrow[m]$ is k-independent if for any distinct keys $x_1,\cdots,x_k\in[u]$, the hash values $H(x_1),\cdots,H(x_k)$ are independent random variables, each uniformly distributed in $[m]$.
 
-From prime $p$, we can implement a k-independent $H:[p]\rarr[p]$ using $k$ random coefficients $a_0,\cdots,a_{k-1}\in[p]$, defining
+From prime $p$, we can implement a k-independent $H:[p]\rightarrow[p]$ using $k$ random coefficients $a_0,\cdots,a_{k-1}\in[p]$, defining
 $$
 H(x)=\sum_{i=0}^{k-1}a_ix^i\text{ mod }p.
 $$

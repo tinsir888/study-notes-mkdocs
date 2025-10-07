@@ -180,11 +180,11 @@ No matter what agent 1 bids, it is possible to "replace" the agent with an imagi
 >
 > Let $\succ_1$ be the preference ranking induced by $\mathbf b_1$ and consider all the goods according to this ranking: $h_1\succ_1h_2\succ_1\cdots\succ_1h_m$. Let $n_1=1\lt n_2\lt\cdots\lt n_k$ be the indices in this ordering of the goods assigned to agent 1 by round-robin($\mathbf b$). In round $r$, agent 1 receives good $h_{n_r}$. Thus $A_1=\{h_{n_1},h_{n_2},\cdots,h_{n_k}\}$.
 >
-> Recursively construct $v_1^*$ from $v_1$ over the rounds of RR. We define a sequence of intermediate bid vector $\mathbf b_1^r$ and valuation functions $v_1^r$. One for each round $r$ starting from the last round $k$, so that $v_1^*=v_1^1\and\mathbf b_1^*=\mathbf b_1^1$. For defining each $\mathbf b_1^r$, we use a number of auxiliary bid vectors. For any round $r$ we maintain that
+> Recursively construct $v_1^*$ from $v_1$ over the rounds of RR. We define a sequence of intermediate bid vector $\mathbf b_1^r$ and valuation functions $v_1^r$. One for each round $r$ starting from the last round $k$, so that $v_1^*=v_1^1\land\mathbf b_1^*=\mathbf b_1^1$. For defining each $\mathbf b_1^r$, we use a number of auxiliary bid vectors. For any round $r$ we maintain that
 >
 > 1. $v_1^r(A_1)=v_1(A_1)$
 > 2. $v_1^r(g)=v_1(g)\forall g\in M\diagdown A_1$
-> 3. $\mathbf b_1^r$ is truthful from round $r$ w.r.t. $v_1^r$, meaning that for every good that is no better than $h_{n_r}$, according to the preference ranking $\succ_1^r$ induced by $\mathbf b_1^r$. Formally $g\not\succ_1^rh_{n_r}\Rarr\mathbf b_1^r(g)=v_1^r(g)$.
+> 3. $\mathbf b_1^r$ is truthful from round $r$ w.r.t. $v_1^r$, meaning that for every good that is no better than $h_{n_r}$, according to the preference ranking $\succ_1^r$ induced by $\mathbf b_1^r$. Formally $g\not\succ_1^rh_{n_r}\Rightarrow\mathbf b_1^r(g)=v_1^r(g)$.
 > 4. The preference ranking $\succ_1^r$ is identical to $\succ_1$ up to good $h_{n_r-1}$.
 > 5. $\min_{g,h\in M,g\neq h}|v_1^r(g)-v_1^r(h)|\gt0$. (strict preference?)
 >
@@ -214,7 +214,7 @@ for all $t\in[m+1]$.
 > **Case 1**: $M_t(\mathbf b)=M_t(\mathbf b')$.
 >
 > - No matter who $j$ is and what $g,g'$ are. It always holds either
->   - $|M_t(\mathbf b)\diagdown M_t(\mathbf b')|=|M_t(\mathbf b')\diagdown M_t(\mathbf b)|=\empty$ or
+>   - $|M_t(\mathbf b)\diagdown M_t(\mathbf b')|=|M_t(\mathbf b')\diagdown M_t(\mathbf b)|=\emptyset$ or
 >   - $M_t(\mathbf b')\diagdown M_t(\mathbf b)=\{g\}$ or
 >   - $M_t(\mathbf b)\diagdown M_t(\mathbf b')=\{g'\}$
 > - Thus Lemma 3 holds in this case.
@@ -223,12 +223,12 @@ for all $t\in[m+1]$.
 >
 > Claim 1. Suppose that $t_*$ is the first time step in which the good $\gamma$ allocated in round-robin($\mathbf b$) is different from the good $\gamma'$ allocated in round-robin$(\mathbf b')$. Then $\gamma=s$. ~~Proof of claim 1 is omitted here.~~
 >
-> **Case 2**: $M_t(\mathbf b)\diagdown M_t(\mathbf b')=\{h\}\and M_t(\mathbf b')\diagdown M_t(\mathbf b)=\{h'\}$.
+> **Case 2**: $M_t(\mathbf b)\diagdown M_t(\mathbf b')=\{h\}\land M_t(\mathbf b')\diagdown M_t(\mathbf b)=\{h'\}$.
 >
-> - When $g=h\or g'=h'$, it's easy to complete the induction.
-> - If $g=h\and g'\neq h'$, we have $M_t(\mathbf b)\diagdown M_t(\mathbf b')=\{g'\}$.
-> - If $g\neq h\and g'=h'$, analogously we have $M_t(\mathbf b')\diagdown M_t(\mathbf b)=\{h'\}$
-> - The sub-case $g\neq h\and g'\neq h'$ can't happen, proof by contradiction.
+> - When $g=h\lor g'=h'$, it's easy to complete the induction.
+> - If $g=h\land g'\neq h'$, we have $M_t(\mathbf b)\diagdown M_t(\mathbf b')=\{g'\}$.
+> - If $g\neq h\land g'=h'$, analogously we have $M_t(\mathbf b')\diagdown M_t(\mathbf b)=\{h'\}$
+> - The sub-case $g\neq h\land g'\neq h'$ can't happen, proof by contradiction.
 
 # EFX Equilibria: The Case of 2 Agents
 
@@ -250,7 +250,7 @@ This paper shows that although its non-truthful, Mod-Cut&Choose always has at le
 
 input: $\mathbf b_1,\mathbf b_2$
 
-1. $(E_1,E_2)=(\empty,\empty)$
+1. $(E_1,E_2)=(\emptyset,\emptyset)$
 2. $(h_1,h_2,\cdots,h_m)$ is $M$, sorted in decreasing order w.r.t. $v_1$.
 3. for $i=1,\cdots m$ do // agent 1 partition the bundles
    - $j=\arg\min_{k\in[2]}\mathbf b_1(E_k)$

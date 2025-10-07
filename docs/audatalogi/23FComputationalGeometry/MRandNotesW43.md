@@ -202,17 +202,25 @@ Again, we use backwards analysis:
 >
 > $\mathbb E[k_i]=\frac{1}{i}\sum_{s\in\{s_1,\cdots,s_i\}}\sum_{\Delta\in\mathcal T_i}\delta(\Delta,s)=\frac{O(i)}{i}=O(1)$
 >
-> $\delta(\Delta,s)=\begin{cases}1\ if\ \Delta\ there\ are\ at\ most\ 4\ segments\ that\ can\ cause \Delta\ to\ disappear.\\ otherwise\end{cases}$
+> $\delta(\Delta,s)=\begin{cases}1\ \text{if there are at most 4 segments that can cause } \Delta \text{ to disappear.}\\ \Delta \text{ otherwise}\end{cases}$
 >
 > So $\sum_{s\in\{s_1,\cdots,s_i\}}\sum_{\Delta\in\mathcal T_i}\delta(s,\Delta)\le4|\mathcal T_i|=O(i)$
 
-$\mathbb E[$preprocessing time$]=O(1)+\sum_i\mathbb E[$time to insert $s_i]$.
+$$
+\mathbb E[\text{preprocessing time}]=O(1)+\sum_i\mathbb E[\text{time to insert }s_i].
+$$
 
-$=O(1)+\sum_i(O(\log i)+O(\mathbb E[k_i]))$
+$$
+=O(1)+\sum_i(O(\log i)+O(\mathbb E[k_i]))
+$$
 
-$=O(1)+\sum_i(O(\log n)+O(1))$
+$$
+=O(1)+\sum_i(O(\log n)+O(1))
+$$
 
-$=O(n\log n)$
+$$
+=O(n\log n)
+$$
 
 $k_i$ is number of trapezoids created when inserting $s_i$.
 

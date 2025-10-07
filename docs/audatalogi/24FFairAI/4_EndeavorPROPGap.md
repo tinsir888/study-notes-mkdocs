@@ -24,8 +24,8 @@ Do some fine-tuning on results of Greedy Capture.
 ## Pseudo code
 
 1. $X\gets$ Greedy Capture$(\mathcal N,\mathcal M,k)$
-2. $N\gets\empty$ // $N$ denotes "free" data points
-3. while $\exist$ 2-approximate Block Coalition
+2. $N\gets\emptyset$ // $N$ denotes "free" data points
+3. while $\exists$ 2-approximate Block Coalition
    - $N_{bc}\gets$ all data points in that 2-approx Block Coalition
    - $X_{bc}\gets$ all cluster centers associated with any data points in $N_{bc}$
    - $N_{\text{affect}}\gets$ all data points associated with any cluster centers in $X_{bc}$
@@ -63,26 +63,26 @@ Fine-tuning Greedy Capture$(\mathcal N,\mathcal M,k,r_{bc},x^*)$
 
 Input: $\mathcal N,\mathcal M,k,r_{bc},x^*$ // $r_{bc}$ denotes the fixed radius for 2-block coalition, $x^*$ denotes the center of 2-block coalition
 
-1. $X\gets\empty,\Delta=(\delta_1,\delta_2,\cdots,\delta_m)\gets(0,0,\cdots,0),N\gets\mathcal N$
+1. $X\gets\emptyset,\Delta=(\delta_1,\delta_2,\cdots,\delta_m)\gets(0,0,\cdots,0),N\gets\mathcal N$
 
 2. $X\gets X\cup\{x^*\},\delta_{x^*}\gets r_{bc}$
 
-3. while $N\neq\empty$ do
+3. while $N\neq\emptyset$ do
 
    - Smoothly and synchronously increase $\Delta\diagdown\delta_{x^*}$
 
    - If $\delta$ for other surpass $\delta_{x^*}$, increase $\delta_{x^*}$ also.
 
-   - while $\exist x\in X$ s.t. $|B(x,\delta_x)\cap N|\ge1$
+   - while $\exists x\in X$ s.t. $|B(x,\delta_x)\cap N|\ge1$
 
      - $N\gets N\diagdown B(x,\delta_x)$
 
-   - while $\exist x\in\mathcal M\diagdown X$ s.t. $|B(x,\delta_x)\cap N|\ge\lceil n/k\rceil$ do
+   - while $\exists x\in\mathcal M\diagdown X$ s.t. $|B(x,\delta_x)\cap N|\ge\lceil n/k\rceil$ do
 
      - $X\gets X\cup\{x\}$
      - $N\gets N\diagdown B(x,\delta_x)$
 
-   - while $\exist x'\in\mathcal M\diagdown X$ s.t. $x'$ is the center of a 2-block coalition
+   - while $\exists x'\in\mathcal M\diagdown X$ s.t. $x'$ is the center of a 2-block coalition
 
      - $x^*\gets x'$
 

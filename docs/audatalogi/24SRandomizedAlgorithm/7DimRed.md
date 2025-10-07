@@ -39,7 +39,7 @@ Further results: JL lemma is tight even for non-linear embeddings.
 $$
 k=O(\frac{1}{\epsilon^2}\log m)
 $$
-large enough and any $m$ points $x_1,\cdots,x_m\subset\mathbb R^d$ there exists a linear map matrix $L:\mathbb R^d\rarr\mathbb R^k$ s.t. for any $1\le i,j\le m$:
+large enough and any $m$ points $x_1,\cdots,x_m\subset\mathbb R^d$ there exists a linear map matrix $L:\mathbb R^d\rightarrow\mathbb R^k$ s.t. for any $1\le i,j\le m$:
 $$
 (1-\epsilon)||x_i-x_j||_2^2\le||Lx_i-Lx_j||_2^2\le(1+\epsilon)||x_i-x_j||^2_2
 $$
@@ -79,7 +79,7 @@ Since we need all pairwise distances to be approximately maintained, we need to 
 
 Applying the Union Bound, the probability over $L$ that there is a bad index pair is at most the sum over all $i,j$ the probability that $L$ distorts the norm of $x_i-x_j$ by more than $(1\pm\epsilon)$. We get:
 $$
-\Pr_L(\exist(i,j)\text{ that is bad})\le\sum_{i=1}^{m-1}\sum_{j=i+1}^m\Pr((i,j)\text{ bad})=\left(\begin{array}{cc}m\\2\end{array}\right)\frac{1}{m^3}\le\frac{1}{m}
+\Pr_L(\exists(i,j)\text{ that is bad})\le\sum_{i=1}^{m-1}\sum_{j=i+1}^m\Pr((i,j)\text{ bad})=\left(\begin{array}{cc}m\\2\end{array}\right)\frac{1}{m^3}\le\frac{1}{m}
 $$
 Thus with probability at least $1-\frac{1}{m}\gt0$ the random matrix $L$ maintains all the pairwise norms in the dataset within a factor $(1\pm\epsilon)$. In particular, this means that there exists a matrix that can embed the points and maintain all pairwise distances and to find one just sample a matrix and it works with probability at least $1-\frac{1}{m}$.
 

@@ -31,18 +31,20 @@ Revisit the definition of **Core-Stability**: A predictor $\theta\in P$ is calle
 
 
 
-{% note danger modern %}
+!!! warning
 
-:warning::warning::warning:**What is WRONG with the claim**
+    :warning::warning::warning:**What is WRONG with the claim**
 
-> Setting $S=[n]$ in definition, there is no predictor $\theta'\in P$ where $\sum_{i\in[n]}\frac{u_i(\theta')}{u_i(\theta)}\gt n$.
+    > Setting $S=[n]$ in definition, there is no predictor $\theta'\in P$ where $\sum_{i\in[n]}\frac{u_i(\theta')}{u_i(\theta)}\gt n$.
 
-According to the definition, when we plug in $S=[n]$, there exist no $\theta'\in P$ s.t.
-$$
-u_i(\theta')\ge u_i(\theta)\forall i\in S\\
-\Lrarr\frac{u_i(\theta')}{u_i(\theta)}\ge 1\forall i\in S
-$$
-with at least one strict inequality.
+    According to the definition, when we plug in $S=[n]$, there exist no $\theta'\in P$ s.t.
+
+    $$
+    u_i(\theta')\ge u_i(\theta)\forall i\in S\\
+    \Leftrightarrow\frac{u_i(\theta')}{u_i(\theta)}\ge 1\forall i\in S
+    $$
+
+    with at least one strict inequality.
 
 **The problem is, can we directly sum it up, then we have** $\sum_i\frac{u_i(\theta')}{u_i(\theta)}\gt n$???
 
@@ -63,13 +65,13 @@ There is a counterexample:
 
   But $\sum_i\frac{u_i(\theta')}{u_i(\theta)}=\frac{u_1(\theta')}{u_1(\theta)}+\frac{u_2(\theta')}{u_2(\theta)}=3-2\epsilon\gt2$!
 
-{% endnote %}
 
-{% note default modern %}
 
-Scaled factor $|S|/n$ suggests some kind of proportionality here. Basically core-stability means there is **no big benefit** for agent to form a coalition.
+!!! info
 
-{% endnote %}
+    Scaled factor $|S|/n$ suggests some kind of proportionality here. Basically core-stability means there is **no big benefit** for agent to form a coalition.
+
+
 
 Core means **"no deviating subgroup"**
 
@@ -90,7 +92,7 @@ Robustness to poor local data quality of agents.
 
 :exclamation:Scaling the utility of any single agents does not change the core-stable allocation.
 
-# :heavy_exclamation_mark:Some Ideas around Sum-of-ratio Property
+# :book:Some Ideas around Sum-of-ratio Property
 
 ## Is there scenario s.t. none of predictors is core-stable?
 
@@ -211,17 +213,17 @@ Approximate core stable predictor exists in Deep Neural Network.
 
    $\forall\langle\alpha_1,\cdots,\alpha_n\rangle\in\mathbb R_{\ge0}^n$, the set $C=\{\theta|\sum_{i\in[n]}\alpha_iu_i(\theta)\}$ is convex.
 
-:thinking:Important theorem: Kakutani's Fixed Point Theorem: A *set valued function* $\phi:D\to2^D$ admits a fixed point, i.e. $\exist d\in D$, s.t. $d\in\phi(d)$, if
+:thinking:Important theorem: Kakutani's Fixed Point Theorem: A *set valued function* $\phi:D\to2^D$ admits a fixed point, i.e. $\exists d\in D$, s.t. $d\in\phi(d)$, if
 
 1. $D$ is non-empty, compact, and convex
 
-{% note info modern %}
+!!! info
 
-Compact: The set is closed (It must contains all its boundary points), and bounded (It can be covered by a "sphere" with certain radius)
+    Compact: The set is closed (It must contains all its boundary points), and bounded (It can be covered by a "sphere" with certain radius)
 
-Convex: A set is **convex** if, for any two points $x$ and $y$ in the set, the line segment connecting $x$ and $y$ also lies entirely within the set. Mathematically, for any $x,y\in S$ and any $t \in [0, 1]$, the point: $tx+(1−t)y\in S$.
+    Convex: A set is **convex** if, for any two points $x$ and $y$ in the set, the line segment connecting $x$ and $y$ also lies entirely within the set. Mathematically, for any $x,y\in S$ and any $t \in [0, 1]$, the point: $tx+(1−t)y\in S$.
 
-{% endnote %}
+
 
 2. $\forall d\in D,\phi(d)$ is non-empty, compact, and convex.
 3. $\phi(\cdot)$ has a **closed graph**. i.e., $\forall$ sequence $(d_i)_{i\in\mathbb N}$ converging to $d^*$ and $(e_i)_{i\in\mathbb N}$ converging to $e^*$, s.t. $d_i\in D$ and $e_i\in\phi(d_i)$, we have $e^*\in\phi(d^*)$.
@@ -324,7 +326,7 @@ end
 
 Utility function is concave.
 
-$u_i$ is concave $\Lrarr \ell$ is convex
+$u_i$ is concave $\Leftrightarrow \ell$ is convex
 
 $n$ finite samples $\{(x_i,y_i)\}_{i\in[n]}$ drawn from data distribution $\mathcal P$, which constitute empirical distribution $\hat{\mathcal P}_n$.
 

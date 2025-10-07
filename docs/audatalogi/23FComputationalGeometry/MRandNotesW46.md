@@ -60,11 +60,11 @@ SearchKDTree($v,R$)
 
 2. else 
 
-   ​	if $S_{lc(v)}\sube R$ then ReportSubstree($lc(v)$)
+   ​	if $S_{lc(v)}\subseteq R$ then ReportSubstree($lc(v)$)
 
    ​	else if $S_{lc(v)}$ intersects $R$ then SearchKDTree($lc(v),R$)
 
-   ​	if $S_{rc(v)}\sube R$ then ReportSubstree($rc(v)$)
+   ​	if $S_{rc(v)}\subseteq R$ then ReportSubstree($rc(v)$)
 
    ​	else if $S_{rc(v)}$ intersects $R$ then SearchKDTree($rc(v),R$)
 
@@ -193,7 +193,7 @@ Store the elementary intervals as leaves in a balanced BST $\mathcal T$.
 
 Every node $v$ corresponds to an interval $l_v$, which is the union of the elementary intervals stored in its subtree.
 
-store a canonical subset $S(v)\sube S$ of intervals s.t. $s\in S$ if and only if $l_v\sube s$ but $parent(v)_l\not\sube s$.
+store a canonical subset $S(v)\subseteq S$ of intervals s.t. $s\in S$ if and only if $l_v\subseteq s$ but $parent(v)_l\not\subseteq s$.
 
 这里有点 tricky，为了尽量少的节点存下这些 element intervals，尽量往上面的祖先节点存，aka 节点存储的是包含 element intervals 的最大正规集 maximal canonical set。这样复杂度就是 $\log n$ 级别的了（对于每根线段，有 $O(\log n)$ 个线段树节点存储）
 

@@ -54,11 +54,11 @@ $$
 $$
 If $A\le_{a,b}B$ and $B\le_{a,b}A$, we say that $A$ and $B$ are fine-grained equivalent, $A\equiv_{a,b}B$.
 
-{% note info modern %}
+!!! info
 
-若存在一个能在**指数位置上**打破 $A$ 问题猜想时间复杂度下界的算法 $R$，并且该算法包含若干次调用**在指数位置上**打破 $B$ 问题猜想复杂度下界的算法，则称 $A$ 能细粒度归约到 $B$。
+    若存在一个能在**指数位置上**打破 $A$ 问题猜想时间复杂度下界的算法 $R$，并且该算法包含若干次调用**在指数位置上**打破 $B$ 问题猜想复杂度下界的算法，则称 $A$ 能细粒度归约到 $B$。
 
-{% endnote %}
+
 
 ~~被绕晕了没有？~~
 
@@ -106,7 +106,7 @@ For simplicity, we can think of $L\subseteq\Sigma^*\times \N$.
 
 :book:Definition of FPT. A parameterized language $L$ is **fixed parameter tractable** (FPT), iff there is a computable function $f$, a constant $c$, and a deterministic algorithm $M$ s.t.
 $$
-\forall x,k:\lang x,k\rang\in L\Lrarr M(x,k)\text{ accepts},
+\forall x,k:\langle x,k\rangle\in L\Leftrightarrow M(x,k)\text{ accepts},
 $$
 and the running time of $M(x,k)$ is $\le f(k)|x|^c$.
 
@@ -132,7 +132,7 @@ Some optimized methods.
 
 1. $k'\le k$
 2. $|I'|\le g(k)$, for some function $g$ depending only on $k$.
-3. $(I,k)\in L\Lrarr(I',k')\in L$.
+3. $(I,k)\in L\Leftrightarrow(I',k')\in L$.
 
 The reduction from $(I,k)$ to $(I',k')$ must be computable in time polynomial in $|I|+|k|$.
 

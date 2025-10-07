@@ -141,7 +141,7 @@ Similarly, we compute $rank_T^S$ for tail's neighborhood $\mathcal N^-(t)$.
 $$
 rank_H(x_{hrt})\le rank_H^S(x_{hrt})+|\mathcal N^-(h)|-|S_H|\\
 rank_T(x_{hrt})\le rank_T^S(x_{hrt})+|\mathcal N^-(h)|-|S_T|\\
-\Rarr ReliK_{LB}(x_{hrt})=\frac{1}{2}\left(\frac{1}{rank_H^S(x_{hrt})+|\mathcal N^-(h)|-|S_H|}+\frac{1}{rank_T^S(x_{hrt})+|\mathcal N^-(t)|-|S_T|}\right),
+\Rightarrow ReliK_{LB}(x_{hrt})=\frac{1}{2}\left(\frac{1}{rank_H^S(x_{hrt})+|\mathcal N^-(h)|-|S_H|}+\frac{1}{rank_T^S(x_{hrt})+|\mathcal N^-(t)|-|S_T|}\right),
 $$
 
 It holds that $ReliK_{LB}(x_{hrt})\le ReliK(x_{hrt})$.

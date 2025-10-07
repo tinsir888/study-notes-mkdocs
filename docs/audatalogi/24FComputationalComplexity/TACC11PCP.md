@@ -34,8 +34,8 @@ Important parameters of PCP verifier:
 
 :book:Definition 49 (PCP languages). Let $r:\N\to\N,q:\N\to\N$ be functions, let $\Sigma$ be a non-empty finite set, and let $0\le s\lt c\le1$ be reals. $PCP_{c,s}^\Sigma(r(n),q(n))$ is the class of languages $L$ for which there exist a PCP verifier $V$ that on input $x$ of length $n$ uses at most $r(n)$ random bits and queries at most $q(n)$ positions of a proof $\pi\in\Sigma^*$ s.t.
 $$
-\forall x\in L,\exist\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\ge c\\
-\forall x\not\in L,\exist\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\le s
+\forall x\in L,\exists\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\ge c\\
+\forall x\not\in L,\exists\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\le s
 $$
 $c$ for completeness, $s$ for soundness.
 
@@ -69,7 +69,7 @@ Verifier of $PCP(r(n),q(n))$ is able to access at most $2^{r(n)}q(n)$ different 
 
 Some observations about interactive proofs and probabilistically checkable proofs.
 
-1. Consider an interactive proof system $(P,V)$. On input $x$, we tabulate all possible replies $P(\lang x,m_1,\cdots,m_i\rang)$ a prover $P$ may send during a run of the protocol with input $x$ into a written proof $\pi$.
+1. Consider an interactive proof system $(P,V)$. On input $x$, we tabulate all possible replies $P(\langle x,m_1,\cdots,m_i\rangle)$ a prover $P$ may send during a run of the protocol with input $x$ into a written proof $\pi$.
 
    Then verifier $V$ may be viewed as an adaptive PCP verifier that instead of communicating with $P$ simply queries the proof $\pi$.
 
