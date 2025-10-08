@@ -4,10 +4,6 @@ All my study notes are compressed HERE!
 
 ❗Personal use mainly.
 
-
-
-
-
 # Content
 
 - Study notes @ Nankai University, Computer Science and Technology (B. Eng.)
@@ -15,18 +11,14 @@ All my study notes are compressed HERE!
 - Review Outline for APS (Akademische Prüfstelle)
 - Study notes on MANY LANGUAGES 🗣️
 
-
-
 ## Backup URLs for Study Notes
 
-Primary Site: [Codeberg Pages](https://tinsir888.codeberg.page/notes-mkdocs/site/)
+Primary: [Codeberg Pages](https://tinsir888.codeberg.page/notes-mkdocs/site/)
 
-Mirror Site: [GitHub Pages](https://tinsir888.github.io/study-notes-mkdocs/site/)
-
-
-
-
+Mirror: [GitHub Pages](https://tinsir888.github.io/study-notes-mkdocs/site/)
 
 # Visit My Blog
 
-[GitHub Pages](https://tinsir888.github.io)
+Primary: [Codeberg Pages](https://tinsir888.codeberg.page)
+
+Mirror: [GitHub Pages](https://tinsir888.github.io)
