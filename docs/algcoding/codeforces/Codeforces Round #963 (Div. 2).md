@@ -175,10 +175,15 @@ $n,w,h\le10^6,k\le n$.
 记 $(x_i,y_i)$ 为机器人执行第一遍指令序列时每一步所在的位置。则指令完成后机器人位于 $(x_n,y_n)$。
 
 此后机器人在执行第 $j$ 遍指令序列时的第 $i$ 个指令，所在的位置为 $(jx_n+x_i,jy_n+y_i)$。同时，需要满足
+
 $$
-x\equiv0\mod 2w\Rarr x_i\equiv-jx_n\mod 2w\\
-y\equiv0\mod 2h\Rarr y_i\equiv-jy_n\mod 2h
+x\equiv0\mod 2w\Rightarrow x_i\equiv-jx_n\mod 2w\\
 $$
+
+$$
+y\equiv0\mod 2h\Rightarrow y_i\equiv-jy_n\mod 2h
+$$
+
 直接遍历 $0$ 到 $k-1$，对每一遍指令序列满足同余关系数量求和。最终得到答案。
 
 可以用 map 存储执行第一遍指令序列机器人位于长宽为 $2w,2h$ 的矩形内每一个点的经过次数。
