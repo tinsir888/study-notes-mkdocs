@@ -118,13 +118,22 @@ If the input is inversed, picking the first (also largest) as pivot, it will nee
 Selecting better pivot!
 
 Make median-number pivot?
+
 $$
 T(n)=2\cdot T(\frac{n}{2})+T_{partition}(n)+T_{median}(n)\\
+$$
+
+$$
 T_{partition}(n)=O(n)
 $$
+
 There exists linear-time algorithm for median, thus
+
 $$
 T(n)=2\cdot T(\frac{n}{2})+O(n)\\
+$$
+
+$$
 \Rightarrow T(n)=O(n\log n)
 $$
 
@@ -141,8 +150,12 @@ but complicated
 Randomly choose pivot
 
 On average, random pivot gives 25% - 75% split
+
 $$
 T(n)=T(3n/4)+T(n/4)+O(n)\\
+$$
+
+$$
 \Rightarrow T(n)=O(n\log n)
 $$
 
@@ -163,9 +176,11 @@ $i<j,X_{ij}$ as the r.v. denoting the number of times the element $z_i$ and $z_j
 $X_{ij}$ is 1 if $z_i$ and $z_j$ both belong to the same subarray when some of them is selected as pivot, otherwise it is 0.
 
 Then the # of comparisons in the calls of partition is
+
 $$
 C=\sum_{i=1}^{n-1}\sum_{j=i+1}^nX_{ij}
 $$
+
 *No good sorting algorithm should perform the same comparison twice.*
 
 ## Bounding the expectation of $C$
@@ -184,9 +199,11 @@ What is $\Pr[X_{ij}=1]$?
 - $\Pr[X_{ij}=1]=\frac{2}{j-i+1}$
 
 Thus
+
 $$
 \mathbb E[C]=\sum_{i=1}^{n-1}\sum_{j=i+1}^n\frac{2}{j-i+1}=\sum_{i=1}^{n-1}\sum_{k=2}^{n-i+1}\frac{2}{k}\le2\sum_{i=1}^{n-1}H_n\le2nH_n
 $$
+
 i.e., $\mathbb E[C]=O(n\log n)$ ($H_n$ is harmonic number $\ln(n+1)\le H_n\le1+\ln n$)
 
 

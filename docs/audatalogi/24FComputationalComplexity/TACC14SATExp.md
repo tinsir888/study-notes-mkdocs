@@ -33,6 +33,7 @@ For special case of $kSAT$, there are faster algorithms, but all take time $2^{(
 # The Sparsification Lemma
 
 :dart:Lemma 22. For all $\epsilon\gt0$ and integers $k$, there exists a constant $C=C(\epsilon,k)$ and an algorithm that given as input a $kCNF$ $\Phi$ in $n$ variables runs in time $tn^{O(1)}$, where $t\le2^{\epsilon n}$, and give as output a list of $kCNF$ formulas $\Psi_1,\cdots,\Psi_t$ each with at most $Cn$ clauses such that
+
 $$
 \Phi(x)=\bigvee_{i=1}^t\Psi_i(x),
 $$
@@ -74,9 +75,11 @@ Any collection of subsets $\mathcal T$ over $\mathcal U$ can be viewed as a CNF 
 Clearly, if $\mathcal T$ is a restriction of $\mathcal S$, then $\sigma(\mathcal T)\subseteq\sigma(\mathcal S)$. Any satisfying assignment of CNF formula given by $\mathcal T$ is also a satisfying assignment of the CNF formula given by $\mathcal S$.
 
 :thinking:Lemma 23 (Hitting set correspondence). For all $\epsilon\gt0$ and integers $k$, there exists a constant $C=C(\epsilon,k)$ and an algorithm that given as input collection $\mathcal S$ of subsets of size at most $k$ of a universe $\mathcal U$ of size $n$ runs in time $tn^{O(1)}$, where $t\le 2^{\epsilon n}$, and give as output a list of restrictions $\mathcal T_1,\cdots,\mathcal T_t$ each with at most $Cn$ subsets of $\mathcal U$ which are all of size at most $k$ s.t.
+
 $$
 \sigma(\mathcal S)=\bigcup_{i=1}^t\sigma(\mathcal T_i).
 $$
+
 We call a subset of $\mathcal U$ of size $j$: $j$-set.
 
 The algorithm is a branching algorithm where each leaf of the recursion tree will give a restriction of $\mathcal S$.
@@ -156,10 +159,15 @@ It remains to establish qualitative properties of `Reduce`: Every restriction ou
 The number of restriction output by `Reduce` should be bounded by the number of leaves $t$ in the recursion tree.
 
 :thinking:Lemma 26. Let $0\lt m\lt n$ be integers. It holds that
+
 $$
 \sum_{i=1}^m{n\choose i}\le2^{H(\frac{m}{n})\cdot n}.\\
+$$
+
+$$
 H(p)=p\log_2(1/p)+(1-p)\log_2(1/(1-p))
 $$
+
 :thinking:Corollary 14. A binary tree of depth $h$ in which every root-to-leaf path follows the right child at most $\gamma h$ times has at most $2^{H(\gamma)h}$ leafs.
 
 > Proof by Lemma 26.
@@ -179,10 +187,15 @@ When $\gamma\le1/2$ we have $H(\gamma)\le2\gamma\log_2(1/\gamma)$, thus we use t
 :thinking:Lemma 30. Along any path of the recursion tree of `Reduce` at most $\beta_in/\theta_i$ families are created by adding petals of size $i$ for every $1\le i\lt k$.
 
 We set $\theta_i$ in such a way that the ratio $\theta_i/\beta_i$ is equal to an integer constant $\alpha$, to be fixed later, for $1\le i\le k$. Thus
+
 $$
 \beta_i=4\beta_{i-1}\theta_{i-1}=4\alpha(\beta_{i-1})^2\\
+$$
+
+$$
 \Rightarrow \beta_i=(4\alpha)^{2^{i-1}-1},\theta_i=\alpha(4\alpha)^{2^{i-1}-1}\forall 1\le i\le k
 $$
+
 :thinking:Corollary 16. Along any path of the recursion tree of `Reduce` at most $kn/\alpha$ families are created by adding petals.
 
 ~~让我缓缓~~

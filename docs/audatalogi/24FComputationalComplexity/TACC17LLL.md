@@ -21,18 +21,20 @@ Lecture notes by Rothvoss, University of Washington
 # Lattices
 
 Lattices are **integral combinations** of linearly independent vectors:
-$$
-\left\{\sum_{i=1}^k\lambda_i\mathbf b_i\vert\lambda_1,\cdots,\lambda_k\in\Z\right\}
-$$
-where $\mathbf b_1,\cdots,\mathbf b_k\in\R^n$ are linearly independent vectors.
 
-Another equivalent definition: a lattice is a **discrete subgroup** of $\R^n$.
+$$
+\{\sum_{i=1}^k\lambda_i\mathbf b_i\vert\lambda_1,\cdots,\lambda_k\in\mathbb Z\}
+$$
+
+where $\mathbf b_1,\cdots,\mathbf b_k\in \mathbb R^n$ are linearly independent vectors.
+
+Another equivalent definition: a lattice is a **discrete subgroup** of $\mathbb R^n$.
 
 If $k=n$ the lattice has **full rank**. Without specification, the we consider lattice with full rank.
 
-Let $\mathbf B\in\R^{n\times n}$ be the matrix that has the basis vector $\mathbf b_1,\cdots,\mathbf b_n$ as columns, the lattice is
+Let $\mathbf B\in \mathbb R^{n\times n}$ be the matrix that has the basis vector $\mathbf b_1,\cdots,\mathbf b_n$ as columns, the lattice is
 $$
-\Lambda(\mathbf B)=\left\{\sum_{i=1}^k\lambda_i\mathbf b_i\vert\lambda_1,\cdots,\lambda_k\in\Z\right\}.
+\Lambda(\mathbf B)=\{\sum_{i=1}^k\lambda_i\mathbf b_i\vert\lambda_1,\cdots,\lambda_k\in\mathbb Z\}.
 $$
 
 The matrix $\mathbf B$ is called **basis** of the lattice $\Lambda(\mathbf B)$.
@@ -43,13 +45,13 @@ The matrix $\mathbf B$ is called **basis** of the lattice $\Lambda(\mathbf B)$.
 
 幺模矩阵，~~什么玩意从来没听说过~~
 
-:book:Definition 1 (unimodular matrices). An $n\times n$ matrix $\mathbf U$ is called **unimodular**, if $\mathbf U\in\Z^{n\times n}$ and $\det(\mathbf U)\in\{\pm1\}$.
+:book:Definition 1 (unimodular matrices). An $n\times n$ matrix $\mathbf U$ is called **unimodular**, if $\mathbf U\in\mathbb Z^{n\times n}$ and $\det(\mathbf U)\in\{\pm1\}$.
 
 简单一句话，就是行列式等于正负 1 的方阵。
 
 :thinking:Lemma 1. If $\mathbf U$ is unimodular, then $\mathbf U^{-1}$ is also unimodular.
 
-:thinking:Lemma 2. Let $\mathbf B_1,\mathbf B_2\in\R^{n\times n}$ non-singular. Then $\Lambda(\mathbf B_1)=\Lambda(\mathbf B_2)$ iff there is a unimodular matrix $\mathbf U$ with $\mathbf B_2=\mathbf B_1\mathbf U$.
+:thinking:Lemma 2. Let $\mathbf B_1,\mathbf B_2\in \mathbb R^{n\times n}$ non-singular. Then $\Lambda(\mathbf B_1)=\Lambda(\mathbf B_2)$ iff there is a unimodular matrix $\mathbf U$ with $\mathbf B_2=\mathbf B_1\mathbf U$.
 
 ## The fundamental parallelepiped
 
@@ -61,7 +63,7 @@ $$
 $$
 简单来讲，就是两个基向量在 0 到 1 的线性组合覆盖的所有区域。在二维空间是个平行四边形，在三维空间是个平行六面体。
 
-For every vector $\mathbf x\in\R^n$, there is a unique coefficient vector $\lambda\in\R^n$ so that $\mathbf x=\sum_{i=1}^n\lambda_i\mathbf b_i$. ~~高中数学知识~~
+For every vector $\mathbf x\in \mathbb R^n$, there is a unique coefficient vector $\lambda\in \mathbb R^n$ so that $\mathbf x=\sum_{i=1}^n\lambda_i\mathbf b_i$. ~~高中数学知识~~
 
 So $\mathbf x$ can be written as
 $$
@@ -69,7 +71,7 @@ $$
 $$
 The left half $\in\Lambda(\mathbf B)$, and the right half $\in\Lambda(\mathbf B)$.
 
-This translates of the parallelepiped placed at lattices points exactly partition the $\R^n$. This is called a **tiling** of $\R^n$.
+This translates of the parallelepiped placed at lattices points exactly partition the $\mathbb R^n$. This is called a **tiling** of $\mathbb R^n$.
 
 平铺
 
@@ -83,7 +85,7 @@ vol(\mathcal P(\mathbf B))=vol([0,1[^n)\cdot|\det(\mathbf B)|.
 $$
 Fundamental parallelepiped it self depend on the choice of the basis, but its volume doesn't.
 
-:thinking:Lemma 3. Let $\mathbf B\in\R^{n\times n}$ and $\Lambda=\Lambda(\mathbf B)$ be the generated lattice. Then the determinant of the lattice $\det(\Lambda)=|\det(\mathbf B)|$ is independent of the chosen basis. Moreover, $\det(\Lambda)=vol(\mathcal P(\mathbf B))$.
+:thinking:Lemma 3. Let $\mathbf B\in \mathbb R^{n\times n}$ and $\Lambda=\Lambda(\mathbf B)$ be the generated lattice. Then the determinant of the lattice $\det(\Lambda)=|\det(\mathbf B)|$ is independent of the chosen basis. Moreover, $\det(\Lambda)=vol(\mathcal P(\mathbf B))$.
 
 # Minkowski's Theorem
 
@@ -104,9 +106,9 @@ Define $y+K=\{x+y|x\in K\}$ as the translate of $K$ by $y$.
 
 Minkowski's theorem says that every large enough symmetric convex set must contain a non-zero lattice point.
 
-:dart:Theorem 4 (Minkowski). Let $K\subseteq\R^n$ be a bounded symmetric convex set with $vol(K)\gt2^n$. Then $K\cap(\Z^n\diagdown\{\mathbf 0\})\neq\emptyset$.
+:dart:Theorem 4 (Minkowski). Let $K\subseteq \mathbb R^n$ be a bounded symmetric convex set with $vol(K)\gt2^n$. Then $K\cap(\mathbb Z^n\diagdown\{\mathbf 0\})\neq\emptyset$.
 
-:dart:Theorem 5 (Blichfeldt). Let $S\subseteq\R^n$ be a measurable set with $vol(S)\gt1$. Then there are $\mathbf s_1,\mathbf s_2\in S$ with $\mathbf s_1-\mathbf s_2\in\Z^n$.
+:dart:Theorem 5 (Blichfeldt). Let $S\subseteq \mathbb R^n$ be a measurable set with $vol(S)\gt1$. Then there are $\mathbf s_1,\mathbf s_2\in S$ with $\mathbf s_1-\mathbf s_2\in\mathbb Z^n$.
 
 ## Minkowski's Theorem for General Lattices
 
@@ -124,16 +126,16 @@ is its length.
 
 We can get some estimates on it.
 
-:dart:Theorem 7. Any lattice $\Lambda\subseteq\R^n$, one has $SVP(\Lambda)\le\sqrt n\cdot\det(\Lambda)^{1/n}$.
+:dart:Theorem 7. Any lattice $\Lambda\subseteq \mathbb R^n$, one has $SVP(\Lambda)\le\sqrt n\cdot\det(\Lambda)^{1/n}$.
 
-:dart:Theorem 8 (Minkowski's second theorem). For any full-rank lattice $\Lambda\in\R^n$, one has
+:dart:Theorem 8 (Minkowski's second theorem). For any full-rank lattice $\Lambda\in \mathbb R^n$, one has
 $$
 \left(\prod_{i=1}^n\lambda_i(\Lambda)\right)^{1/n}\le\sqrt n\cdot\det(\Lambda)^{1/n}.
 $$
 
 ## Dirichlet's Theorem
 
-:dart:Theorem 9. A vector $\alpha\in[0,1]^n$ of real numbers. There are numbers $p_1,\cdots,p_n\in\Z_{\ge0}$ and $q\in\{1,\cdots,Q\}$ so that
+:dart:Theorem 9. A vector $\alpha\in[0,1]^n$ of real numbers. There are numbers $p_1,\cdots,p_n\in\mathbb Z_{\ge0}$ and $q\in\{1,\cdots,Q\}$ so that
 $$
 \max_{i=1,\cdots,n}|\frac{p_i}{q}-\alpha_i|\le\frac{1}{Q^{1/n}q}.
 $$
@@ -144,11 +146,11 @@ To find approximate shortest vector.
 
 A lattice $\Lambda(\mathbf B)$, we want to find a non-zero vector in polynomial time that has length $||x||_2\le\alpha\cdot SVP(\Lambda(\mathbf B))$. Here $\alpha=\alpha(n)\ge1$, called approximation factor (as small as possible).
 
-The Gram Schmidt orthogonalisation takes indepedent vectors $\mathbf b_1,\cdots,\mathbf b_n\in\R^n$ as input and computes an orthogonal basis $\mathbf b^*_1,\cdots,\mathbf b^*_n$ so that $\text{span}(\mathbf b_1,\cdots,\mathbf b_k)=\text{span}(\mathbf b^*_1,\cdots,\mathbf b^*_k)$ for all $k=1,\cdots.n$.
+The Gram Schmidt orthogonalisation takes indepedent vectors $\mathbf b_1,\cdots,\mathbf b_n\in \mathbb R^n$ as input and computes an orthogonal basis $\mathbf b^*_1,\cdots,\mathbf b^*_n$ so that $\text{span}(\mathbf b_1,\cdots,\mathbf b_k)=\text{span}(\mathbf b^*_1,\cdots,\mathbf b^*_k)$ for all $k=1,\cdots.n$.
 
 ## Pseudo-code
 
-Input: $\mathbf b_1,\cdots,\mathbf b_n\in\R^n$
+Input: $\mathbf b_1,\cdots,\mathbf b_n\in \mathbb R^n$
 
 Output: Orthogonal basis $\mathbf b^*_1,\cdots,\mathbf b^*_n$
 
@@ -169,7 +171,7 @@ $$
 
 # The Lenstra-Lenstra-Lovász Algorithm
 
-:dart:Theorem 11. Given a regular matrix $\mathbf B\in\Q^{n\times n}$ one can compute a vector $\mathbf x\in\Lambda(\mathbf B)\diagdown\{\mathbf 0\}$ of length $\vert\vert\mathbf x\vert\vert_2\le2^{n/2}\cdot SVP(\Lambda(\mathbf B))$ in polynomial time.
+:dart:Theorem 11. Given a regular matrix $\mathbf B\in\mathbb Q^{n\times n}$ one can compute a vector $\mathbf x\in\Lambda(\mathbf B)\diagdown\{\mathbf 0\}$ of length $\vert\vert\mathbf x\vert\vert_2\le2^{n/2}\cdot SVP(\Lambda(\mathbf B))$ in polynomial time.
 
 The running time is actually $O(n^6\log^3(n\vert\vert\mathbf B\vert\vert_\infty))$.
 
@@ -186,7 +188,7 @@ A basis is **coefficient-reduced** if $\vert\mu_{i,j}\vert\le1/2$ for all $i\lt 
 
 ## Main Procedure
 
-:book:Definition of LLL-reduced: Let $\mathbf B\in\R^{n\times n}$ be a lattice basis and let $\mu_{i,j}$ be the coefficients from the Gram Schmidt orthogonalisation. The basis is called LLL-reduced if the following is satisfied.
+:book:Definition of LLL-reduced: Let $\mathbf B\in \mathbb R^{n\times n}$ be a lattice basis and let $\mu_{i,j}$ be the coefficients from the Gram Schmidt orthogonalisation. The basis is called LLL-reduced if the following is satisfied.
 
 - Coefficient reduced: $\vert\mu_{i,j}\vert\le1/2$ for all $i\lt j$.
 - Lovász condition: $\vert\vert\mathbf b_i^*\vert\vert_2^2\le2\vert\vert\mathbf b_{i+1}^*\vert\vert_2^2$ for $i=1,\cdots,n-1$.
@@ -201,7 +203,7 @@ A basis is **coefficient-reduced** if $\vert\mu_{i,j}\vert\le1/2$ for all $i\lt 
 
 ## Pseudo-code
 
-Input: A lattice basis $\mathbf B\in\R^{n\times n}$
+Input: A lattice basis $\mathbf B\in \mathbb R^{n\times n}$
 
 Output: An LLL reduced basis $\tilde{\mathbf B}$
 

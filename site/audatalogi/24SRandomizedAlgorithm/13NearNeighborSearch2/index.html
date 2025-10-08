@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9463,11 +9463,11 @@
 <p><strong>Hamming Distance</strong>. Hash functions for Hamming distance: a uniform hash function <span class="arithmatex">\(h\)</span> in <span class="arithmatex">\(\mathcal H\)</span> chooses <mark>a uniform random bit position and returns the corresponding bit as the hash value.</mark> <span class="arithmatex">\(\mathcal H\)</span> was <span class="arithmatex">\((R,cR,1-R/d,1-cR/d)\)</span>-sensitive and we proved that exponent <span class="arithmatex">\(\rho=\ln P_1/\ln P_2\)</span> satisfies <span class="arithmatex">\(\rho\le 1/c\)</span>.</p>
 <h1 id="other-distance-measures">Other Distance Measures</h1>
 <h2 id="l1-distance">l<sub>1</sub>-distance</h2>
-<p>For 2 points <span class="arithmatex">\(p,q\in\mathbb R^d\)</span>, we have <span class="arithmatex">\(\ell_1\)</span>-distance <span class="arithmatex">\(\sum_{i=1}^d|p_i-q_i|\)</span>. Given the radius <span class="arithmatex">\(R\)</span> and approximation factor <span class="arithmatex">\(c\)</span>, we can design a sensitive family of hash functions as follows: For a radius <span class="arithmatex">\(w\)</span> to be determined, consider the family:
-$$
-\mathcal H=\left{h_{i,o}(x)=\left\lfloor\frac{x_i-o}{w}\right\rfloor| i\in{1,\cdots,d},o\in[0,w)\right}
-$$
-To get a hash function from <span class="arithmatex">\(\mathcal H\)</span>, a coordinate <span class="arithmatex">\(i\)</span> and offset <span class="arithmatex">\(o\)</span> are drawn uniformly and independently.</p>
+<p>For 2 points <span class="arithmatex">\(p,q\in\mathbb R^d\)</span>, we have <span class="arithmatex">\(\ell_1\)</span>-distance <span class="arithmatex">\(\sum_{i=1}^d|p_i-q_i|\)</span>. Given the radius <span class="arithmatex">\(R\)</span> and approximation factor <span class="arithmatex">\(c\)</span>, we can design a sensitive family of hash functions as follows: For a radius <span class="arithmatex">\(w\)</span> to be determined, consider the family:</p>
+<div class="arithmatex">\[
+\mathcal H=\left\{h_{i,o}(x)=\left\lfloor\frac{x_i-o}{w}\right\rfloor| i\in\{1,\cdots,d\},o\in[0,w)\right\}
+\]</div>
+<p>To get a hash function from <span class="arithmatex">\(\mathcal H\)</span>, a coordinate <span class="arithmatex">\(i\)</span> and offset <span class="arithmatex">\(o\)</span> are drawn uniformly and independently.</p>
 <p>The hash value of the point <span class="arithmatex">\(x\)</span> is <span class="arithmatex">\(\lfloor(x_i-o)/w\rfloor\)</span>.</p>
 <p>Consider <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(h_{i,o}\)</span> has been chosen, but <span class="arithmatex">\(o\)</span> is still uniform random in <span class="arithmatex">\([0,w)\)</span>. For points <span class="arithmatex">\(p,q\)</span>, <span class="arithmatex">\(h_{i,o}(p)\)</span> and <span class="arithmatex">\(h_{i,o}(q)\)</span> equal precisely when <span class="arithmatex">\(\lfloor(p_i-o)/w\rfloor=\lfloor(q_i-o)/w\rfloor\)</span>. The expression <span class="arithmatex">\(\lfloor(x-o_i)/w\rfloor\)</span> changes value precisely at points <span class="arithmatex">\(x=o_i+jw\)</span> for <span class="arithmatex">\(j\in\mathbb Z\)</span>.</p>
 <p>What's the probability that a point of the form <span class="arithmatex">\(o_i+jw\)</span> lies between <span class="arithmatex">\(p_i\)</span> and <span class="arithmatex">\(q_i\)</span>?</p>
@@ -9476,74 +9476,88 @@ To get a hash function from <span class="arithmatex">\(\mathcal H\)</span>, a co
 <li>Otherwise, the probability is <span class="arithmatex">\(|p_i-q_i|/w\)</span>.</li>
 </ul>
 <p>Thus we have <span class="arithmatex">\(\Pr[\lfloor(p_i-o_i)/w\rfloor=\lfloor(q_i-o_i)/w\rfloor]=\max\{0,1-|p_i-q_i|/w\}\)</span>.</p>
-<p>Since <span class="arithmatex">\(i\)</span> is chosen uniformly, we get
-$$
-\Pr_{h\sim\mathcal H}[h(p)=h(q)]=\sum_{i=1}^d\frac{1}{d}\max{0,1-|p_i-q_i|/w}.
-$$
-Let us first assume <span class="arithmatex">\(dist(p,q)\le R\)</span>. If we choose <span class="arithmatex">\(w\ge R\)</span>, then the above simplifies to
-$$
-\Pr_{h\sim\mathcal H}[h(p)=h(q)]=\sum_{i=1}^d\frac1d\cdot(1-|p_i-q_i|/w)\
+<p>Since <span class="arithmatex">\(i\)</span> is chosen uniformly, we get</p>
+<div class="arithmatex">\[
+\Pr_{h\sim\mathcal H}[h(p)=h(q)]=\sum_{i=1}^d\frac{1}{d}\max\{0,1-|p_i-q_i|/w\}.
+\]</div>
+<p>Let us first assume <span class="arithmatex">\(dist(p,q)\le R\)</span>. If we choose <span class="arithmatex">\(w\ge R\)</span>, then the above simplifies to</p>
+<div class="arithmatex">\[
+\Pr_{h\sim\mathcal H}[h(p)=h(q)]=\sum_{i=1}^d\frac1d\cdot(1-|p_i-q_i|/w)\\
+\]</div>
+<div class="arithmatex">\[
 =1-\frac{\sum_{i=1}^d|p_i-q_i|}{dw}=1-\frac{dist(p,q)}{dw}\ge1-\frac{R}{dw}
-$$
-On the other hand, assume <span class="arithmatex">\(dist(p,q)\gt cR\)</span> and assume we choose <span class="arithmatex">\(w\ge cR\)</span>. Then we get:
-$$
-\Pr_{h\sim\mathcal H}[h(p)=h(q)]=\sum_{i=1}^d\frac{1}{d}\max{0,1-|p_i-q_i|/w}\
-=\sum_{i=1}^d\frac{1}{d}\cdot(1-\frac{\min{w,|p_i-q_i|}}{w})\
-=1-\frac{\sum_{i=1}^d\min{w,|p_i-q_i|}}{dw}.
-$$
-Assume first that <span class="arithmatex">\(\forall i:|p_i-q_i|\le w\)</span>. Then the above equals
-$$
+\]</div>
+<p>On the other hand, assume <span class="arithmatex">\(dist(p,q)\gt cR\)</span> and assume we choose <span class="arithmatex">\(w\ge cR\)</span>. Then we get:</p>
+<div class="arithmatex">\[
+\Pr_{h\sim\mathcal H}[h(p)=h(q)]=\sum_{i=1}^d\frac{1}{d}\max\{0,1-|p_i-q_i|/w\}\\
+\]</div>
+<div class="arithmatex">\[
+=\sum_{i=1}^d\frac{1}{d}\cdot(1-\frac{\min\{w,|p_i-q_i|\}}{w})\\
+\]</div>
+<div class="arithmatex">\[
+=1-\frac{\sum_{i=1}^d\min\{w,|p_i-q_i|\}}{dw}.
+\]</div>
+<p>Assume first that <span class="arithmatex">\(\forall i:|p_i-q_i|\le w\)</span>. Then the above equals</p>
+<div class="arithmatex">\[
 1-\frac{\sum_{i=1}^d|p_i-q_i|}{dw}=1-\frac{dist(p,q)}{dw}\le1-\frac{cR}{dw}
-$$
-On the other hand, assume <span class="arithmatex">\(\exists i:|p_i-q_i|\gt w\)</span>, then the above has upper bound:
-$$
-\Pr_{h\sim\mathcal H}[h(p)=h(q)]=1-\frac{\sum_{i=1}^d\min{w,|p_i-q_i|}}{dw}\
+\]</div>
+<p>On the other hand, assume <span class="arithmatex">\(\exists i:|p_i-q_i|\gt w\)</span>, then the above has upper bound:</p>
+<div class="arithmatex">\[
+\Pr_{h\sim\mathcal H}[h(p)=h(q)]=1-\frac{\sum_{i=1}^d\min\{w,|p_i-q_i|\}}{dw}\\
+\]</div>
+<div class="arithmatex">\[
 \le 1-\frac{w}{dw}\le1-\frac{cR}{dw}
-$$
-Thus <span class="arithmatex">\(\mathcal H\)</span> is <span class="arithmatex">\((R,cR.1-R/(dw),1-cR/(dw))\)</span>-sensitive if we choose <span class="arithmatex">\(w\ge cR\)</span>. This results in <span class="arithmatex">\(L=O(n^\rho)\)</span> for
-$$
+\]</div>
+<p>Thus <span class="arithmatex">\(\mathcal H\)</span> is <span class="arithmatex">\((R,cR.1-R/(dw),1-cR/(dw))\)</span>-sensitive if we choose <span class="arithmatex">\(w\ge cR\)</span>. This results in <span class="arithmatex">\(L=O(n^\rho)\)</span> for</p>
+<div class="arithmatex">\[
 \rho=\frac{\ln P_1}{\ln P_2}=\frac{\ln(1-R/(dw))}{\ln(1-cR/(dw))}\le\frac{\ln(1-R/(dw))}{\ln(1-R/(dw))^c}=\frac{1}{c}
-$$
-We also have <span class="arithmatex">\(k=\log_{P_2}(1/n)=\frac{\ln(1/n)}{\ln(1-cR/(dw))}\)</span>. By <span class="arithmatex">\(1-x\le\exp(-x)\)</span>, we have
-$$
+\]</div>
+<p>We also have <span class="arithmatex">\(k=\log_{P_2}(1/n)=\frac{\ln(1/n)}{\ln(1-cR/(dw))}\)</span>. By <span class="arithmatex">\(1-x\le\exp(-x)\)</span>, we have</p>
+<div class="arithmatex">\[
 k=\log_{P_2}(1/n)=\frac{\ln(1/n)}{\ln(1-cR/(dw))}\le\frac{\ln(1/n)}{-cR/(dw)}=dw\ln n/(cR).
-$$</p>
+\]</div>
 <h2 id="set-similarity-search">Set Similarity Search</h2>
 <p>Consider the data consists of sets rather than points.</p>
 <p>Input consist of <span class="arithmatex">\(n\)</span> sets <span class="arithmatex">\(S_1,\cdots,S_n\)</span>, all subsets of a universe <span class="arithmatex">\(U\)</span>.</p>
-<p>Measure for set similarity: Jaccard coefficient
-$$
+<p>Measure for set similarity: Jaccard coefficient</p>
+<div class="arithmatex">\[
 J(A,B)=\frac{|A\cap B|}{|A\cup B|}
-$$
-The coefficient lies between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(1\)</span> with <span class="arithmatex">\(J(A,B)=1\)</span> when <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are identical and <span class="arithmatex">\(J(A,B)=0\)</span> when <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are disjoint.</p>
+\]</div>
+<p>The coefficient lies between <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(1\)</span> with <span class="arithmatex">\(J(A,B)=1\)</span> when <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are identical and <span class="arithmatex">\(J(A,B)=0\)</span> when <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are disjoint.</p>
 <p>The Nearest Neighbor Queries on sets: Given a set <span class="arithmatex">\(C\)</span>, find the set <span class="arithmatex">\(S_i\)</span> in the data that is most similar to <span class="arithmatex">\(C\)</span>.</p>
-<p>Goal: Use the LSH. For LSH we need to distance metric. Which is the opposite of Jaccard coefficient.
-$$
+<p>Goal: Use the LSH. For LSH we need to distance metric. Which is the opposite of Jaccard coefficient.</p>
+<div class="arithmatex">\[
 dist_J(A,B)=1-J(A,B)
-$$
-How to define LSH function for this distance metric? Use <em>min-wise independent</em> families of hash function. A family of hash functions <span class="arithmatex">\(\mathcal H:U\rightarrow\mathbb R\)</span> is <strong>min-wise independent</strong> if <span class="arithmatex">\(\forall x\in U,S\subset U\)</span> with <span class="arithmatex">\(x\notin S\)</span>, it holds that
-$$
+\]</div>
+<p>How to define LSH function for this distance metric? Use <em>min-wise independent</em> families of hash function. A family of hash functions <span class="arithmatex">\(\mathcal H:U\rightarrow\mathbb R\)</span> is <strong>min-wise independent</strong> if <span class="arithmatex">\(\forall x\in U,S\subset U\)</span> with <span class="arithmatex">\(x\notin S\)</span>, it holds that</p>
+<div class="arithmatex">\[
 \Pr_{h\sim\mathcal H}[h(x)\lt\min_{y\in S}h(y)]=\frac{1}{|S|+1}.
-$$
-The above definition means that in any set, each element has exactly the same probability of receiving the smallest hash value. We assume that any <span class="arithmatex">\(h\in\mathcal H\)</span> returns distinct values for all <span class="arithmatex">\(x\in U\)</span> i.e. <span class="arithmatex">\(h(x)\neq h(y)\)</span> for any <span class="arithmatex">\(x\neq y\)</span> and any <span class="arithmatex">\(h\in\mathcal H\)</span>.</p>
-<p>Assume that we have a min-wise independent family of hash functions <span class="arithmatex">\(\mathcal H\)</span> and define from it a new family of hash function <span class="arithmatex">\(\mathcal G_\mathcal H\subset 2^U\rightarrow U:\)</span>
-$$
-\mathcal G_\mathcal H={g_h(A)=\arg\min_{x\in A}h(x)|h\in\mathcal H}.
-$$</p>
+\]</div>
+<p>The above definition means that in any set, each element has exactly the same probability of receiving the smallest hash value. We assume that any <span class="arithmatex">\(h\in\mathcal H\)</span> returns distinct values for all <span class="arithmatex">\(x\in U\)</span> i.e. <span class="arithmatex">\(h(x)\neq h(y)\)</span> for any <span class="arithmatex">\(x\neq y\)</span> and any <span class="arithmatex">\(h\in\mathcal H\)</span>.</p>
+<p>Assume that we have a min-wise independent family of hash functions <span class="arithmatex">\(\mathcal H\)</span> and define from it a new family of hash function <span class="arithmatex">\(\mathcal G_\mathcal H\subset 2^U\rightarrow U:\)</span></p>
+<div class="arithmatex">\[
+\mathcal G_\mathcal H=\{g_h(A)=\arg\min_{x\in A}h(x)|h\in\mathcal H\}.
+\]</div>
 <p>This definition needs a bit of explanation. The notation <span class="arithmatex">\(2^U\)</span> refers to all subsets of the universe <span class="arithmatex">\(U\)</span>. So <span class="arithmatex">\(\mathcal G_\mathcal H\)</span> consists of functions that map sets <span class="arithmatex">\(A\subseteq U\)</span> to hash values in <span class="arithmatex">\(U\)</span>.</p>
 <p>The family <span class="arithmatex">\(\mathcal G_\mathcal H\)</span> has one function <span class="arithmatex">\(g_h\)</span> for each function <span class="arithmatex">\(h\in\mathcal H\)</span>. To evaluate <span class="arithmatex">\(g_h(A)\)</span>, we compute the element <span class="arithmatex">\(x\in A\)</span> receiving the smallest hash value when using <span class="arithmatex">\(h\)</span>, and we return that element <span class="arithmatex">\(x\)</span> as the hash value of <span class="arithmatex">\(A\)</span>. Simply speaking, <span class="arithmatex">\(g_h(A)\)</span> returns the element in <span class="arithmatex">\(A\)</span> with smallest hash value according to <span class="arithmatex">\(h\)</span>,</p>
-<p>Is <span class="arithmatex">\(\mathcal G_\mathcal H\)</span> sensitive w.r.t. <span class="arithmatex">\(dist_J\)</span>? Consider 2 sets <span class="arithmatex">\(A,B\)</span> and let <span class="arithmatex">\(x^*=\arg\min_{x\in A\cup B}h(x)\)</span> be the element with smallest hash value in the union <span class="arithmatex">\(A\cup B\)</span>. Observe that <span class="arithmatex">\(g_h(A)=g_h(B)\)</span> iff <span class="arithmatex">\(x^*\in A\cap B\)</span>. Now define for every <span class="arithmatex">\(x\in A\cap B\)</span> the event <span class="arithmatex">\(E_x\)</span> s.t. <span class="arithmatex">\(h(x)\lt\min_{g\in(A\cup B)\diagdown\{x\}}h(y)\)</span>, i.e., <span class="arithmatex">\(E_x\)</span> is the event that <span class="arithmatex">\(x\)</span> has the smallest hash value among all elements in <span class="arithmatex">\(A\cup B\)</span>, we have
-$$
-\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]=\Pr_{h\sim H}[\arg\min_{x\in A\cup B}h(x)\in A\cap B]\
+<p>Is <span class="arithmatex">\(\mathcal G_\mathcal H\)</span> sensitive w.r.t. <span class="arithmatex">\(dist_J\)</span>? Consider 2 sets <span class="arithmatex">\(A,B\)</span> and let <span class="arithmatex">\(x^*=\arg\min_{x\in A\cup B}h(x)\)</span> be the element with smallest hash value in the union <span class="arithmatex">\(A\cup B\)</span>. Observe that <span class="arithmatex">\(g_h(A)=g_h(B)\)</span> iff <span class="arithmatex">\(x^*\in A\cap B\)</span>. Now define for every <span class="arithmatex">\(x\in A\cap B\)</span> the event <span class="arithmatex">\(E_x\)</span> s.t. <span class="arithmatex">\(h(x)\lt\min_{g\in(A\cup B)\diagdown\{x\}}h(y)\)</span>, i.e., <span class="arithmatex">\(E_x\)</span> is the event that <span class="arithmatex">\(x\)</span> has the smallest hash value among all elements in <span class="arithmatex">\(A\cup B\)</span>, we have</p>
+<div class="arithmatex">\[
+\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]=\Pr_{h\sim H}[\arg\min_{x\in A\cup B}h(x)\in A\cap B]\\
+\]</div>
+<div class="arithmatex">\[
 =\Pr_{h\sim\mathcal H}[\bigcup_{x\in A\cap B}E_x]
-$$
-The events <span class="arithmatex">\(E_x\)</span> are disjoint. Therefore
-$$
-\Pr_{h\sim\mathcal H}[\bigcup_{x\in A\cap B}E_x]=\sum_{x\in A\cap B}\Pr_{h\sim\mathcal H}[E_x]\
-=\sum_{x\in A\cap B}\frac{1}{|(A\cup B)\diagdown{x}|+1}\
+\]</div>
+<p>The events <span class="arithmatex">\(E_x\)</span> are disjoint. Therefore</p>
+<div class="arithmatex">\[
+\Pr_{h\sim\mathcal H}[\bigcup_{x\in A\cap B}E_x]=\sum_{x\in A\cap B}\Pr_{h\sim\mathcal H}[E_x]\\
+\]</div>
+<div class="arithmatex">\[
+=\sum_{x\in A\cap B}\frac{1}{|(A\cup B)\diagdown\{x\}|+1}\\
+\]</div>
+<div class="arithmatex">\[
 =\frac{|A\cap B|}{|A\cup B|}=J(A,B)
-$$
-Now we bound <span class="arithmatex">\(P_1,P_2\)</span>.</p>
+\]</div>
+<p>Now we bound <span class="arithmatex">\(P_1,P_2\)</span>.</p>
 <ul>
 <li>
 <p>For <span class="arithmatex">\(P_1\)</span>. Let <span class="arithmatex">\(A,B\)</span> have <span class="arithmatex">\(dist_J(A,B)\le R\)</span>. We see that <span class="arithmatex">\(R\ge dist_J(A,B)=1-J(A,B)=1-\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]\)</span>, implying <span class="arithmatex">\(\Pr_{g_h\sim \mathcal G_\mathcal H}[g_h(A)=g_h(B)]\ge1-R\)</span>.</p>
@@ -9553,115 +9567,158 @@ Now we bound <span class="arithmatex">\(P_1,P_2\)</span>.</p>
 </li>
 </ul>
 <p>Thus the family <span class="arithmatex">\(\mathcal G_\mathcal H\)</span> is thus <span class="arithmatex">\((R,cR,1-R,1-cR)\)</span>-sensitive.</p>
-<p>Then we bound <span class="arithmatex">\(\rho\)</span> in <span class="arithmatex">\(L=O(n^\rho)\)</span>:
-$$
+<p>Then we bound <span class="arithmatex">\(\rho\)</span> in <span class="arithmatex">\(L=O(n^\rho)\)</span>:</p>
+<div class="arithmatex">\[
 \rho=\ln P_1/\ln P_2=\ln(1-R)/\ln(1-cR)\le\ln(1-R)/\ln(1-R)^c=1/c.
-$$
-Then we bound <span class="arithmatex">\(k\)</span> as <span class="arithmatex">\(k=\ln_{P_2}(1/n)=\ln(1/n)/\ln(1-cR)\)</span>. Analogously,
-$$
+\]</div>
+<p>Then we bound <span class="arithmatex">\(k\)</span> as <span class="arithmatex">\(k=\ln_{P_2}(1/n)=\ln(1/n)/\ln(1-cR)\)</span>. Analogously,</p>
+<div class="arithmatex">\[
 k\le\ln(1/n)/\ln(\exp(-cR))=\ln n/(cR).
-$$</p>
+\]</div>
 <h3 id="constructing-min-wise-independent-families">Constructing Min-Wise Independent Families</h3>
 <p>All of above assumed that we had a min-wise independent family of hash functions <span class="arithmatex">\(\mathcal H\)</span>. Unfortunately it can be proved that such families of hash functions are impossible to construct using a small random seed. However, we can still find efficient families that are only approximately min-wise independent.</p>
 <p>It suffices to get reasonable nearest neighbor search structures.</p>
-<p>We say that a family of hash function <span class="arithmatex">\(\mathcal H\)</span> is <span class="arithmatex">\(\epsilon\)</span><strong>-approximate min-wise independent</strong>, if for any <span class="arithmatex">\(x\in U\)</span> and any <span class="arithmatex">\(S\subset U\)</span> with <span class="arithmatex">\(x\notin S\)</span>, we have
-$$
+<p>We say that a family of hash function <span class="arithmatex">\(\mathcal H\)</span> is <span class="arithmatex">\(\epsilon\)</span><strong>-approximate min-wise independent</strong>, if for any <span class="arithmatex">\(x\in U\)</span> and any <span class="arithmatex">\(S\subset U\)</span> with <span class="arithmatex">\(x\notin S\)</span>, we have</p>
+<div class="arithmatex">\[
 \Pr_{h\sim\mathcal H}[h(x)\lt\min_{y\in S}h(y)]\in\frac{1\pm\epsilon}{|S|+1}
-$$
-Indyk showed that any <span class="arithmatex">\(O(\ln(1/\epsilon))\)</span>-wise independent family of hash functions is also <span class="arithmatex">\(\epsilon\)</span>-approximate min-wise independent. A classic example of <span class="arithmatex">\(k\)</span>-wise independent family of hash function is the following for any prime <span class="arithmatex">\(p\gt U\)</span>:
-$$
-\mathcal H=\left{ h_{a_{k-1},\cdots,a_0}(x)=\sum_{i=1}<sup>{k-1}a_ix</sup>i\text{ mod }p|a_0,\cdots,a_{k-1}\in[p] \right}.
-$$
-Someone proved that the simple tabulation hash function is <span class="arithmatex">\(\epsilon\)</span>-approximate min-wise independent with <span class="arithmatex">\(\epsilon=O(\lg^2n/n^{1/c})\)</span> where <span class="arithmatex">\(c\)</span> is number of tables used for the hash function and <span class="arithmatex">\(n\)</span> is the cardinality of the set <span class="arithmatex">\(S\)</span>. <mark>So the quality depends on the set cardinalities and therefore simple tabulation hashing works best for rather large sets.</mark></p>
-<p>How the approximation affects the sensitivity of the hash function:
-$$
-\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]=\sum_{x\in A\cap B}\Pr_{h\sim\mathcal H}[E_x]\
-\le\sum_{x\in A\cap B}\frac{1+\epsilon}{|(A\cup B)\diagdown{x}|+1}\
-=(1+\epsilon)\cdot\frac{|A\cap B|}{|A\cup B|}\
+\]</div>
+<p>Indyk showed that any <span class="arithmatex">\(O(\ln(1/\epsilon))\)</span>-wise independent family of hash functions is also <span class="arithmatex">\(\epsilon\)</span>-approximate min-wise independent. A classic example of <span class="arithmatex">\(k\)</span>-wise independent family of hash function is the following for any prime <span class="arithmatex">\(p\gt U\)</span>:</p>
+<div class="arithmatex">\[
+\mathcal H=\left\{ h_{a_{k-1},\cdots,a_0}(x)=\sum_{i=1}^{k-1}a_ix^i\text{ mod }p|a_0,\cdots,a_{k-1}\in[p] \right\}.
+\]</div>
+<p>Someone proved that the simple tabulation hash function is <span class="arithmatex">\(\epsilon\)</span>-approximate min-wise independent with <span class="arithmatex">\(\epsilon=O(\lg^2n/n^{1/c})\)</span> where <span class="arithmatex">\(c\)</span> is number of tables used for the hash function and <span class="arithmatex">\(n\)</span> is the cardinality of the set <span class="arithmatex">\(S\)</span>. <mark>So the quality depends on the set cardinalities and therefore simple tabulation hashing works best for rather large sets.</mark></p>
+<p>How the approximation affects the sensitivity of the hash function:</p>
+<div class="arithmatex">\[
+\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]=\sum_{x\in A\cap B}\Pr_{h\sim\mathcal H}[E_x]\\
+\]</div>
+<div class="arithmatex">\[
+\le\sum_{x\in A\cap B}\frac{1+\epsilon}{|(A\cup B)\diagdown\{x\}|+1}\\
+\]</div>
+<div class="arithmatex">\[
+=(1+\epsilon)\cdot\frac{|A\cap B|}{|A\cup B|}\\
+\]</div>
+<div class="arithmatex">\[
 =(1+\epsilon)\cdot J(A,B).
-$$
-Therefore, for <span class="arithmatex">\(dist_J(A,B)\gt cR\)</span>, we have 
-$$
-\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]\
-\le
-(1+\epsilon)J(A,B)\
-\le(1+\epsilon)(1-dist_J(A,B))\
+\]</div>
+<p>Therefore, for <span class="arithmatex">\(dist_J(A,B)\gt cR\)</span>, we have</p>
+<div class="arithmatex">\[
+\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]\\
+\]</div>
+<div class="arithmatex">\[
+\le(1+\epsilon)J(A,B)\\
+\]</div>
+<div class="arithmatex">\[
+\le(1+\epsilon)(1-dist_J(A,B))\\
+\]</div>
+<div class="arithmatex">\[
 \le(1+\epsilon)(1-cR).
-$$
-Analogously, we also have
-$$
-\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]=\sum_{x\in A\cap B}\Pr_{h\sim\mathcal H}[E_x]\
-\ge\sum_{x\in A\cap B}\frac{1-\epsilon}{|(A\cup B)\diagdown{x}|+1}\
-=(1-\epsilon)\cdot\frac{|A\cap B|}{|A\cup B|}\
+\]</div>
+<p>Analogously, we also have</p>
+<div class="arithmatex">\[
+\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]=\sum_{x\in A\cap B}\Pr_{h\sim\mathcal H}[E_x]\\
+\]</div>
+<div class="arithmatex">\[
+\ge\sum_{x\in A\cap B}\frac{1-\epsilon}{|(A\cup B)\diagdown\{x\}|+1}\\
+\]</div>
+<div class="arithmatex">\[
+=(1-\epsilon)\cdot\frac{|A\cap B|}{|A\cup B|}\\
+\]</div>
+<div class="arithmatex">\[
 =(1-\epsilon)\cdot J(A,B).
-$$
-This implies that for <span class="arithmatex">\(dist_J(A,B)\le R\)</span>, we have
-$$
-\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]\
-\ge(1-\epsilon)J(A,B)\
-=(1-\epsilon)(1-dist_J(A,B))\
+\]</div>
+<p>This implies that for <span class="arithmatex">\(dist_J(A,B)\le R\)</span>, we have</p>
+<div class="arithmatex">\[
+\Pr_{g_h\sim\mathcal G_\mathcal H}[g_h(A)=g_h(B)]\\
+\]</div>
+<div class="arithmatex">\[
+\ge(1-\epsilon)J(A,B)\\
+\]</div>
+<div class="arithmatex">\[
+=(1-\epsilon)(1-dist_J(A,B))\\
+\]</div>
+<div class="arithmatex">\[
 \ge(1-\epsilon)(1-R).
-$$
-Thus <span class="arithmatex">\(\mathcal G_\mathcal H\)</span> is <span class="arithmatex">\((R,cR,(1-R)(1-\epsilon),(1-cR)(1+\epsilon))\)</span>-sensitive.</p>
+\]</div>
+<p>Thus <span class="arithmatex">\(\mathcal G_\mathcal H\)</span> is <span class="arithmatex">\((R,cR,(1-R)(1-\epsilon),(1-cR)(1+\epsilon))\)</span>-sensitive.</p>
 <h2 id="l2-distance">l<sub>2</sub>-distance</h2>
 <div class="arithmatex">\[
 dist(p,q)=\sqrt{\sum_{i=1}^d(p_i-q_i)^2}
 \]</div>
 <p>Math Math Math!🤯</p>
-<p>Let <span class="arithmatex">\(w\)</span> be a parameter to be fixed and consider the following family of hash functions
-$$
-\mathcal H=\left{h_{o,u}(x)=\lfloor\frac{\langle x,u\rangle-o}{w}\rfloor|o\in[0,w),u\in\mathbb R^d\right}.
-$$
-We simply pick <span class="arithmatex">\(o\)</span> uniformly in <span class="arithmatex">\([0,w)\)</span> and pick vector <span class="arithmatex">\(u\)</span> s.t. each coordinate is independently <span class="arithmatex">\(\mathcal N(0,1)\)</span> distributed.</p>
-<p>Consider two points <span class="arithmatex">\(p,q\)</span> and two fixed values of <span class="arithmatex">\(\langle p,u\rangle\)</span> and <span class="arithmatex">\(\langle q,u\rangle\)</span> (Once <span class="arithmatex">\(u\)</span> is chosen but <span class="arithmatex">\(o\)</span> is still uniform random). Similar to <span class="arithmatex">\(\ell_1\)</span>-distance, we get
-$$
+<p>Let <span class="arithmatex">\(w\)</span> be a parameter to be fixed and consider the following family of hash functions</p>
+<div class="arithmatex">\[
+\mathcal H=\left\{h_{o,u}(x)=\lfloor\frac{\langle x,u\rangle-o}{w}\rfloor|o\in[0,w),u\in\mathbb R^d\right\}.
+\]</div>
+<p>We simply pick <span class="arithmatex">\(o\)</span> uniformly in <span class="arithmatex">\([0,w)\)</span> and pick vector <span class="arithmatex">\(u\)</span> s.t. each coordinate is independently <span class="arithmatex">\(\mathcal N(0,1)\)</span> distributed.</p>
+<p>Consider two points <span class="arithmatex">\(p,q\)</span> and two fixed values of <span class="arithmatex">\(\langle p,u\rangle\)</span> and <span class="arithmatex">\(\langle q,u\rangle\)</span> (Once <span class="arithmatex">\(u\)</span> is chosen but <span class="arithmatex">\(o\)</span> is still uniform random). Similar to <span class="arithmatex">\(\ell_1\)</span>-distance, we get</p>
+<div class="arithmatex">\[
 \lfloor\frac{\langle p,u\rangle-o}{w}\rfloor=\lfloor\frac{\langle q,u\rangle-o}{w}\rfloor
-$$
-with probability <span class="arithmatex">\(\max\{0,1-|\langle p-q,u\rangle|/w\}\)</span>.</p>
-<p>Then consider the distribution of <span class="arithmatex">\(\langle p-q,u\rangle\)</span>:
-$$
-\langle p-q,u\rangle=\sum_{i=1}^d(p_i-q_i)u_i\sim\mathcal N(0,\sum_i(p_i-q_i)^2)\
-\sim\mathcal N(0,dist(p,q)^2)\sim dist(p,q)\cdot\mathcal N(0,1)\
-\Rightarrow \langle p-q,u\rangle/w\sim (dist(p,q)/w)\cdot\mathcal N(0,1)\
-$$
-By probability density function <span class="arithmatex">\(f\)</span> or <span class="arithmatex">\(\mathcal N(0,1)\)</span>:
-$$
-\Pr[h(p)=h(q)]=\int_{-\infty}<sup>\infty\frac{1}{\sqrt{2\pi}}\exp(-x</sup>2/2)\cdot\max{0,1-(dist(p,q)/w)|x|}dx\
-\ge\Pr[h(p)=h(q)]=\int_{-\infty}<sup>\infty\frac{1}{\sqrt{2\pi}}\exp(-x</sup>2/2)\cdot(1-(dist(p,q)/w)|x|)dx\
-=\int_{-\infty}<sup>\infty\frac{1}{\sqrt{2\pi}}\exp(-x</sup>2/2)dx-\int_{-\infty}<sup>\infty\frac{1}{\sqrt{2\pi}}\exp(-x</sup>2/2)(dist(p,q)/w)|x|dx.
-$$
-By symmetry and integral of <span class="arithmatex">\(f\)</span> is <span class="arithmatex">\(1\)</span>, the upper quantity
-$$
-\ge1-2\cdot(dist(p,q)/w)\cdot\frac{1}{\sqrt{2\pi}}\cdot\int_0<sup>\infty\exp(-x</sup>2/2)xdx\
+\]</div>
+<p>with probability <span class="arithmatex">\(\max\{0,1-|\langle p-q,u\rangle|/w\}\)</span>.</p>
+<p>Then consider the distribution of <span class="arithmatex">\(\langle p-q,u\rangle\)</span>:</p>
+<div class="arithmatex">\[
+\langle p-q,u\rangle=\sum_{i=1}^d(p_i-q_i)u_i\sim\mathcal N(0,\sum_i(p_i-q_i)^2)\\
+\]</div>
+<div class="arithmatex">\[
+\sim\mathcal N(0,dist(p,q)^2)\sim dist(p,q)\cdot\mathcal N(0,1)\\
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \langle p-q,u\rangle/w\sim (dist(p,q)/w)\cdot\mathcal N(0,1)\\
+\]</div>
+<p>By probability density function <span class="arithmatex">\(f\)</span> or <span class="arithmatex">\(\mathcal N(0,1)\)</span>:</p>
+<div class="arithmatex">\[
+\Pr[h(p)=h(q)]=\int_{-\infty}^\infty\frac{1}{\sqrt{2\pi}}\exp(-x^2/2)\cdot\max\{0,1-(dist(p,q)/w)|x|\}dx\\
+\]</div>
+<div class="arithmatex">\[
+\ge\Pr[h(p)=h(q)]=\int_{-\infty}^\infty\frac{1}{\sqrt{2\pi}}\exp(-x^2/2)\cdot(1-(dist(p,q)/w)|x|)dx\\
+\]</div>
+<div class="arithmatex">\[
+=\int_{-\infty}^\infty\frac{1}{\sqrt{2\pi}}\exp(-x^2/2)dx-\int_{-\infty}^\infty\frac{1}{\sqrt{2\pi}}\exp(-x^2/2)(dist(p,q)/w)|x|dx.
+\]</div>
+<p>By symmetry and integral of <span class="arithmatex">\(f\)</span> is <span class="arithmatex">\(1\)</span>, the upper quantity</p>
+<div class="arithmatex">\[
+\ge1-2\cdot(dist(p,q)/w)\cdot\frac{1}{\sqrt{2\pi}}\cdot\int_0^\infty\exp(-x^2/2)xdx\\
+\]</div>
+<div class="arithmatex">\[
 \ge1-2\cdot(dist(p,q)/w)\cdot\frac{1}{\sqrt{2\pi}}
-$$
-<strong>For <span class="arithmatex">\(p,q\)</span> with dist less than <span class="arithmatex">\(R\)</span></strong>, this is at least <span class="arithmatex">\(1-\sqrt{2/\pi}(R/w)\)</span>.</p>
-<p>For upper bound on <span class="arithmatex">\(\Pr[h(p)=h(q)]\)</span>:
-$$
-\Pr[h(p)=h(q)]=\int_{-\infty}<sup>\infty\frac{1}{\sqrt{2\pi}}\exp(-x</sup>2/2)\cdot\max{0,1-(dist(p,q)/w)|x|}dx\
-\le\int_{-\infty}<sup>\infty\frac{1}{\sqrt{2\pi}}\exp(-x</sup>2/2)\cdot(1-(dist(p,q)/w)|x|)dx\
-+2\cdot\int_{w/dist(p,q)}<sup>\infty\frac{1}{\sqrt{2\pi}}\exp(-x</sup>2/2)\cdot(dist(p,q)/w)xdx\
-=\cdots\cdots\
-=1-\sqrt{2/\pi}(dist(p,q)/w)(1-e<sup>{-(w/dist(p,q))</sup>2/2}).
-$$
-Assume <span class="arithmatex">\(w\gg dist(p,q)\)</span> and ignore <span class="arithmatex">\((1-e^{-(w/dist(p,q))^2/2})\)</span>. Under this simplification, we get for <span class="arithmatex">\(p,q\)</span> with <span class="arithmatex">\(dist(p,q)\gt cR\)</span> that <span class="arithmatex">\(\Pr[h(p)=h(q)]\le1-\sqrt{2/\pi}(cR/w)\)</span>.</p>
-<p>The we bound <span class="arithmatex">\(\rho\)</span> in <span class="arithmatex">\(L=O(n^\rho)\)</span>:
-$$
-\rho=\ln P_1/\ln P_2=\ln(1-\sqrt{2/\pi}(R/w))/\ln(1-\sqrt{2/\pi}(cR/w))\
+\]</div>
+<p><strong>For <span class="arithmatex">\(p,q\)</span> with dist less than <span class="arithmatex">\(R\)</span></strong>, this is at least <span class="arithmatex">\(1-\sqrt{2/\pi}(R/w)\)</span>.</p>
+<p>For upper bound on <span class="arithmatex">\(\Pr[h(p)=h(q)]\)</span>:</p>
+<div class="arithmatex">\[
+\Pr[h(p)=h(q)]=\int_{-\infty}^\infty\frac{1}{\sqrt{2\pi}}\exp(-x^2/2)\cdot\max\{0,1-(dist(p,q)/w)|x|\}dx\\
+\]</div>
+<div class="arithmatex">\[
+\le\int_{-\infty}^\infty\frac{1}{\sqrt{2\pi}}\exp(-x^2/2)\cdot(1-(dist(p,q)/w)|x|)dx\\
+\]</div>
+<div class="arithmatex">\[
++2\cdot\int_{w/dist(p,q)}^\infty\frac{1}{\sqrt{2\pi}}\exp(-x^2/2)\cdot(dist(p,q)/w)xdx\\
+\]</div>
+<div class="arithmatex">\[
+=\cdots\cdots\\
+\]</div>
+<div class="arithmatex">\[
+=1-\sqrt{2/\pi}(dist(p,q)/w)(1-e^{-(w/dist(p,q))^2/2}).
+\]</div>
+<p>Assume <span class="arithmatex">\(w\gg dist(p,q)\)</span> and ignore <span class="arithmatex">\((1-e^{-(w/dist(p,q))^2/2})\)</span>. Under this simplification, we get for <span class="arithmatex">\(p,q\)</span> with <span class="arithmatex">\(dist(p,q)\gt cR\)</span> that <span class="arithmatex">\(\Pr[h(p)=h(q)]\le1-\sqrt{2/\pi}(cR/w)\)</span>.</p>
+<p>The we bound <span class="arithmatex">\(\rho\)</span> in <span class="arithmatex">\(L=O(n^\rho)\)</span>:</p>
+<div class="arithmatex">\[
+\rho=\ln P_1/\ln P_2=\ln(1-\sqrt{2/\pi}(R/w))/\ln(1-\sqrt{2/\pi}(cR/w))\\
+\]</div>
+<div class="arithmatex">\[
 \le\ln(1-\sqrt{2/\pi}(R/w))/\ln(1-\sqrt{2/\pi}(R/w))^c=1/c
-$$
-If we don't ignore <span class="arithmatex">\((1-e^{-(w/dist(p,q))^2/2})\)</span>, then
-$$
-\rho\le\frac{1}{c(1-e<sup>{-(w/dist(p,q))</sup>2/2})}
-$$
-By choosing <span class="arithmatex">\(w\)</span>, we need to estimate on the largest value of <span class="arithmatex">\(dist(p,q)\)</span>.</p>
+\]</div>
+<p>If we don't ignore <span class="arithmatex">\((1-e^{-(w/dist(p,q))^2/2})\)</span>, then</p>
+<div class="arithmatex">\[
+\rho\le\frac{1}{c(1-e^{-(w/dist(p,q))^2/2})}
+\]</div>
+<p>By choosing <span class="arithmatex">\(w\)</span>, we need to estimate on the largest value of <span class="arithmatex">\(dist(p,q)\)</span>.</p>
 <p>Then we bound <span class="arithmatex">\(k\)</span>.</p>
 <p><span class="arithmatex">\(P_2=1-\sqrt{2/\pi}(cR/w)\)</span>, ignoring <span class="arithmatex">\((1-e^{-(w/dist(p,q))^2/2})\)</span>.</p>
-<p>Be have <span class="arithmatex">\(k=\log_{P_2}(1/n)=\ln(1/n)/\ln P_2=\ln(1/n)/\ln(1-\sqrt{2/\pi}(cR/w))\)</span>.
-$$
-k\le\ln(1/n)/\ln(e<sup>{-(w/dist(p,q))</sup>2/2})=\ln n/(\sqrt{2/\pi}cR/w)=O(w\ln n/(cR))
-$$
-This means we should be careful not to choose <span class="arithmatex">\(w\)</span> too large.</p>
+<p>Be have <span class="arithmatex">\(k=\log_{P_2}(1/n)=\ln(1/n)/\ln P_2=\ln(1/n)/\ln(1-\sqrt{2/\pi}(cR/w))\)</span>.</p>
+<div class="arithmatex">\[
+k\le\ln(1/n)/\ln(e^{-(w/dist(p,q))^2/2})=\ln n/(\sqrt{2/\pi}cR/w)=O(w\ln n/(cR))
+\]</div>
+<p>This means we should be careful not to choose <span class="arithmatex">\(w\)</span> too large.</p>
 
 
 

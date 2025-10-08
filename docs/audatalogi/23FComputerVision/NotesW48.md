@@ -50,6 +50,7 @@ In Shannon's theory, sending one bit of information means to reduce the receiver
 幻灯片有一个以天气预报为例解释信息熵的例子
 
 the probability distribution is:
+
 $$
 H(\mathbb p)=-\sum_{i=1}^np_i\log_2(p_i)
 $$
@@ -65,9 +66,11 @@ note that if the predicted probabilities equal the true probabilities, then the 
 but if the two distribution differ, the cross-entropy will be larger than the entropy by some number of bits.
 
 交叉熵实际上就是衡量两个我预测的概率分布和真实的概率分布差距的大小。
+
 $$
 H(\mathbb p,\mathbb q)=-\sum_{i=1}^np_i\log_2(q_i)
 $$
+
 $p_i$: true underlying distribution
 
 $q_i$: predicted distribution

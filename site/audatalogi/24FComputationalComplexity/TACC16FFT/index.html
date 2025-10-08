@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9458,7 +9458,7 @@
 <p class="admonition-title">Info</p>
 <p>伽罗瓦域是一个包含加法和乘法的代数结构，满足加法和乘法的交换律、结合律、分配律，每个元素都有逆元。</p>
 </div>
-<p><span class="arithmatex">\(\Z_n\)</span>: Integers modulo <span class="arithmatex">\(n\ge1\)</span>.</p>
+<p><span class="arithmatex">\(\mathbb Z_n\)</span>: Integers modulo <span class="arithmatex">\(n\ge1\)</span>.</p>
 <p><span class="arithmatex">\(M_{m,n}(R)\)</span>: <span class="arithmatex">\(m\)</span> by <span class="arithmatex">\(n\)</span> matrices over a ring <span class="arithmatex">\(R\)</span>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -9473,16 +9473,16 @@
 e^{\frac{2\pi}{n}i}=\cos\frac{2\pi}{n}+i\sin\frac{2\pi}{n}\\
 i=\sqrt{-1}
 \]</div>
-<p>A complex number <span class="arithmatex">\(\alpha\in\C\)</span> is a <span class="arithmatex">\(n\)</span>-th <strong>root of unity</strong> if <span class="arithmatex">\(\alpha^n=1\)</span>.</p>
+<p>A complex number <span class="arithmatex">\(\alpha\in\mathbb C\)</span> is a <span class="arithmatex">\(n\)</span>-th <strong>root of unity</strong> if <span class="arithmatex">\(\alpha^n=1\)</span>.</p>
 <p>It is a <strong>primitive <span class="arithmatex">\(n\)</span>-th root of unity</strong> if <span class="arithmatex">\(\alpha^m\neq1\)</span> for all <span class="arithmatex">\(m=1,\cdots,n-1\)</span>.</p>
 <p>There are exactly <span class="arithmatex">\(\varphi(n)\)</span> primitive <span class="arithmatex">\(n\)</span>-th roots of unity where <span class="arithmatex">\(\varphi(n)\)</span> is the number of positive integers less than or equal to <span class="arithmatex">\(n\)</span> that are relatively prime to <span class="arithmatex">\(n\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma of cancellation property. Let <span class="arithmatex">\(\omega\)</span> be any primitive <span class="arithmatex">\(n\)</span>-th root of unity.
-$$
-\sum_{j=1}<sup>{n-1}\omega</sup>{js}=\begin{cases}
-0\text{ if }s\not\equiv0\mod n\
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma of cancellation property. Let <span class="arithmatex">\(\omega\)</span> be any primitive <span class="arithmatex">\(n\)</span>-th root of unity.</p>
+<div class="arithmatex">\[
+\sum_{j=1}^{n-1}\omega^{js}=\begin{cases}
+0\text{ if }s\not\equiv0\mod n\\
 n\text{ if }s\equiv0\mod n
 \end{cases}
-$$</p>
+\]</div>
 <blockquote>
 <ul>
 <li>
@@ -9494,78 +9494,79 @@ $$</p>
 </ul>
 <p>Substituting <span class="arithmatex">\(x=\omega^s\)</span> makes LHS <span class="arithmatex">\(0\)</span>. Thus RHS equals <span class="arithmatex">\(0\)</span>, since <span class="arithmatex">\(\omega^s\neq1\)</span>, the lemma holds.</p>
 </blockquote>
-<p>Let <span class="arithmatex">\(F(\omega)=F_n(\omega)\)</span> denote the matrix
-$$
+<p>Let <span class="arithmatex">\(F(\omega)=F_n(\omega)\)</span> denote the matrix</p>
+<div class="arithmatex">\[
 \left[
 \begin{array}{ccccc}
-1&amp;1&amp;1&amp;\cdots&amp;1\
-1&amp;\omega&amp;\omega<sup>2&amp;\cdots&amp;\omega</sup>{n-1}\
-1&amp;\omega<sup>2&amp;\omega</sup>4&amp;\cdots&amp;\omega^{2(n-1)}\
-\vdots&amp;&amp;&amp;&amp;\vdots\
-1&amp;\omega<sup>{n-1}&amp;\omega</sup>{2(n-1)}&amp;\cdots&amp;\omega<sup>{(n-1)</sup>2}
+1&amp;1&amp;1&amp;\cdots&amp;1\\
+1&amp;\omega&amp;\omega^2&amp;\cdots&amp;\omega^{n-1}\\
+1&amp;\omega^2&amp;\omega^4&amp;\cdots&amp;\omega^{2(n-1)}\\
+\vdots&amp;&amp;&amp;&amp;\vdots\\
+1&amp;\omega^{n-1}&amp;\omega^{2(n-1)}&amp;\cdots&amp;\omega^{(n-1)^2}
 \end{array}
 \right]
-$$</p>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of DFT and its inverse. Let <span class="arithmatex">\(\mathbf a=(a_0,\cdots,a_{n-1})^\top\in\C^n\)</span>. The <strong>discret Fourier transform</strong> of <span class="arithmatex">\(\mathbf a\)</span> is
-$$
-DFT_n(\mathbf a)=\mathbf A=(A_0,\cdots,A_{n-1})^\top\
-A_i=\sum_{j=0}<sup>{n-1}a_j\omega</sup>{ij}\forall i=0,\cdots,n-1
-$$
-i.e.,
-$$
+\]</div>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of DFT and its inverse. Let <span class="arithmatex">\(\mathbf a=(a_0,\cdots,a_{n-1})^\top\in\mathbb C^n\)</span>. The <strong>discret Fourier transform</strong> of <span class="arithmatex">\(\mathbf a\)</span> is</p>
+<div class="arithmatex">\[
+DFT_n(\mathbf a)=\mathbf A=(A_0,\cdots,A_{n-1})^\top\\
+A_i=\sum_{j=0}^{n-1}a_j\omega^{ij}\forall i=0,\cdots,n-1
+\]</div>
+<p>i.e.,</p>
+<div class="arithmatex">\[
 DFT_n(\mathbf a)=
 \frac{1}{n}
 \cdot
 \left[
 \begin{array}{ccccc}
-1&amp;1&amp;1&amp;\cdots&amp;1\
-1&amp;\omega<sup>{-1}&amp;\omega</sup>{-2}&amp;\cdots&amp;\omega^{-n+1}\
-\vdots&amp;&amp;&amp;&amp;\vdots\
-1&amp;\omega<sup>{-n+1}&amp;\omega</sup>{-2(n-1)}&amp;\cdots&amp;\omega<sup>{-(n-1)</sup>2}
+1&amp;1&amp;1&amp;\cdots&amp;1\\
+1&amp;\omega^{-1}&amp;\omega^{-2}&amp;\cdots&amp;\omega^{-n+1}\\
+\vdots&amp;&amp;&amp;&amp;\vdots\\
+1&amp;\omega^{-n+1}&amp;\omega^{-2(n-1)}&amp;\cdots&amp;\omega^{-(n-1)^2}
 \end{array}
 \right]
-\cdot</p>
-<p>\left[
+\]</div>
+<div class="arithmatex">\[
+\cdot\left[
 \begin{array}{c}
-A_0\A_1\ \vdots\ A_{n-1}
+A_0\\ A_1\\ \vdots\\ A_{n-1}
 \end{array}
 \right].
-$$
-The inverse discrete Fourier transform of <span class="arithmatex">\(\mathbf A=(A_0,\cdots,A_{n-1})^\top\)</span> is <span class="arithmatex">\(DFT_n^{-1}(\mathbf A)=\frac{1}{n}F(\omega^{-1})\cdot \mathbf A\)</span>.
-$$
+\]</div>
+<p>The inverse discrete Fourier transform of <span class="arithmatex">\(\mathbf A=(A_0,\cdots,A_{n-1})^\top\)</span> is <span class="arithmatex">\(DFT_n^{-1}(\mathbf A)=\frac{1}{n}F(\omega^{-1})\cdot \mathbf A\)</span>.</p>
+<div class="arithmatex">\[
 DFT_n^{-1}(\mathbf a)=F(\omega)\cdot\left[
 \begin{array}{c}
-a_0\a_1\ \vdots\ a_{n-1}
+a_0\\ a_1\\ \vdots\\ a_{n-1}
 \end{array}
 \right]
 =\left[
 \begin{array}{c}
-A_0\A_1\ \vdots\ A_{n-1}
+A_0\\ A_1\\ \vdots\\ A_{n-1}
 \end{array}
 \right].
-$$
-<img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma of reverse multiplication. <span class="arithmatex">\(F(\omega^{-1})\cdot F(\omega)=F(\omega)\cdot F(\omega^{-1})=nI_n\)</span> where <span class="arithmatex">\(I_n\)</span> is the identity matrix.</p>
+\]</div>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma of reverse multiplication. <span class="arithmatex">\(F(\omega^{-1})\cdot F(\omega)=F(\omega)\cdot F(\omega^{-1})=nI_n\)</span> where <span class="arithmatex">\(I_n\)</span> is the identity matrix.</p>
 <blockquote>
 <p>Proof by Lemma of cancellation property.</p>
 </blockquote>
-<p>Connection to polynomial evaluation and interpolation. Let <span class="arithmatex">\(\mathbf a\)</span> be the coefficient vector of the polynomial <span class="arithmatex">\(P(X)=\sum_{i=1}^{n-1}a_iX^i\)</span>. Then computing <span class="arithmatex">\(DFT(\mathbf a)\)</span> amounts to evaluating the polynomial <span class="arithmatex">\(P(X)\)</span> at all the <span class="arithmatex">\(n\)</span>-th roots of unity, at
-$$
-X=1,\omega,\omega<sup>2,\cdots,\omega</sup>{n-1}.
-$$
-Similarly, computing <span class="arithmatex">\(DFT^{-1}(\mathbf A)\)</span> amounts to recovering the polynomial <span class="arithmatex">\(P(X)\)</span> from its values <span class="arithmatex">\((A_0,\cdots,A_{n-1})\)</span> at the same <span class="arithmatex">\(n\)</span> points.</p>
+<p>Connection to polynomial evaluation and interpolation. Let <span class="arithmatex">\(\mathbf a\)</span> be the coefficient vector of the polynomial <span class="arithmatex">\(P(X)=\sum_{i=1}^{n-1}a_iX^i\)</span>. Then computing <span class="arithmatex">\(DFT(\mathbf a)\)</span> amounts to evaluating the polynomial <span class="arithmatex">\(P(X)\)</span> at all the <span class="arithmatex">\(n\)</span>-th roots of unity, at</p>
+<div class="arithmatex">\[
+X=1,\omega,\omega^2,\cdots,\omega^{n-1}.
+\]</div>
+<p>Similarly, computing <span class="arithmatex">\(DFT^{-1}(\mathbf A)\)</span> amounts to recovering the polynomial <span class="arithmatex">\(P(X)\)</span> from its values <span class="arithmatex">\((A_0,\cdots,A_{n-1})\)</span> at the same <span class="arithmatex">\(n\)</span> points.</p>
 <h2 id="the-fast-fourier-transform">The Fast Fourier Transform</h2>
 <p>Naive algorithm for <span class="arithmatex">\(DFT\)</span> and <span class="arithmatex">\(DFT^{-1}\)</span>: <span class="arithmatex">\(O(n^2)\)</span>.</p>
 <p>Fast Fourier Transform: <span class="arithmatex">\(O(n\log n)\)</span>.</p>
 <p>FFT algorithm: divide-and-conquer.</p>
-<p>Let <span class="arithmatex">\(n\)</span> be a power of <span class="arithmatex">\(2\)</span>. Computing <span class="arithmatex">\(DFT(\mathbf a)\)</span> amounts to computing the <span class="arithmatex">\(n\)</span> values
-$$
+<p>Let <span class="arithmatex">\(n\)</span> be a power of <span class="arithmatex">\(2\)</span>. Computing <span class="arithmatex">\(DFT(\mathbf a)\)</span> amounts to computing the <span class="arithmatex">\(n\)</span> values</p>
+<div class="arithmatex">\[
 P(1),P(\omega),\cdots,P(\omega^{n-1}).
-$$
-Actually, <span class="arithmatex">\(P(X)\)</span> has even part and odd part.
-$$
+\]</div>
+<p>Actually, <span class="arithmatex">\(P(X)\)</span> has even part and odd part.</p>
+<div class="arithmatex">\[
 P(X)=P_e(X^2)+X\cdot P_o(X^2).
-$$
-Where <span class="arithmatex">\(P_e\)</span> and <span class="arithmatex">\(P_o\)</span> are polynomials of degrees at most <span class="arithmatex">\(n/2\)</span> and <span class="arithmatex">\((n-1)/2\)</span> respectively.</p>
+\]</div>
+<p>Where <span class="arithmatex">\(P_e\)</span> and <span class="arithmatex">\(P_o\)</span> are polynomials of degrees at most <span class="arithmatex">\(n/2\)</span> and <span class="arithmatex">\((n-1)/2\)</span> respectively.</p>
 <h3 id="pseudo-code-of-fft">Pseudo code of FFT</h3>
 <p>Input: A polynomial <span class="arithmatex">\(P(X)\)</span> with coefficients given by an <span class="arithmatex">\(n\)</span>-vector <span class="arithmatex">\(\mathbf a\)</span>, <span class="arithmatex">\(\omega\)</span>, a primitive <span class="arithmatex">\(n\)</span>-th root of unity.</p>
 <p>Output: <span class="arithmatex">\(DFT_n(\mathbf a)\)</span></p>
@@ -9586,48 +9587,48 @@ Where <span class="arithmatex">\(P_e\)</span> and <span class="arithmatex">\(P_o
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem of FFT's complexity. Assuming the availability of a primitive <span class="arithmatex">\(n\)</span>-th root of unity, the discrete Fourier transform <span class="arithmatex">\(DFT_n\)</span> and its inverse can be computed in <span class="arithmatex">\(O(n\log n)\)</span> complex arithmetic operations.</p>
 <h1 id="polynomial-multiplication">Polynomial Multiplication</h1>
 <h2 id="convolution-and-polynomial-multiplication">Convolution and polynomial multiplication</h2>
-<p>Assume <span class="arithmatex">\(n\ge2\)</span>. The convolution of two <span class="arithmatex">\(n\)</span>-vectors <span class="arithmatex">\(\mathbf a,\mathbf b\)</span> is the <span class="arithmatex">\(n\)</span>-vector
-$$
+<p>Assume <span class="arithmatex">\(n\ge2\)</span>. The convolution of two <span class="arithmatex">\(n\)</span>-vectors <span class="arithmatex">\(\mathbf a,\mathbf b\)</span> is the <span class="arithmatex">\(n\)</span>-vector</p>
+<div class="arithmatex">\[
 \mathbf c=\mathbf a*\mathbf b=(c_0,\cdots,c_{n-1})^\top
-$$
-where <span class="arithmatex">\(c_i=\sum_{j=0}^ia_jb_{i-j}\)</span>.</p>
+\]</div>
+<p>where <span class="arithmatex">\(c_i=\sum_{j=0}^ia_jb_{i-j}\)</span>.</p>
 <p>Let <span class="arithmatex">\(P(X),Q(X)\)</span> be polynomials of degrees less than <span class="arithmatex">\(n/2\)</span>. Then <span class="arithmatex">\(R(X)=P(X)Q(X)\)</span> is a polynomial of degree less than <span class="arithmatex">\(n-1\)</span>.</p>
 <p>Let <span class="arithmatex">\(\mathbf a\)</span> and <span class="arithmatex">\(\mathbf b\)</span> denote the coefficient vectors of <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(Q\)</span>. Then it is not hard to see <span class="arithmatex">\(\mathbf a*\mathbf b\)</span> gives the coefficient vector of <span class="arithmatex">\(R(X)\)</span>.</p>
 <p><strong>Thus convolution is essentially polynomial multiplication.</strong></p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem of convolution. Let <span class="arithmatex">\(\mathbf a,\mathbf b\)</span> be <span class="arithmatex">\(n\)</span>-vectors whose initial <span class="arithmatex">\(\lfloor n/2\rfloor\)</span> entries are zeros. Then
-$$
-DFT^{-1}(DFT(\mathbf a)<em>DFT(\mathbf b))=\mathbf a</em>\mathbf b.
-$$
-This reduces the problem of convolution to two <span class="arithmatex">\(DFT\)</span> and <span class="arithmatex">\(DFT^{-1}\)</span> computations.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem of polynomial computation's complexity. Assuming the availability of a primitive <span class="arithmatex">\(n\)</span>-th root of unity, we can compute the product <span class="arithmatex">\(PQ\)</span> of two polynomials <span class="arithmatex">\(P,Q\in\C[X]\)</span> of degree less than <span class="arithmatex">\(n\)</span> in <span class="arithmatex">\(O(n\log n)\)</span> complex operations.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem of convolution. Let <span class="arithmatex">\(\mathbf a,\mathbf b\)</span> be <span class="arithmatex">\(n\)</span>-vectors whose initial <span class="arithmatex">\(\lfloor n/2\rfloor\)</span> entries are zeros. Then</p>
+<div class="arithmatex">\[
+DFT^{-1}(DFT(\mathbf a)*DFT(\mathbf b))=\mathbf a*\mathbf b.
+\]</div>
+<p>This reduces the problem of convolution to two <span class="arithmatex">\(DFT\)</span> and <span class="arithmatex">\(DFT^{-1}\)</span> computations.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem of polynomial computation's complexity. Assuming the availability of a primitive <span class="arithmatex">\(n\)</span>-th root of unity, we can compute the product <span class="arithmatex">\(PQ\)</span> of two polynomials <span class="arithmatex">\(P,Q\in\mathbb C[X]\)</span> of degree less than <span class="arithmatex">\(n\)</span> in <span class="arithmatex">\(O(n\log n)\)</span> complex operations.</p>
 <h1 id="modular-fft">Modular FFT</h1>
-<p>Define <span class="arithmatex">\(\Z_M\)</span> where <span class="arithmatex">\(M=2^L+1\)</span>.</p>
-<p>An element <span class="arithmatex">\(x\in\Z_M\)</span> is a zero-divisor if there exist <span class="arithmatex">\(y\neq0\)</span> s.t. <span class="arithmatex">\(x\cdot y=0\)</span>.</p>
+<p>Define <span class="arithmatex">\(\mathbb Z_M\)</span> where <span class="arithmatex">\(M=2^L+1\)</span>.</p>
+<p>An element <span class="arithmatex">\(x\in\mathbb Z_M\)</span> is a zero-divisor if there exist <span class="arithmatex">\(y\neq0\)</span> s.t. <span class="arithmatex">\(x\cdot y=0\)</span>.</p>
 <p>The inverse element of <span class="arithmatex">\(x\)</span> is <span class="arithmatex">\(y\)</span> s.t. <span class="arithmatex">\(xy=1\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />An element <span class="arithmatex">\(x\in\Z_M\)</span> has a multiplicative inverse <span class="arithmatex">\(x^{-1}\)</span> iff <span class="arithmatex">\(x\)</span> is not a zero-divisor.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />An element <span class="arithmatex">\(x\in\mathbb Z_M\)</span> has a multiplicative inverse <span class="arithmatex">\(x^{-1}\)</span> iff <span class="arithmatex">\(x\)</span> is not a zero-divisor.</p>
 <h2 id="representation-and-basic-operations-modulo-m">Representation and basic operations modulo M</h2>
-<p>Let <span class="arithmatex">\(2^L\equiv-1\mod M\)</span> be denoted with special symbol <span class="arithmatex">\(\bar 1\)</span>. Each element of <span class="arithmatex">\(\Z_M\diagdown\{\bar 1\}\)</span> as binary string <span class="arithmatex">\((b_{L-1},\cdots,b_0)\)</span> of length <span class="arithmatex">\(L\)</span>; the element <span class="arithmatex">\(\bar1\)</span> is given a special representation.</p>
+<p>Let <span class="arithmatex">\(2^L\equiv-1\mod M\)</span> be denoted with special symbol <span class="arithmatex">\(\bar 1\)</span>. Each element of <span class="arithmatex">\(\mathbb Z_M\diagdown\{\bar 1\}\)</span> as binary string <span class="arithmatex">\((b_{L-1},\cdots,b_0)\)</span> of length <span class="arithmatex">\(L\)</span>; the element <span class="arithmatex">\(\bar1\)</span> is given a special representation.</p>
 <blockquote>
 <p>For example, <span class="arithmatex">\(M=17,L=4\)</span>. Then <span class="arithmatex">\(13\)</span> is represented by <span class="arithmatex">\((1,1,0,1)\)</span>.</p>
 </blockquote>
-<p>It's easy to add and subtract in <span class="arithmatex">\(\Z_M\)</span> under this representation in <span class="arithmatex">\(O(L)\)</span> time.</p>
+<p>It's easy to add and subtract in <span class="arithmatex">\(\mathbb Z_M\)</span> under this representation in <span class="arithmatex">\(O(L)\)</span> time.</p>
 <p>Multiplying <span class="arithmatex">\(X\)</span> by <span class="arithmatex">\(2^j\)</span> amounts to left-shifting the string <span class="arithmatex">\(X\)</span> by <span class="arithmatex">\(j\)</span> positions.</p>
-<p>If <span class="arithmatex">\((b_{L-1},\cdots,b_0)\)</span> is multiplied by <span class="arithmatex">\(2^j(0\lt j\lt L)\)</span>, the results is given as
-$$
+<p>If <span class="arithmatex">\((b_{L-1},\cdots,b_0)\)</span> is multiplied by <span class="arithmatex">\(2^j(0\lt j\lt L)\)</span>, the results is given as</p>
+<div class="arithmatex">\[
 (b_{L-j-1},\cdots,b_0,0,\cdots,0)-(0,\cdots,0,b_{L-1},\cdots,b_{L-j})
-$$</p>
+\]</div>
 <h2 id="primitive-roots-of-unity-modulo-m">Primitive roots of unity modulo M</h2>
 <p>Let <span class="arithmatex">\(K=2^k\)</span> and <span class="arithmatex">\(K\)</span> divides <span class="arithmatex">\(L\)</span>. We define <span class="arithmatex">\(\omega=2^{L/K}\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma: In <span class="arithmatex">\(\Z_M\)</span>, <span class="arithmatex">\(\omega\)</span> is a primitive <span class="arithmatex">\((2K)\)</span>-th root of unity.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />The cancellation property holds:
-$$
-\sum_{j=0}<sup>{2K-1}\omega</sup>{js}\equiv
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma: In <span class="arithmatex">\(\mathbb Z_M\)</span>, <span class="arithmatex">\(\omega\)</span> is a primitive <span class="arithmatex">\((2K)\)</span>-th root of unity.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />The cancellation property holds:</p>
+<div class="arithmatex">\[
+\sum_{j=0}^{2K-1}\omega^{js}\equiv
 \begin{cases}
-0\mod M\text{ if }s\not\equiv0\mod 2K\
+0\mod M\text{ if }s\not\equiv0\mod 2K\\
 2K\mod M\text{ if }s\equiv0\mod 2k
 \end{cases}
-$$
-<img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem. The transforms <span class="arithmatex">\(DFT_{2K}(\mathbf a)\)</span> and <span class="arithmatex">\(DFT^{-1}_{2K}(\mathbf A)\)</span> for <span class="arithmatex">\((2K)\)</span>-vectors <span class="arithmatex">\(\mathbf a,\mathbf A\in(\Z_M)^{2K}\)</span> can be computed using the FFT method, taking <span class="arithmatex">\(O(KL\log K)\)</span> bit operations.</p>
+\]</div>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem. The transforms <span class="arithmatex">\(DFT_{2K}(\mathbf a)\)</span> and <span class="arithmatex">\(DFT^{-1}_{2K}(\mathbf A)\)</span> for <span class="arithmatex">\((2K)\)</span>-vectors <span class="arithmatex">\(\mathbf a,\mathbf A\in(\mathbb Z_M)^{2K}\)</span> can be computed using the FFT method, taking <span class="arithmatex">\(O(KL\log K)\)</span> bit operations.</p>
 <blockquote>
 <p><span class="arithmatex">\(T(2K)=2T(K)+O(KL)\)</span></p>
 </blockquote>
@@ -9636,65 +9637,65 @@ $$
 <p>Here we prove a weaker bound <span class="arithmatex">\(n\log^{2.6}n\)</span>.</p>
 <h2 id="a-simplified-schonhage-strassen-algorithm">A simplified Schönhage-Strassen algorithm</h2>
 <p>Goal: Product <span class="arithmatex">\(W=UV\)</span>. Assume that <span class="arithmatex">\(U,V\)</span> are <span class="arithmatex">\(N\)</span>-bit binary numbers where <span class="arithmatex">\(N=2^n\)</span>.</p>
-<p>Choose <span class="arithmatex">\(K=2^k,L=3\cdot2^\ell\)</span> where
-$$
+<p>Choose <span class="arithmatex">\(K=2^k,L=3\cdot2^\ell\)</span> where</p>
+<div class="arithmatex">\[
 k=\lfloor\frac{n}{2}\rfloor,\ell=\lceil n-k\rceil.
-$$
-<span class="arithmatex">\(k,\ell\)</span> are integers, <span class="arithmatex">\(n\)</span> is not necessarily be integer.</p>
+\]</div>
+<p><span class="arithmatex">\(k,\ell\)</span> are integers, <span class="arithmatex">\(n\)</span> is not necessarily be integer.</p>
 <p><span class="arithmatex">\(k+\ell\ge n\)</span>, we may view <span class="arithmatex">\(U\)</span> as <span class="arithmatex">\(2^{k+\ell}\)</span>-bit numbers, padding with zeros. Break up <span class="arithmatex">\(U\)</span> into <span class="arithmatex">\(K\)</span> pieces, each of bit size <span class="arithmatex">\(2^\ell\)</span>.</p>
-<p>Similar padding to <span class="arithmatex">\(V\)</span>, we have <span class="arithmatex">\((2K)\)</span>-vector:
-$$
-\bar U=(0,\cdots,0,U_{K-1},\cdots,U_0)\
+<p>Similar padding to <span class="arithmatex">\(V\)</span>, we have <span class="arithmatex">\((2K)\)</span>-vector:</p>
+<div class="arithmatex">\[
+\bar U=(0,\cdots,0,U_{K-1},\cdots,U_0)\\
 \bar V=(0,\cdots,0,V_{K-1},\cdots,V_0)
-$$
-where each component has <span class="arithmatex">\(2^\ell\)</span> bits.</p>
-<p>We can regard <span class="arithmatex">\(\bar U,\bar V\)</span> as coefficient vectors of the polynomials <span class="arithmatex">\(P(X)=\sum_{j=0}^{K-1}U_jX^j\)</span> and <span class="arithmatex">\(Q(X)=\sum_{j=0}^{K-1}V_jX_j\)</span>. Let
-$$
+\]</div>
+<p>where each component has <span class="arithmatex">\(2^\ell\)</span> bits.</p>
+<p>We can regard <span class="arithmatex">\(\bar U,\bar V\)</span> as coefficient vectors of the polynomials <span class="arithmatex">\(P(X)=\sum_{j=0}^{K-1}U_jX^j\)</span> and <span class="arithmatex">\(Q(X)=\sum_{j=0}^{K-1}V_jX_j\)</span>. Let</p>
+<div class="arithmatex">\[
 \bar W=(W_{2K-1},\cdots,W_0)
-$$
-be the convolution of <span class="arithmatex">\(\bar U,\bar V\)</span>. Each <span class="arithmatex">\(W_i\)</span> in <span class="arithmatex">\(\bar W\)</span> satisfies the inequality
-$$
-0\le W_i\le K\cdot2<sup>{2\cdot2</sup>\ell}
-$$
-since it is the sum of at most <span class="arithmatex">\(K\)</span> products of the form <span class="arithmatex">\(U_jV_{i-j}\)</span>. Hence
-$$
-0\le W_i\lt 2<sup>{3\cdot2</sup>\ell}\le M
-$$
-where <span class="arithmatex">\(M=2^L+1\)</span> as usual.</p>
-<p><span class="arithmatex">\(\bar W\)</span> is the coefficient vector of the product <span class="arithmatex">\(R(X)=P(X)Q(X)\)</span>. Since <span class="arithmatex">\(P(2^{2^\ell})=U\)</span> and <span class="arithmatex">\(Q(2^{2^\ell})=V\)</span>, it follows that <span class="arithmatex">\(R(2^{2^\ell})=UV=W\)</span>. Hence
-$$
-W=\sum_{j=0}<sup>{2K-1}2</sup>{2^\ell j}W_j.
-$$
-We can easily obtain each summation in this sum from <span class="arithmatex">\(\bar W\)</span> by multiplying each <span class="arithmatex">\(W_j\)</span> with <span class="arithmatex">\(2^{2^\ell j}\)</span>. As each <span class="arithmatex">\(W_j\)</span> has <span class="arithmatex">\(k+2\cdot2^\ell\lt L\)</span> non-zero bits.</p>
+\]</div>
+<p>be the convolution of <span class="arithmatex">\(\bar U,\bar V\)</span>. Each <span class="arithmatex">\(W_i\)</span> in <span class="arithmatex">\(\bar W\)</span> satisfies the inequality</p>
+<div class="arithmatex">\[
+0\le W_i\le K\cdot2^{2\cdot2^\ell}
+\]</div>
+<p>since it is the sum of at most <span class="arithmatex">\(K\)</span> products of the form <span class="arithmatex">\(U_jV_{i-j}\)</span>. Hence</p>
+<div class="arithmatex">\[
+0\le W_i\lt 2^{3\cdot2^\ell}\le M
+\]</div>
+<p>where <span class="arithmatex">\(M=2^L+1\)</span> as usual.</p>
+<p><span class="arithmatex">\(\bar W\)</span> is the coefficient vector of the product <span class="arithmatex">\(R(X)=P(X)Q(X)\)</span>. Since <span class="arithmatex">\(P(2^{2^\ell})=U\)</span> and <span class="arithmatex">\(Q(2^{2^\ell})=V\)</span>, it follows that <span class="arithmatex">\(R(2^{2^\ell})=UV=W\)</span>. Hence</p>
+<div class="arithmatex">\[
+W=\sum_{j=0}^{2K-1}2^{2^\ell j}W_j.
+\]</div>
+<p>We can easily obtain each summation in this sum from <span class="arithmatex">\(\bar W\)</span> by multiplying each <span class="arithmatex">\(W_j\)</span> with <span class="arithmatex">\(2^{2^\ell j}\)</span>. As each <span class="arithmatex">\(W_j\)</span> has <span class="arithmatex">\(k+2\cdot2^\ell\lt L\)</span> non-zero bits.</p>
 <p>Each bit of <span class="arithmatex">\(W\)</span> is obtained by summing at most <span class="arithmatex">\(3\)</span> bits plus at most <span class="arithmatex">\(2\)</span> carry bits.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma: The product <span class="arithmatex">\(W\)</span> can be obtained from <span class="arithmatex">\(\bar W\)</span> in <span class="arithmatex">\(O(N)\)</span> bit operations.</p>
 <blockquote>
 <p><span class="arithmatex">\(\bar W=DFT^{-1}(DFT(\bar U)\cdot DFT(\bar V))\)</span>.</p>
 <p>These transforms take <span class="arithmatex">\(O(KL\log K)=O(n\log n)\)</span> bit operations.</p>
-<p>The inner product requires <span class="arithmatex">\(2K\)</span> multiplications of <span class="arithmatex">\(L\)</span>-bit numbers, which is recursively accomplished. Let <span class="arithmatex">\(T(N)\)</span> denote the bit complexity of algorithm:
-$$
+<p>The inner product requires <span class="arithmatex">\(2K\)</span> multiplications of <span class="arithmatex">\(L\)</span>-bit numbers, which is recursively accomplished. Let <span class="arithmatex">\(T(N)\)</span> denote the bit complexity of algorithm:</p>
+<div class="arithmatex">\[
 T(N)=O(N\log N)+2K\cdot T(L).
-$$
-Write <span class="arithmatex">\(t(n)=T(N)/N\)</span> where <span class="arithmatex">\(N=2^n\)</span>. The recurrence becomes
-$$
+\]</div>
+<p>Write <span class="arithmatex">\(t(n)=T(N)/N\)</span> where <span class="arithmatex">\(N=2^n\)</span>. The recurrence becomes</p>
+<div class="arithmatex">\[
 t(n)=O(n)+2\frac{K}{N}T(L)=O(n)+2\frac{3}{L}T(L)=O(n)+6t(n/2+c),
-$$
-for some constant <span class="arithmatex">\(c\)</span>. Define <span class="arithmatex">\(s(n)=t(n+2c)\)</span>. Then
-$$
+\]</div>
+<p>for some constant <span class="arithmatex">\(c\)</span>. Define <span class="arithmatex">\(s(n)=t(n+2c)\)</span>. Then</p>
+<div class="arithmatex">\[
 s(n)=O(n+2c)+6t((n/2)+2c)=O(n)+6s(n/2).
-$$
-This resolves to <span class="arithmatex">\(s(n)=O(n^{\lg 6})\)</span>. Back-substituting, we obtain
-$$
+\]</div>
+<p>This resolves to <span class="arithmatex">\(s(n)=O(n^{\lg 6})\)</span>. Back-substituting, we obtain</p>
+<div class="arithmatex">\[
 T(N)=O(N\log^\alpha N),\alpha=\lg6\lt2.5848
-$$</p>
+\]</div>
 </blockquote>
 <h2 id="refinements">Refinements</h2>
 <p>The choice of <span class="arithmatex">\(L=3\cdot2^\ell\)</span> is sub-optimal.</p>
-<p>The method implies
-$$
+<p>The method implies</p>
+<div class="arithmatex">\[
 T(N)=O(N\log^{2+\epsilon}N)
-$$
-for any <span class="arithmatex">\(\epsilon\gt0\)</span>.</p>
+\]</div>
+<p>for any <span class="arithmatex">\(\epsilon\gt0\)</span>.</p>
 <p>Improvement: compute each <span class="arithmatex">\(W_i\)</span> in two parts:</p>
 <ul>
 <li>Let <span class="arithmatex">\(M'=2^{2\cdot2^\ell}+1\)</span> and <span class="arithmatex">\(M''=K\)</span>.</li>

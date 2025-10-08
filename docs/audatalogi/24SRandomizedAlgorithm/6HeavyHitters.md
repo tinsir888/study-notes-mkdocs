@@ -105,15 +105,19 @@ We want to bound the expected number of light nodes visited.
 Define a light node $v$ its light depth $d(v)$ as the distance to its **nearest heavy ancestor** in $\mathcal T$.
 
 Consider all light nodes at levels $i\ge2$. Let $V$ be the set of such nodes. If we visit such a node, we spend $O(1)$ time making two queries to a count min sketch. Thus if we define an indicator random variable $X_v$ for each such node $v\in V$, taking the value 1 if $v$ is visited by the query algorithm, and 0 otherwise, then the expected time spend on visiting all light nodes $v\in V$ is
+
 $$
 O(\mathbb E[\sum_{v\in V}X_v])=O(\sum_{v\in V}\mathbb E[X_v])=O(\sum_{v\in V}\Pr[v\text{ is visited}]).
 $$
+
 Thus we need to bound $\Pr[v\text{ is visited}]$. For this, the trick is to use the light depth.
 
 Let $V_i\subseteq V$ be the set of nodes in $V$ with light depth $i$ for $i=1,\cdots,\log U$. Then we have
+
 $$
 O(\sum_{v\in V}\Pr[v\text{ is visited}])=O(\sum_{i=1}^{\log U}\sum_{v\in V_i}\Pr[v\text{ is visited}]).
 $$
+
 Let $v\in V_i$ and consider $\Pr[v\text{ is visited}]$.
 
 - For $v$ to be visited, it must be the case that query made in every single ancestor up to its nearest heavy ancestor failed, i.e. returned an estimate that was off by at least $\epsilon'||f||_1$.
@@ -121,6 +125,7 @@ Let $v\in V_i$ and consider $\Pr[v\text{ is visited}]$.
 - Since these queries to $d(v)=i$ independent count min data structures with failure probability $1/4$ each, the probability they all fail is at most $1/4^i$.
 
   Hence, we have
+
   $$
   O(\sum_{i=1}^{\log U}\sum_{v\in V_i}\Pr[v\text{ is visited}])=O(\sum_{i=1}^{\log U}\sum_{v\in V_i}4^{-i}).
   $$
@@ -132,19 +137,27 @@ Next we bound $|V_i|$. (By examine a heavy node)
 - By observation 1, there are no more than $O(\epsilon^{-1}\log U)$ heavy nodes in $\mathcal T$ and therefore we have $|V_i|\le O(2^i\epsilon^{-1}\log U)$.
 
   We thus conclude that
-  $$
-  O(\mathbb E[\sum_{v\in V}X_v])=O(\sum_{i=1}^{\log U}\sum_{v\in V_i}4^{-i})=O(\sum_{i=1}^{\log U}2^i4^{-i}\frac{1}{\epsilon}\log U)\\
-  =O(\frac{1}{\epsilon}\log U\sum_{i=1}^{\log U}2^{-i})=O(\frac{1}{\epsilon}\log U\sum_{i=1}^{\log U}2^{-i})=O(\epsilon^{-1}\log U)
-  $$
+
+  
+  $O(\mathbb E[\sum_{v\in V}X_v])=O(\sum_{i=1}^{\log U}\sum_{v\in V_i}4^{-i})=O(\sum_{i=1}^{\log U}2^i4^{-i}\frac{1}{\epsilon}\log U)$ 
+
+  
+  $=O(\frac{1}{\epsilon}\log U\sum_{i=1}^{\log U}2^{-i})=O(\frac{1}{\epsilon}\log U\sum_{i=1}^{\log U}2^{-i})=O(\epsilon^{-1}\log U)$
+  
   as claimed.
+
 
 It remains to bound the cost of the queries made in light nodes at level $i=1$. Recall that these query the data structure at level $0$ which had an error probability of $1/U^2$, and thus the cost of visiting such a light node is $O(\log U)$ rather than $O(1)$. If we this time define $V_i$ as the set of light nodes at level $1$ that have a light depth of $i$, then by argument similar to above, the expected time spend visiting nodes $v\in V_i$ is $O(\sum_{i=1}^{\log U}|V_i|4^{-i}\log U)$.
 
 Fortunately, the new sets $V_i$ are a factor $\log U$ smaller than before. To see this, note that any node in $V_i$ must have its nearest heavy ancestor at level exactly $1+i$. But observation 1 tells that there are only $O(\frac{1}{\epsilon})$ heavy nodes at level $i+1$, and each such node has only $2^i$ descendants at level $1$.
 
 Therefore we have $|V_i|=O(\epsilon^{-1}2^i)$. Inserting this, we conclude that
+
 $$
 O(\sum_{i=1}^{\log U}|V_i|4^{-i}\log U)=O(\sum_{i=1}^{\log U}\frac{1}{\epsilon}2^i4^{-i}\log U)\\
+$$
+
+$$
 =O(\frac{1}{\epsilon}\log U)
 $$
 

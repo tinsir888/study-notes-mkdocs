@@ -43,7 +43,6 @@ claim: if $p$ is on(below/above) $l\Leftrightarrow l^*$ is on(below/above) $p^*$
 > $$
 > 
 > Q.E.D.
-> $$
 
 observation: the duality transform has the following properties:
 
@@ -134,8 +133,15 @@ How to compute DCEL in bounding box which contains all intersect point?
 how to split a face? walk around each face.
 
 running time: 
+
 $$
 O(n^2)+\sum_{i=1}^nO(\text{time to insert }l_i)\\
+$$
+
+$$
 =O(n^2)+\sum_{i=1}^nO(\text{complexity of the zone }Z_i\text{ of }l_i)\\
+$$
+
+$$
 =O(n^2)+\sum_{i=1}^nO(i)=O(n^2)
 $$

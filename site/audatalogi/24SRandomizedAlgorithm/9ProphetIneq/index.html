@@ -6414,7 +6414,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6437,7 +6437,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6460,7 +6460,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9568,20 +9568,20 @@
 <p><strong>Theorem 1</strong> by Krengel, Sucheston and Garling. There exists a strategy with expected reward <span class="arithmatex">\(\frac{1}{2}\mathbb E[X_\max]\)</span>.</p>
 <blockquote>
 <p>Let <span class="arithmatex">\(\tau\)</span> be the median of the distribution of <span class="arithmatex">\(X_\max\)</span>, i.e., <span class="arithmatex">\(\Pr[X_\max\ge\tau]=1/2\)</span>.</p>
-<p>Now the strategy is simple: pick the first <span class="arithmatex">\(X_i\)</span> which exceeds <span class="arithmatex">\(\tau\)</span>. Clearly, we will pick an item with probability exactly <span class="arithmatex">\(1\over2\)</span>, then notice that
-$$
-\mathbb E[X_\max]\le\tau+\mathbb E[(X_\max-\tau)^+]\
-\le\tau+\mathbb E[\sum_{i=1}<sup>n(X_i-\tau)</sup>+].
-$$
-Then for algorithm:
-$$
-ALG\ge\tau\cdot\Pr[X_\max\ge\tau]+\sum_{i=1}^n\mathbb E[(X_i-\tau)^+]\cdot\Pr[\bigwedge_{j\le i}(X_j\lt\tau)]\
+<p>Now the strategy is simple: pick the first <span class="arithmatex">\(X_i\)</span> which exceeds <span class="arithmatex">\(\tau\)</span>. Clearly, we will pick an item with probability exactly <span class="arithmatex">\(1\over2\)</span>, then notice that</p>
+<div class="arithmatex">\[
+\mathbb E[X_\max]\le\tau+\mathbb E[(X_\max-\tau)^+]\\
+\le\tau+\mathbb E[\sum_{i=1}^n(X_i-\tau)^+].
+\]</div>
+<p>Then for algorithm:</p>
+<div class="arithmatex">\[
+ALG\ge\tau\cdot\Pr[X_\max\ge\tau]+\sum_{i=1}^n\mathbb E[(X_i-\tau)^+]\cdot\Pr[\bigwedge_{j\le i}(X_j\lt\tau)]\\
 \ge\tau\cdot\Pr[X_\max\ge\tau]+\sum_{i=1}^n\mathbb E[(X_i-\tau)^+]\cdot\Pr[X_\max\lt\tau]
-$$
-By letting <span class="arithmatex">\(\Pr[X_\max\lt\tau]=\Pr[X_\max\ge\tau]=1/2\)</span>, we have
-$$
+\]</div>
+<p>By letting <span class="arithmatex">\(\Pr[X_\max\lt\tau]=\Pr[X_\max\ge\tau]=1/2\)</span>, we have</p>
+<div class="arithmatex">\[
 ALG\ge\frac{1}{2}\mathbb E[X_\max]
-$$</p>
+\]</div>
 </blockquote>
 <p><em>The proof is beautiful, but hard to generalize. What if we can choose <span class="arithmatex">\(k\)</span> variables?</em></p>
 <p>There are <strong>LP-based</strong> version of proof, which can be generalized:</p>
@@ -9651,20 +9651,26 @@ $$</p>
 <p><strong>Theorem 2.1</strong>. There is a strategy to pick the best item with probability at least <span class="arithmatex">\(\frac{1}{e}\)</span>.</p>
 <blockquote>
 <p>A simple algorithm and proof showing probability of <span class="arithmatex">\(\frac{1}{4}\)</span>: ignore the first <span class="arithmatex">\(n/2\)</span> items, and then pick the next item that is better than all the ones seen so far. Note that this algorithm succeeds if the best item is in the second half of the items (happens with probability <span class="arithmatex">\(1/2\)</span>). Hence <span class="arithmatex">\(1/4\)</span>. Rejecting the first half of the items is not optimal, and there are other cases where the algorithm succeeds that this simple analysis does not account for.</p>
-<p>First, the algorithm should never pick an element that is not the best so far. Moreover, if we define
-$$
-f(i)=\Pr[i^{th}\text{ item is global best}|i^{th}\text{ is best so far}]\
-=\frac{\Pr[i^{th}\text{ item is global best}]}{\Pr[i^{th}\text{ is best so far}]}=\frac{1/n}{1/i}=\frac{i}{n}\
+<p>First, the algorithm should never pick an element that is not the best so far. Moreover, if we define</p>
+<div class="arithmatex">\[
+f(i)=\Pr[i^{th}\text{ item is global best}|i^{th}\text{ is best so far}]\\
+\]</div>
+<div class="arithmatex">\[
+=\frac{\Pr[i^{th}\text{ item is global best}]}{\Pr[i^{th}\text{ is best so far}]}=\frac{1/n}{1/i}=\frac{i}{n}\\
+\]</div>
+<p>$$
 g(i)=\Pr[\text{picking global best using optimal strategy from item i onwards}]
 $$
 then <span class="arithmatex">\(g(i)\)</span> is a non-increasing and <span class="arithmatex">\(f(i)\)</span> is increasing.</p>
 <p>Any optimal strategy should pass at times <span class="arithmatex">\(i\)</span> where <span class="arithmatex">\(f(i)\lt g(i+1)\)</span> and pick at other times if we see an element that is best so far. i.e., a strategy of the type used in the simple proof of <span class="arithmatex">\(1/4\)</span> is optimal.</p>
-<p>So if we reject the first <span class="arithmatex">\(\tau\)</span> items, then the probability we succeed in picking the global best is
-$$
-\sum_{t=\tau+1}<sup>n\Pr[t</sup>{th}\text{ item is global best}]\cdot\Pr[\text{best of first }t-1\text{ items in first }\tau\text{ positions}]\
+<p>So if we reject the first <span class="arithmatex">\(\tau\)</span> items, then the probability we succeed in picking the global best is</p>
+<div class="arithmatex">\[
+\sum_{t=\tau+1}^n\Pr[t^{th}\text{ item is global best}]\cdot\Pr[\text{best of first }t-1\text{ items in first }\tau\text{ positions}]\\
+\]</div>
+<div class="arithmatex">\[
 =\sum_{t=\tau+1}^n\frac{1}{n}\cdot\frac{\tau}{t-1}=\frac{\tau}{n}(H_{n-1}-H_{\tau-1}).
-$$
-This is <span class="arithmatex">\(g(\tau+1)\)</span>. So the first position where <span class="arithmatex">\(f(\tau)=\tau/n\ge g(\tau+1)\)</span> is given by the smallest <span class="arithmatex">\(\tau\)</span> s.t. <span class="arithmatex">\(1\ge H_{n-1}-H_{\tau-1}\)</span>, i.e., <span class="arithmatex">\(\tau\approx n/e\)</span> for large <span class="arithmatex">\(n\)</span>, hence <span class="arithmatex">\(g(\tau+1)\approx1/e\)</span>.</p>
+\]</div>
+<p>This is <span class="arithmatex">\(g(\tau+1)\)</span>. So the first position where <span class="arithmatex">\(f(\tau)=\tau/n\ge g(\tau+1)\)</span> is given by the smallest <span class="arithmatex">\(\tau\)</span> s.t. <span class="arithmatex">\(1\ge H_{n-1}-H_{\tau-1}\)</span>, i.e., <span class="arithmatex">\(\tau\approx n/e\)</span> for large <span class="arithmatex">\(n\)</span>, hence <span class="arithmatex">\(g(\tau+1)\approx1/e\)</span>.</p>
 </blockquote>
 <p>There is an alternate proof that uses a convex-programming. We will write down an LP that captures some properties of any feasible solution, optimize this LP and show a strategy whose success probability is comparable to the objective of this LP.</p>
 <blockquote>
@@ -9757,82 +9763,96 @@ $$
 $$</p>
 <h1 id="azuma-hoeffding-inequality">Azuma-Hoeffding Inequality</h1>
 <p>Let <span class="arithmatex">\(X_0,\cdots,X_n\)</span> be a martingale s.t. <span class="arithmatex">\(|X_i-X_{i-1}|\le c_i\)</span>.</p>
-<p>Then for any <span class="arithmatex">\(\lambda\gt0\)</span>,
-$$
-\mathbb P(X_n-X_0\ge\lambda)\le\exp(-\frac{\lambda<sup>2}{2\sum_{i=1}</sup>nc_i^2}),
-$$
-and
-$$
-\mathbb P(X_n-X_0\le-\lambda)\le\exp(-\frac{\lambda<sup>2}{2\sum_{i=1}</sup>nc_i^2}).
-$$
-Proof of the first inequality, (similar proof for second inequality):</p>
+<p>Then for any <span class="arithmatex">\(\lambda\gt0\)</span>,</p>
+<div class="arithmatex">\[
+\mathbb P(X_n-X_0\ge\lambda)\le\exp(-\frac{\lambda^2}{2\sum_{i=1}^nc_i^2}),
+\]</div>
+<p>and</p>
+<div class="arithmatex">\[
+\mathbb P(X_n-X_0\le-\lambda)\le\exp(-\frac{\lambda^2}{2\sum_{i=1}^nc_i^2}).
+\]</div>
+<p>Proof of the first inequality, (similar proof for second inequality):</p>
 <blockquote>
 <p>By applying Markov's inequality to an appropriate random variable and it is similar to the proof of Chernoff's bounds.</p>
 <p>We use the variables <span class="arithmatex">\(Y_i=X_i-X_{i-1}\)</span>. The step of the proof:</p>
 <ol>
-<li>
-<p>We use Chernoff bounds and instead of bounding <span class="arithmatex">\(\mathbb P(X_n-X_0\ge\lambda)\)</span>, we bound <span class="arithmatex">\(\mathbb P(\exp(t(X_n-X_0))\ge\exp(t\lambda))\)</span>:
-$$
-  \mathbb P(\exp(t(X_n-X_0))\ge\exp(t\lambda))\le\exp(-t\lambda)\mathbb E[\exp(t(X_n-X_0))].
-$$
-  Then focus on <span class="arithmatex">\(\mathbb E[\exp(t(X_n-X_0))]\)</span>, which can be replaced by <span class="arithmatex">\(Y_i\)</span>'s
-$$
-  \mathbb E[\exp(t(X_n-X_0))]=\mathbb E[\prod_{i=1}^n\exp(tY_i)],
-$$
-  by telescoping, <span class="arithmatex">\(X_n-X_0\sum_{i=1}^n(X_i-X_{i-1})=\sum_{i=1}^nY_i\)</span>.</p>
-</li>
-<li>
-<p>We can't use <span class="arithmatex">\(\mathbb E[Y_1Y_2]=\mathbb E[Y_1]\mathbb E[Y_2]\)</span> since <span class="arithmatex">\(Y_i\)</span>s are not independent. Consider the conditional expectation.
-$$
-  \mathbb E[\prod_{i=1}^n\exp(tY_i)|X_0,\cdots,X_{n-1}]\
-  =(\prod_{i=1}^{n-1}\exp(tY_i))\mathbb E[\exp(tY_n)|X_0,\cdots,X_{n-1}]
-$$
-  because for fixed <span class="arithmatex">\(X_0,\cdots,X_{n-1}\)</span>, all but the last factor in the product are constant and can be moved out.</p>
-</li>
+<li>We use Chernoff bounds and instead of bounding <span class="arithmatex">\(\mathbb P(X_n-X_0\ge\lambda)\)</span>, we bound <span class="arithmatex">\(\mathbb P(\exp(t(X_n-X_0))\ge\exp(t\lambda))\)</span>:</li>
 </ol>
+<div class="arithmatex">\[
+  \mathbb P(\exp(t(X_n-X_0))\ge\exp(t\lambda))\le\exp(-t\lambda)\mathbb E[\exp(t(X_n-X_0))].
+\]</div>
+<p>Then focus on <span class="arithmatex">\(\mathbb E[\exp(t(X_n-X_0))]\)</span>, which can be replaced by <span class="arithmatex">\(Y_i\)</span>'s</p>
+<div class="arithmatex">\[
+  \mathbb E[\exp(t(X_n-X_0))]=\mathbb E[\prod_{i=1}^n\exp(tY_i)],
+\]</div>
+<p>by telescoping, <span class="arithmatex">\(X_n-X_0\sum_{i=1}^n(X_i-X_{i-1})=\sum_{i=1}^nY_i\)</span>.</p>
+<ol>
+<li>We can't use <span class="arithmatex">\(\mathbb E[Y_1Y_2]=\mathbb E[Y_1]\mathbb E[Y_2]\)</span> since <span class="arithmatex">\(Y_i\)</span>s are not independent. Consider the conditional expectation.</li>
+</ol>
+<div class="arithmatex">\[
+  \mathbb E[\prod_{i=1}^n\exp(tY_i)|X_0,\cdots,X_{n-1}]\\
+\]</div>
+<div class="arithmatex">\[
+  =(\prod_{i=1}^{n-1}\exp(tY_i))\mathbb E[\exp(tY_n)|X_0,\cdots,X_{n-1}]
+\]</div>
+<p>because for fixed <span class="arithmatex">\(X_0,\cdots,X_{n-1}\)</span>, all but the last factor in the product are constant and can be moved out.</p>
 <p>Then find an upper bound on <span class="arithmatex">\(\mathbb E[\exp(tY_n)|X_0,\cdots,X_{n-1}]\)</span>.</p>
 <ul>
 <li>
-<p>Observe that <span class="arithmatex">\(\mathbb E[Y_i|X_0,\cdots,X_{i-1}]=0\)</span> by martingale property.
-    $$
-    \mathbb E[Y_i|X_0,\cdots,X_{i-1}]\
-    =\mathbb E[X_i-X_{i-1}|X_0,\cdots,X_{i-1}]\
-    =\mathbb E[X_i|X_0,\cdots,X_{i-1}]-\mathbb E[X_{i-1}|X_0,\cdots,X_{i-1}]\
-    =X_{i-1}-X_{i-1}=0
-    $$</p>
-</li>
-<li>
-<p>Then by the condition <span class="arithmatex">\(|Y_i|\le c_i\)</span>,
-    $$
-    \exp(tY_i)\le\beta_i+\gamma_iY_i
-    $$
-    for <span class="arithmatex">\(\beta_i=(e^{tc_i}+e^{-tc_i})/2\le\exp((tc_i)^2/2)\)</span>, <span class="arithmatex">\(\gamma_i=(e^{tc_i}+e^{-tc_i})/(2c_i)\)</span>. Then rewrite <span class="arithmatex">\(Y_i\)</span> as <span class="arithmatex">\(Y_i=rc_i+(1-r)(-c_i)\)</span>, where <span class="arithmatex">\(r=\frac{1+Y_i/c_i}{2}\in[0,1]\)</span>, then use the convexity of <span class="arithmatex">\(e^{tx}\)</span> to get
-    $$
-    e^{tY_i}\le re<sup>{tc_i}+(1-r)e</sup>{-tc_i}\
-    =\beta_i+\gamma_iY_i.
-    $$</p>
-</li>
-<li>
-<p>Combine the above to get
-    $$
-    \mathbb E[e^{tY_i}|X_0,\cdots,X_{i-1}]\le\mathbb E[\beta_i+\gamma_iY_i|X_0,\cdots,X_{i-1}]\
-    =\beta_i\le\exp((tc_i)^2/2).
-    $$</p>
+<p>Observe that <span class="arithmatex">\(\mathbb E[Y_i|X_0,\cdots,X_{i-1}]=0\)</span> by martingale property.</p>
+<div class="arithmatex">\[
+\mathbb E[Y_i|X_0,\cdots,X_{i-1}]\\
+\]</div>
 </li>
 </ul>
-<p>It follows that
-$$
-  \mathbb E[\prod_{i=1}^n\exp(tY_i)]=\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)\times\exp(tY_n)|X_0,\cdots,X_{n-1}]\
-  \le\mathbb E[\prod_{i=1}<sup>{n-1}\exp(tY_i)]\exp((tc_n)</sup>2/2).
-$$</p>
-<ol>
+<div class="arithmatex">\[
+    =\mathbb E[X_i-X_{i-1}|X_0,\cdots,X_{i-1}]\\
+\]</div>
+<div class="arithmatex">\[
+    =\mathbb E[X_i|X_0,\cdots,X_{i-1}]-\mathbb E[X_{i-1}|X_0,\cdots,X_{i-1}]\\
+\]</div>
+<div class="arithmatex">\[
+    =X_{i-1}-X_{i-1}=0
+\]</div>
+<ul>
 <li>
-<p>Then take expectations on both sides to get rid of the conditional expectation:
-$$
-  \mathbb E[\prod_{i=1}^n\exp(tY_i)]=\mathbb E[\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)|X_0,\cdots,X_{n-1}]]\
-  \le\mathbb E[\prod_{i=1}<sup>{n-1}\exp(tY_i)]\exp((tc_n)</sup>2/2).
-$$</p>
+<p>Then by the condition <span class="arithmatex">\(|Y_i|\le c_i\)</span>,</p>
+<div class="arithmatex">\[
+\exp(tY_i)\le\beta_i+\gamma_iY_i
+\]</div>
+<p>for <span class="arithmatex">\(\beta_i=(e^{tc_i}+e^{-tc_i})/2\le\exp((tc_i)^2/2)\)</span>, <span class="arithmatex">\(\gamma_i=(e^{tc_i}+e^{-tc_i})/(2c_i)\)</span>. Then rewrite <span class="arithmatex">\(Y_i\)</span> as <span class="arithmatex">\(Y_i=rc_i+(1-r)(-c_i)\)</span>, where <span class="arithmatex">\(r=\frac{1+Y_i/c_i}{2}\in[0,1]\)</span>, then use the convexity of <span class="arithmatex">\(e^{tx}\)</span> to get</p>
+<div class="arithmatex">\[
+e^{tY_i}\le re^{tc_i}+(1-r)e^{-tc_i}\\
+=\beta_i+\gamma_iY_i.
+\]</div>
 </li>
+<li>
+<p>Combine the above to get</p>
+<div class="arithmatex">\[
+\mathbb E[e^{tY_i}|X_0,\cdots,X_{i-1}]\le\mathbb E[\beta_i+\gamma_iY_i|X_0,\cdots,X_{i-1}]\\
+\]</div>
+<div class="arithmatex">\[
+=\beta_i\le\exp((tc_i)^2/2).
+\]</div>
+</li>
+</ul>
+<p>It follows that</p>
+<div class="arithmatex">\[
+  \mathbb E[\prod_{i=1}^n\exp(tY_i)]=\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)\times\exp(tY_n)|X_0,\cdots,X_{n-1}]\\
+\]</div>
+<div class="arithmatex">\[
+  \le\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)]\exp((tc_n)^2/2).
+\]</div>
+<ol>
+<li>Then take expectations on both sides to get rid of the conditional expectation:</li>
+</ol>
+<div class="arithmatex">\[
+  \mathbb E[\prod_{i=1}^n\exp(tY_i)]=\mathbb E[\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)|X_0,\cdots,X_{n-1}]]\\
+\]</div>
+<div class="arithmatex">\[
+  \le\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)]\exp((tc_n)^2/2).
+\]</div>
+<ol>
 <li>
 <p>Then use same standard techniques</p>
 </li>

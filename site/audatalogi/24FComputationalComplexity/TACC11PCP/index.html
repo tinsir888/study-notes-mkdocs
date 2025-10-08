@@ -6386,7 +6386,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6409,7 +6409,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6432,7 +6432,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9520,12 +9520,14 @@
 <li>Number of random bits used during computation</li>
 <li>Number of queries made to the proof tape.</li>
 </ol>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 49 (PCP languages). Let <span class="arithmatex">\(r:\N\to\N,q:\N\to\N\)</span> be functions, let <span class="arithmatex">\(\Sigma\)</span> be a non-empty finite set, and let <span class="arithmatex">\(0\le s\lt c\le1\)</span> be reals. <span class="arithmatex">\(PCP_{c,s}^\Sigma(r(n),q(n))\)</span> is the class of languages <span class="arithmatex">\(L\)</span> for which there exist a PCP verifier <span class="arithmatex">\(V\)</span> that on input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span> uses at most <span class="arithmatex">\(r(n)\)</span> random bits and queries at most <span class="arithmatex">\(q(n)\)</span> positions of a proof <span class="arithmatex">\(\pi\in\Sigma^*\)</span> s.t.
-$$
-\forall x\in L,\exists\pi\in\Sigma<sup>*:\Pr[V</sup>\pi(x)=yes]\ge c\
-\forall x\not\in L,\exists\pi\in\Sigma<sup>*:\Pr[V</sup>\pi(x)=yes]\le s
-$$
-<span class="arithmatex">\(c\)</span> for completeness, <span class="arithmatex">\(s\)</span> for soundness.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 49 (PCP languages). Let <span class="arithmatex">\(r:\mathbb N\to\mathbb N,q:\mathbb N\to\mathbb N\)</span> be functions, let <span class="arithmatex">\(\Sigma\)</span> be a non-empty finite set, and let <span class="arithmatex">\(0\le s\lt c\le1\)</span> be reals. <span class="arithmatex">\(PCP_{c,s}^\Sigma(r(n),q(n))\)</span> is the class of languages <span class="arithmatex">\(L\)</span> for which there exist a PCP verifier <span class="arithmatex">\(V\)</span> that on input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span> uses at most <span class="arithmatex">\(r(n)\)</span> random bits and queries at most <span class="arithmatex">\(q(n)\)</span> positions of a proof <span class="arithmatex">\(\pi\in\Sigma^*\)</span> s.t.</p>
+<div class="arithmatex">\[
+\forall x\in L,\exists\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\ge c\\
+\]</div>
+<div class="arithmatex">\[
+\forall x\not\in L,\exists\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\le s
+\]</div>
+<p><span class="arithmatex">\(c\)</span> for completeness, <span class="arithmatex">\(s\)</span> for soundness.</p>
 <p>We often use the notion as follows:</p>
 <ul>
 <li><span class="arithmatex">\(PCP_{c,s}(r(n),q(n))\)</span> when <span class="arithmatex">\(\Sigma=\{0,1\}\)</span></li>
@@ -9553,22 +9555,22 @@ $$
 <p>Then verifier <span class="arithmatex">\(V\)</span> may be viewed as an adaptive PCP verifier that instead of communicating with <span class="arithmatex">\(P\)</span> simply queries the proof <span class="arithmatex">\(\pi\)</span>.</p>
 <p>In Sumcheck protocol, all msg of <span class="arithmatex">\(V\)</span> consist of uniformly random bits, which means that all queries may be made non-adaptively. Together with Theorem 49, this gives that <span class="arithmatex">\(IP\subseteq PCP(n^{O(1)},n^{O(1)})\)</span>.</p>
 <ol>
-<li>Arithmetic formula <span class="arithmatex">\(F\)</span> in Sumcheck is only evaluated once, at the end of the protocol, and on a uniformly chosen random input <span class="arithmatex">\((a_1,\cdots,a_n)\in\Z_p^n\)</span>.</li>
+<li>Arithmetic formula <span class="arithmatex">\(F\)</span> in Sumcheck is only evaluated once, at the end of the protocol, and on a uniformly chosen random input <span class="arithmatex">\((a_1,\cdots,a_n)\in\mathbb Z_p^n\)</span>.</li>
 </ol>
 <p>For proving Theorem 52, we need to show that <span class="arithmatex">\(3SAT\in PCP((\log n)^{O(1)},(\log n)^{O(1)})\)</span>.</p>
 <blockquote>
 <p>Some details is omitted.</p>
 </blockquote>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 18. For any function <span class="arithmatex">\(f:\{0,1\}^\ell\to R\)</span>, where <span class="arithmatex">\(R\)</span> is any ring, there is a unique multilinear polynomial <span class="arithmatex">\(\tilde f\)</span> s.t. <span class="arithmatex">\(f(x)=\tilde f(x)\)</span> for all <span class="arithmatex">\(x\in\{0,1\}^\ell\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 19. Let <span class="arithmatex">\(f:\{0,1\}^\ell\to\{0,1\}\)</span> and let <span class="arithmatex">\(x\in\{1,\cdots,M\}^\ell\)</span>. Then
-$$
-|\tilde f(x)|\le2^\ell M<sup>\ell=(2M)</sup>\ell
-$$
-<img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 50. Let <span class="arithmatex">\(\varphi\)</span> be a <span class="arithmatex">\(3CNF\)</span> formula with <span class="arithmatex">\(n\)</span> var and <span class="arithmatex">\(m\)</span> clauses and let functions <span class="arithmatex">\(h_1,h_2,h_3\)</span> and <span class="arithmatex">\(s_1,s_2,s_3\)</span> be defined as above. Let <span class="arithmatex">\(a:\{0,1\}^\ell\to\Z\)</span> be any function. We define the arithmetic formula <span class="arithmatex">\(A_{\varphi,a}\)</span> in <span class="arithmatex">\(4\ell\)</span> variables computing a polynomial of total degree <span class="arithmatex">\(3(2\ell+2\ell)=12\ell\)</span> by
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 19. Let <span class="arithmatex">\(f:\{0,1\}^\ell\to\{0,1\}\)</span> and let <span class="arithmatex">\(x\in\{1,\cdots,M\}^\ell\)</span>. Then</p>
+<div class="arithmatex">\[
+|\tilde f(x)|\le2^\ell M^\ell=(2M)^\ell.
+\]</div>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 50. Let <span class="arithmatex">\(\varphi\)</span> be a <span class="arithmatex">\(3CNF\)</span> formula with <span class="arithmatex">\(n\)</span> var and <span class="arithmatex">\(m\)</span> clauses and let functions <span class="arithmatex">\(h_1,h_2,h_3\)</span> and <span class="arithmatex">\(s_1,s_2,s_3\)</span> be defined as above. Let <span class="arithmatex">\(a:\{0,1\}^\ell\to\mathbb Z\)</span> be any function. We define the arithmetic formula <span class="arithmatex">\(A_{\varphi,a}\)</span> in <span class="arithmatex">\(4\ell\)</span> variables computing a polynomial of total degree <span class="arithmatex">\(3(2\ell+2\ell)=12\ell\)</span> by
 $$
 A_{\varphi,a}(c,v_1,v_2,v_3)=\prod_{i=1}^3\tilde h_i(c,v_i)(\tilde s_i(c)-\tilde a(v_i))^2.
 $$
-We have that <span class="arithmatex">\(a:\{0,1\}^\ell\to\Z\)</span> is an assignment satisfying <span class="arithmatex">\(\varphi\)</span> iff
+We have that <span class="arithmatex">\(a:\{0,1\}^\ell\to\mathbb Z\)</span> is an assignment satisfying <span class="arithmatex">\(\varphi\)</span> iff
 $$
 \sum_{(c,v_1,v_2,v_3)\in{0,1}^{4\ell}}A_{\varphi,a}(c,v_1,v_2,v_3)=0.
 $$

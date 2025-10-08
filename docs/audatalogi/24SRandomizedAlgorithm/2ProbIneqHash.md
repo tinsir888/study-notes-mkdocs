@@ -47,10 +47,15 @@ Analyze the expected query time of hashing in chaining.
 The work spend when answering the query $x$ is proportional to the number of elements from $S$ also stored in $List(A[h(x)])$.
 
 Bad idea: compute $\mathbb E[List(A[h(x)])]$ directly: (Too hard)
+
 $$
 =\sum_{i=0}^ni\cdot\Pr\{i=List(A[h(x)])\}\\
+$$
+
+$$
 =\sum_{i=0}^ni\cdot(\frac{1}{m})^i(1-\frac{1}{m})^{n-i}C_n^i
 $$
+
 Good idea: break down $X$.
 
 Random variable $X_i$ for each $x_i$, if $h(x_i)=h(x), X_i=1$, else $X_i=0$.
@@ -62,16 +67,23 @@ Definition of expectation: $\mathbb E[X]=\sum_{x\in X}Pr[X=x]\cdot x$
 Linearity of expectation: $\mathbb E[\sum_ix_i]=\sum_i\mathbb E[x_i]$
 
 Thus, by linearity of expectation,
+
 $$
 \mathbb E_h[\sum_iX_i]=\sum_i\mathbb E_h[X_i]\\
+$$
+
+$$
 \mathbb E_h[X_i]=\Pr[h(x_i)=h(x)]\cdot1+\Pr[h(x_i)\neq h(x)]\cdot0\\=\Pr[h(x_i)=h(x)]
 $$
+
 if $x_i=x,\Pr[h(x_i)=h(x)]=1$. if $x_i\neq x,\Pr[h(x_i)=h(x)]=\frac{1}{m}$.
 
 Thus,
+
 $$
 \sum_i\mathbb E_h[X_i]\le1+\sum_{i:x_i\neq x}\mathbb E_h[X_i]\le1+\frac{n}{m}
 $$
+
 choose $m=\Theta(n)$, then query time is $O(1)$ and space usage is $O(n)$.
 
 **Linearity of expectation is also valid if random variables are not independent!!!**
@@ -81,13 +93,21 @@ choose $m=\Theta(n)$, then query time is $O(1)$ and space usage is $O(n)$.
 Let $X$ be a **non-negative** discrete random variable. $\forall t\gt0$, we have $\Pr[x\gt t]\lt\frac{\mathbb E[X]}{t}$ and $\Pr[x\ge t]\le\frac{\mathbb E[X]}{t}$
 
 > Proof for continuous version
+>
 > $$
 > \mathbb E[X]=\int_0^\infty xf(x)dx\\
+> $$
+>
+> $$
 > \forall t>0,\mathbb E[X]\ge\int_t^\infty xf(x)dx\\
+> $$
+>
+> $$
 > \ge\int_t^\infty tf(x)dx=t\int_t^\infty f(x)dx=t\cdot\Pr(X\ge t)
 > $$
 
 Conclusion: If we insert $n$ elements into hashing with chaining data structure and then ask one query $x$, then the linked list $List(A[h(x)])$ that we have to scan through contains more than $t(1+\frac{n}{m})$ elements with probability less than $1\over t$.
+
 $$
 \Pr[X\gt t(1+\frac{n}{m})]\lt\frac{\mathbb E[X]}{t(1+\frac{n}{m})}\le\frac{1+\frac{n}{m}}{t(1+\frac{n}{m})}=\frac{1}{t}
 $$
@@ -107,88 +127,158 @@ $Y_j$s are independent and $\mathbb E[Y_j]=\frac{1}{m}$.
 Chernoff Bound: Let $\{X_i\}$ be a set of **independent boolean random variables** and let $X=\sum_iX_i$. Then,
 
 $\forall\mu\le\mathbb E[X],\forall0\lt\delta\lt1$ we have
+
 $$
 \Pr[X\lt(1-\delta)\mu]\lt e^{-\frac{\delta^2\mu}{2}}
 $$
+
 $\forall\mu\ge\mathbb E[X],\forall0\lt\delta\lt1$ we have
+
 $$
 \Pr[X\gt(1+\delta)\mu]\lt e^{-\frac{\delta^2\mu}{3}}
 $$
+
 Finally, $\forall\delta\ge1,\forall\mu\ge\mathbb E[X]$, we have
+
 $$
 \Pr[X\gt(1+\delta)\mu]\lt(\frac{e^\delta}{(1+\delta)^{1+\delta}})^\mu
 $$
 
 
 We have $\mathbb E[Y]=\frac{n}{m}$, $\forall\delta\ge1$, we have **Chernoff Bound**:
+
 $$
 \Pr[Y\gt(1+\delta)\frac{n}{m}]\lt(\frac{e^\delta}{(1+\delta)^{1+\delta}})^{\frac{n}{m}}
 $$
 
 Application in our scenario: $m=n,t=(1+\delta)\ge2,\mu=\mathbb E[Y]={n\over m}=O(1)$:
+
 $$
 \Pr[|List(A[i])|\gt t]=\Pr[Y\gt t]\lt\frac{e^{t-1}}{t^t}\lt(\frac{e}{t})^t
 $$
+
 Conclusion: we spend more than $O(t)$ time with probability decreasing as fast as $t^{-t}$.
 
 > Proof of Chernoff Bound
 >
 > By Markov's inequality,
+> 
 > $$
 > \forall t\gt0:\Pr(x\gt a)=\Pr(e^{tX}\gt e^{ta})\lt\frac{\mathbb E[e^{tX}]}{e^{ta}}\\
+> $$
+>
+> $$
 > \text{Denote }M_X(t)=\mathbb E[e^{tX}], M_X(t)=\prod_{i=1}^nM_{X_i}(t)\\
+> $$
+>
+> $$
 > M_X(t)=pe^t+(1-p)=1+p(e^t-1)\le e^{p(e^t-1)}\\
+> $$
+>
+> $$
 > \therefore\Pr(X\gt(1+\delta)\mu)\lt\frac{\mathbb E[e^{tX}]}{e^{t(1+\delta)\mu}}=\frac{\prod_{i=1}^nM_{X_i}(t)}{e^{t(1+\delta)\mu}}\\
+> $$
+>
+> $$
 > \le\frac{e^{(e^t-1)\sum_ip_i}}{e^{t(1+\delta)\mu}}=\frac{e^{(e^t-1)\mathbb E[X]}}{e^{t(1+\delta)\mu}}\le[\frac{e^{e^t-1}}{e^{t(1+\delta)}}]^\mu\\
 > $$
+>
 > Let $t=\ln(1+\delta)\ge0$, we have:
+>
 > $$
 > \Pr[X\gt(1+\delta)\mu]\lt(\frac{e^\delta}{(1+\delta)^{1+\delta}})^\mu\\
+> $$
+>
+> $$
 > \Rightarrow\ln[(\frac{e^\delta}{(1+\delta)^{1+\delta}})^\mu]=\mu(\delta-(1+\delta)\ln(1+\delta))\\
+> $$
+>
+> $$
 > \because\forall x\ge0,\ln(1+x)\ge\frac{x}{1+\frac{x}{2}}\\
+> $$
+>
+> $$
 > \therefore\mu(\delta-(1+\delta)\ln(1+\delta))\le-\frac{\delta^2}{2+\delta}\mu\\
+> $$
+>
+> $$
 > \lt-\frac{\mu\delta^2}{3}(\because0\lt\delta\lt1)\\
+> $$
+>
+> $$
 > \Pr[X\gt(1+\delta)\mu]\lt e^{-\frac{\delta^2\mu}{3}}(0\lt\delta\lt1)
 > $$
 >
 > 
 >
 > Analogously, we have
+>
 > $$
 > \forall t\gt0:\Pr(x\lt a)=\Pr(e^{-tX}\gt e^{-ta})\lt\frac{\mathbb E[e^{-tX}]}{e^{-ta}}\\
+> $$
+>
+> $$
 > \Rightarrow\cdots\Rightarrow\cdots\\
+> $$
+>
+> $$
 > \Rightarrow\Pr[X\lt(1-\delta)\mu]\lt(\frac{e^{e^{-t}-1}}{e^{-t(1-\delta)}})^\mu(**)\\
 > $$
+>
 > Let $t=-\ln(1-\delta)\gt0$,
+>
 > $$
 > (**)=(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}})^\mu(*)\\
+> $$
+>
+> $$
 > \because \forall0\lt\delta\lt1,(1-\delta)\ln(1-\delta)\gt-\delta+\frac{\delta^2}{2}\\
+> $$
+>
+> $$
 > \therefore(*)\le(\frac{e^{-\delta}}{e^{-\delta+\frac{\delta^2}{2}}})^\mu=e^{-\frac{\delta^2\mu}{2}}\\
+> $$
+>
+> $$
 > \Rightarrow\Pr[X\lt(1-\delta)\mu]\lt e^{-\frac{\delta^2\mu}{2}}
 > $$
 
 ## Union Bound
 
 Let $\{E_i\}$ be events, then
+
 $$
 \Pr[\bigcup_iE_i]\le\sum_i\Pr[E_i]
 $$
+
 If we define $E_i$ as event that $|List(A[i])|\gt4\frac{\ln n}{\ln\ln n}$, then by Chernoff Bound,
+
 $$
 \Pr[E_i]\lt((e/4)\ln\ln n/\ln n)^{4\ln n/\ln\ln n}\lt(\ln\ln n/\ln n)^{4\ln n/\ln\ln n}
 $$
+
 ($n\gt3\gt e$ is needed!)
 
 :astonished:~~CRAZY MATH!!!~~
+
 $$
 \because \ln\ln n\le\sqrt{\ln n}\\
+$$
+
+$$
 \therefore(\frac{\ln\ln n}{\ln n})^{\frac{4\ln n}{\ln\ln n}}\le(\frac{\sqrt{\ln n}}{\ln n})^{\frac{4\ln n}{\ln\ln n}}=(\ln n)^{-\frac{2\ln n}{\ln\ln n}}\\
+$$
+
+$$
 =(e^{\ln\ln n})^{-2\frac{\ln n}{\ln\ln n}}=e^{-2\frac{\ln n}{\ln\ln n}\cdot\ln\ln n}=n^{-2}
 $$
+
 By union bound, we have
+
 $$
 \Pr[\bigcup_iE_i]\le\sum_in^{-2}=n^{-1}
 $$
+
 This means with probability $1-\frac{1}{n}$, there is not even a single list $List(A[i])$ with size more than $4\frac{\ln n}{\ln\ln n}$, assuming $(n\ge3)$.
 
 In this case, the worst case query time of the data structure is $O(\frac{\log n}{\log\log n})$
@@ -202,9 +292,11 @@ The construction time is $O(n)$ and the space is $O(n)$.
 After insert $x_1,\cdots,x_n$, one of the list exceeds $4\frac{\ln n}{\ln\ln n}$, then we discard the current data structure and try again with a freshly chosen $h$.
 
 This performs at least $i$ iterations with probability no more than $(\frac{1}{n})^{i-1}$, thus the expected construction time is upper bounded by
+
 $$
 \sum_{i=1}^\infty(1/n)^{i-1}\cdot O(n)=O(n)
 $$
+
 We have thus achieved a worst case query time of $O(\log n/\log\log n)$ with space $O(n)$ and expected construction time $O(n)$.
 
 # O-Notation
@@ -222,9 +314,11 @@ Sum of same magnitude. if $\forall i=1,\cdots,k,f_i(n)=O(g(n))$, then $\sum_{i=1
 Constants don't matter!
 
 Products. if $f(n)=O(h(n)),g(n)=O(l(n))$ then
+
 $$
 f(n)g(n)=O(h(n)l(n))
 $$
+
 Base of Logs. The base of logarithms don't matter! We only use $f(n)=O(\log n)$.
 
 Careful with exponents!!! $2\log_2n=O(\log n)$, but $2^{2\log_2n}=O(n^2)$

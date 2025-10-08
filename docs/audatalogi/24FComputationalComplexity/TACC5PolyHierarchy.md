@@ -53,9 +53,11 @@ The definition can be extended to other complexity classes.
 $P^A$ and $NP^A$ for any oracle language $A$.
 
 The oracle may be chosen from some class of languages. Let $\mathcal C$ be a class of languages.
+
 $$
 DTIME^\mathcal C(T(n))=\bigcup_{A\in\mathcal C}DTIME^A(T(n))
 $$
+
 Similarly we have $DSPACE^\mathcal C(T(n))$, $NTIME^\mathcal C(T(n))$ and $NSPACE^\mathcal C(T(n))$.
 
 This again extends to all other complexity classes such as $P^{NP}$.
@@ -76,9 +78,11 @@ It also satisfies **transitivity**.
 # The Polynomial-time Hierarchy via Oracles and Quantifiers
 
 For a class of language $\mathcal C$, denote $co\mathcal C$ the class of complements of languages of $\mathcal C$.
+
 $$
 co\mathcal C=\{\overline L|L\in\mathcal C\}
 $$
+
 :book:Definition 18 (polynomial-time hierarchy). Let $\Delta_0^P=\Sigma_0^P=\Pi_0^P=P$. For $i\ge0$, define further $\Delta_{i+1}^P=P^{\Sigma_i^P}$, $\Sigma_{i+1}^P=NP^{\Sigma_i^P}$ and $\Pi_{i+1}^P=coNP^{\Sigma_i^P}$. Finally, let **Polynomial Hierarchy** $PH=\bigcup_{i\ge0}\Sigma_i^P$.
 
 The classes $\Delta_i^P,\Sigma_i^P,\Pi_i^P$ are said to make up level $i$ of the polynomial-time hierarchy, and $PH$ denotes the entire polynomial-time hierarchy.
@@ -88,9 +92,11 @@ Note that $\Delta_1^P=P^P=P$, $\Sigma_1^P=NP^P=NP$, $\Pi_1^P=coNP^P=coNP$.
 On second level, we have $P^{NP}, NP^{NP}, coNP^{NP}$, continuing ad infimum.
 
 Straightforward:
+
 $$
 \Delta_i^P\subseteq\Sigma_i^P\cap\Pi_i^P\subseteq\Sigma_i^P\cup\Pi_i^P\subseteq\Delta_{i+1}^P
 $$
+
 :dart:Theorem 27. $PH\subseteq PSPACE$.
 
 > Using polynomial space simply simulate the non-deterministic Turing machine same way as in proof of Theorem 10.
@@ -98,6 +104,7 @@ $$
 Then prove an equivalent definition of the classes $\Sigma_i^P$ and $\Pi_i^P$ in terms of **quantifiers**.
 
 :dart:Theorem 28. Let $L$ be any language and let $i\ge1$. Then $L\in\Sigma_i^P$ iff there is a polynomial $q$ and another language $L'\in\Pi_{i-1}^P$  s.t.
+
 $$
 \forall x:[x\in L\Leftrightarrow\exists y:|y|\le q(|x|)\land\langle x,y\rangle\in L'].
 $$
@@ -105,17 +112,23 @@ $$
 > 看不懂了。
 
 :thinking:Corollary 3. Let $L$ be any language and let $i\ge1$. Then $L\in\Pi_i^P$ iff there is a polynomial $q$ and another language $L'\in\Sigma_{i-1}^P$  s.t.
+
 $$
 \forall x:[x\in L\Leftrightarrow\forall y:|y|\le q(|x|)\Rightarrow\langle x,y\rangle\in L'].
 $$
+
 :thinking:Corollary 4. Let $L$ be any language and let $i\ge1$. Then $L\in\Sigma_i^P$ iff there is a polynomial $q$ and another language $L'\in P$  s.t.
+
 $$
 \forall x:[x\in L\Leftrightarrow\exists^qy_1\forall^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
 $$
+
 where $Q_i$ is $\exists$ if $i$ is odd, and $\forall$ if $i$ is even. Likewise, $L\in\Pi_i^P$ iff there is a polynomial $q$ and another language $L'\in P$ s.t.
+
 $$
 \forall x:[x\in L\Leftrightarrow\forall^qy_1\exists^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
 $$
+
 where $Q_i$ is $\exists$ if $i$ is even, and $\forall$ if $i$ is odd.
 
 Generalize whether $P=NP,NP=coNP$ to question whether $\Delta_i^P=\Sigma_i^P,\Sigma_i^P=\Pi_i^P$ for $i\gt1$.

@@ -46,7 +46,7 @@ $A^*$ is adjugate matrix
 
 define: $A_{ij}$ is matrix determinant multiply $(-1)^{i+j}$ which delete i-th row and j-th column
 
-$A^*=\left(\begin{array}{cc} A_{11}&\cdots&A_{1n}\\ &\cdots&\\A_{n1}&\cdots& A_{nn} \end{array}\right)$
+$A^*=\left(\begin{array}{cc} A_{11}&\cdots&A_{1n}\\ &\cdots&\\mathbb A_{n1}&\cdots& A_{nn} \end{array}\right)$
 
 $A^{-1}=\frac{1}{\det A}A^*$
 

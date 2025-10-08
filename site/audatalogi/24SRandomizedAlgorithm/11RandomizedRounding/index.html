@@ -6399,7 +6399,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6422,7 +6422,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6445,7 +6445,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9604,25 +9604,33 @@ By induction, we can set the sequence of variables better than <span class="arit
 <blockquote>
 <p>假设这些布尔表达式不含有单个非变量。</p>
 <p>对于只含一个变量的布尔表达式，满足的概率为 <span class="arithmatex">\(p\)</span>.</p>
-<p>对于含有至少两个变量的布尔表达式，假设 <span class="arithmatex">\(x_i\)</span> 有 <span class="arithmatex">\(a\)</span> 个，<span class="arithmatex">\(\bar x_j\)</span> 有 <span class="arithmatex">\(b\)</span> 个，则该表达式不满足的概率为：
-$$
-\Pr[C_k\text{ not satisfied}]=(1-p)<sup>ap</sup>b\le p^{a+b}\le p^2\
+<p>对于含有至少两个变量的布尔表达式，假设 <span class="arithmatex">\(x_i\)</span> 有 <span class="arithmatex">\(a\)</span> 个，<span class="arithmatex">\(\bar x_j\)</span> 有 <span class="arithmatex">\(b\)</span> 个，则该表达式不满足的概率为：</p>
+<div class="arithmatex">\[
+\Pr[C_k\text{ not satisfied}]=(1-p)^ap^b\le p^{a+b}\le p^2\\
+\]</div>
+<div class="arithmatex">\[
 \therefore\Pr[C_k\text{ satisfied}]\ge 1-p^2
-$$
-现在就需要将 <span class="arithmatex">\(\min(p,1-p^2)\)</span> 最大化。</p>
+\]</div>
+<p>现在就需要将 <span class="arithmatex">\(\min(p,1-p^2)\)</span> 最大化。</p>
 </blockquote>
 <p>Best performance is <span class="arithmatex">\(p=1-p^2\Rightarrow p\approx0.618\)</span>.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" /><strong>Theorem 4</strong>. Setting each <span class="arithmatex">\(x_i\)</span> to <code>true</code> with probability <span class="arithmatex">\(p\)</span> independently gives a randomized <span class="arithmatex">\(\min(p,1-p^2)\)</span>-approximation algorithm for MAX SAT instances with no negated unit clauses.</p>
 <p>Let <span class="arithmatex">\(v_i\)</span> be the weight of the unit clause <span class="arithmatex">\(\bar x_i\)</span> if it exists in the instance, and let <span class="arithmatex">\(v_i\)</span> be zero otherwise.</p>
 <p><span class="arithmatex">\(OPT\)</span> has a tighter bound: <span class="arithmatex">\(OPT\le\sum_{j=1}^mw_j-\sum_{i=1}^nv_i\)</span>.</p>
-<p>Let <span class="arithmatex">\(U\)</span> be the set of indices of clauses of the instance excluding unit clauses of the form <span class="arithmatex">\(\bar x_i\)</span>. WLOG the weight of each clause <span class="arithmatex">\(\bar x_i\)</span> is no greater than the weight of clause <span class="arithmatex">\(x_i\)</span>. Thus <span class="arithmatex">\(\sum_{j\in U}w_j=\sum_{j=1}^mw_j-\sum_{i=1}^nv_i\)</span>. Each <span class="arithmatex">\(x_i\)</span> is set to <code>true</code> with probability <span class="arithmatex">\(0.618\)</span>. So the algorithm produces
-$$
-\mathbb E[W]=\sum_{j=1}^mw_j\Pr[C_j\text{ satisfied}]\
-\ge\sum_{j\in U}^mw_j\Pr[C_j\text{ satisfied}]\
-\ge p\cdot\sum_{j\in U}w_j\
-=p\cdot(\sum_{j=1}<sup>mw_j-\sum_{i=1}</sup>nv_i)\ge p\cdot OPT.
-$$
-This algorithm can be derandomized using the method of conditional expectations.</p>
+<p>Let <span class="arithmatex">\(U\)</span> be the set of indices of clauses of the instance excluding unit clauses of the form <span class="arithmatex">\(\bar x_i\)</span>. WLOG the weight of each clause <span class="arithmatex">\(\bar x_i\)</span> is no greater than the weight of clause <span class="arithmatex">\(x_i\)</span>. Thus <span class="arithmatex">\(\sum_{j\in U}w_j=\sum_{j=1}^mw_j-\sum_{i=1}^nv_i\)</span>. Each <span class="arithmatex">\(x_i\)</span> is set to <code>true</code> with probability <span class="arithmatex">\(0.618\)</span>. So the algorithm produces</p>
+<div class="arithmatex">\[
+\mathbb E[W]=\sum_{j=1}^mw_j\Pr[C_j\text{ satisfied}]\\
+\]</div>
+<div class="arithmatex">\[
+\ge\sum_{j\in U}^mw_j\Pr[C_j\text{ satisfied}]\\
+\]</div>
+<div class="arithmatex">\[
+\ge p\cdot\sum_{j\in U}w_j\\
+\]</div>
+<div class="arithmatex">\[
+=p\cdot(\sum_{j=1}^mw_j-\sum_{i=1}^nv_i)\ge p\cdot OPT.
+\]</div>
+<p>This algorithm can be derandomized using the method of conditional expectations.</p>
 <h1 id="randomized-rounding">Randomized Rounding</h1>
 <p>Biasing probability with which we set <span class="arithmatex">\(x_i\)</span> <code>true</code> yields an improved approximation algorithm. However, we gave each variable the same bias. <mark>We can do better by giving each variable its own bias!</mark></p>
 <p>Idea of <strong>randomized rounding</strong>:</p>
@@ -9632,15 +9640,15 @@ This algorithm can be derandomized using the method of conditional expectations.
 <li>The fractional value <span class="arithmatex">\(y_i^*\)</span> is interpreted as the probability that <span class="arithmatex">\(y_i\)</span> should be set to <span class="arithmatex">\(1\)</span>. In this case we set each <span class="arithmatex">\(x_i\)</span> to <code>true</code> with probability <span class="arithmatex">\(y_i^*\)</span> independently.</li>
 </ul>
 <p>For MAX SAT problem, in addition to the variables <span class="arithmatex">\(y_i\)</span>, we introduce a variable <span class="arithmatex">\(z_j\)</span> for each <span class="arithmatex">\(C_j\)</span> that will be <span class="arithmatex">\(1\)</span> if the clause is satisfied and <span class="arithmatex">\(0\)</span> otherwise. For each clause <span class="arithmatex">\(C_j\)</span> let <span class="arithmatex">\(P_j\)</span> be the indices of the variables <span class="arithmatex">\(x_i\)</span> that are positive, <span class="arithmatex">\(N_j\)</span> be negated in the clause.</p>
-<p>We denote the clause <span class="arithmatex">\(C_j\)</span> by
-$$
+<p>We denote the clause <span class="arithmatex">\(C_j\)</span> by</p>
+<div class="arithmatex">\[
 \bigvee_{i\in P_j}x_i\lor\bigvee_{i\in N_j}\bar x_i.
-$$
-Then the inequality
-$$
+\]</div>
+<p>Then the inequality</p>
+<div class="arithmatex">\[
 \sum_{i\in P_j}y_i+\sum_{i\in N_j}(1-y_i)\ge z_j
-$$
-must hold for <span class="arithmatex">\(C_j\)</span> since if each variable that occurs positively in the clause is set to <code>false</code> and each variable that occurs negatively is set to <code>true</code>, then the clause is not satisfied, and <span class="arithmatex">\(z_j\)</span> must be <span class="arithmatex">\(0\)</span>.</p>
+\]</div>
+<p>must hold for <span class="arithmatex">\(C_j\)</span> since if each variable that occurs positively in the clause is set to <code>false</code> and each variable that occurs negatively is set to <code>true</code>, then the clause is not satisfied, and <span class="arithmatex">\(z_j\)</span> must be <span class="arithmatex">\(0\)</span>.</p>
 <p>This yields <strong>integer programming</strong> formulation of MAX SAT problem:</p>
 <ul>
 <li>maximize <span class="arithmatex">\(\sum_{j=1}^mw_jz_j\)</span></li>
@@ -9649,42 +9657,50 @@ must hold for <span class="arithmatex">\(C_j\)</span> since if each variable tha
 <li><span class="arithmatex">\(0\le z_j\le 1,j=1,\cdots,m\)</span></li>
 </ul>
 <p><span class="arithmatex">\(Z^*_{LP}\)</span> is the optimum value of this linear program <span class="arithmatex">\(LP\)</span>, then clearly the optimum value of integer program (IP) <span class="arithmatex">\(Z^*_{IP}=OPT\)</span>.</p>
-<p>Let <span class="arithmatex">\((y^*,z^*)\)</span> be the optimum value of solution to the linear programming, relaxation. Consider the result of using randomized rounding, and setting <span class="arithmatex">\(x_i\)</span> to <code>true</code> with probability <span class="arithmatex">\(y_i^*\)</span> independently. Before we can begin the analysis, we will need 2 facts. The first is commonly called the <em>arithmetic-geometric mean inequality</em>, because it compares the <strong>arithmetic and geometric means</strong> of a set of numbers.
-$$
-\sqrt[k]{\prod_{i=1}<sup>ka_i}\le\frac{1}{k}\sum_{i=1}</sup>ka_i
-$$
-If <span class="arithmatex">\(f''(x)\le0\forall x\in[0,1],f(0)=a,f(1)=b+a\)</span>, then <span class="arithmatex">\(f(x)\ge bx+a\forall x\in[0,1]\)</span>.</p>
+<p>Let <span class="arithmatex">\((y^*,z^*)\)</span> be the optimum value of solution to the linear programming, relaxation. Consider the result of using randomized rounding, and setting <span class="arithmatex">\(x_i\)</span> to <code>true</code> with probability <span class="arithmatex">\(y_i^*\)</span> independently. Before we can begin the analysis, we will need 2 facts. The first is commonly called the <em>arithmetic-geometric mean inequality</em>, because it compares the <strong>arithmetic and geometric means</strong> of a set of numbers.</p>
+<div class="arithmatex">\[
+\sqrt[k]{\prod_{i=1}^ka_i}\le\frac{1}{k}\sum_{i=1}^ka_i
+\]</div>
+<p>If <span class="arithmatex">\(f''(x)\le0\forall x\in[0,1],f(0)=a,f(1)=b+a\)</span>, then <span class="arithmatex">\(f(x)\ge bx+a\forall x\in[0,1]\)</span>.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" /><strong>Theorem 5</strong>. Randomized rounding gives a randomized <span class="arithmatex">\((1-\frac{1}{e})\)</span>-approximation algorithm for MAX SAT.</p>
 <blockquote>
-<p>Applying arithmetic-geometric mean inequality:
-$$
-\Pr[C_j\text{ not satisfied}]=\prod_{i\in P_j}(1-y_i^<em>)\prod_{i\in N_j}y_i^</em>\
-\le\left[\frac{1}{l_j}(\sum_{i\in P_j}(1-y_i^<em>)+\sum_{i\in N_j}y_i<sup>*)\right]</sup>{l_j}
-$$
-By rearranging terms,
-$$
-\left[\frac{1}{l_j}(\sum_{i\in P_j}(1-y_i^</em>)+\sum_{i\in N_j}y_i<sup>*)\right]</sup>{l_j}=\left[1-\frac{1}{l_j}(\sum_{i\in N_j}(1-y_i^<em>)+\sum_{i\in P_j}y_i<sup>*)\right]</sup>{l_j}
-$$
-By the inequality Optimum of LP <span class="arithmatex">\(\ge\)</span> Optimum of IP, we see
-$$
-\Pr[C_j\text{ not satisfied}]\le\left(1-\frac{z_j<sup>*}{l_j}\right)</sup>{l_j}.
-$$
-Function <span class="arithmatex">\(f(z_j^*)=1-\left(1-\frac{z_j^*}{l_j}\right)^{l_j}\)</span> is concave for <span class="arithmatex">\(l_j\ge1\)</span>, then
-$$
-\Pr[C_j\text{ satisfied}]\ge1-\left(1-\frac{z_j<sup>*}{l_j}\right)</sup>{l_j}\
-\ge\left[\left(1-\frac{1}{l_j}\right)<sup>{l_j}\right]z_j</sup></em>.
-$$
-Therefore the expected value of the randomized rounding algorithm is
-$$
-\mathbb E[W]=\sum_{j=1}^mw_j\Pr[C_j\text{ satisfied}]\
-\ge\sum_{j=1}<sup>mw_jz_j</sup><em>\left[\left(1-\frac{1}{l_j}\right)^{l_j}\right]\
-\ge\min_{k\ge1}\left[\left(1-\frac{1}{k}\right)<sup>{k}\right]\sum_{j=1}</sup>mw_jz_j^</em>.
-$$
-<span class="arithmatex">\(\left[\left(1-\frac{1}{k}\right)^{k}\right]\)</span> is non-increasing. It approaches <span class="arithmatex">\(1-\frac{1}{e}\)</span> from above as <span class="arithmatex">\(k\)</span> tends to infinity. Thus we have
-$$
-\mathbb E[W]\ge\min_{k\ge1}\left[\left(1-\frac{1}{k}\right)<sup>{k}\right]\sum_{j=1}</sup>mw_jz_j^*\ge(1-\frac{1}{e})OPT.
-$$
-This randomized rounding algorithm can be derandomized in the standard way using the method of conditional expectations.</p>
+<p>Applying arithmetic-geometric mean inequality:</p>
+<div class="arithmatex">\[
+\Pr[C_j\text{ not satisfied}]=\prod_{i\in P_j}(1-y_i^*)\prod_{i\in N_j}y_i^*\\
+\]</div>
+<div class="arithmatex">\[
+\le\left[\frac{1}{l_j}(\sum_{i\in P_j}(1-y_i^*)+\sum_{i\in N_j}y_i^*)\right]^{l_j}
+\]</div>
+<p>By rearranging terms,</p>
+<div class="arithmatex">\[
+\left[\frac{1}{l_j}(\sum_{i\in P_j}(1-y_i^*)+\sum_{i\in N_j}y_i^*)\right]^{l_j}=\left[1-\frac{1}{l_j}(\sum_{i\in N_j}(1-y_i^*)+\sum_{i\in P_j}y_i^*)\right]^{l_j}
+\]</div>
+<p>By the inequality Optimum of LP <span class="arithmatex">\(\ge\)</span> Optimum of IP, we see</p>
+<div class="arithmatex">\[
+\Pr[C_j\text{ not satisfied}]\le\left(1-\frac{z_j^*}{l_j}\right)^{l_j}.
+\]</div>
+<p>Function <span class="arithmatex">\(f(z_j^*)=1-\left(1-\frac{z_j^*}{l_j}\right)^{l_j}\)</span> is concave for <span class="arithmatex">\(l_j\ge1\)</span>, then</p>
+<div class="arithmatex">\[
+\Pr[C_j\text{ satisfied}]\ge1-\left(1-\frac{z_j^*}{l_j}\right)^{l_j}\\
+\]</div>
+<div class="arithmatex">\[
+\ge\left[\left(1-\frac{1}{l_j}\right)^{l_j}\right]z_j^*.
+\]</div>
+<p>Therefore the expected value of the randomized rounding algorithm is</p>
+<div class="arithmatex">\[
+\mathbb E[W]=\sum_{j=1}^mw_j\Pr[C_j\text{ satisfied}]\\
+\]</div>
+<div class="arithmatex">\[
+\ge\sum_{j=1}^mw_jz_j^*\left[\left(1-\frac{1}{l_j}\right)^{l_j}\right]\\
+\]</div>
+<div class="arithmatex">\[
+\ge\min_{k\ge1}\left[\left(1-\frac{1}{k}\right)^{k}\right]\sum_{j=1}^mw_jz_j^*.
+\]</div>
+<p><span class="arithmatex">\(\left[\left(1-\frac{1}{k}\right)^{k}\right]\)</span> is non-increasing. It approaches <span class="arithmatex">\(1-\frac{1}{e}\)</span> from above as <span class="arithmatex">\(k\)</span> tends to infinity. Thus we have</p>
+<div class="arithmatex">\[
+\mathbb E[W]\ge\min_{k\ge1}\left[\left(1-\frac{1}{k}\right)^{k}\right]\sum_{j=1}^mw_jz_j^*\ge(1-\frac{1}{e})OPT.
+\]</div>
+<p>This randomized rounding algorithm can be derandomized in the standard way using the method of conditional expectations.</p>
 </blockquote>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -9697,22 +9713,28 @@ This randomized rounding algorithm can be derandomized in the standard way using
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" /><strong>Theorem 6</strong>. Choosing the better of the two solutions given by the randomized rounding algorithm and the unbiased randomized algorithm yields a randomized <span class="arithmatex">\(3/4\)</span>-approximation algorithm for MAX SAT.</p>
 <blockquote>
 <p>Let <span class="arithmatex">\(W_1\)</span> be a random variable denoting the value of the solution by randomized rounding algorithm.</p>
-<p>Let <span class="arithmatex">\(W_2\)</span> be the results of unbiased randomized algorithm. To show:
-$$
-\mathbb E[\max(W_1,W_2)]\ge\frac{3}{4}OPT\
-$$
-Observe that
-$$
-\mathbb E[\max(W_1,W_2)]\ge\mathbb E[\frac{1}{2}(W_1+W_2)]\
-=\frac{1}{2}\mathbb E[W_1]+\frac{1}{2}\mathbb E[W_2]\
-\ge\frac{1}{2}\sum_{j=1}<sup>mw_jz_j</sup><em>\left[\left(1-\frac{1}{l_j}\right)<sup>{l_j}\right]+\frac{1}{2}\sum_{j=1}</sup>mw_j(1-2^{-l_j})\
-\ge\sum_{j=1}<sup>mw_jz_j</sup></em>\left[\frac{1}{2}\left(1-(1-\frac{1}{l_j})<sup>{l_j}\right)+\frac{1}{2}(1-2</sup>{-l_j})\right].
-$$
-Claim that
-$$
-\left[\frac{1}{2}\left(1-(1-\frac{1}{l_j})<sup>{l_j}\right)+\frac{1}{2}(1-2</sup>{-l_j})\right]\ge\frac{3}{4}
-$$
-for all positive integers <span class="arithmatex">\(l_j\)</span>.</p>
+<p>Let <span class="arithmatex">\(W_2\)</span> be the results of unbiased randomized algorithm. To show:</p>
+<div class="arithmatex">\[
+\mathbb E[\max(W_1,W_2)]\ge\frac{3}{4}OPT\\
+\]</div>
+<p>Observe that</p>
+<div class="arithmatex">\[
+\mathbb E[\max(W_1,W_2)]\ge\mathbb E[\frac{1}{2}(W_1+W_2)]\\
+\]</div>
+<div class="arithmatex">\[
+=\frac{1}{2}\mathbb E[W_1]+\frac{1}{2}\mathbb E[W_2]\\
+\]</div>
+<div class="arithmatex">\[
+\ge\frac{1}{2}\sum_{j=1}^mw_jz_j^*\left[\left(1-\frac{1}{l_j}\right)^{l_j}\right]+\frac{1}{2}\sum_{j=1}^mw_j(1-2^{-l_j})\\
+\]</div>
+<div class="arithmatex">\[
+\ge\sum_{j=1}^mw_jz_j^*\left[\frac{1}{2}\left(1-(1-\frac{1}{l_j})^{l_j}\right)+\frac{1}{2}(1-2^{-l_j})\right].
+\]</div>
+<p>Claim that</p>
+<div class="arithmatex">\[
+\left[\frac{1}{2}\left(1-(1-\frac{1}{l_j})^{l_j}\right)+\frac{1}{2}(1-2^{-l_j})\right]\ge\frac{3}{4}
+\]</div>
+<p>for all positive integers <span class="arithmatex">\(l_j\)</span>.</p>
 <p><del>通过求导等方法可以求出这个式子的最小值，不太优雅啊……</del></p>
 </blockquote>
 <p>Notice that taking the best solution of the two derandomized algorithms gives at least half of sum of two results.</p>

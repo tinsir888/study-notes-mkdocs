@@ -6447,7 +6447,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6470,7 +6470,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6493,7 +6493,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9627,21 +9627,21 @@
 <p>Lecture notes by Elias Koutsoupias from Oxford</p>
 <h1 id="markov-chains">Markov Chains</h1>
 <h2 id="definitions">Definitions</h2>
-<p>A <em>discrete-time finite Markov chain</em> is a sequence of random variables <span class="arithmatex">\(X=X_0,X_1,X_2,\cdots\)</span> taking values in a finite set of states <span class="arithmatex">\(\{1,2,\cdots,n\}\)</span> s.t. <span class="arithmatex">\(\forall t\in\mathbb N:\)</span>
-$$
+<p>A <em>discrete-time finite Markov chain</em> is a sequence of random variables <span class="arithmatex">\(X=X_0,X_1,X_2,\cdots\)</span> taking values in a finite set of states <span class="arithmatex">\(\{1,2,\cdots,n\}\)</span> s.t. <span class="arithmatex">\(\forall t\in\mathbb N:\)</span></p>
+<div class="arithmatex">\[
 \Pr(X_{t+1}=j|X_t=i)=Q_{i,j},
-$$
-where <span class="arithmatex">\(Q=(Q_{i,j})\)</span> is an <span class="arithmatex">\(n\times n\)</span> stochastic <em>transition matrix</em>.</p>
+\]</div>
+<p>where <span class="arithmatex">\(Q=(Q_{i,j})\)</span> is an <span class="arithmatex">\(n\times n\)</span> stochastic <em>transition matrix</em>.</p>
 <p><span class="arithmatex">\(X_t\)</span> represents the state of the Markov chain at time <span class="arithmatex">\(t\)</span> and the matrix <span class="arithmatex">\(Q\)</span> encodes the state-to-state transition probabilities. The characteristic property of a Markov chain is that the distribution of <span class="arithmatex">\(X_t\)</span> depends only on <span class="arithmatex">\(X_{t-1}\)</span>. The conditional probability above is independent of the time <span class="arithmatex">\(t\)</span>.</p>
-<p>The <span class="arithmatex">\(t\)</span>-step transition probabilities are given by the power matrix <span class="arithmatex">\(Q^t\)</span>, i.e.,
-$$
+<p>The <span class="arithmatex">\(t\)</span>-step transition probabilities are given by the power matrix <span class="arithmatex">\(Q^t\)</span>, i.e.,</p>
+<div class="arithmatex">\[
 \Pr(X_{s+t}=j|X_s=i)=Q_{i,j}^t,
-$$
-<span class="arithmatex">\(\forall s,t\in\mathbb N\)</span>. Thus,
-$$
-\Pr(X_t=j)=\sum_{i=1}<sup>nQ_{i,j}</sup>t\cdot\Pr(X_0=i).
-$$
-A Markov chain is completely determined by the distribution of <span class="arithmatex">\(X_0\)</span> and the transition matrix <span class="arithmatex">\(Q\)</span>.</p>
+\]</div>
+<p><span class="arithmatex">\(\forall s,t\in\mathbb N\)</span>. Thus,</p>
+<div class="arithmatex">\[
+\Pr(X_t=j)=\sum_{i=1}^nQ_{i,j}^t\cdot\Pr(X_0=i).
+\]</div>
+<p>A Markov chain is completely determined by the distribution of <span class="arithmatex">\(X_0\)</span> and the transition matrix <span class="arithmatex">\(Q\)</span>.</p>
 <p>A Markov chain can be represented as a weighted directed graph whose vertices are the states of the chain and in which there is an edge <span class="arithmatex">\((i,j)\)</span> of weight <span class="arithmatex">\(Q_{i,j}\)</span> whenever <span class="arithmatex">\(Q_{i,j}\gt0\)</span>. We define the weight of a path to the product of the weights of the edges along the path, i.e. the probability to take the path. Then the sum of the weights of all length-<span class="arithmatex">\(k\)</span> paths <span class="arithmatex">\(i\)</span> to <span class="arithmatex">\(j\)</span> is <span class="arithmatex">\(Q_{i,j}^k\)</span>.</p>
 <p>The term <em>random walk</em> usually refers to the random process in which a particle moves on a graph, selecting the next node uniformly at random from the adjacent nodes. It is the special case of a Markov chain when for every state <span class="arithmatex">\(i\)</span> all probabilities <span class="arithmatex">\(Q_{i,j}\)</span> for <span class="arithmatex">\(j\neq i\)</span> are <strong>equal</strong> and <span class="arithmatex">\(Q_{i,i}=0\)</span>.</p>
 <p>A <em>lazy random walk</em> is similar but <span class="arithmatex">\(Q_{i,i}=1/2\)</span>.</p>
@@ -9667,13 +9667,19 @@ A Markov chain is completely determined by the distribution of <span class="arit
 <p>If the <span class="arithmatex">\(\varphi\)</span> is not satisfiable then the algorithm returns unsatisfiable. However, if <span class="arithmatex">\(\varphi\)</span> is satisfiable then the algorithm might not find a satisfying assignment. We analyze the probability that the algorithm gives correct answer.</p>
 <p>Consider <span class="arithmatex">\(\varphi\)</span> is satisfiable. Let <span class="arithmatex">\(S\)</span> be a particular assignment that satisfies <span class="arithmatex">\(\varphi\)</span>.</p>
 <p>Then we bound the probability that algorithm finds <span class="arithmatex">\(S\)</span>. If <span class="arithmatex">\(\varphi\)</span> is not satisfied by an assignment <span class="arithmatex">\(A\)</span> there must be an unsatisfied clause <span class="arithmatex">\(C\)</span>. Observe that one or both literals of <span class="arithmatex">\(C\)</span> must have different truth values under <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(S\)</span>. <strong>Thus if we flip a random literal in <span class="arithmatex">\(C\)</span> then the probability that we increase the agreement between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(S\)</span> is either <span class="arithmatex">\(1/2\)</span> or <span class="arithmatex">\(1\)</span>.</strong></p>
-<p>Writing <span class="arithmatex">\(A_t\)</span> for the assignment after <span class="arithmatex">\(t\)</span> iterations of the main loop and <span class="arithmatex">\(X_t\)</span> for the number of variables in which <span class="arithmatex">\(A_t\)</span> agrees with <span class="arithmatex">\(S\)</span>, we have
-$$
-\Pr(X_{t+1}=1|X_t=0)=1\
-\Pr(X_{t+1}=i+1|X_t=i)\ge1/2,i\in{1,\cdots,n-1}\
-\Pr(X_{t+1}=i-1|X_t=i)\le1/2,i\in{1,\cdots,n-1}\
+<p>Writing <span class="arithmatex">\(A_t\)</span> for the assignment after <span class="arithmatex">\(t\)</span> iterations of the main loop and <span class="arithmatex">\(X_t\)</span> for the number of variables in which <span class="arithmatex">\(A_t\)</span> agrees with <span class="arithmatex">\(S\)</span>, we have</p>
+<div class="arithmatex">\[
+\Pr(X_{t+1}=1|X_t=0)=1\\
+\]</div>
+<div class="arithmatex">\[
+\Pr(X_{t+1}=i+1|X_t=i)\ge1/2,i\in\{1,\cdots,n-1\}\\
+\]</div>
+<div class="arithmatex">\[
+\Pr(X_{t+1}=i-1|X_t=i)\le1/2,i\in\{1,\cdots,n-1\}\\
+\]</div>
+<div class="arithmatex">\[
 \Pr(X_{t+1}=n|X_t=n)=1
-$$</p>
+\]</div>
 <p>If we replace inequalities with equations, then <span class="arithmatex">\(X\)</span> becomes a Markov chain on the state space <span class="arithmatex">\([n]\)</span>. The Markov chain of this process is:</p>
 <div class="highlight"><pre><span></span><code>flowchart LR
   0((0))
@@ -9692,29 +9698,35 @@ $$</p>
 </code></pre></div>
 <p>The chain describes the movement of a particle on a line: it is an example of a <em>one-dimensional random walk with one reflecting and one absorbing barrier</em>.</p>
 <p>The expected time until <span class="arithmatex">\(X_t=n\)</span> is an upper bound on the expected number of steps for the 2-SAT algorithm to find <span class="arithmatex">\(S\)</span>.</p>
-<p>Let <span class="arithmatex">\(h_j\)</span> be the expected time for <span class="arithmatex">\(X\)</span> to first reach <span class="arithmatex">\(n\)</span> starting at <span class="arithmatex">\(j\)</span>. Then we have
-$$
-h_n=0\
-h_0=1+h_1\
-h_j=1+\frac{h_{j-1}}{2}+\frac{h_{j+1}}{2},j\in{1,\cdots,n-1}
-$$
-This is a linear system of equations in <span class="arithmatex">\(n+1\)</span> unknowns.</p>
+<p>Let <span class="arithmatex">\(h_j\)</span> be the expected time for <span class="arithmatex">\(X\)</span> to first reach <span class="arithmatex">\(n\)</span> starting at <span class="arithmatex">\(j\)</span>. Then we have</p>
+<div class="arithmatex">\[
+h_n=0\\
+\]</div>
+<div class="arithmatex">\[
+h_0=1+h_1\\
+\]</div>
+<div class="arithmatex">\[
+h_j=1+\frac{h_{j-1}}{2}+\frac{h_{j+1}}{2},j\in\{1,\cdots,n-1\}
+\]</div>
+<p>This is a linear system of equations in <span class="arithmatex">\(n+1\)</span> unknowns.</p>
 <p>By some deduction, we have <span class="arithmatex">\(h_j=h_{j+1}+2j+1\)</span>. Combining with <span class="arithmatex">\(h_n=0\)</span>, we get that <span class="arithmatex">\(h_j=n^2-j^2\)</span>. Thus <span class="arithmatex">\(h_j\le n^2\forall j\)</span>.</p>
-<p>Let <span class="arithmatex">\(T\)</span> denote the number of steps for the 2-SAT algorithm to find assignment <span class="arithmatex">\(S\)</span> starting from some arbitrary assignment. By Markov's inequality, we have
-$$
-\Pr(T\ge2n^2)\le\frac{\mathbb E[T]}{2n^2}\le \frac{n<sup>2}{2n</sup>2}=\frac{1}{2}
-$$
-Theorem: If <span class="arithmatex">\(\varphi\)</span> is satisfiable then the 2-SAT algorithm returns a satisfying assignment with probability at least <span class="arithmatex">\(1/2\)</span>. If <span class="arithmatex">\(\varphi\)</span> is unsatisfiable then the 2-SAT algorithm is always correct.</p>
+<p>Let <span class="arithmatex">\(T\)</span> denote the number of steps for the 2-SAT algorithm to find assignment <span class="arithmatex">\(S\)</span> starting from some arbitrary assignment. By Markov's inequality, we have</p>
+<div class="arithmatex">\[
+\Pr(T\ge2n^2)\le\frac{\mathbb E[T]}{2n^2}\le \frac{n^2}{2n^2}=\frac{1}{2}
+\]</div>
+<p>Theorem: If <span class="arithmatex">\(\varphi\)</span> is satisfiable then the 2-SAT algorithm returns a satisfying assignment with probability at least <span class="arithmatex">\(1/2\)</span>. If <span class="arithmatex">\(\varphi\)</span> is unsatisfiable then the 2-SAT algorithm is always correct.</p>
 <p>The failure probability can be decreased to <span class="arithmatex">\(2^{-N}\)</span> by repeating the loop <span class="arithmatex">\(2Nn^2\)</span> instead of <span class="arithmatex">\(2n^2\)</span> times.</p>
 <h2 id="randomized-3-sat">Randomized 3-SAT</h2>
 <p>Extending the randomized algorithm for 2-SAT to 3-SAT.</p>
 <p>3-SAT is NP-complete. We can use <span class="arithmatex">\(O(2^n)\)</span> exhaustive search to solve it.</p>
-<p>Suppose a given 3-CNF formula <span class="arithmatex">\(\varphi\)</span> has a satisfying assignment <span class="arithmatex">\(S\)</span>. Let <span class="arithmatex">\(A_t\)</span> be the assignment after <span class="arithmatex">\(t\)</span> steps and let <span class="arithmatex">\(X_t\)</span> denote the number of propositional variables in which <span class="arithmatex">\(A_t\)</span> agrees with <span class="arithmatex">\(S\)</span>. Similarly,
-$$
-\Pr(X_{t+1}=j+1|X_t=j)\ge1/3\
+<p>Suppose a given 3-CNF formula <span class="arithmatex">\(\varphi\)</span> has a satisfying assignment <span class="arithmatex">\(S\)</span>. Let <span class="arithmatex">\(A_t\)</span> be the assignment after <span class="arithmatex">\(t\)</span> steps and let <span class="arithmatex">\(X_t\)</span> denote the number of propositional variables in which <span class="arithmatex">\(A_t\)</span> agrees with <span class="arithmatex">\(S\)</span>. Similarly,</p>
+<div class="arithmatex">\[
+\Pr(X_{t+1}=j+1|X_t=j)\ge1/3\\
+\]</div>
+<div class="arithmatex">\[
 \Pr(X_{t+1}=j-1|X_t=j)\le2/3
-$$
-Then by replacing <span class="arithmatex">\(\le\ge\)</span> into <span class="arithmatex">\(=\)</span>, we turn the process <span class="arithmatex">\(X\)</span> into Markov chain:</p>
+\]</div>
+<p>Then by replacing <span class="arithmatex">\(\le\ge\)</span> into <span class="arithmatex">\(=\)</span>, we turn the process <span class="arithmatex">\(X\)</span> into Markov chain:</p>
 <div class="highlight"><pre><span></span><code>flowchart LR
   0((0))
   1((1))
@@ -9732,13 +9744,17 @@ Then by replacing <span class="arithmatex">\(\le\ge\)</span> into <span class="a
 </code></pre></div>
 <p>The expected time for the resulting chain to reach state <span class="arithmatex">\(n\)</span> is an upper bound for the expected time of the algorithm to find a satisfying valuation.</p>
 <p><strong>In this case, there is twice likelihood to move away from <span class="arithmatex">\(n\)</span> as to move towards <span class="arithmatex">\(n\)</span></strong>.</p>
-<p>Let <span class="arithmatex">\(h_j\)</span> denote expected number of steps to reach <span class="arithmatex">\(n\)</span> when starting from state <span class="arithmatex">\(j\)</span>. Then we have the following system of equations
-$$
-h_n=0\
-h_j=\frac{2h_{j-1}}{3}+\frac{h_{j+1}}{3}+1\
+<p>Let <span class="arithmatex">\(h_j\)</span> denote expected number of steps to reach <span class="arithmatex">\(n\)</span> when starting from state <span class="arithmatex">\(j\)</span>. Then we have the following system of equations</p>
+<div class="arithmatex">\[
+h_n=0\\
+\]</div>
+<div class="arithmatex">\[
+h_j=\frac{2h_{j-1}}{3}+\frac{h_{j+1}}{3}+1\\
+\]</div>
+<div class="arithmatex">\[
 h_0=h_1+1
-$$
-By solving this linear system, we get <span class="arithmatex">\(h_j=h_{j+1}+2^{j+2}-3\)</span> for all <span class="arithmatex">\(j\)</span>.</p>
+\]</div>
+<p>By solving this linear system, we get <span class="arithmatex">\(h_j=h_{j+1}+2^{j+2}-3\)</span> for all <span class="arithmatex">\(j\)</span>.</p>
 <p>With <span class="arithmatex">\(h_n=0\)</span> this leads to <span class="arithmatex">\(h_j=2^{n+2}-2^{j+2}-3(n-j)\)</span>.</p>
 <p>The above bound shows that the expected number of flips to find <span class="arithmatex">\(S\)</span> is at most <span class="arithmatex">\(O(2^n)\)</span>. This bound is useless. However, we can improve the performance of this procedure by adapting <strong>random restarts</strong> into search. A random truth assignment leads to a binomial distribution over the states of the Markov chain <span class="arithmatex">\(X\)</span> centered around the state <span class="arithmatex">\(n/2\)</span>.</p>
 <p>Since Markov chain has a tendency to move towards state <span class="arithmatex">\(0\)</span>, after running it for a little while we are better off restarting with a random distribution than continuing to flip literals.</p>
@@ -9758,104 +9774,122 @@ By solving this linear system, we get <span class="arithmatex">\(h_j=h_{j+1}+2^{
 </ul>
 <p>Theorem: If <span class="arithmatex">\(\varphi\)</span> is satisfiable then the 3-SAT algorithm returns a satisfying assignment with probability at least <span class="arithmatex">\(1/2\)</span>. If <span class="arithmatex">\(\varphi\)</span> is unsatisfiable then the 2-SAT algorithm is always correct.</p>
 <blockquote>
-<p>Let <span class="arithmatex">\(q_j\)</span> be the probability to reach position <span class="arithmatex">\(n\)</span> with <span class="arithmatex">\(3n\)</span> steps starting from position <span class="arithmatex">\(n-j\)</span>. We have
-$$
-q_j\ge C_{3j}<sup>j(2/3)</sup>j(1/3)^{2j},
-$$
-since this is the probability to make exactly <span class="arithmatex">\(2j\)</span> right moves and <span class="arithmatex">\(j\)</span> left moves in the first <span class="arithmatex">\(3j\le3n\)</span> steps.</p>
-<p>By <strong>Stirling's formula</strong>:
-$$
+<p>Let <span class="arithmatex">\(q_j\)</span> be the probability to reach position <span class="arithmatex">\(n\)</span> with <span class="arithmatex">\(3n\)</span> steps starting from position <span class="arithmatex">\(n-j\)</span>. We have</p>
+<div class="arithmatex">\[
+q_j\ge C_{3j}^j(2/3)^j(1/3)^{2j},
+\]</div>
+<p>since this is the probability to make exactly <span class="arithmatex">\(2j\)</span> right moves and <span class="arithmatex">\(j\)</span> left moves in the first <span class="arithmatex">\(3j\le3n\)</span> steps.</p>
+<p>By <strong>Stirling's formula</strong>:</p>
+<div class="arithmatex">\[
 \sqrt{2\pi m}(\frac{m}{e})^m\le m!\le2\sqrt{2\pi m}(\frac{m}{e})^m,
-$$
-we have
-$$
-C_{3j}^j=\frac{(3j)!}{j!(2j)!}\
-\ge\frac{c}{\sqrt j}(27/4)^j\
+\]</div>
+<p>we have</p>
+<div class="arithmatex">\[
+C_{3j}^j=\frac{(3j)!}{j!(2j)!}\\
+\]</div>
+<div class="arithmatex">\[
+\ge\frac{c}{\sqrt j}(27/4)^j\\
+\]</div>
+<div class="arithmatex">\[
 (c=\frac{\sqrt3}{8\sqrt\pi}).
-$$
-Thus when <span class="arithmatex">\(j\gt0\)</span>,
-$$
-q_j\ge C_{3j}<sup>j(2/3)</sup>j(1/3)^{2j}\
-\ge \frac{c}{\sqrt j}(27/4)<sup>j(2/3)</sup>j(1/3)^{2j}\
+\]</div>
+<p>Thus when <span class="arithmatex">\(j\gt0\)</span>,</p>
+<div class="arithmatex">\[
+q_j\ge C_{3j}^j(2/3)^j(1/3)^{2j}\\
+\]</div>
+<div class="arithmatex">\[
+\ge \frac{c}{\sqrt j}(27/4)^j(2/3)^j(1/3)^{2j}\\
+\]</div>
+<div class="arithmatex">\[
 \ge\frac{c}{\sqrt j}\frac{1}{2^j}.
-$$
-The probability of success drops exponentially with the distance <span class="arithmatex">\(j\)</span> between the initial random assignment of the phase and the satisfying truth assignment. But by Chernoff bounds, the probability that this distance is away from <span class="arithmatex">\(n/2\)</span> also drops exponentially.</p>
-<p>Having established a lower bound for <span class="arithmatex">\(q_j\)</span> we now obtain a lower bound for <span class="arithmatex">\(q\)</span>, the probability to reach state <span class="arithmatex">\(n\)</span> with <span class="arithmatex">\(3n\)</span> steps in case the initial state of the random walk is determined by a random assignment. We have
-$$
-q\ge\sum_{j=0}^n\Pr(\text{walk starts at }n-j)\cdot q_j\
-\ge\frac{1}{2<sup>n}+\sum_{j=1}</sup>nC_n<sup>j(1/2)</sup>n\frac{c}{\sqrt j}\frac{1}{2^j}\
-\ge\frac{c}{\sqrt n}(1/2)<sup>n\sum_{j=0}</sup>nC_n<sup>j(1/2)</sup>j\
+\]</div>
+<p>The probability of success drops exponentially with the distance <span class="arithmatex">\(j\)</span> between the initial random assignment of the phase and the satisfying truth assignment. But by Chernoff bounds, the probability that this distance is away from <span class="arithmatex">\(n/2\)</span> also drops exponentially.</p>
+<p>Having established a lower bound for <span class="arithmatex">\(q_j\)</span> we now obtain a lower bound for <span class="arithmatex">\(q\)</span>, the probability to reach state <span class="arithmatex">\(n\)</span> with <span class="arithmatex">\(3n\)</span> steps in case the initial state of the random walk is determined by a random assignment. We have</p>
+<div class="arithmatex">\[
+q\ge\sum_{j=0}^n\Pr(\text{walk starts at }n-j)\cdot q_j\\
+\]</div>
+<div class="arithmatex">\[
+\ge\frac{1}{2^n}+\sum_{j=1}^nC_n^j(1/2)^n\frac{c}{\sqrt j}\frac{1}{2^j}\\
+\]</div>
+<div class="arithmatex">\[
+\ge\frac{c}{\sqrt n}(1/2)^n\sum_{j=0}^nC_n^j(1/2)^j\\
+\]</div>
+<div class="arithmatex">\[
 =\frac{c}{n}(3/4)^n.
-$$
-The number of phases to find a satisfying assignment is a geometric random variable with parameter <span class="arithmatex">\(q\)</span>, so the expected number of phases to find a satisfying assignment is <span class="arithmatex">\(1/q\)</span>. Thus the algorithm finds a satisfying assignment with probability at least <span class="arithmatex">\(1/2\)</span> after <span class="arithmatex">\(N=2/q\)</span> phases.</p>
+\]</div>
+<p>The number of phases to find a satisfying assignment is a geometric random variable with parameter <span class="arithmatex">\(q\)</span>, so the expected number of phases to find a satisfying assignment is <span class="arithmatex">\(1/q\)</span>. Thus the algorithm finds a satisfying assignment with probability at least <span class="arithmatex">\(1/2\)</span> after <span class="arithmatex">\(N=2/q\)</span> phases.</p>
 </blockquote>
 <h1 id="stationary-distributions">Stationary Distributions</h1>
 <h2 id="definition">Definition</h2>
-<p>Let <span class="arithmatex">\(X\)</span> be a Markov chain with transition matrix <span class="arithmatex">\(Q\)</span>. A probability distribution <span class="arithmatex">\(\pi\)</span> on the set of states is called <em>stationary distribution</em> of <span class="arithmatex">\(X\)</span> if
-$$
+<p>Let <span class="arithmatex">\(X\)</span> be a Markov chain with transition matrix <span class="arithmatex">\(Q\)</span>. A probability distribution <span class="arithmatex">\(\pi\)</span> on the set of states is called <em>stationary distribution</em> of <span class="arithmatex">\(X\)</span> if</p>
+<div class="arithmatex">\[
 \pi=\pi Q.
-$$
-Given states <span class="arithmatex">\(i,j\)</span> of a Markov chain, the <strong>hitting time</strong> <span class="arithmatex">\(H_{i,j}\)</span> is a random variable giving the number of steps to visit state <span class="arithmatex">\(j\)</span> starting from state <span class="arithmatex">\(i\)</span>. Formally we have
-$$
-H_{i,j}=\min{t\gt0:X_t=j|X_0=i}.
-$$
-We define <span class="arithmatex">\(h_{i,j}=\mathbb E[H_{i,j}]\)</span> to be the mean hitting time.</p>
+\]</div>
+<p>Given states <span class="arithmatex">\(i,j\)</span> of a Markov chain, the <strong>hitting time</strong> <span class="arithmatex">\(H_{i,j}\)</span> is a random variable giving the number of steps to visit state <span class="arithmatex">\(j\)</span> starting from state <span class="arithmatex">\(i\)</span>. Formally we have</p>
+<div class="arithmatex">\[
+H_{i,j}=\min\{t\gt0:X_t=j|X_0=i\}.
+\]</div>
+<p>We define <span class="arithmatex">\(h_{i,j}=\mathbb E[H_{i,j}]\)</span> to be the mean hitting time.</p>
 <p>In general <span class="arithmatex">\(h_{i,j}\)</span> may be infinite. Certainly <span class="arithmatex">\(h_{i,j}=\infty\)</span> if <span class="arithmatex">\(j\)</span> is not reachable from <span class="arithmatex">\(i\)</span> in the underlying graph, or, if <span class="arithmatex">\(i\)</span> can reach a state <span class="arithmatex">\(k\)</span> from which <span class="arithmatex">\(j\)</span> is no longer reachable. We therefore restrict attention to Markov chains whose underlying graph consists of a single strongly connected component. We call such chains <strong>irreducible</strong>.</p>
 <p>We can still have <span class="arithmatex">\(h_{i,j}=\infty\)</span> in an irreducible chain.</p>
-<p>Consider Markov chain <span class="arithmatex">\(X\)</span> with set of states <span class="arithmatex">\(\{1,2,3,\cdots\}\)</span> and transition matrix <span class="arithmatex">\(Q\)</span>, where <span class="arithmatex">\(Q_{i,i+1}=i/(i+1)\)</span> and <span class="arithmatex">\(Q_{i,1}=1/(i+1)\)</span>. Starting at state <span class="arithmatex">\(1\)</span>, the probability not to have returned to state <span class="arithmatex">\(1\)</span> with <span class="arithmatex">\(t\)</span> steps is
-$$
+<p>Consider Markov chain <span class="arithmatex">\(X\)</span> with set of states <span class="arithmatex">\(\{1,2,3,\cdots\}\)</span> and transition matrix <span class="arithmatex">\(Q\)</span>, where <span class="arithmatex">\(Q_{i,i+1}=i/(i+1)\)</span> and <span class="arithmatex">\(Q_{i,1}=1/(i+1)\)</span>. Starting at state <span class="arithmatex">\(1\)</span>, the probability not to have returned to state <span class="arithmatex">\(1\)</span> with <span class="arithmatex">\(t\)</span> steps is</p>
+<div class="arithmatex">\[
 \prod_{j=1}^t\frac{j}{j+1}=\frac{1}{t+1}.
-$$
-Thus we return to state <span class="arithmatex">\(1\)</span> almost surely, but the expected return time is
-$$
-h_{1,1}=\mathbb[H_{1,1}]=\sum_{j=1}^\infty\Pr(H_{1,1}\ge j)\
+\]</div>
+<p>Thus we return to state <span class="arithmatex">\(1\)</span> almost surely, but the expected return time is</p>
+<div class="arithmatex">\[
+h_{1,1}=\mathbb[H_{1,1}]=\sum_{j=1}^\infty\Pr(H_{1,1}\ge j)\\
+\]</div>
+<div class="arithmatex">\[
 =\sum_{j=1}^\infty\frac{1}{j+1}=\infty
-$$
-In finite irreducible Markov chain, the mean hitting time between any pair of states is always finite.</p>
+\]</div>
+<p>In finite irreducible Markov chain, the mean hitting time between any pair of states is always finite.</p>
 <p>Theorem: For any pair of states <span class="arithmatex">\(i,j\)</span> in a finite irreducible Markov chain, <span class="arithmatex">\(h_{i,j}\lt\infty\)</span>.</p>
 <blockquote>
-<p>Let <span class="arithmatex">\(d\)</span> be the diameter of the underlying graph, let <span class="arithmatex">\(\epsilon\gt0\)</span> be the smallest positive entry of the transition matrix <span class="arithmatex">\(Q\)</span>. Then for any pair of states <span class="arithmatex">\(i,j\)</span>, if the chain is started in <span class="arithmatex">\(i\)</span> then it visits <span class="arithmatex">\(j\)</span> within <span class="arithmatex">\(d\)</span> steps with probability at least <span class="arithmatex">\(\epsilon^d\)</span>.
-$$
-h_{i,j}=\mathbb E[H_{i,j}]\
-=\sum_{t=1}^\infty\Pr(H_{i,j}\ge t)\le\sum_{t=1}<sup>\infty(1-\epsilon</sup>d)^{\lfloor t/d\rfloor}\lt\infty.
-$$</p>
+<p>Let <span class="arithmatex">\(d\)</span> be the diameter of the underlying graph, let <span class="arithmatex">\(\epsilon\gt0\)</span> be the smallest positive entry of the transition matrix <span class="arithmatex">\(Q\)</span>. Then for any pair of states <span class="arithmatex">\(i,j\)</span>, if the chain is started in <span class="arithmatex">\(i\)</span> then it visits <span class="arithmatex">\(j\)</span> within <span class="arithmatex">\(d\)</span> steps with probability at least <span class="arithmatex">\(\epsilon^d\)</span>.</p>
+<div class="arithmatex">\[
+h_{i,j}=\mathbb E[H_{i,j}]\\
+\]</div>
+<div class="arithmatex">\[
+=\sum_{t=1}^\infty\Pr(H_{i,j}\ge t)\le\sum_{t=1}^\infty(1-\epsilon^d)^{\lfloor t/d\rfloor}\lt\infty.
+\]</div>
 </blockquote>
 <p>A finite irreducible Markov chain has a unique stationary distribution.</p>
 <p>Theorem: A finite irreducible Markov chain has a unique stationary distribution <span class="arithmatex">\(\pi\)</span> where <span class="arithmatex">\(\pi_j=1/h_{j,j}\)</span> for each state <span class="arithmatex">\(j\)</span>.</p>
 <p>Stationary distribution represents a <em>time average</em>. On average the chain visits state <span class="arithmatex">\(j\)</span> every <span class="arithmatex">\(h_{j,j}\)</span> steps, and thus spends proportion of time <span class="arithmatex">\(\pi_j=1/h_{j,j}\)</span> in state <span class="arithmatex">\(j\)</span>. We expect that the stationary distribution is also a <em>space average</em>, i.e., the distribution of <span class="arithmatex">\(X_t\)</span> converges to <span class="arithmatex">\(\pi\)</span> as <span class="arithmatex">\(t\)</span> tends to infinity. However, in general this need not be true.</p>
 <p>Definition of <em>period</em>: The period of a state <span class="arithmatex">\(i\)</span> in a Markov chain is defined to be <span class="arithmatex">\(\gcd\{m\gt0:Q_{i,i}^m\gt0\}\)</span>. A state is <em>aperiodic</em> if it has period <span class="arithmatex">\(1\)</span>. A Markov chain is aperiodic if all states are aperiodic.</p>
 <p>A Markov chain is irreducible and aperiodic iff there exists some power of the transition matrix <span class="arithmatex">\(P\)</span> with all entries strictly positive.</p>
-<p>Theorem: Consider a finite, irreducible, aperiodic Markov chain with stationary distribution <span class="arithmatex">\(\pi\)</span>. Then <span class="arithmatex">\(\lim_{n\rightarrow\infty}Q^n\)</span> is the matrix
-$$
+<p>Theorem: Consider a finite, irreducible, aperiodic Markov chain with stationary distribution <span class="arithmatex">\(\pi\)</span>. Then <span class="arithmatex">\(\lim_{n\rightarrow\infty}Q^n\)</span> is the matrix</p>
+<div class="arithmatex">\[
 Q^\infty=\left[
 \begin{array}{cc}
-\pi_1&amp;\pi_2&amp;\cdots&amp;\pi_n\
-\pi_1&amp;\pi_2&amp;\cdots&amp;\pi_n\
-\cdots&amp;\cdots&amp;\cdots&amp;\cdots\
-\pi_1&amp;\pi_2&amp;\cdots&amp;\pi_n\
+\pi_1&amp;\pi_2&amp;\cdots&amp;\pi_n\\
+\pi_1&amp;\pi_2&amp;\cdots&amp;\pi_n\\
+\cdots&amp;\cdots&amp;\cdots&amp;\cdots\\
+\pi_1&amp;\pi_2&amp;\cdots&amp;\pi_n\\
 \end{array}
 \right]
-$$
-If follows that for any initial distribution <span class="arithmatex">\(x\)</span> we have <span class="arithmatex">\(xQ^b\rightarrow xQ^\infty=\pi\)</span> as <span class="arithmatex">\(n\rightarrow\infty\)</span>, i.e., the chain converges to the stationary distribution from any starting point.</p>
+\]</div>
+<p>If follows that for any initial distribution <span class="arithmatex">\(x\)</span> we have <span class="arithmatex">\(xQ^b\rightarrow xQ^\infty=\pi\)</span> as <span class="arithmatex">\(n\rightarrow\infty\)</span>, i.e., the chain converges to the stationary distribution from any starting point.</p>
 <h2 id="random-walks-on-undirected-graphs">Random walks on undirected graphs</h2>
 <p>Let <span class="arithmatex">\(G=(V,E)\)</span> be a finite, undirected and connected graph. The degree of a vertex <span class="arithmatex">\(v\in V\)</span> is the number <span class="arithmatex">\(d(v)\)</span> of edges incident to <span class="arithmatex">\(v\)</span>. A random walk on <span class="arithmatex">\(G\)</span> is a Markov chain modeling a particle that moves along the edges of <span class="arithmatex">\(G\)</span> and which is equally likely to take any outgoing edge at a given vertex/</p>
 <p>Formally a random walk on <span class="arithmatex">\(G\)</span> has set of states is <span class="arithmatex">\(V\)</span> and for each edge <span class="arithmatex">\(\{u,v\}\in E\)</span> the probability to transition from <span class="arithmatex">\(u\)</span> to <span class="arithmatex">\(v\)</span> is <span class="arithmatex">\(1/d(u)\)</span>.</p>
 <p>Claim: A random walk on <span class="arithmatex">\(G\)</span> is aperiodic iff <span class="arithmatex">\(G\)</span> is not bipartite.</p>
-<p>Theorem: A random walk on a connected graph <span class="arithmatex">\(G\)</span> has a <strong>unique stationary distribution</strong> <span class="arithmatex">\(\pi\)</span>, where
-$$
+<p>Theorem: A random walk on a connected graph <span class="arithmatex">\(G\)</span> has a <strong>unique stationary distribution</strong> <span class="arithmatex">\(\pi\)</span>, where</p>
+<div class="arithmatex">\[
 \pi_v=\frac{d(v)}{2E}.
-$$</p>
+\]</div>
 <blockquote>
-<p>所有点的度数之和等于 <span class="arithmatex">\(2|E|\)</span>.
-$$
-(\pi P))<em>u=\sum</em>{v\in N(u)}\frac{d(v)}{2|E|}\frac{1}{d(v)}=\frac{d(u)}{2|E|}=\pi_u\forall u\in V
-$$</p>
+<p>所有点的度数之和等于 <span class="arithmatex">\(2|E|\)</span>.</p>
+<div class="arithmatex">\[
+(\pi P)_u=\sum_{v\in N(u)}\frac{d(v)}{2|E|}\frac{1}{d(v)}=\frac{d(u)}{2|E|}=\pi_u\forall u\in V
+\]</div>
 </blockquote>
-<p>Corollary: Let <span class="arithmatex">\(h_{u,v}\)</span> denote the expected number of steps to go from vertex <span class="arithmatex">\(u\)</span> to vertex <span class="arithmatex">\(v\)</span>. Then for any vertex <span class="arithmatex">\(u\)</span> we have
-$$
+<p>Corollary: Let <span class="arithmatex">\(h_{u,v}\)</span> denote the expected number of steps to go from vertex <span class="arithmatex">\(u\)</span> to vertex <span class="arithmatex">\(v\)</span>. Then for any vertex <span class="arithmatex">\(u\)</span> we have</p>
+<div class="arithmatex">\[
 h_{u,u}=\frac{2|E|}{d(u)}
-$$
-Theorem: If <span class="arithmatex">\(u,v\)</span> are adjacent then <span class="arithmatex">\(h_{v,u}\lt 2|E|\)</span>.</p>
+\]</div>
+<p>Theorem: If <span class="arithmatex">\(u,v\)</span> are adjacent then <span class="arithmatex">\(h_{v,u}\lt 2|E|\)</span>.</p>
 <blockquote>
 <p>omitted.</p>
 </blockquote>

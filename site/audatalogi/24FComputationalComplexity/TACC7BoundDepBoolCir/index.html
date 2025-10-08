@@ -6399,7 +6399,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6422,7 +6422,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6445,7 +6445,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9559,34 +9559,38 @@
 <h2 id="boolean-functions-with-k-ary">Boolean functions with k-ary</h2>
 <div class="arithmatex">\[
 AND(z_1,\cdots,z_k)=z_1\land\cdots\land z_k\\
+\]</div>
+<div class="arithmatex">\[
 OR(z_1,\cdots,z_k)=z_1\lor\cdots\lor z_k\\
+\]</div>
+<div class="arithmatex">\[
 MOD_m(z_1,\cdots,z_k)=\begin{cases}
 1\ if\ \sum_{i=1}^kz_i\not\equiv0\mod m\\
 0\ if\ \sum_{i=1}^kz_i\equiv0\mod m
 \end{cases}
 \]</div>
 <p><span class="arithmatex">\(MOD_2\)</span> is the same as the xor-sum.</p>
-<p>The major voting function <span class="arithmatex">\(MAJ\)</span>:
-$$
+<p>The major voting function <span class="arithmatex">\(MAJ\)</span>:</p>
+<div class="arithmatex">\[
 MAJ(z_1,\cdots,z_k)=\begin{cases}
-1 if \sum_{i=1}^kz_i\ge\frac{k}{2}\
-0 if \sum_{i=1}^kz_i\lt\frac{k}{2}
+1\ if\ \sum_{i=1}^kz_i\ge\frac{k}{2}\\
+0\ if\ \sum_{i=1}^kz_i\lt\frac{k}{2}
 \end{cases}
-$$
-Let <span class="arithmatex">\(w=(w_1,\cdots,w_k)\in\mathbb R^k\)</span> be weights and <span class="arithmatex">\(t\in\mathbb R\)</span> be a threshold. Then <span class="arithmatex">\(THR_{w,t}\)</span> is defined:
-$$
+\]</div>
+<p>Let <span class="arithmatex">\(w=(w_1,\cdots,w_k)\in\mathbb R^k\)</span> be weights and <span class="arithmatex">\(t\in\mathbb R\)</span> be a threshold. Then <span class="arithmatex">\(THR_{w,t}\)</span> is defined:</p>
+<div class="arithmatex">\[
 THR_{w,t}(z_1,\cdots,z_k)=\begin{cases}
-1 if \sum_{i=1}^kw_iz_i\ge t\
-0 if \sum_{i=1}^kw_iz_i\lt t
+1\ if\ \sum_{i=1}^kw_iz_i\ge t\\
+0\ if\ \sum_{i=1}^kw_iz_i\lt t
 \end{cases}
-$$
-When all weights is <span class="arithmatex">\(1\)</span>,
-$$
+\]</div>
+<p>When all weights is <span class="arithmatex">\(1\)</span>,</p>
+<div class="arithmatex">\[
 T_t(z_1,\cdots,z_k)=\begin{cases}
-1 if \sum_{i=1}^kz_i\ge t\
-0 if \sum_{i=1}^kz_i\lt t
+1\ if\ \sum_{i=1}^kz_i\ge t\\
+0\ if\ \sum_{i=1}^kz_i\lt t
 \end{cases}
-$$</p>
+\]</div>
 <h2 id="several-circuit-classes">Several Circuit Classes</h2>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(AC^i\)</span>. For <span class="arithmatex">\(i\ge0\)</span>, <span class="arithmatex">\(AC^i\)</span> is the class of languages computed by families of Boolean circuits of polynomial size and depth <span class="arithmatex">\(O(\log^in)\)</span> using <strong>unbounded fanin</strong> <span class="arithmatex">\(AND\)</span> and <span class="arithmatex">\(OR\)</span> gates.</p>
 <p><span class="arithmatex">\(AC^i\)</span> is similar to <span class="arithmatex">\(NC^i\)</span>.</p>
@@ -9607,11 +9611,11 @@ $$</p>
 <blockquote>
 <p>Circuit <span class="arithmatex">\(C\)</span> with depth <span class="arithmatex">\((\log n)\)</span> is computable by a <span class="arithmatex">\(O(\log n)\)</span> space Turing Machine.</p>
 </blockquote>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of Boolean product of matrices. <span class="arithmatex">\(A=(a_{ij})\in\{0,1\}^{m\times r},B=(b_{ij})\in\{0,1\}^{r\times n}\)</span>. The Boolean product <span class="arithmatex">\(AB\)</span> is the <span class="arithmatex">\(m\times n\)</span> Boolean matrix <span class="arithmatex">\(C=(c_{ij})\)</span> s.t.
-$$
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of Boolean product of matrices. <span class="arithmatex">\(A=(a_{ij})\in\{0,1\}^{m\times r},B=(b_{ij})\in\{0,1\}^{r\times n}\)</span>. The Boolean product <span class="arithmatex">\(AB\)</span> is the <span class="arithmatex">\(m\times n\)</span> Boolean matrix <span class="arithmatex">\(C=(c_{ij})\)</span> s.t.</p>
+<div class="arithmatex">\[
 c_{ij}=\bigvee_{k=1}^ra_{ik}\land a_{kj}.
-$$
-A <span class="arithmatex">\(n\times n\)</span> Boolean matrix corresponds to a directed graph. The transitive closure of the graph gives rise to the transitive closure of the matrix.</p>
+\]</div>
+<p>A <span class="arithmatex">\(n\times n\)</span> Boolean matrix corresponds to a directed graph. The transitive closure of the graph gives rise to the transitive closure of the matrix.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>回想起大二学的离散数学了吗？邻接矩阵的闭包与可达性。</p>

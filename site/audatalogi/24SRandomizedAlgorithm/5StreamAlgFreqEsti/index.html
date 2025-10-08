@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9486,32 +9486,34 @@
 <p>Maintain <span class="arithmatex">\(t\)</span> arrays <span class="arithmatex">\(A[i]\)</span> each having <span class="arithmatex">\(k\)</span> counters, hash function <span class="arithmatex">\(h_i:U\rightarrow[k]\)</span> drawn from a <span class="arithmatex">\(2\)</span>-wise independent family <span class="arithmatex">\(\mathcal H\)</span> is associated to array <span class="arithmatex">\(A[i]\)</span>.</p>
 </li>
 <li>
-<p>For element <span class="arithmatex">\((j,c_j)\)</span> in the stream, update counters as follows:
-   $$
+<p>For element <span class="arithmatex">\((j,c_j)\)</span> in the stream, update counters as follows:</p>
+</li>
+</ol>
+<p>$$
    A[i,h_i(j)]\gets A[i,h_i(j)]+c_j\forall i\in[t]
    $$</p>
-</li>
-<li>
-<p>The frequency estimate for item <span class="arithmatex">\(j\)</span> is <span class="arithmatex">\(\min_{i\in[t]}A[i,h(j)]\)</span>.</p>
-</li>
+<ol>
+<li>The frequency estimate for item <span class="arithmatex">\(j\)</span> is <span class="arithmatex">\(\min_{i\in[t]}A[i,h(j)]\)</span>.</li>
 </ol>
 <p>The output estimate is always more than the true value of <span class="arithmatex">\(f_j\)</span> as the count of all the items in the stream is non-negative.</p>
 <h2 id="analysis">Analysis</h2>
-<p>To bound the error in the estimate for <span class="arithmatex">\(f_j\)</span> we need to analyze the excess <span class="arithmatex">\(X\)</span> where <span class="arithmatex">\(A[1,h_1(j)]=f_j+X\)</span>. The excess <span class="arithmatex">\(X\)</span> an be a sum of random variables <span class="arithmatex">\(X=\sum_iY_i\)</span> where <span class="arithmatex">\(Y_i=f_i\)</span> if <span class="arithmatex">\(h_1(j)=h_1(i)\)</span> and <span class="arithmatex">\(0\)</span> otherwise. As <span class="arithmatex">\(h_1\in\mathcal H\)</span> is chosen uniformly at random from a pair-wise independent hash function family, <span class="arithmatex">\(\mathbb E[Y_i]=f_i/k\)</span>.
-$$
+<p>To bound the error in the estimate for <span class="arithmatex">\(f_j\)</span> we need to analyze the excess <span class="arithmatex">\(X\)</span> where <span class="arithmatex">\(A[1,h_1(j)]=f_j+X\)</span>. The excess <span class="arithmatex">\(X\)</span> an be a sum of random variables <span class="arithmatex">\(X=\sum_iY_i\)</span> where <span class="arithmatex">\(Y_i=f_i\)</span> if <span class="arithmatex">\(h_1(j)=h_1(i)\)</span> and <span class="arithmatex">\(0\)</span> otherwise. As <span class="arithmatex">\(h_1\in\mathcal H\)</span> is chosen uniformly at random from a pair-wise independent hash function family, <span class="arithmatex">\(\mathbb E[Y_i]=f_i/k\)</span>.</p>
+<div class="arithmatex">\[
 \mathbb E[X]={|f|_1\over k}={\epsilon|f|_1\over2}.
-$$</p>
+\]</div>
 <blockquote>
 <div class="arithmatex">\[
 \mathbb E[X]=\mathbb E_h[\sum_{j\neq i,h(i)=h(j)}f_j]=\mathbb E_h[\sum_{j|j\neq i}f_j\cdot\mathbf 1_{h(i)=h(j)}]\\
+\]</div>
+<div class="arithmatex">\[
 =\sum_{j|j\neq i}\mathbb E[\mathbf 1_{h(i)=h(j)}]\cdot f_j=\sum_{j|j\neq i}\Pr[h(i)=h(j)]\cdot f_j=\sum_{j|j\neq i}{f_j\over k}\le{\sum_jf_j\over k}={|f|_1\over k}
 \]</div>
 </blockquote>
-<p>Applying Markov's inequality, we have
-$$
+<p>Applying Markov's inequality, we have</p>
+<div class="arithmatex">\[
 \Pr[X\gt\epsilon|f|_1]\le{1\over2}.
-$$
-The probability that all the excesses at <span class="arithmatex">\(A[i,h_i(x_i)]\)</span> are greater than <span class="arithmatex">\(\epsilon|f|_1\)</span> is at most <span class="arithmatex">\({1\over2^t}\le\delta\)</span> as <span class="arithmatex">\(t\)</span> was chosen to be <span class="arithmatex">\(\log(1/\delta)\)</span>. The algorithm estimates the frequency of item <span class="arithmatex">\(x_j\)</span> up to an additive error <span class="arithmatex">\(\epsilon|f|_1\)</span> with probability <span class="arithmatex">\(1-\delta\)</span>.</p>
+\]</div>
+<p>The probability that all the excesses at <span class="arithmatex">\(A[i,h_i(x_i)]\)</span> are greater than <span class="arithmatex">\(\epsilon|f|_1\)</span> is at most <span class="arithmatex">\({1\over2^t}\le\delta\)</span> as <span class="arithmatex">\(t\)</span> was chosen to be <span class="arithmatex">\(\log(1/\delta)\)</span>. The algorithm estimates the frequency of item <span class="arithmatex">\(x_j\)</span> up to an additive error <span class="arithmatex">\(\epsilon|f|_1\)</span> with probability <span class="arithmatex">\(1-\delta\)</span>.</p>
 <p>The memory required for the algorithm is the sum of the space for the array and the hash functions, <span class="arithmatex">\(O(kt\log n+t\log m)=O({1\over\epsilon}\log(1/\delta)\log n)\)</span>. The update time per item in the stream is <span class="arithmatex">\(O(\log{1\over\delta})\)</span>.</p>
 <h1 id="count-sketch">Count Sketch</h1>
 <p>Another sketch algorithm with error in terms of the <span class="arithmatex">\(\ell_2\)</span> norm <span class="arithmatex">\(|f|_2=\sqrt{\sum_jf_j^2}\)</span>.</p>
@@ -9522,39 +9524,47 @@ The probability that all the excesses at <span class="arithmatex">\(A[i,h_i(x_i)
 <p>Maintain <span class="arithmatex">\(t\)</span> arrays <span class="arithmatex">\(A[i]\)</span> each having <span class="arithmatex">\(k\)</span> counters, hash function: <span class="arithmatex">\(g_i:U\rightarrow\{-1,1\}\)</span> and <span class="arithmatex">\(h_i:U\rightarrow[k]\)</span> drawn uniformly at random from a pair-wise independent families are associated to array <span class="arithmatex">\(A[i]\)</span>.</p>
 </li>
 <li>
-<p>For element <span class="arithmatex">\((j,c_j)\)</span> in the stream, update counters as follows
-   $$
+<p>For element <span class="arithmatex">\((j,c_j)\)</span> in the stream, update counters as follows</p>
+</li>
+</ol>
+<p>$$
    A[i,h_i(j)]\gets A[i,h_i(j)]+g_i(j)c_j\forall i\in[t]
    $$</p>
-</li>
-<li>
-<p>The frequency estimate for item <span class="arithmatex">\(j\)</span> is the <strong>median</strong> over the <span class="arithmatex">\(t\)</span> arrays of <span class="arithmatex">\(g_i(x_j)A[i,h(j)]\)</span>.</p>
-</li>
+<ol>
+<li>The frequency estimate for item <span class="arithmatex">\(j\)</span> is the <strong>median</strong> over the <span class="arithmatex">\(t\)</span> arrays of <span class="arithmatex">\(g_i(x_j)A[i,h(j)]\)</span>.</li>
 </ol>
 <h2 id="analysis_1">Analysis</h2>
 <p>The entry <span class="arithmatex">\(A[1,h_1(j)]=g_1(j)f_j+X\)</span>, we examine the contribution <span class="arithmatex">\(X\)</span> from the other items by writing <span class="arithmatex">\(X=\sum_iY_i\)</span> where <span class="arithmatex">\(Y\)</span> is <span class="arithmatex">\(\pm f_i\)</span> if <span class="arithmatex">\(h_1(i)=h_1(j)\)</span> and <span class="arithmatex">\(0\)</span> otherwise. Note that <span class="arithmatex">\(\mathbb E[Y_j]=0\)</span>, so the expected value of <span class="arithmatex">\(g_1(j)A[1,h(j)]\)</span> is <span class="arithmatex">\(f_j\)</span>.</p>
 <blockquote>
 <div class="arithmatex">\[
 \hat{f_i}=g(i)\cdot A[h(i)]=g(i)\cdot(g(i)\cdot f_i+\sum_{j\neq i,h(j)=h(i)}g(j)\cdot f_j)\\
+\]</div>
+<div class="arithmatex">\[
 =f_i+\sum_{j\neq i,h(j)=h(i)}g(i)g(j)f_j\\
+\]</div>
+<div class="arithmatex">\[
 =f_i+X\\
+\]</div>
+<div class="arithmatex">\[
 \mathbb E[X]=\mathbb E[\sum_{j\neq i,h(j)=h(i)}g(i)g(j)f_j]=\mathbb E[\sum_{j\neq i}\mathbf1_{h(i)=h(j)}g(i)g(j)f_j]\\
+\]</div>
+<div class="arithmatex">\[
 =\sum_{j\neq i}\mathbb E[\mathbf1_{h(i)=h(j)}g(i)g(j)]f_j=\sum_{j\neq i}\mathbb E[\mathbf 1_{h(i)=h(j)}]\mathbb E[g(i)]\mathbb E[g(j)]f_j=0\\
 \]</div>
 </blockquote>
-<p>The random variable <span class="arithmatex">\(Y_i\)</span> are pairwise independent as <span class="arithmatex">\(h_1\)</span> is a pair-wise independent hash function, so the variance of <span class="arithmatex">\(X\)</span>:
-$$
+<p>The random variable <span class="arithmatex">\(Y_i\)</span> are pairwise independent as <span class="arithmatex">\(h_1\)</span> is a pair-wise independent hash function, so the variance of <span class="arithmatex">\(X\)</span>:</p>
+<div class="arithmatex">\[
 Var(X)=\sum_{i\in[m]}Var(Y_i)=\sum_{i\in[m]}{f^2_i\over k}={|f|_2^2\over k}.
-$$
-By Chebyshev's inequality,
-$$
+\]</div>
+<p>By Chebyshev's inequality,</p>
+<div class="arithmatex">\[
 \Pr[|X-\mu|\gt\Delta]\le{Var(X)\over\Delta^2}.
-$$
-The mean <span class="arithmatex">\(\mu=0\)</span> and the variance is <span class="arithmatex">\(|f|_2^2\over k\)</span>, choosing <span class="arithmatex">\(\delta=\epsilon|f|_2\)</span> and <span class="arithmatex">\(k=4/\epsilon^2\)</span>, we have
-$$
+\]</div>
+<p>The mean <span class="arithmatex">\(\mu=0\)</span> and the variance is <span class="arithmatex">\(|f|_2^2\over k\)</span>, choosing <span class="arithmatex">\(\delta=\epsilon|f|_2\)</span> and <span class="arithmatex">\(k=4/\epsilon^2\)</span>, we have</p>
+<div class="arithmatex">\[
 \Pr[|X-\mu|\gt\epsilon|f|_2]\le{1\over\epsilon^2k}\le{1\over4}.
-$$
-For <span class="arithmatex">\(t=\theta(\log(1/\delta))\)</span>, the probability that the median value deviates from <span class="arithmatex">\(\mu\)</span> by more than <span class="arithmatex">\(\epsilon|f|_2\)</span> is less than <span class="arithmatex">\(\delta\)</span> by a <strong>Chernoff Bound</strong>. That is, the probability that there are fewer than <span class="arithmatex">\(t/2\)</span> success in a series of <span class="arithmatex">\(t\)</span> tosses of a coin with success probability <span class="arithmatex">\(3\over4\)</span> is smaller than <span class="arithmatex">\(\delta\)</span> for <span class="arithmatex">\(t=O(\log({1\over\delta}))\)</span>.</p>
+\]</div>
+<p>For <span class="arithmatex">\(t=\theta(\log(1/\delta))\)</span>, the probability that the median value deviates from <span class="arithmatex">\(\mu\)</span> by more than <span class="arithmatex">\(\epsilon|f|_2\)</span> is less than <span class="arithmatex">\(\delta\)</span> by a <strong>Chernoff Bound</strong>. That is, the probability that there are fewer than <span class="arithmatex">\(t/2\)</span> success in a series of <span class="arithmatex">\(t\)</span> tosses of a coin with success probability <span class="arithmatex">\(3\over4\)</span> is smaller than <span class="arithmatex">\(\delta\)</span> for <span class="arithmatex">\(t=O(\log({1\over\delta}))\)</span>.</p>
 <p>Arguing as in the count min sketch the space required is <span class="arithmatex">\(O({1\over\epsilon^2}\log{1\over\delta}\log n)\)</span> and the update time per item is <span class="arithmatex">\(O(\log{1\over\delta})\)</span>.</p>
 <h1 id="remarks">Remarks</h1>
 <ul>

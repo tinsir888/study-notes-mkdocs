@@ -6399,7 +6399,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6422,7 +6422,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6445,7 +6445,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9547,8 +9547,7 @@ l^*(a,-b),p^*:y=p_xx-p_y\\
 <div class="arithmatex">\[
 \text{we plug }l^*\text{ into }p^*:p_xa-(-b)=ap_x+b=p_y\\
 \]</div>
-<p>Q.E.D.
-$$</p>
+<p>Q.E.D.</p>
 </blockquote>
 <p>observation: the duality transform has the following properties:</p>
 <ul>
@@ -9606,12 +9605,16 @@ $$</p>
 <li>walk to the next face intersected by <span class="arithmatex">\(l_i\)</span>.</li>
 </ul>
 <p>how to split a face? walk around each face.</p>
-<p>running time: 
-$$
-O(n<sup>2)+\sum_{i=1}</sup>nO(\text{time to insert }l_i)\
-=O(n<sup>2)+\sum_{i=1}</sup>nO(\text{complexity of the zone }Z_i\text{ of }l_i)\
-=O(n<sup>2)+\sum_{i=1}</sup>nO(i)=O(n^2)
-$$</p>
+<p>running time: </p>
+<div class="arithmatex">\[
+O(n^2)+\sum_{i=1}^nO(\text{time to insert }l_i)\\
+\]</div>
+<div class="arithmatex">\[
+=O(n^2)+\sum_{i=1}^nO(\text{complexity of the zone }Z_i\text{ of }l_i)\\
+\]</div>
+<div class="arithmatex">\[
+=O(n^2)+\sum_{i=1}^nO(i)=O(n^2)
+\]</div>
 
 
 

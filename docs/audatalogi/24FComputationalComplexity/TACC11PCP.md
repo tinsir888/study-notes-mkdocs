@@ -32,11 +32,16 @@ Important parameters of PCP verifier:
 1. Number of random bits used during computation
 2. Number of queries made to the proof tape.
 
-:book:Definition 49 (PCP languages). Let $r:\N\to\N,q:\N\to\N$ be functions, let $\Sigma$ be a non-empty finite set, and let $0\le s\lt c\le1$ be reals. $PCP_{c,s}^\Sigma(r(n),q(n))$ is the class of languages $L$ for which there exist a PCP verifier $V$ that on input $x$ of length $n$ uses at most $r(n)$ random bits and queries at most $q(n)$ positions of a proof $\pi\in\Sigma^*$ s.t.
+:book:Definition 49 (PCP languages). Let $r:\mathbb N\to\mathbb N,q:\mathbb N\to\mathbb N$ be functions, let $\Sigma$ be a non-empty finite set, and let $0\le s\lt c\le1$ be reals. $PCP_{c,s}^\Sigma(r(n),q(n))$ is the class of languages $L$ for which there exist a PCP verifier $V$ that on input $x$ of length $n$ uses at most $r(n)$ random bits and queries at most $q(n)$ positions of a proof $\pi\in\Sigma^*$ s.t.
+
 $$
 \forall x\in L,\exists\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\ge c\\
+$$
+
+$$
 \forall x\not\in L,\exists\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\le s
 $$
+
 $c$ for completeness, $s$ for soundness.
 
 We often use the notion as follows:
@@ -75,7 +80,7 @@ Some observations about interactive proofs and probabilistically checkable proof
 
    In Sumcheck protocol, all msg of $V$ consist of uniformly random bits, which means that all queries may be made non-adaptively. Together with Theorem 49, this gives that $IP\subseteq PCP(n^{O(1)},n^{O(1)})$.
 
-2. Arithmetic formula $F$ in Sumcheck is only evaluated once, at the end of the protocol, and on a uniformly chosen random input $(a_1,\cdots,a_n)\in\Z_p^n$.
+2. Arithmetic formula $F$ in Sumcheck is only evaluated once, at the end of the protocol, and on a uniformly chosen random input $(a_1,\cdots,a_n)\in\mathbb Z_p^n$.
 
 For proving Theorem 52, we need to show that $3SAT\in PCP((\log n)^{O(1)},(\log n)^{O(1)})$.
 
@@ -84,14 +89,16 @@ For proving Theorem 52, we need to show that $3SAT\in PCP((\log n)^{O(1)},(\log 
 :thinking:Lemma 18. For any function $f:\{0,1\}^\ell\to R$, where $R$ is any ring, there is a unique multilinear polynomial $\tilde f$ s.t. $f(x)=\tilde f(x)$ for all $x\in\{0,1\}^\ell$.
 
 :thinking:Lemma 19. Let $f:\{0,1\}^\ell\to\{0,1\}$ and let $x\in\{1,\cdots,M\}^\ell$. Then
+
 $$
-|\tilde f(x)|\le2^\ell M^\ell=(2M)^\ell
+|\tilde f(x)|\le2^\ell M^\ell=(2M)^\ell.
 $$
-:book:Definition 50. Let $\varphi$ be a $3CNF$ formula with $n$ var and $m$ clauses and let functions $h_1,h_2,h_3$ and $s_1,s_2,s_3$ be defined as above. Let $a:\{0,1\}^\ell\to\Z$ be any function. We define the arithmetic formula $A_{\varphi,a}$ in $4\ell$ variables computing a polynomial of total degree $3(2\ell+2\ell)=12\ell$ by
+
+:book:Definition 50. Let $\varphi$ be a $3CNF$ formula with $n$ var and $m$ clauses and let functions $h_1,h_2,h_3$ and $s_1,s_2,s_3$ be defined as above. Let $a:\{0,1\}^\ell\to\mathbb Z$ be any function. We define the arithmetic formula $A_{\varphi,a}$ in $4\ell$ variables computing a polynomial of total degree $3(2\ell+2\ell)=12\ell$ by
 $$
 A_{\varphi,a}(c,v_1,v_2,v_3)=\prod_{i=1}^3\tilde h_i(c,v_i)(\tilde s_i(c)-\tilde a(v_i))^2.
 $$
-We have that $a:\{0,1\}^\ell\to\Z$ is an assignment satisfying $\varphi$ iff
+We have that $a:\{0,1\}^\ell\to\mathbb Z$ is an assignment satisfying $\varphi$ iff
 $$
 \sum_{(c,v_1,v_2,v_3)\in\{0,1\}^{4\ell}}A_{\varphi,a}(c,v_1,v_2,v_3)=0.
 $$

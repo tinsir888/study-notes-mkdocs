@@ -6399,7 +6399,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6422,7 +6422,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6445,7 +6445,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9546,14 +9546,26 @@
 <li>Then embed <span class="arithmatex">\(x\)</span> as <span class="arithmatex">\(t^{-1/2}Ax\)</span>. Hence the embedding time compared to standard JL went from <span class="arithmatex">\(O(||x||_0\epsilon^{-1}\log n)\)</span>, <span class="arithmatex">\(\epsilon^{-1}\)</span> improvement.</li>
 <li>The target dimensionality <span class="arithmatex">\(m\)</span> remains optimal <span class="arithmatex">\(O(\epsilon^{-2}\log n)\)</span>.</li>
 </ul>
-<p>The expected length of the embedded vector is the same as the original vector:
-$$
-\mathbb E[||t<sup>{-1/2}Ax||_2</sup>2]=t^{-1}\mathbb E[||Ax||<em>2^2]\
-=t<sup>{-1}\sum_{i=1}</sup>m\mathbb E[(\sum</em>{j=1}<sup>da_{i,j}x_j)</sup>2]\
-=t<sup>{-1}\sum_{i=1}</sup>m(\sum_{j=1}^d\mathbb E[a_{i,j}<sup>2x_j</sup>2]+\sum_{j=1}^d\sum_{h\neq j}\mathbb E[a_{i,j}a_{i,h}x_jx_h])\
-=t<sup>{-1}\sum_{i=1}</sup>m\sum_{j=1}^d\mathbb E[a_{i,j}<sup>2]x_j</sup>2\
-=t<sup>{-1}\sum_{i=1}</sup>m\sum_{j=1}<sup>d(t/m)x_j</sup>2\
-=\sum_{j=1}<sup>dx_j</sup>2\
+<p>The expected length of the embedded vector is the same as the original vector:</p>
+<div class="arithmatex">\[
+\mathbb E[||t^{-1/2}Ax||_2^2]=t^{-1}\mathbb E[||Ax||_2^2]\\
+\]</div>
+<div class="arithmatex">\[
+=t^{-1}\sum_{i=1}^m\mathbb E[(\sum_{j=1}^da_{i,j}x_j)^2]\\
+\]</div>
+<div class="arithmatex">\[
+=t^{-1}\sum_{i=1}^m(\sum_{j=1}^d\mathbb E[a_{i,j}^2x_j^2]+\sum_{j=1}^d\sum_{h\neq j}\mathbb E[a_{i,j}a_{i,h}x_jx_h])\\
+\]</div>
+<div class="arithmatex">\[
+=t^{-1}\sum_{i=1}^m\sum_{j=1}^d\mathbb E[a_{i,j}^2]x_j^2\\
+\]</div>
+<div class="arithmatex">\[
+=t^{-1}\sum_{i=1}^m\sum_{j=1}^d(t/m)x_j^2\\
+\]</div>
+<div class="arithmatex">\[
+=\sum_{j=1}^dx_j^2\\
+\]</div>
+<p>$$
 =||x||_2^2
 $$
 In the above, we use <span class="arithmatex">\(\mathbb E[a_{i,j}]=\mathbb E[a_{i,j}]\mathbb E[a_{i,h}]=0\)</span> by independence and the fact that <span class="arithmatex">\(a_{i,j}\)</span> is symmetric around 0.</p>
@@ -9565,14 +9577,14 @@ In the above, we use <span class="arithmatex">\(\mathbb E[a_{i,j}]=\mathbb E[a_{
 <p>Take bag of words as example. If one removes very frequently occurring words, then it seems reasonable to assume that the vector representing a document has no large coordinates. More formally, the ratio between <span class="arithmatex">\(||x||_\infty\)</span> and <span class="arithmatex">\(||x||_2\)</span> is small.</p>
 <p>Under such assumptions, it's possible to speed up the sparse transforms from above.</p>
 <p><strong>Feature hashing</strong> by Weinberger et al. takes this to the extreme by letting <span class="arithmatex">\(A\)</span> have exactly one non-zero per column, chosen at a uniform random row and with a value that is uniform among <span class="arithmatex">\(-1\)</span> and <span class="arithmatex">\(+1\)</span>. So feature hashing is really the construction of Kane and Nelson with <span class="arithmatex">\(t=1\)</span>. Therefore it follows from the above calculations that the expected length of embedded vectors are correct. Feature hashing clearly has the fastest possible embedding time of just <span class="arithmatex">\(O(||x||_0)\)</span>.</p>
-<p>Freksen, Kamma and Larsen showed that Feature Hashing into the optimal <span class="arithmatex">\(m=O(\epsilon^{-2}\log n)\)</span> dimensions has the JL guarantees (preserve all distances to within <span class="arithmatex">\((1\pm\epsilon)\)</span>) exactly when
-$$
-\frac{||x||<em>\infty}{||x||_2}=O(\epsilon^{-1/2}\cdot\min{\frac{\log(1/\epsilon)}{\log n},\sqrt{\frac{1}{\log n}}}).
-$$
-And more generally, if one embeds into <span class="arithmatex">\(m\ge\epsilon^{-2}\log n\)</span> dimensions, then distances are preserved when
-$$
-\frac{||x||</em>\infty}{||x||_2}=O(\epsilon^{-1/2}\cdot\min{\frac{\log(\epsilon m/\log n)}{\log n},\sqrt{\frac{\log(\epsilon^2 m/\log n)}{\log n}}}).
-$$</p>
+<p>Freksen, Kamma and Larsen showed that Feature Hashing into the optimal <span class="arithmatex">\(m=O(\epsilon^{-2}\log n)\)</span> dimensions has the JL guarantees (preserve all distances to within <span class="arithmatex">\((1\pm\epsilon)\)</span>) exactly when</p>
+<div class="arithmatex">\[
+\frac{||x||_\infty}{||x||_2}=O(\epsilon^{-1/2}\cdot\min\{\frac{\log(1/\epsilon)}{\log n},\sqrt{\frac{1}{\log n}}\}).
+\]</div>
+<p>And more generally, if one embeds into <span class="arithmatex">\(m\ge\epsilon^{-2}\log n\)</span> dimensions, then distances are preserved when</p>
+<div class="arithmatex">\[
+\frac{||x||_\infty}{||x||_2}=O(\epsilon^{-1/2}\cdot\min\{\frac{\log(\epsilon m/\log n)}{\log n},\sqrt{\frac{\log(\epsilon^2 m/\log n)}{\log n}}\}).
+\]</div>
 <h1 id="fast-jl-transform">Fast JL Transform</h1>
 <p>Instead of using sparse matrices for embedding, another approach is to use matrices for which there are efficient algorithms to compute the product <span class="arithmatex">\(Ax\)</span>.</p>
 <p>The Fast JL transform by Ailon and Chazelle.</p>
@@ -9587,7 +9599,11 @@ $$</p>
 </ul>
 <div class="arithmatex">\[
 \bar H_2=\left(\begin{array}{cc}1&amp;1\\1&amp;-1\end{array}\right)\\
+\]</div>
+<div class="arithmatex">\[
 \bar H_{2d}=\left(\begin{array}{cc}\bar H_d&amp; \bar H_d\\ \bar H_d&amp; -\bar H_d\end{array}\right)\\
+\]</div>
+<div class="arithmatex">\[
 \bar H_4=\left(
 \begin{array}{cc}
 1&amp;1&amp;1&amp;1\\
@@ -9624,26 +9640,38 @@ $$</p>
 <p>In the first step, we need to show <span class="arithmatex">\(||HDx||_\infty=O(\sqrt{\log(nd)/d})\)</span> with probability <span class="arithmatex">\(1-1/n^3\)</span> for any unit vector <span class="arithmatex">\(x\in\mathbb R^d\)</span>. That is, <span class="arithmatex">\(HD\)</span> ensures that most coordinates of <span class="arithmatex">\(x\)</span> are small.</p>
 <p>In the second step, one shows that, assuming <span class="arithmatex">\(||HDx||_\infty=O(\sqrt{\log(nd)/d})\)</span>, the application of <span class="arithmatex">\(P\)</span> preserves norms to within <span class="arithmatex">\((1\pm\epsilon)\)</span> with good probability. Here we remark that <span class="arithmatex">\(HD\)</span> preserves the norm of all vectors perfectly but the dimension is still <span class="arithmatex">\(d\)</span>. (Only do first step here.)</p>
 <p>Consider the <span class="arithmatex">\(i\)</span>-th coordinate of <span class="arithmatex">\(HDx\)</span>. Each entry of <span class="arithmatex">\(H\)</span> is either <span class="arithmatex">\(-d^{-1/2}\)</span> or <span class="arithmatex">\(d^{-1/2}\)</span> and <span class="arithmatex">\(D\)</span> multiplies a random sign onto each coordinate of <span class="arithmatex">\(x\)</span>. Hence the <span class="arithmatex">\(i\)</span>-th coordinate is distributed as <span class="arithmatex">\(\sum_i\sigma_id^{-1/2}x_i\)</span> where the <span class="arithmatex">\(\sigma_i\)</span>'s are independent and uniform among <span class="arithmatex">\(-1\)</span> and <span class="arithmatex">\(1\)</span>. Clearly <span class="arithmatex">\(\mathbb E[(HDx)_i]=0\)</span> by linearity of expectation. We prove Hoeffding's theory first.</p>
-<p><strong>Hoeffding's Inequality</strong>. Let <span class="arithmatex">\(X_1,\cdots,X_d\)</span> be independent random variables where <span class="arithmatex">\(X_i\)</span> takes values in <span class="arithmatex">\([a_i,b_i]\)</span>. Let <span class="arithmatex">\(X=\sum_iX_i\)</span>, then
-$$
-\Pr[|X-\mathbb E[X]|\gt t]\lt2\exp(-\frac{2t<sup>2}{\sum_{i=1}</sup>d(b_i-a_i)^2}).
-$$
-For sum <span class="arithmatex">\(\sum_i\sigma_id^{-1/2}x_i\)</span>, we have the random variable <span class="arithmatex">\(X_i=\sigma_id^{-1/2}x_i\)</span> takes values in the interval <span class="arithmatex">\([-d^{-1/2}x_i,d^{-1/2}|x_i|]\)</span> and thus <span class="arithmatex">\((b_i-a_i)^2=(2d^{-1/2}|x_i|)^2=4d^{-1}x_i^2\)</span>. Thus,
-$$
-\Pr[|X-\mathbb E[X]|\gt t]\lt2\exp(-\frac{2t<sup>2}{\sum_{i=1}</sup>d4d<sup>{-1}x_i</sup>2})\
-=2\exp(-\frac{2t<sup>2}{4d</sup>{-1}||x||_2^2})\
+<p><strong>Hoeffding's Inequality</strong>. Let <span class="arithmatex">\(X_1,\cdots,X_d\)</span> be independent random variables where <span class="arithmatex">\(X_i\)</span> takes values in <span class="arithmatex">\([a_i,b_i]\)</span>. Let <span class="arithmatex">\(X=\sum_iX_i\)</span>, then</p>
+<div class="arithmatex">\[
+\Pr[|X-\mathbb E[X]|\gt t]\lt2\exp(-\frac{2t^2}{\sum_{i=1}^d(b_i-a_i)^2}).
+\]</div>
+<p>For sum <span class="arithmatex">\(\sum_i\sigma_id^{-1/2}x_i\)</span>, we have the random variable <span class="arithmatex">\(X_i=\sigma_id^{-1/2}x_i\)</span> takes values in the interval <span class="arithmatex">\([-d^{-1/2}x_i,d^{-1/2}|x_i|]\)</span> and thus <span class="arithmatex">\((b_i-a_i)^2=(2d^{-1/2}|x_i|)^2=4d^{-1}x_i^2\)</span>. Thus,</p>
+<div class="arithmatex">\[
+\Pr[|X-\mathbb E[X]|\gt t]\lt2\exp(-\frac{2t^2}{\sum_{i=1}^d4d^{-1}x_i^2})\\
+\]</div>
+<div class="arithmatex">\[
+=2\exp(-\frac{2t^2}{4d^{-1}||x||_2^2})\\
+\]</div>
+<div class="arithmatex">\[
 =2\exp(-t^2d/2).
-$$
-For <span class="arithmatex">\(t=C\sqrt{\ln(nd)/d}\)</span> for a big enough constant <span class="arithmatex">\(C\)</span>, this probability is less than <span class="arithmatex">\(1/(dn)^3\)</span>. A union bound over all <span class="arithmatex">\(d\)</span> coordinates shows that <span class="arithmatex">\(||HDx||_\infty=O(\sqrt{\ln(nd)/d})\)</span> with probability at least <span class="arithmatex">\(1-1/n^3\)</span>.</p>
-<p>Conclude by showing <span class="arithmatex">\(\mathbb E[||Px||_2^2]=||x||_2^2\)</span> for all vectors <span class="arithmatex">\(x\)</span>, i.e., <span class="arithmatex">\(P\)</span> preserves norms in expectation. Each entry of <span class="arithmatex">\(P\)</span> is distributed as the product of a Bernoulli variable <span class="arithmatex">\(b_{i,j}\)</span> taking value <span class="arithmatex">\(1\)</span> with probability <span class="arithmatex">\(q\)</span> and <span class="arithmatex">\(0\)</span> otherwise, and a variable <span class="arithmatex">\(n_{i,j}\sim\mathcal N(0,(mq)^{-1})\)</span>. We thus get:
-$$
-\mathbb E[||Px||<em>2<sup>2]=\sum_{i=1}</sup>m\mathbb E[(\sum</em>{j=1}<sup>db_{i,j}n_{i,j}x_j)</sup>2]\
-=\sum_{i=1}<sup>m\sum_{j=1}</sup>d\mathbb E[b_{i,j}<sup>2n_{i,j}</sup>2x_j<sup>2]+\sum_{j=1}</sup>d\sum_{h\neq j}\mathbb E[b_{i,j}b_{i,h}n_{i,j}n_{i,h}x_ix_j]\
-=\sum_{i=1}<sup>m\sum_{j=1}</sup>d\mathbb E[b_{i,j}^2]\mathbb E[n_{i,j}<sup>2]x_j</sup>2+\sum_{j=1}^d\sum_{h\neq j}\mathbb E[b_{i,j}]\mathbb E[b_{i,h}]\mathbb E[n_{i,j}n]\mathbb E[<em>{i,h}]x_ix_j\
-=\sum</em>{i=1}<sup>m\sum_{j=1}</sup>dq(mq)<sup>{-1}x_j</sup>2\
+\]</div>
+<p>For <span class="arithmatex">\(t=C\sqrt{\ln(nd)/d}\)</span> for a big enough constant <span class="arithmatex">\(C\)</span>, this probability is less than <span class="arithmatex">\(1/(dn)^3\)</span>. A union bound over all <span class="arithmatex">\(d\)</span> coordinates shows that <span class="arithmatex">\(||HDx||_\infty=O(\sqrt{\ln(nd)/d})\)</span> with probability at least <span class="arithmatex">\(1-1/n^3\)</span>.</p>
+<p>Conclude by showing <span class="arithmatex">\(\mathbb E[||Px||_2^2]=||x||_2^2\)</span> for all vectors <span class="arithmatex">\(x\)</span>, i.e., <span class="arithmatex">\(P\)</span> preserves norms in expectation. Each entry of <span class="arithmatex">\(P\)</span> is distributed as the product of a Bernoulli variable <span class="arithmatex">\(b_{i,j}\)</span> taking value <span class="arithmatex">\(1\)</span> with probability <span class="arithmatex">\(q\)</span> and <span class="arithmatex">\(0\)</span> otherwise, and a variable <span class="arithmatex">\(n_{i,j}\sim\mathcal N(0,(mq)^{-1})\)</span>. We thus get:</p>
+<div class="arithmatex">\[
+\mathbb E[||Px||_2^2]=\sum_{i=1}^m\mathbb E[(\sum_{j=1}^db_{i,j}n_{i,j}x_j)^2]\\
+\]</div>
+<div class="arithmatex">\[
+=\sum_{i=1}^m\sum_{j=1}^d\mathbb E[b_{i,j}^2n_{i,j}^2x_j^2]+\sum_{j=1}^d\sum_{h\neq j}\mathbb E[b_{i,j}b_{i,h}n_{i,j}n_{i,h}x_ix_j]\\
+\]</div>
+<div class="arithmatex">\[
+=\sum_{i=1}^m\sum_{j=1}^d\mathbb E[b_{i,j}^2]\mathbb E[n_{i,j}^2]x_j^2+\sum_{j=1}^d\sum_{h\neq j}\mathbb E[b_{i,j}]\mathbb E[b_{i,h}]\mathbb E[n_{i,j}n]\mathbb E[_{i,h}]x_ix_j\\
+\]</div>
+<div class="arithmatex">\[
+=\sum_{i=1}^m\sum_{j=1}^dq(mq)^{-1}x_j^2\\
+\]</div>
+<div class="arithmatex">\[
 =||x||_2^2
-$$
-In the above, we use <span class="arithmatex">\(\mathbb E[n_{i,j}]=0\)</span> and <span class="arithmatex">\(\mathbb E[b_{i,j}^2]=\mathbb E[b_{i,j}]=q\)</span>. We also use for <span class="arithmatex">\(n_{i,j}\sim\mathcal N(0,\sigma^2)\)</span> random variables, we have <span class="arithmatex">\(\mathbb E[n_{i,j}^2]=\sigma^2\)</span>. We also use independence of the entries in <span class="arithmatex">\(P\)</span> to split the expectation of the product into the product of expectations.</p>
+\]</div>
+<p>In the above, we use <span class="arithmatex">\(\mathbb E[n_{i,j}]=0\)</span> and <span class="arithmatex">\(\mathbb E[b_{i,j}^2]=\mathbb E[b_{i,j}]=q\)</span>. We also use for <span class="arithmatex">\(n_{i,j}\sim\mathcal N(0,\sigma^2)\)</span> random variables, we have <span class="arithmatex">\(\mathbb E[n_{i,j}^2]=\sigma^2\)</span>. We also use independence of the entries in <span class="arithmatex">\(P\)</span> to split the expectation of the product into the product of expectations.</p>
 
 
 

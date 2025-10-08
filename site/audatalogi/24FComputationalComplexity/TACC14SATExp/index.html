@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9461,10 +9461,10 @@
 <p>该算法在上学期随机算法课最后一节课 <a href="https://tinsir888.github.io/posts/34c1542e.html">马尔可夫链和随机游走</a> 中讲过，故此处略过。</p>
 <p>分析过程很恶心。</p>
 <h1 id="the-sparsification-lemma">The Sparsification Lemma</h1>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Lemma 22. For all <span class="arithmatex">\(\epsilon\gt0\)</span> and integers <span class="arithmatex">\(k\)</span>, there exists a constant <span class="arithmatex">\(C=C(\epsilon,k)\)</span> and an algorithm that given as input a <span class="arithmatex">\(kCNF\)</span> <span class="arithmatex">\(\Phi\)</span> in <span class="arithmatex">\(n\)</span> variables runs in time <span class="arithmatex">\(tn^{O(1)}\)</span>, where <span class="arithmatex">\(t\le2^{\epsilon n}\)</span>, and give as output a list of <span class="arithmatex">\(kCNF\)</span> formulas <span class="arithmatex">\(\Psi_1,\cdots,\Psi_t\)</span> each with at most <span class="arithmatex">\(Cn\)</span> clauses such that
-$$
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Lemma 22. For all <span class="arithmatex">\(\epsilon\gt0\)</span> and integers <span class="arithmatex">\(k\)</span>, there exists a constant <span class="arithmatex">\(C=C(\epsilon,k)\)</span> and an algorithm that given as input a <span class="arithmatex">\(kCNF\)</span> <span class="arithmatex">\(\Phi\)</span> in <span class="arithmatex">\(n\)</span> variables runs in time <span class="arithmatex">\(tn^{O(1)}\)</span>, where <span class="arithmatex">\(t\le2^{\epsilon n}\)</span>, and give as output a list of <span class="arithmatex">\(kCNF\)</span> formulas <span class="arithmatex">\(\Psi_1,\cdots,\Psi_t\)</span> each with at most <span class="arithmatex">\(Cn\)</span> clauses such that</p>
+<div class="arithmatex">\[
 \Phi(x)=\bigvee_{i=1}^t\Psi_i(x),
-$$</p>
+\]</div>
 <p>for all <span class="arithmatex">\(x\in\{0,1\}^n\)</span>.</p>
 <h2 id="reduce-to-hitting-set-problem">Reduce to Hitting Set Problem</h2>
 <p>Recall <span class="arithmatex">\(HittingSet\)</span> problem. Consider a universe <span class="arithmatex">\(U\)</span> of elements and a collection <span class="arithmatex">\(\mathcal S\)</span> of subsets of <span class="arithmatex">\(\mathcal U\)</span>. We say that <span class="arithmatex">\(T\subseteq\mathcal U\)</span> is a hitting set for <span class="arithmatex">\(\mathcal S\)</span> if <span class="arithmatex">\(S\cap T\neq\emptyset\)</span> for all <span class="arithmatex">\(S\in\mathcal S\)</span>. We denote by <span class="arithmatex">\(\sigma(\mathcal S)\)</span> the collection of all hitting sets of <span class="arithmatex">\(\mathcal S\)</span>.</p>
@@ -9490,11 +9490,11 @@ $$</p>
 </div>
 <p><del>很绕，不是吗？</del></p>
 <p>Clearly, if <span class="arithmatex">\(\mathcal T\)</span> is a restriction of <span class="arithmatex">\(\mathcal S\)</span>, then <span class="arithmatex">\(\sigma(\mathcal T)\subseteq\sigma(\mathcal S)\)</span>. Any satisfying assignment of CNF formula given by <span class="arithmatex">\(\mathcal T\)</span> is also a satisfying assignment of the CNF formula given by <span class="arithmatex">\(\mathcal S\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 23 (Hitting set correspondence). For all <span class="arithmatex">\(\epsilon\gt0\)</span> and integers <span class="arithmatex">\(k\)</span>, there exists a constant <span class="arithmatex">\(C=C(\epsilon,k)\)</span> and an algorithm that given as input collection <span class="arithmatex">\(\mathcal S\)</span> of subsets of size at most <span class="arithmatex">\(k\)</span> of a universe <span class="arithmatex">\(\mathcal U\)</span> of size <span class="arithmatex">\(n\)</span> runs in time <span class="arithmatex">\(tn^{O(1)}\)</span>, where <span class="arithmatex">\(t\le 2^{\epsilon n}\)</span>, and give as output a list of restrictions <span class="arithmatex">\(\mathcal T_1,\cdots,\mathcal T_t\)</span> each with at most <span class="arithmatex">\(Cn\)</span> subsets of <span class="arithmatex">\(\mathcal U\)</span> which are all of size at most <span class="arithmatex">\(k\)</span> s.t.
-$$
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 23 (Hitting set correspondence). For all <span class="arithmatex">\(\epsilon\gt0\)</span> and integers <span class="arithmatex">\(k\)</span>, there exists a constant <span class="arithmatex">\(C=C(\epsilon,k)\)</span> and an algorithm that given as input collection <span class="arithmatex">\(\mathcal S\)</span> of subsets of size at most <span class="arithmatex">\(k\)</span> of a universe <span class="arithmatex">\(\mathcal U\)</span> of size <span class="arithmatex">\(n\)</span> runs in time <span class="arithmatex">\(tn^{O(1)}\)</span>, where <span class="arithmatex">\(t\le 2^{\epsilon n}\)</span>, and give as output a list of restrictions <span class="arithmatex">\(\mathcal T_1,\cdots,\mathcal T_t\)</span> each with at most <span class="arithmatex">\(Cn\)</span> subsets of <span class="arithmatex">\(\mathcal U\)</span> which are all of size at most <span class="arithmatex">\(k\)</span> s.t.</p>
+<div class="arithmatex">\[
 \sigma(\mathcal S)=\bigcup_{i=1}^t\sigma(\mathcal T_i).
-$$
-We call a subset of <span class="arithmatex">\(\mathcal U\)</span> of size <span class="arithmatex">\(j\)</span>: <span class="arithmatex">\(j\)</span>-set.</p>
+\]</div>
+<p>We call a subset of <span class="arithmatex">\(\mathcal U\)</span> of size <span class="arithmatex">\(j\)</span>: <span class="arithmatex">\(j\)</span>-set.</p>
 <p>The algorithm is a branching algorithm where each leaf of the recursion tree will give a restriction of <span class="arithmatex">\(\mathcal S\)</span>.</p>
 <p>To branch, the algorithm looks for a large collection of subsets of the <strong>same size</strong> that has a non-empty intersection, and branches on whether or not the common intersection will be hit by the hitting set. We define such collections of sets as <strong>flowers</strong>.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 58. Let <span class="arithmatex">\(S_1,\cdots,S_c\)</span> be <span class="arithmatex">\(j\)</span>-sets.</p>
@@ -9549,12 +9549,14 @@ We call a subset of <span class="arithmatex">\(\mathcal U\)</span> of size <span
 <p>Prove by contradiction. Use pigeonhole principle.</p>
 </blockquote>
 <p>The number of restriction output by <code>Reduce</code> should be bounded by the number of leaves <span class="arithmatex">\(t\)</span> in the recursion tree.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 26. Let <span class="arithmatex">\(0\lt m\lt n\)</span> be integers. It holds that
-$$
-\sum_{i=1}^m{n\choose i}\le2^{H(\frac{m}{n})\cdot n}.\
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 26. Let <span class="arithmatex">\(0\lt m\lt n\)</span> be integers. It holds that</p>
+<div class="arithmatex">\[
+\sum_{i=1}^m{n\choose i}\le2^{H(\frac{m}{n})\cdot n}.\\
+\]</div>
+<div class="arithmatex">\[
 H(p)=p\log_2(1/p)+(1-p)\log_2(1/(1-p))
-$$
-<img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 14. A binary tree of depth <span class="arithmatex">\(h\)</span> in which every root-to-leaf path follows the right child at most <span class="arithmatex">\(\gamma h\)</span> times has at most <span class="arithmatex">\(2^{H(\gamma)h}\)</span> leafs.</p>
+\]</div>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 14. A binary tree of depth <span class="arithmatex">\(h\)</span> in which every root-to-leaf path follows the right child at most <span class="arithmatex">\(\gamma h\)</span> times has at most <span class="arithmatex">\(2^{H(\gamma)h}\)</span> leafs.</p>
 <blockquote>
 <p>Proof by Lemma 26.</p>
 </blockquote>
@@ -9565,12 +9567,14 @@ $$
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 29. Let <span class="arithmatex">\(1\lt i\lt k\)</span> and suppose <span class="arithmatex">\(\beta_{i-1}\)</span> is s.t. at most <span class="arithmatex">\(\beta_{i-1}n\)</span> sets of size at most <span class="arithmatex">\(i-1\)</span> that are added along a given path of the recursion tree of <code>Reduce</code>. Then the number of <span class="arithmatex">\(i\)</span>-sets added along that path is at most <span class="arithmatex">\((2\beta_{i-1}+1)(\theta_{i-1}-1)n\)</span>.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 15. At most <span class="arithmatex">\(\beta_in\)</span> sets of size at most <span class="arithmatex">\(i\)</span> are added along any path of the recursion tree of <code>Reduce</code>, for all <span class="arithmatex">\(1\le i\lt k\)</span>.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 30. Along any path of the recursion tree of <code>Reduce</code> at most <span class="arithmatex">\(\beta_in/\theta_i\)</span> families are created by adding petals of size <span class="arithmatex">\(i\)</span> for every <span class="arithmatex">\(1\le i\lt k\)</span>.</p>
-<p>We set <span class="arithmatex">\(\theta_i\)</span> in such a way that the ratio <span class="arithmatex">\(\theta_i/\beta_i\)</span> is equal to an integer constant <span class="arithmatex">\(\alpha\)</span>, to be fixed later, for <span class="arithmatex">\(1\le i\le k\)</span>. Thus
-$$
-\beta_i=4\beta_{i-1}\theta_{i-1}=4\alpha(\beta_{i-1})^2\
-\Rightarrow \beta_i=(4\alpha)<sup>{2</sup>{i-1}-1},\theta_i=\alpha(4\alpha)<sup>{2</sup>{i-1}-1}\forall 1\le i\le k
-$$
-<img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 16. Along any path of the recursion tree of <code>Reduce</code> at most <span class="arithmatex">\(kn/\alpha\)</span> families are created by adding petals.</p>
+<p>We set <span class="arithmatex">\(\theta_i\)</span> in such a way that the ratio <span class="arithmatex">\(\theta_i/\beta_i\)</span> is equal to an integer constant <span class="arithmatex">\(\alpha\)</span>, to be fixed later, for <span class="arithmatex">\(1\le i\le k\)</span>. Thus</p>
+<div class="arithmatex">\[
+\beta_i=4\beta_{i-1}\theta_{i-1}=4\alpha(\beta_{i-1})^2\\
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \beta_i=(4\alpha)^{2^{i-1}-1},\theta_i=\alpha(4\alpha)^{2^{i-1}-1}\forall 1\le i\le k
+\]</div>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 16. Along any path of the recursion tree of <code>Reduce</code> at most <span class="arithmatex">\(kn/\alpha\)</span> families are created by adding petals.</p>
 <p><del>让我缓缓</del></p>
 <h1 id="the-exponential-time-hypothesis">The Exponential Time Hypothesis</h1>
 <p>A stronger hypothesis than <span class="arithmatex">\(P\neq NP\)</span>: Exponential time is required to decide <span class="arithmatex">\(SAT\)</span>.</p>

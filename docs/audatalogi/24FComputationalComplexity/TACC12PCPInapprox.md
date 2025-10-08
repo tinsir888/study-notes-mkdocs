@@ -39,9 +39,9 @@ A feasible solution $y\in F(x)$ s.t. $val_x(y)=OPT(x)$ is called an **optimal so
 
 When this is $NP$-hard, it follows that there is no polynomial-time algorithm that on input $x$ computes an optimal solution for $x$ unless $P=NP$.
 
-:book:Definition 54. Let $\Pi$ be an $NP$-optimization problem and let $\rho:\N\to\R_+$ be a function. A $\rho$-approximation algorithm $A$ is an algorithm that on input $x$ gives as output $y\in F(x)$ s.t. $val_x(y)\ge\rho(|x|)OPT(x)$ in case of a maximization problem $\Pi$ or such that $val_x(y)\le\rho(x)OPT(x)$ in case of a minimization problem $\Pi$.
+:book:Definition 54. Let $\Pi$ be an $NP$-optimization problem and let $\rho:\mathbb N\to\R_+$ be a function. A $\rho$-approximation algorithm $A$ is an algorithm that on input $x$ gives as output $y\in F(x)$ s.t. $val_x(y)\ge\rho(|x|)OPT(x)$ in case of a maximization problem $\Pi$ or such that $val_x(y)\le\rho(x)OPT(x)$ in case of a minimization problem $\Pi$.
 
-Let $\Pi$ be an $NP$-maximization problem and let $a,b:\N\to\R_+$ be functions s.t. $0\lt a(n)\lt b(n)$ for all $n$. Then define the following promise decision problem.
+Let $\Pi$ be an $NP$-maximization problem and let $a,b:\mathbb N\to\R_+$ be functions s.t. $0\lt a(n)\lt b(n)$ for all $n$. Then define the following promise decision problem.
 
 $(a,b)-GAP-\Pi$:
 
@@ -88,9 +88,11 @@ Now define $MAXCLIQUE$
 - Output: Clique in $G$ of maximum size.
 
 :thinking:Lemma 20. Let $V$ be a $PCP$ verifier using $r(n)$ random bits and querying $q(n)$ symbols from a proof $\pi\in\{0,1\}^*$. For an input $x$ we have
+
 $$
 OPT(G(x))=2^{r(n)}\max_\pi\Pr[V^\pi(x)=yes].
 $$
+
 :thinking:Corollary 13. Let $L\in PCP_{c,s}(r(n),q(n))$ and let $V$ be a corresponding PCP verifier. Then using time $2^{O(r(n)+q(n))}n^{O(1)}$ on input $x$ of length $n$ a graph $G(x)$ with $2^{r(n)+q(n)}$ vertices can be computed s.t.
 
 - If $x\in L$ then $OPT(G(x))\ge c2^{r(n)}$.

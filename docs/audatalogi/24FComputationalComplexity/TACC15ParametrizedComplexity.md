@@ -102,7 +102,7 @@ Parameterized complexity:
 
 A **parameterized language** is $L\subseteq\Sigma^*\times\Sigma^*$ where we refer to the second coordinate as **parameter**.
 
-For simplicity, we can think of $L\subseteq\Sigma^*\times \N$.
+For simplicity, we can think of $L\subseteq\Sigma^*\times \mathbb N$.
 
 :book:Definition of FPT. A parameterized language $L$ is **fixed parameter tractable** (FPT), iff there is a computable function $f$, a constant $c$, and a deterministic algorithm $M$ s.t.
 $$

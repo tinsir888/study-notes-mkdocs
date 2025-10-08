@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9512,11 +9512,11 @@ A(C_j)=1-A(\neg C_j)=1-A(\neg \ell_{j,1})A(\neg \ell_{j,2})A(\neg \ell_{j,3})\
 $$
 Finally, we define <span class="arithmatex">\(A_\varphi=\prod_{j=1}^mA(C_j)\)</span>.</p>
 <p>Expanding <span class="arithmatex">\(A(\varphi)\)</span> into a sum of monomials would take exponential time.</p>
-<p>The number of satisfying assignments <span class="arithmatex">\(\#\varphi\)</span> of <span class="arithmatex">\(\varphi\)</span>:
-$$
-#\varphi=\sum_{x_1=0}<sup>1\sum_{x_2=0}</sup>1\cdots\sum_{x_n=0}^1A_\varphi(x_1,\cdots,x_n)
-$$
-Then we define an <strong>interactive proof</strong> for proving <span class="arithmatex">\(\#\varphi=K\)</span>, for given <span class="arithmatex">\(K\)</span>. For <span class="arithmatex">\(K=0\)</span> allow us prove that <span class="arithmatex">\(coNP\subseteq IP\)</span>. The protocol is called <strong>Sumcheck</strong> protocol:</p>
+<p>The number of satisfying assignments <span class="arithmatex">\(\#\varphi\)</span> of <span class="arithmatex">\(\varphi\)</span>:</p>
+<div class="arithmatex">\[
+\#\varphi=\sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1A_\varphi(x_1,\cdots,x_n)
+\]</div>
+<p>Then we define an <strong>interactive proof</strong> for proving <span class="arithmatex">\(\#\varphi=K\)</span>, for given <span class="arithmatex">\(K\)</span>. For <span class="arithmatex">\(K=0\)</span> allow us prove that <span class="arithmatex">\(coNP\subseteq IP\)</span>. The protocol is called <strong>Sumcheck</strong> protocol:</p>
 <ul>
 <li>Input: Arithmetic formula <span class="arithmatex">\(F(x_1,\cdots,x_n)\)</span> of total degree <span class="arithmatex">\(d\)</span>, prime <span class="arithmatex">\(p\)</span>, number <span class="arithmatex">\(K\)</span>.</li>
 <li>Goal: Prove <span class="arithmatex">\(\sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1F(x_1,\cdots,x_n)\equiv K\mod p\)</span>.</li>
@@ -9524,11 +9524,11 @@ Then we define an <strong>interactive proof</strong> for proving <span class="ar
 <li>Prover: Send the uni-variate degree <span class="arithmatex">\(d\)</span> polynomial <span class="arithmatex">\(Q(x_1)\)</span> to Verifier, where <span class="arithmatex">\(Q(x_1)\)</span> is given by <span class="arithmatex">\(Q(x_1)=\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1F(x_1,\cdots,x_n)\)</span>.</li>
 <li>Verifier: If <span class="arithmatex">\(Q(0)+Q(1)\not\equiv K\mod p\)</span>, reject. Otherwise, pick <span class="arithmatex">\(a_1\in\mathbb Z_p\)</span> uniformly at random. Send <span class="arithmatex">\(a_1\)</span> to <span class="arithmatex">\(P\)</span> and recursively invoke the protocol for proving that <span class="arithmatex">\(\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1F(a_1,x_2,\cdots,x_n)\equiv Q(a_1)\mod p\)</span>.</li>
 </ul>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 16. Let <span class="arithmatex">\(F(x_1,\cdots,x_n)\)</span> be an arithmetic formula of total degree <span class="arithmatex">\(d\)</span>, which is polynomial in <span class="arithmatex">\(n\)</span>, let <span class="arithmatex">\(p\)</span> be a prime of bi-length polynomial in <span class="arithmatex">\(n\)</span>, and let <span class="arithmatex">\(K\)</span> be an integer. The Sumcheck protocol is an interactive proof for the statement
-$$
-\sum_{x_1=0}<sup>1\sum_{x_2=0}</sup>1\cdots\sum_{x_n=0}^1F(x_1,\cdots,x_n)\equiv K\mod p
-$$
-with completeness <span class="arithmatex">\(1\)</span> and soundness error at most <span class="arithmatex">\(nd/p\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 16. Let <span class="arithmatex">\(F(x_1,\cdots,x_n)\)</span> be an arithmetic formula of total degree <span class="arithmatex">\(d\)</span>, which is polynomial in <span class="arithmatex">\(n\)</span>, let <span class="arithmatex">\(p\)</span> be a prime of bi-length polynomial in <span class="arithmatex">\(n\)</span>, and let <span class="arithmatex">\(K\)</span> be an integer. The Sumcheck protocol is an interactive proof for the statement</p>
+<div class="arithmatex">\[
+\sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1F(x_1,\cdots,x_n)\equiv K\mod p
+\]</div>
+<p>with completeness <span class="arithmatex">\(1\)</span> and soundness error at most <span class="arithmatex">\(nd/p\)</span>.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 11. <span class="arithmatex">\(coNP\subseteq IP\)</span>.</p>
 <blockquote>
 <p>Show that <span class="arithmatex">\(\overline{3SAT}\in IP\)</span>.</p>

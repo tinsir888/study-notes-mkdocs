@@ -65,14 +65,31 @@ Thus everything related to the Turing machines becomes a random variable.
 
 
 Define log-space/polynomial time bounded classes:
+
 $$
 ZPL=ZPSPACE(\log n)\\
+$$
+
+$$
 RP=RSPACE(\log n)\\
+$$
+
+$$
 BPL=BPSPACE(\log n)\\
+$$
+
+$$
 ZPP=ZPTIME(n^{O(1)})\\
+$$
+
+$$
 RP=RTIME(n^{O(1)})\\
+$$
+
+$$
 BPP=BPTIME(n^{O(1)})
 $$
+
 Trivially, $L\subseteq ZPL\subseteq RL\subseteq BPL$; $P\subseteq ZPP\subseteq RP\subseteq BPP$.
 
 It's also easy to see that $RL\subseteq NL$ and $RP\subseteq NP$.
@@ -92,14 +109,17 @@ For one-sided error, if some trial accepts, we accept. otherwise we reject.
 For two-sided error, we decided the answer by the majority of trials.
 
 :thinking:Lemma 3. Let $X_1,\cdots,X_k$ be independent Boolean variables s.t. $\Pr[X_i=1]\ge\epsilon$. Then
+
 $$
 \Pr[\forall i:X_i=0]\lt\exp(-k\epsilon)
 $$
 
 > By independence,
+>
 > $$
 > \Pr[\forall i:X_i=0]=\prod_i\Pr[X_i=0]\lt(1-\epsilon)^k\le\exp(-k\epsilon).
 > $$
+>
 > (by $1+x\le\exp(x)$)
 
 Apply this to zero-sided and one-sided errors:
@@ -110,15 +130,22 @@ Apply this to zero-sided and one-sided errors:
 For two-sided error:
 
 :thinking:Lemma 4 (Chernoff-Hoeffding Bound). Let $X$ be the sum of $k$ independent Boolean random variables. Assume $\mu_L\le\mathbb E[X]\le\mu_H$, $t>0$. Then
+
 $$
 \Pr[X<\mu_L-t]\le\exp(-2t^2/k),\\
+$$
+
+$$
 \Pr[X>\mu_H+t]\le\exp(-2t^2/k).
 $$
+
 We define the random indicator $X_i$ to indicate whether trial $i$ gave correct output. We assume that $\Pr[X_i=1]\ge\frac{1}{2}+\epsilon$ and $k$ is odd. Let $X=\sum_{i=1}^kX_i$, we have $\mathbb E[X]\ge\frac{k}{2}+k\epsilon$. Applying Chernoff-Hoeffding bound, we have
+
 $$
 \Pr[X<\frac{k}{2}]=\Pr[X<\mu_L-k\epsilon]\le\exp(-2(k\epsilon)^2/k)\\
 =\exp(-2k\epsilon^2)
 $$
+
 using $\mu_L=\frac{k}{2}+k\epsilon$. Instead of have error probability $1/4$, we assume error probability for once just less than $1/2-1/p(n)$ and achieve error probability $\exp(-q(n))$ by running $k=\frac{p(n)^2q(n)}{2}$ independent trials.
 
 !!! info
@@ -176,6 +203,7 @@ A simple randomized algorithm: simply choose number $a_1,\cdots,a_n\in\{1,2,\cdo
 Using Schwartz-Zippel lemma to analyze error probability.
 
 :thinking:Lemma 5 (Schwartz-Zippel lemma). Let $\mathbb F$ be a field, let $P(x_1,\cdots, x_n)\in\mathbb F[x_1,\cdots,x_n]$ be a non-zero polynomial of total degree at most $d$. Let $S\subseteq\mathbb F$, and pick $a_1,\cdots, a_n\in S$ independently and uniformly at random. Then
+
 $$
 \Pr[P(a_1,\cdots,a_n)=0]\le\frac{d}{|S|}.
 $$
@@ -203,9 +231,11 @@ Circuit of size $m$ has at most $m$ multiplication gates. The degree of the poly
 To remedy this, we switch to modular arithmetic with randomly chosen prime modulus. Use prime number theorem to analyze error probability.
 
 Let $\pi(x)$ be the number of prime number less than $x$. By prime number theory,
+
 $$
 \pi(x)\sim\frac{x}{\ln x}.
 $$
+
 :thinking:Lemma 6. For all $m>1$, we have $\pi(2^m)\ge\frac{2^m}{m}$.
 
 :thinking::dart:Theorem 35. $ACIT\in coRP$.
@@ -217,10 +247,15 @@ $$
 We have alternative characterization of $BPP$. Also there are similar alternatives of $ZPP$ and $RP$.
 
 Proposition 4. Let $L$ be a language. Then $L\in BPP$ iff there is a polynomial $q$ and another language $L'\in P$ s.t. $\forall x$:
+
 $$
 x\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge\frac{3}{4}\\
+$$
+
+$$
 x\not\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\not\in L']\ge\frac{3}{4}
 $$
+
 We say that the randomized computation uses $q(|x|)$ random bits.
 
 Using success amplification a randomized algorithm using $R$ random bits and having error probability less than $1/4$ can be transformed to a randomized algorithm using $kR$ random bits and having error probability less than $\exp(-k/8)$ by running $k$ trials and taking the majority vote.
@@ -240,21 +275,35 @@ But we can prove that $BPP$ is contained in **the second level of polynomial-tim
 > Prove that $BPP\subseteq\Sigma_2^P$. From this also we get $BPP\subseteq\Pi_2^P$.
 >
 > - Let $L\in BPP$. We have a polynomial $q(n)$ and a language $L'\in P$ s.t. for all $x$ we have
+>
 >   $$
 >   x\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge1-\frac{1}{2q(|x|)},\\
+>   $$
+>
+>   $$
 >   x\not\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']<1-\frac{1}{2q(|x|)}.
 >   $$
 >
 > - Let $m=q(|x|)$. For given $x$, we define $S_x=\{y\in\{0,1\}^m|\langle x,y\rangle\in L'\}$. Thus, for all $x$ we have
+>
 >   $$
 >   x\in L\Rightarrow|S_x|\ge(1-\frac{1}{2m})2^m,\\
+>   $$
+>
+>   $$
 >   x\not\in L\Rightarrow|S_x|<\frac{1}{2m}2^m.
 >   $$
+>
 >   Claim that $x\in L$ iff
+>
 >   $$
 >   \exists u_1,\cdots, u_m\in\{0,1\}^m\forall r\in\{0,1\}^m:\\
+>   $$
+>
+>   $$
 >   \bigvee_{i=1}^m\langle x,u_i\oplus r\rangle\in L',
 >   $$
+>
 >   where $u_i\oplus r$ denote the coordinate-wise exclusive-or. ~~什么是坐标或运算？~~
 >
 > - This shows that $L\in\Sigma_2^P$ since this can be done in polynomial time.

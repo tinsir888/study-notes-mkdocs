@@ -6390,7 +6390,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6413,7 +6413,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6436,7 +6436,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9544,16 +9544,26 @@
 <p class="admonition-title">Info</p>
 <p>For space bounded randomized classes, we assume that the Turing machine always halts! Because otherwise these three classes would end up containing <span class="arithmatex">\(NSPACE(S(n))\)</span>!</p>
 </div>
-<p>Define log-space/polynomial time bounded classes:
-$$
-ZPL=ZPSPACE(\log n)\
-RP=RSPACE(\log n)\
-BPL=BPSPACE(\log n)\
-ZPP=ZPTIME(n^{O(1)})\
-RP=RTIME(n^{O(1)})\
+<p>Define log-space/polynomial time bounded classes:</p>
+<div class="arithmatex">\[
+ZPL=ZPSPACE(\log n)\\
+\]</div>
+<div class="arithmatex">\[
+RP=RSPACE(\log n)\\
+\]</div>
+<div class="arithmatex">\[
+BPL=BPSPACE(\log n)\\
+\]</div>
+<div class="arithmatex">\[
+ZPP=ZPTIME(n^{O(1)})\\
+\]</div>
+<div class="arithmatex">\[
+RP=RTIME(n^{O(1)})\\
+\]</div>
+<div class="arithmatex">\[
 BPP=BPTIME(n^{O(1)})
-$$
-Trivially, <span class="arithmatex">\(L\subseteq ZPL\subseteq RL\subseteq BPL\)</span>; <span class="arithmatex">\(P\subseteq ZPP\subseteq RP\subseteq BPP\)</span>.</p>
+\]</div>
+<p>Trivially, <span class="arithmatex">\(L\subseteq ZPL\subseteq RL\subseteq BPL\)</span>; <span class="arithmatex">\(P\subseteq ZPP\subseteq RP\subseteq BPP\)</span>.</p>
 <p>It's also easy to see that <span class="arithmatex">\(RL\subseteq NL\)</span> and <span class="arithmatex">\(RP\subseteq NP\)</span>.</p>
 <p>Simple upper bound for <span class="arithmatex">\(BPP\)</span> (not tight): similar to theorem 10, <span class="arithmatex">\(BPP\subseteq PSPACE\)</span>.</p>
 <p>For <span class="arithmatex">\(BPL\)</span>, <span class="arithmatex">\(BPL\subseteq DSPACE(\log^{3/2}n)\)</span>.</p>
@@ -9562,16 +9572,16 @@ Trivially, <span class="arithmatex">\(L\subseteq ZPL\subseteq RL\subseteq BPL\)<
 <p>For zero-sided error, we won't stop until we get non-unknown answer.</p>
 <p>For one-sided error, if some trial accepts, we accept. otherwise we reject.</p>
 <p>For two-sided error, we decided the answer by the majority of trials.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 3. Let <span class="arithmatex">\(X_1,\cdots,X_k\)</span> be independent Boolean variables s.t. <span class="arithmatex">\(\Pr[X_i=1]\ge\epsilon\)</span>. Then
-$$
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 3. Let <span class="arithmatex">\(X_1,\cdots,X_k\)</span> be independent Boolean variables s.t. <span class="arithmatex">\(\Pr[X_i=1]\ge\epsilon\)</span>. Then</p>
+<div class="arithmatex">\[
 \Pr[\forall i:X_i=0]\lt\exp(-k\epsilon)
-$$</p>
+\]</div>
 <blockquote>
-<p>By independence,
-$$
+<p>By independence,</p>
+<div class="arithmatex">\[
 \Pr[\forall i:X_i=0]=\prod_i\Pr[X_i=0]\lt(1-\epsilon)^k\le\exp(-k\epsilon).
-$$
-(by <span class="arithmatex">\(1+x\le\exp(x)\)</span>)</p>
+\]</div>
+<p>(by <span class="arithmatex">\(1+x\le\exp(x)\)</span>)</p>
 </blockquote>
 <p>Apply this to zero-sided and one-sided errors:</p>
 <ul>
@@ -9579,17 +9589,19 @@ $$
 <li>Instead of having error probability <span class="arithmatex">\(1/4\)</span>, we actually assume that error probability for once is less than <span class="arithmatex">\(1-\frac{1}{p(n)}\)</span> and still achieve error probability <span class="arithmatex">\(\exp(-q(n))\)</span> for all by running <span class="arithmatex">\(k=p(n)q(n)\)</span> trials, which is polynomial number.</li>
 </ul>
 <p>For two-sided error:</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 4 (Chernoff-Hoeffding Bound). Let <span class="arithmatex">\(X\)</span> be the sum of <span class="arithmatex">\(k\)</span> independent Boolean random variables. Assume <span class="arithmatex">\(\mu_L\le\mathbb E[X]\le\mu_H\)</span>, <span class="arithmatex">\(t&gt;0\)</span>. Then
-$$
-\Pr[X&lt;\mu_L-t]\le\exp(-2t^2/k),\
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 4 (Chernoff-Hoeffding Bound). Let <span class="arithmatex">\(X\)</span> be the sum of <span class="arithmatex">\(k\)</span> independent Boolean random variables. Assume <span class="arithmatex">\(\mu_L\le\mathbb E[X]\le\mu_H\)</span>, <span class="arithmatex">\(t&gt;0\)</span>. Then</p>
+<div class="arithmatex">\[
+\Pr[X&lt;\mu_L-t]\le\exp(-2t^2/k),\\
+\]</div>
+<div class="arithmatex">\[
 \Pr[X&gt;\mu_H+t]\le\exp(-2t^2/k).
-$$
-We define the random indicator <span class="arithmatex">\(X_i\)</span> to indicate whether trial <span class="arithmatex">\(i\)</span> gave correct output. We assume that <span class="arithmatex">\(\Pr[X_i=1]\ge\frac{1}{2}+\epsilon\)</span> and <span class="arithmatex">\(k\)</span> is odd. Let <span class="arithmatex">\(X=\sum_{i=1}^kX_i\)</span>, we have <span class="arithmatex">\(\mathbb E[X]\ge\frac{k}{2}+k\epsilon\)</span>. Applying Chernoff-Hoeffding bound, we have
-$$
-\Pr[X&lt;\frac{k}{2}]=\Pr[X&lt;\mu_L-k\epsilon]\le\exp(-2(k\epsilon)^2/k)\
+\]</div>
+<p>We define the random indicator <span class="arithmatex">\(X_i\)</span> to indicate whether trial <span class="arithmatex">\(i\)</span> gave correct output. We assume that <span class="arithmatex">\(\Pr[X_i=1]\ge\frac{1}{2}+\epsilon\)</span> and <span class="arithmatex">\(k\)</span> is odd. Let <span class="arithmatex">\(X=\sum_{i=1}^kX_i\)</span>, we have <span class="arithmatex">\(\mathbb E[X]\ge\frac{k}{2}+k\epsilon\)</span>. Applying Chernoff-Hoeffding bound, we have</p>
+<div class="arithmatex">\[
+\Pr[X&lt;\frac{k}{2}]=\Pr[X&lt;\mu_L-k\epsilon]\le\exp(-2(k\epsilon)^2/k)\\
 =\exp(-2k\epsilon^2)
-$$
-using <span class="arithmatex">\(\mu_L=\frac{k}{2}+k\epsilon\)</span>. Instead of have error probability <span class="arithmatex">\(1/4\)</span>, we assume error probability for once just less than <span class="arithmatex">\(1/2-1/p(n)\)</span> and achieve error probability <span class="arithmatex">\(\exp(-q(n))\)</span> by running <span class="arithmatex">\(k=\frac{p(n)^2q(n)}{2}\)</span> independent trials.</p>
+\]</div>
+<p>using <span class="arithmatex">\(\mu_L=\frac{k}{2}+k\epsilon\)</span>. Instead of have error probability <span class="arithmatex">\(1/4\)</span>, we assume error probability for once just less than <span class="arithmatex">\(1/2-1/p(n)\)</span> and achieve error probability <span class="arithmatex">\(\exp(-q(n))\)</span> by running <span class="arithmatex">\(k=\frac{p(n)^2q(n)}{2}\)</span> independent trials.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>These analysis applies to both polynomial-time bounded and log-space bounded randomized complexity classes.</p>
@@ -9627,10 +9639,10 @@ using <span class="arithmatex">\(\mu_L=\frac{k}{2}+k\epsilon\)</span>. Instead o
 <p>Question: Is <span class="arithmatex">\(P(x)\equiv0\)</span>?</p>
 <p>A simple randomized algorithm: simply choose number <span class="arithmatex">\(a_1,\cdots,a_n\in\{1,2,\cdots,4m\}\)</span>  independently and uniformly at random, where <span class="arithmatex">\(m\)</span> is the size of the given formula, evaluate <span class="arithmatex">\(P(a_1,\cdots, a_n)\)</span> and answer accordingly.</p>
 <p>Using Schwartz-Zippel lemma to analyze error probability.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 5 (Schwartz-Zippel lemma). Let <span class="arithmatex">\(\mathbb F\)</span> be a field, let <span class="arithmatex">\(P(x_1,\cdots, x_n)\in\mathbb F[x_1,\cdots,x_n]\)</span> be a non-zero polynomial of total degree at most <span class="arithmatex">\(d\)</span>. Let <span class="arithmatex">\(S\subseteq\mathbb F\)</span>, and pick <span class="arithmatex">\(a_1,\cdots, a_n\in S\)</span> independently and uniformly at random. Then
-$$
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 5 (Schwartz-Zippel lemma). Let <span class="arithmatex">\(\mathbb F\)</span> be a field, let <span class="arithmatex">\(P(x_1,\cdots, x_n)\in\mathbb F[x_1,\cdots,x_n]\)</span> be a non-zero polynomial of total degree at most <span class="arithmatex">\(d\)</span>. Let <span class="arithmatex">\(S\subseteq\mathbb F\)</span>, and pick <span class="arithmatex">\(a_1,\cdots, a_n\in S\)</span> independently and uniformly at random. Then</p>
+<div class="arithmatex">\[
 \Pr[P(a_1,\cdots,a_n)=0]\le\frac{d}{|S|}.
-$$</p>
+\]</div>
 <blockquote>
 <p>Proof by induction on <span class="arithmatex">\(n\)</span>.</p>
 </blockquote>
@@ -9644,23 +9656,25 @@ $$</p>
 <p>Question: Is <span class="arithmatex">\(P(x)\equiv0\)</span>?</p>
 <p>Circuit of size <span class="arithmatex">\(m\)</span> has at most <span class="arithmatex">\(m\)</span> multiplication gates. The degree of the polynomial computed is at most <span class="arithmatex">\(2^m\)</span>. The same approach as in <em>arithmetic formula</em> calls for draw random number from <span class="arithmatex">\(1,\cdots,2^{m+2}\)</span>. (exponential!)</p>
 <p>To remedy this, we switch to modular arithmetic with randomly chosen prime modulus. Use prime number theorem to analyze error probability.</p>
-<p>Let <span class="arithmatex">\(\pi(x)\)</span> be the number of prime number less than <span class="arithmatex">\(x\)</span>. By prime number theory,
-$$
+<p>Let <span class="arithmatex">\(\pi(x)\)</span> be the number of prime number less than <span class="arithmatex">\(x\)</span>. By prime number theory,</p>
+<div class="arithmatex">\[
 \pi(x)\sim\frac{x}{\ln x}.
-$$
-<img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 6. For all <span class="arithmatex">\(m&gt;1\)</span>, we have <span class="arithmatex">\(\pi(2^m)\ge\frac{2^m}{m}\)</span>.</p>
+\]</div>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 6. For all <span class="arithmatex">\(m&gt;1\)</span>, we have <span class="arithmatex">\(\pi(2^m)\ge\frac{2^m}{m}\)</span>.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" /><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 35. <span class="arithmatex">\(ACIT\in coRP\)</span>.</p>
 <blockquote>
 <p><del>Det kan jeg ikke forstår</del></p>
 </blockquote>
 <h1 id="an-alternative-characterization-of-time-bounded-classes">An Alternative Characterization of Time Bounded Classes</h1>
 <p>We have alternative characterization of <span class="arithmatex">\(BPP\)</span>. Also there are similar alternatives of <span class="arithmatex">\(ZPP\)</span> and <span class="arithmatex">\(RP\)</span>.</p>
-<p>Proposition 4. Let <span class="arithmatex">\(L\)</span> be a language. Then <span class="arithmatex">\(L\in BPP\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in P\)</span> s.t. <span class="arithmatex">\(\forall x\)</span>:
-$$
-x\in L\Rightarrow\Pr_{y\in{0,1}^{q(|x|)}}[\langle x,y\rangle\in L']\ge\frac{3}{4}\
-x\not\in L\Rightarrow\Pr_{y\in{0,1}^{q(|x|)}}[\langle x,y\rangle\not\in L']\ge\frac{3}{4}
-$$
-We say that the randomized computation uses <span class="arithmatex">\(q(|x|)\)</span> random bits.</p>
+<p>Proposition 4. Let <span class="arithmatex">\(L\)</span> be a language. Then <span class="arithmatex">\(L\in BPP\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in P\)</span> s.t. <span class="arithmatex">\(\forall x\)</span>:</p>
+<div class="arithmatex">\[
+x\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge\frac{3}{4}\\
+\]</div>
+<div class="arithmatex">\[
+x\not\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\not\in L']\ge\frac{3}{4}
+\]</div>
+<p>We say that the randomized computation uses <span class="arithmatex">\(q(|x|)\)</span> random bits.</p>
 <p>Using success amplification a randomized algorithm using <span class="arithmatex">\(R\)</span> random bits and having error probability less than <span class="arithmatex">\(1/4\)</span> can be transformed to a randomized algorithm using <span class="arithmatex">\(kR\)</span> random bits and having error probability less than <span class="arithmatex">\(\exp(-k/8)\)</span> by running <span class="arithmatex">\(k\)</span> trials and taking the majority vote.</p>
 <h1 id="randomized-computation-and-the-polynomial-time-hierarchy">Randomized Computation and the Polynomial-time Hierarchy</h1>
 <p>By definition, <span class="arithmatex">\(RP\subseteq NP\)</span>.</p>
@@ -9671,29 +9685,33 @@ We say that the randomized computation uses <span class="arithmatex">\(q(|x|)\)<
 <blockquote>
 <p>Prove that <span class="arithmatex">\(BPP\subseteq\Sigma_2^P\)</span>. From this also we get <span class="arithmatex">\(BPP\subseteq\Pi_2^P\)</span>.</p>
 <ul>
-<li>
-<p>Let <span class="arithmatex">\(L\in BPP\)</span>. We have a polynomial <span class="arithmatex">\(q(n)\)</span> and a language <span class="arithmatex">\(L'\in P\)</span> s.t. for all <span class="arithmatex">\(x\)</span> we have
-  $$
+<li>Let <span class="arithmatex">\(L\in BPP\)</span>. We have a polynomial <span class="arithmatex">\(q(n)\)</span> and a language <span class="arithmatex">\(L'\in P\)</span> s.t. for all <span class="arithmatex">\(x\)</span> we have</li>
+</ul>
+<p>$$
   x\in L\Rightarrow\Pr_{y\in{0,1}^{q(|x|)}}[\langle x,y\rangle\in L']\ge1-\frac{1}{2q(|x|)},\
+  $$</p>
+<p>$$
   x\not\in L\Rightarrow\Pr_{y\in{0,1}^{q(|x|)}}[\langle x,y\rangle\in L']&lt;1-\frac{1}{2q(|x|)}.
   $$</p>
-</li>
-<li>
-<p>Let <span class="arithmatex">\(m=q(|x|)\)</span>. For given <span class="arithmatex">\(x\)</span>, we define <span class="arithmatex">\(S_x=\{y\in\{0,1\}^m|\langle x,y\rangle\in L'\}\)</span>. Thus, for all <span class="arithmatex">\(x\)</span> we have
-  $$
+<ul>
+<li>Let <span class="arithmatex">\(m=q(|x|)\)</span>. For given <span class="arithmatex">\(x\)</span>, we define <span class="arithmatex">\(S_x=\{y\in\{0,1\}^m|\langle x,y\rangle\in L'\}\)</span>. Thus, for all <span class="arithmatex">\(x\)</span> we have</li>
+</ul>
+<p>$$
   x\in L\Rightarrow|S_x|\ge(1-\frac{1}{2m})2^m,\
+  $$</p>
+<p>$$
   x\not\in L\Rightarrow|S_x|&lt;\frac{1}{2m}2^m.
-  $$
-  Claim that <span class="arithmatex">\(x\in L\)</span> iff
-  $$
+  $$</p>
+<p>Claim that <span class="arithmatex">\(x\in L\)</span> iff</p>
+<p>$$
   \exists u_1,\cdots, u_m\in{0,1}^m\forall r\in{0,1}^m:\
+  $$</p>
+<p>$$
   \bigvee_{i=1}^m\langle x,u_i\oplus r\rangle\in L',
-  $$
-  where <span class="arithmatex">\(u_i\oplus r\)</span> denote the coordinate-wise exclusive-or. <del>什么是坐标或运算？</del></p>
-</li>
-<li>
-<p>This shows that <span class="arithmatex">\(L\in\Sigma_2^P\)</span> since this can be done in polynomial time.</p>
-</li>
+  $$</p>
+<p>where <span class="arithmatex">\(u_i\oplus r\)</span> denote the coordinate-wise exclusive-or. <del>什么是坐标或运算？</del></p>
+<ul>
+<li>This shows that <span class="arithmatex">\(L\in\Sigma_2^P\)</span> since this can be done in polynomial time.</li>
 </ul>
 <p><del>It remains to prove the predicate is equivalent to</del> <span class="arithmatex">\(\bigcup_{i=1}^mu_i\oplus S_x=\{0,1\}^m\)</span>.</p>
 </blockquote>

@@ -6390,7 +6390,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6413,7 +6413,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6436,7 +6436,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9531,11 +9531,11 @@
 <p>Thus we define <span class="arithmatex">\(NSPACE^A(S(n))\)</span> as the class of languages computed by a <span class="arithmatex">\(O(S(n))\)</span> space-bounded non-deterministic oracle Turing machine <strong>with deterministic oracle access</strong> to oracle <span class="arithmatex">\(A\)</span>.</p>
 <p>The definition can be extended to other complexity classes.</p>
 <p><span class="arithmatex">\(P^A\)</span> and <span class="arithmatex">\(NP^A\)</span> for any oracle language <span class="arithmatex">\(A\)</span>.</p>
-<p>The oracle may be chosen from some class of languages. Let <span class="arithmatex">\(\mathcal C\)</span> be a class of languages.
-$$
+<p>The oracle may be chosen from some class of languages. Let <span class="arithmatex">\(\mathcal C\)</span> be a class of languages.</p>
+<div class="arithmatex">\[
 DTIME^\mathcal C(T(n))=\bigcup_{A\in\mathcal C}DTIME^A(T(n))
-$$
-Similarly we have <span class="arithmatex">\(DSPACE^\mathcal C(T(n))\)</span>, <span class="arithmatex">\(NTIME^\mathcal C(T(n))\)</span> and <span class="arithmatex">\(NSPACE^\mathcal C(T(n))\)</span>.</p>
+\]</div>
+<p>Similarly we have <span class="arithmatex">\(DSPACE^\mathcal C(T(n))\)</span>, <span class="arithmatex">\(NTIME^\mathcal C(T(n))\)</span> and <span class="arithmatex">\(NSPACE^\mathcal C(T(n))\)</span>.</p>
 <p>This again extends to all other complexity classes such as <span class="arithmatex">\(P^{NP}\)</span>.</p>
 <h2 id="turing-reductions">Turing Reductions</h2>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 17 (Turing reductions). Let <span class="arithmatex">\(L_1\)</span> and <span class="arithmatex">\(L_2\)</span> be languages. We say that <span class="arithmatex">\(L_1\)</span> log-space Turing machine reduces to <span class="arithmatex">\(L_2\)</span> (<span class="arithmatex">\(L_1\le_T^{\log}L_2\)</span>), if <span class="arithmatex">\(L_1\in L^{L_2}\)</span>. Similarly we say <span class="arithmatex">\(L_1\)</span> polynomial time Turing reduces to <span class="arithmatex">\(L_2\)</span> (<span class="arithmatex">\(L_1\le_T^PL_2\)</span>), if <span class="arithmatex">\(L_1\in P^{L_2}\)</span>.</p>
@@ -9547,43 +9547,43 @@ Similarly we have <span class="arithmatex">\(DSPACE^\mathcal C(T(n))\)</span>, <
 </ul>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 3. The class <span class="arithmatex">\(L,NL,P,PSPACE,EXP\)</span> are all closed under log-space Turing reductions. The class <span class="arithmatex">\(P,PSPACE,EXP\)</span> are all closed under polynomial-time Turing machine.</p>
 <h1 id="the-polynomial-time-hierarchy-via-oracles-and-quantifiers">The Polynomial-time Hierarchy via Oracles and Quantifiers</h1>
-<p>For a class of language <span class="arithmatex">\(\mathcal C\)</span>, denote <span class="arithmatex">\(co\mathcal C\)</span> the class of complements of languages of <span class="arithmatex">\(\mathcal C\)</span>.
-$$
-co\mathcal C={\overline L|L\in\mathcal C}
-$$
-<img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 18 (polynomial-time hierarchy). Let <span class="arithmatex">\(\Delta_0^P=\Sigma_0^P=\Pi_0^P=P\)</span>. For <span class="arithmatex">\(i\ge0\)</span>, define further <span class="arithmatex">\(\Delta_{i+1}^P=P^{\Sigma_i^P}\)</span>, <span class="arithmatex">\(\Sigma_{i+1}^P=NP^{\Sigma_i^P}\)</span> and <span class="arithmatex">\(\Pi_{i+1}^P=coNP^{\Sigma_i^P}\)</span>. Finally, let <strong>Polynomial Hierarchy</strong> <span class="arithmatex">\(PH=\bigcup_{i\ge0}\Sigma_i^P\)</span>.</p>
+<p>For a class of language <span class="arithmatex">\(\mathcal C\)</span>, denote <span class="arithmatex">\(co\mathcal C\)</span> the class of complements of languages of <span class="arithmatex">\(\mathcal C\)</span>.</p>
+<div class="arithmatex">\[
+co\mathcal C=\{\overline L|L\in\mathcal C\}
+\]</div>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 18 (polynomial-time hierarchy). Let <span class="arithmatex">\(\Delta_0^P=\Sigma_0^P=\Pi_0^P=P\)</span>. For <span class="arithmatex">\(i\ge0\)</span>, define further <span class="arithmatex">\(\Delta_{i+1}^P=P^{\Sigma_i^P}\)</span>, <span class="arithmatex">\(\Sigma_{i+1}^P=NP^{\Sigma_i^P}\)</span> and <span class="arithmatex">\(\Pi_{i+1}^P=coNP^{\Sigma_i^P}\)</span>. Finally, let <strong>Polynomial Hierarchy</strong> <span class="arithmatex">\(PH=\bigcup_{i\ge0}\Sigma_i^P\)</span>.</p>
 <p>The classes <span class="arithmatex">\(\Delta_i^P,\Sigma_i^P,\Pi_i^P\)</span> are said to make up level <span class="arithmatex">\(i\)</span> of the polynomial-time hierarchy, and <span class="arithmatex">\(PH\)</span> denotes the entire polynomial-time hierarchy.</p>
 <p>Note that <span class="arithmatex">\(\Delta_1^P=P^P=P\)</span>, <span class="arithmatex">\(\Sigma_1^P=NP^P=NP\)</span>, <span class="arithmatex">\(\Pi_1^P=coNP^P=coNP\)</span>.</p>
 <p>On second level, we have <span class="arithmatex">\(P^{NP}, NP^{NP}, coNP^{NP}\)</span>, continuing ad infimum.</p>
-<p>Straightforward:
-$$
-\Delta_i<sup>P\subseteq\Sigma_i</sup>P\cap\Pi_i<sup>P\subseteq\Sigma_i</sup>P\cup\Pi_i<sup>P\subseteq\Delta_{i+1}</sup>P
-$$
-<img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 27. <span class="arithmatex">\(PH\subseteq PSPACE\)</span>.</p>
+<p>Straightforward:</p>
+<div class="arithmatex">\[
+\Delta_i^P\subseteq\Sigma_i^P\cap\Pi_i^P\subseteq\Sigma_i^P\cup\Pi_i^P\subseteq\Delta_{i+1}^P
+\]</div>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 27. <span class="arithmatex">\(PH\subseteq PSPACE\)</span>.</p>
 <blockquote>
 <p>Using polynomial space simply simulate the non-deterministic Turing machine same way as in proof of Theorem 10.</p>
 </blockquote>
 <p>Then prove an equivalent definition of the classes <span class="arithmatex">\(\Sigma_i^P\)</span> and <span class="arithmatex">\(\Pi_i^P\)</span> in terms of <strong>quantifiers</strong>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 28. Let <span class="arithmatex">\(L\)</span> be any language and let <span class="arithmatex">\(i\ge1\)</span>. Then <span class="arithmatex">\(L\in\Sigma_i^P\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in\Pi_{i-1}^P\)</span>  s.t.
-$$
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 28. Let <span class="arithmatex">\(L\)</span> be any language and let <span class="arithmatex">\(i\ge1\)</span>. Then <span class="arithmatex">\(L\in\Sigma_i^P\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in\Pi_{i-1}^P\)</span>  s.t.</p>
+<div class="arithmatex">\[
 \forall x:[x\in L\Leftrightarrow\exists y:|y|\le q(|x|)\land\langle x,y\rangle\in L'].
-$$</p>
+\]</div>
 <blockquote>
 <p>看不懂了。</p>
 </blockquote>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 3. Let <span class="arithmatex">\(L\)</span> be any language and let <span class="arithmatex">\(i\ge1\)</span>. Then <span class="arithmatex">\(L\in\Pi_i^P\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in\Sigma_{i-1}^P\)</span>  s.t.
-$$
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 3. Let <span class="arithmatex">\(L\)</span> be any language and let <span class="arithmatex">\(i\ge1\)</span>. Then <span class="arithmatex">\(L\in\Pi_i^P\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in\Sigma_{i-1}^P\)</span>  s.t.</p>
+<div class="arithmatex">\[
 \forall x:[x\in L\Leftrightarrow\forall y:|y|\le q(|x|)\Rightarrow\langle x,y\rangle\in L'].
-$$
-<img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 4. Let <span class="arithmatex">\(L\)</span> be any language and let <span class="arithmatex">\(i\ge1\)</span>. Then <span class="arithmatex">\(L\in\Sigma_i^P\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in P\)</span>  s.t.
-$$
-\forall x:[x\in L\Leftrightarrow\exists<sup>qy_1\forall</sup>qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
-$$
-where <span class="arithmatex">\(Q_i\)</span> is <span class="arithmatex">\(\exists\)</span> if <span class="arithmatex">\(i\)</span> is odd, and <span class="arithmatex">\(\forall\)</span> if <span class="arithmatex">\(i\)</span> is even. Likewise, <span class="arithmatex">\(L\in\Pi_i^P\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in P\)</span> s.t.
-$$
-\forall x:[x\in L\Leftrightarrow\forall<sup>qy_1\exists</sup>qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
-$$
-where <span class="arithmatex">\(Q_i\)</span> is <span class="arithmatex">\(\exists\)</span> if <span class="arithmatex">\(i\)</span> is even, and <span class="arithmatex">\(\forall\)</span> if <span class="arithmatex">\(i\)</span> is odd.</p>
+\]</div>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 4. Let <span class="arithmatex">\(L\)</span> be any language and let <span class="arithmatex">\(i\ge1\)</span>. Then <span class="arithmatex">\(L\in\Sigma_i^P\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in P\)</span>  s.t.</p>
+<div class="arithmatex">\[
+\forall x:[x\in L\Leftrightarrow\exists^qy_1\forall^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
+\]</div>
+<p>where <span class="arithmatex">\(Q_i\)</span> is <span class="arithmatex">\(\exists\)</span> if <span class="arithmatex">\(i\)</span> is odd, and <span class="arithmatex">\(\forall\)</span> if <span class="arithmatex">\(i\)</span> is even. Likewise, <span class="arithmatex">\(L\in\Pi_i^P\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in P\)</span> s.t.</p>
+<div class="arithmatex">\[
+\forall x:[x\in L\Leftrightarrow\forall^qy_1\exists^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
+\]</div>
+<p>where <span class="arithmatex">\(Q_i\)</span> is <span class="arithmatex">\(\exists\)</span> if <span class="arithmatex">\(i\)</span> is even, and <span class="arithmatex">\(\forall\)</span> if <span class="arithmatex">\(i\)</span> is odd.</p>
 <p>Generalize whether <span class="arithmatex">\(P=NP,NP=coNP\)</span> to question whether <span class="arithmatex">\(\Delta_i^P=\Sigma_i^P,\Sigma_i^P=\Pi_i^P\)</span> for <span class="arithmatex">\(i\gt1\)</span>.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 29. If <span class="arithmatex">\(\Sigma_i^P=\Pi_i^P\)</span> for some <span class="arithmatex">\(i\ge1\)</span> then <span class="arithmatex">\(PH=\Sigma_i^P\)</span>.</p>
 <blockquote>

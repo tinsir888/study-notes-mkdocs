@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9480,8 +9480,8 @@
 <p>返回这些最大流的最小值 return the minimum s-t cut in all these executions</p>
 </li>
 </ol>
-<p>时间复杂度为 <span class="arithmatex">\(O(n^2|E|^2)\)</span> It's the algorithm we wanna beat today.
-   $$
+<p>时间复杂度为 <span class="arithmatex">\(O(n^2|E|^2)\)</span> It's the algorithm we wanna beat today.</p>
+<p>$$
    O(n^4)\le O(n<sup>2|E|</sup>2)\le O(n^6)
    $$</p>
 <h1 id="kargers-algorithm">Karger's Algorithm</h1>
@@ -9499,10 +9499,10 @@
 <h1 id="analysis">Analysis</h1>
 <p>Some facts help to analyze the algorithm.</p>
 <h2 id="fact-1">Fact 1</h2>
-<p>If <span class="arithmatex">\(degree(u)\)</span> denotes the number of edges touching node <span class="arithmatex">\(u\)</span>, then
-$$
+<p>If <span class="arithmatex">\(degree(u)\)</span> denotes the number of edges touching node <span class="arithmatex">\(u\)</span>, then</p>
+<div class="arithmatex">\[
 \sum_{u\in V}degree(u)=2|E|
-$$</p>
+\]</div>
 <blockquote>
 <p>Obviously, each edge contributes twice w.r.t. 2 nodes it connects.</p>
 </blockquote>
@@ -9510,19 +9510,21 @@ $$</p>
 <p>If there are <span class="arithmatex">\(n\)</span> nodes, then the average degree of a node is <span class="arithmatex">\(2|E|\over n\)</span>.</p>
 <blockquote>
 <p>A very straightforward conclusion.</p>
-<p>When we randomly pick a node <span class="arithmatex">\(X\)</span> at random:
-$$
+<p>When we randomly pick a node <span class="arithmatex">\(X\)</span> at random:</p>
+<div class="arithmatex">\[
 \mathbb E[degree(X)]=\sum_{u\in V}\Pr(X=u)degree(u)={1\over n}\sum_{u\in V}degree(u)=\frac{2|E|}{n}
-$$</p>
+\]</div>
 </blockquote>
 <h2 id="fact-3">Fact 3</h2>
 <p>The size of the minimum cut is at most <span class="arithmatex">\(2|E|\over n\)</span>.</p>
 <blockquote>
-<p>Consider the partition of <span class="arithmatex">\(V\)</span> into two pieces, one containing a single node <span class="arithmatex">\(u\)</span>, and the other containing the remaining <span class="arithmatex">\(n-1\)</span> nodes. The size of this cut is <span class="arithmatex">\(degree(u)\)</span>. Since this is a valid cut, the minimum cut cannot be bigger than this. i.e.,
-$$
-\forall u\in V, mincut\le degree(u)\
+<p>Consider the partition of <span class="arithmatex">\(V\)</span> into two pieces, one containing a single node <span class="arithmatex">\(u\)</span>, and the other containing the remaining <span class="arithmatex">\(n-1\)</span> nodes. The size of this cut is <span class="arithmatex">\(degree(u)\)</span>. Since this is a valid cut, the minimum cut cannot be bigger than this. i.e.,</p>
+<div class="arithmatex">\[
+\forall u\in V, mincut\le degree(u)\\
+\]</div>
+<div class="arithmatex">\[
 \Rightarrow mincut\le\min_{u\in V}(degree(u))\le\text{avg}_{u\in V}(degree(u))=\frac{2|E|}{n}.
-$$</p>
+\]</div>
 </blockquote>
 <h2 id="fact-4">Fact 4</h2>
 <p>If an edge is picked at random, the probability that it lies across the minimum cut is at most <span class="arithmatex">\(2\over n\)</span>.</p>
@@ -9530,15 +9532,23 @@ $$</p>
 <p>This is because there are <span class="arithmatex">\(|E|\)</span> edges to choose from, and at most <span class="arithmatex">\(2|E|\over n\)</span> of them are in the minimum cut.</p>
 </blockquote>
 <p>By facts above, we can easily analyze Karger's algorithm.</p>
-<p>Each time an edge is collapsed, the number of nodes decreases by <span class="arithmatex">\(1\)</span>. Therefore,
-$$
-\Pr(\text{final cut is the minimum cut})=\Pr(\text{first edge not in mincut})\times\
-\Pr(\text{second edge not in mincut})\times\cdots\
-\ge(1-\frac{2}{n})\times(1-\frac{2}{n-1})\times\cdots\times(1-\frac{2}{4})\times(1-\frac{2}{3})\
-={n-2\over n}\cdot{n-3\over n-1}\cdot{n-4\over n-2}\cdots{2\over4}\cdot{1\over3}\
-={2\over n(n-1)}=\left(\begin{array}{c}n\2\end{array}\right)^{-1}
-$$
-Karger's algorithm succeeds with probability <span class="arithmatex">\(p\ge {2\over n^2}\)</span>. Therefore, it should be run <span class="arithmatex">\(\Omega(n^2)\)</span> times, after which the smallest cut found should be chosen.</p>
+<p>Each time an edge is collapsed, the number of nodes decreases by <span class="arithmatex">\(1\)</span>. Therefore,</p>
+<div class="arithmatex">\[
+\Pr(\text{final cut is the minimum cut})=\Pr(\text{first edge not in mincut})\times\\
+\]</div>
+<div class="arithmatex">\[
+\Pr(\text{second edge not in mincut})\times\cdots\\
+\]</div>
+<div class="arithmatex">\[
+\ge(1-\frac{2}{n})\times(1-\frac{2}{n-1})\times\cdots\times(1-\frac{2}{4})\times(1-\frac{2}{3})\\
+\]</div>
+<div class="arithmatex">\[
+={n-2\over n}\cdot{n-3\over n-1}\cdot{n-4\over n-2}\cdots{2\over4}\cdot{1\over3}\\
+\]</div>
+<div class="arithmatex">\[
+={2\over n(n-1)}=\left(\begin{array}{c}n\\2\end{array}\right)^{-1}
+\]</div>
+<p>Karger's algorithm succeeds with probability <span class="arithmatex">\(p\ge {2\over n^2}\)</span>. Therefore, it should be run <span class="arithmatex">\(\Omega(n^2)\)</span> times, after which the smallest cut found should be chosen.</p>
 <p>Another way to implement Karger's algorithm:</p>
 <ul>
 <li>Assign each edge a random weight</li>
@@ -9551,11 +9561,11 @@ Karger's algorithm succeeds with probability <span class="arithmatex">\(p\ge {2\
 </blockquote>
 <h2 id="run-multiple-times-to-bound-error-probability">Run Multiple Times to Bound Error Probability</h2>
 <p>In order to boost the probability of success, we simply run the algorithm <span class="arithmatex">\(\ell\left(\begin{array}{c}n\\2\end{array}\right)\)</span> times.</p>
-<p>The probability that at least one run succeeds is at least
-$$
-1-\left(1-(\begin{array}{c}n\2\end{array})<sup>{-1}\right)</sup>{\ell(\begin{array}{c}n\2\end{array})}\ge 1-e^{-\ell}.
-$$
-Setting <span class="arithmatex">\(\ell=c\ln n\)</span>, we have error probability <span class="arithmatex">\(\le{1\over n^c}\)</span>.</p>
+<p>The probability that at least one run succeeds is at least</p>
+<div class="arithmatex">\[
+1-\left(1-(\begin{array}{c}n\\2\end{array})^{-1}\right)^{\ell(\begin{array}{c}n\\2\end{array})}\ge 1-e^{-\ell}.
+\]</div>
+<p>Setting <span class="arithmatex">\(\ell=c\ln n\)</span>, we have error probability <span class="arithmatex">\(\le{1\over n^c}\)</span>.</p>
 <p>It's easy to implement Karger's algorithm so that one run takes <span class="arithmatex">\(O(n^2)\)</span> time. Therefore, by running the algorithm <span class="arithmatex">\(O(n^2\log n)\)</span> times, we have an <span class="arithmatex">\(O(n^4\log n)\)</span> time randomized algorithm with error probability <span class="arithmatex">\(1\over\text{poly}(n)\)</span>. <mark>Still better than EK algorithm for not very sparse graphs.</mark></p>
 <h2 id="the-number-of-mincut">The Number of <span class="arithmatex">\(mincut\)</span></h2>
 <p>Theorem: Any graph has at most <span class="arithmatex">\(n(n-1)\over2\)</span> distinct global cuts of <span class="arithmatex">\(mincut\)</span>.</p>
@@ -9575,14 +9585,14 @@ Setting <span class="arithmatex">\(\ell=c\ln n\)</span>, we have error probabili
 <li>recurse on the resulting graph.</li>
 </ol>
 <p>Return the minimum of the cuts found in the two recursive calls.</p>
-<p>The choice of <span class="arithmatex">\(6\)</span> instead of other constant will only affect the running time by a constant factor.
-$$
-T(n)=2T(n/\sqrt2)+O(n<sup>2)=O(n</sup>2\log n).
-$$
-Since we succeed down to <span class="arithmatex">\(n/\sqrt2\)</span> with probability <span class="arithmatex">\(\ge{1\over2}\)</span>, we have the following recurrence for the probability of success, denote by <span class="arithmatex">\(P(n)\)</span>:
-$$
+<p>The choice of <span class="arithmatex">\(6\)</span> instead of other constant will only affect the running time by a constant factor.</p>
+<div class="arithmatex">\[
+T(n)=2T(n/\sqrt2)+O(n^2)=O(n^2\log n).
+\]</div>
+<p>Since we succeed down to <span class="arithmatex">\(n/\sqrt2\)</span> with probability <span class="arithmatex">\(\ge{1\over2}\)</span>, we have the following recurrence for the probability of success, denote by <span class="arithmatex">\(P(n)\)</span>:</p>
+<div class="arithmatex">\[
 P(n)\ge1-\left(1-\frac{1}{2}P(n/\sqrt2+1)\right)^2
-$$</p>
+\]</div>
 <blockquote>
 <p>Inner term is probability that the sub-instance preserved <span class="arithmatex">\(mincut\)</span> AND recursive call found this optimum.</p>
 <p>probability of success = 1 - probability of failure.</p>
@@ -9596,11 +9606,11 @@ $$</p>
 <p>This inequality becomes <span class="arithmatex">\(Q(h)\ge Q(h-1)-{Q(h-1)^2\over4}\)</span></p>
 <p>It suffices to show inductively that <span class="arithmatex">\(Q(h)\ge{1\over h+1}\)</span></p>
 <p>Observe that the RHS of the inequality is increasing in <span class="arithmatex">\(Q(h-1)\)</span>.</p>
-<p>By induction hypothesis, <span class="arithmatex">\(Q(h-1)\ge{1\over h}\)</span>, the inequality implies that
-$$
+<p>By induction hypothesis, <span class="arithmatex">\(Q(h-1)\ge{1\over h}\)</span>, the inequality implies that</p>
+<div class="arithmatex">\[
 Q(h)\ge{1\over h}-{(1/h)^2\over4}\ge{1\over h}-{1\over h(h+1)}={1\over h+1}
-$$
-as desired.</p>
+\]</div>
+<p>as desired.</p>
 </blockquote>
 <p>Hence, similar to the earlier argument for the original algorithm, with <span class="arithmatex">\(O(\log^2n)\)</span> runs of the algorithm, the probability of success is <span class="arithmatex">\(1-{1\over\text{poly}(n)}\)</span>.</p>
 <p>There fore in <span class="arithmatex">\(O(n^2\log^3n)\)</span> total time, we can find the minimum cut with probability <span class="arithmatex">\(1-{1\over\text{poly}(n)}\)</span>.</p>

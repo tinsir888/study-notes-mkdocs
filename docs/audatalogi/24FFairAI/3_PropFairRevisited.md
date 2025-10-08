@@ -272,7 +272,7 @@ $|err_N(h_{X,y})-err_\mathcal N(h_{X,y})|$ is bounded for all $X,y$.
 
 :thinking:Proposition 15. Let $\mathcal H$ be a family of binary classifier over a set of points $\mathcal N$. If $N\subseteq N$ is a uniformly random sample with $|N|\ge\Omega\left(\frac{dim^{VC}(\mathcal H)+\ln(1/\delta)}{\epsilon^2}\right)$, then with probability at least $1-\delta$, $|err_N(h)-err_\mathcal N(h)|\le\epsilon$ for all $h\in\mathcal H$.
 
-:dart:Theorem 16. Fix $\epsilon,\delta\gt0,\rho\ge1,k,t\in\N$, and metric $(\mathcal X,d)$ where $\mathcal X=\R^t$ and $d=L^2$. Let $\mathcal N$ be a set of points and $\mathcal M=\R^t$ be the set of candidate centers. Let $N\subseteq\mathcal N$ be sampled uniformly at random with $|N|\ge\Omega\left(\frac{k^2\cdot(tk\ln k+\ln(1/\delta))}{\epsilon^2}\right)$. Then with probability at least $1-\delta$, every $k$-clustering $X\in\mathcal M^k$ that is $\rho$-PROP w.r.t. $N$ is $\rho$-PROP to $(1+\epsilon)$-deviation w.r.t. $\mathcal N$.
+:dart:Theorem 16. Fix $\epsilon,\delta\gt0,\rho\ge1,k,t\in\mathbb N$, and metric $(\mathcal X,d)$ where $\mathcal X= \mathbb R^t$ and $d=L^2$. Let $\mathcal N$ be a set of points and $\mathcal M= \mathbb R^t$ be the set of candidate centers. Let $N\subseteq\mathcal N$ be sampled uniformly at random with $|N|\ge\Omega\left(\frac{k^2\cdot(tk\ln k+\ln(1/\delta))}{\epsilon^2}\right)$. Then with probability at least $1-\delta$, every $k$-clustering $X\in\mathcal M^k$ that is $\rho$-PROP w.r.t. $N$ is $\rho$-PROP to $(1+\epsilon)$-deviation w.r.t. $\mathcal N$.
 
 # Open Questions
 
@@ -286,7 +286,7 @@ Can we bridge the lower $(1+\sqrt2)$ and upper bounds on the approximation ratio
 
 Conjecture for $L^2$, the lower bound $2/\sqrt3$ may be achievable.
 
-Maybe by Jung's theorem, for $L^2$ distance in $\R^2$, any set of points with diameter at most $1$ is contained in a ball of radius at most $1/\sqrt3$. This could be useful in closing the gap for $L^2$.
+Maybe by Jung's theorem, for $L^2$ distance in $ \mathbb R^2$, any set of points with diameter at most $1$ is contained in a ball of radius at most $1/\sqrt3$. This could be useful in closing the gap for $L^2$.
 
 ## On Graphs
 

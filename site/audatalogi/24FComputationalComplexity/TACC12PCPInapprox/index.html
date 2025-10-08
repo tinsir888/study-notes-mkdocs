@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6418,7 +6418,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6441,7 +6441,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9540,8 +9540,8 @@ Assume that <span class="arithmatex">\(F(x)\neq\emptyset\)</span> for any <span 
 <p>A feasible solution <span class="arithmatex">\(y\in F(x)\)</span> s.t. <span class="arithmatex">\(val_x(y)=OPT(x)\)</span> is called an <strong>optimal solution</strong> for <span class="arithmatex">\(x\)</span>.</p>
 <p><strong>"Gap-version" reduction</strong>: The corresponding decision problem is that of asking whether <span class="arithmatex">\(OPT(x)\ge K\)</span> in case of a maximization problem or whether <span class="arithmatex">\(OPT(x)\le K\)</span> in case of a minimization problem.</p>
 <p>When this is <span class="arithmatex">\(NP\)</span>-hard, it follows that there is no polynomial-time algorithm that on input <span class="arithmatex">\(x\)</span> computes an optimal solution for <span class="arithmatex">\(x\)</span> unless <span class="arithmatex">\(P=NP\)</span>.</p>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 54. Let <span class="arithmatex">\(\Pi\)</span> be an <span class="arithmatex">\(NP\)</span>-optimization problem and let <span class="arithmatex">\(\rho:\N\to\R_+\)</span> be a function. A <span class="arithmatex">\(\rho\)</span>-approximation algorithm <span class="arithmatex">\(A\)</span> is an algorithm that on input <span class="arithmatex">\(x\)</span> gives as output <span class="arithmatex">\(y\in F(x)\)</span> s.t. <span class="arithmatex">\(val_x(y)\ge\rho(|x|)OPT(x)\)</span> in case of a maximization problem <span class="arithmatex">\(\Pi\)</span> or such that <span class="arithmatex">\(val_x(y)\le\rho(x)OPT(x)\)</span> in case of a minimization problem <span class="arithmatex">\(\Pi\)</span>.</p>
-<p>Let <span class="arithmatex">\(\Pi\)</span> be an <span class="arithmatex">\(NP\)</span>-maximization problem and let <span class="arithmatex">\(a,b:\N\to\R_+\)</span> be functions s.t. <span class="arithmatex">\(0\lt a(n)\lt b(n)\)</span> for all <span class="arithmatex">\(n\)</span>. Then define the following promise decision problem.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 54. Let <span class="arithmatex">\(\Pi\)</span> be an <span class="arithmatex">\(NP\)</span>-optimization problem and let <span class="arithmatex">\(\rho:\mathbb N\to\R_+\)</span> be a function. A <span class="arithmatex">\(\rho\)</span>-approximation algorithm <span class="arithmatex">\(A\)</span> is an algorithm that on input <span class="arithmatex">\(x\)</span> gives as output <span class="arithmatex">\(y\in F(x)\)</span> s.t. <span class="arithmatex">\(val_x(y)\ge\rho(|x|)OPT(x)\)</span> in case of a maximization problem <span class="arithmatex">\(\Pi\)</span> or such that <span class="arithmatex">\(val_x(y)\le\rho(x)OPT(x)\)</span> in case of a minimization problem <span class="arithmatex">\(\Pi\)</span>.</p>
+<p>Let <span class="arithmatex">\(\Pi\)</span> be an <span class="arithmatex">\(NP\)</span>-maximization problem and let <span class="arithmatex">\(a,b:\mathbb N\to\R_+\)</span> be functions s.t. <span class="arithmatex">\(0\lt a(n)\lt b(n)\)</span> for all <span class="arithmatex">\(n\)</span>. Then define the following promise decision problem.</p>
 <p><span class="arithmatex">\((a,b)-GAP-\Pi\)</span>:</p>
 <ul>
 <li>Input: <span class="arithmatex">\(x\)</span> s.t. either <span class="arithmatex">\(OPT(x)\le a(|x|)\)</span> or <span class="arithmatex">\(OPT(x)\ge b(|x|)\)</span>.</li>
@@ -9575,11 +9575,11 @@ Assume that <span class="arithmatex">\(F(x)\neq\emptyset\)</span> for any <span 
 <li>Instance: A graph <span class="arithmatex">\(G\)</span>.</li>
 <li>Output: Clique in <span class="arithmatex">\(G\)</span> of maximum size.</li>
 </ul>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 20. Let <span class="arithmatex">\(V\)</span> be a <span class="arithmatex">\(PCP\)</span> verifier using <span class="arithmatex">\(r(n)\)</span> random bits and querying <span class="arithmatex">\(q(n)\)</span> symbols from a proof <span class="arithmatex">\(\pi\in\{0,1\}^*\)</span>. For an input <span class="arithmatex">\(x\)</span> we have
-$$
-OPT(G(x))=2<sup>{r(n)}\max_\pi\Pr[V</sup>\pi(x)=yes].
-$$
-<img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 13. Let <span class="arithmatex">\(L\in PCP_{c,s}(r(n),q(n))\)</span> and let <span class="arithmatex">\(V\)</span> be a corresponding PCP verifier. Then using time <span class="arithmatex">\(2^{O(r(n)+q(n))}n^{O(1)}\)</span> on input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span> a graph <span class="arithmatex">\(G(x)\)</span> with <span class="arithmatex">\(2^{r(n)+q(n)}\)</span> vertices can be computed s.t.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 20. Let <span class="arithmatex">\(V\)</span> be a <span class="arithmatex">\(PCP\)</span> verifier using <span class="arithmatex">\(r(n)\)</span> random bits and querying <span class="arithmatex">\(q(n)\)</span> symbols from a proof <span class="arithmatex">\(\pi\in\{0,1\}^*\)</span>. For an input <span class="arithmatex">\(x\)</span> we have</p>
+<div class="arithmatex">\[
+OPT(G(x))=2^{r(n)}\max_\pi\Pr[V^\pi(x)=yes].
+\]</div>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 13. Let <span class="arithmatex">\(L\in PCP_{c,s}(r(n),q(n))\)</span> and let <span class="arithmatex">\(V\)</span> be a corresponding PCP verifier. Then using time <span class="arithmatex">\(2^{O(r(n)+q(n))}n^{O(1)}\)</span> on input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span> a graph <span class="arithmatex">\(G(x)\)</span> with <span class="arithmatex">\(2^{r(n)+q(n)}\)</span> vertices can be computed s.t.</p>
 <ul>
 <li>If <span class="arithmatex">\(x\in L\)</span> then <span class="arithmatex">\(OPT(G(x))\ge c2^{r(n)}\)</span>.</li>
 <li>If <span class="arithmatex">\(x\not\in L\)</span> then <span class="arithmatex">\(OPT(G(x))\le s2^{r(n)}\)</span>.</li>

@@ -20,21 +20,27 @@ Lecture notes by Elias Koutsoupias from Oxford
 ## Definitions
 
 A *discrete-time finite Markov chain* is a sequence of random variables $X=X_0,X_1,X_2,\cdots$ taking values in a finite set of states $\{1,2,\cdots,n\}$ s.t. $\forall t\in\mathbb N:$
+
 $$
 \Pr(X_{t+1}=j|X_t=i)=Q_{i,j},
 $$
+
 where $Q=(Q_{i,j})$ is an $n\times n$ stochastic *transition matrix*.
 
 $X_t$ represents the state of the Markov chain at time $t$ and the matrix $Q$ encodes the state-to-state transition probabilities. The characteristic property of a Markov chain is that the distribution of $X_t$ depends only on $X_{t-1}$. The conditional probability above is independent of the time $t$.
 
 The $t$-step transition probabilities are given by the power matrix $Q^t$, i.e.,
+
 $$
 \Pr(X_{s+t}=j|X_s=i)=Q_{i,j}^t,
 $$
+
 $\forall s,t\in\mathbb N$. Thus,
+
 $$
 \Pr(X_t=j)=\sum_{i=1}^nQ_{i,j}^t\cdot\Pr(X_0=i).
 $$
+
 A Markov chain is completely determined by the distribution of $X_0$ and the transition matrix $Q$.
 
 A Markov chain can be represented as a weighted directed graph whose vertices are the states of the chain and in which there is an edge $(i,j)$ of weight $Q_{i,j}$ whenever $Q_{i,j}\gt0$. We define the weight of a path to the product of the weights of the edges along the path, i.e. the probability to take the path. Then the sum of the weights of all length-$k$ paths $i$ to $j$ is $Q_{i,j}^k$.
@@ -76,10 +82,20 @@ Consider $\varphi$ is satisfiable. Let $S$ be a particular assignment that satis
 Then we bound the probability that algorithm finds $S$. If $\varphi$ is not satisfied by an assignment $A$ there must be an unsatisfied clause $C$. Observe that one or both literals of $C$ must have different truth values under $A$ and $S$. **Thus if we flip a random literal in $C$ then the probability that we increase the agreement between $A$ and $S$ is either $1/2$ or $1$.**
 
 Writing $A_t$ for the assignment after $t$ iterations of the main loop and $X_t$ for the number of variables in which $A_t$ agrees with $S$, we have
+
 $$
 \Pr(X_{t+1}=1|X_t=0)=1\\
+$$
+
+$$
 \Pr(X_{t+1}=i+1|X_t=i)\ge1/2,i\in\{1,\cdots,n-1\}\\
+$$
+
+$$
 \Pr(X_{t+1}=i-1|X_t=i)\le1/2,i\in\{1,\cdots,n-1\}\\
+$$
+
+$$
 \Pr(X_{t+1}=n|X_t=n)=1
 $$
 
@@ -107,19 +123,29 @@ The chain describes the movement of a particle on a line: it is an example of a 
 The expected time until $X_t=n$ is an upper bound on the expected number of steps for the 2-SAT algorithm to find $S$.
 
 Let $h_j$ be the expected time for $X$ to first reach $n$ starting at $j$. Then we have
+
 $$
 h_n=0\\
+$$
+
+$$
 h_0=1+h_1\\
+$$
+
+$$
 h_j=1+\frac{h_{j-1}}{2}+\frac{h_{j+1}}{2},j\in\{1,\cdots,n-1\}
 $$
+
 This is a linear system of equations in $n+1$ unknowns.
 
 By some deduction, we have $h_j=h_{j+1}+2j+1$. Combining with $h_n=0$, we get that $h_j=n^2-j^2$. Thus $h_j\le n^2\forall j$.
 
 Let $T$ denote the number of steps for the 2-SAT algorithm to find assignment $S$ starting from some arbitrary assignment. By Markov's inequality, we have
+
 $$
 \Pr(T\ge2n^2)\le\frac{\mathbb E[T]}{2n^2}\le \frac{n^2}{2n^2}=\frac{1}{2}
 $$
+
 Theorem: If $\varphi$ is satisfiable then the 2-SAT algorithm returns a satisfying assignment with probability at least $1/2$. If $\varphi$ is unsatisfiable then the 2-SAT algorithm is always correct.
 
 The failure probability can be decreased to $2^{-N}$ by repeating the loop $2Nn^2$ instead of $2n^2$ times.
@@ -131,10 +157,15 @@ Extending the randomized algorithm for 2-SAT to 3-SAT.
 3-SAT is NP-complete. We can use $O(2^n)$ exhaustive search to solve it.
 
 Suppose a given 3-CNF formula $\varphi$ has a satisfying assignment $S$. Let $A_t$ be the assignment after $t$ steps and let $X_t$ denote the number of propositional variables in which $A_t$ agrees with $S$. Similarly,
+
 $$
 \Pr(X_{t+1}=j+1|X_t=j)\ge1/3\\
+$$
+
+$$
 \Pr(X_{t+1}=j-1|X_t=j)\le2/3
 $$
+
 Then by replacing $\le\ge$ into $=$, we turn the process $X$ into Markov chain:
 
 ```mermaid
@@ -159,11 +190,19 @@ The expected time for the resulting chain to reach state $n$ is an upper bound f
 **In this case, there is twice likelihood to move away from $n$ as to move towards $n$**.
 
 Let $h_j$ denote expected number of steps to reach $n$ when starting from state $j$. Then we have the following system of equations
+
 $$
 h_n=0\\
+$$
+
+$$
 h_j=\frac{2h_{j-1}}{3}+\frac{h_{j+1}}{3}+1\\
+$$
+
+$$
 h_0=h_1+1
 $$
+
 By solving this linear system, we get $h_j=h_{j+1}+2^{j+2}-3$ for all $j$.
 
 With $h_n=0$ this leads to $h_j=2^{n+2}-2^{j+2}-3(n-j)$.
@@ -192,36 +231,67 @@ Randomized 3-SAT$(\varphi)$
 Theorem: If $\varphi$ is satisfiable then the 3-SAT algorithm returns a satisfying assignment with probability at least $1/2$. If $\varphi$ is unsatisfiable then the 2-SAT algorithm is always correct.
 
 > Let $q_j$ be the probability to reach position $n$ with $3n$ steps starting from position $n-j$. We have
+
 > $$
 > q_j\ge C_{3j}^j(2/3)^j(1/3)^{2j},
 > $$
+>
 > since this is the probability to make exactly $2j$ right moves and $j$ left moves in the first $3j\le3n$ steps.
 >
 > By **Stirling's formula**:
+>
 > $$
 > \sqrt{2\pi m}(\frac{m}{e})^m\le m!\le2\sqrt{2\pi m}(\frac{m}{e})^m,
 > $$
+>
 > we have
+>
 > $$
 > C_{3j}^j=\frac{(3j)!}{j!(2j)!}\\
+> $$
+>
+> $$
 > \ge\frac{c}{\sqrt j}(27/4)^j\\
+> $$
+> 
+> $$
 > (c=\frac{\sqrt3}{8\sqrt\pi}).
 > $$
+>
 > Thus when $j\gt0$,
+> 
 > $$
 > q_j\ge C_{3j}^j(2/3)^j(1/3)^{2j}\\
+> $$
+>
+> $$
 > \ge \frac{c}{\sqrt j}(27/4)^j(2/3)^j(1/3)^{2j}\\
+> $$
+>
+> $$
 > \ge\frac{c}{\sqrt j}\frac{1}{2^j}.
 > $$
+>
 > The probability of success drops exponentially with the distance $j$ between the initial random assignment of the phase and the satisfying truth assignment. But by Chernoff bounds, the probability that this distance is away from $n/2$ also drops exponentially.
 >
 > Having established a lower bound for $q_j$ we now obtain a lower bound for $q$, the probability to reach state $n$ with $3n$ steps in case the initial state of the random walk is determined by a random assignment. We have
+> 
 > $$
 > q\ge\sum_{j=0}^n\Pr(\text{walk starts at }n-j)\cdot q_j\\
+> $$
+>
+> $$
 > \ge\frac{1}{2^n}+\sum_{j=1}^nC_n^j(1/2)^n\frac{c}{\sqrt j}\frac{1}{2^j}\\
+> $$
+>
+> $$
 > \ge\frac{c}{\sqrt n}(1/2)^n\sum_{j=0}^nC_n^j(1/2)^j\\
+> $$
+>
+> $$
 > =\frac{c}{n}(3/4)^n.
 > $$
+> 
 > The number of phases to find a satisfying assignment is a geometric random variable with parameter $q$, so the expected number of phases to find a satisfying assignment is $1/q$. Thus the algorithm finds a satisfying assignment with probability at least $1/2$ after $N=2/q$ phases.
 
 # Stationary Distributions
@@ -229,13 +299,17 @@ Theorem: If $\varphi$ is satisfiable then the 3-SAT algorithm returns a satisfyi
 ## Definition
 
 Let $X$ be a Markov chain with transition matrix $Q$. A probability distribution $\pi$ on the set of states is called *stationary distribution* of $X$ if
+
 $$
 \pi=\pi Q.
 $$
+
 Given states $i,j$ of a Markov chain, the **hitting time** $H_{i,j}$ is a random variable giving the number of steps to visit state $j$ starting from state $i$. Formally we have
+
 $$
 H_{i,j}=\min\{t\gt0:X_t=j|X_0=i\}.
 $$
+
 We define $h_{i,j}=\mathbb E[H_{i,j}]$ to be the mean hitting time.
 
 In general $h_{i,j}$ may be infinite. Certainly $h_{i,j}=\infty$ if $j$ is not reachable from $i$ in the underlying graph, or, if $i$ can reach a state $k$ from which $j$ is no longer reachable. We therefore restrict attention to Markov chains whose underlying graph consists of a single strongly connected component. We call such chains **irreducible**.
@@ -243,21 +317,32 @@ In general $h_{i,j}$ may be infinite. Certainly $h_{i,j}=\infty$ if $j$ is not r
 We can still have $h_{i,j}=\infty$ in an irreducible chain.
 
 Consider Markov chain $X$ with set of states $\{1,2,3,\cdots\}$ and transition matrix $Q$, where $Q_{i,i+1}=i/(i+1)$ and $Q_{i,1}=1/(i+1)$. Starting at state $1$, the probability not to have returned to state $1$ with $t$ steps is
+
 $$
 \prod_{j=1}^t\frac{j}{j+1}=\frac{1}{t+1}.
 $$
+
 Thus we return to state $1$ almost surely, but the expected return time is
+
 $$
 h_{1,1}=\mathbb[H_{1,1}]=\sum_{j=1}^\infty\Pr(H_{1,1}\ge j)\\
+$$
+
+$$
 =\sum_{j=1}^\infty\frac{1}{j+1}=\infty
 $$
+
 In finite irreducible Markov chain, the mean hitting time between any pair of states is always finite.
 
 Theorem: For any pair of states $i,j$ in a finite irreducible Markov chain, $h_{i,j}\lt\infty$.
 
 > Let $d$ be the diameter of the underlying graph, let $\epsilon\gt0$ be the smallest positive entry of the transition matrix $Q$. Then for any pair of states $i,j$, if the chain is started in $i$ then it visits $j$ within $d$ steps with probability at least $\epsilon^d$.
+> 
 > $$
 > h_{i,j}=\mathbb E[H_{i,j}]\\
+> $$
+>
+> $$
 > =\sum_{t=1}^\infty\Pr(H_{i,j}\ge t)\le\sum_{t=1}^\infty(1-\epsilon^d)^{\lfloor t/d\rfloor}\lt\infty.
 > $$
 
@@ -272,6 +357,7 @@ Definition of *period*: The period of a state $i$ in a Markov chain is defined t
 A Markov chain is irreducible and aperiodic iff there exists some power of the transition matrix $P$ with all entries strictly positive.
 
 Theorem: Consider a finite, irreducible, aperiodic Markov chain with stationary distribution $\pi$. Then $\lim_{n\rightarrow\infty}Q^n$ is the matrix
+
 $$
 Q^\infty=\left[
 \begin{array}{cc}
@@ -282,6 +368,7 @@ Q^\infty=\left[
 \end{array}
 \right]
 $$
+
 If follows that for any initial distribution $x$ we have $xQ^b\rightarrow xQ^\infty=\pi$ as $n\rightarrow\infty$, i.e., the chain converges to the stationary distribution from any starting point.
 
 ## Random walks on undirected graphs
@@ -293,19 +380,23 @@ Formally a random walk on $G$ has set of states is $V$ and for each edge $\{u,v\
 Claim: A random walk on $G$ is aperiodic iff $G$ is not bipartite.
 
 Theorem: A random walk on a connected graph $G$ has a **unique stationary distribution** $\pi$, where
+
 $$
 \pi_v=\frac{d(v)}{2E}.
 $$
 
 > 所有点的度数之和等于 $2|E|$.
+>
 > $$
-> (\pi P))_u=\sum_{v\in N(u)}\frac{d(v)}{2|E|}\frac{1}{d(v)}=\frac{d(u)}{2|E|}=\pi_u\forall u\in V
+> (\pi P)_u=\sum_{v\in N(u)}\frac{d(v)}{2|E|}\frac{1}{d(v)}=\frac{d(u)}{2|E|}=\pi_u\forall u\in V
 > $$
 
 Corollary: Let $h_{u,v}$ denote the expected number of steps to go from vertex $u$ to vertex $v$. Then for any vertex $u$ we have
+
 $$
 h_{u,u}=\frac{2|E|}{d(u)}
 $$
+
 Theorem: If $u,v$ are adjacent then $h_{v,u}\lt 2|E|$.
 
 > omitted.

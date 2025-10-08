@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9481,11 +9481,11 @@
 </div>
 <p>If we want to apply non-Boolean alphabet, we just encode these letters into <span class="arithmatex">\(\{0,1\}^k\)</span> for some fixed <span class="arithmatex">\(k\)</span>.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(SIZE\)</span>. Let <span class="arithmatex">\(S:\mathbb N\to\mathbb N\)</span>. <span class="arithmatex">\(SIZE(S(n))\)</span> is the class of languages computed by family of Boolean circuit of size <span class="arithmatex">\(O(S(n))\)</span>,</p>
-<p>We interested in class of languages computed by a family of polynomial size.
-$$
+<p>We interested in class of languages computed by a family of polynomial size.</p>
+<div class="arithmatex">\[
 P/poly=\bigcup_{k&gt;0}SIZE(n^k).
-$$
-<img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>log-space/polynomial-time uniform</strong>. Let <span class="arithmatex">\((C_n)_{n=0}^\infty\)</span> be a family of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span>. We say that the family is <em>log-space uniform</em> if the function <span class="arithmatex">\(1^n\mapsto C_n\)</span> is computable in space <span class="arithmatex">\(O(\log S(n))\)</span>. The family is <em>polynomial-time uniform</em> if the function is computable in time <span class="arithmatex">\((S(n))^{O(1)}\)</span>.</p>
+\]</div>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>log-space/polynomial-time uniform</strong>. Let <span class="arithmatex">\((C_n)_{n=0}^\infty\)</span> be a family of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span>. We say that the family is <em>log-space uniform</em> if the function <span class="arithmatex">\(1^n\mapsto C_n\)</span> is computable in space <span class="arithmatex">\(O(\log S(n))\)</span>. The family is <em>polynomial-time uniform</em> if the function is computable in time <span class="arithmatex">\((S(n))^{O(1)}\)</span>.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of complexity classes of languages computed by families of Boolean circuits. Let <span class="arithmatex">\(S:\mathbb N\to\mathbb N\)</span>.</p>
 <ul>
 <li><span class="arithmatex">\(U_L-SIZE(S(n))\)</span> is the class of languages computed by log-space uniform families of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span>.</li>
@@ -9495,11 +9495,13 @@ $$
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>Boolean formulas</strong>. A Boolean formula (aka de Morgan formula) is a Boolean circuit where the underlying directed graph is a tree.</p>
 <p>合取范式 conjunctive normal form CNF</p>
 <p>析取范式 disjunctive normal form DNF</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 14. Any Boolean function <span class="arithmatex">\(f:\{0,1\}^n\to\{0,1\}\)</span> is computed by a CNF with <span class="arithmatex">\(s\)</span> clauses of length <span class="arithmatex">\(n\)</span> and a DNF with <span class="arithmatex">\(t\)</span> terms of length <span class="arithmatex">\(n\)</span> where
-$$
-s=|{x\in{0,1}^n|f(x)=0}|,\
-t=|{x\in{0,1}^n|f(x)=1}|.
-$$</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 14. Any Boolean function <span class="arithmatex">\(f:\{0,1\}^n\to\{0,1\}\)</span> is computed by a CNF with <span class="arithmatex">\(s\)</span> clauses of length <span class="arithmatex">\(n\)</span> and a DNF with <span class="arithmatex">\(t\)</span> terms of length <span class="arithmatex">\(n\)</span> where</p>
+<div class="arithmatex">\[
+s=|\{x\in\{0,1\}^n|f(x)=0\}|,\\
+\]</div>
+<div class="arithmatex">\[
+t=|\{x\in\{0,1\}^n|f(x)=1\}|.
+\]</div>
 <h1 id="the-shannon-function">The Shannon Function</h1>
 <p>The smallest size <span class="arithmatex">\(L(n)\)</span> in which any Boolean function on <span class="arithmatex">\(n\)</span> variables can be computed by a Boolean circuit of size <span class="arithmatex">\(L(n)\)</span>.</p>
 <p>The function <span class="arithmatex">\(L(n)\)</span> is called the Shannon function.</p>
@@ -9509,18 +9511,20 @@ $$</p>
 <blockquote>
 <p>For a given number of inputs <span class="arithmatex">\(n\ge1\)</span>: first give an upper bound on number of Boolean circuits with <span class="arithmatex">\(n\)</span> inputs and <span class="arithmatex">\(1\)</span> output, with at most <span class="arithmatex">\(s\ge1\)</span> gates. Consider an acyclic ordering of the gates of the circuit and assume the last gate is the output gate.</p>
 <p>Different types of gate: input gates have <span class="arithmatex">\(2n+2\)</span> probabilities, negation with one input <span class="arithmatex">\(s\)</span>, and/or with two inputs <span class="arithmatex">\((s^2,s^2)\)</span>. Thus we have at most <span class="arithmatex">\(2n+2+s+s^2+s^2\)</span> options for every gate, meaning that we have at most <span class="arithmatex">\((2n+2+s+2s^2)^s\)</span> many circuits with at most <span class="arithmatex">\(s\)</span> gates.</p>
-<p>For <span class="arithmatex">\(s\ge n+1\)</span> we have
-$$
-2n+2+s+2s<sup>2\le4s</sup>2\
-\Rightarrow(2n+2+s+2s<sup>2)</sup>s\le(2s)^{2s}.
-$$
-Each of these at most <span class="arithmatex">\((2s)^{2s}\)</span> circuits computes precisely one Boolean function. There are exactly <span class="arithmatex">\(2^{2^n}\)</span> different Boolean functions on <span class="arithmatex">\(n\)</span> inputs.</p>
+<p>For <span class="arithmatex">\(s\ge n+1\)</span> we have</p>
+<div class="arithmatex">\[
+2n+2+s+2s^2\le4s^2\\
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow(2n+2+s+2s^2)^s\le(2s)^{2s}.
+\]</div>
+<p>Each of these at most <span class="arithmatex">\((2s)^{2s}\)</span> circuits computes precisely one Boolean function. There are exactly <span class="arithmatex">\(2^{2^n}\)</span> different Boolean functions on <span class="arithmatex">\(n\)</span> inputs.</p>
 <p>Thus if <span class="arithmatex">\(2^{2^n}\gt(2s)^{2s}\)</span>, there must be a Boolean function that is not computed by a Boolean circuit of size <span class="arithmatex">\(s\)</span>. (By pigeon hole theorem)</p>
-<p>Let <span class="arithmatex">\(n\ge9,s=\frac{2^n}{4n}\)</span>, which satisfies <span class="arithmatex">\(s\ge n+1\)</span>, we have
-$$
-(2s)<sup>{2s}=2</sup>{2s\log_2(2s)}=2<sup>{\frac{2</sup>n}{2n}(n-1-\log n)}\lt2<sup>{2</sup>{n-1}}.
-$$
-It follows that less than <span class="arithmatex">\(2^{2^{n-1}}\)</span> Boolean functions on <span class="arithmatex">\(n\)</span> inputs are computed by Boolean circuits of size at most <span class="arithmatex">\(\frac{2^n}{4n}\)</span>.</p>
+<p>Let <span class="arithmatex">\(n\ge9,s=\frac{2^n}{4n}\)</span>, which satisfies <span class="arithmatex">\(s\ge n+1\)</span>, we have</p>
+<div class="arithmatex">\[
+(2s)^{2s}=2^{2s\log_2(2s)}=2^{\frac{2^n}{2n}(n-1-\log n)}\lt2^{2^{n-1}}.
+\]</div>
+<p>It follows that less than <span class="arithmatex">\(2^{2^{n-1}}\)</span> Boolean functions on <span class="arithmatex">\(n\)</span> inputs are computed by Boolean circuits of size at most <span class="arithmatex">\(\frac{2^n}{4n}\)</span>.</p>
 </blockquote>
 <h1 id="turing-machines-versus-boolean-circuits">Turing Machines versus Boolean Circuits</h1>
 <p>Oblivious Turing machine can efficiently be converted to a family of Boolean circuits.</p>

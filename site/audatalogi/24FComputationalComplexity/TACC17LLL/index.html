@@ -6399,7 +6399,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6422,7 +6422,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6445,7 +6445,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9531,25 +9531,25 @@
 <p>这课终于上完了。上得真挺难受<img alt="😭" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f62d.svg" title=":sob:" /></p>
 <p>Lecture notes by Rothvoss, University of Washington</p>
 <h1 id="lattices">Lattices</h1>
-<p>Lattices are <strong>integral combinations</strong> of linearly independent vectors:
-$$
-\left{\sum_{i=1}^k\lambda_i\mathbf b_i\vert\lambda_1,\cdots,\lambda_k\in\Z\right}
-$$
-where <span class="arithmatex">\(\mathbf b_1,\cdots,\mathbf b_k\in\R^n\)</span> are linearly independent vectors.</p>
-<p>Another equivalent definition: a lattice is a <strong>discrete subgroup</strong> of <span class="arithmatex">\(\R^n\)</span>.</p>
+<p>Lattices are <strong>integral combinations</strong> of linearly independent vectors:</p>
+<div class="arithmatex">\[
+\{\sum_{i=1}^k\lambda_i\mathbf b_i\vert\lambda_1,\cdots,\lambda_k\in\mathbb Z\}
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf b_1,\cdots,\mathbf b_k\in \mathbb R^n\)</span> are linearly independent vectors.</p>
+<p>Another equivalent definition: a lattice is a <strong>discrete subgroup</strong> of <span class="arithmatex">\(\mathbb R^n\)</span>.</p>
 <p>If <span class="arithmatex">\(k=n\)</span> the lattice has <strong>full rank</strong>. Without specification, the we consider lattice with full rank.</p>
-<p>Let <span class="arithmatex">\(\mathbf B\in\R^{n\times n}\)</span> be the matrix that has the basis vector <span class="arithmatex">\(\mathbf b_1,\cdots,\mathbf b_n\)</span> as columns, the lattice is
+<p>Let <span class="arithmatex">\(\mathbf B\in \mathbb R^{n\times n}\)</span> be the matrix that has the basis vector <span class="arithmatex">\(\mathbf b_1,\cdots,\mathbf b_n\)</span> as columns, the lattice is
 $$
-\Lambda(\mathbf B)=\left{\sum_{i=1}^k\lambda_i\mathbf b_i\vert\lambda_1,\cdots,\lambda_k\in\Z\right}.
+\Lambda(\mathbf B)={\sum_{i=1}^k\lambda_i\mathbf b_i\vert\lambda_1,\cdots,\lambda_k\in\mathbb Z}.
 $$</p>
 <p>The matrix <span class="arithmatex">\(\mathbf B\)</span> is called <strong>basis</strong> of the lattice <span class="arithmatex">\(\Lambda(\mathbf B)\)</span>.</p>
 <p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" />A lattice has more than one basis.</p>
 <h2 id="unimodular-matrices">Unimodular matrices</h2>
 <p>幺模矩阵，<del>什么玩意从来没听说过</del></p>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 1 (unimodular matrices). An <span class="arithmatex">\(n\times n\)</span> matrix <span class="arithmatex">\(\mathbf U\)</span> is called <strong>unimodular</strong>, if <span class="arithmatex">\(\mathbf U\in\Z^{n\times n}\)</span> and <span class="arithmatex">\(\det(\mathbf U)\in\{\pm1\}\)</span>.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 1 (unimodular matrices). An <span class="arithmatex">\(n\times n\)</span> matrix <span class="arithmatex">\(\mathbf U\)</span> is called <strong>unimodular</strong>, if <span class="arithmatex">\(\mathbf U\in\mathbb Z^{n\times n}\)</span> and <span class="arithmatex">\(\det(\mathbf U)\in\{\pm1\}\)</span>.</p>
 <p>简单一句话，就是行列式等于正负 1 的方阵。</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 1. If <span class="arithmatex">\(\mathbf U\)</span> is unimodular, then <span class="arithmatex">\(\mathbf U^{-1}\)</span> is also unimodular.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 2. Let <span class="arithmatex">\(\mathbf B_1,\mathbf B_2\in\R^{n\times n}\)</span> non-singular. Then <span class="arithmatex">\(\Lambda(\mathbf B_1)=\Lambda(\mathbf B_2)\)</span> iff there is a unimodular matrix <span class="arithmatex">\(\mathbf U\)</span> with <span class="arithmatex">\(\mathbf B_2=\mathbf B_1\mathbf U\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 2. Let <span class="arithmatex">\(\mathbf B_1,\mathbf B_2\in \mathbb R^{n\times n}\)</span> non-singular. Then <span class="arithmatex">\(\Lambda(\mathbf B_1)=\Lambda(\mathbf B_2)\)</span> iff there is a unimodular matrix <span class="arithmatex">\(\mathbf U\)</span> with <span class="arithmatex">\(\mathbf B_2=\mathbf B_1\mathbf U\)</span>.</p>
 <h2 id="the-fundamental-parallelepiped">The fundamental parallelepiped</h2>
 <p>“基平行六面体”</p>
 <p>The fundamental parallelepiped of the lattice <span class="arithmatex">\(\Lambda(\mathbf B)\)</span> is the polytope
@@ -9557,13 +9557,13 @@ $$
 \mathcal P(\mathbf B)=\left{\sum_{i=1}^n\lambda_i\mathbf b_i\vert0\le\lambda_i\lt1\forall i\in[n]\right}.
 $$
 简单来讲，就是两个基向量在 0 到 1 的线性组合覆盖的所有区域。在二维空间是个平行四边形，在三维空间是个平行六面体。</p>
-<p>For every vector <span class="arithmatex">\(\mathbf x\in\R^n\)</span>, there is a unique coefficient vector <span class="arithmatex">\(\lambda\in\R^n\)</span> so that <span class="arithmatex">\(\mathbf x=\sum_{i=1}^n\lambda_i\mathbf b_i\)</span>. <del>高中数学知识</del></p>
+<p>For every vector <span class="arithmatex">\(\mathbf x\in \mathbb R^n\)</span>, there is a unique coefficient vector <span class="arithmatex">\(\lambda\in \mathbb R^n\)</span> so that <span class="arithmatex">\(\mathbf x=\sum_{i=1}^n\lambda_i\mathbf b_i\)</span>. <del>高中数学知识</del></p>
 <p>So <span class="arithmatex">\(\mathbf x\)</span> can be written as
 $$
 \mathbf x=\sum_{i=1}^n\lfloor\lambda_i\rfloor\mathbf b_i+\sum_{i=1}^n(\lambda_i-\lfloor\lambda_i\rfloor)\mathbf b_i.
 $$
 The left half <span class="arithmatex">\(\in\Lambda(\mathbf B)\)</span>, and the right half <span class="arithmatex">\(\in\Lambda(\mathbf B)\)</span>.</p>
-<p>This translates of the parallelepiped placed at lattices points exactly partition the <span class="arithmatex">\(\R^n\)</span>. This is called a <strong>tiling</strong> of <span class="arithmatex">\(\R^n\)</span>.</p>
+<p>This translates of the parallelepiped placed at lattices points exactly partition the <span class="arithmatex">\(\mathbb R^n\)</span>. This is called a <strong>tiling</strong> of <span class="arithmatex">\(\mathbb R^n\)</span>.</p>
 <p>平铺</p>
 <p>Fundamental parallelepiped can be rewritten as
 $$
@@ -9574,7 +9574,7 @@ $$
 vol(\mathcal P(\mathbf B))=vol([0,1[^n)\cdot|\det(\mathbf B)|.
 $$
 Fundamental parallelepiped it self depend on the choice of the basis, but its volume doesn't.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 3. Let <span class="arithmatex">\(\mathbf B\in\R^{n\times n}\)</span> and <span class="arithmatex">\(\Lambda=\Lambda(\mathbf B)\)</span> be the generated lattice. Then the determinant of the lattice <span class="arithmatex">\(\det(\Lambda)=|\det(\mathbf B)|\)</span> is independent of the chosen basis. Moreover, <span class="arithmatex">\(\det(\Lambda)=vol(\mathcal P(\mathbf B))\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 3. Let <span class="arithmatex">\(\mathbf B\in \mathbb R^{n\times n}\)</span> and <span class="arithmatex">\(\Lambda=\Lambda(\mathbf B)\)</span> be the generated lattice. Then the determinant of the lattice <span class="arithmatex">\(\det(\Lambda)=|\det(\mathbf B)|\)</span> is independent of the chosen basis. Moreover, <span class="arithmatex">\(\det(\Lambda)=vol(\mathcal P(\mathbf B))\)</span>.</p>
 <h1 id="minkowskis-theorem">Minkowski's Theorem</h1>
 <p>闵可夫斯基格点定理</p>
 <p>A set <span class="arithmatex">\(K\)</span> is <strong>convex</strong> if <span class="arithmatex">\(\forall x,y\in K\)</span> and <span class="arithmatex">\(0\le\lambda\le1\)</span>, <span class="arithmatex">\(\lambda x+(1-\lambda)y\in K\)</span>.</p>
@@ -9587,8 +9587,8 @@ $$
 That is, <span class="arithmatex">\(||x||_K\)</span> gives the scaling factor that one needs until the scaled copy of <span class="arithmatex">\(K\)</span> includes <span class="arithmatex">\(x\)</span>.</p>
 <p>Define <span class="arithmatex">\(y+K=\{x+y|x\in K\}\)</span> as the translate of <span class="arithmatex">\(K\)</span> by <span class="arithmatex">\(y\)</span>.</p>
 <p>Minkowski's theorem says that every large enough symmetric convex set must contain a non-zero lattice point.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 4 (Minkowski). Let <span class="arithmatex">\(K\subseteq\R^n\)</span> be a bounded symmetric convex set with <span class="arithmatex">\(vol(K)\gt2^n\)</span>. Then <span class="arithmatex">\(K\cap(\Z^n\diagdown\{\mathbf 0\})\neq\emptyset\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 5 (Blichfeldt). Let <span class="arithmatex">\(S\subseteq\R^n\)</span> be a measurable set with <span class="arithmatex">\(vol(S)\gt1\)</span>. Then there are <span class="arithmatex">\(\mathbf s_1,\mathbf s_2\in S\)</span> with <span class="arithmatex">\(\mathbf s_1-\mathbf s_2\in\Z^n\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 4 (Minkowski). Let <span class="arithmatex">\(K\subseteq \mathbb R^n\)</span> be a bounded symmetric convex set with <span class="arithmatex">\(vol(K)\gt2^n\)</span>. Then <span class="arithmatex">\(K\cap(\mathbb Z^n\diagdown\{\mathbf 0\})\neq\emptyset\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 5 (Blichfeldt). Let <span class="arithmatex">\(S\subseteq \mathbb R^n\)</span> be a measurable set with <span class="arithmatex">\(vol(S)\gt1\)</span>. Then there are <span class="arithmatex">\(\mathbf s_1,\mathbf s_2\in S\)</span> with <span class="arithmatex">\(\mathbf s_1-\mathbf s_2\in\mathbb Z^n\)</span>.</p>
 <h2 id="minkowskis-theorem-for-general-lattices">Minkowski's Theorem for General Lattices</h2>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 6. (Minkowski's first theorem). Let <span class="arithmatex">\(\Lambda\)</span> be a lattice and <span class="arithmatex">\(K\)</span> be a symmetric convex set with <span class="arithmatex">\(vol(K)\gt2^n\det(\Lambda)\)</span>. Then <span class="arithmatex">\(K\cap(\Lambda\diagdown\{\mathbf 0\})\neq\emptyset\)</span>.</p>
 <h2 id="shortest-vector">Shortest Vector</h2>
@@ -9599,22 +9599,22 @@ $$
 is its length.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />In fact, finding the shortest vector is an <span class="arithmatex">\(NP\)</span>-hard problem.</p>
 <p>We can get some estimates on it.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 7. Any lattice <span class="arithmatex">\(\Lambda\subseteq\R^n\)</span>, one has <span class="arithmatex">\(SVP(\Lambda)\le\sqrt n\cdot\det(\Lambda)^{1/n}\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 8 (Minkowski's second theorem). For any full-rank lattice <span class="arithmatex">\(\Lambda\in\R^n\)</span>, one has
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 7. Any lattice <span class="arithmatex">\(\Lambda\subseteq \mathbb R^n\)</span>, one has <span class="arithmatex">\(SVP(\Lambda)\le\sqrt n\cdot\det(\Lambda)^{1/n}\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 8 (Minkowski's second theorem). For any full-rank lattice <span class="arithmatex">\(\Lambda\in \mathbb R^n\)</span>, one has
 $$
 \left(\prod_{i=1}<sup>n\lambda_i(\Lambda)\right)</sup>{1/n}\le\sqrt n\cdot\det(\Lambda)^{1/n}.
 $$</p>
 <h2 id="dirichlets-theorem">Dirichlet's Theorem</h2>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 9. A vector <span class="arithmatex">\(\alpha\in[0,1]^n\)</span> of real numbers. There are numbers <span class="arithmatex">\(p_1,\cdots,p_n\in\Z_{\ge0}\)</span> and <span class="arithmatex">\(q\in\{1,\cdots,Q\}\)</span> so that
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 9. A vector <span class="arithmatex">\(\alpha\in[0,1]^n\)</span> of real numbers. There are numbers <span class="arithmatex">\(p_1,\cdots,p_n\in\mathbb Z_{\ge0}\)</span> and <span class="arithmatex">\(q\in\{1,\cdots,Q\}\)</span> so that
 $$
 \max_{i=1,\cdots,n}|\frac{p_i}{q}-\alpha_i|\le\frac{1}{Q^{1/n}q}.
 $$</p>
 <h1 id="gram-schmidt-orthogonalisation">Gram Schmidt Orthogonalisation</h1>
 <p>To find approximate shortest vector.</p>
 <p>A lattice <span class="arithmatex">\(\Lambda(\mathbf B)\)</span>, we want to find a non-zero vector in polynomial time that has length <span class="arithmatex">\(||x||_2\le\alpha\cdot SVP(\Lambda(\mathbf B))\)</span>. Here <span class="arithmatex">\(\alpha=\alpha(n)\ge1\)</span>, called approximation factor (as small as possible).</p>
-<p>The Gram Schmidt orthogonalisation takes indepedent vectors <span class="arithmatex">\(\mathbf b_1,\cdots,\mathbf b_n\in\R^n\)</span> as input and computes an orthogonal basis <span class="arithmatex">\(\mathbf b^*_1,\cdots,\mathbf b^*_n\)</span> so that <span class="arithmatex">\(\text{span}(\mathbf b_1,\cdots,\mathbf b_k)=\text{span}(\mathbf b^*_1,\cdots,\mathbf b^*_k)\)</span> for all <span class="arithmatex">\(k=1,\cdots.n\)</span>.</p>
+<p>The Gram Schmidt orthogonalisation takes indepedent vectors <span class="arithmatex">\(\mathbf b_1,\cdots,\mathbf b_n\in \mathbb R^n\)</span> as input and computes an orthogonal basis <span class="arithmatex">\(\mathbf b^*_1,\cdots,\mathbf b^*_n\)</span> so that <span class="arithmatex">\(\text{span}(\mathbf b_1,\cdots,\mathbf b_k)=\text{span}(\mathbf b^*_1,\cdots,\mathbf b^*_k)\)</span> for all <span class="arithmatex">\(k=1,\cdots.n\)</span>.</p>
 <h2 id="pseudo-code">Pseudo-code</h2>
-<p>Input: <span class="arithmatex">\(\mathbf b_1,\cdots,\mathbf b_n\in\R^n\)</span></p>
+<p>Input: <span class="arithmatex">\(\mathbf b_1,\cdots,\mathbf b_n\in \mathbb R^n\)</span></p>
 <p>Output: Orthogonal basis <span class="arithmatex">\(\mathbf b^*_1,\cdots,\mathbf b^*_n\)</span></p>
 <ol>
 <li><span class="arithmatex">\(\mathbf b_1^*\gets\mathbf b_1\)</span></li>
@@ -9630,7 +9630,7 @@ $$
 <img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 10. Let <span class="arithmatex">\(\mathbf B\)</span> be a basis and <span class="arithmatex">\(\mathbf B^*\)</span> be its Gram Schmidt orthogonalisation. Then <span class="arithmatex">\(SVP(\Lambda(\mathbf B))\ge\min_{i=1,\cdots,n}||\mathbf b_i^*||_2\)</span></p>
 <p>第一个正交化向量总是相等的。基向量的顺序很重要，这为 LLL 算法埋下伏笔。</p>
 <h1 id="the-lenstra-lenstra-lovasz-algorithm">The Lenstra-Lenstra-Lovász Algorithm</h1>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 11. Given a regular matrix <span class="arithmatex">\(\mathbf B\in\Q^{n\times n}\)</span> one can compute a vector <span class="arithmatex">\(\mathbf x\in\Lambda(\mathbf B)\diagdown\{\mathbf 0\}\)</span> of length <span class="arithmatex">\(\vert\vert\mathbf x\vert\vert_2\le2^{n/2}\cdot SVP(\Lambda(\mathbf B))\)</span> in polynomial time.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 11. Given a regular matrix <span class="arithmatex">\(\mathbf B\in\mathbb Q^{n\times n}\)</span> one can compute a vector <span class="arithmatex">\(\mathbf x\in\Lambda(\mathbf B)\diagdown\{\mathbf 0\}\)</span> of length <span class="arithmatex">\(\vert\vert\mathbf x\vert\vert_2\le2^{n/2}\cdot SVP(\Lambda(\mathbf B))\)</span> in polynomial time.</p>
 <p>The running time is actually <span class="arithmatex">\(O(n^6\log^3(n\vert\vert\mathbf B\vert\vert_\infty))\)</span>.</p>
 <p>Consider basis <span class="arithmatex">\(\mathbf b_1,\cdots,\mathbf b_n\)</span>:</p>
 <ul>
@@ -9641,7 +9641,7 @@ $$
 <p>A basis is <strong>coefficient-reduced</strong> if <span class="arithmatex">\(\vert\mu_{i,j}\vert\le1/2\)</span> for all <span class="arithmatex">\(i\lt j\)</span>.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 12. Given any basis <span class="arithmatex">\(\mathbf B\)</span> one can compute a coefficient-reduced basis <span class="arithmatex">\(\tilde{\mathbf B}\)</span> in polynomial time so that <span class="arithmatex">\(\Lambda(\tilde{\mathbf B})=\Lambda(\mathbf B)\)</span> and the Gram Schmidt orthogonalisations are identical.</p>
 <h2 id="main-procedure">Main Procedure</h2>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of LLL-reduced: Let <span class="arithmatex">\(\mathbf B\in\R^{n\times n}\)</span> be a lattice basis and let <span class="arithmatex">\(\mu_{i,j}\)</span> be the coefficients from the Gram Schmidt orthogonalisation. The basis is called LLL-reduced if the following is satisfied.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of LLL-reduced: Let <span class="arithmatex">\(\mathbf B\in \mathbb R^{n\times n}\)</span> be a lattice basis and let <span class="arithmatex">\(\mu_{i,j}\)</span> be the coefficients from the Gram Schmidt orthogonalisation. The basis is called LLL-reduced if the following is satisfied.</p>
 <ul>
 <li>Coefficient reduced: <span class="arithmatex">\(\vert\mu_{i,j}\vert\le1/2\)</span> for all <span class="arithmatex">\(i\lt j\)</span>.</li>
 <li>Lovász condition: <span class="arithmatex">\(\vert\vert\mathbf b_i^*\vert\vert_2^2\le2\vert\vert\mathbf b_{i+1}^*\vert\vert_2^2\)</span> for <span class="arithmatex">\(i=1,\cdots,n-1\)</span>.</li>
@@ -9653,7 +9653,7 @@ $$
 <p>Taking square roots then gives the claim.</p>
 </blockquote>
 <h2 id="pseudo-code_1">Pseudo-code</h2>
-<p>Input: A lattice basis <span class="arithmatex">\(\mathbf B\in\R^{n\times n}\)</span></p>
+<p>Input: A lattice basis <span class="arithmatex">\(\mathbf B\in \mathbb R^{n\times n}\)</span></p>
 <p>Output: An LLL reduced basis <span class="arithmatex">\(\tilde{\mathbf B}\)</span></p>
 <ol>
 <li>Compute a Gram Schmidt orthogonalisation <span class="arithmatex">\(\mathbf b_1^*,\cdots,\mathbf b_n^*\)</span> with coefficients <span class="arithmatex">\(\mu_{i,j}\)</span> and update whenever we change the order of the basis.</li>

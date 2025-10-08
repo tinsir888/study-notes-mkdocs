@@ -6399,7 +6399,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6422,7 +6422,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6445,7 +6445,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9618,6 +9618,8 @@
 <p>Define fail-event <span class="arithmatex">\(E_i:\{h(x)=h(x_i)\}\)</span>,</p>
 <div class="arithmatex">\[
 \Pr[get(x)\text{ fails}]=\Pr[\bigcup_{x_i\neq x}E_i]\le\sum_{x_i\neq x}\Pr[E_i]\\
+\]</div>
+<div class="arithmatex">\[
 \le\sum_{x_i\neq x}\frac{1}{m}=\frac{n-1}{m}\le\frac{t-1}{m}=\frac{t-1}{2t}\le\frac{1}{2}
 \]</div>
 <ul>
@@ -9629,6 +9631,8 @@
 <p>Define fail-event <span class="arithmatex">\(E_{ij}=\{h(x)=h(x_i)=h(x_j)\}\)</span>
   $$
   \Pr[\bigcup_{i\neq j}E_{ij}]\le\sum_{i\lt j}\Pr[E_{ij}]=\sum_{i\lt j}\frac{1}{m<sup>2}=C_n</sup>2\frac{1}{m^2}\
+  $$</p>
+<p>$$
   =\frac{n(n-1)}{2m<sup>2}\le\frac{t</sup>2}{2m<sup>2}\le\frac{t</sup>2}{8t^2}=\frac{1}{8}
   $$</p>
 <div class="admonition success">
@@ -9694,26 +9698,38 @@
 <p>List entries fails iff non-empty 2-core exists.</p>
 <p>i.e. largest subgraph where every node has <span class="arithmatex">\(degree\ge2\)</span></p>
 <p><span class="arithmatex">\(F=\{ListEntries\text{ fails}\}\)</span></p>
-<p><span class="arithmatex">\(F_j=\{ListEntries\text{ fails with j key-value left}\}\)</span>
-$$
-\Pr[F]=\Pr[\bigcup_{j=2}<sup>nF_j]\le\sum_{j=2}</sup>n\Pr[F_j]   (1)
-$$
-For every <span class="arithmatex">\(S\in C_{x}^j\)</span>, <span class="arithmatex">\(F_{jS}=\{ListEntries\text{ fails, with S as j keys}\}\)</span>
-$$
-(1)=\sum_{j=2}^n\Pr[\bigcup_{S\in C_x<sup>j}F_{jS}]\le\sum_{j=2}</sup>n\sum_{S\in C_x^j}\Pr[F_{jS}]   (2)
-$$
-Denote: <span class="arithmatex">\((T_1,\cdots,T_k)\in (C_{[m]}^{j/2})^k\)</span></p>
-<p><span class="arithmatex">\(F_{j,S,T_1,\cdots,T_k}=\{LE\text{ fails for S and }\forall_i:h_i(S)\subseteq T_i\}\)</span>
-$$
-(2)=\sum_{j=2}^n\sum_{S\in C_x^j}\sum_{(T_1,\cdots,T_k)\in (C_{[m]}<sup>{j/2})</sup>k}\Pr[F_{j,S,T_1,\cdots,T_k}]   (3)
-$$</p>
+<p><span class="arithmatex">\(F_j=\{ListEntries\text{ fails with j key-value left}\}\)</span></p>
+<div class="arithmatex">\[
+\Pr[F]=\Pr[\bigcup_{j=2}^nF_j]\le\sum_{j=2}^n\Pr[F_j]\ \ \ (1)
+\]</div>
+<p>For every <span class="arithmatex">\(S\in C_{x}^j\)</span>, <span class="arithmatex">\(F_{jS}=\{ListEntries\text{ fails, with S as j keys}\}\)</span></p>
+<div class="arithmatex">\[
+(1)=\sum_{j=2}^n\Pr[\bigcup_{S\in C_x^j}F_{jS}]\le\sum_{j=2}^n\sum_{S\in C_x^j}\Pr[F_{jS}]\ \ \ (2)
+\]</div>
+<p>Denote: <span class="arithmatex">\((T_1,\cdots,T_k)\in (C_{[m]}^{j/2})^k\)</span></p>
+<p><span class="arithmatex">\(F_{j,S,T_1,\cdots,T_k}=\{LE\text{ fails for S and }\forall_i:h_i(S)\subseteq T_i\}\)</span></p>
+<div class="arithmatex">\[
+(2)=\sum_{j=2}^n\sum_{S\in C_x^j}\sum_{(T_1,\cdots,T_k)\in (C_{[m]}^{j/2})^k}\Pr[F_{j,S,T_1,\cdots,T_k}]\ \ \ (3)
+\]</div>
 <div class="arithmatex">\[
 \Pr[h_1(x_1)\subseteq T_1]=\frac{j}{2m}\\
-\Pr[h_1(S)\subseteq T_1=(\frac{j}{2m})^j\\
+\]</div>
+<div class="arithmatex">\[
+\Pr[h_1(S)\subseteq T_1]=(\frac{j}{2m})^j\\
+\]</div>
+<div class="arithmatex">\[
 \Pr[\forall_i:h_i(S)\subseteq T_i]=(\frac{j}{2m})^{jk}\\
+\]</div>
+<div class="arithmatex">\[
 \Pr[F_{j,S,T_1,\cdots,T_k}]\le\Pr[\forall_i:h_i(S)\subseteq T_i]=(\frac{j}{2m})^{jk}\\
+\]</div>
+<div class="arithmatex">\[
 (3)\le\sum_{j=2}^n C_n^j (C_m^{j/2})^k(\frac{j}{2m})^{jk}\le\sum_{j=2}^n(\frac{en}{j})^j(\frac{m2e}{j})^{jk/2}(\frac{j}{2m})^{jk}\\
+\]</div>
+<div class="arithmatex">\[
 =\sum_{j=2}^n(\frac{en}{j})^j(\frac{je}{m2})^{jk/2}=\sum_{j=2}^n(\frac{e^2n}{2m})^j(\frac{je}{2m})^{j(k/2-1)}\\
+\]</div>
+<div class="arithmatex">\[
 \le\sum_{j=2}^n2^{-j}(\frac{je}{2m})^{j(k/2-1)}\le2\cdot\frac{1}{4}\cdot(\frac{e}{m})^{k-2}\le(\frac{e}{m})^{k-2}\le(1/t)^{k-2}
 \]</div>
 <p><img alt="☠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2620.svg" title=":skull_and_crossbones:" /><img alt="☠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2620.svg" title=":skull_and_crossbones:" /><img alt="☠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2620.svg" title=":skull_and_crossbones:" /></p>

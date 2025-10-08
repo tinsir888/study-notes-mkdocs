@@ -116,6 +116,9 @@ For `get(x)`
 
 $$
 \Pr[get(x)\text{ fails}]=\Pr[\bigcup_{x_i\neq x}E_i]\le\sum_{x_i\neq x}\Pr[E_i]\\
+$$
+
+$$
 \le\sum_{x_i\neq x}\frac{1}{m}=\frac{n-1}{m}\le\frac{t-1}{m}=\frac{t-1}{2t}\le\frac{1}{2}
 $$
 
@@ -126,6 +129,9 @@ $$
   Define fail-event $E_{ij}=\{h(x)=h(x_i)=h(x_j)\}$
   $$
   \Pr[\bigcup_{i\neq j}E_{ij}]\le\sum_{i\lt j}\Pr[E_{ij}]=\sum_{i\lt j}\frac{1}{m^2}=C_n^2\frac{1}{m^2}\\
+  $$
+
+  $$
   =\frac{n(n-1)}{2m^2}\le\frac{t^2}{2m^2}\le\frac{t^2}{8t^2}=\frac{1}{8}
   $$
 
@@ -188,27 +194,50 @@ i.e. largest subgraph where every node has $degree\ge2$
 $F=\{ListEntries\text{ fails}\}$
 
 $F_j=\{ListEntries\text{ fails with j key-value left}\}$
+
 $$
 \Pr[F]=\Pr[\bigcup_{j=2}^nF_j]\le\sum_{j=2}^n\Pr[F_j]\ \ \ (1)
 $$
+
 For every $S\in C_{x}^j$, $F_{jS}=\{ListEntries\text{ fails, with S as j keys}\}$
+
 $$
 (1)=\sum_{j=2}^n\Pr[\bigcup_{S\in C_x^j}F_{jS}]\le\sum_{j=2}^n\sum_{S\in C_x^j}\Pr[F_{jS}]\ \ \ (2)
 $$
+
 Denote: $(T_1,\cdots,T_k)\in (C_{[m]}^{j/2})^k$
 
 $F_{j,S,T_1,\cdots,T_k}=\{LE\text{ fails for S and }\forall_i:h_i(S)\subseteq T_i\}$
+
 $$
 (2)=\sum_{j=2}^n\sum_{S\in C_x^j}\sum_{(T_1,\cdots,T_k)\in (C_{[m]}^{j/2})^k}\Pr[F_{j,S,T_1,\cdots,T_k}]\ \ \ (3)
 $$
 
 $$
 \Pr[h_1(x_1)\subseteq T_1]=\frac{j}{2m}\\
-\Pr[h_1(S)\subseteq T_1=(\frac{j}{2m})^j\\
+$$
+
+$$
+\Pr[h_1(S)\subseteq T_1]=(\frac{j}{2m})^j\\
+$$
+
+$$
 \Pr[\forall_i:h_i(S)\subseteq T_i]=(\frac{j}{2m})^{jk}\\
+$$
+
+$$
 \Pr[F_{j,S,T_1,\cdots,T_k}]\le\Pr[\forall_i:h_i(S)\subseteq T_i]=(\frac{j}{2m})^{jk}\\
+$$
+
+$$
 (3)\le\sum_{j=2}^n C_n^j (C_m^{j/2})^k(\frac{j}{2m})^{jk}\le\sum_{j=2}^n(\frac{en}{j})^j(\frac{m2e}{j})^{jk/2}(\frac{j}{2m})^{jk}\\
+$$
+
+$$
 =\sum_{j=2}^n(\frac{en}{j})^j(\frac{je}{m2})^{jk/2}=\sum_{j=2}^n(\frac{e^2n}{2m})^j(\frac{je}{2m})^{j(k/2-1)}\\
+$$
+
+$$
 \le\sum_{j=2}^n2^{-j}(\frac{je}{2m})^{j(k/2-1)}\le2\cdot\frac{1}{4}\cdot(\frac{e}{m})^{k-2}\le(\frac{e}{m})^{k-2}\le(1/t)^{k-2}
 $$
 

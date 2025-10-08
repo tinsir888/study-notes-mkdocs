@@ -80,6 +80,7 @@ Proof by constructing $M$ s.t. $L(M)\not\in NTIME(T_1(n))$.
 Better than $NSPACE(S(n))\subseteq DSPACE(2^{O(S(n))})$.
 
 :dart:Theorem 12 (Savitch's Theorem). Let $S(n)\ge\log n$. Then
+
 $$
 NSPACE(S(n))\subseteq DSPACE(S(n)^2).
 $$
@@ -92,6 +93,7 @@ Non-deterministic space is closed under the operation of taking complements.
 $coNSPACE(S(n))$: The class of complement languages of languages in $NSPACE(S(n))$.
 
 :dart:Theorem 13 (Immerman–Szelepcsényi theorem). Let $S(n)\ge\log n$. Then
+
 $$
 coNSPACE(S(n))=NSPACE(S(n)).
 $$
@@ -100,7 +102,13 @@ $$
 
 $$
 NL=NSPACE(\log n)\\
+$$
+
+$$
 NP=\bigcup_{k\gt0}NTIME(n^k)\\
+$$
+
+$$
 NEXP=\bigcup_{k\gt0}NTIME(2^{n^k})
 $$
 

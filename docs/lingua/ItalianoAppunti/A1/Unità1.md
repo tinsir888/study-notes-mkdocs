@@ -102,9 +102,7 @@ Greta, Anna, Chiara, Elena, Gaia, Sara, Rosa, Mia, Lisa, Elsa
 essere 相当于英语中的 be 动词
 
 1. essere 可以作为系动词 “存在；在；是；就是”
-
    后面需要跟表语说明主语的身份、状况、性质等
-
 2. essere 可以作为助动词
 
 意大利语动词变位：不同的时态、式、主语搭配时会进行变位。
@@ -373,3 +371,4 @@ sai 你知道
 fratello 兄弟 s.m.
 
 davvero 真的
+

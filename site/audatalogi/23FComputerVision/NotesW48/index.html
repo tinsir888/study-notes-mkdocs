@@ -6417,7 +6417,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6440,7 +6440,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6463,7 +6463,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9586,20 +9586,20 @@ J(w)=-\sum_{i=1}^n(y^{(i)}\log(h_w(x^{(i)}))+(1-y^{(i)})\log(1-h_w(x^{(i)})))\\
 <p>so when we send a message, we want as much useful information as possible to get through</p>
 <p>In Shannon's theory, sending one bit of information means to reduce the receiver's uncertainty by a factor of two.</p>
 <p>幻灯片有一个以天气预报为例解释信息熵的例子</p>
-<p>the probability distribution is:
-$$
+<p>the probability distribution is:</p>
+<div class="arithmatex">\[
 H(\mathbb p)=-\sum_{i=1}^np_i\log_2(p_i)
-$$</p>
+\]</div>
 <h2 id="cross-entropy">Cross-entropy</h2>
 <p>the cross entropy between two probability distributions <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> over the same underlying set of events measures <strong>the average number of bits needed to identify an event drawn from the set</strong> if a coding scheme used for the set is optimized for an estimated probability distribution <span class="arithmatex">\(q\)</span>, rather than the true distribution <span class="arithmatex">\(p\)</span>.</p>
 <p>幻灯片有一个以天气预报为例解释交叉熵的例子</p>
 <p>note that if the predicted probabilities equal the true probabilities, then the cross-entropy is just the entropy.</p>
 <p>but if the two distribution differ, the cross-entropy will be larger than the entropy by some number of bits.</p>
-<p>交叉熵实际上就是衡量两个我预测的概率分布和真实的概率分布差距的大小。
-$$
+<p>交叉熵实际上就是衡量两个我预测的概率分布和真实的概率分布差距的大小。</p>
+<div class="arithmatex">\[
 H(\mathbb p,\mathbb q)=-\sum_{i=1}^np_i\log_2(q_i)
-$$
-<span class="arithmatex">\(p_i\)</span>: true underlying distribution</p>
+\]</div>
+<p><span class="arithmatex">\(p_i\)</span>: true underlying distribution</p>
 <p><span class="arithmatex">\(q_i\)</span>: predicted distribution</p>
 <h2 id="effect-of-kl-loss-term-in-vaes">Effect of KL loss term in VAEs</h2>
 <div class="arithmatex">\[

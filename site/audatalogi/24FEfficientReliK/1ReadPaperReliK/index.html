@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9502,16 +9502,16 @@
 <p>For a triple <span class="arithmatex">\(x_{hrt}=(h,r,t)\)</span> we compute the neighbor set <span class="arithmatex">\(\mathcal N^-(h)\)</span> of all possible negative triples, that is triples with head <span class="arithmatex">\(h\)</span> that do not exist in <span class="arithmatex">\(\mathcal K\)</span>.</p>
 <p>Similarly, we define <span class="arithmatex">\(\mathcal N^-(t)\)</span> for tail.</p>
 <p>Head rank: <span class="arithmatex">\(rank_H(x_{hrt})=|\{x\in\mathcal N^-(h):s(x)\gt s(x_{hrt})\}|+1\)</span></p>
-<p>Similarly, we define <span class="arithmatex">\(rank_T(x_{hrt})\)</span> for tail.
-$$
+<p>Similarly, we define <span class="arithmatex">\(rank_T(x_{hrt})\)</span> for tail.</p>
+<div class="arithmatex">\[
 ReliK(x_{hrt})=\frac{1}{2}\left(\frac{1}{rank_H(x_{hrt})}+\frac{1}{rank_T(x_{hrt})}\right).
-$$
-ReliK can easily be extended from single triples to sub-graphs by computing the average reliability among the triples in the subgraph.</p>
-<p>We define the ReliK score of a set <span class="arithmatex">\(S\subseteq\mathcal F\)</span> of triples as
-$$
+\]</div>
+<p>ReliK can easily be extended from single triples to sub-graphs by computing the average reliability among the triples in the subgraph.</p>
+<p>We define the ReliK score of a set <span class="arithmatex">\(S\subseteq\mathcal F\)</span> of triples as</p>
+<div class="arithmatex">\[
 ReliK(S)=\frac{1}{S}\sum_{x_{hrt}\in S}ReliK(x_{hrt}).
-$$
-<span class="arithmatex">\(ReliK\in(0,1]\)</span>. The higher the <span class="arithmatex">\(ReliK\)</span>, the better reliability.</p>
+\]</div>
+<p><span class="arithmatex">\(ReliK\in(0,1]\)</span>. The higher the <span class="arithmatex">\(ReliK\)</span>, the better reliability.</p>
 <p>The lower the head-rank and tail-rank, the better the ranking of <span class="arithmatex">\(x_{hrt}\)</span> induced by the underlying embedding scores.</p>
 <h2 id="efficiently-computing-relik">Efficiently Computing ReliK</h2>
 <p>Computing original ReliK requires <span class="arithmatex">\(\Omega(|\mathcal C|\cdot|\mathcal R|)\)</span>, as it needs to scan the entire negative neighborhood of the target triple.</p>
@@ -9527,24 +9527,28 @@ $$
 <ul>
 <li><span class="arithmatex">\(ReliK_{Apx}\)</span>, estimation of <span class="arithmatex">\(ReliK\)</span> by evaluating the fraction of triples in the sample that have a higher score than the triple under consideration and scaling this fraction to the total number of negative triples.</li>
 </ul>
-<p>Let <span class="arithmatex">\(S_H\)</span> be a random subset of <span class="arithmatex">\(k\)</span> elements selected without replacement independently and uniformly at random from negative neighborhood <span class="arithmatex">\(\mathcal N^-(h)\)</span> of the head <span class="arithmatex">\(h\)</span> of a triple <span class="arithmatex">\(x_{hrt}\)</span>.
-$$
-rank_H^S(x_{hrt})=\vert{x\in S_H:s(x)\gt s(x_{hrt})}\vert+1,
-$$
-to be the rank of the score <span class="arithmatex">\(s(x_{hrt})\)</span> the KGE assigns to <span class="arithmatex">\(x_{hrt}\)</span>, among all the triples in the sample.</p>
+<p>Let <span class="arithmatex">\(S_H\)</span> be a random subset of <span class="arithmatex">\(k\)</span> elements selected without replacement independently and uniformly at random from negative neighborhood <span class="arithmatex">\(\mathcal N^-(h)\)</span> of the head <span class="arithmatex">\(h\)</span> of a triple <span class="arithmatex">\(x_{hrt}\)</span>.</p>
+<div class="arithmatex">\[
+rank_H^S(x_{hrt})=\vert\{x\in S_H:s(x)\gt s(x_{hrt})\}\vert+1,
+\]</div>
+<p>to be the rank of the score <span class="arithmatex">\(s(x_{hrt})\)</span> the KGE assigns to <span class="arithmatex">\(x_{hrt}\)</span>, among all the triples in the sample.</p>
 <p>Similarly, we compute <span class="arithmatex">\(rank_T^S\)</span> for tail's neighborhood <span class="arithmatex">\(\mathcal N^-(t)\)</span>.</p>
 <h3 id="lower-bound-estimator">Lower Bound Estimator</h3>
 <div class="arithmatex">\[
 rank_H(x_{hrt})\le rank_H^S(x_{hrt})+|\mathcal N^-(h)|-|S_H|\\
+\]</div>
+<div class="arithmatex">\[
 rank_T(x_{hrt})\le rank_T^S(x_{hrt})+|\mathcal N^-(h)|-|S_T|\\
+\]</div>
+<div class="arithmatex">\[
 \Rightarrow ReliK_{LB}(x_{hrt})=\frac{1}{2}\left(\frac{1}{rank_H^S(x_{hrt})+|\mathcal N^-(h)|-|S_H|}+\frac{1}{rank_T^S(x_{hrt})+|\mathcal N^-(t)|-|S_T|}\right),
 \]</div>
 <p>It holds that <span class="arithmatex">\(ReliK_{LB}(x_{hrt})\le ReliK(x_{hrt})\)</span>.</p>
 <h3 id="upper-bound-estimator">Upper Bound Estimator</h3>
-<p>Theoretical analysis is omitted here.
-$$
-ReliK_{Apx}(x_{hrt})=\frac{1}{2}\left(\frac{1}{rank_H^S(x_{hrt})\frac{\mathcal N<sup>-(h)}{|S_H|}}+\frac{1}{rank_T</sup>S(x_{hrt})\frac{\mathcal N^-(t)}{|S_T|}}\right).
-$$</p>
+<p>Theoretical analysis is omitted here.</p>
+<div class="arithmatex">\[
+ReliK_{Apx}(x_{hrt})=\frac{1}{2}\left(\frac{1}{rank_H^S(x_{hrt})\frac{\mathcal N^-(h)}{|S_H|}}+\frac{1}{rank_T^S(x_{hrt})\frac{\mathcal N^-(t)}{|S_T|}}\right).
+\]</div>
 <h2 id="pseudo-code">Pseudo Code</h2>
 <p>Input: KG <span class="arithmatex">\(\mathcal K:\langle\mathcal E,\mathcal R,\mathcal F\rangle\)</span>, triple <span class="arithmatex">\(x_{hrt}=(h,r,t)\in\mathcal F\)</span>, embedding score function <span class="arithmatex">\(s:\mathcal E\times\mathcal R\times\mathcal E\to\mathbb R\)</span>, sample size <span class="arithmatex">\(k\in\mathbb N\)</span></p>
 <p>Output: <span class="arithmatex">\(ReliK_{LB}(x_{hrt})\)</span> or <span class="arithmatex">\(ReliK_{Apx}(x_{hrt})\)</span></p>

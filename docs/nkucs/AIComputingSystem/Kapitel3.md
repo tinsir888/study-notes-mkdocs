@@ -66,7 +66,7 @@ $y(n)=\Sigma_{i=-\infty}^\infty x(i)h(n-i)=x(n)*h(n)$
 ### 卷积神经网络的结构
 - 常见卷积神经网络由卷积层、池化层和全连接层构成。
 - 具体结构：
-  $input\rightarrow N Convs(relu)\rightarrow M个Pool\rightarrow K FCs(relu)\rightarrow FC/softmax\rightarrow $输出结果
+  $input\rightarrow N Convs(relu)\rightarrow$ M个Pool $\rightarrow K FCs(relu)\rightarrow FC/\text{softmax}\rightarrow$ 输出结果
 - 为何选择深而非广的网络结构
   - 可以从局部到整体“理解”图像
   - 减少权重数量

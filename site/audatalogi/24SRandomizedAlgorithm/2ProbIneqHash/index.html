@@ -6432,7 +6432,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6455,7 +6455,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6478,7 +6478,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9629,42 +9629,50 @@
 <h2 id="linearity-of-expectation">Linearity of Expectation</h2>
 <p>Analyze the expected query time of hashing in chaining.</p>
 <p>The work spend when answering the query <span class="arithmatex">\(x\)</span> is proportional to the number of elements from <span class="arithmatex">\(S\)</span> also stored in <span class="arithmatex">\(List(A[h(x)])\)</span>.</p>
-<p>Bad idea: compute <span class="arithmatex">\(\mathbb E[List(A[h(x)])]\)</span> directly: (Too hard)
-$$
-=\sum_{i=0}^ni\cdot\Pr{i=List(A[h(x)])}\
-=\sum_{i=0}<sup>ni\cdot(\frac{1}{m})</sup>i(1-\frac{1}{m})<sup>{n-i}C_n</sup>i
-$$
-Good idea: break down <span class="arithmatex">\(X\)</span>.</p>
+<p>Bad idea: compute <span class="arithmatex">\(\mathbb E[List(A[h(x)])]\)</span> directly: (Too hard)</p>
+<div class="arithmatex">\[
+=\sum_{i=0}^ni\cdot\Pr\{i=List(A[h(x)])\}\\
+\]</div>
+<div class="arithmatex">\[
+=\sum_{i=0}^ni\cdot(\frac{1}{m})^i(1-\frac{1}{m})^{n-i}C_n^i
+\]</div>
+<p>Good idea: break down <span class="arithmatex">\(X\)</span>.</p>
 <p>Random variable <span class="arithmatex">\(X_i\)</span> for each <span class="arithmatex">\(x_i\)</span>, if <span class="arithmatex">\(h(x_i)=h(x), X_i=1\)</span>, else <span class="arithmatex">\(X_i=0\)</span>.</p>
 <p>The expected query time is <span class="arithmatex">\(O(\mathbb E_h[\sum_iX_i])\)</span></p>
 <p>Definition of expectation: <span class="arithmatex">\(\mathbb E[X]=\sum_{x\in X}Pr[X=x]\cdot x\)</span></p>
 <p>Linearity of expectation: <span class="arithmatex">\(\mathbb E[\sum_ix_i]=\sum_i\mathbb E[x_i]\)</span></p>
-<p>Thus, by linearity of expectation,
-$$
-\mathbb E_h[\sum_iX_i]=\sum_i\mathbb E_h[X_i]\
-\mathbb E_h[X_i]=\Pr[h(x_i)=h(x)]\cdot1+\Pr[h(x_i)\neq h(x)]\cdot0\=\Pr[h(x_i)=h(x)]
-$$
-if <span class="arithmatex">\(x_i=x,\Pr[h(x_i)=h(x)]=1\)</span>. if <span class="arithmatex">\(x_i\neq x,\Pr[h(x_i)=h(x)]=\frac{1}{m}\)</span>.</p>
-<p>Thus,
-$$
+<p>Thus, by linearity of expectation,</p>
+<div class="arithmatex">\[
+\mathbb E_h[\sum_iX_i]=\sum_i\mathbb E_h[X_i]\\
+\]</div>
+<div class="arithmatex">\[
+\mathbb E_h[X_i]=\Pr[h(x_i)=h(x)]\cdot1+\Pr[h(x_i)\neq h(x)]\cdot0\\=\Pr[h(x_i)=h(x)]
+\]</div>
+<p>if <span class="arithmatex">\(x_i=x,\Pr[h(x_i)=h(x)]=1\)</span>. if <span class="arithmatex">\(x_i\neq x,\Pr[h(x_i)=h(x)]=\frac{1}{m}\)</span>.</p>
+<p>Thus,</p>
+<div class="arithmatex">\[
 \sum_i\mathbb E_h[X_i]\le1+\sum_{i:x_i\neq x}\mathbb E_h[X_i]\le1+\frac{n}{m}
-$$
-choose <span class="arithmatex">\(m=\Theta(n)\)</span>, then query time is <span class="arithmatex">\(O(1)\)</span> and space usage is <span class="arithmatex">\(O(n)\)</span>.</p>
+\]</div>
+<p>choose <span class="arithmatex">\(m=\Theta(n)\)</span>, then query time is <span class="arithmatex">\(O(1)\)</span> and space usage is <span class="arithmatex">\(O(n)\)</span>.</p>
 <p><strong>Linearity of expectation is also valid if random variables are not independent!!!</strong></p>
 <h2 id="markovs-inequality">Markov's Inequality</h2>
 <p>Let <span class="arithmatex">\(X\)</span> be a <strong>non-negative</strong> discrete random variable. <span class="arithmatex">\(\forall t\gt0\)</span>, we have <span class="arithmatex">\(\Pr[x\gt t]\lt\frac{\mathbb E[X]}{t}\)</span> and <span class="arithmatex">\(\Pr[x\ge t]\le\frac{\mathbb E[X]}{t}\)</span></p>
 <blockquote>
-<p>Proof for continuous version
-$$
-\mathbb E[X]=\int_0^\infty xf(x)dx\
-\forall t&gt;0,\mathbb E[X]\ge\int_t^\infty xf(x)dx\
+<p>Proof for continuous version</p>
+<div class="arithmatex">\[
+\mathbb E[X]=\int_0^\infty xf(x)dx\\
+\]</div>
+<div class="arithmatex">\[
+\forall t&gt;0,\mathbb E[X]\ge\int_t^\infty xf(x)dx\\
+\]</div>
+<div class="arithmatex">\[
 \ge\int_t^\infty tf(x)dx=t\int_t^\infty f(x)dx=t\cdot\Pr(X\ge t)
-$$</p>
+\]</div>
 </blockquote>
-<p>Conclusion: If we insert <span class="arithmatex">\(n\)</span> elements into hashing with chaining data structure and then ask one query <span class="arithmatex">\(x\)</span>, then the linked list <span class="arithmatex">\(List(A[h(x)])\)</span> that we have to scan through contains more than <span class="arithmatex">\(t(1+\frac{n}{m})\)</span> elements with probability less than <span class="arithmatex">\(1\over t\)</span>.
-$$
+<p>Conclusion: If we insert <span class="arithmatex">\(n\)</span> elements into hashing with chaining data structure and then ask one query <span class="arithmatex">\(x\)</span>, then the linked list <span class="arithmatex">\(List(A[h(x)])\)</span> that we have to scan through contains more than <span class="arithmatex">\(t(1+\frac{n}{m})\)</span> elements with probability less than <span class="arithmatex">\(1\over t\)</span>.</p>
+<div class="arithmatex">\[
 \Pr[X\gt t(1+\frac{n}{m})]\lt\frac{\mathbb E[X]}{t(1+\frac{n}{m})}\le\frac{1+\frac{n}{m}}{t(1+\frac{n}{m})}=\frac{1}{t}
-$$</p>
+\]</div>
 <p>Markov's Inequality gives a loose bound: <span class="arithmatex">\(\Pr[List(A[h(x)])=n] \le(1+n/m)/n=O(1/n)(m=\Theta(n))\)</span></p>
 <h2 id="chernoff-bound">Chernoff Bound</h2>
 <p><img alt="😰" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f630.svg" title=":cold_sweat:" /><img alt="😰" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f630.svg" title=":cold_sweat:" /><img alt="😰" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f630.svg" title=":cold_sweat:" /><del>What the hell is this?!</del></p>
@@ -9672,91 +9680,123 @@ $$</p>
 <p>We have <span class="arithmatex">\(|List(A[i])|=\sum_jY_j\)</span>.</p>
 <p><span class="arithmatex">\(Y_j\)</span>s are independent and <span class="arithmatex">\(\mathbb E[Y_j]=\frac{1}{m}\)</span>.</p>
 <p>Chernoff Bound: Let <span class="arithmatex">\(\{X_i\}\)</span> be a set of <strong>independent boolean random variables</strong> and let <span class="arithmatex">\(X=\sum_iX_i\)</span>. Then,</p>
-<p><span class="arithmatex">\(\forall\mu\le\mathbb E[X],\forall0\lt\delta\lt1\)</span> we have
-$$
-\Pr[X\lt(1-\delta)\mu]\lt e<sup>{-\frac{\delta</sup>2\mu}{2}}
-$$
-<span class="arithmatex">\(\forall\mu\ge\mathbb E[X],\forall0\lt\delta\lt1\)</span> we have
-$$
-\Pr[X\gt(1+\delta)\mu]\lt e<sup>{-\frac{\delta</sup>2\mu}{3}}
-$$
-Finally, <span class="arithmatex">\(\forall\delta\ge1,\forall\mu\ge\mathbb E[X]\)</span>, we have
-$$
-\Pr[X\gt(1+\delta)\mu]\lt(\frac{e<sup>\delta}{(1+\delta)</sup>{1+\delta}})^\mu
-$$</p>
-<p>We have <span class="arithmatex">\(\mathbb E[Y]=\frac{n}{m}\)</span>, <span class="arithmatex">\(\forall\delta\ge1\)</span>, we have <strong>Chernoff Bound</strong>:
-$$
-\Pr[Y\gt(1+\delta)\frac{n}{m}]\lt(\frac{e<sup>\delta}{(1+\delta)</sup>{1+\delta}})^{\frac{n}{m}}
-$$</p>
-<p>Application in our scenario: <span class="arithmatex">\(m=n,t=(1+\delta)\ge2,\mu=\mathbb E[Y]={n\over m}=O(1)\)</span>:
-$$
-\Pr[|List(A[i])|\gt t]=\Pr[Y\gt t]\lt\frac{e<sup>{t-1}}{t</sup>t}\lt(\frac{e}{t})^t
-$$
-Conclusion: we spend more than <span class="arithmatex">\(O(t)\)</span> time with probability decreasing as fast as <span class="arithmatex">\(t^{-t}\)</span>.</p>
+<p><span class="arithmatex">\(\forall\mu\le\mathbb E[X],\forall0\lt\delta\lt1\)</span> we have</p>
+<div class="arithmatex">\[
+\Pr[X\lt(1-\delta)\mu]\lt e^{-\frac{\delta^2\mu}{2}}
+\]</div>
+<p><span class="arithmatex">\(\forall\mu\ge\mathbb E[X],\forall0\lt\delta\lt1\)</span> we have</p>
+<div class="arithmatex">\[
+\Pr[X\gt(1+\delta)\mu]\lt e^{-\frac{\delta^2\mu}{3}}
+\]</div>
+<p>Finally, <span class="arithmatex">\(\forall\delta\ge1,\forall\mu\ge\mathbb E[X]\)</span>, we have</p>
+<div class="arithmatex">\[
+\Pr[X\gt(1+\delta)\mu]\lt(\frac{e^\delta}{(1+\delta)^{1+\delta}})^\mu
+\]</div>
+<p>We have <span class="arithmatex">\(\mathbb E[Y]=\frac{n}{m}\)</span>, <span class="arithmatex">\(\forall\delta\ge1\)</span>, we have <strong>Chernoff Bound</strong>:</p>
+<div class="arithmatex">\[
+\Pr[Y\gt(1+\delta)\frac{n}{m}]\lt(\frac{e^\delta}{(1+\delta)^{1+\delta}})^{\frac{n}{m}}
+\]</div>
+<p>Application in our scenario: <span class="arithmatex">\(m=n,t=(1+\delta)\ge2,\mu=\mathbb E[Y]={n\over m}=O(1)\)</span>:</p>
+<div class="arithmatex">\[
+\Pr[|List(A[i])|\gt t]=\Pr[Y\gt t]\lt\frac{e^{t-1}}{t^t}\lt(\frac{e}{t})^t
+\]</div>
+<p>Conclusion: we spend more than <span class="arithmatex">\(O(t)\)</span> time with probability decreasing as fast as <span class="arithmatex">\(t^{-t}\)</span>.</p>
 <blockquote>
 <p>Proof of Chernoff Bound</p>
-<p>By Markov's inequality,
-$$
-\forall t\gt0:\Pr(x\gt a)=\Pr(e^{tX}\gt e^{ta})\lt\frac{\mathbb E[e<sup>{tX}]}{e</sup>{ta}}\
-\text{Denote }M_X(t)=\mathbb E[e^{tX}], M_X(t)=\prod_{i=1}^nM_{X_i}(t)\
-M_X(t)=pe<sup>t+(1-p)=1+p(e</sup>t-1)\le e<sup>{p(e</sup>t-1)}\
-\therefore\Pr(X\gt(1+\delta)\mu)\lt\frac{\mathbb E[e<sup>{tX}]}{e</sup>{t(1+\delta)\mu}}=\frac{\prod_{i=1}<sup>nM_{X_i}(t)}{e</sup>{t(1+\delta)\mu}}\
-\le\frac{e<sup>{(e</sup>t-1)\sum_ip_i}}{e<sup>{t(1+\delta)\mu}}=\frac{e</sup>{(e^t-1)\mathbb E[X]}}{e<sup>{t(1+\delta)\mu}}\le[\frac{e</sup>{e<sup>t-1}}{e</sup>{t(1+\delta)}}]^\mu\
-$$
-Let <span class="arithmatex">\(t=\ln(1+\delta)\ge0\)</span>, we have:
-$$
-\Pr[X\gt(1+\delta)\mu]\lt(\frac{e<sup>\delta}{(1+\delta)</sup>{1+\delta}})^\mu\
-\Rightarrow\ln[(\frac{e<sup>\delta}{(1+\delta)</sup>{1+\delta}})^\mu]=\mu(\delta-(1+\delta)\ln(1+\delta))\
-\because\forall x\ge0,\ln(1+x)\ge\frac{x}{1+\frac{x}{2}}\
-\therefore\mu(\delta-(1+\delta)\ln(1+\delta))\le-\frac{\delta^2}{2+\delta}\mu\
-\lt-\frac{\mu\delta^2}{3}(\because0\lt\delta\lt1)\
-\Pr[X\gt(1+\delta)\mu]\lt e<sup>{-\frac{\delta</sup>2\mu}{3}}(0\lt\delta\lt1)
-$$</p>
-<p>Analogously, we have
-$$
-\forall t\gt0:\Pr(x\lt a)=\Pr(e^{-tX}\gt e^{-ta})\lt\frac{\mathbb E[e<sup>{-tX}]}{e</sup>{-ta}}\
-\Rightarrow\cdots\Rightarrow\cdots\
-\Rightarrow\Pr[X\lt(1-\delta)\mu]\lt(\frac{e<sup>{e</sup>{-t}-1}}{e<sup>{-t(1-\delta)}})</sup>\mu(<strong>)\
-$$
-Let <span class="arithmatex">\(t=-\ln(1-\delta)\gt0\)</span>,
-$$
-(</strong>)=(\frac{e<sup>{-\delta}}{(1-\delta)</sup>{1-\delta}})^\mu(<em>)\
-\because \forall0\lt\delta\lt1,(1-\delta)\ln(1-\delta)\gt-\delta+\frac{\delta^2}{2}\
-\therefore(</em>)\le(\frac{e<sup>{-\delta}}{e</sup>{-\delta+\frac{\delta<sup>2}{2}}})</sup>\mu=e<sup>{-\frac{\delta</sup>2\mu}{2}}\
-\Rightarrow\Pr[X\lt(1-\delta)\mu]\lt e<sup>{-\frac{\delta</sup>2\mu}{2}}
-$$</p>
+<p>By Markov's inequality,</p>
+<div class="arithmatex">\[
+\forall t\gt0:\Pr(x\gt a)=\Pr(e^{tX}\gt e^{ta})\lt\frac{\mathbb E[e^{tX}]}{e^{ta}}\\
+\]</div>
+<div class="arithmatex">\[
+\text{Denote }M_X(t)=\mathbb E[e^{tX}], M_X(t)=\prod_{i=1}^nM_{X_i}(t)\\
+\]</div>
+<div class="arithmatex">\[
+M_X(t)=pe^t+(1-p)=1+p(e^t-1)\le e^{p(e^t-1)}\\
+\]</div>
+<div class="arithmatex">\[
+\therefore\Pr(X\gt(1+\delta)\mu)\lt\frac{\mathbb E[e^{tX}]}{e^{t(1+\delta)\mu}}=\frac{\prod_{i=1}^nM_{X_i}(t)}{e^{t(1+\delta)\mu}}\\
+\]</div>
+<div class="arithmatex">\[
+\le\frac{e^{(e^t-1)\sum_ip_i}}{e^{t(1+\delta)\mu}}=\frac{e^{(e^t-1)\mathbb E[X]}}{e^{t(1+\delta)\mu}}\le[\frac{e^{e^t-1}}{e^{t(1+\delta)}}]^\mu\\
+\]</div>
+<p>Let <span class="arithmatex">\(t=\ln(1+\delta)\ge0\)</span>, we have:</p>
+<div class="arithmatex">\[
+\Pr[X\gt(1+\delta)\mu]\lt(\frac{e^\delta}{(1+\delta)^{1+\delta}})^\mu\\
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow\ln[(\frac{e^\delta}{(1+\delta)^{1+\delta}})^\mu]=\mu(\delta-(1+\delta)\ln(1+\delta))\\
+\]</div>
+<div class="arithmatex">\[
+\because\forall x\ge0,\ln(1+x)\ge\frac{x}{1+\frac{x}{2}}\\
+\]</div>
+<div class="arithmatex">\[
+\therefore\mu(\delta-(1+\delta)\ln(1+\delta))\le-\frac{\delta^2}{2+\delta}\mu\\
+\]</div>
+<div class="arithmatex">\[
+\lt-\frac{\mu\delta^2}{3}(\because0\lt\delta\lt1)\\
+\]</div>
+<div class="arithmatex">\[
+\Pr[X\gt(1+\delta)\mu]\lt e^{-\frac{\delta^2\mu}{3}}(0\lt\delta\lt1)
+\]</div>
+<p>Analogously, we have</p>
+<div class="arithmatex">\[
+\forall t\gt0:\Pr(x\lt a)=\Pr(e^{-tX}\gt e^{-ta})\lt\frac{\mathbb E[e^{-tX}]}{e^{-ta}}\\
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow\cdots\Rightarrow\cdots\\
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow\Pr[X\lt(1-\delta)\mu]\lt(\frac{e^{e^{-t}-1}}{e^{-t(1-\delta)}})^\mu(**)\\
+\]</div>
+<p>Let <span class="arithmatex">\(t=-\ln(1-\delta)\gt0\)</span>,</p>
+<div class="arithmatex">\[
+(**)=(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}})^\mu(*)\\
+\]</div>
+<div class="arithmatex">\[
+\because \forall0\lt\delta\lt1,(1-\delta)\ln(1-\delta)\gt-\delta+\frac{\delta^2}{2}\\
+\]</div>
+<div class="arithmatex">\[
+\therefore(*)\le(\frac{e^{-\delta}}{e^{-\delta+\frac{\delta^2}{2}}})^\mu=e^{-\frac{\delta^2\mu}{2}}\\
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow\Pr[X\lt(1-\delta)\mu]\lt e^{-\frac{\delta^2\mu}{2}}
+\]</div>
 </blockquote>
 <h2 id="union-bound">Union Bound</h2>
-<p>Let <span class="arithmatex">\(\{E_i\}\)</span> be events, then
-$$
+<p>Let <span class="arithmatex">\(\{E_i\}\)</span> be events, then</p>
+<div class="arithmatex">\[
 \Pr[\bigcup_iE_i]\le\sum_i\Pr[E_i]
-$$
-If we define <span class="arithmatex">\(E_i\)</span> as event that <span class="arithmatex">\(|List(A[i])|\gt4\frac{\ln n}{\ln\ln n}\)</span>, then by Chernoff Bound,
-$$
+\]</div>
+<p>If we define <span class="arithmatex">\(E_i\)</span> as event that <span class="arithmatex">\(|List(A[i])|\gt4\frac{\ln n}{\ln\ln n}\)</span>, then by Chernoff Bound,</p>
+<div class="arithmatex">\[
 \Pr[E_i]\lt((e/4)\ln\ln n/\ln n)^{4\ln n/\ln\ln n}\lt(\ln\ln n/\ln n)^{4\ln n/\ln\ln n}
-$$
-(<span class="arithmatex">\(n\gt3\gt e\)</span> is needed!)</p>
-<p><img alt="😲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f632.svg" title=":astonished:" /><del>CRAZY MATH!!!</del>
-$$
-\because \ln\ln n\le\sqrt{\ln n}\
-\therefore(\frac{\ln\ln n}{\ln n})^{\frac{4\ln n}{\ln\ln n}}\le(\frac{\sqrt{\ln n}}{\ln n})^{\frac{4\ln n}{\ln\ln n}}=(\ln n)^{-\frac{2\ln n}{\ln\ln n}}\
+\]</div>
+<p>(<span class="arithmatex">\(n\gt3\gt e\)</span> is needed!)</p>
+<p><img alt="😲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f632.svg" title=":astonished:" /><del>CRAZY MATH!!!</del></p>
+<div class="arithmatex">\[
+\because \ln\ln n\le\sqrt{\ln n}\\
+\]</div>
+<div class="arithmatex">\[
+\therefore(\frac{\ln\ln n}{\ln n})^{\frac{4\ln n}{\ln\ln n}}\le(\frac{\sqrt{\ln n}}{\ln n})^{\frac{4\ln n}{\ln\ln n}}=(\ln n)^{-\frac{2\ln n}{\ln\ln n}}\\
+\]</div>
+<div class="arithmatex">\[
 =(e^{\ln\ln n})^{-2\frac{\ln n}{\ln\ln n}}=e^{-2\frac{\ln n}{\ln\ln n}\cdot\ln\ln n}=n^{-2}
-$$
-By union bound, we have
-$$
-\Pr[\bigcup_iE_i]\le\sum_in<sup>{-2}=n</sup>{-1}
-$$
-This means with probability <span class="arithmatex">\(1-\frac{1}{n}\)</span>, there is not even a single list <span class="arithmatex">\(List(A[i])\)</span> with size more than <span class="arithmatex">\(4\frac{\ln n}{\ln\ln n}\)</span>, assuming <span class="arithmatex">\((n\ge3)\)</span>.</p>
+\]</div>
+<p>By union bound, we have</p>
+<div class="arithmatex">\[
+\Pr[\bigcup_iE_i]\le\sum_in^{-2}=n^{-1}
+\]</div>
+<p>This means with probability <span class="arithmatex">\(1-\frac{1}{n}\)</span>, there is not even a single list <span class="arithmatex">\(List(A[i])\)</span> with size more than <span class="arithmatex">\(4\frac{\ln n}{\ln\ln n}\)</span>, assuming <span class="arithmatex">\((n\ge3)\)</span>.</p>
 <p>In this case, the worst case query time of the data structure is <span class="arithmatex">\(O(\frac{\log n}{\log\log n})\)</span></p>
 <p>Hashing with Chaining with <span class="arithmatex">\(m=n\)</span>, the worst query time is <span class="arithmatex">\(O(\frac{\log n}{\log\log n})\)</span> with probability <span class="arithmatex">\(1-\frac{1}{n}\)</span> when <span class="arithmatex">\(h\)</span> is truly random.</p>
 <p>The construction time is <span class="arithmatex">\(O(n)\)</span> and the space is <span class="arithmatex">\(O(n)\)</span>.</p>
 <h3 id="worst-case">Worst Case</h3>
 <p>After insert <span class="arithmatex">\(x_1,\cdots,x_n\)</span>, one of the list exceeds <span class="arithmatex">\(4\frac{\ln n}{\ln\ln n}\)</span>, then we discard the current data structure and try again with a freshly chosen <span class="arithmatex">\(h\)</span>.</p>
-<p>This performs at least <span class="arithmatex">\(i\)</span> iterations with probability no more than <span class="arithmatex">\((\frac{1}{n})^{i-1}\)</span>, thus the expected construction time is upper bounded by
-$$
-\sum_{i=1}<sup>\infty(1/n)</sup>{i-1}\cdot O(n)=O(n)
-$$
-We have thus achieved a worst case query time of <span class="arithmatex">\(O(\log n/\log\log n)\)</span> with space <span class="arithmatex">\(O(n)\)</span> and expected construction time <span class="arithmatex">\(O(n)\)</span>.</p>
+<p>This performs at least <span class="arithmatex">\(i\)</span> iterations with probability no more than <span class="arithmatex">\((\frac{1}{n})^{i-1}\)</span>, thus the expected construction time is upper bounded by</p>
+<div class="arithmatex">\[
+\sum_{i=1}^\infty(1/n)^{i-1}\cdot O(n)=O(n)
+\]</div>
+<p>We have thus achieved a worst case query time of <span class="arithmatex">\(O(\log n/\log\log n)\)</span> with space <span class="arithmatex">\(O(n)\)</span> and expected construction time <span class="arithmatex">\(O(n)\)</span>.</p>
 <h1 id="o-notation">O-Notation</h1>
 <p>中文中有个很好的对应概念”数量级“</p>
 <p>For two functions <span class="arithmatex">\(f:\mathbb R\rightarrow\mathbb R,g:\mathbb R\rightarrow\mathbb R\)</span>, we can write <span class="arithmatex">\(f(n)=O(g(n))\)</span> if:</p>
@@ -9766,11 +9806,11 @@ We have thus achieved a worst case query time of <span class="arithmatex">\(O(\l
 <p>e.g. <span class="arithmatex">\(n^3/6-n^2/2=O(n^3)\)</span></p>
 <p>Sum of same magnitude. if <span class="arithmatex">\(\forall i=1,\cdots,k,f_i(n)=O(g(n))\)</span>, then <span class="arithmatex">\(\sum_{i=1}^kf_i(n)=O(g(n))\)</span></p>
 <p>Constants don't matter!</p>
-<p>Products. if <span class="arithmatex">\(f(n)=O(h(n)),g(n)=O(l(n))\)</span> then
-$$
+<p>Products. if <span class="arithmatex">\(f(n)=O(h(n)),g(n)=O(l(n))\)</span> then</p>
+<div class="arithmatex">\[
 f(n)g(n)=O(h(n)l(n))
-$$
-Base of Logs. The base of logarithms don't matter! We only use <span class="arithmatex">\(f(n)=O(\log n)\)</span>.</p>
+\]</div>
+<p>Base of Logs. The base of logarithms don't matter! We only use <span class="arithmatex">\(f(n)=O(\log n)\)</span>.</p>
 <p>Careful with exponents!!! <span class="arithmatex">\(2\log_2n=O(\log n)\)</span>, but <span class="arithmatex">\(2^{2\log_2n}=O(n^2)\)</span></p>
 
 

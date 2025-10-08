@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9491,10 +9491,7 @@
 </li>
 <li>
 <p>Function
-  $$
-  \delta:(Q\diagdown{yes,no})\times(\Sigma\cup{\Delta})\times\Gamma^k\rightarrow Q\times(\Gamma\diagdown{\Delta})<sup>k\times{L,S,R}</sup>{k+1}
-  $$
-  is the <strong>transition function</strong>.</p>
+  <span class="arithmatex">\(\delta:(Q\diagdown\{yes,no\})\times(\Sigma\cup\{\Delta\})\times\Gamma^k\rightarrow Q\times(\Gamma\diagdown\{\Delta\})^k\times\{L,S,R\}^{k+1}\)</span> is the <strong>transition function</strong>.</p>
 </li>
 </ul>
 <div class="admonition info">
@@ -9526,12 +9523,14 @@
 <h2 id="an-extension-on-turing-machine">An Extension on Turing Machine</h2>
 <p>Add an additional <em>output tape</em> which is <em>write-only</em>.</p>
 <p><span class="arithmatex">\(\Lambda\)</span>: non-empty finite set, <em>output alphabet</em>. (Usually <span class="arithmatex">\(\Lambda=\Sigma\)</span>)</p>
-<p>In each step of computation <span class="arithmatex">\(M\)</span> can choose to write a single symbol to the output tape. Then transition function:
-$$
-\delta:(Q\diagdown{yes,no})\times(\Sigma\cup{\Delta})\times\Gamma^k\
-\rightarrow Q\times(\Gamma\diagdown{\Delta})<sup>k\times(\Lambda\cup{\epsilon})\times{L,S,R}</sup>{k+1}
-$$
-<span class="arithmatex">\(\epsilon\)</span> here means write nothing.</p>
+<p>In each step of computation <span class="arithmatex">\(M\)</span> can choose to write a single symbol to the output tape. Then transition function:</p>
+<div class="arithmatex">\[
+\delta:(Q\diagdown\{yes,no\})\times(\Sigma\cup\{\Delta\})\times\Gamma^k\\
+\]</div>
+<div class="arithmatex">\[
+\rightarrow Q\times(\Gamma\diagdown\{\Delta\})^k\times(\Lambda\cup\{\epsilon\})\times\{L,S,R\}^{k+1}
+\]</div>
+<p><span class="arithmatex">\(\epsilon\)</span> here means write nothing.</p>
 <p>Such a Turing machine is also called a <em>transducer</em>.</p>
 <h1 id="time-and-space-complexity">Time and Space Complexity</h1>
 <p>For a given input <span class="arithmatex">\(x\in\Sigma^*\)</span>:</p>
@@ -9590,10 +9589,10 @@ $$
 <p>Observation: If a Turing machine repeats a configuration, it will enter an infinite loop, infinitely repeating the computation taking place between two repeating configurations.</p>
 <h1 id="the-space-hierarchy-theorem">The Space Hierarchy Theorem</h1>
 <p>Idea: More resources means more can be computed.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 3: Let <span class="arithmatex">\(S_2(n)\ge\log n\)</span> be space constructible. If <span class="arithmatex">\(S_1(n)=o(S_2(n))\)</span>, then
-$$
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 3: Let <span class="arithmatex">\(S_2(n)\ge\log n\)</span> be space constructible. If <span class="arithmatex">\(S_1(n)=o(S_2(n))\)</span>, then</p>
+<div class="arithmatex">\[
 DSPACE(S_1(n))\subsetneq DSPACE(S_2(n)).
-$$</p>
+\]</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>中文简单解释一下：图灵机的可用渐进存储空间越多，那么解决的问题也就越多。</p>
@@ -9620,19 +9619,25 @@ $$</p>
 <p>Hard proof.</p>
 </blockquote>
 <h1 id="the-time-hierarchy-theorem">The Time Hierarchy Theorem</h1>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 5: Let <span class="arithmatex">\(T_2(n)\ge n\)</span> be time constructible. If <span class="arithmatex">\(T_1(n)\ge n\)</span> satisfies <span class="arithmatex">\(T_1(n)\log T_1(n)=o(T_2(n))\)</span>, then
-$$
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 5: Let <span class="arithmatex">\(T_2(n)\ge n\)</span> be time constructible. If <span class="arithmatex">\(T_1(n)\ge n\)</span> satisfies <span class="arithmatex">\(T_1(n)\log T_1(n)=o(T_2(n))\)</span>, then</p>
+<div class="arithmatex">\[
 DTIME(T_1(n))\subsetneq DTIME(T_2(n)).
-$$</p>
+\]</div>
 <blockquote>
 <p>Proof by tape reduction.</p>
 </blockquote>
 <h1 id="time-and-space-complexity-classes">Time and Space Complexity Classes</h1>
-<p>There are some standard complexity classes given by natural classes of time and space bounds.
-$$
-L=DSPACE(\log n)\
-P=\bigcup_{k&gt;0}DTIME(n^k)\
-PSPACE=\bigcup_{k&gt;0}DSPACE(n^k)\
+<p>There are some standard complexity classes given by natural classes of time and space bounds.</p>
+<div class="arithmatex">\[
+L=DSPACE(\log n)\\
+\]</div>
+<div class="arithmatex">\[
+P=\bigcup_{k&gt;0}DTIME(n^k)\\
+\]</div>
+<div class="arithmatex">\[
+PSPACE=\bigcup_{k&gt;0}DSPACE(n^k)\\
+\]</div>
+<p>$$
 EXP=\bigcup_{k&gt;0}DTIME(2<sup>{n</sup>k})
 $$
 Trivially, <span class="arithmatex">\(L\subseteq P\subseteq PSPACE\subseteq EXP\)</span>.</p>

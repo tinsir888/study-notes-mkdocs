@@ -116,10 +116,15 @@ Suppose we set each $x_i$ to be `true` independently with probability $p\gt\frac
 > 对于只含一个变量的布尔表达式，满足的概率为 $p$.
 >
 > 对于含有至少两个变量的布尔表达式，假设 $x_i$ 有 $a$ 个，$\bar x_j$ 有 $b$ 个，则该表达式不满足的概率为：
+>
 > $$
 > \Pr[C_k\text{ not satisfied}]=(1-p)^ap^b\le p^{a+b}\le p^2\\
+> $$
+>
+> $$
 > \therefore\Pr[C_k\text{ satisfied}]\ge 1-p^2
 > $$
+>
 > 现在就需要将 $\min(p,1-p^2)$ 最大化。
 
 Best performance is $p=1-p^2\Rightarrow p\approx0.618$.
@@ -131,12 +136,23 @@ Let $v_i$ be the weight of the unit clause $\bar x_i$ if it exists in the instan
 $OPT$ has a tighter bound: $OPT\le\sum_{j=1}^mw_j-\sum_{i=1}^nv_i$.
 
 Let $U$ be the set of indices of clauses of the instance excluding unit clauses of the form $\bar x_i$. WLOG the weight of each clause $\bar x_i$ is no greater than the weight of clause $x_i$. Thus $\sum_{j\in U}w_j=\sum_{j=1}^mw_j-\sum_{i=1}^nv_i$. Each $x_i$ is set to `true` with probability $0.618$. So the algorithm produces
+
 $$
 \mathbb E[W]=\sum_{j=1}^mw_j\Pr[C_j\text{ satisfied}]\\
+$$
+
+$$
 \ge\sum_{j\in U}^mw_j\Pr[C_j\text{ satisfied}]\\
+$$
+
+$$
 \ge p\cdot\sum_{j\in U}w_j\\
+$$
+
+$$
 =p\cdot(\sum_{j=1}^mw_j-\sum_{i=1}^nv_i)\ge p\cdot OPT.
 $$
+
 This algorithm can be derandomized using the method of conditional expectations.
 
 # Randomized Rounding
@@ -152,13 +168,17 @@ Idea of **randomized rounding**:
 For MAX SAT problem, in addition to the variables $y_i$, we introduce a variable $z_j$ for each $C_j$ that will be $1$ if the clause is satisfied and $0$ otherwise. For each clause $C_j$ let $P_j$ be the indices of the variables $x_i$ that are positive, $N_j$ be negated in the clause.
 
 We denote the clause $C_j$ by
+
 $$
 \bigvee_{i\in P_j}x_i\lor\bigvee_{i\in N_j}\bar x_i.
 $$
+
 Then the inequality
+
 $$
 \sum_{i\in P_j}y_i+\sum_{i\in N_j}(1-y_i)\ge z_j
 $$
+
 must hold for $C_j$ since if each variable that occurs positively in the clause is set to `false` and each variable that occurs negatively is set to `true`, then the clause is not satisfied, and $z_j$ must be $0$.
 
 This yields **integer programming** formulation of MAX SAT problem:
@@ -171,41 +191,67 @@ This yields **integer programming** formulation of MAX SAT problem:
 $Z^*_{LP}$ is the optimum value of this linear program $LP$, then clearly the optimum value of integer program (IP) $Z^*_{IP}=OPT$.
 
 Let $(y^*,z^*)$ be the optimum value of solution to the linear programming, relaxation. Consider the result of using randomized rounding, and setting $x_i$ to `true` with probability $y_i^*$ independently. Before we can begin the analysis, we will need 2 facts. The first is commonly called the *arithmetic-geometric mean inequality*, because it compares the **arithmetic and geometric means** of a set of numbers.
+
 $$
 \sqrt[k]{\prod_{i=1}^ka_i}\le\frac{1}{k}\sum_{i=1}^ka_i
 $$
+
 If $f''(x)\le0\forall x\in[0,1],f(0)=a,f(1)=b+a$, then $f(x)\ge bx+a\forall x\in[0,1]$.
 
 :thinking:**Theorem 5**. Randomized rounding gives a randomized $(1-\frac{1}{e})$-approximation algorithm for MAX SAT.
 
 >Applying arithmetic-geometric mean inequality:
+>
 >$$
 >\Pr[C_j\text{ not satisfied}]=\prod_{i\in P_j}(1-y_i^*)\prod_{i\in N_j}y_i^*\\
+>$$
+>
+>$$
 >\le\left[\frac{1}{l_j}(\sum_{i\in P_j}(1-y_i^*)+\sum_{i\in N_j}y_i^*)\right]^{l_j}
 >$$
+
 >By rearranging terms,
+>
 >$$
 >\left[\frac{1}{l_j}(\sum_{i\in P_j}(1-y_i^*)+\sum_{i\in N_j}y_i^*)\right]^{l_j}=\left[1-\frac{1}{l_j}(\sum_{i\in N_j}(1-y_i^*)+\sum_{i\in P_j}y_i^*)\right]^{l_j}
 >$$
+>
 >By the inequality Optimum of LP $\ge$ Optimum of IP, we see
+>
 >$$
 >\Pr[C_j\text{ not satisfied}]\le\left(1-\frac{z_j^*}{l_j}\right)^{l_j}.
 >$$
+>
 >Function $f(z_j^*)=1-\left(1-\frac{z_j^*}{l_j}\right)^{l_j}$ is concave for $l_j\ge1$, then
+>
 >$$
 >\Pr[C_j\text{ satisfied}]\ge1-\left(1-\frac{z_j^*}{l_j}\right)^{l_j}\\
+>$$
+>
+>$$
 >\ge\left[\left(1-\frac{1}{l_j}\right)^{l_j}\right]z_j^*.
 >$$
+>
 >Therefore the expected value of the randomized rounding algorithm is
+>
 >$$
 >\mathbb E[W]=\sum_{j=1}^mw_j\Pr[C_j\text{ satisfied}]\\
+>$$
+>
+>$$
 >\ge\sum_{j=1}^mw_jz_j^*\left[\left(1-\frac{1}{l_j}\right)^{l_j}\right]\\
+>$$
+>
+>$$
 >\ge\min_{k\ge1}\left[\left(1-\frac{1}{k}\right)^{k}\right]\sum_{j=1}^mw_jz_j^*.
 >$$
+>
 >$\left[\left(1-\frac{1}{k}\right)^{k}\right]$ is non-increasing. It approaches $1-\frac{1}{e}$ from above as $k$ tends to infinity. Thus we have
+>
 >$$
 >\mathbb E[W]\ge\min_{k\ge1}\left[\left(1-\frac{1}{k}\right)^{k}\right]\sum_{j=1}^mw_jz_j^*\ge(1-\frac{1}{e})OPT.
 >$$
+>
 >This randomized rounding algorithm can be derandomized in the standard way using the method of conditional expectations.
 
 !!! info
@@ -227,20 +273,35 @@ When the clause is short, it is very likely to be satisfied by the randomized ro
 > Let $W_1$ be a random variable denoting the value of the solution by randomized rounding algorithm.
 >
 > Let $W_2$ be the results of unbiased randomized algorithm. To show:
+>
 > $$
 > \mathbb E[\max(W_1,W_2)]\ge\frac{3}{4}OPT\\
 > $$
+>
 > Observe that
+>
 > $$
 > \mathbb E[\max(W_1,W_2)]\ge\mathbb E[\frac{1}{2}(W_1+W_2)]\\
+> $$
+>
+> $$
 > =\frac{1}{2}\mathbb E[W_1]+\frac{1}{2}\mathbb E[W_2]\\
+> $$
+>
+> $$
 > \ge\frac{1}{2}\sum_{j=1}^mw_jz_j^*\left[\left(1-\frac{1}{l_j}\right)^{l_j}\right]+\frac{1}{2}\sum_{j=1}^mw_j(1-2^{-l_j})\\
+> $$
+>
+> $$
 > \ge\sum_{j=1}^mw_jz_j^*\left[\frac{1}{2}\left(1-(1-\frac{1}{l_j})^{l_j}\right)+\frac{1}{2}(1-2^{-l_j})\right].
 > $$
+>
 > Claim that
+>
 > $$
 > \left[\frac{1}{2}\left(1-(1-\frac{1}{l_j})^{l_j}\right)+\frac{1}{2}(1-2^{-l_j})\right]\ge\frac{3}{4}
 > $$
+>
 > for all positive integers $l_j$.
 >
 > ~~通过求导等方法可以求出这个式子的最小值，不太优雅啊……~~

@@ -76,6 +76,7 @@ Point Query(Point q){
 ```
 
 Let $X_p$ be $1$ if $h(p)=h(q)$ and $0$ otherwise.
+
 $$
 \mathbb E[\sum_pX_p]=\sum_p\mathbb E[X_p]=\sum_p\Pr_h[h(p)=h(q)]
 $$
@@ -88,6 +89,7 @@ For $dist(p,q)\le R$, $\Pr_g[g(p)=g(q)]\ge P_1^k$.
 For $dist(p,q)\ge R$, $\Pr_g[g(p)=g(q)]\le P_2^k\le1/n$.
 
 Let $X_p$ be $1$ if $g(p)=g(q)$ and $0$ otherwise.
+
 $$
 \mathbb E[\sum_pX_p]=\sum_{dist(p,q)\ge cR}\Pr[g(p)=g(q)]+\sum_{dist(p,q)\le R}\Pr[g(p)=g(q)]
 $$
@@ -132,30 +134,66 @@ $E_2=\{\sum_{i=1}^L|\{p:dist(p,q)\gt cR\land g_i(q)=g_i(p)\}|\gt3L\}$
 If none of them happens, the results is correct.
 
 We want $\Pr[E_1\cup E_2]\le\Pr[E_1]+\Pr[E_2]\le1/2$.
+
 $$
 \Pr[E_2]\le\mathbb E[\sum_{i=1}^L|\{p:dist(p,q)\gt cR\land g_i(q)=g_i(p)\}|]/3L\\
+$$
+
+$$
 =\sum_{i=1}^L....\\
+$$
+
+$$
 \le L/3L=1/3\\
+$$
+
+$$
 \Pr[E_1]=\Pr[\forall i:g_i(p)\neq g_i(p^*)]\\
+$$
+
+$$
 =\prod_{i=1}^L\Pr[g_i(q)\neq g_i(p^*)]\\
+$$
+
+$$
 =\prod_{i=1}^L(1-\Pr[g_i(q)=g_i(p^*)])\\
+$$
+
+$$
 =(1-P_1^k)^L\\
 $$
+
 Choosing $L=\log_{1-P_1^k}\frac{1}{6}$, we will get $1/2$ probability bound for failure.
 
 ## Upper bound for L
 
 $$
 L=\frac{\ln 1/6}{\ln(1-P_1^k)}\le\frac{\ln(1/6)}{\ln(\exp(-P_1^k))}=\frac{\ln1/6}{-P_1^k}=\ln6/P_1^k=O(P_1^{-k})\\
+$$
+
+$$
 P_1^{-k}=\frac{1}{P_1^{\log_{P_2}1/n}}\\
+$$
+
+$$
 =\cdots\cdots\\
+$$
+
+$$
 =n^{\ln P_1/\ln P_2}=n^{\ln(1/P_1)/\ln(1/P_2)}
 $$
 
 For hamming distance:
+
 $$
 P_1=1-R/d\\
+$$
+
+$$
 P_2=1-cR/d\\
+$$
+
+$$
 \sup L=n^{1/c}
 $$
 

@@ -32,16 +32,21 @@ We want to give a strategy that, upon seeing the value $X_i$ decides either to c
 > Let $\tau$ be the median of the distribution of $X_\max$, i.e., $\Pr[X_\max\ge\tau]=1/2$.
 >
 > Now the strategy is simple: pick the first $X_i$ which exceeds $\tau$. Clearly, we will pick an item with probability exactly $1\over2$, then notice that
+>
 > $$
 > \mathbb E[X_\max]\le\tau+\mathbb E[(X_\max-\tau)^+]\\
 > \le\tau+\mathbb E[\sum_{i=1}^n(X_i-\tau)^+].
 > $$
+>
 > Then for algorithm:
+>
 > $$
 > ALG\ge\tau\cdot\Pr[X_\max\ge\tau]+\sum_{i=1}^n\mathbb E[(X_i-\tau)^+]\cdot\Pr[\bigwedge_{j\le i}(X_j\lt\tau)]\\
 > \ge\tau\cdot\Pr[X_\max\ge\tau]+\sum_{i=1}^n\mathbb E[(X_i-\tau)^+]\cdot\Pr[X_\max\lt\tau]
 > $$
+>
 > By letting $\Pr[X_\max\lt\tau]=\Pr[X_\max\ge\tau]=1/2$, we have
+>
 > $$
 > ALG\ge\frac{1}{2}\mathbb E[X_\max]
 > $$
@@ -140,9 +145,16 @@ If an adversary chooses the order in which the items are presented, every determ
 > A simple algorithm and proof showing probability of $\frac{1}{4}$: ignore the first $n/2$ items, and then pick the next item that is better than all the ones seen so far. Note that this algorithm succeeds if the best item is in the second half of the items (happens with probability $1/2$). Hence $1/4$. Rejecting the first half of the items is not optimal, and there are other cases where the algorithm succeeds that this simple analysis does not account for.
 >
 > First, the algorithm should never pick an element that is not the best so far. Moreover, if we define
+>
 > $$
 > f(i)=\Pr[i^{th}\text{ item is global best}|i^{th}\text{ is best so far}]\\
+> $$
+>
+> $$
 > =\frac{\Pr[i^{th}\text{ item is global best}]}{\Pr[i^{th}\text{ is best so far}]}=\frac{1/n}{1/i}=\frac{i}{n}\\
+> $$
+>
+> $$
 > g(i)=\Pr[\text{picking global best using optimal strategy from item i onwards}]
 > $$
 > then $g(i)$ is a non-increasing and $f(i)$ is increasing.
@@ -150,10 +162,15 @@ If an adversary chooses the order in which the items are presented, every determ
 > Any optimal strategy should pass at times $i$ where $f(i)\lt g(i+1)$ and pick at other times if we see an element that is best so far. i.e., a strategy of the type used in the simple proof of $1/4$ is optimal.
 >
 > So if we reject the first $\tau$ items, then the probability we succeed in picking the global best is
+> 
 > $$
 > \sum_{t=\tau+1}^n\Pr[t^{th}\text{ item is global best}]\cdot\Pr[\text{best of first }t-1\text{ items in first }\tau\text{ positions}]\\
+> $$
+>
+> $$
 > =\sum_{t=\tau+1}^n\frac{1}{n}\cdot\frac{\tau}{t-1}=\frac{\tau}{n}(H_{n-1}-H_{\tau-1}).
 > $$
+>
 > This is $g(\tau+1)$. So the first position where $f(\tau)=\tau/n\ge g(\tau+1)$ is given by the smallest $\tau$ s.t. $1\ge H_{n-1}-H_{\tau-1}$, i.e., $\tau\approx n/e$ for large $n$, hence $g(\tau+1)\approx1/e$.
 
 There is an alternate proof that uses a convex-programming. We will write down an LP that captures some properties of any feasible solution, optimize this LP and show a strategy whose success probability is comparable to the objective of this LP.
@@ -283,13 +300,17 @@ $$
 Let $X_0,\cdots,X_n$ be a martingale s.t. $|X_i-X_{i-1}|\le c_i$.
 
 Then for any $\lambda\gt0$,
+
 $$
 \mathbb P(X_n-X_0\ge\lambda)\le\exp(-\frac{\lambda^2}{2\sum_{i=1}^nc_i^2}),
 $$
+
 and
+
 $$
 \mathbb P(X_n-X_0\le-\lambda)\le\exp(-\frac{\lambda^2}{2\sum_{i=1}^nc_i^2}).
 $$
+
 Proof of the first inequality, (similar proof for second inequality):
 
 >By applying Markov's inequality to an appropriate random variable and it is similar to the proof of Chernoff's bounds.
@@ -297,57 +318,91 @@ Proof of the first inequality, (similar proof for second inequality):
 >We use the variables $Y_i=X_i-X_{i-1}$. The step of the proof:
 >
 >1. We use Chernoff bounds and instead of bounding $\mathbb P(X_n-X_0\ge\lambda)$, we bound $\mathbb P(\exp(t(X_n-X_0))\ge\exp(t\lambda))$:
+>
 > $$
 >   \mathbb P(\exp(t(X_n-X_0))\ge\exp(t\lambda))\le\exp(-t\lambda)\mathbb E[\exp(t(X_n-X_0))].
 > $$
+>
 >   Then focus on $\mathbb E[\exp(t(X_n-X_0))]$, which can be replaced by $Y_i$'s
+>
 > $$
 >   \mathbb E[\exp(t(X_n-X_0))]=\mathbb E[\prod_{i=1}^n\exp(tY_i)],
 > $$
+>
 >   by telescoping, $X_n-X_0\sum_{i=1}^n(X_i-X_{i-1})=\sum_{i=1}^nY_i$.
 >
 >2. We can't use $\mathbb E[Y_1Y_2]=\mathbb E[Y_1]\mathbb E[Y_2]$ since $Y_i$s are not independent. Consider the conditional expectation.
+> 
 > $$
 >   \mathbb E[\prod_{i=1}^n\exp(tY_i)|X_0,\cdots,X_{n-1}]\\
+> $$
+>
+> $$
 >   =(\prod_{i=1}^{n-1}\exp(tY_i))\mathbb E[\exp(tY_n)|X_0,\cdots,X_{n-1}]
 > $$
+>
 >   because for fixed $X_0,\cdots,X_{n-1}$, all but the last factor in the product are constant and can be moved out.
 >
 >   Then find an upper bound on $\mathbb E[\exp(tY_n)|X_0,\cdots,X_{n-1}]$.
 >
 >   - Observe that $\mathbb E[Y_i|X_0,\cdots,X_{i-1}]=0$ by martingale property.
+>
 >     $$
 >     \mathbb E[Y_i|X_0,\cdots,X_{i-1}]\\
+> $$
+>
+> $$
 >     =\mathbb E[X_i-X_{i-1}|X_0,\cdots,X_{i-1}]\\
+> $$
+>
+> $$
 >     =\mathbb E[X_i|X_0,\cdots,X_{i-1}]-\mathbb E[X_{i-1}|X_0,\cdots,X_{i-1}]\\
+> $$
+>
+> $$
 >     =X_{i-1}-X_{i-1}=0
->     $$
+> $$
 >
 >   - Then by the condition $|Y_i|\le c_i$,
+> 
 >     $$
 >     \exp(tY_i)\le\beta_i+\gamma_iY_i
 >     $$
+>
 >     for $\beta_i=(e^{tc_i}+e^{-tc_i})/2\le\exp((tc_i)^2/2)$, $\gamma_i=(e^{tc_i}+e^{-tc_i})/(2c_i)$. Then rewrite $Y_i$ as $Y_i=rc_i+(1-r)(-c_i)$, where $r=\frac{1+Y_i/c_i}{2}\in[0,1]$, then use the convexity of $e^{tx}$ to get
+> 
 >     $$
 >     e^{tY_i}\le re^{tc_i}+(1-r)e^{-tc_i}\\
 >     =\beta_i+\gamma_iY_i.
 >     $$
 >
 >   - Combine the above to get
+> 
 >     $$
 >     \mathbb E[e^{tY_i}|X_0,\cdots,X_{i-1}]\le\mathbb E[\beta_i+\gamma_iY_i|X_0,\cdots,X_{i-1}]\\
+>     $$
+>
+>     $$
 >     =\beta_i\le\exp((tc_i)^2/2).
 >     $$
 >
 >   It follows that
+>
 > $$
 >   \mathbb E[\prod_{i=1}^n\exp(tY_i)]=\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)\times\exp(tY_n)|X_0,\cdots,X_{n-1}]\\
+> $$
+>
+> $$
 >   \le\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)]\exp((tc_n)^2/2).
 > $$
 >
 >3. Then take expectations on both sides to get rid of the conditional expectation:
+>
 > $$
 >   \mathbb E[\prod_{i=1}^n\exp(tY_i)]=\mathbb E[\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)|X_0,\cdots,X_{n-1}]]\\
+> $$
+>
+> $$
 >   \le\mathbb E[\prod_{i=1}^{n-1}\exp(tY_i)]\exp((tc_n)^2/2).
 > $$
 >

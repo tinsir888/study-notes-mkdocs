@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9507,16 +9507,16 @@
 <p>The only thing changed is the query time due to more nodes in <span class="arithmatex">\(\mathcal T\)</span> being visited.</p>
 <p>We want to bound the expected number of light nodes visited.</p>
 <p>Define a light node <span class="arithmatex">\(v\)</span> its light depth <span class="arithmatex">\(d(v)\)</span> as the distance to its <strong>nearest heavy ancestor</strong> in <span class="arithmatex">\(\mathcal T\)</span>.</p>
-<p>Consider all light nodes at levels <span class="arithmatex">\(i\ge2\)</span>. Let <span class="arithmatex">\(V\)</span> be the set of such nodes. If we visit such a node, we spend <span class="arithmatex">\(O(1)\)</span> time making two queries to a count min sketch. Thus if we define an indicator random variable <span class="arithmatex">\(X_v\)</span> for each such node <span class="arithmatex">\(v\in V\)</span>, taking the value 1 if <span class="arithmatex">\(v\)</span> is visited by the query algorithm, and 0 otherwise, then the expected time spend on visiting all light nodes <span class="arithmatex">\(v\in V\)</span> is
-$$
+<p>Consider all light nodes at levels <span class="arithmatex">\(i\ge2\)</span>. Let <span class="arithmatex">\(V\)</span> be the set of such nodes. If we visit such a node, we spend <span class="arithmatex">\(O(1)\)</span> time making two queries to a count min sketch. Thus if we define an indicator random variable <span class="arithmatex">\(X_v\)</span> for each such node <span class="arithmatex">\(v\in V\)</span>, taking the value 1 if <span class="arithmatex">\(v\)</span> is visited by the query algorithm, and 0 otherwise, then the expected time spend on visiting all light nodes <span class="arithmatex">\(v\in V\)</span> is</p>
+<div class="arithmatex">\[
 O(\mathbb E[\sum_{v\in V}X_v])=O(\sum_{v\in V}\mathbb E[X_v])=O(\sum_{v\in V}\Pr[v\text{ is visited}]).
-$$
-Thus we need to bound <span class="arithmatex">\(\Pr[v\text{ is visited}]\)</span>. For this, the trick is to use the light depth.</p>
-<p>Let <span class="arithmatex">\(V_i\subseteq V\)</span> be the set of nodes in <span class="arithmatex">\(V\)</span> with light depth <span class="arithmatex">\(i\)</span> for <span class="arithmatex">\(i=1,\cdots,\log U\)</span>. Then we have
-$$
+\]</div>
+<p>Thus we need to bound <span class="arithmatex">\(\Pr[v\text{ is visited}]\)</span>. For this, the trick is to use the light depth.</p>
+<p>Let <span class="arithmatex">\(V_i\subseteq V\)</span> be the set of nodes in <span class="arithmatex">\(V\)</span> with light depth <span class="arithmatex">\(i\)</span> for <span class="arithmatex">\(i=1,\cdots,\log U\)</span>. Then we have</p>
+<div class="arithmatex">\[
 O(\sum_{v\in V}\Pr[v\text{ is visited}])=O(\sum_{i=1}^{\log U}\sum_{v\in V_i}\Pr[v\text{ is visited}]).
-$$
-Let <span class="arithmatex">\(v\in V_i\)</span> and consider <span class="arithmatex">\(\Pr[v\text{ is visited}]\)</span>.</p>
+\]</div>
+<p>Let <span class="arithmatex">\(v\in V_i\)</span> and consider <span class="arithmatex">\(\Pr[v\text{ is visited}]\)</span>.</p>
 <ul>
 <li>
 <p>For <span class="arithmatex">\(v\)</span> to be visited, it must be the case that query made in every single ancestor up to its nearest heavy ancestor failed, i.e. returned an estimate that was off by at least <span class="arithmatex">\(\epsilon'||f||_1\)</span>.</p>
@@ -9525,8 +9525,8 @@ Let <span class="arithmatex">\(v\in V_i\)</span> and consider <span class="arith
 <p>Since these queries to <span class="arithmatex">\(d(v)=i\)</span> independent count min data structures with failure probability <span class="arithmatex">\(1/4\)</span> each, the probability they all fail is at most <span class="arithmatex">\(1/4^i\)</span>.</p>
 </li>
 </ul>
-<p>Hence, we have
-  $$
+<p>Hence, we have</p>
+<p>$$
   O(\sum_{i=1}^{\log U}\sum_{v\in V_i}\Pr[v\text{ is visited}])=O(\sum_{i=1}^{\log U}\sum_{v\in V_i}4^{-i}).
   $$</p>
 <p>Next we bound <span class="arithmatex">\(|V_i|\)</span>. (By examine a heavy node)</p>
@@ -9538,19 +9538,19 @@ Let <span class="arithmatex">\(v\in V_i\)</span> and consider <span class="arith
 <p>By observation 1, there are no more than <span class="arithmatex">\(O(\epsilon^{-1}\log U)\)</span> heavy nodes in <span class="arithmatex">\(\mathcal T\)</span> and therefore we have <span class="arithmatex">\(|V_i|\le O(2^i\epsilon^{-1}\log U)\)</span>.</p>
 </li>
 </ul>
-<p>We thus conclude that
-  $$
-  O(\mathbb E[\sum_{v\in V}X_v])=O(\sum_{i=1}^{\log U}\sum_{v\in V_i}4<sup>{-i})=O(\sum_{i=1}</sup>{\log U}2<sup>i4</sup>{-i}\frac{1}{\epsilon}\log U)\
-  =O(\frac{1}{\epsilon}\log U\sum_{i=1}^{\log U}2^{-i})=O(\frac{1}{\epsilon}\log U\sum_{i=1}^{\log U}2<sup>{-i})=O(\epsilon</sup>{-1}\log U)
-  $$
-  as claimed.</p>
+<p>We thus conclude that</p>
+<p><span class="arithmatex">\(O(\mathbb E[\sum_{v\in V}X_v])=O(\sum_{i=1}^{\log U}\sum_{v\in V_i}4^{-i})=O(\sum_{i=1}^{\log U}2^i4^{-i}\frac{1}{\epsilon}\log U)\)</span> </p>
+<p><span class="arithmatex">\(=O(\frac{1}{\epsilon}\log U\sum_{i=1}^{\log U}2^{-i})=O(\frac{1}{\epsilon}\log U\sum_{i=1}^{\log U}2^{-i})=O(\epsilon^{-1}\log U)\)</span></p>
+<p>as claimed.</p>
 <p>It remains to bound the cost of the queries made in light nodes at level <span class="arithmatex">\(i=1\)</span>. Recall that these query the data structure at level <span class="arithmatex">\(0\)</span> which had an error probability of <span class="arithmatex">\(1/U^2\)</span>, and thus the cost of visiting such a light node is <span class="arithmatex">\(O(\log U)\)</span> rather than <span class="arithmatex">\(O(1)\)</span>. If we this time define <span class="arithmatex">\(V_i\)</span> as the set of light nodes at level <span class="arithmatex">\(1\)</span> that have a light depth of <span class="arithmatex">\(i\)</span>, then by argument similar to above, the expected time spend visiting nodes <span class="arithmatex">\(v\in V_i\)</span> is <span class="arithmatex">\(O(\sum_{i=1}^{\log U}|V_i|4^{-i}\log U)\)</span>.</p>
 <p>Fortunately, the new sets <span class="arithmatex">\(V_i\)</span> are a factor <span class="arithmatex">\(\log U\)</span> smaller than before. To see this, note that any node in <span class="arithmatex">\(V_i\)</span> must have its nearest heavy ancestor at level exactly <span class="arithmatex">\(1+i\)</span>. But observation 1 tells that there are only <span class="arithmatex">\(O(\frac{1}{\epsilon})\)</span> heavy nodes at level <span class="arithmatex">\(i+1\)</span>, and each such node has only <span class="arithmatex">\(2^i\)</span> descendants at level <span class="arithmatex">\(1\)</span>.</p>
-<p>Therefore we have <span class="arithmatex">\(|V_i|=O(\epsilon^{-1}2^i)\)</span>. Inserting this, we conclude that
-$$
-O(\sum_{i=1}^{\log U}|V_i|4^{-i}\log U)=O(\sum_{i=1}^{\log U}\frac{1}{\epsilon}2<sup>i4</sup>{-i}\log U)\
+<p>Therefore we have <span class="arithmatex">\(|V_i|=O(\epsilon^{-1}2^i)\)</span>. Inserting this, we conclude that</p>
+<div class="arithmatex">\[
+O(\sum_{i=1}^{\log U}|V_i|4^{-i}\log U)=O(\sum_{i=1}^{\log U}\frac{1}{\epsilon}2^i4^{-i}\log U)\\
+\]</div>
+<div class="arithmatex">\[
 =O(\frac{1}{\epsilon}\log U)
-$$</p>
+\]</div>
 <h2 id="summary">Summary</h2>
 <p>Improved space to <span class="arithmatex">\(O(\frac{1}{\epsilon}\log U)\)</span>.</p>
 <p>Update time in worst case <span class="arithmatex">\(O(\log U)\)</span></p>

@@ -95,15 +95,19 @@ Similarly, we define $\mathcal N^-(t)$ for tail.
 Head rank: $rank_H(x_{hrt})=|\{x\in\mathcal N^-(h):s(x)\gt s(x_{hrt})\}|+1$
 
 Similarly, we define $rank_T(x_{hrt})$ for tail.
+
 $$
 ReliK(x_{hrt})=\frac{1}{2}\left(\frac{1}{rank_H(x_{hrt})}+\frac{1}{rank_T(x_{hrt})}\right).
 $$
+
 ReliK can easily be extended from single triples to sub-graphs by computing the average reliability among the triples in the subgraph.
 
 We define the ReliK score of a set $S\subseteq\mathcal F$ of triples as
+
 $$
 ReliK(S)=\frac{1}{S}\sum_{x_{hrt}\in S}ReliK(x_{hrt}).
 $$
+
 $ReliK\in(0,1]$. The higher the $ReliK$, the better reliability.
 
 The lower the head-rank and tail-rank, the better the ranking of $x_{hrt}$ induced by the underlying embedding scores.
@@ -129,9 +133,11 @@ Approximate
 - $ReliK_{Apx}$, estimation of $ReliK$ by evaluating the fraction of triples in the sample that have a higher score than the triple under consideration and scaling this fraction to the total number of negative triples.
 
 Let $S_H$ be a random subset of $k$ elements selected without replacement independently and uniformly at random from negative neighborhood $\mathcal N^-(h)$ of the head $h$ of a triple $x_{hrt}$.
+
 $$
 rank_H^S(x_{hrt})=\vert\{x\in S_H:s(x)\gt s(x_{hrt})\}\vert+1,
 $$
+
 to be the rank of the score $s(x_{hrt})$ the KGE assigns to $x_{hrt}$, among all the triples in the sample.
 
 Similarly, we compute $rank_T^S$ for tail's neighborhood $\mathcal N^-(t)$.
@@ -140,7 +146,13 @@ Similarly, we compute $rank_T^S$ for tail's neighborhood $\mathcal N^-(t)$.
 
 $$
 rank_H(x_{hrt})\le rank_H^S(x_{hrt})+|\mathcal N^-(h)|-|S_H|\\
+$$
+
+$$
 rank_T(x_{hrt})\le rank_T^S(x_{hrt})+|\mathcal N^-(h)|-|S_T|\\
+$$
+
+$$
 \Rightarrow ReliK_{LB}(x_{hrt})=\frac{1}{2}\left(\frac{1}{rank_H^S(x_{hrt})+|\mathcal N^-(h)|-|S_H|}+\frac{1}{rank_T^S(x_{hrt})+|\mathcal N^-(t)|-|S_T|}\right),
 $$
 
@@ -149,6 +161,7 @@ It holds that $ReliK_{LB}(x_{hrt})\le ReliK(x_{hrt})$.
 ### Upper Bound Estimator
 
 Theoretical analysis is omitted here.
+
 $$
 ReliK_{Apx}(x_{hrt})=\frac{1}{2}\left(\frac{1}{rank_H^S(x_{hrt})\frac{\mathcal N^-(h)}{|S_H|}}+\frac{1}{rank_T^S(x_{hrt})\frac{\mathcal N^-(t)}{|S_T|}}\right).
 $$

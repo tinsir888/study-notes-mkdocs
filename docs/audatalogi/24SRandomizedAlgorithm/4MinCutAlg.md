@@ -42,6 +42,7 @@ Variant of cut problem:
 3. 返回这些最大流的最小值 return the minimum s-t cut in all these executions
 
    时间复杂度为 $O(n^2|E|^2)$ It's the algorithm we wanna beat today.
+
    $$
    O(n^4)\le O(n^2|E|^2)\le O(n^6)
    $$
@@ -66,6 +67,7 @@ Some facts help to analyze the algorithm.
 ## Fact 1
 
 If $degree(u)$ denotes the number of edges touching node $u$, then
+
 $$
 \sum_{u\in V}degree(u)=2|E|
 $$
@@ -79,6 +81,7 @@ If there are $n$ nodes, then the average degree of a node is $2|E|\over n$.
 > A very straightforward conclusion.
 >
 > When we randomly pick a node $X$ at random:
+>
 > $$
 > \mathbb E[degree(X)]=\sum_{u\in V}\Pr(X=u)degree(u)={1\over n}\sum_{u\in V}degree(u)=\frac{2|E|}{n}
 > $$
@@ -88,8 +91,12 @@ If there are $n$ nodes, then the average degree of a node is $2|E|\over n$.
 The size of the minimum cut is at most $2|E|\over n$.
 
 > Consider the partition of $V$ into two pieces, one containing a single node $u$, and the other containing the remaining $n-1$ nodes. The size of this cut is $degree(u)$. Since this is a valid cut, the minimum cut cannot be bigger than this. i.e.,
+>
 > $$
 > \forall u\in V, mincut\le degree(u)\\
+> $$
+>
+> $$
 > \Rightarrow mincut\le\min_{u\in V}(degree(u))\le\text{avg}_{u\in V}(degree(u))=\frac{2|E|}{n}.
 > $$
 
@@ -104,13 +111,27 @@ If an edge is picked at random, the probability that it lies across the minimum 
 By facts above, we can easily analyze Karger's algorithm.
 
 Each time an edge is collapsed, the number of nodes decreases by $1$. Therefore,
+
 $$
 \Pr(\text{final cut is the minimum cut})=\Pr(\text{first edge not in mincut})\times\\
+$$
+
+$$
 \Pr(\text{second edge not in mincut})\times\cdots\\
+$$
+
+$$
 \ge(1-\frac{2}{n})\times(1-\frac{2}{n-1})\times\cdots\times(1-\frac{2}{4})\times(1-\frac{2}{3})\\
+$$
+
+$$
 ={n-2\over n}\cdot{n-3\over n-1}\cdot{n-4\over n-2}\cdots{2\over4}\cdot{1\over3}\\
+$$
+
+$$
 ={2\over n(n-1)}=\left(\begin{array}{c}n\\2\end{array}\right)^{-1}
 $$
+
 Karger's algorithm succeeds with probability $p\ge {2\over n^2}$. Therefore, it should be run $\Omega(n^2)$ times, after which the smallest cut found should be chosen.
 
 Another way to implement Karger's algorithm:
@@ -128,9 +149,11 @@ Why does Kruskal's algorithm work?
 In order to boost the probability of success, we simply run the algorithm $\ell\left(\begin{array}{c}n\\2\end{array}\right)$ times.
 
 The probability that at least one run succeeds is at least
+
 $$
 1-\left(1-(\begin{array}{c}n\\2\end{array})^{-1}\right)^{\ell(\begin{array}{c}n\\2\end{array})}\ge 1-e^{-\ell}.
 $$
+
 Setting $\ell=c\ln n$, we have error probability $\le{1\over n^c}$.
 
 It's easy to implement Karger's algorithm so that one run takes $O(n^2)$ time. Therefore, by running the algorithm $O(n^2\log n)$ times, we have an $O(n^4\log n)$ time randomized algorithm with error probability $1\over\text{poly}(n)$. ==Still better than EK algorithm for not very sparse graphs.==
@@ -163,10 +186,13 @@ Improved algorithm: From a multi-graph $G$, if $G$ has at least $6$ vertices, re
 Return the minimum of the cuts found in the two recursive calls.
 
 The choice of $6$ instead of other constant will only affect the running time by a constant factor.
+
 $$
 T(n)=2T(n/\sqrt2)+O(n^2)=O(n^2\log n).
 $$
+
 Since we succeed down to $n/\sqrt2$ with probability $\ge{1\over2}$, we have the following recurrence for the probability of success, denote by $P(n)$:
+
 $$
 P(n)\ge1-\left(1-\frac{1}{2}P(n/\sqrt2+1)\right)^2
 $$
@@ -192,9 +218,11 @@ This solves to $P(n)=\Omega({1\over\log n})$. WHY???
 > Observe that the RHS of the inequality is increasing in $Q(h-1)$.
 >
 > By induction hypothesis, $Q(h-1)\ge{1\over h}$, the inequality implies that
+>
 > $$
 > Q(h)\ge{1\over h}-{(1/h)^2\over4}\ge{1\over h}-{1\over h(h+1)}={1\over h+1}
 > $$
+>
 > as desired.
 
 Hence, similar to the earlier argument for the original algorithm, with $O(\log^2n)$ runs of the algorithm, the probability of success is $1-{1\over\text{poly}(n)}$.

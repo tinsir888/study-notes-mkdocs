@@ -231,9 +231,9 @@ nav:
       - Visual Technology Basis: "APS/noncore/Visual Technology Basis.md"
   - Competitive Programming: #"algcoding/*"
     - Codeforces: #"algcoding/codeforces"
-      - Round \#805 (Div. 3): "algcoding/codeforces/Round805Div3.md"
-      - Round \#957 (Div. 3): "algcoding/codeforces/Round957Div3.md"
-      - Round \#963 (Div. 2): "algcoding/codeforces/Round963Div2.md"
+      - Round 805 (Div. 3): "algcoding/codeforces/Round805Div3.md"
+      - Round 957 (Div. 3): "algcoding/codeforces/Round957Div3.md"
+      - Round 963 (Div. 2): "algcoding/codeforces/Round963Div2.md"
   - Languages:
     - Dansk: #"lingua/Dansknote/*"
       - Andersens Eventyr: #"lingua/Dansknote/AndersensEventyr/*"

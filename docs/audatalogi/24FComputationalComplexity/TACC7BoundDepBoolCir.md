@@ -60,7 +60,13 @@ $C$ compute a Boolean function $f:\{0,1\}^n\to\{0,1\}^m$ in a natural way.
 
 $$
 AND(z_1,\cdots,z_k)=z_1\land\cdots\land z_k\\
+$$
+
+$$
 OR(z_1,\cdots,z_k)=z_1\lor\cdots\lor z_k\\
+$$
+
+$$
 MOD_m(z_1,\cdots,z_k)=\begin{cases}
 1\ if\ \sum_{i=1}^kz_i\not\equiv0\mod m\\
 0\ if\ \sum_{i=1}^kz_i\equiv0\mod m
@@ -70,20 +76,25 @@ $$
 $MOD_2$ is the same as the xor-sum.
 
 The major voting function $MAJ$:
+
 $$
 MAJ(z_1,\cdots,z_k)=\begin{cases}
 1\ if\ \sum_{i=1}^kz_i\ge\frac{k}{2}\\
 0\ if\ \sum_{i=1}^kz_i\lt\frac{k}{2}
 \end{cases}
 $$
+
 Let $w=(w_1,\cdots,w_k)\in\mathbb R^k$ be weights and $t\in\mathbb R$ be a threshold. Then $THR_{w,t}$ is defined:
+
 $$
 THR_{w,t}(z_1,\cdots,z_k)=\begin{cases}
 1\ if\ \sum_{i=1}^kw_iz_i\ge t\\
 0\ if\ \sum_{i=1}^kw_iz_i\lt t
 \end{cases}
 $$
+
 When all weights is $1$,
+
 $$
 T_t(z_1,\cdots,z_k)=\begin{cases}
 1\ if\ \sum_{i=1}^kz_i\ge t\\
@@ -122,9 +133,11 @@ $AC^i$ is similar to $NC^i$.
 > Circuit $C$ with depth $(\log n)$ is computable by a $O(\log n)$ space Turing Machine.
 
 :book:Definition of Boolean product of matrices. $A=(a_{ij})\in\{0,1\}^{m\times r},B=(b_{ij})\in\{0,1\}^{r\times n}$. The Boolean product $AB$ is the $m\times n$ Boolean matrix $C=(c_{ij})$ s.t.
+
 $$
 c_{ij}=\bigvee_{k=1}^ra_{ik}\land a_{kj}.
 $$
+
 A $n\times n$ Boolean matrix corresponds to a directed graph. The transitive closure of the graph gives rise to the transitive closure of the matrix.
 
 !!! info

@@ -6423,7 +6423,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6446,7 +6446,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6469,7 +6469,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9587,79 +9587,79 @@
 <p>While JL theorem requires no assumption on the original data and the target dimension is even independent of the input dimension.</p>
 <p>Further results: JL lemma is tight even for non-linear embeddings.</p>
 <h2 id="simple-jl-lemma">Simple JL Lemma</h2>
-<p><strong>Theorem 1</strong>. For any <span class="arithmatex">\(0\lt\epsilon\lt\frac{1}{2}\)</span> and any integer <span class="arithmatex">\(m\)</span>, then for integer
-$$
+<p><strong>Theorem 1</strong>. For any <span class="arithmatex">\(0\lt\epsilon\lt\frac{1}{2}\)</span> and any integer <span class="arithmatex">\(m\)</span>, then for integer</p>
+<div class="arithmatex">\[
 k=O(\frac{1}{\epsilon^2}\log m)
-$$
-large enough and any <span class="arithmatex">\(m\)</span> points <span class="arithmatex">\(x_1,\cdots,x_m\subset\mathbb R^d\)</span> there exists a linear map matrix <span class="arithmatex">\(L:\mathbb R^d\rightarrow\mathbb R^k\)</span> s.t. for any <span class="arithmatex">\(1\le i,j\le m\)</span>:
-$$
-(1-\epsilon)||x_i-x_j||_2<sup>2\le||Lx_i-Lx_j||_2</sup>2\le(1+\epsilon)||x_i-x_j||^2_2
-$$
-The linear transformation <span class="arithmatex">\(L\)</span> in Theorem 1 is simply multiplication by a matrix whose entries are sampled independently from a standard Gaussian.</p>
+\]</div>
+<p>large enough and any <span class="arithmatex">\(m\)</span> points <span class="arithmatex">\(x_1,\cdots,x_m\subset\mathbb R^d\)</span> there exists a linear map matrix <span class="arithmatex">\(L:\mathbb R^d\rightarrow\mathbb R^k\)</span> s.t. for any <span class="arithmatex">\(1\le i,j\le m\)</span>:</p>
+<div class="arithmatex">\[
+(1-\epsilon)||x_i-x_j||_2^2\le||Lx_i-Lx_j||_2^2\le(1+\epsilon)||x_i-x_j||^2_2
+\]</div>
+<p>The linear transformation <span class="arithmatex">\(L\)</span> in Theorem 1 is simply multiplication by a matrix whose entries are sampled independently from a standard Gaussian.</p>
 <p>Define a random variable <span class="arithmatex">\(A\)</span> as <span class="arithmatex">\(k\times d\)</span> matrix, where each entry <span class="arithmatex">\(A_{i,j}\sim\mathcal N(0,1)\)</span>. The final embedding matrix is sample of the random variable <span class="arithmatex">\(L=\frac{1}{\sqrt k}A\)</span>.</p>
 <p>First we prove a simply simpler result for such random variables.</p>
 <p><strong>Lemma 1</strong>. Fix any vector <strong>unit vector</strong> <span class="arithmatex">\(x\)</span>.</p>
 <blockquote>
 <p><span class="arithmatex">\(x\)</span> is unit vector if <span class="arithmatex">\(\sum_ix_i^2=1\)</span>.</p>
 </blockquote>
-<p>For any <span class="arithmatex">\(0\lt\epsilon,\delta\le\frac{1}{2}\)</span>. For <span class="arithmatex">\(k=O(\frac{1}{\epsilon^2}\log\frac{1}{\delta})\)</span> large enough let <span class="arithmatex">\(L=\frac{1}{\sqrt k}A\)</span> be a random variable, where <span class="arithmatex">\(A\)</span> is a <span class="arithmatex">\(k\times d\)</span> random matrix whose entries are independent <span class="arithmatex">\(\sim\mathcal N(0,1)\)</span>. Then:
-$$
+<p>For any <span class="arithmatex">\(0\lt\epsilon,\delta\le\frac{1}{2}\)</span>. For <span class="arithmatex">\(k=O(\frac{1}{\epsilon^2}\log\frac{1}{\delta})\)</span> large enough let <span class="arithmatex">\(L=\frac{1}{\sqrt k}A\)</span> be a random variable, where <span class="arithmatex">\(A\)</span> is a <span class="arithmatex">\(k\times d\)</span> random matrix whose entries are independent <span class="arithmatex">\(\sim\mathcal N(0,1)\)</span>. Then:</p>
+<div class="arithmatex">\[
 \Pr_L(|||Lx||^2-1|\gt\epsilon)\le\delta
-$$
-If we pick a random matrix as described, then with probability at least <span class="arithmatex">\(1-\delta\)</span> the norm of <span class="arithmatex">\(x\)</span> is distorted by a factor at most <span class="arithmatex">\((1\pm\epsilon)\)</span> by <span class="arithmatex">\(L\)</span>.</p>
-<p>Note that this generalizes to any non-unit vector since a vector <span class="arithmatex">\(v\)</span> can be written as <span class="arithmatex">\(v=||v||\frac{v}{||v||}\)</span>. Since the embedding is linear, <span class="arithmatex">\(Lv=||v||L\frac{v}{||v||}\)</span>, thus with probability at least <span class="arithmatex">\(1-\delta\)</span>,
-$$
-||Lv||<sup>2=\left|\left|||v||L\frac{v}{||v||}\right|\right|</sup>2=||v||<sup>2\left|\left|L\frac{v}{||v||}\right|\right|</sup>2\in||v||^2(1\pm\epsilon)
-$$
- and the same bound applies for any vector <span class="arithmatex">\(v\)</span>.</p>
+\]</div>
+<p>If we pick a random matrix as described, then with probability at least <span class="arithmatex">\(1-\delta\)</span> the norm of <span class="arithmatex">\(x\)</span> is distorted by a factor at most <span class="arithmatex">\((1\pm\epsilon)\)</span> by <span class="arithmatex">\(L\)</span>.</p>
+<p>Note that this generalizes to any non-unit vector since a vector <span class="arithmatex">\(v\)</span> can be written as <span class="arithmatex">\(v=||v||\frac{v}{||v||}\)</span>. Since the embedding is linear, <span class="arithmatex">\(Lv=||v||L\frac{v}{||v||}\)</span>, thus with probability at least <span class="arithmatex">\(1-\delta\)</span>,</p>
+<div class="arithmatex">\[
+||Lv||^2=\left|\left|||v||L\frac{v}{||v||}\right|\right|^2=||v||^2\left|\left|L\frac{v}{||v||}\right|\right|^2\in||v||^2(1\pm\epsilon)
+\]</div>
+<p>and the same bound applies for any vector <span class="arithmatex">\(v\)</span>.</p>
 <h3 id="proof-of-theorem-1">Proof of Theorem 1</h3>
 <p>Fix a point set <span class="arithmatex">\(x_1,\cdots,x_m\)</span>, Set <span class="arithmatex">\(\delta=\frac{1}{m^3}\)</span> and <span class="arithmatex">\(k=O(\epsilon^{-2}\log\frac{1}{\delta})\)</span> large enough and consider the random variable matrix <span class="arithmatex">\(L=\frac{1}{\sqrt k}A\)</span> where <span class="arithmatex">\(A_{i,j}\sim\mathcal N(0,1)\)</span>.</p>
 <p>Observation: From linearity of <span class="arithmatex">\(L\)</span>, it follows that <span class="arithmatex">\(||Lx_i-Lx_j||=||L(x_i-x_j)||\)</span>. This means that the distance between <span class="arithmatex">\(x_i\)</span> and <span class="arithmatex">\(x_j\)</span> is distorted by more than <span class="arithmatex">\((1\pm\epsilon)\)</span> iff the norm of the vector <span class="arithmatex">\((x_i-x_j)\)</span> is distorted by more than <span class="arithmatex">\((1\pm\epsilon)\)</span>.</p>
 <p>Assuming Lemma 1, for any pair of indices <span class="arithmatex">\(i,j\)</span>, the probability that the matrix <span class="arithmatex">\(L\)</span> distorts the norm of the vector <span class="arithmatex">\(x_i-x_j\)</span> by more than <span class="arithmatex">\((1\pm\epsilon)\)</span> is at most <span class="arithmatex">\(\delta\)</span>.</p>
 <p>Since we need all pairwise distances to be approximately maintained, we need to bound the probability that there will be at least one index pair <span class="arithmatex">\(i,j\)</span> s.t. <span class="arithmatex">\(x_i-x_j\)</span> is distorted by at least <span class="arithmatex">\((1\pm\epsilon)\)</span>. We call an index pair <span class="arithmatex">\(i,j\)</span> bad if <span class="arithmatex">\(L\)</span> does not maintain the norm of <span class="arithmatex">\(x_i-x_j\)</span>.</p>
-<p>Applying the Union Bound, the probability over <span class="arithmatex">\(L\)</span> that there is a bad index pair is at most the sum over all <span class="arithmatex">\(i,j\)</span> the probability that <span class="arithmatex">\(L\)</span> distorts the norm of <span class="arithmatex">\(x_i-x_j\)</span> by more than <span class="arithmatex">\((1\pm\epsilon)\)</span>. We get:
-$$
-\Pr_L(\exists(i,j)\text{ that is bad})\le\sum_{i=1}<sup>{m-1}\sum_{j=i+1}</sup>m\Pr((i,j)\text{ bad})=\left(\begin{array}{cc}m\2\end{array}\right)\frac{1}{m^3}\le\frac{1}{m}
-$$
-Thus with probability at least <span class="arithmatex">\(1-\frac{1}{m}\gt0\)</span> the random matrix <span class="arithmatex">\(L\)</span> maintains all the pairwise norms in the dataset within a factor <span class="arithmatex">\((1\pm\epsilon)\)</span>. In particular, this means that there exists a matrix that can embed the points and maintain all pairwise distances and to find one just sample a matrix and it works with probability at least <span class="arithmatex">\(1-\frac{1}{m}\)</span>.</p>
+<p>Applying the Union Bound, the probability over <span class="arithmatex">\(L\)</span> that there is a bad index pair is at most the sum over all <span class="arithmatex">\(i,j\)</span> the probability that <span class="arithmatex">\(L\)</span> distorts the norm of <span class="arithmatex">\(x_i-x_j\)</span> by more than <span class="arithmatex">\((1\pm\epsilon)\)</span>. We get:</p>
+<div class="arithmatex">\[
+\Pr_L(\exists(i,j)\text{ that is bad})\le\sum_{i=1}^{m-1}\sum_{j=i+1}^m\Pr((i,j)\text{ bad})=\left(\begin{array}{cc}m\\2\end{array}\right)\frac{1}{m^3}\le\frac{1}{m}
+\]</div>
+<p>Thus with probability at least <span class="arithmatex">\(1-\frac{1}{m}\gt0\)</span> the random matrix <span class="arithmatex">\(L\)</span> maintains all the pairwise norms in the dataset within a factor <span class="arithmatex">\((1\pm\epsilon)\)</span>. In particular, this means that there exists a matrix that can embed the points and maintain all pairwise distances and to find one just sample a matrix and it works with probability at least <span class="arithmatex">\(1-\frac{1}{m}\)</span>.</p>
 <p>It remains to prove Lemma 1.</p>
 <p><strong>Fact 1</strong>. Fir any constants <span class="arithmatex">\(a,b\)</span>, if <span class="arithmatex">\(X\sim\mathcal N(0,1),Y\sim\mathcal N(0,1)\)</span>, then <span class="arithmatex">\(aX+bY\sim(0,a^2\sigma_x^2+b^2\sigma_y^2)\)</span>.</p>
 <p>Chi-square distribution: the sum of square of <span class="arithmatex">\(k\)</span> independent random variables which <span class="arithmatex">\(\sim\mathcal N(0,1)\)</span></p>
-<p><strong>Lemma 2</strong>. Let <span class="arithmatex">\(Y\sim\chi_k^2\)</span>. Then
-$$
+<p><strong>Lemma 2</strong>. Let <span class="arithmatex">\(Y\sim\chi_k^2\)</span>. Then</p>
+<div class="arithmatex">\[
 \Pr_Y\left(\left|\frac{Y}{k}-1\right|\ge x\right)\le\exp\left(-\frac{3}{16}kx^2\right),x\in[0,\frac{1}{2})
-$$
-First we prove that the random variable defined as the norm of <span class="arithmatex">\(||Ax||^2\)</span> is <span class="arithmatex">\(\chi_k^2\)</span> distributed. The we apply Lemma 2 and Lemma 1.</p>
-<p><strong>Lemma 3</strong>. Given any unit vector <span class="arithmatex">\(x\in\mathbb R^d\)</span>. Let <span class="arithmatex">\(A\)</span> be the random variable matrix with each <span class="arithmatex">\(A_{i,j}\sim\mathcal N(0,1)\)</span> independently of the other entries. Then the random variable that is the squared norm of <span class="arithmatex">\(Ax\)</span> is <span class="arithmatex">\(\chi_{k,d}\)</span> distributed:
-$$
-||Ax||<sup>2\sim\chi_k</sup>2
-$$</p>
+\]</div>
+<p>First we prove that the random variable defined as the norm of <span class="arithmatex">\(||Ax||^2\)</span> is <span class="arithmatex">\(\chi_k^2\)</span> distributed. The we apply Lemma 2 and Lemma 1.</p>
+<p><strong>Lemma 3</strong>. Given any unit vector <span class="arithmatex">\(x\in\mathbb R^d\)</span>. Let <span class="arithmatex">\(A\)</span> be the random variable matrix with each <span class="arithmatex">\(A_{i,j}\sim\mathcal N(0,1)\)</span> independently of the other entries. Then the random variable that is the squared norm of <span class="arithmatex">\(Ax\)</span> is <span class="arithmatex">\(\chi_{k,d}\)</span> distributed:</p>
+<div class="arithmatex">\[
+||Ax||^2\sim\chi_k^2
+\]</div>
 <blockquote>
-<p>Let <span class="arithmatex">\(a_i\)</span> denote the <span class="arithmatex">\(i\)</span>-th row of <span class="arithmatex">\(A\)</span>:
-$$
-||Ax||<sup>2=\sum_{i=1}</sup>k\langle a_i,x\rangle<sup>2=\sum_{i=1}</sup>k\left(\sum_{j=1}<sup>da_{i,j}x_j\right)</sup>2.
-$$</p>
-<p>By Fact 1, <span class="arithmatex">\(a_{i,j}\sim\mathcal N(0,1)\)</span>, we know <span class="arithmatex">\(a_{i,j}x_j\sim\mathcal N(0,x_j^2)\)</span> and we are computing a sum of these. This means that <span class="arithmatex">\(\sum_{j=1}^da_{i,j}x_j\sim\mathcal N(0,\sum_{j=1}^dx_j^2)=\mathcal N(0,1)\)</span>, since <span class="arithmatex">\(||x||^2=1\)</span>. In total, we get that <span class="arithmatex">\(||Ax||^2\)</span> is distributed as a sum of <span class="arithmatex">\(k\)</span> standard Gaussians i.e.
-$$
-||Ax||<sup>2\sim\sum_{i=1}</sup>k\mathcal N(0,1)<sup>2\sim\chi_k</sup>2
-$$</p>
+<p>Let <span class="arithmatex">\(a_i\)</span> denote the <span class="arithmatex">\(i\)</span>-th row of <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[
+||Ax||^2=\sum_{i=1}^k\langle a_i,x\rangle^2=\sum_{i=1}^k\left(\sum_{j=1}^da_{i,j}x_j\right)^2.
+\]</div>
+<p>By Fact 1, <span class="arithmatex">\(a_{i,j}\sim\mathcal N(0,1)\)</span>, we know <span class="arithmatex">\(a_{i,j}x_j\sim\mathcal N(0,x_j^2)\)</span> and we are computing a sum of these. This means that <span class="arithmatex">\(\sum_{j=1}^da_{i,j}x_j\sim\mathcal N(0,\sum_{j=1}^dx_j^2)=\mathcal N(0,1)\)</span>, since <span class="arithmatex">\(||x||^2=1\)</span>. In total, we get that <span class="arithmatex">\(||Ax||^2\)</span> is distributed as a sum of <span class="arithmatex">\(k\)</span> standard Gaussians i.e.</p>
+<div class="arithmatex">\[
+||Ax||^2\sim\sum_{i=1}^k\mathcal N(0,1)^2\sim\chi_k^2
+\]</div>
 </blockquote>
 <h3 id="proof-of-lemma-1">Proof of Lemma 1</h3>
 <p>Fix a unit vector <span class="arithmatex">\(x\)</span> and consider the random variable matrix <span class="arithmatex">\(L=\frac{1}{\sqrt k}A\)</span> defined as usual.</p>
 <p>First note that the expected value <span class="arithmatex">\(\mathbb E[||Ax||^2]=k\)</span>, which means that <span class="arithmatex">\(\mathbb E[||Lx||^2]=1\)</span>, i.e., in expectation the norm of <span class="arithmatex">\(x\)</span> is preserved by <span class="arithmatex">\(L\)</span>. This is a very relevant property indeed. But not enough.</p>
-<p>We need to argue that
-$$
+<p>We need to argue that</p>
+<div class="arithmatex">\[
 \Pr_L(|||Lx||^2-1|\gt\epsilon)\le\delta
-$$
-Luckily this is exactly captured in Lemma 2. Since <span class="arithmatex">\(||Ax||^2\sim\chi_k^2\)</span>, then
-$$
-\Pr_A\left(\left|\frac{||Ax||<sup>2}{k}-1\right|\ge\epsilon\right)\le\exp\left(-\frac{3}{16}k\epsilon</sup>2\right),
-$$
-since <span class="arithmatex">\(||Ax||^2/k=||\frac{1}{\sqrt k}Ax||^2=||Lx||^2\)</span>, this means that
-$$
-\Pr_L(|||Lx||<sup>2-1|\gt\epsilon)\le\exp\left(-\frac{3}{16}k\epsilon</sup>2\right).
-$$
-To finalize the proof, we need to find a <span class="arithmatex">\(k\)</span> s.t. <span class="arithmatex">\(\exp(-\frac{3}{16}k\epsilon^2)\)</span> which is easily achieved by setting <span class="arithmatex">\(k\ge\frac{16}{3}\epsilon^{-2}\log\frac{1}{\delta}\)</span>.</p>
+\]</div>
+<p>Luckily this is exactly captured in Lemma 2. Since <span class="arithmatex">\(||Ax||^2\sim\chi_k^2\)</span>, then</p>
+<div class="arithmatex">\[
+\Pr_A\left(\left|\frac{||Ax||^2}{k}-1\right|\ge\epsilon\right)\le\exp\left(-\frac{3}{16}k\epsilon^2\right),
+\]</div>
+<p>since <span class="arithmatex">\(||Ax||^2/k=||\frac{1}{\sqrt k}Ax||^2=||Lx||^2\)</span>, this means that</p>
+<div class="arithmatex">\[
+\Pr_L(|||Lx||^2-1|\gt\epsilon)\le\exp\left(-\frac{3}{16}k\epsilon^2\right).
+\]</div>
+<p>To finalize the proof, we need to find a <span class="arithmatex">\(k\)</span> s.t. <span class="arithmatex">\(\exp(-\frac{3}{16}k\epsilon^2)\)</span> which is easily achieved by setting <span class="arithmatex">\(k\ge\frac{16}{3}\epsilon^{-2}\log\frac{1}{\delta}\)</span>.</p>
 <h2 id="remarks">Remarks</h2>
 <p>JL Lemma generalizes to the case where the entries in <span class="arithmatex">\(A\)</span> are instead uniform random signs <span class="arithmatex">\(\pm1\)</span>. Also, it can be shown that the matrix can be made sparse and the amount of randomness required reduced, all steps to make the embedding more efficient.</p>
 <p>We can reduce the dimensionality of any dataset by using a simple randomized linear transformation.</p>
@@ -9682,32 +9682,50 @@ To finalize the proof, we need to find a <span class="arithmatex">\(k\)</span> s
 <p>To speed up Lloyd's algorithm</p>
 <p>Before running Lloyd's algorithm, perform a JL transform s.t. all distances between points are preserved to within <span class="arithmatex">\((1\pm\epsilon)\)</span>.</p>
 <p>Let <span class="arithmatex">\(A\in\mathbb R^{m\times d}\)</span> be the embedding matrix s.t. each original point <span class="arithmatex">\(x_i\)</span> is mapped to <span class="arithmatex">\(Ax_i\)</span>. The new dimensionality is <span class="arithmatex">\(m=O(\epsilon^{-2}\log n)\)</span>. Performing the transform takes <span class="arithmatex">\(O(nd\epsilon^{-2}\log n)\)</span> time, which may be much less than <span class="arithmatex">\(O(tdnk)\)</span>. Therefore, running Lloyd's in the lower dimensional space takes <span class="arithmatex">\(tnk\epsilon^{-2}\log n\)</span> for a total running time of <span class="arithmatex">\(O(n\epsilon^{-2}(d+kt)\log n)\)</span>.</p>
-<p><strong>Lemma 4</strong>. For any set of points <span class="arithmatex">\(x_1,\cdots,x_n\)</span> and a partitioning of the points into clusters <span class="arithmatex">\(X_1,\cdots,X_k\)</span>, the cost of the clustering satisfies
-$$
-\sum_{j=1}^k\sum_{x_i\in X_j}\left|\left|x_i-\frac{1}{|X_j|}\sum_{x_h\in X_j}x_h\right|\right|<em>2<sup>2=\frac{1}{2}\sum_{j=1}</sup>k\frac{1}{|X_j|}\sum</em>{x_i\in X_j}\sum_{x_h\in X_j}||x_i-x_h||_2^2
-$$
-The interesting thing about Lemma 4 is that it shows that the cost of a clustering can be written solely in terms of pairwise distances. This means that the cost of all clusterings will be roughly preserved if all distances are roughly preserved.</p>
-<p>Consider any clustering <span class="arithmatex">\(X_1,\cdots,X_k\)</span> on the dimensionality reduced data set <span class="arithmatex">\(Ax_1,\cdots,Ax_n\)</span> and assume its cost is <span class="arithmatex">\(\mu\)</span>. By lemma 4, we get that the cost of the clustering equals
-$$
-\sum_{j=1}^k\sum_{x_i\in X_j}\left|\left|Ax_i-\frac{1}{|X_j|}\sum_{x_h\in X_j}Ax_h\right|\right|<em>2<sup>2=\frac{1}{2}\sum_{j=1}</sup>k\frac{1}{|X_j|}\sum</em>{x_i\in X_j}\sum_{x_h\in X_j}||Ax_i-Ax_h||<em>2^2
-$$
-JL guarantees that each term <span class="arithmatex">\(||Ax_i-Ax_h||_2^2\)</span> is within <span class="arithmatex">\((1\pm\epsilon)||x_i-x_h||_2^2\)</span>, thus the cost of same clustering on the original data points lies in the interval:
-$$
-\frac{1}{2}\sum</em>{j=1}^k\frac{1}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_j}(1\pm\epsilon)||x_i-x_h||_2^2=(1\pm\epsilon)\mu.
-$$
-Since this holds for all clusterings, we can in particular conclude that if one finds a good clustering on the low dimensional data set (say one with a cost of at most <span class="arithmatex">\((1+\gamma)\mu^*\)</span> where <span class="arithmatex">\(\mu^*\)</span> is the optimal clustering in low dimensional space), then that clustering has a cost of at most <span class="arithmatex">\((1+\epsilon)(1+\gamma)\mu^*\)</span> on the original data set.</p>
+<p><strong>Lemma 4</strong>. For any set of points <span class="arithmatex">\(x_1,\cdots,x_n\)</span> and a partitioning of the points into clusters <span class="arithmatex">\(X_1,\cdots,X_k\)</span>, the cost of the clustering satisfies</p>
+<div class="arithmatex">\[
+\sum_{j=1}^k\sum_{x_i\in X_j}\left|\left|x_i-\frac{1}{|X_j|}\sum_{x_h\in X_j}x_h\right|\right|_2^2=\frac{1}{2}\sum_{j=1}^k\frac{1}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_j}||x_i-x_h||_2^2
+\]</div>
+<p>The interesting thing about Lemma 4 is that it shows that the cost of a clustering can be written solely in terms of pairwise distances. This means that the cost of all clusterings will be roughly preserved if all distances are roughly preserved.</p>
+<p>Consider any clustering <span class="arithmatex">\(X_1,\cdots,X_k\)</span> on the dimensionality reduced data set <span class="arithmatex">\(Ax_1,\cdots,Ax_n\)</span> and assume its cost is <span class="arithmatex">\(\mu\)</span>. By lemma 4, we get that the cost of the clustering equals</p>
+<div class="arithmatex">\[
+\sum_{j=1}^k\sum_{x_i\in X_j}\left|\left|Ax_i-\frac{1}{|X_j|}\sum_{x_h\in X_j}Ax_h\right|\right|_2^2=\frac{1}{2}\sum_{j=1}^k\frac{1}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_j}||Ax_i-Ax_h||_2^2
+\]</div>
+<p>JL guarantees that each term <span class="arithmatex">\(||Ax_i-Ax_h||_2^2\)</span> is within <span class="arithmatex">\((1\pm\epsilon)||x_i-x_h||_2^2\)</span>, thus the cost of same clustering on the original data points lies in the interval:</p>
+<div class="arithmatex">\[
+\frac{1}{2}\sum_{j=1}^k\frac{1}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_j}(1\pm\epsilon)||x_i-x_h||_2^2=(1\pm\epsilon)\mu.
+\]</div>
+<p>Since this holds for all clusterings, we can in particular conclude that if one finds a good clustering on the low dimensional data set (say one with a cost of at most <span class="arithmatex">\((1+\gamma)\mu^*\)</span> where <span class="arithmatex">\(\mu^*\)</span> is the optimal clustering in low dimensional space), then that clustering has a cost of at most <span class="arithmatex">\((1+\epsilon)(1+\gamma)\mu^*\)</span> on the original data set.</p>
 <p>Moreover, if we let <span class="arithmatex">\(\psi^*\)</span> be the cost of the optimal clustering <span class="arithmatex">\(X^*\)</span> on the original data set, then we know that the optimal clustering must have a cost of <span class="arithmatex">\(\frac{1}{1\pm\epsilon}\psi^*\ge\mu^*\)</span> in low dimensional space. It follows that the clustering <span class="arithmatex">\(X\)</span> has a cost of no more than <span class="arithmatex">\((1+\epsilon)(1+\gamma)\frac{1}{1\pm\epsilon}\psi^*\)</span>. For <span class="arithmatex">\(\epsilon\lt\frac{1}{2}\)</span>, we have <span class="arithmatex">\(1/(1-\epsilon)=1+\epsilon(1-\epsilon)\le1+2\epsilon\)</span> and <span class="arithmatex">\((1+\epsilon)(1+2\epsilon)=(1+3\epsilon+2\epsilon^2)\le1+4\epsilon\)</span> and thus the cost is no more than <span class="arithmatex">\((1+4\epsilon)(1+\gamma)\psi^*\)</span>. That is, if we can find an approximately optimal clustering for the dimensionality reduced points, we have found an approximately optimal clustering for the original points.</p>
 <h3 id="proof-of-lemma-4">Proof of Lemma 4</h3>
 <div class="arithmatex">\[
 \sum_{j=1}^k\sum_{x_i\in X_j}\left|\left|x_i-\frac{1}{|X_j|}\sum_{x_h\in X_j}x_h\right|\right|_2^2\\
+\]</div>
+<div class="arithmatex">\[
 =\sum_{j=1}^k\sum_{x_i\in X_j}\left(||x_i||^2-\frac{2}{|X_j|}\sum_{x_h\in X_j}\langle x_i,x_h\rangle+\frac{1}{|X_j|^2}||\sum_{x_h\in X_j}x_h||_2^2\right)\\
+\]</div>
+<div class="arithmatex">\[
 =\sum_{j=1}^k\left(\sum_{x_i\in X_j}||x_i||_2^2-\frac{2}{|X_j|}\langle\sum_{x_i\in X_j}x_i,\sum_{x_h\in X_j}x_h\rangle+\frac{1}{|X_j|}||\sum_{x_h\in X_j}x_h||_2^2\right)\\
+\]</div>
+<div class="arithmatex">\[
 =\sum_{j=1}^k\left(\sum_{x_i\in X_j}||x_i||_2^2-\frac{2}{|X_j|}||\sum_{x_i\in X_j}||_2^2+\frac{1}{|X_j|}||\sum_{x_h\in X_j}x_h||_2^2\right)\\
+\]</div>
+<div class="arithmatex">\[
 =\sum_{j=1}^k\left(\sum_{x_i\in X_j}||x_i||_2^2-\frac{1}{|X_j|}||\sum_{x_i\in X_j}x_i||_2^2\right)\\
+\]</div>
+<div class="arithmatex">\[
 =\frac{1}{2}\sum_{j=1}^k\left(2\sum_{x_i\in X_j}||x_i||_2^2-\frac{2}{|X_j|}||\sum_{x_i\in X_j}x_i||_2^2\right)\\
+\]</div>
+<div class="arithmatex">\[
 =\frac{1}{2}\sum_{j=1}^k\left(\frac{2}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_j}||x_i||_2^2-\frac{2}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_j}\langle x_i,x_h\rangle\right)\\
+\]</div>
+<div class="arithmatex">\[
 =\frac{1}{2}\sum_{j=1}^k\left(\frac{1}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_j}(||x_i||_2^2+||x_h||_2^2)-\frac{2}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_h}\langle X_i,x_j\rangle\right)\\
+\]</div>
+<div class="arithmatex">\[
 =\frac{1}{2}\sum_{j=1}^k\frac{1}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_j}(||x_i||_2^2+||x_h||_2^2-2\langle x_i,x_h\rangle)\\
+\]</div>
+<div class="arithmatex">\[
 =\frac{1}{2}\sum_{j=1}^k\frac{1}{|X_j|}\sum_{x_i\in X_j}\sum_{x_h\in X_j}||x_i-x_h||_2^2
 \]</div>
 

@@ -52,22 +52,29 @@ Then construct a probabilistic polynomial form an $AC^0[p]$ circuit.
 > Negation gates: $\neg z$ can be computed by the polynomial $1-y$ with error $0$.
 >
 > $MOD_p$ gate with inputs $z_1,\cdots,z_k$ can be computed by the polynomial
+>
 > $$
 > \left(\sum_{i=1}^kz_i\right)^{p-1}
 > $$
+>
 > with error $0$ by Fermat's little theorem.
 >
 > $OR$ gate with inputs $z_1,\cdots,z_k$: Consider picking $a_1,\cdots,a_k\in\mathbb Z_p$ uniformly and independently at random. Using Fermat's little theorem again, we have the polynomial
+>
 > $$
 > \left(\sum_{i=1}^ka_iz_i\right)^{p-1}
 > $$
+>
 > computes $OR(z_1,\cdots,z_k)$ with one-sided error $\frac{1}{p}$. In order to decrease the error, use success amplification using $t$ independent trials.
+>
 > $$
 > 1-\prod_{j=1}^t\left(1-\left(\sum_{i=1}^ka_{ij}z_i\right)^{p-1}\right),
 > $$
+>
 > which then computes $OR(z_1,\cdots,z_k)$ with one-sided error $\frac{1}{p^t}$.
 >
 > Analogously, for $AND$ gate, the probabilistic polynomial
+>
 > $$
 > 1-\prod_{j=1}^t\left(1-\left(\sum_{i=1}^ka_{ij}(1-z_i)\right)^{p-1}\right).
 > $$
@@ -75,6 +82,7 @@ Then construct a probabilistic polynomial form an $AC^0[p]$ circuit.
 :thinking:Lemma 14. Let $P$ be a probabilistic polynomial of degree $d$ and let $f:\{a,b\}^n\to\mathbb F$ be a function s.t. $\Pr[P(x)=f(x)]\ge1-\epsilon$. Then there exists a polynomial $P'$ of degree $d$ and a set $G\subseteq\{a,b\}^n$ with $|G|\ge(1-\epsilon)2^n$ s.t. $P(x)=f(x)$ for all $x\in G$.
 
 > Linearity of expectation:
+>
 > $$
 > \mathbb E[|x\in\{a,b\}^n:P(x)=f(x)|]=\sum_{x\in\{a,b\}^n}\Pr[P(x)=f(x)]\ge2^n(1-\epsilon),
 > $$
@@ -110,25 +118,33 @@ One may convert any polynomial into a multi-linear polynomial of the same degree
 :thinking:Lemma 16. Let $a,b\in\mathbb F$ and let $P$ be a polynomial of degree $d$. Then there exists a multi-linear polynomial $P'$ of degree at most $d$ s.t. $P(x)=P'(x)$ for all $x\in\{a,b\}^n$.
 
 > An occurrence of $x_i^k$ in $P$ may be replaced by the polynomial
+>
 > $$
 > \frac{x_i-b}{a-b}a^k+\frac{x_i-a}{b-a}b^k,
 > $$
+>
 > which can never increase the degree.
 
 :thinking:Lemma 17. For all integers $n\ge 1$:
+
 $$
 \frac{4^n}{\sqrt{\pi(n+1)}}\le C_{2n}^n\le\frac{4^n}{\sqrt{\pi n}}
 $$
+
 :thinking:Corollary 10. For all integers $n\ge1$:
+
 $$
 C_{\lceil n/2\rceil}^n\le\frac{2^n}{\sqrt{\pi\lceil n/2\rceil}}.
 $$
 
 :thinking:Proposition 13. Let $P$ be a polynomial in $n$ variables of total degree $\Delta$ over a field $\mathbb F$. Let $a,b\in\mathbb F$ and suppose $G\subseteq \{a,b\}^n$ is s.t.
+
 $$
 y\in G:P(y)=\prod_{i=1}^ny_i.
 $$
+
 Then
+
 $$
 |G|\le 2^n\left(\frac{1}{2}+\frac{4}{10}\frac{\Delta}{\sqrt n}\right).
 $$
@@ -138,14 +154,17 @@ $$
 > The number of functions $f:G\to\mathbb F$, which amounts to $p^{|G|}$, must be less than the number of multilinear polynomials of degree at most $\frac{n+\Delta}{2}$, which amounts to $p^M$, where $M$ denotes the number of monomials on $n$ variables of degree at most $\frac{n+\Delta}{2}$. It follows that $|G|\le M$.
 >
 > Then conclude by estimating $M$.
+>
 > $$
 > M=\sum_{i=0}^{\lfloor\frac{n+\Delta}{2}\rfloor}C_n^i=2^{n-1}+\sum_{i=\lceil n/2\rceil}^{\lfloor\frac{n+\Delta}{2}\rfloor}C_n^i\le2^{n-1}+\frac{\Delta}{2}\frac{2^n}{\sqrt{\pi n/2}}\le 2^{n-1}+\frac{4}{10}\frac{\Delta2^n}{\sqrt n},
 > $$
+>
 > where $C_n^i$ is estimated by central binomial coefficient, for $i\gt n/2$, and use $\sqrt{2\pi}\ge\frac{10}{4}$,
 
 Finally combine the construction of the probabilistic polynomials with the counting argument to derive a circuit lower bound.
 
 :dart:Theorem 46 . Let $p\neq 2$ be a prime. Suppose that $C$ is depth $h$ circuit with at most $S$ unbounded fanin $AND,OR,MOD_p$ as well as $NEG$ gates computing $MOD_2$. Then
+
 $$
 S=2^{\Omega(n^{\frac{1}{2h}})}.
 $$
@@ -153,6 +172,7 @@ $$
 > Lemma 13, Lemma 14, Proposition 13.
 
 :dart:Theorem 47 (Smolensky). Let $p$ be a prime. Suppose that $C$ is a depth $h$ circuit with at most $S$ unbounded fanin $AND,OR,MOD_{p^r}$ gates for a constant $r\ge1$ as well as $NEG$ gates computing function $MOD_q$, where $q\neq p$ is a prime. Then
+
 $$
 S=2^{\Omega(n^{\frac{1}{2h}})}.
 $$

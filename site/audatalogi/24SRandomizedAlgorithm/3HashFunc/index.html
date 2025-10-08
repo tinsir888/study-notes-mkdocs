@@ -6390,7 +6390,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6413,7 +6413,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6436,7 +6436,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9526,15 +9526,15 @@
 <li>Properties of random variables.</li>
 </ol>
 <h1 id="universal-hashing">Universal Hashing</h1>
-<p>To generate a random hash function <span class="arithmatex">\(h:U\rightarrow[m]\)</span> from a key universe <span class="arithmatex">\(U\)</span> to a set of hash values <span class="arithmatex">\([m]=\{0,\cdots,m-1\}\)</span>. We think of <span class="arithmatex">\(h\)</span> as a random variable following some distribution over functions <span class="arithmatex">\(U\rightarrow[m]\)</span>. We want <span class="arithmatex">\(h\)</span> to be <strong>universal</strong> which means that for any given distinct keys <span class="arithmatex">\(x,y\in U\)</span>, when <span class="arithmatex">\(h\)</span> is picked at random, we have low collision probability:
-$$
+<p>To generate a random hash function <span class="arithmatex">\(h:U\rightarrow[m]\)</span> from a key universe <span class="arithmatex">\(U\)</span> to a set of hash values <span class="arithmatex">\([m]=\{0,\cdots,m-1\}\)</span>. We think of <span class="arithmatex">\(h\)</span> as a random variable following some distribution over functions <span class="arithmatex">\(U\rightarrow[m]\)</span>. We want <span class="arithmatex">\(h\)</span> to be <strong>universal</strong> which means that for any given distinct keys <span class="arithmatex">\(x,y\in U\)</span>, when <span class="arithmatex">\(h\)</span> is picked at random, we have low collision probability:</p>
+<div class="arithmatex">\[
 \Pr_h[h(x)=h(y)]\le{1\over m}
-$$
-For many applications, it suffices if for some <span class="arithmatex">\(c=O(1)\)</span>, we have
-$$
+\]</div>
+<p>For many applications, it suffices if for some <span class="arithmatex">\(c=O(1)\)</span>, we have</p>
+<div class="arithmatex">\[
 \Pr_h[h(x)=h(y)]\le{c\over m}
-$$
-Then <span class="arithmatex">\(h\)</span> is called <strong>c-approximately universal</strong>.</p>
+\]</div>
+<p>Then <span class="arithmatex">\(h\)</span> is called <strong>c-approximately universal</strong>.</p>
 <p>Exercise 2.1 Is the truly independent hash function <span class="arithmatex">\(h : U \rightarrow [m]\)</span> universal?</p>
 <blockquote>
 <p>Yes.</p>
@@ -9551,32 +9551,40 @@ Then <span class="arithmatex">\(h\)</span> is called <strong>c-approximately uni
 <p><em>hash tables with chaining</em>. (detail see in <a href="https://tinsir888.github.io/posts/36868314.html">Lecture 2</a>)</p>
 <h2 id="multiply-mod-prime">Multiply-mod-prime</h2>
 <p>Assume <span class="arithmatex">\(m\lt u\)</span> and <span class="arithmatex">\(m\gt1\)</span>.</p>
-<p>The classic universal hash function is based on a prime number <span class="arithmatex">\(p\ge u\)</span>. We pick a uniformly random <span class="arithmatex">\(a\in[p]_+=\{1,\cdots,p-1\}\)</span> and <span class="arithmatex">\(b\in[p]=\{1,\cdots,p-1\}\)</span>, and define <span class="arithmatex">\(h_{a,b}:[u]\rightarrow[m]\)</span> by
-$$
+<p>The classic universal hash function is based on a prime number <span class="arithmatex">\(p\ge u\)</span>. We pick a uniformly random <span class="arithmatex">\(a\in[p]_+=\{1,\cdots,p-1\}\)</span> and <span class="arithmatex">\(b\in[p]=\{1,\cdots,p-1\}\)</span>, and define <span class="arithmatex">\(h_{a,b}:[u]\rightarrow[m]\)</span> by</p>
+<div class="arithmatex">\[
 h_{a,b}(x)=((ax+b)\text{ mod }p)\text{ mod }m
-$$
-Given any distinct <span class="arithmatex">\(x,y\in[u]\subseteq[p]\)</span>, we want for random <span class="arithmatex">\(a,b\)</span>:
-$$
-\Pr_{a\in[p]<em>+,b\in[p]}[h</em>{a,b}(x)=h_{a,b}(y)]\lt{1\over m}
-$$
-<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" />Strict inequality! Strictly better.</p>
+\]</div>
+<p>Given any distinct <span class="arithmatex">\(x,y\in[u]\subseteq[p]\)</span>, we want for random <span class="arithmatex">\(a,b\)</span>:</p>
+<div class="arithmatex">\[
+\Pr_{a\in[p]_+,b\in[p]}[h_{a,b}(x)=h_{a,b}(y)]\lt{1\over m}
+\]</div>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" />Strict inequality! Strictly better.</p>
 <p>Fact: If <span class="arithmatex">\(p\)</span> is prime and <span class="arithmatex">\(\alpha,\beta\in[p]_+\)</span> then <span class="arithmatex">\(\alpha\beta\not\equiv0\text{ mod } p\)</span>.</p>
-<p>Let <span class="arithmatex">\(x,y\in[p],x\neq y\)</span> be given. For given pair <span class="arithmatex">\((a,b)\in[p]^2\)</span>, define <span class="arithmatex">\((q,r)\in[p]^2\)</span> by
-$$
-(ax+b)\text{ mod }p=q\
+<p>Let <span class="arithmatex">\(x,y\in[p],x\neq y\)</span> be given. For given pair <span class="arithmatex">\((a,b)\in[p]^2\)</span>, define <span class="arithmatex">\((q,r)\in[p]^2\)</span> by</p>
+<div class="arithmatex">\[
+(ax+b)\text{ mod }p=q\\
+\]</div>
+<div class="arithmatex">\[
 (ay+b)\text{ mod }p=r
-$$
-Lemma: These two equations define a 1-1 correspondence between pairs <span class="arithmatex">\((a,b)\)</span> and <span class="arithmatex">\((q,r)\)</span>.</p>
+\]</div>
+<p>Lemma: These two equations define a 1-1 correspondence between pairs <span class="arithmatex">\((a,b)\)</span> and <span class="arithmatex">\((q,r)\)</span>.</p>
 <blockquote>
 <p>(Use Fact to prove)</p>
-<p>Assume that there exist two different pairs <span class="arithmatex">\(a,b\)</span> and <span class="arithmatex">\(a',b'\)</span> which corresponds to same <span class="arithmatex">\(q,r\)</span>.
-$$
-(ax+b)\text{ mod }p=q (1)\
-(ay+b)\text{ mod }p=r (2)\
-(a'x+b')\text{ mod }p=q (3)\
-(a'y+b')\text{ mod }p=r (4)
-$$
-For <span class="arithmatex">\(((1)-(2))-((3)-(4))\)</span>, by the Fact above, it yields <span class="arithmatex">\(a-a'\equiv0\mod p\)</span>.</p>
+<p>Assume that there exist two different pairs <span class="arithmatex">\(a,b\)</span> and <span class="arithmatex">\(a',b'\)</span> which corresponds to same <span class="arithmatex">\(q,r\)</span>.</p>
+<div class="arithmatex">\[
+(ax+b)\text{ mod }p=q\ (1)\\
+\]</div>
+<div class="arithmatex">\[
+(ay+b)\text{ mod }p=r\ (2)\\
+\]</div>
+<div class="arithmatex">\[
+(a'x+b')\text{ mod }p=q\ (3)\\
+\]</div>
+<div class="arithmatex">\[
+(a'y+b')\text{ mod }p=r\ (4)
+\]</div>
+<p>For <span class="arithmatex">\(((1)-(2))-((3)-(4))\)</span>, by the Fact above, it yields <span class="arithmatex">\(a-a'\equiv0\mod p\)</span>.</p>
 <p>For <span class="arithmatex">\(((1)-(3))-((2)-(4))\)</span>, it yields <span class="arithmatex">\(b-b'\equiv0\mod p\)</span>.</p>
 <p>Thus <span class="arithmatex">\(a=a',b=b'\)</span> contradicts assumption.</p>
 <p>Thus its bijection.</p>
@@ -9588,16 +9596,16 @@ For <span class="arithmatex">\(((1)-(2))-((3)-(4))\)</span>, by the Fact above, 
 <p>Let us fix <span class="arithmatex">\(q\)</span> and set <span class="arithmatex">\(i=q\text{ mod }m\)</span>. There are at most <span class="arithmatex">\(\lceil p/m\rceil\)</span> values <span class="arithmatex">\(r\in[p]\)</span> with <span class="arithmatex">\(r\text{ mod }m=i\)</span> and one of them is <span class="arithmatex">\(r=q\)</span>. Therefore, the number of <span class="arithmatex">\(r\in[p]\diagdown\{q\}\)</span> with <span class="arithmatex">\(r\text{ mod }m=i=q\text{ mod }m\)</span> is at most <span class="arithmatex">\(\lceil p/m\rceil-1\le(p+m-1)/m-1=(p-1)/m\)</span>. However, there are values of <span class="arithmatex">\(i'\in[m]\)</span> with only <span class="arithmatex">\(\lfloor p/m\rfloor\)</span> values of <span class="arithmatex">\(q'\in[p]\)</span> with <span class="arithmatex">\(q'\text{ mod }m=i'\)</span>, and then the number of <span class="arithmatex">\(r'\in[p]\diagdown\{q'\}\)</span> with <span class="arithmatex">\(r'\text{ mod }m=i'=q'\text{ mod }m\)</span> is <span class="arithmatex">\(\lfloor p/m\rfloor-1\lt\lceil p/m\rceil-1\)</span>. Summing over all <span class="arithmatex">\(p\)</span> values of <span class="arithmatex">\(q\in[p]\)</span>, we get that the number of <span class="arithmatex">\(r\in[p]\diagdown\{q\}\)</span> with <span class="arithmatex">\(r\text{ mod }m=i=q\text{ mod }m\)</span> is strictly less than <span class="arithmatex">\(p(\lceil p/m\rceil-1)\le p(p-1)/m\)</span>. Then 1-1 correspondence implies that there are strictly less than <span class="arithmatex">\(p(p-1)/m\)</span> collision pairs <span class="arithmatex">\((a,b)\in[p]_+\times[p]\)</span>. Since each of the <span class="arithmatex">\(p(p-1)\)</span> pairs from <span class="arithmatex">\([p]_+\times[p]\)</span> are equally likely, we conclude that the collision probability is strictly below <span class="arithmatex">\(1/m\)</span>.</p>
 </blockquote>
 <h3 id="implementation-for-64-bit-keys">Implementation for 64-bit Keys</h3>
-<p>Hashing scheme
-$$
+<p>Hashing scheme</p>
+<div class="arithmatex">\[
 h(x)=((ax+b)\text{ mod }p)\text{ mod }m
-$$
-<span class="arithmatex">\(u=2^{64},m=2^{20}\)</span>.</p>
+\]</div>
+<p><span class="arithmatex">\(u=2^{64},m=2^{20}\)</span>.</p>
 <p>Since <span class="arithmatex">\(p\gt u=2^{64}\)</span>, we generally need to reserve more than 64 bits for <span class="arithmatex">\(a\in[p]_+\)</span>, so the product <span class="arithmatex">\(ax\)</span> has more than 128 bits. We can get the product of 32-bit numbers, representing them as 64-bit numbers, and getting the full 64-bit result. We need at least 6 such 64-bit multiplications to compute <span class="arithmatex">\(ax\)</span>.</p>
-<p>How do we compute  <span class="arithmatex">\(ax\text{ mod }p\)</span>? For 64-bit numbers, we have a general mod-operation. Idea: Let <span class="arithmatex">\(p\)</span> be a Mersenne prime <span class="arithmatex">\(p=2^q-1\)</span>, e.g. <span class="arithmatex">\(2^{61}-1,2^{89}-1\)</span>.
-$$
+<p>How do we compute  <span class="arithmatex">\(ax\text{ mod }p\)</span>? For 64-bit numbers, we have a general mod-operation. Idea: Let <span class="arithmatex">\(p\)</span> be a Mersenne prime <span class="arithmatex">\(p=2^q-1\)</span>, e.g. <span class="arithmatex">\(2^{61}-1,2^{89}-1\)</span>.</p>
+<div class="arithmatex">\[
 x\equiv(x\text{ mod }2^q+\lfloor x/2^q\rfloor)\mod p
-$$</p>
+\]</div>
 <blockquote>
 <p>To prove this, it suffices to prove: <span class="arithmatex">\(x\text{ mod }2^q+\lfloor x/2^q\rfloor=x-\lfloor x/2^q\rfloor p\)</span>. (Obviously)</p>
 </blockquote>
@@ -9607,21 +9615,21 @@ $$</p>
 </code></pre></div>
 <h2 id="multiply-shift">Multiply-shift</h2>
 <p>Hashing from <span class="arithmatex">\(w\)</span>-bit integers to <span class="arithmatex">\(\ell\)</span>-bit integers.</p>
-<p>We pick a uniformly random odd <span class="arithmatex">\(w\)</span>-bit integer <span class="arithmatex">\(a\)</span>, and then we compute <span class="arithmatex">\(h_a:[2^w]\rightarrow[2^\ell]\)</span>, as
-$$
-h_a(x)=\lfloor(ax\text{ mod }2<sup>w)/2</sup>{w-\ell}\rfloor.
-$$
+<p>We pick a uniformly random odd <span class="arithmatex">\(w\)</span>-bit integer <span class="arithmatex">\(a\)</span>, and then we compute <span class="arithmatex">\(h_a:[2^w]\rightarrow[2^\ell]\)</span>, as</p>
+<div class="arithmatex">\[
+h_a(x)=\lfloor(ax\text{ mod }2^w)/2^{w-\ell}\rfloor.
+\]</div>
 <div class="highlight"><pre><span></span><code><span class="c1">//(a*x%pow(2,w))&gt;&gt;(w-l)</span>
 <span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="n">a</span><span class="o">%</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">w</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">w</span><span class="p">)))</span><span class="o">%</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">w</span><span class="p">))</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">w</span><span class="o">-</span><span class="n">l</span><span class="p">);</span>
 <span class="c1">//for w=64, variable are uint64_t</span>
 <span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="mi">64</span><span class="o">-</span><span class="n">l</span><span class="p">);</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>This scheme is faster than <span class="arithmatex">\(h_{a,b}(x)=((ax+b)\text{ mod }p)\text{ mod }n\)</span>. Numbers are stored as bit strings, with the least significant bit to the right. Integer division by a power of 2 is accomplished by a right shift. For hashing 64-bit integers, we further exploit that 64-bit multiplication automatically discards overflow, which is the same as multiplying modulo <span class="arithmatex">\(2^{64}\)</span>.</p>
-<p>Multiply-shift is <strong>2-approximately universal</strong>, i.e., for <span class="arithmatex">\(x\neq y\)</span>,
-$$
-\Pr_{\text{odd }a\in[2<sup>w]}[h_a(x)=h_a(y)]\le2/2</sup>\ell=2/m
-$$
-To prove this, it suffices to prove that the probability that bis <span class="arithmatex">\(w-\ell,\cdots,w-1\)</span> of <span class="arithmatex">\(a(y-x)\)</span> are all 0s or all 1s is at most <span class="arithmatex">\(2/2^\ell\)</span>.</p>
+<p>Multiply-shift is <strong>2-approximately universal</strong>, i.e., for <span class="arithmatex">\(x\neq y\)</span>,</p>
+<div class="arithmatex">\[
+\Pr_{\text{odd }a\in[2^w]}[h_a(x)=h_a(y)]\le2/2^\ell=2/m
+\]</div>
+<p>To prove this, it suffices to prove that the probability that bis <span class="arithmatex">\(w-\ell,\cdots,w-1\)</span> of <span class="arithmatex">\(a(y-x)\)</span> are all 0s or all 1s is at most <span class="arithmatex">\(2/2^\ell\)</span>.</p>
 <p>Fact: If <span class="arithmatex">\(\alpha\)</span> is odd and <span class="arithmatex">\(\beta\in[2^q]_+\)</span>, then <span class="arithmatex">\(\alpha\beta\not\equiv0(\text{ mod }2^q)\)</span>.</p>
 <blockquote>
 <p><del>Proof omitted.</del></p>
@@ -9630,11 +9638,11 @@ To prove this, it suffices to prove that the probability that bis <span class="a
 </blockquote>
 <h1 id="strong-universality">Strong Universality</h1>
 <p><strong>Strong universality</strong>: For <span class="arithmatex">\(h:[u]\rightarrow[m]\)</span>, we consider pairwise events of the form that for given distinct keys <span class="arithmatex">\(x,y\in[u]\)</span> and possibly non-distinct hash values <span class="arithmatex">\(q,r\in[m]\)</span>, we have <span class="arithmatex">\(h(x)=q\)</span> and <span class="arithmatex">\(h(y)=r\)</span>. We say a random hash function <span class="arithmatex">\(h:[u]\rightarrow[m]\)</span> is strongly universal if the probability of every pairwise event is <span class="arithmatex">\(1/m^2\)</span>.</p>
-<p>We note that if <span class="arithmatex">\(h\)</span> is strongly universal, it is also universal since
-$$
+<p>We note that if <span class="arithmatex">\(h\)</span> is strongly universal, it is also universal since</p>
+<div class="arithmatex">\[
 \Pr[h(x)=h(y)]=\sum_{q\in[m]}\Pr[h(x)=q\land h(y)=q]=m/m^2=1/m
-$$
-Observation: An equivalent definition of strong universality is that each key is hashed uniformly into <span class="arithmatex">\([m]\)</span>, and that every two distinct keys are hashed independently.</p>
+\]</div>
+<p>Observation: An equivalent definition of strong universality is that each key is hashed uniformly into <span class="arithmatex">\([m]\)</span>, and that every two distinct keys are hashed independently.</p>
 <blockquote>
 <p><del>Proof omitted.</del></p>
 </blockquote>
@@ -9649,48 +9657,50 @@ Observation: An equivalent definition of strong universality is that each key is
 <p>Basic idea: small samples can reason about the similarity of huge sets.</p>
 <p>First we consider sampling from a single set <span class="arithmatex">\(A\subseteq U\)</span> using a strongly universal hash function <span class="arithmatex">\(h:U\rightarrow[m]\)</span> and a threshold <span class="arithmatex">\(t\in\{0,\cdots,m\}\)</span>. We now sample <span class="arithmatex">\(x\)</span> if <span class="arithmatex">\(h(x)\lt t\)</span>, which by uniformity happens with probability <span class="arithmatex">\(t/m\)</span> for any <span class="arithmatex">\(x\)</span>.</p>
 <p>Let <span class="arithmatex">\(S_{h,t}(A)=\{x\in A|h(x)\lt t\}\)</span> denote the resulting sample from <span class="arithmatex">\(A\)</span>. Then by linearity of expectation, <span class="arithmatex">\(\mathbb E[|S_{h,t}(A)|]=|A|\cdot t/m\)</span>. Conversely, this means that if we have <span class="arithmatex">\(S_{h,t}(A)\)</span>, then we can estimate <span class="arithmatex">\(|A|\)</span> as <span class="arithmatex">\(|S_{h,t}(A)|\cdot m/t\)</span>.</p>
-<p>The important application is not just sampling from a single set, but rather the sampling from different sets <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> so that we can later reason about the similarity, estimating the sizes of their union <span class="arithmatex">\(B\cup C\)</span> and intersection <span class="arithmatex">\(B\cap C\)</span>.
-$$
-S_{h,t}(B\cup C)=S_{h,t}(B)\cup S_{h,t}(C)\
+<p>The important application is not just sampling from a single set, but rather the sampling from different sets <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> so that we can later reason about the similarity, estimating the sizes of their union <span class="arithmatex">\(B\cup C\)</span> and intersection <span class="arithmatex">\(B\cap C\)</span>.</p>
+<div class="arithmatex">\[
+S_{h,t}(B\cup C)=S_{h,t}(B)\cup S_{h,t}(C)\\
+\]</div>
+<div class="arithmatex">\[
 S_{h,t}(B\cap C)=S_{h,t}(B)\cap S_{h,t}(C)
-$$
-We can then estimate the size of the union and intersection multiplying the corresponding sample sizes by <span class="arithmatex">\(m/t\)</span>.</p>
+\]</div>
+<p>We can then estimate the size of the union and intersection multiplying the corresponding sample sizes by <span class="arithmatex">\(m/t\)</span>.</p>
 <p>Sampling from different sets can be done in a distributed way.</p>
 <p>Application: In machine learning, we can store the samples of many different large sets; On the Internet, routers can store samples of the packets passing through.</p>
 <p>To get a fixed sampling probability <span class="arithmatex">\(t/m\)</span> for each <span class="arithmatex">\(x\in U\)</span>, we only need that <span class="arithmatex">\(h:U\rightarrow[m]\)</span> is uniform. This ensures that the estimate <span class="arithmatex">\(|S_{h,t}(A)|\cdot m/t\)</span> of <span class="arithmatex">\(A\)</span> is unbiased.</p>
 <p>For <span class="arithmatex">\(a\in A\)</span>, let <span class="arithmatex">\(X_a=[h(a)\lt t],X=\sum_{a\in A}X_a\)</span>. Then <span class="arithmatex">\(X=|S_{h,t}(A)|\)</span>, but the reasoning below applies when <span class="arithmatex">\(X_a\)</span> is any 0-1 indicator variable that depends only <span class="arithmatex">\(h(a)\)</span>.</p>
 <p>Because <span class="arithmatex">\(h\)</span> is strongly universal, for any distinct <span class="arithmatex">\(a,b\in A\)</span>, we have that <span class="arithmatex">\(h(a),h(b)\)</span> are independent, and hence so are <span class="arithmatex">\(X_a,X_b\)</span>. Therefore <span class="arithmatex">\(X=\sum_{a\in A}X_a\)</span> is the sum of pairwise independent 0-1 variables. Now the following concentration bound applies to <span class="arithmatex">\(X\)</span>.</p>
-<p>Lemma: Let <span class="arithmatex">\(X=\sum_{a\in A}X_a\)</span> where <span class="arithmatex">\(X_a\)</span> are pairwise independent 0-1 variables. Let <span class="arithmatex">\(\mu=\mathbb E[X]\)</span>. Then <span class="arithmatex">\(\text{Var}(X)\le\mu\)</span> and for any <span class="arithmatex">\(q\gt0\)</span>,
-$$
+<p>Lemma: Let <span class="arithmatex">\(X=\sum_{a\in A}X_a\)</span> where <span class="arithmatex">\(X_a\)</span> are pairwise independent 0-1 variables. Let <span class="arithmatex">\(\mu=\mathbb E[X]\)</span>. Then <span class="arithmatex">\(\text{Var}(X)\le\mu\)</span> and for any <span class="arithmatex">\(q\gt0\)</span>,</p>
+<div class="arithmatex">\[
 \Pr[|X-\mu|\ge q\sqrt\mu]\le1/q^2
-$$</p>
+\]</div>
 <blockquote>
 <p><del>Proof by Chebyshev's inequality</del></p>
 </blockquote>
 <h2 id="multiply-mod-prime_1">Multiply-mod-prime</h2>
-<p>The classic strongly universal hash scheme is a multiply-mod-prime scheme. For some prime <span class="arithmatex">\(p\)</span>, uniformly at random we pick <span class="arithmatex">\((a,b)\in[p]^2\)</span> and define <span class="arithmatex">\(h_{a,b}:[p]\rightarrow[p]\)</span> by
-$$
+<p>The classic strongly universal hash scheme is a multiply-mod-prime scheme. For some prime <span class="arithmatex">\(p\)</span>, uniformly at random we pick <span class="arithmatex">\((a,b)\in[p]^2\)</span> and define <span class="arithmatex">\(h_{a,b}:[p]\rightarrow[p]\)</span> by</p>
+<div class="arithmatex">\[
 h_{a,b}(x)=(ax+b)\text{ mod }p.
-$$
-Each pair <span class="arithmatex">\(h_{a,b}(x)=q\)</span> and <span class="arithmatex">\(h_{a,b}(y)=r\)</span> happens with probability <span class="arithmatex">\(1/p^2\)</span>.</p>
+\]</div>
+<p>Each pair <span class="arithmatex">\(h_{a,b}(x)=q\)</span> and <span class="arithmatex">\(h_{a,b}(y)=r\)</span> happens with probability <span class="arithmatex">\(1/p^2\)</span>.</p>
 <h2 id="multiply-shift_1">Multiply-shift</h2>
-<p>For any bit-string <span class="arithmatex">\(z\)</span> and integers <span class="arithmatex">\(j\gt i\ge0,z[i,j)=z[i,j-1]\)</span> denotes the number represented by bits <span class="arithmatex">\(i,\cdots,j-1\)</span>, so
-$$
-z[i,j)=\lfloor(z\text{ mod }2<sup>j)/2</sup>i\rfloor.
-$$
-To get strongly universal hashing <span class="arithmatex">\([2^w]\rightarrow[2^\ell]\)</span>, we may pick any <span class="arithmatex">\(\overline w\ge w+\ell-1\)</span>. For any pair <span class="arithmatex">\((a,b)\in[\overline w]^2\)</span>, we define <span class="arithmatex">\(h_{a,b}:[2^w]\rightarrow[2^\ell]\)</span> by
-$$
+<p>For any bit-string <span class="arithmatex">\(z\)</span> and integers <span class="arithmatex">\(j\gt i\ge0,z[i,j)=z[i,j-1]\)</span> denotes the number represented by bits <span class="arithmatex">\(i,\cdots,j-1\)</span>, so</p>
+<div class="arithmatex">\[
+z[i,j)=\lfloor(z\text{ mod }2^j)/2^i\rfloor.
+\]</div>
+<p>To get strongly universal hashing <span class="arithmatex">\([2^w]\rightarrow[2^\ell]\)</span>, we may pick any <span class="arithmatex">\(\overline w\ge w+\ell-1\)</span>. For any pair <span class="arithmatex">\((a,b)\in[\overline w]^2\)</span>, we define <span class="arithmatex">\(h_{a,b}:[2^w]\rightarrow[2^\ell]\)</span> by</p>
+<div class="arithmatex">\[
 h_{a,b}(x)=(ax+b)[\overline w-\ell,\overline w).
-$$
-It is strongly universal, proof omitted.</p>
+\]</div>
+<p>It is strongly universal, proof omitted.</p>
 <h1 id="beyond-strong-universality">Beyond Strong Universality</h1>
 <p>There are more advanced algorithmic applications that need more powerful hash functions.</p>
 <p><strong>k-independent hash functions</strong>: A hash random function <span class="arithmatex">\(H:U\rightarrow[m]\)</span> is k-independent if for any distinct keys <span class="arithmatex">\(x_1,\cdots,x_k\in[u]\)</span>, the hash values <span class="arithmatex">\(H(x_1),\cdots,H(x_k)\)</span> are independent random variables, each uniformly distributed in <span class="arithmatex">\([m]\)</span>.</p>
-<p>From prime <span class="arithmatex">\(p\)</span>, we can implement a k-independent <span class="arithmatex">\(H:[p]\rightarrow[p]\)</span> using <span class="arithmatex">\(k\)</span> random coefficients <span class="arithmatex">\(a_0,\cdots,a_{k-1}\in[p]\)</span>, defining
-$$
-H(x)=\sum_{i=0}<sup>{k-1}a_ix</sup>i\text{ mod }p.
-$$
-However, there is no efficient implementation of k-independent hashing on complex objects such as variable length strings. What we can do instead is to use the signature idea from Section 2, and first hash the complex keys to unique hash values from a limited integer domain <span class="arithmatex">\([u]\)</span>.</p>
+<p>From prime <span class="arithmatex">\(p\)</span>, we can implement a k-independent <span class="arithmatex">\(H:[p]\rightarrow[p]\)</span> using <span class="arithmatex">\(k\)</span> random coefficients <span class="arithmatex">\(a_0,\cdots,a_{k-1}\in[p]\)</span>, defining</p>
+<div class="arithmatex">\[
+H(x)=\sum_{i=0}^{k-1}a_ix^i\text{ mod }p.
+\]</div>
+<p>However, there is no efficient implementation of k-independent hashing on complex objects such as variable length strings. What we can do instead is to use the signature idea from Section 2, and first hash the complex keys to unique hash values from a limited integer domain <span class="arithmatex">\([u]\)</span>.</p>
 
 
 

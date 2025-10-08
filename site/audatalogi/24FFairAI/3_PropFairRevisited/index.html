@@ -6390,7 +6390,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6413,7 +6413,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6436,7 +6436,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9673,14 +9673,14 @@ Agent <span class="arithmatex">\(i\)</span> is interested in minimizing the cost
 <p><span class="arithmatex">\(|err_N(h_{X,y})-err_\mathcal N(h_{X,y})|\)</span> is bounded for all <span class="arithmatex">\(X,y\)</span>.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 14 (VC Dimension). Let <span class="arithmatex">\(\mathcal N\)</span> be a set of points. Let <span class="arithmatex">\(\mathcal H\)</span> be a family of binary classifier over <span class="arithmatex">\(\mathcal N\)</span>. We say that <span class="arithmatex">\(\mathcal H\)</span> shatters <span class="arithmatex">\(S\subseteq\mathcal N\)</span> if for every labeling <span class="arithmatex">\(\ell:S\to\{0,1\}\)</span>, there exists a classifier <span class="arithmatex">\(h\in\mathcal H\)</span> s.t. <span class="arithmatex">\(h(i)=\ell(i)\)</span> for all <span class="arithmatex">\(i\in S\)</span>. The VC dimension of <span class="arithmatex">\(\mathcal H\)</span>, denoted <span class="arithmatex">\(dim^{VC}(\mathcal H)\)</span>, is the size of the largest <span class="arithmatex">\(S\)</span> that can be shattered by <span class="arithmatex">\(\mathcal H\)</span>.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 15. Let <span class="arithmatex">\(\mathcal H\)</span> be a family of binary classifier over a set of points <span class="arithmatex">\(\mathcal N\)</span>. If <span class="arithmatex">\(N\subseteq N\)</span> is a uniformly random sample with <span class="arithmatex">\(|N|\ge\Omega\left(\frac{dim^{VC}(\mathcal H)+\ln(1/\delta)}{\epsilon^2}\right)\)</span>, then with probability at least <span class="arithmatex">\(1-\delta\)</span>, <span class="arithmatex">\(|err_N(h)-err_\mathcal N(h)|\le\epsilon\)</span> for all <span class="arithmatex">\(h\in\mathcal H\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 16. Fix <span class="arithmatex">\(\epsilon,\delta\gt0,\rho\ge1,k,t\in\N\)</span>, and metric <span class="arithmatex">\((\mathcal X,d)\)</span> where <span class="arithmatex">\(\mathcal X=\R^t\)</span> and <span class="arithmatex">\(d=L^2\)</span>. Let <span class="arithmatex">\(\mathcal N\)</span> be a set of points and <span class="arithmatex">\(\mathcal M=\R^t\)</span> be the set of candidate centers. Let <span class="arithmatex">\(N\subseteq\mathcal N\)</span> be sampled uniformly at random with <span class="arithmatex">\(|N|\ge\Omega\left(\frac{k^2\cdot(tk\ln k+\ln(1/\delta))}{\epsilon^2}\right)\)</span>. Then with probability at least <span class="arithmatex">\(1-\delta\)</span>, every <span class="arithmatex">\(k\)</span>-clustering <span class="arithmatex">\(X\in\mathcal M^k\)</span> that is <span class="arithmatex">\(\rho\)</span>-PROP w.r.t. <span class="arithmatex">\(N\)</span> is <span class="arithmatex">\(\rho\)</span>-PROP to <span class="arithmatex">\((1+\epsilon)\)</span>-deviation w.r.t. <span class="arithmatex">\(\mathcal N\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 16. Fix <span class="arithmatex">\(\epsilon,\delta\gt0,\rho\ge1,k,t\in\mathbb N\)</span>, and metric <span class="arithmatex">\((\mathcal X,d)\)</span> where <span class="arithmatex">\(\mathcal X= \mathbb R^t\)</span> and <span class="arithmatex">\(d=L^2\)</span>. Let <span class="arithmatex">\(\mathcal N\)</span> be a set of points and <span class="arithmatex">\(\mathcal M= \mathbb R^t\)</span> be the set of candidate centers. Let <span class="arithmatex">\(N\subseteq\mathcal N\)</span> be sampled uniformly at random with <span class="arithmatex">\(|N|\ge\Omega\left(\frac{k^2\cdot(tk\ln k+\ln(1/\delta))}{\epsilon^2}\right)\)</span>. Then with probability at least <span class="arithmatex">\(1-\delta\)</span>, every <span class="arithmatex">\(k\)</span>-clustering <span class="arithmatex">\(X\in\mathcal M^k\)</span> that is <span class="arithmatex">\(\rho\)</span>-PROP w.r.t. <span class="arithmatex">\(N\)</span> is <span class="arithmatex">\(\rho\)</span>-PROP to <span class="arithmatex">\((1+\epsilon)\)</span>-deviation w.r.t. <span class="arithmatex">\(\mathcal N\)</span>.</p>
 <h1 id="open-questions">Open Questions</h1>
 <p>This paper mainly consider <span class="arithmatex">\(\mathcal M\)</span> is entire metric space.</p>
 <p>There are some open questions.</p>
 <h2 id="bridging-gaps">Bridging Gaps</h2>
 <p>Can we bridge the lower <span class="arithmatex">\((1+\sqrt2)\)</span> and upper bounds on the approximation ratio to PROP.</p>
 <p>Conjecture for <span class="arithmatex">\(L^2\)</span>, the lower bound <span class="arithmatex">\(2/\sqrt3\)</span> may be achievable.</p>
-<p>Maybe by Jung's theorem, for <span class="arithmatex">\(L^2\)</span> distance in <span class="arithmatex">\(\R^2\)</span>, any set of points with diameter at most <span class="arithmatex">\(1\)</span> is contained in a ball of radius at most <span class="arithmatex">\(1/\sqrt3\)</span>. This could be useful in closing the gap for <span class="arithmatex">\(L^2\)</span>.</p>
+<p>Maybe by Jung's theorem, for <span class="arithmatex">\(L^2\)</span> distance in $ \mathbb R^2$, any set of points with diameter at most <span class="arithmatex">\(1\)</span> is contained in a ball of radius at most <span class="arithmatex">\(1/\sqrt3\)</span>. This could be useful in closing the gap for <span class="arithmatex">\(L^2\)</span>.</p>
 <h2 id="on-graphs">On Graphs</h2>
 <p>Does PROP clustering always exist for all graphs when <span class="arithmatex">\(\mathcal N=\mathcal M\)</span> is the set of all nodes of the graph?</p>
 <h2 id="computational-hardness">Computational Hardness</h2>

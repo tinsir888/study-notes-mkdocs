@@ -46,13 +46,32 @@ Kane and Nelson showed that the following construction with high probability pre
 - The target dimensionality $m$ remains optimal $O(\epsilon^{-2}\log n)$.
 
 The expected length of the embedded vector is the same as the original vector:
+
 $$
 \mathbb E[||t^{-1/2}Ax||_2^2]=t^{-1}\mathbb E[||Ax||_2^2]\\
+$$
+
+$$
 =t^{-1}\sum_{i=1}^m\mathbb E[(\sum_{j=1}^da_{i,j}x_j)^2]\\
+$$
+
+$$
 =t^{-1}\sum_{i=1}^m(\sum_{j=1}^d\mathbb E[a_{i,j}^2x_j^2]+\sum_{j=1}^d\sum_{h\neq j}\mathbb E[a_{i,j}a_{i,h}x_jx_h])\\
+$$
+
+$$
 =t^{-1}\sum_{i=1}^m\sum_{j=1}^d\mathbb E[a_{i,j}^2]x_j^2\\
+$$
+
+$$
 =t^{-1}\sum_{i=1}^m\sum_{j=1}^d(t/m)x_j^2\\
+$$
+
+$$
 =\sum_{j=1}^dx_j^2\\
+$$
+
+$$
 =||x||_2^2
 $$
 In the above, we use $\mathbb E[a_{i,j}]=\mathbb E[a_{i,j}]\mathbb E[a_{i,h}]=0$ by independence and the fact that $a_{i,j}$ is symmetric around 0.
@@ -74,10 +93,13 @@ Under such assumptions, it's possible to speed up the sparse transforms from abo
 **Feature hashing** by Weinberger et al. takes this to the extreme by letting $A$ have exactly one non-zero per column, chosen at a uniform random row and with a value that is uniform among $-1$ and $+1$. So feature hashing is really the construction of Kane and Nelson with $t=1$. Therefore it follows from the above calculations that the expected length of embedded vectors are correct. Feature hashing clearly has the fastest possible embedding time of just $O(||x||_0)$.
 
 Freksen, Kamma and Larsen showed that Feature Hashing into the optimal $m=O(\epsilon^{-2}\log n)$ dimensions has the JL guarantees (preserve all distances to within $(1\pm\epsilon)$) exactly when
+
 $$
 \frac{||x||_\infty}{||x||_2}=O(\epsilon^{-1/2}\cdot\min\{\frac{\log(1/\epsilon)}{\log n},\sqrt{\frac{1}{\log n}}\}).
 $$
+
 And more generally, if one embeds into $m\ge\epsilon^{-2}\log n$ dimensions, then distances are preserved when
+
 $$
 \frac{||x||_\infty}{||x||_2}=O(\epsilon^{-1/2}\cdot\min\{\frac{\log(\epsilon m/\log n)}{\log n},\sqrt{\frac{\log(\epsilon^2 m/\log n)}{\log n}}\}).
 $$
@@ -101,7 +123,13 @@ Assume without loss of generality that $d$ is a power of $2$. Let $H_d$ be the $
 >
 > $$
 > \bar H_2=\left(\begin{array}{cc}1&1\\1&-1\end{array}\right)\\
+> $$
+>
+> $$
 > \bar H_{2d}=\left(\begin{array}{cc}\bar H_d& \bar H_d\\ \bar H_d& -\bar H_d\end{array}\right)\\
+> $$
+>
+> $$
 > \bar H_4=\left(
 > \begin{array}{cc}
 > 1&1&1&1\\
@@ -148,23 +176,47 @@ In the second step, one shows that, assuming $||HDx||_\infty=O(\sqrt{\log(nd)/d}
 Consider the $i$-th coordinate of $HDx$. Each entry of $H$ is either $-d^{-1/2}$ or $d^{-1/2}$ and $D$ multiplies a random sign onto each coordinate of $x$. Hence the $i$-th coordinate is distributed as $\sum_i\sigma_id^{-1/2}x_i$ where the $\sigma_i$'s are independent and uniform among $-1$ and $1$. Clearly $\mathbb E[(HDx)_i]=0$ by linearity of expectation. We prove Hoeffding's theory first.
 
 **Hoeffding's Inequality**. Let $X_1,\cdots,X_d$ be independent random variables where $X_i$ takes values in $[a_i,b_i]$. Let $X=\sum_iX_i$, then
+
 $$
 \Pr[|X-\mathbb E[X]|\gt t]\lt2\exp(-\frac{2t^2}{\sum_{i=1}^d(b_i-a_i)^2}).
 $$
+
 For sum $\sum_i\sigma_id^{-1/2}x_i$, we have the random variable $X_i=\sigma_id^{-1/2}x_i$ takes values in the interval $[-d^{-1/2}x_i,d^{-1/2}|x_i|]$ and thus $(b_i-a_i)^2=(2d^{-1/2}|x_i|)^2=4d^{-1}x_i^2$. Thus,
+
 $$
 \Pr[|X-\mathbb E[X]|\gt t]\lt2\exp(-\frac{2t^2}{\sum_{i=1}^d4d^{-1}x_i^2})\\
+$$
+
+$$
 =2\exp(-\frac{2t^2}{4d^{-1}||x||_2^2})\\
+$$
+
+$$
 =2\exp(-t^2d/2).
 $$
+
 For $t=C\sqrt{\ln(nd)/d}$ for a big enough constant $C$, this probability is less than $1/(dn)^3$. A union bound over all $d$ coordinates shows that $||HDx||_\infty=O(\sqrt{\ln(nd)/d})$ with probability at least $1-1/n^3$.
 
 Conclude by showing $\mathbb E[||Px||_2^2]=||x||_2^2$ for all vectors $x$, i.e., $P$ preserves norms in expectation. Each entry of $P$ is distributed as the product of a Bernoulli variable $b_{i,j}$ taking value $1$ with probability $q$ and $0$ otherwise, and a variable $n_{i,j}\sim\mathcal N(0,(mq)^{-1})$. We thus get:
+
 $$
 \mathbb E[||Px||_2^2]=\sum_{i=1}^m\mathbb E[(\sum_{j=1}^db_{i,j}n_{i,j}x_j)^2]\\
+$$
+
+$$
 =\sum_{i=1}^m\sum_{j=1}^d\mathbb E[b_{i,j}^2n_{i,j}^2x_j^2]+\sum_{j=1}^d\sum_{h\neq j}\mathbb E[b_{i,j}b_{i,h}n_{i,j}n_{i,h}x_ix_j]\\
+$$
+
+$$
 =\sum_{i=1}^m\sum_{j=1}^d\mathbb E[b_{i,j}^2]\mathbb E[n_{i,j}^2]x_j^2+\sum_{j=1}^d\sum_{h\neq j}\mathbb E[b_{i,j}]\mathbb E[b_{i,h}]\mathbb E[n_{i,j}n]\mathbb E[_{i,h}]x_ix_j\\
+$$
+
+$$
 =\sum_{i=1}^m\sum_{j=1}^dq(mq)^{-1}x_j^2\\
+$$
+
+$$
 =||x||_2^2
 $$
+
 In the above, we use $\mathbb E[n_{i,j}]=0$ and $\mathbb E[b_{i,j}^2]=\mathbb E[b_{i,j}]=q$. We also use for $n_{i,j}\sim\mathcal N(0,\sigma^2)$ random variables, we have $\mathbb E[n_{i,j}^2]=\sigma^2$. We also use independence of the entries in $P$ to split the expectation of the product into the product of expectations.

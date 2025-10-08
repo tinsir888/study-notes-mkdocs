@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9509,13 +9509,15 @@ $$</p>
 <blockquote>
 <p>The item is not always sold.</p>
 </blockquote>
-<p>for revenue:
-$$
-\mathbb E_{x,y\sim F}[revenue(r)]=2r<sup>2(1-r)+\int_r</sup>1\int_r^1\min{x,y}\mathrm dy\mathrm dx\
-=\frac{1}{3}+r<sup>2-\frac{4}{3}r</sup>3
-$$
-<em>maximized for <span class="arithmatex">\(r=\frac{1}{2}\)</span> at the value <span class="arithmatex">\(\frac{5}{12}\)</span>.</em></p>
-<p>## Revenue-optimal auctions</p>
+<p>for revenue:</p>
+<div class="arithmatex">\[
+\mathbb E_{x,y\sim F}[revenue(r)]=2r^2(1-r)+\int_r^1\int_r^1\min\{x,y\}\mathrm dy\mathrm dx\\
+\]</div>
+<div class="arithmatex">\[
+=\frac{1}{3}+r^2-\frac{4}{3}r^3
+\]</div>
+<p><em>maximized for <span class="arithmatex">\(r=\frac{1}{2}\)</span> at the value <span class="arithmatex">\(\frac{5}{12}\)</span>.</em></p>
+<h2 id="revenue-optimal-auctions">Revenue-optimal auctions</h2>
 <p>participant <span class="arithmatex">\(i\)</span> selects random valuation from distribution <span class="arithmatex">\(F_i\)</span>.</p>
 <p>probability distributions <span class="arithmatex">\(\mathbf F\)</span> with continuous probability density function <span class="arithmatex">\(\mathbf f\)</span>. defined in <span class="arithmatex">\([0,+\infty)\)</span></p>
 <h3 id="assumption">Assumption</h3>

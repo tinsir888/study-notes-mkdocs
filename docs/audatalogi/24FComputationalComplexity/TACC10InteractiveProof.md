@@ -108,9 +108,11 @@ Finally, we define $A_\varphi=\prod_{j=1}^mA(C_j)$.
 Expanding $A(\varphi)$ into a sum of monomials would take exponential time.
 
 The number of satisfying assignments $\#\varphi$ of $\varphi$:
+
 $$
 \#\varphi=\sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1A_\varphi(x_1,\cdots,x_n)
 $$
+
 Then we define an **interactive proof** for proving $\#\varphi=K$, for given $K$. For $K=0$ allow us prove that $coNP\subseteq IP$. The protocol is called **Sumcheck** protocol:
 
 - Input: Arithmetic formula $F(x_1,\cdots,x_n)$ of total degree $d$, prime $p$, number $K$.
@@ -120,9 +122,11 @@ Then we define an **interactive proof** for proving $\#\varphi=K$, for given $K$
 - Verifier: If $Q(0)+Q(1)\not\equiv K\mod p$, reject. Otherwise, pick $a_1\in\mathbb Z_p$ uniformly at random. Send $a_1$ to $P$ and recursively invoke the protocol for proving that $\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1F(a_1,x_2,\cdots,x_n)\equiv Q(a_1)\mod p$.
 
 :thinking:Proposition 16. Let $F(x_1,\cdots,x_n)$ be an arithmetic formula of total degree $d$, which is polynomial in $n$, let $p$ be a prime of bi-length polynomial in $n$, and let $K$ be an integer. The Sumcheck protocol is an interactive proof for the statement
+
 $$
 \sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1F(x_1,\cdots,x_n)\equiv K\mod p
 $$
+
 with completeness $1$ and soundness error at most $nd/p$.
 
 :thinking:Corollary 11. $coNP\subseteq IP$.

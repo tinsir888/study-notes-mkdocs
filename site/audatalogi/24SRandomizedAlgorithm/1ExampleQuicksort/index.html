@@ -6349,7 +6349,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6372,7 +6372,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6395,7 +6395,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9519,27 +9519,33 @@
 <p>If the input is inversed, picking the first (also largest) as pivot, it will need <span class="arithmatex">\(\Theta(n^2)\)</span> time.</p>
 <h2 id="how-to-improve">How to improve</h2>
 <p>Selecting better pivot!</p>
-<p>Make median-number pivot?
-$$
-T(n)=2\cdot T(\frac{n}{2})+T_{partition}(n)+T_{median}(n)\
+<p>Make median-number pivot?</p>
+<div class="arithmatex">\[
+T(n)=2\cdot T(\frac{n}{2})+T_{partition}(n)+T_{median}(n)\\
+\]</div>
+<div class="arithmatex">\[
 T_{partition}(n)=O(n)
-$$
-There exists linear-time algorithm for median, thus
-$$
-T(n)=2\cdot T(\frac{n}{2})+O(n)\
+\]</div>
+<p>There exists linear-time algorithm for median, thus</p>
+<div class="arithmatex">\[
+T(n)=2\cdot T(\frac{n}{2})+O(n)\\
+\]</div>
+<div class="arithmatex">\[
 \Rightarrow T(n)=O(n\log n)
-$$</p>
+\]</div>
 <h2 id="how-good-is-quicksort-so-far">How good is Quicksort so far</h2>
 <p>Best possible running time</p>
 <p>low space</p>
 <p>but complicated</p>
 <h1 id="randomized-quicksort">Randomized Quicksort</h1>
 <p>Randomly choose pivot</p>
-<p>On average, random pivot gives 25% - 75% split
-$$
-T(n)=T(3n/4)+T(n/4)+O(n)\
+<p>On average, random pivot gives 25% - 75% split</p>
+<div class="arithmatex">\[
+T(n)=T(3n/4)+T(n/4)+O(n)\\
+\]</div>
+<div class="arithmatex">\[
 \Rightarrow T(n)=O(n\log n)
-$$</p>
+\]</div>
 <h2 id="analysis-of-random-quicksort">Analysis of Random Quicksort</h2>
 <p>Expected number of comparisons in the calls of partition</p>
 <p>Typically, the uniform selection of a pivot among <span class="arithmatex">\(n\)</span> elements can be implemented with <span class="arithmatex">\(O(\log n)\)</span> coin tosses, on average</p>
@@ -9548,11 +9554,11 @@ $$</p>
 <p><span class="arithmatex">\(z_i\)</span> denotes <span class="arithmatex">\(i\)</span>-th smallest element</p>
 <p><span class="arithmatex">\(i&lt;j,X_{ij}\)</span> as the r.v. denoting the number of times the element <span class="arithmatex">\(z_i\)</span> and <span class="arithmatex">\(z_j\)</span> get compared by Quicksort</p>
 <p><span class="arithmatex">\(X_{ij}\)</span> is 1 if <span class="arithmatex">\(z_i\)</span> and <span class="arithmatex">\(z_j\)</span> both belong to the same subarray when some of them is selected as pivot, otherwise it is 0.</p>
-<p>Then the # of comparisons in the calls of partition is
-$$
-C=\sum_{i=1}<sup>{n-1}\sum_{j=i+1}</sup>nX_{ij}
-$$
-<em>No good sorting algorithm should perform the same comparison twice.</em></p>
+<p>Then the # of comparisons in the calls of partition is</p>
+<div class="arithmatex">\[
+C=\sum_{i=1}^{n-1}\sum_{j=i+1}^nX_{ij}
+\]</div>
+<p><em>No good sorting algorithm should perform the same comparison twice.</em></p>
 <h2 id="bounding-the-expectation-of-c">Bounding the expectation of <span class="arithmatex">\(C\)</span></h2>
 <div class="arithmatex">\[
 \mathbb E[C]=\mathbb E[\sum_{i=1}^{n-1}\sum_{j=i+1}^nX_{ij}]=\sum_{i=1}^{n-1}\sum_{j=i+1}^n\mathbb E[X_{ij}]=\sum_{i=1}^{n-1}\sum_{j=i+1}^n\Pr[X_{ij}=1]
@@ -9569,11 +9575,11 @@ $$
 <p><span class="arithmatex">\(\Pr[X_{ij}=1]=\frac{2}{j-i+1}\)</span></p>
 </li>
 </ul>
-<p>Thus
-$$
-\mathbb E[C]=\sum_{i=1}<sup>{n-1}\sum_{j=i+1}</sup>n\frac{2}{j-i+1}=\sum_{i=1}<sup>{n-1}\sum_{k=2}</sup>{n-i+1}\frac{2}{k}\le2\sum_{i=1}^{n-1}H_n\le2nH_n
-$$
-i.e., <span class="arithmatex">\(\mathbb E[C]=O(n\log n)\)</span> (<span class="arithmatex">\(H_n\)</span> is harmonic number <span class="arithmatex">\(\ln(n+1)\le H_n\le1+\ln n\)</span>)</p>
+<p>Thus</p>
+<div class="arithmatex">\[
+\mathbb E[C]=\sum_{i=1}^{n-1}\sum_{j=i+1}^n\frac{2}{j-i+1}=\sum_{i=1}^{n-1}\sum_{k=2}^{n-i+1}\frac{2}{k}\le2\sum_{i=1}^{n-1}H_n\le2nH_n
+\]</div>
+<p>i.e., <span class="arithmatex">\(\mathbb E[C]=O(n\log n)\)</span> (<span class="arithmatex">\(H_n\)</span> is harmonic number <span class="arithmatex">\(\ln(n+1)\le H_n\le1+\ln n\)</span>)</p>
 <h1 id="reference-literature">Reference Literature</h1>
 <h2 id="lecture-notes-by-nick-harvey-from-ubc">Lecture notes by Nick Harvey from UBC</h2>
 <p>What are randomized algorithms?</p>

@@ -61,9 +61,11 @@ If we want to apply non-Boolean alphabet, we just encode these letters into $\{0
 :book:Definition of $SIZE$. Let $S:\mathbb N\to\mathbb N$. $SIZE(S(n))$ is the class of languages computed by family of Boolean circuit of size $O(S(n))$,
 
 We interested in class of languages computed by a family of polynomial size.
+
 $$
 P/poly=\bigcup_{k>0}SIZE(n^k).
 $$
+
 :book:Definition of **log-space/polynomial-time uniform**. Let $(C_n)_{n=0}^\infty$ be a family of Boolean circuits of size $O(S(n))$. We say that the family is *log-space uniform* if the function $1^n\mapsto C_n$ is computable in space $O(\log S(n))$. The family is *polynomial-time uniform* if the function is computable in time $(S(n))^{O(1)}$.
 
 :book:Definition of complexity classes of languages computed by families of Boolean circuits. Let $S:\mathbb N\to\mathbb N$.
@@ -80,8 +82,12 @@ $$
 析取范式 disjunctive normal form DNF
 
 :dart:Theorem 14. Any Boolean function $f:\{0,1\}^n\to\{0,1\}$ is computed by a CNF with $s$ clauses of length $n$ and a DNF with $t$ terms of length $n$ where
+
 $$
 s=|\{x\in\{0,1\}^n|f(x)=0\}|,\\
+$$
+
+$$
 t=|\{x\in\{0,1\}^n|f(x)=1\}|.
 $$
 
@@ -102,18 +108,25 @@ Shannon proved that $L(n)=\Theta(2^n/n)$.
 > Different types of gate: input gates have $2n+2$ probabilities, negation with one input $s$, and/or with two inputs $(s^2,s^2)$. Thus we have at most $2n+2+s+s^2+s^2$ options for every gate, meaning that we have at most $(2n+2+s+2s^2)^s$ many circuits with at most $s$ gates.
 >
 > For $s\ge n+1$ we have
+>
 > $$
 > 2n+2+s+2s^2\le4s^2\\
+> $$
+>
+> $$
 > \Rightarrow(2n+2+s+2s^2)^s\le(2s)^{2s}.
 > $$
+>
 > Each of these at most $(2s)^{2s}$ circuits computes precisely one Boolean function. There are exactly $2^{2^n}$ different Boolean functions on $n$ inputs.
 >
 > Thus if $2^{2^n}\gt(2s)^{2s}$, there must be a Boolean function that is not computed by a Boolean circuit of size $s$. (By pigeon hole theorem)
 >
 > Let $n\ge9,s=\frac{2^n}{4n}$, which satisfies $s\ge n+1$, we have
+>
 > $$
 > (2s)^{2s}=2^{2s\log_2(2s)}=2^{\frac{2^n}{2n}(n-1-\log n)}\lt2^{2^{n-1}}.
 > $$
+>
 > It follows that less than $2^{2^{n-1}}$ Boolean functions on $n$ inputs are computed by Boolean circuits of size at most $\frac{2^n}{4n}$.
 
 # Turing Machines versus Boolean Circuits

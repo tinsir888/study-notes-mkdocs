@@ -56,10 +56,7 @@ Turing machine $M$ with one input tape and $k$ work tapes. It includes:
 - Element $\Delta\in\Gamma\diagdown\Sigma$: **blank symbol**
 
 - Function
-  $$
-  \delta:(Q\diagdown\{yes,no\})\times(\Sigma\cup\{\Delta\})\times\Gamma^k\rightarrow Q\times(\Gamma\diagdown\{\Delta\})^k\times\{L,S,R\}^{k+1}
-  $$
-  is the **transition function**.
+  $\delta:(Q\diagdown\{yes,no\})\times(\Sigma\cup\{\Delta\})\times\Gamma^k\rightarrow Q\times(\Gamma\diagdown\{\Delta\})^k\times\{L,S,R\}^{k+1}$ is the **transition function**.
 
 !!! info
 
@@ -99,10 +96,15 @@ Add an additional *output tape* which is *write-only*.
 $\Lambda$: non-empty finite set, *output alphabet*. (Usually $\Lambda=\Sigma$)
 
 In each step of computation $M$ can choose to write a single symbol to the output tape. Then transition function:
+
 $$
 \delta:(Q\diagdown\{yes,no\})\times(\Sigma\cup\{\Delta\})\times\Gamma^k\\
+$$
+
+$$
 \rightarrow Q\times(\Gamma\diagdown\{\Delta\})^k\times(\Lambda\cup\{\epsilon\})\times\{L,S,R\}^{k+1}
 $$
+
 $\epsilon$ here means write nothing.
 
 Such a Turing machine is also called a *transducer*.
@@ -193,6 +195,7 @@ Observation: If a Turing machine repeats a configuration, it will enter an infin
 Idea: More resources means more can be computed.
 
 :dart:Theorem 3: Let $S_2(n)\ge\log n$ be space constructible. If $S_1(n)=o(S_2(n))$, then
+
 $$
 DSPACE(S_1(n))\subsetneq DSPACE(S_2(n)).
 $$
@@ -232,6 +235,7 @@ It is easy to modify the $O(T(n)^2)$ to be oblivious by first copying the input 
 # The Time Hierarchy Theorem
 
 :dart:Theorem 5: Let $T_2(n)\ge n$ be time constructible. If $T_1(n)\ge n$ satisfies $T_1(n)\log T_1(n)=o(T_2(n))$, then
+
 $$
 DTIME(T_1(n))\subsetneq DTIME(T_2(n)).
 $$
@@ -241,10 +245,20 @@ $$
 # Time and Space Complexity Classes
 
 There are some standard complexity classes given by natural classes of time and space bounds.
+
 $$
 L=DSPACE(\log n)\\
+$$
+
+$$
 P=\bigcup_{k>0}DTIME(n^k)\\
+$$
+
+$$
 PSPACE=\bigcup_{k>0}DSPACE(n^k)\\
+$$
+
+$$
 EXP=\bigcup_{k>0}DTIME(2^{n^k})
 $$
 Trivially, $L\subseteq P\subseteq PSPACE\subseteq EXP$.

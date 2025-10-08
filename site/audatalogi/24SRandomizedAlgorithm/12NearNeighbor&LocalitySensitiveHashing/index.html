@@ -6390,7 +6390,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#805 (Div. 3)
+    Round 805 (Div. 3)
     
   </span>
   
@@ -6413,7 +6413,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#957 (Div. 3)
+    Round 957 (Div. 3)
     
   </span>
   
@@ -6436,7 +6436,7 @@
   
   
   <span class="md-ellipsis">
-    Round \#963 (Div. 2)
+    Round 963 (Div. 2)
     
   </span>
   
@@ -9557,17 +9557,17 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Let <span class="arithmatex">\(X_p\)</span> be <span class="arithmatex">\(1\)</span> if <span class="arithmatex">\(h(p)=h(q)\)</span> and <span class="arithmatex">\(0\)</span> otherwise.
-$$
+<p>Let <span class="arithmatex">\(X_p\)</span> be <span class="arithmatex">\(1\)</span> if <span class="arithmatex">\(h(p)=h(q)\)</span> and <span class="arithmatex">\(0\)</span> otherwise.</p>
+<div class="arithmatex">\[
 \mathbb E[\sum_pX_p]=\sum_p\mathbb E[X_p]=\sum_p\Pr_h[h(p)=h(q)]
-$$</p>
+\]</div>
 <p>Parameter <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(g(p)\)</span> is the concatenates of <span class="arithmatex">\(0-1\)</span> bits of <span class="arithmatex">\(h_1(p),\cdots,h_k(p)\)</span>. <span class="arithmatex">\(h_i\)</span> are independent.</p>
 <p>For <span class="arithmatex">\(dist(p,q)\le R\)</span>, <span class="arithmatex">\(\Pr_g[g(p)=g(q)]\ge P_1^k\)</span>.</p>
 <p>For <span class="arithmatex">\(dist(p,q)\ge R\)</span>, <span class="arithmatex">\(\Pr_g[g(p)=g(q)]\le P_2^k\le1/n\)</span>.</p>
-<p>Let <span class="arithmatex">\(X_p\)</span> be <span class="arithmatex">\(1\)</span> if <span class="arithmatex">\(g(p)=g(q)\)</span> and <span class="arithmatex">\(0\)</span> otherwise.
-$$
+<p>Let <span class="arithmatex">\(X_p\)</span> be <span class="arithmatex">\(1\)</span> if <span class="arithmatex">\(g(p)=g(q)\)</span> and <span class="arithmatex">\(0\)</span> otherwise.</p>
+<div class="arithmatex">\[
 \mathbb E[\sum_pX_p]=\sum_{dist(p,q)\ge cR}\Pr[g(p)=g(q)]+\sum_{dist(p,q)\le R}\Pr[g(p)=g(q)]
-$$</p>
+\]</div>
 <p>Choosing <span class="arithmatex">\(k=\log_{P_2}(1/n)\)</span></p>
 <p>Better probability:</p>
 <p>For parameters <span class="arithmatex">\(L,k\)</span>. For <span class="arithmatex">\(i=1,\cdots,L\)</span>, <span class="arithmatex">\(g_i(p)\)</span> is the concatenates of <span class="arithmatex">\(0-1\)</span> bits of <span class="arithmatex">\(h_{i1}(p),\cdots,h_{ik}(p)\)</span>. <span class="arithmatex">\(h_i\)</span> are independent.</p>
@@ -9599,30 +9599,52 @@ $$</p>
 <p><span class="arithmatex">\(E_1=\{\forall_i:g_i(q)\ne g_i(p^*)\}\)</span></p>
 <p><span class="arithmatex">\(E_2=\{\sum_{i=1}^L|\{p:dist(p,q)\gt cR\land g_i(q)=g_i(p)\}|\gt3L\}\)</span></p>
 <p>If none of them happens, the results is correct.</p>
-<p>We want <span class="arithmatex">\(\Pr[E_1\cup E_2]\le\Pr[E_1]+\Pr[E_2]\le1/2\)</span>.
-$$
-\Pr[E_2]\le\mathbb E[\sum_{i=1}^L|{p:dist(p,q)\gt cR\land g_i(q)=g_i(p)}|]/3L\
-=\sum_{i=1}^L....\
-\le L/3L=1/3\
-\Pr[E_1]=\Pr[\forall i:g_i(p)\neq g_i(p^<em>)]\
-=\prod_{i=1}^L\Pr[g_i(q)\neq g_i(p^</em>)]\
-=\prod_{i=1}<sup>L(1-\Pr[g_i(q)=g_i(p</sup>*)])\
-=(1-P_1<sup>k)</sup>L\
-$$
-Choosing <span class="arithmatex">\(L=\log_{1-P_1^k}\frac{1}{6}\)</span>, we will get <span class="arithmatex">\(1/2\)</span> probability bound for failure.</p>
+<p>We want <span class="arithmatex">\(\Pr[E_1\cup E_2]\le\Pr[E_1]+\Pr[E_2]\le1/2\)</span>.</p>
+<div class="arithmatex">\[
+\Pr[E_2]\le\mathbb E[\sum_{i=1}^L|\{p:dist(p,q)\gt cR\land g_i(q)=g_i(p)\}|]/3L\\
+\]</div>
+<div class="arithmatex">\[
+=\sum_{i=1}^L....\\
+\]</div>
+<div class="arithmatex">\[
+\le L/3L=1/3\\
+\]</div>
+<div class="arithmatex">\[
+\Pr[E_1]=\Pr[\forall i:g_i(p)\neq g_i(p^*)]\\
+\]</div>
+<div class="arithmatex">\[
+=\prod_{i=1}^L\Pr[g_i(q)\neq g_i(p^*)]\\
+\]</div>
+<div class="arithmatex">\[
+=\prod_{i=1}^L(1-\Pr[g_i(q)=g_i(p^*)])\\
+\]</div>
+<div class="arithmatex">\[
+=(1-P_1^k)^L\\
+\]</div>
+<p>Choosing <span class="arithmatex">\(L=\log_{1-P_1^k}\frac{1}{6}\)</span>, we will get <span class="arithmatex">\(1/2\)</span> probability bound for failure.</p>
 <h2 id="upper-bound-for-l">Upper bound for L</h2>
 <div class="arithmatex">\[
 L=\frac{\ln 1/6}{\ln(1-P_1^k)}\le\frac{\ln(1/6)}{\ln(\exp(-P_1^k))}=\frac{\ln1/6}{-P_1^k}=\ln6/P_1^k=O(P_1^{-k})\\
+\]</div>
+<div class="arithmatex">\[
 P_1^{-k}=\frac{1}{P_1^{\log_{P_2}1/n}}\\
+\]</div>
+<div class="arithmatex">\[
 =\cdots\cdots\\
+\]</div>
+<div class="arithmatex">\[
 =n^{\ln P_1/\ln P_2}=n^{\ln(1/P_1)/\ln(1/P_2)}
 \]</div>
-<p>For hamming distance:
-$$
-P_1=1-R/d\
-P_2=1-cR/d\
+<p>For hamming distance:</p>
+<div class="arithmatex">\[
+P_1=1-R/d\\
+\]</div>
+<div class="arithmatex">\[
+P_2=1-cR/d\\
+\]</div>
+<div class="arithmatex">\[
 \sup L=n^{1/c}
-$$</p>
+\]</div>
 <h1 id="digest-from-reference-paper">Digest from Reference Paper</h1>
 <p>Efficient algorithms for the approximate and exact nearest neighbor problem.</p>
 <p>Goal: Preprocess a dataset of objects. Later, given a new query object, one can quickly return the dataset object that is most similar to the query.</p>
