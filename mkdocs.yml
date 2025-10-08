@@ -229,6 +229,11 @@ nav:
       - Network Technology and Application: "APS/noncore/Network Technology and Application.md"
       - Sensing Technology and Application: "APS/noncore/Sensing Technology and Application.md"
       - Visual Technology Basis: "APS/noncore/Visual Technology Basis.md"
+  - Competitive Programming: #"algcoding/*"
+    - Codeforces: #"algcoding/codeforces"
+      - Round \#805 (Div. 3): "algcoding/codeforces/Codeforces Round #805 (Div. 3).md"
+      - Round \#957 (Div. 3): "algcoding/codeforces/Codeforces Round #957 (Div. 3).md"
+      - Round \#963 (Div. 2): "algcoding/codeforces/Codeforces Round #963 (Div. 2).md"
   - Languages:
     - Dansk: #"lingua/Dansknote/*"
       - Andersens Eventyr: #"lingua/Dansknote/AndersensEventyr/*"
