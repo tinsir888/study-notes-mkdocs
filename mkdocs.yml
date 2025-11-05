@@ -3,6 +3,11 @@ site_url: https://tinsir888.codeberg.page/notes-mkdocs/site
 repo_url: https://codeberg.org/tinsir888/notes-mkdocs
 nav:
   - Home: index.md
+  - Informatica@GSSI: #"informaticagssi/*"
+    - Design and Analysis of Algorithms: #"informaticagssi/DAA/*"
+      - 1 Big O Notation: "informaticagssi/DAA/1.md"
+    - Introduction to Formal Methods: #"informaticagssi/IFM/*"
+      - 1 Overview of Quantitative Formal Methods: "informaticagssi/IFM/1.md"
   - Datalogi@AU: #"audatalogi/*"
     - Algorithmic Game Theory: #"audatalogi/23FAlgorithmicGameTheory/*"
       - 1 Introduction and examples: "audatalogi/23FAlgorithmicGameTheory/W35.md"

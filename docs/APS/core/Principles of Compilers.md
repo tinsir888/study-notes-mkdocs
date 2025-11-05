@@ -93,7 +93,8 @@ Language to NFA
 
 z.B. we have a NFA as follow:
 
-{% mermaid %}
+```mermaid
+
 graph LR
 0((S))
 1((q0))
@@ -108,7 +109,8 @@ graph LR
 2-->|a|2
 3-->|b|4
 2-->|ε|4
-{% endmermaid %}
+
+```
 
 find ε-closure then merged.
 
@@ -132,7 +134,8 @@ find ε-closure then merged.
 
 Thus, the DFA is:
 
-{% mermaid %}
+```mermaid
+
 graph LR
 0((S))
 1(A)
@@ -145,7 +148,8 @@ graph LR
 2-->|b|3
 3-->|a|2
 3-->|b|3
-{% endmermaid %}
+
+```
 
 
 
@@ -156,15 +160,18 @@ graph LR
 > move({A,B,C},b)={C}
 >
 > so \{A,B,C\} can merged in a state
->
-{% mermaid %}
+
+
+```mermaid
+
 graph LR
 0((S))
 1(ABC)
 0-->1
 1-->|a|1
 1-->|b|1
-{% endmermaid %}
+
+```
 
 ## Parser
 

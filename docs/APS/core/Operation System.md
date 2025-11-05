@@ -91,7 +91,8 @@ What kind of OS are we using today?
 
 Can be described in a finite state machine
 
-{% mermaid %}
+```mermaid
+
 graph TB
 1([new])
 2([ready])
@@ -104,7 +105,8 @@ graph TB
 3 --exit--> 4
 2 --scheduler dispatch--> 3
 3 --interrupt--> 2
-{% endmermaid %}
+
+```
 
 - Process Control Block: Store info of Process (PID)
 - Process Synchronization:
