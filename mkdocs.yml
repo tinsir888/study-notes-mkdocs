@@ -6,8 +6,10 @@ nav:
   - Informatica@GSSI: #"informaticagssi/*"
     - Design and Analysis of Algorithms: #"informaticagssi/DAA/*"
       - 1 Big O Notation: "informaticagssi/DAA/1.md"
+      - 2 Sorting and Master Theorem: "informaticagssi/DAA/2.md"
     - Introduction to Formal Methods: #"informaticagssi/IFM/*"
-      - 1 Overview of Quantitative Formal Methods: "informaticagssi/IFM/1.md"
+      - 1 Stochastic Process: "informaticagssi/IFM/1.md"
+      - 2 Markov Processes: "informaticagssi/IFM/2.md"
   - Datalogi@AU: #"audatalogi/*"
     - Algorithmic Game Theory: #"audatalogi/23FAlgorithmicGameTheory/*"
       - 1 Introduction and examples: "audatalogi/23FAlgorithmicGameTheory/W35.md"
@@ -394,7 +396,8 @@ markdown_extensions:
 
 plugins:
     - search
-    - mermaid2
+    - mermaid2:
+        javascript: https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs
     #- info
     #- git-authors
 extra_javascript:

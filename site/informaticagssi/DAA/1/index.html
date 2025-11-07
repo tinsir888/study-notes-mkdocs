@@ -16,7 +16,7 @@
         <link rel="prev" href="../../..">
       
       
-        <link rel="next" href="../../IFM/1/">
+        <link rel="next" href="../2/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -623,6 +623,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Sorting and Master Theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -684,7 +707,30 @@
   
   
   <span class="md-ellipsis">
-    1 Overview of Quantitative Formal Methods
+    1 Stochastic Process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IFM/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Markov Processes
     
   </span>
   
@@ -9720,8 +9766,14 @@
 <li><span class="arithmatex">\(v&lt;\infty\Rightarrow f(n)\in O(g(n))\)</span> aka <span class="arithmatex">\(\leq_a\)</span></li>
 <li><span class="arithmatex">\(v&gt;0\)</span> is a constant <span class="arithmatex">\(\Rightarrow f(n)\in\Theta(g(n))\)</span> aka <span class="arithmatex">\(=_a\)</span></li>
 <li><span class="arithmatex">\(v&gt;0\Rightarrow f(n)\in\Omega(g(n))\)</span> aka <span class="arithmatex">\(\geq_a\)</span></li>
-<li><span class="arithmatex">\(v=\infty\Rightarrow f(n)\in \omega(g(n))\)</span></li>
+<li><span class="arithmatex">\(v=\infty\Rightarrow f(n)\in \omega(g(n))\)</span> aka <span class="arithmatex">\(&gt;_a\)</span></li>
 </ol>
+<h1 id="other-definitions">Other Definitions</h1>
+<p><span class="arithmatex">\(O(T(n))\)</span>: If <span class="arithmatex">\(\exists c&gt;0,n_0\geq 0\)</span>, s.t., <span class="arithmatex">\(\forall n\geq n_0,\forall\)</span> input of size <span class="arithmatex">\(n\)</span>, algorithm terminates in <span class="arithmatex">\(\leq c\cdot T(n)\)</span>.</p>
+<p>Knuth Definition <span class="arithmatex">\(\Omega\)</span>: If <span class="arithmatex">\(\exists c&gt;0,n_0\)</span>, s.t. <span class="arithmatex">\(\forall n\geq n_0,\exists\)</span> input of size <span class="arithmatex">\(n\)</span>, algorithm requires at least <span class="arithmatex">\(c\cdot T(n)\)</span> to terminate.</p>
+<p>Another definition of <span class="arithmatex">\(\Omega\)</span>: If <span class="arithmatex">\(\exists c&gt;0\forall n_0,\exists n\geq n_0,\exists\)</span> input of size <span class="arithmatex">\(n\)</span>, algorithm  requires at least <span class="arithmatex">\(c\cdot T(n)\)</span> to terminate.</p>
+<p>There are some algorithms in another definition but not in Knuth's definition.</p>
+<p><del>We can ignore the difference without specification</del></p>
 
 
 
@@ -9777,13 +9829,13 @@
         
         
           
-          <a href="../../IFM/1/" class="md-footer__link md-footer__link--next" aria-label="Next: 1 Overview of Quantitative Formal Methods">
+          <a href="../2/" class="md-footer__link md-footer__link--next" aria-label="Next: 2 Sorting and Master Theorem">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                1 Overview of Quantitative Formal Methods
+                2 Sorting and Master Theorem
               </div>
             </div>
             <div class="md-footer__button md-icon">
