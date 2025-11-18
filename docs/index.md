@@ -8,6 +8,7 @@ All my study notes are compressed HERE!
 
 - Study notes @ Nankai University, Computer Science and Technology (B. Eng.)
 - Study notes @ Aarhus University, Computer Science (M. Sc.)
+- Study notes @ Gran Sasso Science Institute, Computer Science (Ph. D.)
 - Review Outline for APS (Akademische Prüfstelle)
 - Study notes on MANY LANGUAGES 🗣️
 
