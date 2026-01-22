@@ -1533,6 +1533,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 SAT Solvers in Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 First Order Logic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 SMT Solvers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 SMT Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -10544,7 +10636,7 @@
 <p>Use <span class="arithmatex">\(T,F\)</span> to denote the <strong>constants</strong> True and False.</p>
 <p>Use uppercase letters to denote atomic formulas.</p>
 <h2 id="well-formed-formulae">Well-formed Formulae</h2>
-<p><span class="arithmatex">\(\varphi::=A|B|\cdots|(\varphi)|\neg\varphi|\varphi\and\varphi|\varphi\or\varphi|\varphi\Rightarrow\varphi|\varphi\Leftrightarrow\varphi|\varphi\oplus\varphi\)</span></p>
+<p><span class="arithmatex">\(\varphi::=A|B|\cdots|(\varphi)|\neg\varphi|\varphi\land\varphi|\varphi\lor\varphi|\varphi\Rightarrow\varphi|\varphi\Leftrightarrow\varphi|\varphi\oplus\varphi\)</span></p>
 <p>Negation, conjunction, disjunction, implications, xor...</p>
 <p>Operators can be defined in terms of each other:</p>
 <ul>
@@ -10559,7 +10651,7 @@
 $$
 \sigma:\text{Propositions}\to{T,F}.
 $$
-For example: <span class="arithmatex">\(\varphi=A\or(B\to(A\and C))\)</span> has <span class="arithmatex">\(8\)</span> possible truth assignments.</p>
+For example: <span class="arithmatex">\(\varphi=A\lor(B\to(A\land C))\)</span> has <span class="arithmatex">\(8\)</span> possible truth assignments.</p>
 <p>The assignment <span class="arithmatex">\(\sigma\)</span> making the formula <span class="arithmatex">\(\varphi\)</span> true, we say that the assignment <strong>satisfies</strong>, aka <span class="arithmatex">\(\sigma\vDash\varphi\)</span>. (The assignment is a <strong>model</strong> for the formula)</p>
 <p>The assignment <span class="arithmatex">\(\sigma\)</span> making the formula <span class="arithmatex">\(\varphi\)</span> false, <span class="arithmatex">\(\sigma\nvDash\varphi\)</span>.</p>
 <p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" />The satisfiability check can be done in polynomial time.</p>
@@ -10578,14 +10670,14 @@ For example: <span class="arithmatex">\(\varphi=A\or(B\to(A\and C))\)</span> has
 </ol>
 <h2 id="some-equivalences">Some Equivalences</h2>
 <ul>
-<li><span class="arithmatex">\((A\to B)\Leftrightarrow(\neg A\or B)\)</span></li>
-<li><span class="arithmatex">\((A\or B)\Leftrightarrow\neg(\neg A\and\neg B)\)</span></li>
-<li><span class="arithmatex">\((A\and B)\Leftrightarrow\neg(\neg A\or\neg B)\)</span></li>
+<li><span class="arithmatex">\((A\to B)\Leftrightarrow(\neg A\lor B)\)</span></li>
+<li><span class="arithmatex">\((A\lor B)\Leftrightarrow\neg(\neg A\land\neg B)\)</span></li>
+<li><span class="arithmatex">\((A\land B)\Leftrightarrow\neg(\neg A\lor\neg B)\)</span></li>
 <li><span class="arithmatex">\((A\to B)\Leftrightarrow(\neg B\to\neg A)\)</span></li>
-<li><span class="arithmatex">\(\neg(A\and B)\Leftrightarrow(\neg A\or\neg B)\)</span></li>
-<li><span class="arithmatex">\(\neg(A\or B)\Leftrightarrow(\neg A\and\neg B)\)</span></li>
-<li><span class="arithmatex">\(A\and(B\or C)\Leftrightarrow(A\and B)\or(A\and C)\)</span></li>
-<li><span class="arithmatex">\(A\or(B\and C)\Leftrightarrow(A\or B)\and(A\or C)\)</span></li>
+<li><span class="arithmatex">\(\neg(A\land B)\Leftrightarrow(\neg A\lor\neg B)\)</span></li>
+<li><span class="arithmatex">\(\neg(A\lor B)\Leftrightarrow(\neg A\land\neg B)\)</span></li>
+<li><span class="arithmatex">\(A\land(B\lor C)\Leftrightarrow(A\land B)\lor(A\land C)\)</span></li>
+<li><span class="arithmatex">\(A\lor(B\land C)\Leftrightarrow(A\lor B)\land(A\lor C)\)</span></li>
 </ul>
 <h1 id="the-sat-problem">The SAT Problem</h1>
 <p>A decision problem: decide whether a given formula <span class="arithmatex">\(f\)</span> is <strong>SAT</strong>isfiable.</p>
@@ -10597,25 +10689,25 @@ For example: <span class="arithmatex">\(\varphi=A\or(B\to(A\and C))\)</span> has
 <p>Important: SAT is NP-complete. (Cook et al, 1971)</p>
 <h1 id="minimal-sets-of-operators-and-normal-forms">Minimal Sets of Operators and Normal Forms</h1>
 <p>A <strong>literal</strong> is either an atom or a negation of an atom.</p>
-<p>A <strong>term</strong> is a conjunction of literals, e.g., <span class="arithmatex">\(\neg A\and\neg B\and C\)</span>.</p>
-<p>A <strong>clause</strong> is a disjunction of literals, e.g., <span class="arithmatex">\(\neg A\or\neg B\or C\)</span>.</p>
+<p>A <strong>term</strong> is a conjunction of literals, e.g., <span class="arithmatex">\(\neg A\land\neg B\land C\)</span>.</p>
+<p>A <strong>clause</strong> is a disjunction of literals, e.g., <span class="arithmatex">\(\neg A\lor\neg B\lor C\)</span>.</p>
 <h2 id="negation-normal-form">Negation Normal Form</h2>
 <p>A formula is <strong>Negation Normal Form</strong> if</p>
 <ul>
 <li>It contains only negation, conjunction, disjunction.</li>
 <li>Negation is only applied to atoms.</li>
 </ul>
-<p>E.g. <span class="arithmatex">\(\neg A\or\neg B\)</span>.</p>
+<p>E.g. <span class="arithmatex">\(\neg A\lor\neg B\)</span>.</p>
 <p>Every formula can be converted to NNF in linear time.</p>
 <h2 id="disjunctive-normal-form">Disjunctive Normal Form</h2>
 <p>A DNF is composed of disjunctions of items. (a disjunction of conjunctions)</p>
-<p>E.g., <span class="arithmatex">\((A\and B\and\neg C)\or(\neg C\and D)\or\neg A\)</span>.</p>
+<p>E.g., <span class="arithmatex">\((A\land B\land\neg C)\lor(\neg C\land D)\lor\neg A\)</span>.</p>
 <p>To convert to DNF, we first convert to NNF, then distribute conjunctions.</p>
 <p>In the worst case, conversion takes <strong>exponential</strong> time and space.</p>
 <p>Observation: SAT of DNF is polynomial (We only need to check whether there are contradictions in each term)</p>
 <h2 id="conjunctive-normal-form">Conjunctive Normal Form</h2>
 <p>A CNF is composed of conjunctions of clauses. (a conjunction of disjunctions)</p>
-<p>E.g., <span class="arithmatex">\((A\or B\or\neg C)\and(\neg C\or D)\and\neg A\)</span>.</p>
+<p>E.g., <span class="arithmatex">\((A\lor B\lor\neg C)\land(\neg C\lor D)\land\neg A\)</span>.</p>
 <p>In the worst case, conversion to CNF takes <strong>exponential</strong> time and space.</p>
 <h2 id="tseitins-encoding">Tseitin's Encoding</h2>
 <p>By adding new variables, any formula can be converted to a CNF in linear time and space that is <strong>equisatisfiable</strong>!</p>
@@ -10651,13 +10743,13 @@ $$</p>
 <h2 id="natural-deduction-for-propositional-logic">Natural Deduction for Propositional Logic</h2>
 <p>A system <span class="arithmatex">\(\mathcal N\)</span> with no axioms, only rules. Some rules:
 $$
-{\varphi \psi\over\varphi\and\psi}(\and\text{-I})
+{\varphi \psi\over\varphi\land\psi}(\land\text{-I})
 $$</p>
 <div class="arithmatex">\[
-{\varphi\and\psi\over\varphi}(\and\text{-E1})
+{\varphi\land\psi\over\varphi}(\land\text{-E1})
 \]</div>
 <div class="arithmatex">\[
-{\varphi\and\psi\over\psi}(\and\text{-E2})
+{\varphi\land\psi\over\psi}(\land\text{-E2})
 \]</div>
 <p>There are additional rules for disjunction etc. that make this system sound and complete.</p>
 
