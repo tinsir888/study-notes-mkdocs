@@ -16,7 +16,7 @@
         <link rel="prev" href="../1/">
       
       
-        <link rel="next" href="../../DAA/1/">
+        <link rel="next" href="../3/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -823,6 +823,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Set Cover Problem
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -11317,19 +11340,19 @@ We get the constraints of <span class="arithmatex">\(\vec y\)</span> according t
 <p>The new LP of <span class="arithmatex">\(\vec y\)</span> is the <strong>dual</strong> of the original minimization problem. The original LP of <span class="arithmatex">\(\vec x\)</span> is called <strong>primal</strong>.</p>
 <p>Any feasible solution to the dual gives an objective function value that is a lower bound to the optimal value of the primal.</p>
 <h2 id="duality-theorems">Duality Theorems</h2>
-<p>Weak duality: If <span class="arithmatex">\(\vec x\)</span> is a feasible solution to the primal, and <span class="arithmatex">\(\vec y\)</span> a feasible solution to the dual, then
-$$
-\sum_{j=1}<sup>nc_jx_j\geq\sum_{i=1}</sup>mb_iy_i
-$$</p>
+<p>Weak duality: If <span class="arithmatex">\(\vec x\)</span> is a feasible solution to the primal, and <span class="arithmatex">\(\vec y\)</span> a feasible solution to the dual, then</p>
+<div class="arithmatex">\[
+\sum_{j=1}^{n}c_jx_j\geq\sum_{i=1}^{m}b_iy_i
+\]</div>
 <blockquote>
 <div class="arithmatex">\[
 \sum_{j=1}^nc_jx_j\geq\sum_{j=1}^n(\sum_{i=1}^ma_{i,j}y_i)x_j=\sum_{i=1}^m(\sum_{j=1}^na_{i,j}x_j)y_i\geq\sum_{i=1}^mb_iy_i
 \]</div>
 </blockquote>
-<p>Strong duality: If the primal and dual are feasible, then for any optimal solution <span class="arithmatex">\(\vec x^*\)</span> of the primal and any optimal solution <span class="arithmatex">\(\vec y^*\)</span> of the dual,
-$$
-\sum_{j=1}<sup>nc_jx_j=\sum_{i=1}</sup>mb_iy_i
-$$</p>
+<p>Strong duality: If the primal and dual are feasible, then for any optimal solution <span class="arithmatex">\(\vec x^*\)</span> of the primal and any optimal solution <span class="arithmatex">\(\vec y^*\)</span> of the dual,</p>
+<div class="arithmatex">\[
+\sum_{j=1}^{n}c_jx_j=\sum_{i=1}^{m}b_iy_i
+\]</div>
 <h2 id="complementary-slackness">Complementary Slackness</h2>
 <p>Let <span class="arithmatex">\(\bar x\)</span> and <span class="arithmatex">\(\bar y\)</span> be feasible primal/dual solutions.</p>
 <p><span class="arithmatex">\(\bar x\)</span> and <span class="arithmatex">\(\bar y\)</span> fulfill the complementary slackness conditions if</p>
@@ -11396,13 +11419,13 @@ $$</p>
         
         
           
-          <a href="../../DAA/1/" class="md-footer__link md-footer__link--next" aria-label="Next: 1 Big O Notation">
+          <a href="../3/" class="md-footer__link md-footer__link--next" aria-label="Next: 3 Set Cover Problem">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                1 Big O Notation
+                3 Set Cover Problem
               </div>
             </div>
             <div class="md-footer__button md-icon">
