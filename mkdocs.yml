@@ -13,6 +13,8 @@ nav:
       - 1 Introduction: "informaticagssi/AA/1.md"
       - 2 Linear and Integer Programming: "informaticagssi/AA/2.md"
       - 3 Set Cover Problem: "informaticagssi/AA/3.md"
+      - 4 Greedy and Local Search Algorithm: "informaticagssi/AA/4.md"
+      - 5 Rounding and Dynamic Programming: "informaticagssi/AA/5.md"
     - Design and Analysis of Algorithms: #"informaticagssi/DAA/*"
       - 1 Big O Notation: "informaticagssi/DAA/1.md"
       - 2 Sorting and Master Theorem: "informaticagssi/DAA/2.md"

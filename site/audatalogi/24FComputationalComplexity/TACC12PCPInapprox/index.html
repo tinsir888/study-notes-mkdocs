@@ -793,6 +793,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Greedy and Local Search Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Rounding and Dynamic Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11298,8 +11344,8 @@ Assume that <span class="arithmatex">\(F(x)\neq\emptyset\)</span> for any <span 
 <p>A feasible solution <span class="arithmatex">\(y\in F(x)\)</span> s.t. <span class="arithmatex">\(val_x(y)=OPT(x)\)</span> is called an <strong>optimal solution</strong> for <span class="arithmatex">\(x\)</span>.</p>
 <p><strong>"Gap-version" reduction</strong>: The corresponding decision problem is that of asking whether <span class="arithmatex">\(OPT(x)\ge K\)</span> in case of a maximization problem or whether <span class="arithmatex">\(OPT(x)\le K\)</span> in case of a minimization problem.</p>
 <p>When this is <span class="arithmatex">\(NP\)</span>-hard, it follows that there is no polynomial-time algorithm that on input <span class="arithmatex">\(x\)</span> computes an optimal solution for <span class="arithmatex">\(x\)</span> unless <span class="arithmatex">\(P=NP\)</span>.</p>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 54. Let <span class="arithmatex">\(\Pi\)</span> be an <span class="arithmatex">\(NP\)</span>-optimization problem and let <span class="arithmatex">\(\rho:\mathbb N\to\R_+\)</span> be a function. A <span class="arithmatex">\(\rho\)</span>-approximation algorithm <span class="arithmatex">\(A\)</span> is an algorithm that on input <span class="arithmatex">\(x\)</span> gives as output <span class="arithmatex">\(y\in F(x)\)</span> s.t. <span class="arithmatex">\(val_x(y)\ge\rho(|x|)OPT(x)\)</span> in case of a maximization problem <span class="arithmatex">\(\Pi\)</span> or such that <span class="arithmatex">\(val_x(y)\le\rho(x)OPT(x)\)</span> in case of a minimization problem <span class="arithmatex">\(\Pi\)</span>.</p>
-<p>Let <span class="arithmatex">\(\Pi\)</span> be an <span class="arithmatex">\(NP\)</span>-maximization problem and let <span class="arithmatex">\(a,b:\mathbb N\to\R_+\)</span> be functions s.t. <span class="arithmatex">\(0\lt a(n)\lt b(n)\)</span> for all <span class="arithmatex">\(n\)</span>. Then define the following promise decision problem.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 54. Let <span class="arithmatex">\(\Pi\)</span> be an <span class="arithmatex">\(NP\)</span>-optimization problem and let <span class="arithmatex">\(\rho:\mathbb N\to\mathbb R_+\)</span> be a function. A <span class="arithmatex">\(\rho\)</span>-approximation algorithm <span class="arithmatex">\(A\)</span> is an algorithm that on input <span class="arithmatex">\(x\)</span> gives as output <span class="arithmatex">\(y\in F(x)\)</span> s.t. <span class="arithmatex">\(val_x(y)\ge\rho(|x|)OPT(x)\)</span> in case of a maximization problem <span class="arithmatex">\(\Pi\)</span> or such that <span class="arithmatex">\(val_x(y)\le\rho(x)OPT(x)\)</span> in case of a minimization problem <span class="arithmatex">\(\Pi\)</span>.</p>
+<p>Let <span class="arithmatex">\(\Pi\)</span> be an <span class="arithmatex">\(NP\)</span>-maximization problem and let <span class="arithmatex">\(a,b:\mathbb N\to\mathbb R_+\)</span> be functions s.t. <span class="arithmatex">\(0\lt a(n)\lt b(n)\)</span> for all <span class="arithmatex">\(n\)</span>. Then define the following promise decision problem.</p>
 <p><span class="arithmatex">\((a,b)-GAP-\Pi\)</span>:</p>
 <ul>
 <li>Input: <span class="arithmatex">\(x\)</span> s.t. either <span class="arithmatex">\(OPT(x)\le a(|x|)\)</span> or <span class="arithmatex">\(OPT(x)\ge b(|x|)\)</span>.</li>
