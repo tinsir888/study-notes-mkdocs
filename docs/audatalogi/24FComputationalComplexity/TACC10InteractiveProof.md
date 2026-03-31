@@ -38,7 +38,7 @@ Define $IP$ as the class of all languages that has an interactive proof system w
 
 
 
-We can view $NP$ as a proof system without randomness or interaction other than a single message.
+We can view $\mathsf{NP}$ as a proof system without randomness or interaction other than a single message.
 
 :thinking:Proposition 14. $NP\subseteq IP$.
 

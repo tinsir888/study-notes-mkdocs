@@ -839,6 +839,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11256,9 +11348,9 @@
 
 
 
-<p>Boolean satisfiability is prototypical <span class="arithmatex">\(NP\)</span>-complete problem.</p>
-<p>There is no algorithm deciding <span class="arithmatex">\(SAT\)</span> in worst case in polynomial time unless <span class="arithmatex">\(P=NP\)</span>.</p>
-<p>We always assume that <span class="arithmatex">\(P\neq NP\)</span>.</p>
+<p>Boolean satisfiability is prototypical <span class="arithmatex">\(\mathsf{NP}\)</span>-complete problem.</p>
+<p>There is no algorithm deciding <span class="arithmatex">\(SAT\)</span> in worst case in polynomial time unless <span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span>.</p>
+<p>We always assume that <span class="arithmatex">\(\mathsf{P}\neq\mathsf{NP}\)</span>.</p>
 <p>For <span class="arithmatex">\(SAT\)</span> problem, SOTA algorithm uses time <span class="arithmatex">\(2^{(1-\frac{1}{O(\log(m/n))})n}m^{O(1)}\)</span>.</p>
 <p>For special case of <span class="arithmatex">\(kSAT\)</span>, there are faster algorithms, but all take time <span class="arithmatex">\(2^{(1-\frac{c}{k})n}\)</span> for some constant <span class="arithmatex">\(0\lt c\lt k\)</span>.</p>
 <h1 id="schonings-ksat-algorithm">Schöning's kSAT Algorithm</h1>
@@ -11381,7 +11473,7 @@ H(p)=p\log_2(1/p)+(1-p)\log_2(1/(1-p))
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 16. Along any path of the recursion tree of <code>Reduce</code> at most <span class="arithmatex">\(kn/\alpha\)</span> families are created by adding petals.</p>
 <p><del>让我缓缓</del></p>
 <h1 id="the-exponential-time-hypothesis">The Exponential Time Hypothesis</h1>
-<p>A stronger hypothesis than <span class="arithmatex">\(P\neq NP\)</span>: Exponential time is required to decide <span class="arithmatex">\(SAT\)</span>.</p>
+<p>A stronger hypothesis than <span class="arithmatex">\(\mathsf{P}\neq\mathsf{NP}\)</span>: Exponential time is required to decide <span class="arithmatex">\(SAT\)</span>.</p>
 <p><strong>Exponential time hypothesis</strong> (aka ETH): <span class="arithmatex">\(kSAT\)</span> requires worst-case linear exponential time, for all <span class="arithmatex">\(k\ge3\)</span>.</p>
 <p>A strengthening of this hypothesis, <strong>strong exponential time hypothesis</strong>: it is not possible to save an exponential factor <span class="arithmatex">\(2^{\epsilon n}\)</span> for a fixed <span class="arithmatex">\(1\gt\epsilon\gt0\)</span> independent of <span class="arithmatex">\(k\)</span></p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 60. Define <span class="arithmatex">\(s_k=\inf\{\delta|kSAT\text{ is solvable in time }O(2^{\delta n}\}\)</span>. The ETH is the statement that <span class="arithmatex">\(\forall k\ge3:s_k\gt0\)</span>, and SETH is the statement that <span class="arithmatex">\(s_{\infty}=\lim_{k\to\infty}s_k=1\)</span>.</p>

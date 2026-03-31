@@ -180,7 +180,7 @@ It may run not in polynomial time. It can be used to detect whether a given undi
 
 :thinking:Corollary 1. The Greedy Capture algorithm is guaranteed to return a clustering that is $4$-FJR (resp. $2$-FJR) for the average (resp. maximum) loss.
 
-:question:Open problem 3: For the average or maximum loss, what is the smallest $\alpha$ for which an $\alpha$-FJR clustering can be computed in polynomial time, assuming $P\neq NP$?
+:question:Open problem 3: For the average or maximum loss, what is the smallest $\alpha$ for which an $\alpha$-FJR clustering can be computed in polynomial time, assuming $\mathsf{P}\neq\mathsf{NP}$?
 
 :question:Open problem 4: What is the smallest $\alpha$ s.t. there always exists a clustering that is simultaneously $\alpha$-FJR for both the average loss and the maximum loss?
 
@@ -194,7 +194,7 @@ Ideas used to find an approx FJR can also be used to audit the FJR approx of any
 
 :question:Open problem 5: Does there exist a polynomial time, $\alpha$-approx core auditing algorithm for some constant $\alpha$?
 
-:dart:Theorem 6. Assuming $P\neq NP$, there does not exist a polynomial-time $\lambda$-approx FJR auditing algorithm for the maximum loss, for any $\lambda\lt2$,
+:dart:Theorem 6. Assuming $\mathsf{P}\neq\mathsf{NP}$, there does not exist a polynomial-time $\lambda$-approx FJR auditing algorithm for the maximum loss, for any $\lambda\lt2$,
 
 # Experiments
 

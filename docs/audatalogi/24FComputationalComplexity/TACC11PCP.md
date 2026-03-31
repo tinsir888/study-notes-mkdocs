@@ -47,8 +47,8 @@ $c$ for completeness, $s$ for soundness.
 We often use the notion as follows:
 
 - $PCP_{c,s}(r(n),q(n))$ when $\Sigma=\{0,1\}$
-- $PCP^\Sigma(r(n),q(n))$ when $c=1,s=1/2$
-- $PCP(r(n),q(n))$ when both $\Sigma=\{0,1\}$ and $c=1,s=1/2$.
+- $mathsf{PCP}^\Sigma(r(n),q(n))$ when $c=1,s=1/2$
+- $mathsf{PCP}(r(n),q(n))$ when both $\Sigma=\{0,1\}$ and $c=1,s=1/2$.
 
 :thinking:Proposition 17.
 
@@ -60,9 +60,9 @@ By enumerating over all strings of $O(\log n)$ bits and using these in place of 
 
 By enumerating over all possible proofs of length $O(\log n)$ one obtains $P=PCP(0,O(\log n))$.
 
-Verifier of $PCP(r(n),q(n))$ is able to access at most $2^{r(n)}q(n)$ different positions of the proof string $\pi$.
+Verifier of $mathsf{PCP}(r(n),q(n))$ is able to access at most $2^{r(n)}q(n)$ different positions of the proof string $\pi$.
 
-:thinking:Proposition 18. $PCP(r(n),q(n))\subseteq NTIME(n^{O(1)}2^{r(n)})$.
+:thinking:Proposition 18. $mathsf{PCP}(r(n),q(n))\subseteq mathsf{NTIME}(n^{O(1)}2^{r(n)})$.
 
 :dart:Theorem 50 (PCP theorem). $NP=PCP(O(\log n),O(1))$.
 

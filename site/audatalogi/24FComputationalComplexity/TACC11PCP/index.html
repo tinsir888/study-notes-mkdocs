@@ -839,6 +839,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11335,8 +11427,8 @@
 <p>We often use the notion as follows:</p>
 <ul>
 <li><span class="arithmatex">\(PCP_{c,s}(r(n),q(n))\)</span> when <span class="arithmatex">\(\Sigma=\{0,1\}\)</span></li>
-<li><span class="arithmatex">\(PCP^\Sigma(r(n),q(n))\)</span> when <span class="arithmatex">\(c=1,s=1/2\)</span></li>
-<li><span class="arithmatex">\(PCP(r(n),q(n))\)</span> when both <span class="arithmatex">\(\Sigma=\{0,1\}\)</span> and <span class="arithmatex">\(c=1,s=1/2\)</span>.</li>
+<li><span class="arithmatex">\(mathsf{PCP}^\Sigma(r(n),q(n))\)</span> when <span class="arithmatex">\(c=1,s=1/2\)</span></li>
+<li><span class="arithmatex">\(mathsf{PCP}(r(n),q(n))\)</span> when both <span class="arithmatex">\(\Sigma=\{0,1\}\)</span> and <span class="arithmatex">\(c=1,s=1/2\)</span>.</li>
 </ul>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 17.</p>
 <ol>
@@ -11346,8 +11438,8 @@
 </ol>
 <p>By enumerating over all strings of <span class="arithmatex">\(O(\log n)\)</span> bits and using these in place of the random bits one obtain the slightly stronger statements <span class="arithmatex">\(P=PCP(O(\log n),0)\)</span> and <span class="arithmatex">\(NP=PCP(O(\log n),n^{O(1)})\)</span>.</p>
 <p>By enumerating over all possible proofs of length <span class="arithmatex">\(O(\log n)\)</span> one obtains <span class="arithmatex">\(P=PCP(0,O(\log n))\)</span>.</p>
-<p>Verifier of <span class="arithmatex">\(PCP(r(n),q(n))\)</span> is able to access at most <span class="arithmatex">\(2^{r(n)}q(n)\)</span> different positions of the proof string <span class="arithmatex">\(\pi\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 18. <span class="arithmatex">\(PCP(r(n),q(n))\subseteq NTIME(n^{O(1)}2^{r(n)})\)</span>.</p>
+<p>Verifier of <span class="arithmatex">\(mathsf{PCP}(r(n),q(n))\)</span> is able to access at most <span class="arithmatex">\(2^{r(n)}q(n)\)</span> different positions of the proof string <span class="arithmatex">\(\pi\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 18. <span class="arithmatex">\(mathsf{PCP}(r(n),q(n))\subseteq mathsf{NTIME}(n^{O(1)}2^{r(n)})\)</span>.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 50 (PCP theorem). <span class="arithmatex">\(NP=PCP(O(\log n),O(1))\)</span>.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 51. <span class="arithmatex">\(NEXP=PCP(n^{O(1)},n^{O(1)})\)</span>.</p>
 <h2 id="a-weak-version-of-the-pcp-theorem">A weak version of the PCP theorem</h2>

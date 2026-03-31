@@ -839,6 +839,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11296,7 +11388,7 @@
 </blockquote>
 <p>By Savitch's Theorem and Immerman-Szelepcsényi Theorem, <span class="arithmatex">\(STCON\in DSPACE(\log^2n)\)</span> and <span class="arithmatex">\(\overline{STCON}\in NL\)</span>, respectively.</p>
 <h1 id="pnp-completeness">P/NP-completeness</h1>
-<p>Basic <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(NP\)</span>-complete problems are given by the ability of Boolean circuits to simulate Turing machines on fixed input length. For <span class="arithmatex">\(P\)</span> this gives the circuit value problem.</p>
+<p>Basic <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(\mathsf{NP}\)</span>-complete problems are given by the ability of Boolean circuits to simulate Turing machines on fixed input length. For <span class="arithmatex">\(P\)</span> this gives the circuit value problem.</p>
 <h2 id="cvp-problem">CVP problem</h2>
 <p>Instance: Boolean circuit <span class="arithmatex">\(C\)</span> on <span class="arithmatex">\(n\)</span> inputs and input <span class="arithmatex">\(x\in\{0,1\}^n\)</span>.</p>
 <p>Question: Is <span class="arithmatex">\(C(x)=1\)</span>?</p>
@@ -11305,17 +11397,17 @@
 <h3 id="circuitsat">CircuitSAT</h3>
 <p>Instance: Boolean circuit <span class="arithmatex">\(C\)</span> on <span class="arithmatex">\(n\)</span> inputs</p>
 <p>Question: Does there exist <span class="arithmatex">\(x\in\{0,1\}^n\)</span> s.t. <span class="arithmatex">\(C(x)=1\)</span>?</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 22. <span class="arithmatex">\(CircuitSAT\)</span> is complete for <span class="arithmatex">\(NP\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 22. <span class="arithmatex">\(CircuitSAT\)</span> is complete for <span class="arithmatex">\(\mathsf{NP}\)</span>.</p>
 <blockquote>
 <p><del>Let me use Chinese</del></p>
-<p>为什么 CircuitSAT 属于 <span class="arithmatex">\(NP\)</span>。简单理解就是非确定性图灵机 NTM 可以在多项式时间解决此问题。一个简单的思想就是暴力枚举，一共遍历 <span class="arithmatex">\(2^n\)</span> 次。这样在确定性图灵机 DTM 上确实就是 <span class="arithmatex">\(O(2^n)\)</span>，但是在非确定性图灵机上，就厉害了。针对每一位，非确定性图灵机可以同时猜测 <span class="arithmatex">\(0\)</span> 和 <span class="arithmatex">\(1\)</span>，这样一共遍历 <span class="arithmatex">\(n\)</span> 次分别对应 <span class="arithmatex">\(n\)</span> 位，就得到了 <span class="arithmatex">\(NP\)</span> 的结果。</p>
-<p>As for <span class="arithmatex">\(NP\)</span>-hard, construct language <span class="arithmatex">\(L\in NTIME(n^k)\)</span> for <span class="arithmatex">\(k\gt0\)</span>.</p>
+<p>为什么 CircuitSAT 属于 <span class="arithmatex">\(\mathsf{NP}\)</span>。简单理解就是非确定性图灵机 NTM 可以在多项式时间解决此问题。一个简单的思想就是暴力枚举，一共遍历 <span class="arithmatex">\(2^n\)</span> 次。这样在确定性图灵机 DTM 上确实就是 <span class="arithmatex">\(O(2^n)\)</span>，但是在非确定性图灵机上，就厉害了。针对每一位，非确定性图灵机可以同时猜测 <span class="arithmatex">\(0\)</span> 和 <span class="arithmatex">\(1\)</span>，这样一共遍历 <span class="arithmatex">\(n\)</span> 次分别对应 <span class="arithmatex">\(n\)</span> 位，就得到了 <span class="arithmatex">\(\mathsf{NP}\)</span> 的结果。</p>
+<p>As for <span class="arithmatex">\(\mathsf{NP}\)</span>-hard, construct language <span class="arithmatex">\(L\in mathsf{NTIME}(n^k)\)</span> for <span class="arithmatex">\(k\gt0\)</span>.</p>
 <p>......</p>
 </blockquote>
 <h3 id="sat">SAT</h3>
 <p>Instance: CNF formula <span class="arithmatex">\(\varphi\)</span>.</p>
 <p>Question: Does <span class="arithmatex">\(\varphi\)</span> have a satisfying assigment?</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 23. CNF satisfiability problem is also complete  for <span class="arithmatex">\(NP\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 23. CNF satisfiability problem is also complete  for <span class="arithmatex">\(\mathsf{NP}\)</span>.</p>
 <blockquote>
 <p>It's easy to see <span class="arithmatex">\(SAT\in NP\)</span>.</p>
 <p>For hardness, by reduction from <span class="arithmatex">\(CircuitSAT\)</span>.</p>
@@ -11335,7 +11427,7 @@
 <p>......</p>
 </blockquote>
 <h1 id="expnexp-completeness">EXP/NEXP-completeness</h1>
-<p>Consider so-called <strong>succinct</strong> versions of complete problems of <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(NP\)</span>.</p>
+<p>Consider so-called <strong>succinct</strong> versions of complete problems of <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(\mathsf{NP}\)</span>.</p>
 <p>Let <span class="arithmatex">\(C\)</span> be a Boolean circuit with <span class="arithmatex">\(n\)</span> input gates and one output gate. The truthtable of <span class="arithmatex">\(C\)</span> is the string <span class="arithmatex">\(tt(C)\in\{0,1\}^{2^n}\)</span> giving the evaluation of <span class="arithmatex">\(C\)</span> on all possible inputs.</p>
 <p>Consider a language <span class="arithmatex">\(L\subseteq\{0,1\}^*\)</span>. Then define the <strong>succinct</strong> version <span class="arithmatex">\(SuccinctL\)</span> of <span class="arithmatex">\(L\)</span> simply by <span class="arithmatex">\(SuccinctL=\{C|tt(C)\in L\}\)</span>. Note that when <span class="arithmatex">\(L\in P\)</span> we have that <span class="arithmatex">\(SuccinctL\in EXP\)</span> simply by decompressing the input <span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(tt(C)\)</span> in exponential time and then using the polynomial-time Turing machine to check for membership in <span class="arithmatex">\(L\)</span>.</p>
 <p>简而言之，把上面这些玩意的真值表算出来，就是属于 EXP/NEXP 的复杂度类。</p>

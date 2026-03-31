@@ -839,6 +839,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11338,22 +11430,22 @@ t=|\{x\in\{0,1\}^n|f(x)=1\}|.
 <p>We can build the Boolean circuit for input length <span class="arithmatex">\(n\)</span> in <span class="arithmatex">\(O(T(n))\)</span> steps. Proof by induction.</p>
 </blockquote>
 <p>Proposition 1 and Theorem 4 result in some inclusion relation.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 16. <span class="arithmatex">\(DTIME(T(n))\subseteq SIZE(T(n)\log T(n))\)</span> for <span class="arithmatex">\(T(n)\ge n\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 16. <span class="arithmatex">\(mathsf{DTIME}(T(n))\subseteq SIZE(T(n)\log T(n))\)</span> for <span class="arithmatex">\(T(n)\ge n\)</span>.</p>
 <p>Turing machine is supplied with an <em>advice string</em> in addition to the input, where the advice string is specific to the input length.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>Advice classes</strong>. Let <span class="arithmatex">\(\mathcal C\)</span> be a class of languages and <span class="arithmatex">\(f:\mathbb N\to\mathbb N\)</span> a function. Define <span class="arithmatex">\(\mathcal C/f(n)\)</span> to be the class of languages <span class="arithmatex">\(L\)</span> for which there exist <span class="arithmatex">\(L'\in\mathcal C\)</span> satisfying that for all input lengths <span class="arithmatex">\(n\)</span>, there is an <strong>advice string</strong> <span class="arithmatex">\(y_n\)</span> of length <span class="arithmatex">\(f(n)\)</span> s.t. for all <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span>, we have <span class="arithmatex">\(x\in L\)</span> iff <span class="arithmatex">\(\langle x,y_n\rangle\in L'\)</span>. For a family <span class="arithmatex">\(\mathcal F\)</span> of functions <span class="arithmatex">\(F:\mathbb N\to\mathbb N\)</span>, we let <span class="arithmatex">\(\mathcal C/\mathcal F=\bigcup_{f\in\mathcal F}\mathcal C/f(n)\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 17. Let <span class="arithmatex">\(S(n)\ge n\)</span>. Then <span class="arithmatex">\(SIZE(S(n))\subseteq DTIME(S(n)^2)/O(S(n)\log S(n))\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 17. Let <span class="arithmatex">\(S(n)\ge n\)</span>. Then <span class="arithmatex">\(SIZE(S(n))\subseteq mathsf{DTIME}(S(n)^2)/O(S(n)\log S(n))\)</span>.</p>
 <blockquote>
 <p>The advice string (length <span class="arithmatex">\(n\)</span>) is an encoding of the circuit <span class="arithmatex">\(C_n\)</span>, which is a string of length <span class="arithmatex">\(O(S(n)\log S(n))\)</span>.</p>
 <p>Assume that the gates of <span class="arithmatex">\(C_n\)</span> are given in the encoding in acyclic order. On input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span> and advice <span class="arithmatex">\(C_n\)</span>, a Turing machine can evaluate <span class="arithmatex">\(C_n\)</span> on input <span class="arithmatex">\(x\)</span>, evaluating the gates in the given acyclic ordering and storing all intermediate outputs.</p>
 <p>To evaluate each gate we need to retrieve the computed value of its inputs, which will take <span class="arithmatex">\(O(S(n))\)</span> time. Doing this for all <span class="arithmatex">\(O(S(n))\)</span> gates leads to <span class="arithmatex">\(O(S(n)^2)\)</span>.</p>
 </blockquote>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Corollary 1. Let <span class="arithmatex">\(T(n)\ge n\)</span>. Then <span class="arithmatex">\(DTIME(T(n)^{O(1)})/T(n)^{O(1)}=SIZE(T(n)^{O(1)})\)</span></p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Corollary 1. Let <span class="arithmatex">\(T(n)\ge n\)</span>. Then <span class="arithmatex">\(mathsf{DTIME}(T(n)^{O(1)})/T(n)^{O(1)}=SIZE(T(n)^{O(1)})\)</span></p>
 <blockquote>
 <p>Proof by Definition of advice class and Theorem 17.</p>
 </blockquote>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 18. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose the function <span class="arithmatex">\(1^n\mapsto T(n)\)</span> is computable in space <span class="arithmatex">\(O(\log T(n))\)</span>. Then <span class="arithmatex">\(DTIME(T(n))\subseteq U_L-SIZE(T(n)\log T(n))\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 19. Let <span class="arithmatex">\((S(n))\ge n\)</span>. Then <span class="arithmatex">\(U_L-SIZE(S(n))\subseteq DTIME(S(n)^{O(1)})\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Corollary 2. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose that function <span class="arithmatex">\(1^n\mapsto T(n)\)</span> is computable in space <span class="arithmatex">\(O(\log T(n))\)</span>. Then <span class="arithmatex">\(DTIME(T(n)^{O(1)})=U_L-SIZE(T(n)^{O(1)})\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 18. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose the function <span class="arithmatex">\(1^n\mapsto T(n)\)</span> is computable in space <span class="arithmatex">\(O(\log T(n))\)</span>. Then <span class="arithmatex">\(mathsf{DTIME}(T(n))\subseteq U_L-SIZE(T(n)\log T(n))\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 19. Let <span class="arithmatex">\((S(n))\ge n\)</span>. Then <span class="arithmatex">\(U_L-SIZE(S(n))\subseteq mathsf{DTIME}(S(n)^{O(1)})\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Corollary 2. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose that function <span class="arithmatex">\(1^n\mapsto T(n)\)</span> is computable in space <span class="arithmatex">\(O(\log T(n))\)</span>. Then <span class="arithmatex">\(mathsf{DTIME}(T(n)^{O(1)})=U_L-SIZE(T(n)^{O(1)})\)</span>.</p>
 <p>In particular, we have <span class="arithmatex">\(P=U_L-SIZE(n^{O(1)})\)</span>.</p>
 
 

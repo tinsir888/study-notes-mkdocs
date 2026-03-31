@@ -244,7 +244,7 @@ Two problems:
 
 :dart:Theorem 11. Let $t\in\mathbb N$, finite $\mathcal N\subset\mathbb R^t$, and $k\in\mathbb N$ be given as input. Suppose $\mathcal M=\mathbb R^t$ and $d=L^2$. Then, the following hold:
 
-1. The clustering returned by Greedy Capture algorithm cannot be computed in polynomial time unless $P=NP$.
+1. The clustering returned by Greedy Capture algorithm cannot be computed in polynomial time unless $\mathsf{P}=\mathsf{NP}$.
 2. If $t$ is constant, then it can be computed in polynomial time.
 3. Even if $t$ is not constant, for any constant $\epsilon>0$, there exists a polynomial time algorithm which finds a $(2+\epsilon)$-PROP clustering.
 

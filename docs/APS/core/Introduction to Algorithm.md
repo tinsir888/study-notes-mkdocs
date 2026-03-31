@@ -699,7 +699,7 @@ A problem is in P if there exists an algorithm for **solving** the problem such 
 
 A problem is in NP if there exists an algorithm for **verify**ing solutions  to the problem such that the time it takes to verify a solution is at most a **polynomial** function of the size of the input. Can't (or not sure to) be solved in polynomial time.
 
-$P\subseteq NP$, but $P\stackrel{?}=NP$ is not solved now.
+$\mathsf{P}\subseteq\mathsf{NP}$, but $P\stackrel{?}=NP$ is not solved now.
 
 ## NP-hard
 
@@ -713,6 +713,6 @@ z.B. TSP (traveling salesperson problem), The subset sum problem, The 3-satisfia
 
 ## Relations between them
 
-$P\subseteq NP$
+$\mathsf{P}\subseteq\mathsf{NP}$
 
 $NP-hard\bigcap NP=NPC$

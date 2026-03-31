@@ -839,6 +839,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11329,7 +11421,7 @@
 </ul>
 <p>Define <span class="arithmatex">\(time_{M^A}(x)\)</span> and <span class="arithmatex">\(space_{M^A}(x)\)</span> for an oracle Turing machine with an oracle language <span class="arithmatex">\(A\)</span> to be the number of computation steps and number of cells of work tape used during computation on input <span class="arithmatex">\(x\)</span>. The same way we define time-bounded and space-bounded oracle Turing machines.</p>
 <p>Then we need to define oracle versions of complexity classes. Straightforward to define time-bounded complexity classes, but be careful to define space-bounded complexity classes.</p>
-<p><span class="arithmatex">\(DTIME^A(T(n)),DSPACE^A(S(n)),NTIME^A(T(n))\)</span>.</p>
+<p><span class="arithmatex">\(mathsf{DTIME}^A(T(n)),DSPACE^A(S(n)),mathsf{NTIME}^A(T(n))\)</span>.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Problem for non-deterministic space-bounded oracle Turing machine: it may write very long strings to the oracle tape. </p>
 <p>Solution: Requiring the oracle Turing machine to behave deterministically in the time between writing the first symbol to the oracle tape and making the oracle query. (deterministic oracle access)</p>
 <p>Thus we define <span class="arithmatex">\(NSPACE^A(S(n))\)</span> as the class of languages computed by a <span class="arithmatex">\(O(S(n))\)</span> space-bounded non-deterministic oracle Turing machine <strong>with deterministic oracle access</strong> to oracle <span class="arithmatex">\(A\)</span>.</p>
@@ -11337,9 +11429,9 @@
 <p><span class="arithmatex">\(P^A\)</span> and <span class="arithmatex">\(NP^A\)</span> for any oracle language <span class="arithmatex">\(A\)</span>.</p>
 <p>The oracle may be chosen from some class of languages. Let <span class="arithmatex">\(\mathcal C\)</span> be a class of languages.</p>
 <div class="arithmatex">\[
-DTIME^\mathcal C(T(n))=\bigcup_{A\in\mathcal C}DTIME^A(T(n))
+mathsf{DTIME}^\mathcal C(T(n))=\bigcup_{A\in\mathcal C}mathsf{DTIME}^A(T(n))
 \]</div>
-<p>Similarly we have <span class="arithmatex">\(DSPACE^\mathcal C(T(n))\)</span>, <span class="arithmatex">\(NTIME^\mathcal C(T(n))\)</span> and <span class="arithmatex">\(NSPACE^\mathcal C(T(n))\)</span>.</p>
+<p>Similarly we have <span class="arithmatex">\(DSPACE^\mathcal C(T(n))\)</span>, <span class="arithmatex">\(mathsf{NTIME}^\mathcal C(T(n))\)</span> and <span class="arithmatex">\(NSPACE^\mathcal C(T(n))\)</span>.</p>
 <p>This again extends to all other complexity classes such as <span class="arithmatex">\(P^{NP}\)</span>.</p>
 <h2 id="turing-reductions">Turing Reductions</h2>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 17 (Turing reductions). Let <span class="arithmatex">\(L_1\)</span> and <span class="arithmatex">\(L_2\)</span> be languages. We say that <span class="arithmatex">\(L_1\)</span> log-space Turing machine reduces to <span class="arithmatex">\(L_2\)</span> (<span class="arithmatex">\(L_1\le_T^{\log}L_2\)</span>), if <span class="arithmatex">\(L_1\in L^{L_2}\)</span>. Similarly we say <span class="arithmatex">\(L_1\)</span> polynomial time Turing reduces to <span class="arithmatex">\(L_2\)</span> (<span class="arithmatex">\(L_1\le_T^PL_2\)</span>), if <span class="arithmatex">\(L_1\in P^{L_2}\)</span>.</p>
@@ -11415,8 +11507,8 @@ co\mathcal C=\{\overline L|L\in\mathcal C\}
 <p>Collapses 在此处指多项式层次结构中某一层以上的所有级别都重合的情况。</p>
 </blockquote>
 <h1 id="the-karp-lipton-theorem">The Karp-Lipton Theorem</h1>
-<p>A possible way to prove <span class="arithmatex">\(P\neq NP\)</span> would be to show that there is some language in <span class="arithmatex">\(NP\)</span> that is not computed by a family of polynomial size Boolean circuits, i.e., that <span class="arithmatex">\(NP\not\subseteq P/poly\)</span>.</p>
-<p>This is stronger than <span class="arithmatex">\(P\neq NP\)</span> since <span class="arithmatex">\(P\subseteq P/poly\)</span>. It turns out that it is not stronger than the assumption that the polynomial-time hierarchy does not collapse.</p>
+<p>A possible way to prove <span class="arithmatex">\(\mathsf{P}\neq\mathsf{NP}\)</span> would be to show that there is some language in <span class="arithmatex">\(\mathsf{NP}\)</span> that is not computed by a family of polynomial size Boolean circuits, i.e., that <span class="arithmatex">\(NP\not\subseteq P/poly\)</span>.</p>
+<p>This is stronger than <span class="arithmatex">\(\mathsf{P}\neq\mathsf{NP}\)</span> since <span class="arithmatex">\(P\subseteq P/poly\)</span>. It turns out that it is not stronger than the assumption that the polynomial-time hierarchy does not collapse.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 32. Suppose that <span class="arithmatex">\(NP\subseteq P/poly\)</span>. Then <span class="arithmatex">\(PH=\Sigma_2^P\cap\Pi_2^P\)</span>.</p>
 <blockquote>
 <p>Proof by Theorem 29, Corollary 4.</p>

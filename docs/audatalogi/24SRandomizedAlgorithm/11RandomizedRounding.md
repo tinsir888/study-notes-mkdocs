@@ -62,9 +62,9 @@ A very straightforward use of randomization: set each $x_i$ to `true` independen
 
 If $l_j\ge k$ for each clause $j$, the algorithm is a $\left(1-(\frac{1}{2})^k\right)$-approximation algorithm for such instances. **Thus the longer the clauses, the better the approximation.**
 
-Consider $l_j=3$ for all clauses, the problem turns into MAX E3SAT. By analysis above, this randomized algorithm gives guarantee of $7/8$ approximation. Nothing better is possible for these instances unless $P=NP$.
+Consider $l_j=3$ for all clauses, the problem turns into MAX E3SAT. By analysis above, this randomized algorithm gives guarantee of $7/8$ approximation. Nothing better is possible for these instances unless $\mathsf{P}=\mathsf{NP}$.
 
-:thinking:**Theorem 2**. If there is an $(\frac{7}{8}+\epsilon)$-approximation algorithm for MAX E3SAT for any constant $\epsilon\gt 0$, then $P=NP$.
+:thinking:**Theorem 2**. If there is an $(\frac{7}{8}+\epsilon)$-approximation algorithm for MAX E3SAT for any constant $\epsilon\gt 0$, then $\mathsf{P}=\mathsf{NP}$.
 
 ## MAX CUT
 

@@ -72,7 +72,7 @@ Consider a reduction from another NP-complete problem $MAXCLIQUE$. The problem a
 
 I don't have a clear idea yet.
 
-But it maybe harder than $NP$. Maybe $P^{NP}$, $NP^{NP}$ or $PSPACE$?
+But it maybe harder than $\mathsf{NP}$. Maybe $P^{NP}$, $NP^{NP}$ or $PSPACE$?
 
 # Complexity for Computing α-Core
 

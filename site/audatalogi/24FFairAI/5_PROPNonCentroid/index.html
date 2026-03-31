@@ -839,6 +839,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11473,14 +11565,14 @@
 <p>It may run not in polynomial time. It can be used to detect whether a given undirected graph admits a clique of at least a given size (NP-Complete).</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Lemma 1. For the average (resp. maximum) loss, SmallestAgentBall is a <span class="arithmatex">\(4\)</span>-approximation (resp. <span class="arithmatex">\(2\)</span>-approximation) algorithm for the MostCohesiveCluster problem, and this is tight.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 1. The Greedy Capture algorithm is guaranteed to return a clustering that is <span class="arithmatex">\(4\)</span>-FJR (resp. <span class="arithmatex">\(2\)</span>-FJR) for the average (resp. maximum) loss.</p>
-<p><img alt="❓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2753.svg" title=":question:" />Open problem 3: For the average or maximum loss, what is the smallest <span class="arithmatex">\(\alpha\)</span> for which an <span class="arithmatex">\(\alpha\)</span>-FJR clustering can be computed in polynomial time, assuming <span class="arithmatex">\(P\neq NP\)</span>?</p>
+<p><img alt="❓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2753.svg" title=":question:" />Open problem 3: For the average or maximum loss, what is the smallest <span class="arithmatex">\(\alpha\)</span> for which an <span class="arithmatex">\(\alpha\)</span>-FJR clustering can be computed in polynomial time, assuming <span class="arithmatex">\(\mathsf{P}\neq\mathsf{NP}\)</span>?</p>
 <p><img alt="❓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2753.svg" title=":question:" />Open problem 4: What is the smallest <span class="arithmatex">\(\alpha\)</span> s.t. there always exists a clustering that is simultaneously <span class="arithmatex">\(\alpha\)</span>-FJR for both the average loss and the maximum loss?</p>
 <h2 id="auditing-fjr">Auditing FJR</h2>
 <p>Ideas used to find an approx FJR can also be used to audit the FJR approx of any given clustering.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 4 (<span class="arithmatex">\(\lambda\)</span>-approx FJR auditing). <span class="arithmatex">\(\mathcal A\)</span> is a <span class="arithmatex">\(\lambda\)</span>-approx FJR auditing algorithm, if given any clustering <span class="arithmatex">\(C\)</span>, it returns <span class="arithmatex">\(\theta\)</span> s.t. the exact FJR approx of <span class="arithmatex">\(C\)</span> is in <span class="arithmatex">\([\theta,\lambda\cdot\theta]\)</span>.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 5. For <span class="arithmatex">\(\lambda\ge1\)</span>, if <span class="arithmatex">\(\mathcal A\)</span> is a <span class="arithmatex">\(\lambda\)</span>-approx algorithm to the MostCohesiveCluster problem, then AuditFJR<span class="arithmatex">\((\mathcal A)\)</span> is a <span class="arithmatex">\(\lambda\)</span>-approx FJR auditing algorithm. Given lemma 1, it follows that for the average (resp. maximum) loss, AuditFJR(SmallestAgentBall) is an efficient <span class="arithmatex">\(4\)</span>-approx (resp. <span class="arithmatex">\(2\)</span>-approx) FJR auditing algorithm.</p>
 <p><img alt="❓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2753.svg" title=":question:" />Open problem 5: Does there exist a polynomial time, <span class="arithmatex">\(\alpha\)</span>-approx core auditing algorithm for some constant <span class="arithmatex">\(\alpha\)</span>?</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 6. Assuming <span class="arithmatex">\(P\neq NP\)</span>, there does not exist a polynomial-time <span class="arithmatex">\(\lambda\)</span>-approx FJR auditing algorithm for the maximum loss, for any <span class="arithmatex">\(\lambda\lt2\)</span>,</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 6. Assuming <span class="arithmatex">\(\mathsf{P}\neq\mathsf{NP}\)</span>, there does not exist a polynomial-time <span class="arithmatex">\(\lambda\)</span>-approx FJR auditing algorithm for the maximum loss, for any <span class="arithmatex">\(\lambda\lt2\)</span>,</p>
 <h1 id="experiments">Experiments</h1>
 <p>Omitted</p>
 <h1 id="discussion">Discussion</h1>

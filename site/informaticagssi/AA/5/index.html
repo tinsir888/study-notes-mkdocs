@@ -16,7 +16,7 @@
         <link rel="prev" href="../4/">
       
       
-        <link rel="next" href="../../DAA/1/">
+        <link rel="next" href="../6/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -851,6 +851,98 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -11258,11 +11350,11 @@
 
 <h1 id="dynamic-programming">Dynamic Programming</h1>
 <p>An optimal solution to a problem is built up from the optimal solution of some subproblems.</p>
-<p><strong>Weakly</strong> <span class="arithmatex">\(NP\)</span>-hard problems sometimes have dynamic programming algorithms which run in <strong>pseudo-polynomial</strong> time.</p>
-<p>Strongly <span class="arithmatex">\(NP\)</span>-hard problem: A problem is strongly <span class="arithmatex">\(NP\)</span>-hard if it is <span class="arithmatex">\(NP\)</span>-hard even when its numeric data is encoded in unary.</p>
+<p><strong>Weakly</strong> <span class="arithmatex">\(\mathsf{NP}\)</span>-hard problems sometimes have dynamic programming algorithms which run in <strong>pseudo-polynomial</strong> time.</p>
+<p>Strongly <span class="arithmatex">\(\mathsf{NP}\)</span>-hard problem: A problem is strongly <span class="arithmatex">\(\mathsf{NP}\)</span>-hard if it is <span class="arithmatex">\(\mathsf{NP}\)</span>-hard even when its numeric data is encoded in unary.</p>
 <p>Pseudo-polynomial algorithms: An algorithm is <strong>pseudo-polynomial</strong> if its running time is polynomial in the size of the input when the numeric part is encoded in unary.</p>
 <ul>
-<li>A problem is weakly <span class="arithmatex">\(NP\)</span>-hard if it has a pseudo-polynomial algorithm</li>
+<li>A problem is weakly <span class="arithmatex">\(\mathsf{NP}\)</span>-hard if it has a pseudo-polynomial algorithm</li>
 <li>For instance, a dynamic programming algorithm for knapsack requires <span class="arithmatex">\(O(n\cdot B)\)</span> time, it is polynomial if <span class="arithmatex">\(B\)</span> is encoded in unary, but <span class="arithmatex">\(B\)</span> can be represented in <span class="arithmatex">\(\log_2B\)</span> bits.</li>
 </ul>
 <p>Two techniques which uses dynamic programming:</p>
@@ -11418,9 +11510,9 @@ Since each long job has rounded processing time a multiple of <span class="arith
 <p><strong>Termination:</strong> When <span class="arithmatex">\(L=U\)</span>, we have a schedule of length at most <span class="arithmatex">\((1+\epsilon)L≤(1+\epsilon)OPT\)</span>.</p>
 <p><strong>Running time:</strong> Each <span class="arithmatex">\(B_k\)</span> call takes <span class="arithmatex">\(n^{O(k^2)}=n^{O(1/ϵ^2)}\)</span>, and we make <span class="arithmatex">\(O(\log(U0−L0))\)</span> calls (polynomial in input size). The overall complexity is <strong>exponential in <span class="arithmatex">\(1/ϵ^2\)</span></strong>, so it is a <span class="arithmatex">\(PTAS\)</span> but <strong>not</strong> an <span class="arithmatex">\(FPTAS\)</span>.</p>
 <h1 id="strong-np-hardness-and-impossibility-of-fptas">Strong NP-Hardness and Impossibility of FPTAS</h1>
-<p><strong>Theorem:</strong> If a strongly <span class="arithmatex">\(NP\)</span>-hard optimization problem has an integer-valued  objective and the optimum is bounded by a polynomial in the unary input  size, then the problem does not admit an <span class="arithmatex">\(FPTAS\)</span> unless <span class="arithmatex">\(P=NP\)</span>.</p>
-<p><strong>Proof sketch:</strong> Suppose an <span class="arithmatex">\(FPTAS\)</span> exists with running time polynomial in <span class="arithmatex">\(1/ϵ\)</span>. Set <span class="arithmatex">\(ϵ=1/p(|Iu|)\)</span>, where <span class="arithmatex">\(p\)</span> is the polynomial bound on <span class="arithmatex">\(OPT\)</span>. Then the <span class="arithmatex">\(FPTAS\)</span> returns a solution with value <span class="arithmatex">\(&lt;OPT+1\)</span> (since <span class="arithmatex">\(\epsilon\cdot OPT&lt;1\)</span>), hence an optimal solution. The running time becomes polynomial in the unary input size, contradicting strong <span class="arithmatex">\(NP\)</span>-hardness.</p>
-<p><strong>Corollary:</strong> Minimum makespan scheduling is strongly <span class="arithmatex">\(NP\)</span>-hard, so it cannot have an <span class="arithmatex">\(FPTAS\)</span> (unless <span class="arithmatex">\(P=NP\)</span>).</p>
+<p><strong>Theorem:</strong> If a strongly <span class="arithmatex">\(\mathsf{NP}\)</span>-hard optimization problem has an integer-valued  objective and the optimum is bounded by a polynomial in the unary input  size, then the problem does not admit an <span class="arithmatex">\(FPTAS\)</span> unless <span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span>.</p>
+<p><strong>Proof sketch:</strong> Suppose an <span class="arithmatex">\(FPTAS\)</span> exists with running time polynomial in <span class="arithmatex">\(1/ϵ\)</span>. Set <span class="arithmatex">\(ϵ=1/p(|Iu|)\)</span>, where <span class="arithmatex">\(p\)</span> is the polynomial bound on <span class="arithmatex">\(OPT\)</span>. Then the <span class="arithmatex">\(FPTAS\)</span> returns a solution with value <span class="arithmatex">\(&lt;OPT+1\)</span> (since <span class="arithmatex">\(\epsilon\cdot OPT&lt;1\)</span>), hence an optimal solution. The running time becomes polynomial in the unary input size, contradicting strong <span class="arithmatex">\(\mathsf{NP}\)</span>-hardness.</p>
+<p><strong>Corollary:</strong> Minimum makespan scheduling is strongly <span class="arithmatex">\(\mathsf{NP}\)</span>-hard, so it cannot have an <span class="arithmatex">\(FPTAS\)</span> (unless <span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span>).</p>
 <h1 id="approximation-classes">Approximation Classes</h1>
 <p><strong>FPTAS</strong> (Fully Polynomial Time Approximation Scheme): approximation ratio <span class="arithmatex">\(1\pm\epsilon\)</span> in time polynomial in <span class="arithmatex">\(n\)</span> and <span class="arithmatex">\(1/\epsilon\)</span>. Example: Knapsack.</p>
 <p><strong>PTAS</strong> (Polynomial Time Approximation Scheme): ratio <span class="arithmatex">\(1\pm\epsilon\)</span> in time polynomial in <span class="arithmatex">\(n\)</span> (may be exponential in <span class="arithmatex">\(1/\epsilon\)</span>). Example: Minimum makespan scheduling.</p>
@@ -11432,7 +11524,7 @@ Since each long job has rounded processing time a multiple of <span class="arith
 <div class="arithmatex">\[
 FPTAS\subset PTAS\subset APX\subset\log-APX\subset\text{poly}-APX\subset \exp-APX
 \]</div>
-<p>The hierarchy collapse if <span class="arithmatex">\(P=NP\)</span>.</p>
+<p>The hierarchy collapse if <span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span>.</p>
 
 
 
@@ -11488,13 +11580,13 @@ FPTAS\subset PTAS\subset APX\subset\log-APX\subset\text{poly}-APX\subset \exp-AP
         
         
           
-          <a href="../../DAA/1/" class="md-footer__link md-footer__link--next" aria-label="Next: 1 Big O Notation">
+          <a href="../6/" class="md-footer__link md-footer__link--next" aria-label="Next: 6 Deterministic Rounding of Linear Programs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                1 Big O Notation
+                6 Deterministic Rounding of Linear Programs
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -839,6 +839,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11466,7 +11558,7 @@
 
 <h1 id="fine-grained-complexity">Fine-grained Complexity</h1>
 <p>Vassilevska Williams, "On some fine-grained questions in algorithms and complexity" (original paper), pages 1-9.</p>
-<p>Mimic <span class="arithmatex">\(NP\)</span>-completeness,</p>
+<p>Mimic <span class="arithmatex">\(\mathsf{NP}\)</span>-completeness,</p>
 <h2 id="3-hypothesis">3 Hypothesis</h2>
 <h3 id="seth">SETH</h3>
 <p>Recap <strong>Strong Exponential Time Hypothesis</strong> (SETH). For every <span class="arithmatex">\(\epsilon\gt0\)</span> there exists an integer <span class="arithmatex">\(k\ge3\)</span> s.t. <span class="arithmatex">\(CNF-SAT\)</span> on formulas with clause size at most <span class="arithmatex">\(k\)</span> and <span class="arithmatex">\(n\)</span> variables can not be solved in <span class="arithmatex">\(O(2^{(1-\epsilon)n})\)</span> time even by a randomized algorithm.</p>
@@ -11548,7 +11640,7 @@ and the running time of <span class="arithmatex">\(M(x,k)\)</span> is <span clas
 <p>After applying these rules, we get to a graph <span class="arithmatex">\((G',k')\)</span>, where no vertex in the reduced graph has degree greater than <span class="arithmatex">\(k'\le k\)</span>, or less than two. Then simple combinatorics shows that if such a reduced graph has a size <span class="arithmatex">\(k\)</span> vertex cover, its must have size <span class="arithmatex">\(\le k^2\)</span>. This is the size <span class="arithmatex">\(k^2\)</span> kernelization.</p>
 <h2 id="lower-bounds-for-some-w1-hard-problems">Lower bounds for some W[1]-hard Problems</h2>
 <p>Chen et.al.: "Tight lower bounds for certain parameterized NP-hard problems" (original paper), Section 4.</p>
-<p>The class <span class="arithmatex">\(SNP\)</span> contains many <span class="arithmatex">\(NP\)</span>-hard problems including <span class="arithmatex">\(q\)</span>-SAT, <span class="arithmatex">\(q\)</span>-Colorability, <span class="arithmatex">\(q\)</span>-Set Cover, Vertex Cover, and Independent Set.</p>
+<p>The class <span class="arithmatex">\(SNP\)</span> contains many <span class="arithmatex">\(\mathsf{NP}\)</span>-hard problems including <span class="arithmatex">\(q\)</span>-SAT, <span class="arithmatex">\(q\)</span>-Colorability, <span class="arithmatex">\(q\)</span>-Set Cover, Vertex Cover, and Independent Set.</p>
 <p>It is commonly believed that it is unlikely that all problems in <span class="arithmatex">\(SNP\)</span> are solvable in sub-exponential time.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem (Vertex Cover reduction has lower bound). Given an instance <span class="arithmatex">\((G,k)\)</span> of Vertex Cover, there is a polynomial time algorithm which either reports that <span class="arithmatex">\(G\)</span> doesn't have a vertex cover of size <span class="arithmatex">\(k\)</span>, or produces a subgraph <span class="arithmatex">\(G'\)</span> of <span class="arithmatex">\(G\)</span> with at most <span class="arithmatex">\(2k'\)</span> vertices, where <span class="arithmatex">\(k'\le k\)</span>, such that <span class="arithmatex">\(G\)</span> has a vertex cover of size <span class="arithmatex">\(k\)</span> iff <span class="arithmatex">\(G'\)</span> has a vertex cover of size <span class="arithmatex">\(k'\)</span>.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem of Independent set poly-time solvable hypothesis. If the parameterized Independent Set problem can be solved in time <span class="arithmatex">\(n^{O(k)}\)</span>, where <span class="arithmatex">\(n\)</span> is the number of vertices in the graph, then all problems in <span class="arithmatex">\(SNP\)</span> can be solved in sub-exponential time.</p>

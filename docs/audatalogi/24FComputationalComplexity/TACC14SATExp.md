@@ -14,11 +14,11 @@ categories:
 abbrlink: 58f23662
 ---
 
-Boolean satisfiability is prototypical $NP$-complete problem.
+Boolean satisfiability is prototypical $\mathsf{NP}$-complete problem.
 
-There is no algorithm deciding $SAT$ in worst case in polynomial time unless $P=NP$.
+There is no algorithm deciding $SAT$ in worst case in polynomial time unless $\mathsf{P}=\mathsf{NP}$.
 
-We always assume that $P\neq NP$.
+We always assume that $\mathsf{P}\neq\mathsf{NP}$.
 
 For $SAT$ problem, SOTA algorithm uses time $2^{(1-\frac{1}{O(\log(m/n))})n}m^{O(1)}$.
 
@@ -202,7 +202,7 @@ $$
 
 # The Exponential Time Hypothesis
 
-A stronger hypothesis than $P\neq NP$: Exponential time is required to decide $SAT$.
+A stronger hypothesis than $\mathsf{P}\neq\mathsf{NP}$: Exponential time is required to decide $SAT$.
 
 **Exponential time hypothesis** (aka ETH): $kSAT$ requires worst-case linear exponential time, for all $k\ge3$.
 

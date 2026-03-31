@@ -38,7 +38,7 @@ Define $time_{M^A}(x)$ and $space_{M^A}(x)$ for an oracle Turing machine with an
 
 Then we need to define oracle versions of complexity classes. Straightforward to define time-bounded complexity classes, but be careful to define space-bounded complexity classes.
 
-$DTIME^A(T(n)),DSPACE^A(S(n)),NTIME^A(T(n))$.
+$mathsf{DTIME}^A(T(n)),DSPACE^A(S(n)),mathsf{NTIME}^A(T(n))$.
 
 :book:Problem for non-deterministic space-bounded oracle Turing machine: it may write very long strings to the oracle tape. 
 
@@ -55,10 +55,10 @@ $P^A$ and $NP^A$ for any oracle language $A$.
 The oracle may be chosen from some class of languages. Let $\mathcal C$ be a class of languages.
 
 $$
-DTIME^\mathcal C(T(n))=\bigcup_{A\in\mathcal C}DTIME^A(T(n))
+mathsf{DTIME}^\mathcal C(T(n))=\bigcup_{A\in\mathcal C}mathsf{DTIME}^A(T(n))
 $$
 
-Similarly we have $DSPACE^\mathcal C(T(n))$, $NTIME^\mathcal C(T(n))$ and $NSPACE^\mathcal C(T(n))$.
+Similarly we have $DSPACE^\mathcal C(T(n))$, $mathsf{NTIME}^\mathcal C(T(n))$ and $NSPACE^\mathcal C(T(n))$.
 
 This again extends to all other complexity classes such as $P^{NP}$.
 
@@ -175,9 +175,9 @@ Question: Is $\psi$ true?
 
 # The Karp-Lipton Theorem
 
-A possible way to prove $P\neq NP$ would be to show that there is some language in $NP$ that is not computed by a family of polynomial size Boolean circuits, i.e., that $NP\not\subseteq P/poly$.
+A possible way to prove $\mathsf{P}\neq\mathsf{NP}$ would be to show that there is some language in $\mathsf{NP}$ that is not computed by a family of polynomial size Boolean circuits, i.e., that $NP\not\subseteq P/poly$.
 
-This is stronger than $P\neq NP$ since $P\subseteq P/poly$. It turns out that it is not stronger than the assumption that the polynomial-time hierarchy does not collapse.
+This is stronger than $\mathsf{P}\neq\mathsf{NP}$ since $P\subseteq P/poly$. It turns out that it is not stronger than the assumption that the polynomial-time hierarchy does not collapse.
 
 :dart:Theorem 32. Suppose that $NP\subseteq P/poly$. Then $PH=\Sigma_2^P\cap\Pi_2^P$.
 

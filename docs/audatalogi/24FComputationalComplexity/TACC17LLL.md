@@ -122,7 +122,7 @@ SVP(\Lambda)=\min\{\vert\vert\mathbf x\vert\vert_2\vert\mathbf x\in\Lambda\diagd
 $$
 is its length.
 
-:thinking:In fact, finding the shortest vector is an $NP$-hard problem.
+:thinking:In fact, finding the shortest vector is an $\mathsf{NP}$-hard problem.
 
 We can get some estimates on it.
 

@@ -122,7 +122,7 @@ Both time and space can be infinite. Space can be infinite when $M$ does not hal
 
 Then define the first **complexity classes** based on time/space bounds.
 
-:book:Definition of $DTIME,DSPACE$: $DTIME(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded Turing machine and $DSPACE(S(n))$ is the class of languages computed by a $O(S(n))$ space Turing machine.
+:book:Definition of $mathsf{DTIME},DSPACE$: $mathsf{DTIME}(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded Turing machine and $DSPACE(S(n))$ is the class of languages computed by a $O(S(n))$ space Turing machine.
 
 !!! warning
 
@@ -222,7 +222,7 @@ $$
 
 A $T(n)$ time-bounded computation of a Turing machine with **any number** of work tapes can be simulated by a $O(T(n)^2)$ time-bounded Turing machine with a **single** work tape. (Simple divide work tape into $k$ tracks.)
 
-This is used to prove $DTIME(T_1(n))\subsetneq DTIME(T_2(n))$ when $T_2(n)>n$ is time-constructible and $(T_1(n))^2=o(T_2(n))$.
+This is used to prove $mathsf{DTIME}(T_1(n))\subsetneq mathsf{DTIME}(T_2(n))$ when $T_2(n)>n$ is time-constructible and $(T_1(n))^2=o(T_2(n))$.
 
 :book:Definition of **oblivious**: Let $M$ be a Turing Machine. $M$ is oblivious if for any $n\ge1$ and any input $x$ of length $n=|x|$, during computation with input $x$ and until $M$ halts, the location of all tape heads of $M$ is a function of $n$ and the number $t$ of steps of the computation so far.
 
@@ -237,7 +237,7 @@ It is easy to modify the $O(T(n)^2)$ to be oblivious by first copying the input 
 :dart:Theorem 5: Let $T_2(n)\ge n$ be time constructible. If $T_1(n)\ge n$ satisfies $T_1(n)\log T_1(n)=o(T_2(n))$, then
 
 $$
-DTIME(T_1(n))\subsetneq DTIME(T_2(n)).
+mathsf{DTIME}(T_1(n))\subsetneq mathsf{DTIME}(T_2(n)).
 $$
 
 > Proof by tape reduction.
@@ -251,7 +251,7 @@ L=DSPACE(\log n)\\
 $$
 
 $$
-P=\bigcup_{k>0}DTIME(n^k)\\
+P=\bigcup_{k>0}mathsf{DTIME}(n^k)\\
 $$
 
 $$
@@ -259,17 +259,17 @@ PSPACE=\bigcup_{k>0}DSPACE(n^k)\\
 $$
 
 $$
-EXP=\bigcup_{k>0}DTIME(2^{n^k})
+EXP=\bigcup_{k>0}mathsf{DTIME}(2^{n^k})
 $$
 Trivially, $L\subseteq P\subseteq PSPACE\subseteq EXP$.
 
-A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus $DSPACE(S(n))\subseteq DTIME(2^{O(S(n))})$ for $S(n)>\log n$.
+A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus $DSPACE(S(n))\subseteq mathsf{DTIME}(2^{O(S(n))})$ for $S(n)>\log n$.
 
 **Unknown: whether any of the inclusions are strict.** But time and space hierarchy theorems give that $L\subsetneq PSPACE$ and $P\subsetneq EXP$.
 
 $L$ means $LOGSPACE$, $P$ denotes $PTIME$, $EXP$ denotes $EXPTIME$.
 
-Obviously(???really???), $DTIME(T(n))\subseteq DSPACE(T(n))$, showing that space is more "valuable than" time. More precisely, $DTIME(T(n))\subseteq DSPACE(T(n)/\log T(n))$ for $T(n)\ge n$.
+Obviously(???really???), $mathsf{DTIME}(T(n))\subseteq DSPACE(T(n))$, showing that space is more "valuable than" time. More precisely, $mathsf{DTIME}(T(n))\subseteq DSPACE(T(n)/\log T(n))$ for $T(n)\ge n$.
 
 # The Padding Technique
 

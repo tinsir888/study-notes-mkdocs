@@ -14,13 +14,13 @@ categories:
 abbrlink: 375beefd
 ---
 
-For $MAXCLIQUE$ problem. A constant factor **polynomial-time** approximation algorithm doesn't exist unless $NP\in DTIME(2^{(\log n)^{O(1)}})$, based on the theorem that $NP\subseteq PCP((\log n)^{O(1)},(\log n)^{O(1)})$.
+For $MAXCLIQUE$ problem. A constant factor **polynomial-time** approximation algorithm doesn't exist unless $NP\in mathsf{DTIME}(2^{(\log n)^{O(1)}})$, based on the theorem that $NP\subseteq PCP((\log n)^{O(1)},(\log n)^{O(1)})$.
 
-Use a different approach the final $PCP$ theorem implies that a constant factor polynomial-time approximation algorithm for $MAXE3SAT$ doesn't exist unless $P=NP$.
+Use a different approach the final $mathsf{PCP}$ theorem implies that a constant factor polynomial-time approximation algorithm for $MAXE3SAT$ doesn't exist unless $\mathsf{P}=\mathsf{NP}$.
 
 Optimization is hard $\Rightarrow$ A corresponding **gap** version of decision problem is hard.
 
-:book:Definition 53. An $NP$-optimization problem $\Pi$ is given by a polynomial $p$, a language $L\in P$, a polynomial-time computable function $val$ called **objective function**, and a choice of being either a maximization problem or a minimization problem. For a given $x$, define the set $F(x)$ of **feasible** solution by
+:book:Definition 53. An $\mathsf{NP}$-optimization problem $\Pi$ is given by a polynomial $p$, a language $L\in P$, a polynomial-time computable function $val$ called **objective function**, and a choice of being either a maximization problem or a minimization problem. For a given $x$, define the set $F(x)$ of **feasible** solution by
 $$
 F(x)=\{y:|y|\le p(|x|)\land\langle x,y\rangle\in L\}.
 $$
@@ -37,29 +37,29 @@ A feasible solution $y\in F(x)$ s.t. $val_x(y)=OPT(x)$ is called an **optimal so
 
 **"Gap-version" reduction**: The corresponding decision problem is that of asking whether $OPT(x)\ge K$ in case of a maximization problem or whether $OPT(x)\le K$ in case of a minimization problem.
 
-When this is $NP$-hard, it follows that there is no polynomial-time algorithm that on input $x$ computes an optimal solution for $x$ unless $P=NP$.
+When this is $\mathsf{NP}$-hard, it follows that there is no polynomial-time algorithm that on input $x$ computes an optimal solution for $x$ unless $\mathsf{P}=\mathsf{NP}$.
 
-:book:Definition 54. Let $\Pi$ be an $NP$-optimization problem and let $\rho:\mathbb N\to\mathbb R_+$ be a function. A $\rho$-approximation algorithm $A$ is an algorithm that on input $x$ gives as output $y\in F(x)$ s.t. $val_x(y)\ge\rho(|x|)OPT(x)$ in case of a maximization problem $\Pi$ or such that $val_x(y)\le\rho(x)OPT(x)$ in case of a minimization problem $\Pi$.
+:book:Definition 54. Let $\Pi$ be an $\mathsf{NP}$-optimization problem and let $\rho:\mathbb N\to\mathbb R_+$ be a function. A $\rho$-approximation algorithm $A$ is an algorithm that on input $x$ gives as output $y\in F(x)$ s.t. $val_x(y)\ge\rho(|x|)OPT(x)$ in case of a maximization problem $\Pi$ or such that $val_x(y)\le\rho(x)OPT(x)$ in case of a minimization problem $\Pi$.
 
-Let $\Pi$ be an $NP$-maximization problem and let $a,b:\mathbb N\to\mathbb R_+$ be functions s.t. $0\lt a(n)\lt b(n)$ for all $n$. Then define the following promise decision problem.
+Let $\Pi$ be an $\mathsf{NP}$-maximization problem and let $a,b:\mathbb N\to\mathbb R_+$ be functions s.t. $0\lt a(n)\lt b(n)$ for all $n$. Then define the following promise decision problem.
 
 $(a,b)-GAP-\Pi$:
 
 - Input: $x$ s.t. either $OPT(x)\le a(|x|)$ or $OPT(x)\ge b(|x|)$.
 - Question: Is $OPT(x)\ge b(|x|)$.
 
-:book:Definition 55. We say that $(a,b)-GAP-\Pi$ is $NP$-hard if there is a polynomial-time computable function $f$ s.t.
+:book:Definition 55. We say that $(a,b)-GAP-\Pi$ is $\mathsf{NP}$-hard if there is a polynomial-time computable function $f$ s.t.
 
 1. If $x\in SAT$ then $f(x)$ is an instance of $\Pi$ and $OPT(f(x))\ge b(|f(x)|)$.
 2. If $x\not\in SAT$ then $f(x)$ is an instance of $\Pi$ and $OPT(f(x))\le a(f(|x|))$.
 
-:thinking:Proposition 19. Suppose that $(a,b)-GAP-\Pi$ is $NP$-hard. Then there is no polynomial-time $\rho$-approximation for $\Pi$ s.t. $\rho(n)\gt\frac{a(n)}{b(n)}$ unless $P=NP$.
+:thinking:Proposition 19. Suppose that $(a,b)-GAP-\Pi$ is $\mathsf{NP}$-hard. Then there is no polynomial-time $\rho$-approximation for $\Pi$ s.t. $\rho(n)\gt\frac{a(n)}{b(n)}$ unless $\mathsf{P}=\mathsf{NP}$.
 
 ## The FGLSS reduction
 
 ~~这真的是人能想出来的规约么~~
 
-Let $L\in PCP_{c,s}(r(n),q(n))$ and let $V$ be a corresponding $PCP$ verifier.
+Let $L\in PCP_{c,s}(r(n),q(n))$ and let $V$ be a corresponding $mathsf{PCP}$ verifier.
 
 WLOG, $V$ makes $q(n)$ queries to the proof on input $x$ of length $n$.
 
@@ -87,7 +87,7 @@ Now define $MAXCLIQUE$
 - Instance: A graph $G$.
 - Output: Clique in $G$ of maximum size.
 
-:thinking:Lemma 20. Let $V$ be a $PCP$ verifier using $r(n)$ random bits and querying $q(n)$ symbols from a proof $\pi\in\{0,1\}^*$. For an input $x$ we have
+:thinking:Lemma 20. Let $V$ be a $mathsf{PCP}$ verifier using $r(n)$ random bits and querying $q(n)$ symbols from a proof $\pi\in\{0,1\}^*$. For an input $x$ we have
 
 $$
 OPT(G(x))=2^{r(n)}\max_\pi\Pr[V^\pi(x)=yes].
@@ -98,19 +98,19 @@ $$
 - If $x\in L$ then $OPT(G(x))\ge c2^{r(n)}$.
 - If $x\not\in L$ then $OPT(G(x))\le s2^{r(n)}$.
 
-Since $NP\in PCP(O(\log n),O(1))$, there is a $\delta\gt0$ s.t. $(\frac{1}{2}\delta n,\delta n)-GAP-MAXCLIQUE$ that for $MAXCLIQUE$ there is no $(\frac{1}{2}+\epsilon)$-approximation algorithm, for any $\epsilon\gt0$, unless $P=NP$.
+Since $NP\in PCP(O(\log n),O(1))$, there is a $\delta\gt0$ s.t. $(\frac{1}{2}\delta n,\delta n)-GAP-MAXCLIQUE$ that for $MAXCLIQUE$ there is no $(\frac{1}{2}+\epsilon)$-approximation algorithm, for any $\epsilon\gt0$, unless $\mathsf{P}=\mathsf{NP}$.
 
-:dart:Theorem 54. For any constant $\rho\gt0$, there is no polynomial time $\rho$-approximation algorithm for $MAXCLIQUE$ unless $P=NP$.
+:dart:Theorem 54. For any constant $\rho\gt0$, there is no polynomial time $\rho$-approximation algorithm for $MAXCLIQUE$ unless $\mathsf{P}=\mathsf{NP}$.
 
 Actually, it is possible to do success amplification in a randomness efficient manner using random walks on expander graphs. This leads to $NP\subseteq PCP_{1,1/n}(O(\log n),O(\log n))$ which leads to a stronger result.
 
-:dart:Theorem 55. There exist a constant $\epsilon\gt0$ s.t. there is no $\frac{1}{n^\epsilon}$-approximation algorithm for $MAXCLIQUE$ unless $P=NP$.
+:dart:Theorem 55. There exist a constant $\epsilon\gt0$ s.t. there is no $\frac{1}{n^\epsilon}$-approximation algorithm for $MAXCLIQUE$ unless $\mathsf{P}=\mathsf{NP}$.
 
 By using a weaker version of theorem 52 that computing $FGLSS$ takes $2^{(\log n)^{O(1)}}$ time, we have a weaker version of theorem 54.
 
-:dart:Theorem 56 (weaker than 54). For any constant $\rho\gt0$, there is no $\rho$-approximation algorithm for $MAXCLIQUE$ running in time $2^{(\log n)^{O(1)}}$ unless $NP\neq\subseteq DTIME(2^{(\log n)^{O(1)}})$.
+:dart:Theorem 56 (weaker than 54). For any constant $\rho\gt0$, there is no $\rho$-approximation algorithm for $MAXCLIQUE$ running in time $2^{(\log n)^{O(1)}}$ unless $NP\neq\subseteq mathsf{DTIME}(2^{(\log n)^{O(1)}})$.
 
-:dart:Theorem 57. For any constant $\epsilon\gt0$ there is no polynomial time $\frac{1}{n^{1-\epsilon}}$-approximation algorithm for $MAXCLIQUE$ unless $P=NP$.
+:dart:Theorem 57. For any constant $\epsilon\gt0$ there is no polynomial time $\frac{1}{n^{1-\epsilon}}$-approximation algorithm for $MAXCLIQUE$ unless $\mathsf{P}=\mathsf{NP}$.
 
 ## Constraint Satisfaction Problem
 
@@ -129,8 +129,8 @@ $MAXE3SAT$:
 - Instance: CNF formula $\varphi$ where each clause contains 3 distinct variables.
 - Output: Assignment $x$ maximizing the fraction of satisfied clauses.
 
-The existence of an $\epsilon\lt1$ such that $(\epsilon,1)-GAP-MAXE3SAT$ is $NP$-hard.
+The existence of an $\epsilon\lt1$ such that $(\epsilon,1)-GAP-MAXE3SAT$ is $\mathsf{NP}$-hard.
 
-:dart:Theorem 58. For fixed $s\lt c$ we have that $NP\subseteq PCP_{c,s}^\Sigma(O(\log n),q)$ iff $(s,c)-GAP-MAX_qCSP_\Sigma$ is $NP$-hard.
+:dart:Theorem 58. For fixed $s\lt c$ we have that $NP\subseteq PCP_{c,s}^\Sigma(O(\log n),q)$ iff $(s,c)-GAP-MAX_qCSP_\Sigma$ is $\mathsf{NP}$-hard.
 
-:dart:Theorem 59. There exist $\epsilon\lt1$ s.t. $(\epsilon,1)-GAP-MAXE3SAT$ is $NP$-hard.
+:dart:Theorem 59. There exist $\epsilon\lt1$ s.t. $(\epsilon,1)-GAP-MAXE3SAT$ is $\mathsf{NP}$-hard.

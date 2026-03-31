@@ -81,7 +81,7 @@ By Savitch's Theorem and Immerman-Szelepcsényi Theorem, $STCON\in DSPACE(\log^2
 
 # P/NP-completeness
 
-Basic $P$ and $NP$-complete problems are given by the ability of Boolean circuits to simulate Turing machines on fixed input length. For $P$ this gives the circuit value problem.
+Basic $P$ and $\mathsf{NP}$-complete problems are given by the ability of Boolean circuits to simulate Turing machines on fixed input length. For $P$ this gives the circuit value problem.
 
 ## CVP problem
 
@@ -99,13 +99,13 @@ Instance: Boolean circuit $C$ on $n$ inputs
 
 Question: Does there exist $x\in\{0,1\}^n$ s.t. $C(x)=1$?
 
-:dart:Theorem 22. $CircuitSAT$ is complete for $NP$.
+:dart:Theorem 22. $CircuitSAT$ is complete for $\mathsf{NP}$.
 
 > ~~Let me use Chinese~~
 >
-> 为什么 CircuitSAT 属于 $NP$。简单理解就是非确定性图灵机 NTM 可以在多项式时间解决此问题。一个简单的思想就是暴力枚举，一共遍历 $2^n$ 次。这样在确定性图灵机 DTM 上确实就是 $O(2^n)$，但是在非确定性图灵机上，就厉害了。针对每一位，非确定性图灵机可以同时猜测 $0$ 和 $1$，这样一共遍历 $n$ 次分别对应 $n$ 位，就得到了 $NP$ 的结果。
+> 为什么 CircuitSAT 属于 $\mathsf{NP}$。简单理解就是非确定性图灵机 NTM 可以在多项式时间解决此问题。一个简单的思想就是暴力枚举，一共遍历 $2^n$ 次。这样在确定性图灵机 DTM 上确实就是 $O(2^n)$，但是在非确定性图灵机上，就厉害了。针对每一位，非确定性图灵机可以同时猜测 $0$ 和 $1$，这样一共遍历 $n$ 次分别对应 $n$ 位，就得到了 $\mathsf{NP}$ 的结果。
 >
-> As for $NP$-hard, construct language $L\in NTIME(n^k)$ for $k\gt0$.
+> As for $\mathsf{NP}$-hard, construct language $L\in mathsf{NTIME}(n^k)$ for $k\gt0$.
 >
 > ......
 
@@ -115,7 +115,7 @@ Instance: CNF formula $\varphi$.
 
 Question: Does $\varphi$ have a satisfying assigment?
 
-:dart:Theorem 23. CNF satisfiability problem is also complete  for $NP$.
+:dart:Theorem 23. CNF satisfiability problem is also complete  for $\mathsf{NP}$.
 
 > It's easy to see $SAT\in NP$.
 >
@@ -147,7 +147,7 @@ Question: Is $\psi$ true?
 
 # EXP/NEXP-completeness
 
-Consider so-called **succinct** versions of complete problems of $P$ and $NP$.
+Consider so-called **succinct** versions of complete problems of $P$ and $\mathsf{NP}$.
 
 Let $C$ be a Boolean circuit with $n$ input gates and one output gate. The truthtable of $C$ is the string $tt(C)\in\{0,1\}^{2^n}$ giving the evaluation of $C$ on all possible inputs.
 

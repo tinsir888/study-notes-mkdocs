@@ -839,6 +839,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/AA/9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11372,8 +11464,8 @@ $$
 where the last inequality follows from the fact that the total weight is an easy upper bound on the optimal value, since each weight is assumed to be non-negative.</p>
 </blockquote>
 <p>If <span class="arithmatex">\(l_j\ge k\)</span> for each clause <span class="arithmatex">\(j\)</span>, the algorithm is a <span class="arithmatex">\(\left(1-(\frac{1}{2})^k\right)\)</span>-approximation algorithm for such instances. <strong>Thus the longer the clauses, the better the approximation.</strong></p>
-<p>Consider <span class="arithmatex">\(l_j=3\)</span> for all clauses, the problem turns into MAX E3SAT. By analysis above, this randomized algorithm gives guarantee of <span class="arithmatex">\(7/8\)</span> approximation. Nothing better is possible for these instances unless <span class="arithmatex">\(P=NP\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" /><strong>Theorem 2</strong>. If there is an <span class="arithmatex">\((\frac{7}{8}+\epsilon)\)</span>-approximation algorithm for MAX E3SAT for any constant <span class="arithmatex">\(\epsilon\gt 0\)</span>, then <span class="arithmatex">\(P=NP\)</span>.</p>
+<p>Consider <span class="arithmatex">\(l_j=3\)</span> for all clauses, the problem turns into MAX E3SAT. By analysis above, this randomized algorithm gives guarantee of <span class="arithmatex">\(7/8\)</span> approximation. Nothing better is possible for these instances unless <span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" /><strong>Theorem 2</strong>. If there is an <span class="arithmatex">\((\frac{7}{8}+\epsilon)\)</span>-approximation algorithm for MAX E3SAT for any constant <span class="arithmatex">\(\epsilon\gt 0\)</span>, then <span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span>.</p>
 <h2 id="max-cut">MAX CUT</h2>
 <p>aka maximum cut problem</p>
 <p>In this problem. the input is an undirected graph <span class="arithmatex">\(G=(V,E)\)</span>, along with a non-negative weight <span class="arithmatex">\(w_{ij}\ge0\)</span> for each edge <span class="arithmatex">\((i,j)\in E\)</span>. The goal is to partition the vertex set into two parts <span class="arithmatex">\(U\)</span> and <span class="arithmatex">\(W=V-U\)</span>, so as to maximize the weight of edges whose two endpoints are in different parts, one in <span class="arithmatex">\(U\)</span> and another in <span class="arithmatex">\(W\)</span>.</p>

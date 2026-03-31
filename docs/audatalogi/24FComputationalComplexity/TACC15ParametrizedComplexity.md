@@ -18,7 +18,7 @@ abbrlink: 3bc55ba9
 
 Vassilevska Williams, "On some fine-grained questions in algorithms and complexity" (original paper), pages 1-9.
 
-Mimic $NP$-completeness,
+Mimic $\mathsf{NP}$-completeness,
 
 ## 3 Hypothesis
 
@@ -150,7 +150,7 @@ After applying these rules, we get to a graph $(G',k')$, where no vertex in the 
 
 Chen et.al.: "Tight lower bounds for certain parameterized NP-hard problems" (original paper), Section 4.
 
-The class $SNP$ contains many $NP$-hard problems including $q$-SAT, $q$-Colorability, $q$-Set Cover, Vertex Cover, and Independent Set.
+The class $SNP$ contains many $\mathsf{NP}$-hard problems including $q$-SAT, $q$-Colorability, $q$-Set Cover, Vertex Cover, and Independent Set.
 
 It is commonly believed that it is unlikely that all problems in $SNP$ are solvable in sub-exponential time.
 

@@ -856,6 +856,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Deterministic Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7 Randomized Rounding of Linear Programs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 The Primal-Dual Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 Techniques in Proving the Hardness of Approximation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11349,7 +11441,7 @@
 </ul>
 </blockquote>
 <h2 id="hardness-of-approximation">Hardness of Approximation</h2>
-<p>Theorem: There is no <span class="arithmatex">\(\alpha\)</span>-approximation algorithm for the <span class="arithmatex">\(k\)</span>-center problem for a <span class="arithmatex">\(\alpha&lt;2\)</span>, unless <span class="arithmatex">\(P=NP\)</span>.</p>
+<p>Theorem: There is no <span class="arithmatex">\(\alpha\)</span>-approximation algorithm for the <span class="arithmatex">\(k\)</span>-center problem for a <span class="arithmatex">\(\alpha&lt;2\)</span>, unless <span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span>.</p>
 <blockquote>
 <p>Show that if there exists an <span class="arithmatex">\(\alpha\)</span>-approximation algorithm with <span class="arithmatex">\(\alpha&lt;2\)</span> for <span class="arithmatex">\(k\)</span>-center problem, we can solve the <strong>dominating set problem</strong>:</p>
 <ul>
@@ -11382,18 +11474,18 @@
 <li>If a machine starts to process a job, it must process it until its completion.</li>
 </ul>
 <h3 id="observation">Observation</h3>
-<p>The problem is <span class="arithmatex">\(NP\)</span>-hard. Even deciding if there exists a schedule for which <span class="arithmatex">\(L_\max\leq0\)</span> is strongly <span class="arithmatex">\(NP\)</span>-hard.</p>
+<p>The problem is <span class="arithmatex">\(\mathsf{NP}\)</span>-hard. Even deciding if there exists a schedule for which <span class="arithmatex">\(L_\max\leq0\)</span> is strongly <span class="arithmatex">\(\mathsf{NP}\)</span>-hard.</p>
 <p>The definition of approximation ratio has the following issue</p>
 <ul>
 <li>Consider a <span class="arithmatex">\(\rho\)</span>-approximation algorithm</li>
 <li>For all the input instances with optimal value <span class="arithmatex">\(L_\max^*\leq0\)</span>, the algorithm finds a solution with <span class="arithmatex">\(L_\max=\rho\cdot L_\max^*\leq0\)</span>.</li>
-<li>As deciding if there exists a schedule for which <span class="arithmatex">\(L_\max\leq0\)</span> is strongly <span class="arithmatex">\(NP\)</span>-hard, this implies that <span class="arithmatex">\(P=NP\)</span>.</li>
+<li>As deciding if there exists a schedule for which <span class="arithmatex">\(L_\max\leq0\)</span> is strongly <span class="arithmatex">\(\mathsf{NP}\)</span>-hard, this implies that <span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span>.</li>
 </ul>
 <p>Walkaround: Consider that all the due dates are negative. (the maximum due date is less than the minimum release date)</p>
 <h3 id="lower-bound">Lower Bound</h3>
 <p>For a subset <span class="arithmatex">\(S\)</span> of jobs:
 $$
-r(S)=\min_{j\in S}r_j,\p(S)=\sum_{j\in S}p_j,\d(S)=\max_{j\in S}d_j
+r(S)=\min_{j\in S}r_j,\ p(S)=\sum_{j\in S}p_j,\ d(S)=\max_{j\in S}d_j
 $$
 <span class="arithmatex">\(L_\max^*\)</span> is the optimal value.</p>
 <p>Lemma: For each subset <span class="arithmatex">\(S\)</span> of jobs, <span class="arithmatex">\(L_\max^*\geq r(S)+p(S)-d(S)\)</span>.</p>
