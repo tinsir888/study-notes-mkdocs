@@ -25,7 +25,7 @@ Current consensus: Randomization only gives
 
 Because of hardness-based pseudo-random generator.
 
-Exponential time: $E=mathsf{DTIME}(2^{O(n)})=U_L-SIZE(2^{O(n)})$. (By corollary 2)
+Exponential time: $E=\mathsf{DTIME}(2^{O(n)})=U_L-SIZE(2^{O(n)})$. (By corollary 2)
 
 Recall that $SIZE(2^n/n)$ includes every Boolean function on $n$ variables, making non-uniform inclusion $E\subseteq SIZE(2^{O(n)})$.
 

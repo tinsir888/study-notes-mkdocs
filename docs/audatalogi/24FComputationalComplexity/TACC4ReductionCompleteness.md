@@ -105,7 +105,7 @@ Question: Does there exist $x\in\{0,1\}^n$ s.t. $C(x)=1$?
 >
 > 为什么 CircuitSAT 属于 $\mathsf{NP}$。简单理解就是非确定性图灵机 NTM 可以在多项式时间解决此问题。一个简单的思想就是暴力枚举，一共遍历 $2^n$ 次。这样在确定性图灵机 DTM 上确实就是 $O(2^n)$，但是在非确定性图灵机上，就厉害了。针对每一位，非确定性图灵机可以同时猜测 $0$ 和 $1$，这样一共遍历 $n$ 次分别对应 $n$ 位，就得到了 $\mathsf{NP}$ 的结果。
 >
-> As for $\mathsf{NP}$-hard, construct language $L\in mathsf{NTIME}(n^k)$ for $k\gt0$.
+> As for $\mathsf{NP}$-hard, construct language $L\in \mathsf{NTIME}(n^k)$ for $k\gt0$.
 >
 > ......
 

@@ -14,9 +14,9 @@ categories:
 abbrlink: 375beefd
 ---
 
-For $MAXCLIQUE$ problem. A constant factor **polynomial-time** approximation algorithm doesn't exist unless $NP\in mathsf{DTIME}(2^{(\log n)^{O(1)}})$, based on the theorem that $NP\subseteq PCP((\log n)^{O(1)},(\log n)^{O(1)})$.
+For $MAXCLIQUE$ problem. A constant factor **polynomial-time** approximation algorithm doesn't exist unless $NP\in \mathsf{DTIME}(2^{(\log n)^{O(1)}})$, based on the theorem that $NP\subseteq PCP((\log n)^{O(1)},(\log n)^{O(1)})$.
 
-Use a different approach the final $mathsf{PCP}$ theorem implies that a constant factor polynomial-time approximation algorithm for $MAXE3SAT$ doesn't exist unless $\mathsf{P}=\mathsf{NP}$.
+Use a different approach the final $\mathsf{PCP}$ theorem implies that a constant factor polynomial-time approximation algorithm for $MAXE3SAT$ doesn't exist unless $\mathsf{P}=\mathsf{NP}$.
 
 Optimization is hard $\Rightarrow$ A corresponding **gap** version of decision problem is hard.
 
@@ -59,7 +59,7 @@ $(a,b)-GAP-\Pi$:
 
 ~~这真的是人能想出来的规约么~~
 
-Let $L\in PCP_{c,s}(r(n),q(n))$ and let $V$ be a corresponding $mathsf{PCP}$ verifier.
+Let $L\in PCP_{c,s}(r(n),q(n))$ and let $V$ be a corresponding $\mathsf{PCP}$ verifier.
 
 WLOG, $V$ makes $q(n)$ queries to the proof on input $x$ of length $n$.
 
@@ -87,7 +87,7 @@ Now define $MAXCLIQUE$
 - Instance: A graph $G$.
 - Output: Clique in $G$ of maximum size.
 
-:thinking:Lemma 20. Let $V$ be a $mathsf{PCP}$ verifier using $r(n)$ random bits and querying $q(n)$ symbols from a proof $\pi\in\{0,1\}^*$. For an input $x$ we have
+:thinking:Lemma 20. Let $V$ be a $\mathsf{PCP}$ verifier using $r(n)$ random bits and querying $q(n)$ symbols from a proof $\pi\in\{0,1\}^*$. For an input $x$ we have
 
 $$
 OPT(G(x))=2^{r(n)}\max_\pi\Pr[V^\pi(x)=yes].
@@ -108,7 +108,7 @@ Actually, it is possible to do success amplification in a randomness efficient m
 
 By using a weaker version of theorem 52 that computing $FGLSS$ takes $2^{(\log n)^{O(1)}}$ time, we have a weaker version of theorem 54.
 
-:dart:Theorem 56 (weaker than 54). For any constant $\rho\gt0$, there is no $\rho$-approximation algorithm for $MAXCLIQUE$ running in time $2^{(\log n)^{O(1)}}$ unless $NP\neq\subseteq mathsf{DTIME}(2^{(\log n)^{O(1)}})$.
+:dart:Theorem 56 (weaker than 54). For any constant $\rho\gt0$, there is no $\rho$-approximation algorithm for $MAXCLIQUE$ running in time $2^{(\log n)^{O(1)}}$ unless $NP\neq\subseteq \mathsf{DTIME}(2^{(\log n)^{O(1)}})$.
 
 :dart:Theorem 57. For any constant $\epsilon\gt0$ there is no polynomial time $\frac{1}{n^{1-\epsilon}}$-approximation algorithm for $MAXCLIQUE$ unless $\mathsf{P}=\mathsf{NP}$.
 

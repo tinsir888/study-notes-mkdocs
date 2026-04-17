@@ -31,7 +31,7 @@ Let $M$ be a non-deterministic Turing machine. For given input $x\in\Sigma^*$,
 
 > Let $T:\mathbb N\rightarrow\mathbb N$ and $S:\mathbb N\rightarrow N$ be functions with $T(n)\ge n$.
 >
-> $mathsf{NTIME}(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded non-deterministic Turing machine.
+> $\mathsf{NTIME}(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded non-deterministic Turing machine.
 >
 > $NSPACE(T(n))$ is the class of languages computed by a $O(S(n))$ space-bounded non-deterministic Turing machine.
 
@@ -58,7 +58,7 @@ For non-deterministic time: rely on technique "delayed diagonalization". 延迟�
 :dart:Theorem 9 (Non-deterministic Time Hierarchy Theorem). Let $T_2(n)\ge n$ be time constructible and non-decreasing. If $T_1(n)$ satisfies $T_1(n+1)=o(T_2(n))$, then
 
 $$
-mathsf{NTIME}(T_1(n))\subsetneq mathsf{NTIME}(T_2(n))
+\mathsf{NTIME}(T_1(n))\subsetneq \mathsf{NTIME}(T_2(n))
 $$
 
 !!! info
@@ -67,13 +67,13 @@ $$
 
 
 
-Proof by constructing $M$ s.t. $L(M)\not\in mathsf{NTIME}(T_1(n))$.
+Proof by constructing $M$ s.t. $L(M)\not\in \mathsf{NTIME}(T_1(n))$.
 
 # Relating Deterministic and Non-deterministic Computation
 
-:dart:Theorem 10. Let $T(n)\ge n$. Then $mathsf{NTIME}(T(n))\subseteq DSPACE(T(n))$.
+:dart:Theorem 10. Let $T(n)\ge n$. Then $\mathsf{NTIME}(T(n))\subseteq DSPACE(T(n))$.
 
-:dart:Theorem 11. Let $S(n)\ge\log n$. Then $NSPACE(S(n))\subseteq mathsf{DTIME}(2^{O(S(n))})$.
+:dart:Theorem 11. Let $S(n)\ge\log n$. Then $NSPACE(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})$.
 
 # Savitch's Theorem
 
@@ -105,11 +105,11 @@ NL=NSPACE(\log n)\\
 $$
 
 $$
-NP=\bigcup_{k\gt0}mathsf{NTIME}(n^k)\\
+NP=\bigcup_{k\gt0}\mathsf{NTIME}(n^k)\\
 $$
 
 $$
-NEXP=\bigcup_{k\gt0}mathsf{NTIME}(2^{n^k})
+NEXP=\bigcup_{k\gt0}\mathsf{NTIME}(2^{n^k})
 $$
 
 Relations:
