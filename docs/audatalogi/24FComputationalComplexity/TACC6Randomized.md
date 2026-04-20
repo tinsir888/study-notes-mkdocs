@@ -60,7 +60,7 @@ Thus everything related to the Turing machines becomes a random variable.
 
 !!! info
 
-    For space bounded randomized classes, we assume that the Turing machine always halts! Because otherwise these three classes would end up containing $NSPACE(S(n))$!
+    For space bounded randomized classes, we assume that the Turing machine always halts! Because otherwise these three classes would end up containing $\mathsf{NSPACE}(S(n))$!
 
 
 
@@ -96,7 +96,7 @@ It's also easy to see that $RL\subseteq NL$ and $RP\subseteq NP$.
 
 Simple upper bound for $BPP$ (not tight): similar to theorem 10, $BPP\subseteq PSPACE$.
 
-For $BPL$, $BPL\subseteq DSPACE(\log^{3/2}n)$.
+For $BPL$, $BPL\subseteq \mathsf{DSPACE}(\log^{3/2}n)$.
 
 # Success Amplification
 

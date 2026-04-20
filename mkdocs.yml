@@ -13,6 +13,8 @@ nav:
       - 1 Introduction to Parallel Computing: "informaticagssi/ADA/1.md"
       - 2 Parallel Sorting and Pointer Jumping: "informaticagssi/ADA/2.md"
       - 3 Parallel Bipartite Matching: "informaticagssi/ADA/3.md"
+      - 4 Introduction to Quantum Computing: "informaticagssi/ADA/4.md"
+      - 5 Examples of Quantum Advantage: "informaticagssi/ADA/5.md"
     - Approximation Algorithms: #"informaticagssi/AA/*"
       - 1 Introduction: "informaticagssi/AA/1.md"
       - 2 Linear and Integer Programming: "informaticagssi/AA/2.md"

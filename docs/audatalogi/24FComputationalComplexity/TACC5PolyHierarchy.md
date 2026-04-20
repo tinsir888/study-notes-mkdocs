@@ -38,13 +38,13 @@ Define $time_{M^A}(x)$ and $space_{M^A}(x)$ for an oracle Turing machine with an
 
 Then we need to define oracle versions of complexity classes. Straightforward to define time-bounded complexity classes, but be careful to define space-bounded complexity classes.
 
-$\mathsf{DTIME}^A(T(n)),DSPACE^A(S(n)),\mathsf{NTIME}^A(T(n))$.
+$\mathsf{DTIME}^A(T(n)),\mathsf{DSPACE}^A(S(n)),\mathsf{NTIME}^A(T(n))$.
 
 :book:Problem for non-deterministic space-bounded oracle Turing machine: it may write very long strings to the oracle tape. 
 
 Solution: Requiring the oracle Turing machine to behave deterministically in the time between writing the first symbol to the oracle tape and making the oracle query. (deterministic oracle access)
 
-Thus we define $NSPACE^A(S(n))$ as the class of languages computed by a $O(S(n))$ space-bounded non-deterministic oracle Turing machine **with deterministic oracle access** to oracle $A$.
+Thus we define $\mathsf{NSPACE}^A(S(n))$ as the class of languages computed by a $O(S(n))$ space-bounded non-deterministic oracle Turing machine **with deterministic oracle access** to oracle $A$.
 
 
 
@@ -58,7 +58,7 @@ $$
 \mathsf{DTIME}^\mathcal C(T(n))=\bigcup_{A\in\mathcal C}\mathsf{DTIME}^A(T(n))
 $$
 
-Similarly we have $DSPACE^\mathcal C(T(n))$, $\mathsf{NTIME}^\mathcal C(T(n))$ and $NSPACE^\mathcal C(T(n))$.
+Similarly we have $\mathsf{DSPACE}^\mathcal C(T(n))$, $\mathsf{NTIME}^\mathcal C(T(n))$ and $\mathsf{NSPACE}^\mathcal C(T(n))$.
 
 This again extends to all other complexity classes such as $P^{NP}$.
 
@@ -73,7 +73,7 @@ It also satisfies **transitivity**.
 - $L_1\le_T^{\log}L_2,L_2\le_T^{\log}L_3\Rightarrow L_1\le_T^{\log}L_3$
 - $L_1\le_T^{P}L_2,L_2\le_T^{P}L_3\Rightarrow L_1\le_T^{P}L_3$
 
-:thinking:Proposition 3. The class $L,NL,P,PSPACE,EXP$ are all closed under log-space Turing reductions. The class $P,PSPACE,EXP$ are all closed under polynomial-time Turing machine.
+:thinking:Proposition 3. The class $L,NL,P,PSPACE,\mathsf{EXP}$ are all closed under log-space Turing reductions. The class $P,PSPACE,\mathsf{EXP}$ are all closed under polynomial-time Turing machine.
 
 # The Polynomial-time Hierarchy via Oracles and Quantifiers
 

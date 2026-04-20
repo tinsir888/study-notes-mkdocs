@@ -793,6 +793,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Introduction to Quantum Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Examples of Quantum Advantage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11555,7 +11601,7 @@
 <p>Both time and space can be infinite. Space can be infinite when <span class="arithmatex">\(M\)</span> does not halt.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>time/space-bounded</strong>: let <span class="arithmatex">\(T:\mathbb N\rightarrow\mathbb N\)</span> and <span class="arithmatex">\(S:\mathbb N\rightarrow\mathbb N\)</span> be functions with <span class="arithmatex">\(T(n)\ge n\)</span>. We say <span class="arithmatex">\(M\)</span> is <span class="arithmatex">\(T(n)\)</span> time-bounded, if for every <span class="arithmatex">\(x\in\Sigma^*\)</span> we have <span class="arithmatex">\(time_M(x)\le T(|x|)\)</span>. Similarly, <span class="arithmatex">\(M\)</span> is <span class="arithmatex">\(S(n)\)</span> space-bounded, if for every <span class="arithmatex">\(x\in\Sigma^*\)</span> we have <span class="arithmatex">\(space_M(x)\le S(|x|)\)</span>.</p>
 <p>Then define the first <strong>complexity classes</strong> based on time/space bounds.</p>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(\mathsf{DTIME},DSPACE\)</span>: <span class="arithmatex">\(\mathsf{DTIME}(T(n))\)</span> is the class of languages computed by a <span class="arithmatex">\(O(T(n))\)</span> time-bounded Turing machine and <span class="arithmatex">\(DSPACE(S(n))\)</span> is the class of languages computed by a <span class="arithmatex">\(O(S(n))\)</span> space Turing machine.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(\mathsf{DTIME},\mathsf{DSPACE}\)</span>: <span class="arithmatex">\(\mathsf{DTIME}(T(n))\)</span> is the class of languages computed by a <span class="arithmatex">\(O(T(n))\)</span> time-bounded Turing machine and <span class="arithmatex">\(\mathsf{DSPACE}(S(n))\)</span> is the class of languages computed by a <span class="arithmatex">\(O(S(n))\)</span> space Turing machine.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><span class="arithmatex">\(D\)</span> 代表 deterministic （确定）。确定性图灵机每次状态转移只有一种。</p>
@@ -11605,14 +11651,14 @@
 <p>Idea: More resources means more can be computed.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 3: Let <span class="arithmatex">\(S_2(n)\ge\log n\)</span> be space constructible. If <span class="arithmatex">\(S_1(n)=o(S_2(n))\)</span>, then</p>
 <div class="arithmatex">\[
-DSPACE(S_1(n))\subsetneq DSPACE(S_2(n)).
+\mathsf{DSPACE}(S_1(n))\subsetneq \mathsf{DSPACE}(S_2(n)).
 \]</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>中文简单解释一下：图灵机的可用渐进存储空间越多，那么解决的问题也就越多。</p>
 </div>
 <blockquote>
-<p>It suffices to construct a <span class="arithmatex">\(O(S_2(n))\)</span> space bounded Turing machine <span class="arithmatex">\(M\)</span> s.t. <span class="arithmatex">\(L(M)\not\in DSPACE(S_1(n))\)</span>.</p>
+<p>It suffices to construct a <span class="arithmatex">\(O(S_2(n))\)</span> space bounded Turing machine <span class="arithmatex">\(M\)</span> s.t. <span class="arithmatex">\(L(M)\not\in \mathsf{DSPACE}(S_1(n))\)</span>.</p>
 <p>Input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n=|x|\)</span>:</p>
 <ol>
 <li>Mark <span class="arithmatex">\(S_2(n)\)</span> cells of work tape using the space constructability of <span class="arithmatex">\(S_2\)</span>. During the remaining computation:</li>
@@ -11643,25 +11689,25 @@ DSPACE(S_1(n))\subsetneq DSPACE(S_2(n)).
 <h1 id="time-and-space-complexity-classes">Time and Space Complexity Classes</h1>
 <p>There are some standard complexity classes given by natural classes of time and space bounds.</p>
 <div class="arithmatex">\[
-L=DSPACE(\log n)\\
+L=\mathsf{DSPACE}(\log n)\\
 \]</div>
 <div class="arithmatex">\[
 P=\bigcup_{k&gt;0}\mathsf{DTIME}(n^k)\\
 \]</div>
 <div class="arithmatex">\[
-PSPACE=\bigcup_{k&gt;0}DSPACE(n^k)\\
+PSPACE=\bigcup_{k&gt;0}\mathsf{DSPACE}(n^k)\\
 \]</div>
 <p>$$
-EXP=\bigcup_{k&gt;0}\mathsf{DTIME}(2<sup>{n</sup>k})
+\mathsf{EXP}=\bigcup_{k&gt;0}\mathsf{DTIME}(2<sup>{n</sup>k})
 $$
-Trivially, <span class="arithmatex">\(L\subseteq P\subseteq PSPACE\subseteq EXP\)</span>.</p>
-<p>A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus <span class="arithmatex">\(DSPACE(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})\)</span> for <span class="arithmatex">\(S(n)&gt;\log n\)</span>.</p>
-<p><strong>Unknown: whether any of the inclusions are strict.</strong> But time and space hierarchy theorems give that <span class="arithmatex">\(L\subsetneq PSPACE\)</span> and <span class="arithmatex">\(P\subsetneq EXP\)</span>.</p>
-<p><span class="arithmatex">\(L\)</span> means <span class="arithmatex">\(LOGSPACE\)</span>, <span class="arithmatex">\(P\)</span> denotes <span class="arithmatex">\(PTIME\)</span>, <span class="arithmatex">\(EXP\)</span> denotes <span class="arithmatex">\(EXPTIME\)</span>.</p>
-<p>Obviously(???really???), <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq DSPACE(T(n))\)</span>, showing that space is more "valuable than" time. More precisely, <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq DSPACE(T(n)/\log T(n))\)</span> for <span class="arithmatex">\(T(n)\ge n\)</span>.</p>
+Trivially, <span class="arithmatex">\(L\subseteq P\subseteq PSPACE\subseteq \mathsf{EXP}\)</span>.</p>
+<p>A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus <span class="arithmatex">\(\mathsf{DSPACE}(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})\)</span> for <span class="arithmatex">\(S(n)&gt;\log n\)</span>.</p>
+<p><strong>Unknown: whether any of the inclusions are strict.</strong> But time and space hierarchy theorems give that <span class="arithmatex">\(L\subsetneq PSPACE\)</span> and <span class="arithmatex">\(P\subsetneq \mathsf{EXP}\)</span>.</p>
+<p><span class="arithmatex">\(L\)</span> means <span class="arithmatex">\(LOGSPACE\)</span>, <span class="arithmatex">\(P\)</span> denotes <span class="arithmatex">\(PTIME\)</span>, <span class="arithmatex">\(\mathsf{EXP}\)</span> denotes <span class="arithmatex">\(EXPTIME\)</span>.</p>
+<p>Obviously(???really???), <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n))\)</span>, showing that space is more "valuable than" time. More precisely, <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n)/\log T(n))\)</span> for <span class="arithmatex">\(T(n)\ge n\)</span>.</p>
 <h1 id="the-padding-technique">The Padding Technique</h1>
-<p>Whether <span class="arithmatex">\(L\subseteq P\)</span> and <span class="arithmatex">\(PSPACE\subseteq EXP\)</span> are strict is related.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 6: If <span class="arithmatex">\(L=P\)</span>, then <span class="arithmatex">\(PSPACE=EXP\)</span>.</p>
+<p>Whether <span class="arithmatex">\(L\subseteq P\)</span> and <span class="arithmatex">\(PSPACE\subseteq \mathsf{EXP}\)</span> are strict is related.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 6: If <span class="arithmatex">\(L=P\)</span>, then <span class="arithmatex">\(PSPACE=\mathsf{EXP}\)</span>.</p>
 
 
 

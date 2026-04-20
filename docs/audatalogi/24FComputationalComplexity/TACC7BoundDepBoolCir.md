@@ -156,7 +156,7 @@ A $n\times n$ Boolean matrix corresponds to a directed graph. The transitive clo
 
 !!! info
 
-    其实这里也存在层次结构：$NL\subseteq U_L-AC^1\subseteq U_L-NC^2\subseteq L^2(=DSPACE(\log^2n))$.
+    其实这里也存在层次结构：$NL\subseteq U_L-AC^1\subseteq U_L-NC^2\subseteq L^2(=\mathsf{DSPACE}(\log^2n))$.
 
 
 

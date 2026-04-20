@@ -51,7 +51,7 @@ Complexity class has an important property: the complexity class is **closed** u
 
 We say $\mathcal C$ is closed w.r.t. $\preceq$ reductions, if whenever $L'\preceq L$ and $L\in\mathcal C$, we also have $L'\in C$. Proof omitted.
 
-:thinking:Proposition 2. The classes $L,NL,P,NP,PSPACE,EXP,NEXP$ are all closed under log-space many-one reductions. The classes $P,NP,PSPACE,EXP,NEXP$ are all closed under polynomial-time many-one reductions.
+:thinking:Proposition 2. The classes $L,NL,P,NP,PSPACE,\mathsf{EXP},\mathsf{NEXP}$ are all closed under log-space many-one reductions. The classes $P,NP,PSPACE,\mathsf{EXP},\mathsf{NEXP}$ are all closed under polynomial-time many-one reductions.
 
 # NL-completeness
 
@@ -77,7 +77,7 @@ Question: Is there a directed path in $D$ from $s$ to $t$?
 >
 > Next generate all arcs between configurations corresponding to a single step of the Turing machine and finally arcs between all accepting configurations to the new node $t$. We then have that the resulting directed graph $D$ has a path from $s$ to $t$ iff $M$ accepts $x$.
 
-By Savitch's Theorem and Immerman-Szelepcsényi Theorem, $STCON\in DSPACE(\log^2n)$ and $\overline{STCON}\in NL$, respectively.
+By Savitch's Theorem and Immerman-Szelepcsényi Theorem, $STCON\in \mathsf{DSPACE}(\log^2n)$ and $\overline{STCON}\in NL$, respectively.
 
 # P/NP-completeness
 
@@ -151,14 +151,14 @@ Consider so-called **succinct** versions of complete problems of $P$ and $\maths
 
 Let $C$ be a Boolean circuit with $n$ input gates and one output gate. The truthtable of $C$ is the string $tt(C)\in\{0,1\}^{2^n}$ giving the evaluation of $C$ on all possible inputs.
 
-Consider a language $L\subseteq\{0,1\}^*$. Then define the **succinct** version $SuccinctL$ of $L$ simply by $SuccinctL=\{C|tt(C)\in L\}$. Note that when $L\in P$ we have that $SuccinctL\in EXP$ simply by decompressing the input $C$ to $tt(C)$ in exponential time and then using the polynomial-time Turing machine to check for membership in $L$.
+Consider a language $L\subseteq\{0,1\}^*$. Then define the **succinct** version $SuccinctL$ of $L$ simply by $SuccinctL=\{C|tt(C)\in L\}$. Note that when $L\in P$ we have that $SuccinctL\in \mathsf{EXP}$ simply by decompressing the input $C$ to $tt(C)$ in exponential time and then using the polynomial-time Turing machine to check for membership in $L$.
 
-简而言之，把上面这些玩意的真值表算出来，就是属于 EXP/NEXP 的复杂度类。
+简而言之，把上面这些玩意的真值表算出来，就是属于 $\mathsf{EXP}/\mathsf{NEXP}$ 的复杂度类。
 
-Similarly we have $SuccinctL\in NEXP$ when $L\in NP$.
+Similarly we have $SuccinctL\in \mathsf{NEXP}$ when $L\in NP$.
 
-:dart:Theorem 25. $SuccinctCVP$ is complete for $EXP$.
+:dart:Theorem 25. $SuccinctCVP$ is complete for $\mathsf{EXP}$.
 
 > Similar transformation.
 
-:dart:Theorem 26. $SucinctCircuitSAT$ and $SuccinctSAT$ are complete for $NEXP$.
+:dart:Theorem 26. $SucinctCircuitSAT$ and $SuccinctSAT$ are complete for $\mathsf{NEXP}$.

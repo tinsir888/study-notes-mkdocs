@@ -793,6 +793,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Introduction to Quantum Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Examples of Quantum Advantage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11479,12 +11525,12 @@
 <blockquote>
 <p>Let <span class="arithmatex">\(T:\mathbb N\rightarrow\mathbb N\)</span> and <span class="arithmatex">\(S:\mathbb N\rightarrow N\)</span> be functions with <span class="arithmatex">\(T(n)\ge n\)</span>.</p>
 <p><span class="arithmatex">\(\mathsf{NTIME}(T(n))\)</span> is the class of languages computed by a <span class="arithmatex">\(O(T(n))\)</span> time-bounded non-deterministic Turing machine.</p>
-<p><span class="arithmatex">\(NSPACE(T(n))\)</span> is the class of languages computed by a <span class="arithmatex">\(O(S(n))\)</span> space-bounded non-deterministic Turing machine.</p>
+<p><span class="arithmatex">\(\mathsf{NSPACE}(T(n))\)</span> is the class of languages computed by a <span class="arithmatex">\(O(S(n))\)</span> space-bounded non-deterministic Turing machine.</p>
 </blockquote>
 <h1 id="non-deterministic-hierarchy-theorems">Non-deterministic Hierarchy Theorems</h1>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 7 (Non-deterministic Space Hierarchy Theorem). Let <span class="arithmatex">\(S_2(n)\ge\log n\)</span> be space constructible. If <span class="arithmatex">\(S_1(n)=o(S_2(n))\)</span>, then</p>
 <div class="arithmatex">\[
-NSPACE(S_1(n))\subsetneq NSPACE(S_2(n)).
+\mathsf{NSPACE}(S_1(n))\subsetneq \mathsf{NSPACE}(S_2(n)).
 \]</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -11503,43 +11549,43 @@ NSPACE(S_1(n))\subsetneq NSPACE(S_2(n)).
 </div>
 <p>Proof by constructing <span class="arithmatex">\(M\)</span> s.t. <span class="arithmatex">\(L(M)\not\in \mathsf{NTIME}(T_1(n))\)</span>.</p>
 <h1 id="relating-deterministic-and-non-deterministic-computation">Relating Deterministic and Non-deterministic Computation</h1>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 10. Let <span class="arithmatex">\(T(n)\ge n\)</span>. Then <span class="arithmatex">\(\mathsf{NTIME}(T(n))\subseteq DSPACE(T(n))\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 11. Let <span class="arithmatex">\(S(n)\ge\log n\)</span>. Then <span class="arithmatex">\(NSPACE(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 10. Let <span class="arithmatex">\(T(n)\ge n\)</span>. Then <span class="arithmatex">\(\mathsf{NTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n))\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 11. Let <span class="arithmatex">\(S(n)\ge\log n\)</span>. Then <span class="arithmatex">\(\mathsf{NSPACE}(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})\)</span>.</p>
 <h1 id="savitchs-theorem">Savitch's Theorem</h1>
-<p>Better than <span class="arithmatex">\(NSPACE(S(n))\subseteq DSPACE(2^{O(S(n))})\)</span>.</p>
+<p>Better than <span class="arithmatex">\(\mathsf{NSPACE}(S(n))\subseteq \mathsf{DSPACE}(2^{O(S(n))})\)</span>.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 12 (Savitch's Theorem). Let <span class="arithmatex">\(S(n)\ge\log n\)</span>. Then</p>
 <p>$$
-NSPACE(S(n))\subseteq DSPACE(S(n)^2).
+\mathsf{NSPACE}(S(n))\subseteq \mathsf{DSPACE}(S(n)^2).
 $$
 Hard proof</p>
 <h1 id="the-immermanszelepcsenyi-theorem">The Immerman–Szelepcsényi Theorem</h1>
 <p>Non-deterministic space is closed under the operation of taking complements.</p>
-<p><span class="arithmatex">\(coNSPACE(S(n))\)</span>: The class of complement languages of languages in <span class="arithmatex">\(NSPACE(S(n))\)</span>.</p>
+<p><span class="arithmatex">\(\mathsf{coNSPACE}(S(n))\)</span>: The class of complement languages of languages in <span class="arithmatex">\(\mathsf{NSPACE}(S(n))\)</span>.</p>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 13 (Immerman–Szelepcsényi theorem). Let <span class="arithmatex">\(S(n)\ge\log n\)</span>. Then</p>
 <div class="arithmatex">\[
-coNSPACE(S(n))=NSPACE(S(n)).
+\mathsf{coNSPACE}(S(n))=\mathsf{NSPACE}(S(n)).
 \]</div>
 <h1 id="non-deterministic-time-and-space-complexity-classes">Non-deterministic Time and Space Complexity Classes</h1>
 <div class="arithmatex">\[
-NL=NSPACE(\log n)\\
+NL=\mathsf{NSPACE}(\log n)\\
 \]</div>
 <div class="arithmatex">\[
 NP=\bigcup_{k\gt0}\mathsf{NTIME}(n^k)\\
 \]</div>
 <div class="arithmatex">\[
-NEXP=\bigcup_{k\gt0}\mathsf{NTIME}(2^{n^k})
+\mathsf{NEXP}=\bigcup_{k\gt0}\mathsf{NTIME}(2^{n^k})
 \]</div>
 <p>Relations:</p>
 <ul>
 <li>
-<p>Due to Savitch's theorem, there is no need for defining <span class="arithmatex">\(NSPACE\)</span>.</p>
+<p>Due to Savitch's theorem, there is no need for defining <span class="arithmatex">\(\mathsf{NSPACE}\)</span>.</p>
 </li>
 <li>
-<p><span class="arithmatex">\(NL\subseteq NP\subseteq PSPACE\subseteq NEXP\)</span>.</p>
+<p><span class="arithmatex">\(NL\subseteq NP\subseteq PSPACE\subseteq \mathsf{NEXP}\)</span>.</p>
 </li>
-<li>By non-deterministic time and space hierarchy theorems: <span class="arithmatex">\(NL\subsetneq PSPACE\)</span>, <span class="arithmatex">\(NP\subsetneq NEXP\)</span>.</li>
+<li>By non-deterministic time and space hierarchy theorems: <span class="arithmatex">\(NL\subsetneq PSPACE\)</span>, <span class="arithmatex">\(NP\subsetneq \mathsf{NEXP}\)</span>.</li>
 </ul>
-<p>Thus, <span class="arithmatex">\(L\subseteq NL\subseteq P\subseteq NP\subseteq PSPACE\subseteq EXP\subseteq NEXP\)</span>.</p>
+<p>Thus, <span class="arithmatex">\(L\subseteq NL\subseteq P\subseteq NP\subseteq PSPACE\subseteq \mathsf{EXP}\subseteq \mathsf{NEXP}\)</span>.</p>
 <h2 id="summary-of-complexity-classes">Summary of Complexity Classes</h2>
 <ol>
 <li><strong>L (Logarithmic Space)</strong></li>
@@ -11558,14 +11604,14 @@ NEXP=\bigcup_{k\gt0}\mathsf{NTIME}(2^{n^k})
 <li><strong>Definition</strong>: <span class="arithmatex">\(PSPACE\)</span> consists of all decision problems that can be solved by a deterministic Turing machine using polynomial space.</li>
 <li><strong>Example</strong>: Generalized games like chess, checkers, and go with a polynomial bound on the number of moves.</li>
 <li><strong>EXP (Exponential Time)</strong></li>
-<li><strong>Definition</strong>: <span class="arithmatex">\(EXP\)</span> consists of all decision problems that can be solved by a deterministic Turing machine in exponential time, <span class="arithmatex">\(O(2^{p(n)})\)</span> for some polynomial <span class="arithmatex">\(p(n)\)</span>.</li>
+<li><strong>Definition</strong>: <span class="arithmatex">\(\mathsf{EXP}\)</span> consists of all decision problems that can be solved by a deterministic Turing machine in exponential time, <span class="arithmatex">\(O(2^{p(n)})\)</span> for some polynomial <span class="arithmatex">\(p(n)\)</span>.</li>
 <li><strong>Example</strong>: Solving the traveling salesman problem using a brute-force search over all possible paths.</li>
 <li><strong>NEXP (Non-deterministic Exponential Time)</strong></li>
-<li><strong>Definition</strong>: <span class="arithmatex">\(NEXP\)</span> consists of all decision problems solvable by a non-deterministic Turing machine in exponential time, <span class="arithmatex">\(O(2^{p(n)})\)</span> for some polynomial <span class="arithmatex">\(p(n)\)</span>.</li>
+<li><strong>Definition</strong>: <span class="arithmatex">\(\mathsf{NEXP}\)</span> consists of all decision problems solvable by a non-deterministic Turing machine in exponential time, <span class="arithmatex">\(O(2^{p(n)})\)</span> for some polynomial <span class="arithmatex">\(p(n)\)</span>.</li>
 <li><strong>Example</strong>: Certain advanced combinatorial problems that require guessing an exponentially long solution and verifying it in exponential time.</li>
 </ol>
 <p>We don't know whether these inclusions are strict. But we usually assume that all the inclusions are strict.</p>
-<p><span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span> implies <span class="arithmatex">\(EXP=NEXP\)</span>; <span class="arithmatex">\(EXP\neq NEXP\)</span> implies <span class="arithmatex">\(\mathsf{P}\neq\mathsf{NP}\)</span>.</p>
+<p><span class="arithmatex">\(\mathsf{P}=\mathsf{NP}\)</span> implies <span class="arithmatex">\(\mathsf{EXP}=\mathsf{NEXP}\)</span>; <span class="arithmatex">\(\mathsf{EXP}\neq \mathsf{NEXP}\)</span> implies <span class="arithmatex">\(\mathsf{P}\neq\mathsf{NP}\)</span>.</p>
 
 
 

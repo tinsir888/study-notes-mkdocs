@@ -66,7 +66,7 @@ Verifier of $\mathsf{PCP}(r(n),q(n))$ is able to access at most $2^{r(n)}q(n)$ d
 
 :dart:Theorem 50 (PCP theorem). $NP=PCP(O(\log n),O(1))$.
 
-:dart:Theorem 51. $NEXP=PCP(n^{O(1)},n^{O(1)})$.
+:dart:Theorem 51. $\mathsf{NEXP}=PCP(n^{O(1)},n^{O(1)})$.
 
 ## A weak version of the PCP theorem
 

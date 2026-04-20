@@ -122,7 +122,7 @@ Both time and space can be infinite. Space can be infinite when $M$ does not hal
 
 Then define the first **complexity classes** based on time/space bounds.
 
-:book:Definition of $\mathsf{DTIME},DSPACE$: $\mathsf{DTIME}(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded Turing machine and $DSPACE(S(n))$ is the class of languages computed by a $O(S(n))$ space Turing machine.
+:book:Definition of $\mathsf{DTIME},\mathsf{DSPACE}$: $\mathsf{DTIME}(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded Turing machine and $\mathsf{DSPACE}(S(n))$ is the class of languages computed by a $O(S(n))$ space Turing machine.
 
 !!! warning
 
@@ -197,7 +197,7 @@ Idea: More resources means more can be computed.
 :dart:Theorem 3: Let $S_2(n)\ge\log n$ be space constructible. If $S_1(n)=o(S_2(n))$, then
 
 $$
-DSPACE(S_1(n))\subsetneq DSPACE(S_2(n)).
+\mathsf{DSPACE}(S_1(n))\subsetneq \mathsf{DSPACE}(S_2(n)).
 $$
 
 !!! info
@@ -206,7 +206,7 @@ $$
 
 
 
-> It suffices to construct a $O(S_2(n))$ space bounded Turing machine $M$ s.t. $L(M)\not\in DSPACE(S_1(n))$.
+> It suffices to construct a $O(S_2(n))$ space bounded Turing machine $M$ s.t. $L(M)\not\in \mathsf{DSPACE}(S_1(n))$.
 >
 > Input $x$ of length $n=|x|$:
 >
@@ -247,7 +247,7 @@ $$
 There are some standard complexity classes given by natural classes of time and space bounds.
 
 $$
-L=DSPACE(\log n)\\
+L=\mathsf{DSPACE}(\log n)\\
 $$
 
 $$
@@ -255,24 +255,24 @@ P=\bigcup_{k>0}\mathsf{DTIME}(n^k)\\
 $$
 
 $$
-PSPACE=\bigcup_{k>0}DSPACE(n^k)\\
+PSPACE=\bigcup_{k>0}\mathsf{DSPACE}(n^k)\\
 $$
 
 $$
-EXP=\bigcup_{k>0}\mathsf{DTIME}(2^{n^k})
+\mathsf{EXP}=\bigcup_{k>0}\mathsf{DTIME}(2^{n^k})
 $$
-Trivially, $L\subseteq P\subseteq PSPACE\subseteq EXP$.
+Trivially, $L\subseteq P\subseteq PSPACE\subseteq \mathsf{EXP}$.
 
-A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus $DSPACE(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})$ for $S(n)>\log n$.
+A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus $\mathsf{DSPACE}(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})$ for $S(n)>\log n$.
 
-**Unknown: whether any of the inclusions are strict.** But time and space hierarchy theorems give that $L\subsetneq PSPACE$ and $P\subsetneq EXP$.
+**Unknown: whether any of the inclusions are strict.** But time and space hierarchy theorems give that $L\subsetneq PSPACE$ and $P\subsetneq \mathsf{EXP}$.
 
-$L$ means $LOGSPACE$, $P$ denotes $PTIME$, $EXP$ denotes $EXPTIME$.
+$L$ means $LOGSPACE$, $P$ denotes $PTIME$, $\mathsf{EXP}$ denotes $EXPTIME$.
 
-Obviously(???really???), $\mathsf{DTIME}(T(n))\subseteq DSPACE(T(n))$, showing that space is more "valuable than" time. More precisely, $\mathsf{DTIME}(T(n))\subseteq DSPACE(T(n)/\log T(n))$ for $T(n)\ge n$.
+Obviously(???really???), $\mathsf{DTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n))$, showing that space is more "valuable than" time. More precisely, $\mathsf{DTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n)/\log T(n))$ for $T(n)\ge n$.
 
 # The Padding Technique
 
-Whether $L\subseteq P$ and $PSPACE\subseteq EXP$ are strict is related.
+Whether $L\subseteq P$ and $PSPACE\subseteq \mathsf{EXP}$ are strict is related.
 
-:dart:Theorem 6: If $L=P$, then $PSPACE=EXP$.
+:dart:Theorem 6: If $L=P$, then $PSPACE=\mathsf{EXP}$.

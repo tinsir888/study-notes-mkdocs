@@ -793,6 +793,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Introduction to Quantum Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Examples of Quantum Advantage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11489,7 +11535,7 @@
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 16. A language <span class="arithmatex">\(L\)</span> is hard for <span class="arithmatex">\(\mathcal C\)</span> under <span class="arithmatex">\(\preceq\)</span> reductions if for all <span class="arithmatex">\(L'\in\mathcal C\)</span> we have <span class="arithmatex">\(L'\preceq L\)</span>. A language <span class="arithmatex">\(L\)</span> is complete for <span class="arithmatex">\(\mathcal C\)</span> under <span class="arithmatex">\(\preceq\)</span> reductions if <span class="arithmatex">\(L\in\mathcal C\)</span> in addition to begin hard for <span class="arithmatex">\(\mathcal C\)</span> under <span class="arithmatex">\(\preceq\)</span> reductions.</p>
 <p>Complexity class has an important property: the complexity class is <strong>closed</strong> under reductions.</p>
 <p>We say <span class="arithmatex">\(\mathcal C\)</span> is closed w.r.t. <span class="arithmatex">\(\preceq\)</span> reductions, if whenever <span class="arithmatex">\(L'\preceq L\)</span> and <span class="arithmatex">\(L\in\mathcal C\)</span>, we also have <span class="arithmatex">\(L'\in C\)</span>. Proof omitted.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 2. The classes <span class="arithmatex">\(L,NL,P,NP,PSPACE,EXP,NEXP\)</span> are all closed under log-space many-one reductions. The classes <span class="arithmatex">\(P,NP,PSPACE,EXP,NEXP\)</span> are all closed under polynomial-time many-one reductions.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 2. The classes <span class="arithmatex">\(L,NL,P,NP,PSPACE,\mathsf{EXP},\mathsf{NEXP}\)</span> are all closed under log-space many-one reductions. The classes <span class="arithmatex">\(P,NP,PSPACE,\mathsf{EXP},\mathsf{NEXP}\)</span> are all closed under polynomial-time many-one reductions.</p>
 <h1 id="nl-completeness">NL-completeness</h1>
 <p>The basic NL-complete problem is given by <em>connectivity in a directed graph</em> (<span class="arithmatex">\(STCON\)</span>).</p>
 <h2 id="stcon">STCON</h2>
@@ -11504,7 +11550,7 @@
 <p>On input <span class="arithmatex">\(x\)</span> we generate all configurations of <span class="arithmatex">\(M\)</span> on input <span class="arithmatex">\(x\)</span>, which then forms the set of nodes together with an additional node <span class="arithmatex">\(t\)</span>. Initial configuration becomes the node <span class="arithmatex">\(s\)</span>.</p>
 <p>Next generate all arcs between configurations corresponding to a single step of the Turing machine and finally arcs between all accepting configurations to the new node <span class="arithmatex">\(t\)</span>. We then have that the resulting directed graph <span class="arithmatex">\(D\)</span> has a path from <span class="arithmatex">\(s\)</span> to <span class="arithmatex">\(t\)</span> iff <span class="arithmatex">\(M\)</span> accepts <span class="arithmatex">\(x\)</span>.</p>
 </blockquote>
-<p>By Savitch's Theorem and Immerman-Szelepcsényi Theorem, <span class="arithmatex">\(STCON\in DSPACE(\log^2n)\)</span> and <span class="arithmatex">\(\overline{STCON}\in NL\)</span>, respectively.</p>
+<p>By Savitch's Theorem and Immerman-Szelepcsényi Theorem, <span class="arithmatex">\(STCON\in \mathsf{DSPACE}(\log^2n)\)</span> and <span class="arithmatex">\(\overline{STCON}\in NL\)</span>, respectively.</p>
 <h1 id="pnp-completeness">P/NP-completeness</h1>
 <p>Basic <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(\mathsf{NP}\)</span>-complete problems are given by the ability of Boolean circuits to simulate Turing machines on fixed input length. For <span class="arithmatex">\(P\)</span> this gives the circuit value problem.</p>
 <h2 id="cvp-problem">CVP problem</h2>
@@ -11547,14 +11593,14 @@
 <h1 id="expnexp-completeness">EXP/NEXP-completeness</h1>
 <p>Consider so-called <strong>succinct</strong> versions of complete problems of <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(\mathsf{NP}\)</span>.</p>
 <p>Let <span class="arithmatex">\(C\)</span> be a Boolean circuit with <span class="arithmatex">\(n\)</span> input gates and one output gate. The truthtable of <span class="arithmatex">\(C\)</span> is the string <span class="arithmatex">\(tt(C)\in\{0,1\}^{2^n}\)</span> giving the evaluation of <span class="arithmatex">\(C\)</span> on all possible inputs.</p>
-<p>Consider a language <span class="arithmatex">\(L\subseteq\{0,1\}^*\)</span>. Then define the <strong>succinct</strong> version <span class="arithmatex">\(SuccinctL\)</span> of <span class="arithmatex">\(L\)</span> simply by <span class="arithmatex">\(SuccinctL=\{C|tt(C)\in L\}\)</span>. Note that when <span class="arithmatex">\(L\in P\)</span> we have that <span class="arithmatex">\(SuccinctL\in EXP\)</span> simply by decompressing the input <span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(tt(C)\)</span> in exponential time and then using the polynomial-time Turing machine to check for membership in <span class="arithmatex">\(L\)</span>.</p>
-<p>简而言之，把上面这些玩意的真值表算出来，就是属于 EXP/NEXP 的复杂度类。</p>
-<p>Similarly we have <span class="arithmatex">\(SuccinctL\in NEXP\)</span> when <span class="arithmatex">\(L\in NP\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 25. <span class="arithmatex">\(SuccinctCVP\)</span> is complete for <span class="arithmatex">\(EXP\)</span>.</p>
+<p>Consider a language <span class="arithmatex">\(L\subseteq\{0,1\}^*\)</span>. Then define the <strong>succinct</strong> version <span class="arithmatex">\(SuccinctL\)</span> of <span class="arithmatex">\(L\)</span> simply by <span class="arithmatex">\(SuccinctL=\{C|tt(C)\in L\}\)</span>. Note that when <span class="arithmatex">\(L\in P\)</span> we have that <span class="arithmatex">\(SuccinctL\in \mathsf{EXP}\)</span> simply by decompressing the input <span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(tt(C)\)</span> in exponential time and then using the polynomial-time Turing machine to check for membership in <span class="arithmatex">\(L\)</span>.</p>
+<p>简而言之，把上面这些玩意的真值表算出来，就是属于 <span class="arithmatex">\(\mathsf{EXP}/\mathsf{NEXP}\)</span> 的复杂度类。</p>
+<p>Similarly we have <span class="arithmatex">\(SuccinctL\in \mathsf{NEXP}\)</span> when <span class="arithmatex">\(L\in NP\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 25. <span class="arithmatex">\(SuccinctCVP\)</span> is complete for <span class="arithmatex">\(\mathsf{EXP}\)</span>.</p>
 <blockquote>
 <p>Similar transformation.</p>
 </blockquote>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 26. <span class="arithmatex">\(SucinctCircuitSAT\)</span> and <span class="arithmatex">\(SuccinctSAT\)</span> are complete for <span class="arithmatex">\(NEXP\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 26. <span class="arithmatex">\(SucinctCircuitSAT\)</span> and <span class="arithmatex">\(SuccinctSAT\)</span> are complete for <span class="arithmatex">\(\mathsf{NEXP}\)</span>.</p>
 
 
 

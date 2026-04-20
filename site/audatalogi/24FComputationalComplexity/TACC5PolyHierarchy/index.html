@@ -793,6 +793,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Introduction to Quantum Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Examples of Quantum Advantage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11539,17 +11585,17 @@
 </ul>
 <p>Define <span class="arithmatex">\(time_{M^A}(x)\)</span> and <span class="arithmatex">\(space_{M^A}(x)\)</span> for an oracle Turing machine with an oracle language <span class="arithmatex">\(A\)</span> to be the number of computation steps and number of cells of work tape used during computation on input <span class="arithmatex">\(x\)</span>. The same way we define time-bounded and space-bounded oracle Turing machines.</p>
 <p>Then we need to define oracle versions of complexity classes. Straightforward to define time-bounded complexity classes, but be careful to define space-bounded complexity classes.</p>
-<p><span class="arithmatex">\(\mathsf{DTIME}^A(T(n)),DSPACE^A(S(n)),\mathsf{NTIME}^A(T(n))\)</span>.</p>
+<p><span class="arithmatex">\(\mathsf{DTIME}^A(T(n)),\mathsf{DSPACE}^A(S(n)),\mathsf{NTIME}^A(T(n))\)</span>.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Problem for non-deterministic space-bounded oracle Turing machine: it may write very long strings to the oracle tape. </p>
 <p>Solution: Requiring the oracle Turing machine to behave deterministically in the time between writing the first symbol to the oracle tape and making the oracle query. (deterministic oracle access)</p>
-<p>Thus we define <span class="arithmatex">\(NSPACE^A(S(n))\)</span> as the class of languages computed by a <span class="arithmatex">\(O(S(n))\)</span> space-bounded non-deterministic oracle Turing machine <strong>with deterministic oracle access</strong> to oracle <span class="arithmatex">\(A\)</span>.</p>
+<p>Thus we define <span class="arithmatex">\(\mathsf{NSPACE}^A(S(n))\)</span> as the class of languages computed by a <span class="arithmatex">\(O(S(n))\)</span> space-bounded non-deterministic oracle Turing machine <strong>with deterministic oracle access</strong> to oracle <span class="arithmatex">\(A\)</span>.</p>
 <p>The definition can be extended to other complexity classes.</p>
 <p><span class="arithmatex">\(P^A\)</span> and <span class="arithmatex">\(NP^A\)</span> for any oracle language <span class="arithmatex">\(A\)</span>.</p>
 <p>The oracle may be chosen from some class of languages. Let <span class="arithmatex">\(\mathcal C\)</span> be a class of languages.</p>
 <div class="arithmatex">\[
 \mathsf{DTIME}^\mathcal C(T(n))=\bigcup_{A\in\mathcal C}\mathsf{DTIME}^A(T(n))
 \]</div>
-<p>Similarly we have <span class="arithmatex">\(DSPACE^\mathcal C(T(n))\)</span>, <span class="arithmatex">\(\mathsf{NTIME}^\mathcal C(T(n))\)</span> and <span class="arithmatex">\(NSPACE^\mathcal C(T(n))\)</span>.</p>
+<p>Similarly we have <span class="arithmatex">\(\mathsf{DSPACE}^\mathcal C(T(n))\)</span>, <span class="arithmatex">\(\mathsf{NTIME}^\mathcal C(T(n))\)</span> and <span class="arithmatex">\(\mathsf{NSPACE}^\mathcal C(T(n))\)</span>.</p>
 <p>This again extends to all other complexity classes such as <span class="arithmatex">\(P^{NP}\)</span>.</p>
 <h2 id="turing-reductions">Turing Reductions</h2>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 17 (Turing reductions). Let <span class="arithmatex">\(L_1\)</span> and <span class="arithmatex">\(L_2\)</span> be languages. We say that <span class="arithmatex">\(L_1\)</span> log-space Turing machine reduces to <span class="arithmatex">\(L_2\)</span> (<span class="arithmatex">\(L_1\le_T^{\log}L_2\)</span>), if <span class="arithmatex">\(L_1\in L^{L_2}\)</span>. Similarly we say <span class="arithmatex">\(L_1\)</span> polynomial time Turing reduces to <span class="arithmatex">\(L_2\)</span> (<span class="arithmatex">\(L_1\le_T^PL_2\)</span>), if <span class="arithmatex">\(L_1\in P^{L_2}\)</span>.</p>
@@ -11559,7 +11605,7 @@
 <li><span class="arithmatex">\(L_1\le_T^{\log}L_2,L_2\le_T^{\log}L_3\Rightarrow L_1\le_T^{\log}L_3\)</span></li>
 <li><span class="arithmatex">\(L_1\le_T^{P}L_2,L_2\le_T^{P}L_3\Rightarrow L_1\le_T^{P}L_3\)</span></li>
 </ul>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 3. The class <span class="arithmatex">\(L,NL,P,PSPACE,EXP\)</span> are all closed under log-space Turing reductions. The class <span class="arithmatex">\(P,PSPACE,EXP\)</span> are all closed under polynomial-time Turing machine.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 3. The class <span class="arithmatex">\(L,NL,P,PSPACE,\mathsf{EXP}\)</span> are all closed under log-space Turing reductions. The class <span class="arithmatex">\(P,PSPACE,\mathsf{EXP}\)</span> are all closed under polynomial-time Turing machine.</p>
 <h1 id="the-polynomial-time-hierarchy-via-oracles-and-quantifiers">The Polynomial-time Hierarchy via Oracles and Quantifiers</h1>
 <p>For a class of language <span class="arithmatex">\(\mathcal C\)</span>, denote <span class="arithmatex">\(co\mathcal C\)</span> the class of complements of languages of <span class="arithmatex">\(\mathcal C\)</span>.</p>
 <div class="arithmatex">\[

@@ -18,16 +18,16 @@ Parity function is not in $AC^0$.
 
 $MAJ\not\in AC^0$.
 
-$NEXP\not\subseteq ACC^0$.
+$\mathsf{NEXP}\not\subseteq ACC^0$.
 
 Some unknown proposition:
 
 - whether $NP\subseteq ACC^0$.
 
-- whether $EXP\subseteq ACC^0$.
+- whether $\mathsf{EXP}\subseteq ACC^0$.
 
-- whether $NEXP\subseteq TC^0$.
-- whether all languages in $NEXP$ can be computed by depth $2$ circuits consisting of weighted linear threshold gates.
+- whether $\mathsf{NEXP}\subseteq TC^0$.
+- whether all languages in $\mathsf{NEXP}$ can be computed by depth $2$ circuits consisting of weighted linear threshold gates.
 
 # The Razborov-Smolensky Lower Bound
 

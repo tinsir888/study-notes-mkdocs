@@ -33,14 +33,14 @@ Let $M$ be a non-deterministic Turing machine. For given input $x\in\Sigma^*$,
 >
 > $\mathsf{NTIME}(T(n))$ is the class of languages computed by a $O(T(n))$ time-bounded non-deterministic Turing machine.
 >
-> $NSPACE(T(n))$ is the class of languages computed by a $O(S(n))$ space-bounded non-deterministic Turing machine.
+> $\mathsf{NSPACE}(T(n))$ is the class of languages computed by a $O(S(n))$ space-bounded non-deterministic Turing machine.
 
 # Non-deterministic Hierarchy Theorems
 
 :dart:Theorem 7 (Non-deterministic Space Hierarchy Theorem). Let $S_2(n)\ge\log n$ be space constructible. If $S_1(n)=o(S_2(n))$, then
 
 $$
-NSPACE(S_1(n))\subsetneq NSPACE(S_2(n)).
+\mathsf{NSPACE}(S_1(n))\subsetneq \mathsf{NSPACE}(S_2(n)).
 $$
 
 !!! info
@@ -71,18 +71,18 @@ Proof by constructing $M$ s.t. $L(M)\not\in \mathsf{NTIME}(T_1(n))$.
 
 # Relating Deterministic and Non-deterministic Computation
 
-:dart:Theorem 10. Let $T(n)\ge n$. Then $\mathsf{NTIME}(T(n))\subseteq DSPACE(T(n))$.
+:dart:Theorem 10. Let $T(n)\ge n$. Then $\mathsf{NTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n))$.
 
-:dart:Theorem 11. Let $S(n)\ge\log n$. Then $NSPACE(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})$.
+:dart:Theorem 11. Let $S(n)\ge\log n$. Then $\mathsf{NSPACE}(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})$.
 
 # Savitch's Theorem
 
-Better than $NSPACE(S(n))\subseteq DSPACE(2^{O(S(n))})$.
+Better than $\mathsf{NSPACE}(S(n))\subseteq \mathsf{DSPACE}(2^{O(S(n))})$.
 
 :dart:Theorem 12 (Savitch's Theorem). Let $S(n)\ge\log n$. Then
 
 $$
-NSPACE(S(n))\subseteq DSPACE(S(n)^2).
+\mathsf{NSPACE}(S(n))\subseteq \mathsf{DSPACE}(S(n)^2).
 $$
 Hard proof
 
@@ -90,18 +90,18 @@ Hard proof
 
 Non-deterministic space is closed under the operation of taking complements.
 
-$coNSPACE(S(n))$: The class of complement languages of languages in $NSPACE(S(n))$.
+$\mathsf{coNSPACE}(S(n))$: The class of complement languages of languages in $\mathsf{NSPACE}(S(n))$.
 
 :dart:Theorem 13 (Immerman–Szelepcsényi theorem). Let $S(n)\ge\log n$. Then
 
 $$
-coNSPACE(S(n))=NSPACE(S(n)).
+\mathsf{coNSPACE}(S(n))=\mathsf{NSPACE}(S(n)).
 $$
 
 # Non-deterministic Time and Space Complexity Classes
 
 $$
-NL=NSPACE(\log n)\\
+NL=\mathsf{NSPACE}(\log n)\\
 $$
 
 $$
@@ -109,17 +109,17 @@ NP=\bigcup_{k\gt0}\mathsf{NTIME}(n^k)\\
 $$
 
 $$
-NEXP=\bigcup_{k\gt0}\mathsf{NTIME}(2^{n^k})
+\mathsf{NEXP}=\bigcup_{k\gt0}\mathsf{NTIME}(2^{n^k})
 $$
 
 Relations:
 
-- Due to Savitch's theorem, there is no need for defining $NSPACE$.
+- Due to Savitch's theorem, there is no need for defining $\mathsf{NSPACE}$.
 
-- $NL\subseteq NP\subseteq PSPACE\subseteq NEXP$.
-- By non-deterministic time and space hierarchy theorems: $NL\subsetneq PSPACE$, $NP\subsetneq NEXP$.
+- $NL\subseteq NP\subseteq PSPACE\subseteq \mathsf{NEXP}$.
+- By non-deterministic time and space hierarchy theorems: $NL\subsetneq PSPACE$, $NP\subsetneq \mathsf{NEXP}$.
 
-Thus, $L\subseteq NL\subseteq P\subseteq NP\subseteq PSPACE\subseteq EXP\subseteq NEXP$.
+Thus, $L\subseteq NL\subseteq P\subseteq NP\subseteq PSPACE\subseteq \mathsf{EXP}\subseteq \mathsf{NEXP}$.
 
 ## Summary of Complexity Classes
 
@@ -139,12 +139,12 @@ Thus, $L\subseteq NL\subseteq P\subseteq NP\subseteq PSPACE\subseteq EXP\subsete
    - **Definition**: $PSPACE$ consists of all decision problems that can be solved by a deterministic Turing machine using polynomial space.
    - **Example**: Generalized games like chess, checkers, and go with a polynomial bound on the number of moves.
 6. **EXP (Exponential Time)**
-   - **Definition**: $EXP$ consists of all decision problems that can be solved by a deterministic Turing machine in exponential time, $O(2^{p(n)})$ for some polynomial $p(n)$.
+   - **Definition**: $\mathsf{EXP}$ consists of all decision problems that can be solved by a deterministic Turing machine in exponential time, $O(2^{p(n)})$ for some polynomial $p(n)$.
    - **Example**: Solving the traveling salesman problem using a brute-force search over all possible paths.
 7. **NEXP (Non-deterministic Exponential Time)**
-   - **Definition**: $NEXP$ consists of all decision problems solvable by a non-deterministic Turing machine in exponential time, $O(2^{p(n)})$ for some polynomial $p(n)$.
+   - **Definition**: $\mathsf{NEXP}$ consists of all decision problems solvable by a non-deterministic Turing machine in exponential time, $O(2^{p(n)})$ for some polynomial $p(n)$.
    - **Example**: Certain advanced combinatorial problems that require guessing an exponentially long solution and verifying it in exponential time.
 
 We don't know whether these inclusions are strict. But we usually assume that all the inclusions are strict.
 
-$\mathsf{P}=\mathsf{NP}$ implies $EXP=NEXP$; $EXP\neq NEXP$ implies $\mathsf{P}\neq\mathsf{NP}$.
+$\mathsf{P}=\mathsf{NP}$ implies $\mathsf{EXP}=\mathsf{NEXP}$; $\mathsf{EXP}\neq \mathsf{NEXP}$ implies $\mathsf{P}\neq\mathsf{NP}$.
