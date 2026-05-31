@@ -15,6 +15,7 @@ nav:
       - 3 Parallel Bipartite Matching: "informaticagssi/ADA/3.md"
       - 4 Introduction to Quantum Computing: "informaticagssi/ADA/4.md"
       - 5 Examples of Quantum Advantage: "informaticagssi/ADA/5.md"
+      - 6 Quantum Application in Cryptography: "informaticagssi/ADA/6.md"
     - Approximation Algorithms: #"informaticagssi/AA/*"
       - 1 Introduction: "informaticagssi/AA/1.md"
       - 2 Linear and Integer Programming: "informaticagssi/AA/2.md"
@@ -416,6 +417,7 @@ nav:
         - 语音入门: "lingua/ItalianoAppunti/A1/语音.md"
         - 1 Benvenuti!: "lingua/ItalianoAppunti/A1/Unità1.md"
         - 2 Un nuovo inizio: "lingua/ItalianoAppunti/A1/Unità2.md"
+        - 3 Tempo libero: "lingua/ItalianoAppunti/A1/Unità3.md"
     - Español: #"lingua/SpanishNotas/*"
       - A1: #"lingua/SpanishNotas/A1/*"
         - 语音入门: "lingua/SpanishNotas/A1/语音.md"
@@ -473,5 +475,4 @@ plugins:
 extra_javascript:
   - javascripts/config.js
   - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

@@ -839,6 +839,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Quantum Application in Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11325,6 +11348,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Tempo libero
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11580,7 +11626,7 @@
 <li>Number of random bits used during computation</li>
 <li>Number of queries made to the proof tape.</li>
 </ol>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 49 (PCP languages). Let <span class="arithmatex">\(r:\mathbb N\to\mathbb N,q:\mathbb N\to\mathbb N\)</span> be functions, let <span class="arithmatex">\(\Sigma\)</span> be a non-empty finite set, and let <span class="arithmatex">\(0\le s\lt c\le1\)</span> be reals. <span class="arithmatex">\(PCP_{c,s}^\Sigma(r(n),q(n))\)</span> is the class of languages <span class="arithmatex">\(L\)</span> for which there exist a PCP verifier <span class="arithmatex">\(V\)</span> that on input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span> uses at most <span class="arithmatex">\(r(n)\)</span> random bits and queries at most <span class="arithmatex">\(q(n)\)</span> positions of a proof <span class="arithmatex">\(\pi\in\Sigma^*\)</span> s.t.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 49 (PCP languages). Let <span class="arithmatex">\(r:\mathbb N\to\mathbb N,q:\mathbb N\to\mathbb N\)</span> be functions, let <span class="arithmatex">\(\Sigma\)</span> be a non-empty finite set, and let <span class="arithmatex">\(0\le s\lt c\le1\)</span> be reals. <span class="arithmatex">\(\mathsf{PCP}_{c,s}^\Sigma(r(n),q(n))\)</span> is the class of languages <span class="arithmatex">\(L\)</span> for which there exist a PCP verifier <span class="arithmatex">\(V\)</span> that on input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span> uses at most <span class="arithmatex">\(r(n)\)</span> random bits and queries at most <span class="arithmatex">\(q(n)\)</span> positions of a proof <span class="arithmatex">\(\pi\in\Sigma^*\)</span> s.t.</p>
 <div class="arithmatex">\[
 \forall x\in L,\exists\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\ge c\\
 \]</div>
@@ -11590,22 +11636,22 @@
 <p><span class="arithmatex">\(c\)</span> for completeness, <span class="arithmatex">\(s\)</span> for soundness.</p>
 <p>We often use the notion as follows:</p>
 <ul>
-<li><span class="arithmatex">\(PCP_{c,s}(r(n),q(n))\)</span> when <span class="arithmatex">\(\Sigma=\{0,1\}\)</span></li>
+<li><span class="arithmatex">\(\mathsf{PCP}_{c,s}(r(n),q(n))\)</span> when <span class="arithmatex">\(\Sigma=\{0,1\}\)</span></li>
 <li><span class="arithmatex">\(\mathsf{PCP}^\Sigma(r(n),q(n))\)</span> when <span class="arithmatex">\(c=1,s=1/2\)</span></li>
 <li><span class="arithmatex">\(\mathsf{PCP}(r(n),q(n))\)</span> when both <span class="arithmatex">\(\Sigma=\{0,1\}\)</span> and <span class="arithmatex">\(c=1,s=1/2\)</span>.</li>
 </ul>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 17.</p>
 <ol>
-<li><span class="arithmatex">\(P=PCP(0,0)\)</span></li>
-<li><span class="arithmatex">\(NP=PCP(0,n^{O(1)})\)</span></li>
-<li><span class="arithmatex">\(coRP=PCP(n^{O(1)},0)\)</span></li>
+<li><span class="arithmatex">\(\mathsf{P}=\mathsf{PCP}(0,0)\)</span></li>
+<li><span class="arithmatex">\(NP=\mathsf{PCP}(0,n^{O(1)})\)</span></li>
+<li><span class="arithmatex">\(coRP=\mathsf{PCP}(n^{O(1)},0)\)</span></li>
 </ol>
-<p>By enumerating over all strings of <span class="arithmatex">\(O(\log n)\)</span> bits and using these in place of the random bits one obtain the slightly stronger statements <span class="arithmatex">\(P=PCP(O(\log n),0)\)</span> and <span class="arithmatex">\(NP=PCP(O(\log n),n^{O(1)})\)</span>.</p>
-<p>By enumerating over all possible proofs of length <span class="arithmatex">\(O(\log n)\)</span> one obtains <span class="arithmatex">\(P=PCP(0,O(\log n))\)</span>.</p>
+<p>By enumerating over all strings of <span class="arithmatex">\(O(\log n)\)</span> bits and using these in place of the random bits one obtain the slightly stronger statements <span class="arithmatex">\(\mathsf{P}=\mathsf{PCP}(O(\log n),0)\)</span> and <span class="arithmatex">\(NP=\mathsf{PCP}(O(\log n),n^{O(1)})\)</span>.</p>
+<p>By enumerating over all possible proofs of length <span class="arithmatex">\(O(\log n)\)</span> one obtains <span class="arithmatex">\(\mathsf{P}=\mathsf{PCP}(0,O(\log n))\)</span>.</p>
 <p>Verifier of <span class="arithmatex">\(\mathsf{PCP}(r(n),q(n))\)</span> is able to access at most <span class="arithmatex">\(2^{r(n)}q(n)\)</span> different positions of the proof string <span class="arithmatex">\(\pi\)</span>.</p>
 <p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 18. <span class="arithmatex">\(\mathsf{PCP}(r(n),q(n))\subseteq \mathsf{NTIME}(n^{O(1)}2^{r(n)})\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 50 (PCP theorem). <span class="arithmatex">\(NP=PCP(O(\log n),O(1))\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 51. <span class="arithmatex">\(\mathsf{NEXP}=PCP(n^{O(1)},n^{O(1)})\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 50 (PCP theorem). <span class="arithmatex">\(NP=\mathsf{PCP}(O(\log n),O(1))\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 51. <span class="arithmatex">\(\mathsf{NEXP}=\mathsf{PCP}(n^{O(1)},n^{O(1)})\)</span>.</p>
 <h2 id="a-weak-version-of-the-pcp-theorem">A weak version of the PCP theorem</h2>
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 52. <span class="arithmatex">\(NP\subseteq PCP((\log n)^{O(1)},(\log n)^{O(1)})\)</span>.</p>
 <p>Some observations about interactive proofs and probabilistically checkable proofs.</p>
@@ -11613,7 +11659,7 @@
 <li>Consider an interactive proof system <span class="arithmatex">\((P,V)\)</span>. On input <span class="arithmatex">\(x\)</span>, we tabulate all possible replies <span class="arithmatex">\(P(\langle x,m_1,\cdots,m_i\rangle)\)</span> a prover <span class="arithmatex">\(P\)</span> may send during a run of the protocol with input <span class="arithmatex">\(x\)</span> into a written proof <span class="arithmatex">\(\pi\)</span>.</li>
 </ol>
 <p>Then verifier <span class="arithmatex">\(V\)</span> may be viewed as an adaptive PCP verifier that instead of communicating with <span class="arithmatex">\(P\)</span> simply queries the proof <span class="arithmatex">\(\pi\)</span>.</p>
-<p>In Sumcheck protocol, all msg of <span class="arithmatex">\(V\)</span> consist of uniformly random bits, which means that all queries may be made non-adaptively. Together with Theorem 49, this gives that <span class="arithmatex">\(IP\subseteq PCP(n^{O(1)},n^{O(1)})\)</span>.</p>
+<p>In Sumcheck protocol, all msg of <span class="arithmatex">\(V\)</span> consist of uniformly random bits, which means that all queries may be made non-adaptively. Together with Theorem 49, this gives that <span class="arithmatex">\(\mathsf{IP}\subseteq PCP(n^{O(1)},n^{O(1)})\)</span>.</p>
 <ol>
 <li>Arithmetic formula <span class="arithmatex">\(F\)</span> in Sumcheck is only evaluated once, at the end of the protocol, and on a uniformly chosen random input <span class="arithmatex">\((a_1,\cdots,a_n)\in\mathbb Z_p^n\)</span>.</li>
 </ol>
@@ -11754,8 +11800,6 @@ $$
         <script src="../../../javascripts/config.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

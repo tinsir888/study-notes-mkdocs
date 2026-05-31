@@ -839,6 +839,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Quantum Application in Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11338,6 +11361,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Tempo libero
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11592,15 +11638,15 @@
 <p>Depth of Boolean circuit: the <strong>length</strong> of a longest path from an input gate to an output gate.</p>
 <p>It's a model of <em>parallel</em> computation where depth corresponds to parallel time.</p>
 <p>Parallel model of random access machine PRAM <del>痛苦的计算几何课的回忆</del></p>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(SIZE-DEPTH\)</span>. Let <span class="arithmatex">\(S:\mathbb N\to\mathbb N\)</span> and <span class="arithmatex">\(d:\mathbb N\to\mathbb N\)</span>. <span class="arithmatex">\(SIZE-DEPTH(S(n),d(n))\)</span> is the class of languages computed by families of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span> and depth <span class="arithmatex">\(O(d(n))\)</span>.</p>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(NC^i\)</span>. For <span class="arithmatex">\(i\ge0\)</span>, define <span class="arithmatex">\(NC^i=SIZE-DEPTH(n^{O(1)},\log^i(n))\)</span>, and further define <span class="arithmatex">\(NC=\cup_{i\ge1}NC^i\)</span>.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(\mathsf{SIZE}-DEPTH\)</span>. Let <span class="arithmatex">\(S:\mathbb N\to\mathbb N\)</span> and <span class="arithmatex">\(d:\mathbb N\to\mathbb N\)</span>. <span class="arithmatex">\(\mathsf{SIZE}-DEPTH(S(n),d(n))\)</span> is the class of languages computed by families of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span> and depth <span class="arithmatex">\(O(d(n))\)</span>.</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(\mathsf{NC}^i\)</span>. For <span class="arithmatex">\(i\ge0\)</span>, define <span class="arithmatex">\(\mathsf{NC}^i=\mathsf{SIZE}-DEPTH(n^{O(1)},\log^i(n))\)</span>, and further define <span class="arithmatex">\(\mathsf{NC}=\cup_{i\ge1}\mathsf{NC}^i\)</span>.</p>
 <p>These circuit classes is restrict to polynomial size and <strong>poly-logarithmic</strong> depth.</p>
-<p>By definition, <span class="arithmatex">\(NC\subseteq P/poly\)</span>, hence <span class="arithmatex">\(U_L-NC\subseteq P\)</span>.</p>
+<p>By definition, <span class="arithmatex">\(\mathsf{NC}\subseteq \mathsf{P/poly}\)</span>, hence <span class="arithmatex">\(\mathsf{U}_L-\mathsf{NC}\subseteq P\)</span>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>为什么呢？回顾定义 <span class="arithmatex">\(P/poly=\bigcup_{k\gt0}SIZE(n^k)\)</span>，发现它的多了一个深度的限制。</p>
+<p>为什么呢？回顾定义 <span class="arithmatex">\(\mathsf{P/poly}=\bigcup_{k\gt0}\mathsf{SIZE}(n^k)\)</span>，发现它的多了一个深度的限制。</p>
 </div>
-<p>In fact <span class="arithmatex">\(P\not\subseteq NC\)</span> is expected to hold. This means not all languages in <span class="arithmatex">\(P\)</span> can benefit greatly from parallelism.</p>
+<p>In fact <span class="arithmatex">\(\mathsf{P}\not\subseteq \mathsf{NC}\)</span> is expected to hold. This means not all languages in <span class="arithmatex">\(\mathsf{P}\)</span> can benefit greatly from parallelism.</p>
 <h1 id="general-boolean-circuits">General Boolean Circuits</h1>
 <p>Consider Boolean circuits that allows arbitrary fanin gate and more general functions than <span class="arithmatex">\(AND, OR, NOT\)</span>.</p>
 <p>General definition of Boolean circuit. A Boolean circuit <span class="arithmatex">\(C\)</span> with <span class="arithmatex">\(n\)</span> inputs and <span class="arithmatex">\(m\)</span> outputs consists of the following:</p>
@@ -11653,11 +11699,11 @@ T_t(z_1,\cdots,z_k)=\begin{cases}
 \]</div>
 <h2 id="several-circuit-classes">Several Circuit Classes</h2>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(AC^i\)</span>. For <span class="arithmatex">\(i\ge0\)</span>, <span class="arithmatex">\(AC^i\)</span> is the class of languages computed by families of Boolean circuits of polynomial size and depth <span class="arithmatex">\(O(\log^in)\)</span> using <strong>unbounded fanin</strong> <span class="arithmatex">\(AND\)</span> and <span class="arithmatex">\(OR\)</span> gates.</p>
-<p><span class="arithmatex">\(AC^i\)</span> is similar to <span class="arithmatex">\(NC^i\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 5. Hierarchy relation between <span class="arithmatex">\(NC\)</span> and <span class="arithmatex">\(AC\)</span>. <span class="arithmatex">\(NC^i\subseteq AC^i\subseteq NC^{i+1}\)</span> for all <span class="arithmatex">\(i\ge0\)</span>.</p>
+<p><span class="arithmatex">\(AC^i\)</span> is similar to <span class="arithmatex">\(\mathsf{NC}^i\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 5. Hierarchy relation between <span class="arithmatex">\(\mathsf{NC}\)</span> and <span class="arithmatex">\(AC\)</span>. <span class="arithmatex">\(\mathsf{NC}^i\subseteq AC^i\subseteq \mathsf{NC}^{i+1}\)</span> for all <span class="arithmatex">\(i\ge0\)</span>.</p>
 <blockquote>
-<p><span class="arithmatex">\(NC^i\subseteq AC^i\)</span> is obtained by definition.</p>
-<p>For <span class="arithmatex">\(AC^i\subseteq NC^{i+1}\)</span>: <span class="arithmatex">\(AND\)</span> and <span class="arithmatex">\(OR\)</span> gates of fanin <span class="arithmatex">\(k\)</span> can be replaced by a binary tree of depth <span class="arithmatex">\(\lceil\log_2k\rceil\)</span> of corresponding fanin <span class="arithmatex">\(2\)</span> gates. Thus the depth increases by a factor <span class="arithmatex">\(O(\log n)\)</span>.</p>
+<p><span class="arithmatex">\(\mathsf{NC}^i\subseteq AC^i\)</span> is obtained by definition.</p>
+<p>For <span class="arithmatex">\(AC^i\subseteq \mathsf{NC}^{i+1}\)</span>: <span class="arithmatex">\(AND\)</span> and <span class="arithmatex">\(OR\)</span> gates of fanin <span class="arithmatex">\(k\)</span> can be replaced by a binary tree of depth <span class="arithmatex">\(\lceil\log_2k\rceil\)</span> of corresponding fanin <span class="arithmatex">\(2\)</span> gates. Thus the depth increases by a factor <span class="arithmatex">\(O(\log n)\)</span>.</p>
 </blockquote>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(AC^0,ACC^0\)</span>. Let <span class="arithmatex">\(m\gt1\)</span>. <span class="arithmatex">\(AC^0[m]\)</span> is the class of languages computed by families of Boolean circuits of polynomial size and depth <span class="arithmatex">\(O(1)\)</span> using unbounded fanin <span class="arithmatex">\(AND,OR,MOD_m\)</span> gates. Define <span class="arithmatex">\(ACC^0=\bigcup_{m\gt1}AC^0[m]\)</span>.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(TC^0\)</span>. <span class="arithmatex">\(TC^0\)</span> is the class of languages computed by families of Boolean circuits of polynomial size and depth <span class="arithmatex">\(O(1)\)</span> using unbounded fanin <span class="arithmatex">\(MAJ\)</span> gates only.</p>
@@ -11667,7 +11713,7 @@ T_t(z_1,\cdots,z_k)=\begin{cases}
 </div>
 <h1 id="logarithmic-space-and-logarithmic-depth-circuits">Logarithmic Space and Logarithmic Depth Circuits</h1>
 <p><strong>log-space</strong> can be roughly the same as <strong>log-depth</strong> circuits.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 38. <span class="arithmatex">\(U_L-NC^1\subseteq L\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 38. <span class="arithmatex">\(\mathsf{U}_L-\mathsf{NC}^1\subseteq L\)</span>.</p>
 <blockquote>
 <p>Circuit <span class="arithmatex">\(C\)</span> with depth <span class="arithmatex">\((\log n)\)</span> is computable by a <span class="arithmatex">\(O(\log n)\)</span> space Turing Machine.</p>
 </blockquote>
@@ -11681,14 +11727,14 @@ c_{ij}=\bigvee_{k=1}^ra_{ik}\land a_{kj}.
 <p>回想起大二学的离散数学了吗？邻接矩阵的闭包与可达性。</p>
 </div>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of transitive closure. Transitive closure <span class="arithmatex">\(A^*\)</span> of <span class="arithmatex">\(A\)</span> is the <span class="arithmatex">\(n\times n\)</span> Boolean matrix given by <span class="arithmatex">\(A^*=\bigvee_{i\ge0}A^i\)</span>, where <span class="arithmatex">\(A^0\)</span> is the identity matrix <span class="arithmatex">\(I\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 39. <span class="arithmatex">\(NL\subseteq U_L-AC^1\)</span></p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 39. <span class="arithmatex">\(\mathsf{NL}\subseteq \mathsf{U}_L-AC^1\)</span></p>
 <blockquote>
 <p><del>懒得看证明了，到学的时候再来</del></p>
 </blockquote>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 6. <span class="arithmatex">\(U_L-NC^1\subseteq L\subseteq NL\subseteq U_L-AC^1\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 6. <span class="arithmatex">\(\mathsf{U}_L-\mathsf{NC}^1\subseteq L\subseteq \mathsf{NL}\subseteq \mathsf{U}_L-AC^1\)</span>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>其实这里也存在层次结构：<span class="arithmatex">\(NL\subseteq U_L-AC^1\subseteq U_L-NC^2\subseteq L^2(=\mathsf{DSPACE}(\log^2n))\)</span>.</p>
+<p>其实这里也存在层次结构：<span class="arithmatex">\(\mathsf{NL}\subseteq \mathsf{U}_L-AC^1\subseteq \mathsf{U}_L-\mathsf{NC}^2\subseteq L^2(=\mathsf{DSPACE}(\log^2n))\)</span>.</p>
 </div>
 <h1 id="functions-and-reductions">Functions and Reductions</h1>
 <p>Boolean circuit is fixed number of inputs, we consider output is also a bounded function of the length of input.</p>
@@ -11707,11 +11753,11 @@ c_{ij}=\bigvee_{k=1}^ra_{ik}\land a_{kj}.
 </blockquote>
 <p>A generalization of <span class="arithmatex">\(ADD\)</span>: iterated addition of <span class="arithmatex">\(n\)</span> numbers each of <span class="arithmatex">\(n\)</span> bits.</p>
 <p><span class="arithmatex">\(ITADD\)</span>: given <span class="arithmatex">\(n\)</span> numbers <span class="arithmatex">\(x^1,\cdots,x^n\)</span> of <span class="arithmatex">\(n\)</span> bits each, output <span class="arithmatex">\(n+\lceil\log_2n\rceil\)</span>-bit number <span class="arithmatex">\(z\)</span> s.t. <span class="arithmatex">\(z=x^1+\cdots+x^n\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 41. <span class="arithmatex">\(ITADD\in NC^1\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 41. <span class="arithmatex">\(ITADD\in \mathsf{NC}^1\)</span>.</p>
 <blockquote>
-<p>We can to reduce the task to the task of add <span class="arithmatex">\(2\)</span> numbers each of <span class="arithmatex">\(n+O(\log n)\)</span> bits. These may be added in depth <span class="arithmatex">\(O(\log n)\)</span> by converting <span class="arithmatex">\(AC^0\)</span> for <span class="arithmatex">\(ADD\)</span> to a <span class="arithmatex">\(NC^1\)</span> circuit.</p>
+<p>We can to reduce the task to the task of add <span class="arithmatex">\(2\)</span> numbers each of <span class="arithmatex">\(n+O(\log n)\)</span> bits. These may be added in depth <span class="arithmatex">\(O(\log n)\)</span> by converting <span class="arithmatex">\(AC^0\)</span> for <span class="arithmatex">\(ADD\)</span> to a <span class="arithmatex">\(\mathsf{NC}^1\)</span> circuit.</p>
 </blockquote>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 7. <span class="arithmatex">\(TC^0\subseteq NC^1\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 7. <span class="arithmatex">\(TC^0\subseteq \mathsf{NC}^1\)</span>.</p>
 <blockquote>
 <p>Note that <span class="arithmatex">\(MAJ\le_T^{AC^0}ITADD\)</span> by computing the sum of the input bits and comparing to the threshold value.</p>
 </blockquote>
@@ -11845,8 +11891,6 @@ c_{ij}=\bigvee_{k=1}^ra_{ik}\land a_{kj}.
         <script src="../../../javascripts/config.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

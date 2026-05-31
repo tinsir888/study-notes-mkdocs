@@ -839,6 +839,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Quantum Application in Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11288,6 +11311,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Tempo libero
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11525,9 +11571,9 @@ x\in L\Rightarrow\Pr[(V,P)(x)=yes]\ge c\
 \land\
 x\not\in L\Rightarrow\Pr[(V,\hat P)(x)=yes]\le s\forall \hat P
 $$
-Define <span class="arithmatex">\(IP\)</span> as the class of all languages that has an interactive proof system with completeness <span class="arithmatex">\(3/4\)</span> and soundness error <span class="arithmatex">\(1/4\)</span>. We say that <span class="arithmatex">\(V\)</span> is the verifier and <span class="arithmatex">\(P\)</span> the prover of the interactive proof system <span class="arithmatex">\((V,P)\)</span>.</p>
+Define <span class="arithmatex">\(\mathsf{IP}\)</span> as the class of all languages that has an interactive proof system with completeness <span class="arithmatex">\(3/4\)</span> and soundness error <span class="arithmatex">\(1/4\)</span>. We say that <span class="arithmatex">\(V\)</span> is the verifier and <span class="arithmatex">\(P\)</span> the prover of the interactive proof system <span class="arithmatex">\((V,P)\)</span>.</p>
 <p>We can view <span class="arithmatex">\(\mathsf{NP}\)</span> as a proof system without randomness or interaction other than a single message.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 14. <span class="arithmatex">\(NP\subseteq IP\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 14. <span class="arithmatex">\(NP\subseteq \mathsf{IP}\)</span>.</p>
 <p>An example of a non-trivial interactive proof system for checking that two graph are not isomorphic (<span class="arithmatex">\(GNI\)</span>).</p>
 <p><del>GNI 问题：判断两图是否不是同构的。</del></p>
 <p>Given a graph <span class="arithmatex">\(G=(V,E)\)</span> and a permutation <span class="arithmatex">\(\pi:V\to V\)</span>. Denote by <span class="arithmatex">\(\pi(G)\)</span> the graph with vertex set <span class="arithmatex">\(V\)</span> and edge set <span class="arithmatex">\(\{(\pi(u),\pi(v))\vert(u,v)\in E\}\)</span>.</p>
@@ -11540,7 +11586,7 @@ Define <span class="arithmatex">\(IP\)</span> as the class of all languages that
 <p>Clearly, <span class="arithmatex">\(GNI\in coNP\)</span>. It is not known whether <span class="arithmatex">\(GNI\in NP\)</span>.</p>
 <p>A very interesting property of this proof system is that it is a so-called zero-knowledge proof.</p>
 <p><del>零知识证明，扯到密码学上去</del></p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 48. <span class="arithmatex">\(GNI\in IP\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 48. <span class="arithmatex">\(GNI\in \mathsf{IP}\)</span>.</p>
 <blockquote>
 <p>GMW Protocol for <span class="arithmatex">\(GNI\)</span>:</p>
 <ul>
@@ -11555,16 +11601,16 @@ Define <span class="arithmatex">\(IP\)</span> as the class of all languages that
 <p>Now since <span class="arithmatex">\(\hat P\)</span> chooses <span class="arithmatex">\(j\)</span> based only on <span class="arithmatex">\(H\)</span> we have <span class="arithmatex">\(\Pr[i=j]=1/2\)</span>. It follows that the completeness of the protocol is <span class="arithmatex">\(1\)</span> and the soundness error of the protocol is <span class="arithmatex">\(1/2\)</span>. The soundness error may be reduced to <span class="arithmatex">\(2^{-k}\)</span> by iterating protocol <span class="arithmatex">\(k\)</span> times.</p>
 </blockquote>
 <p>It is not known whether <span class="arithmatex">\(GNI\in NP\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 15. <span class="arithmatex">\(IP\in PSPACE\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 15. <span class="arithmatex">\(\mathsf{IP}\in \mathsf{PSPACE}\)</span>.</p>
 <blockquote>
 <p>Hard proof.</p>
 </blockquote>
 <h1 id="the-sumcheck-protocol">The Sumcheck Protocol</h1>
 <p>How to utilize the power of interactive proofs? <strong>Converting Boolean formulas to arithmetic formulas</strong> and exploit that polynomials can be evaluated on inputs outside the Boolean cube.</p>
 <p><strong>Arithmetization</strong>: The process of converting a Boolean formula into an arithmetic formula.</p>
-<p>By arithmetization, we can prove that <span class="arithmatex">\(P^{\#P}\subseteq IP\)</span>, where <span class="arithmatex">\(\#P\)</span> is a class capturing the complexity of <strong>counting the number of satisfying assignments of a Boolean formula</strong>.</p>
-<p>A weaker result: <span class="arithmatex">\(coNP\subseteq IP\)</span>.</p>
-<p>The method can be generalized to show <span class="arithmatex">\(PSPACE\subseteq IP\)</span>.</p>
+<p>By arithmetization, we can prove that <span class="arithmatex">\(P^{\#P}\subseteq \mathsf{IP}\)</span>, where <span class="arithmatex">\(\#P\)</span> is a class capturing the complexity of <strong>counting the number of satisfying assignments of a Boolean formula</strong>.</p>
+<p>A weaker result: <span class="arithmatex">\(coNP\subseteq \mathsf{IP}\)</span>.</p>
+<p>The method can be generalized to show <span class="arithmatex">\(\mathsf{PSPACE}\subseteq \mathsf{IP}\)</span>.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 46 (Arithmetization). Let <span class="arithmatex">\(\varphi\)</span> be a <span class="arithmatex">\(3CNF\)</span> formula with <span class="arithmatex">\(m\)</span> classes <span class="arithmatex">\(C_1,\cdots,C_m\)</span> and <span class="arithmatex">\(n\)</span> variables <span class="arithmatex">\(x_1,\cdots,x_n\)</span>. We define the arithmetic formula <span class="arithmatex">\(A_\varphi\)</span>, aka arithmetization of <span class="arithmatex">\(\varphi\)</span>, recursively. For a variable <span class="arithmatex">\(x_i\)</span> we let <span class="arithmatex">\(A(x_i)=x_i\)</span>, for a negated variable <span class="arithmatex">\(\neg x_i\)</span> we let <span class="arithmatex">\(A(\neg x_i)=1-x_i\)</span>. For a clause <span class="arithmatex">\(C_j=(\ell_{j,1}\lor\ell_{j,2}\lor\ell_{j,3})\)</span> we let
 $$
 A(C_j)=1-A(\neg C_j)=1-A(\neg \ell_{j,1})A(\neg \ell_{j,2})A(\neg \ell_{j,3})\
@@ -11576,7 +11622,7 @@ Finally, we define <span class="arithmatex">\(A_\varphi=\prod_{j=1}^mA(C_j)\)</s
 <div class="arithmatex">\[
 \#\varphi=\sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1A_\varphi(x_1,\cdots,x_n)
 \]</div>
-<p>Then we define an <strong>interactive proof</strong> for proving <span class="arithmatex">\(\#\varphi=K\)</span>, for given <span class="arithmatex">\(K\)</span>. For <span class="arithmatex">\(K=0\)</span> allow us prove that <span class="arithmatex">\(coNP\subseteq IP\)</span>. The protocol is called <strong>Sumcheck</strong> protocol:</p>
+<p>Then we define an <strong>interactive proof</strong> for proving <span class="arithmatex">\(\#\varphi=K\)</span>, for given <span class="arithmatex">\(K\)</span>. For <span class="arithmatex">\(K=0\)</span> allow us prove that <span class="arithmatex">\(coNP\subseteq \mathsf{IP}\)</span>. The protocol is called <strong>Sumcheck</strong> protocol:</p>
 <ul>
 <li>Input: Arithmetic formula <span class="arithmatex">\(F(x_1,\cdots,x_n)\)</span> of total degree <span class="arithmatex">\(d\)</span>, prime <span class="arithmatex">\(p\)</span>, number <span class="arithmatex">\(K\)</span>.</li>
 <li>Goal: Prove <span class="arithmatex">\(\sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1F(x_1,\cdots,x_n)\equiv K\mod p\)</span>.</li>
@@ -11589,13 +11635,13 @@ Finally, we define <span class="arithmatex">\(A_\varphi=\prod_{j=1}^mA(C_j)\)</s
 \sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1F(x_1,\cdots,x_n)\equiv K\mod p
 \]</div>
 <p>with completeness <span class="arithmatex">\(1\)</span> and soundness error at most <span class="arithmatex">\(nd/p\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 11. <span class="arithmatex">\(coNP\subseteq IP\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Corollary 11. <span class="arithmatex">\(coNP\subseteq \mathsf{IP}\)</span>.</p>
 <blockquote>
-<p>Show that <span class="arithmatex">\(\overline{3SAT}\in IP\)</span>.</p>
+<p>Show that <span class="arithmatex">\(\overline{3SAT}\in \mathsf{IP}\)</span>.</p>
 </blockquote>
 <h1 id="interactive-proof-for-polynomial-space">Interactive Proof for Polynomial Space</h1>
-<p><span class="arithmatex">\(PSPACE\subseteq IP\)</span></p>
-<p>Consider <span class="arithmatex">\(PSPACE\)</span>-complete <span class="arithmatex">\(TQBF\)</span>.</p>
+<p><span class="arithmatex">\(\mathsf{PSPACE}\subseteq \mathsf{IP}\)</span></p>
+<p>Consider <span class="arithmatex">\(\mathsf{PSPACE}\)</span>-complete <span class="arithmatex">\(TQBF\)</span>.</p>
 <p>Consider whether <span class="arithmatex">\(\psi=\exists x_1\in\{0,1\}\forall x_2\in\{0,1\}\cdots\exists x_n\in\{0,1\}\varphi(x_1,\cdots,x_n)\)</span> is true.</p>
 <p>WLOG, quantifiers are strictly alternating, <span class="arithmatex">\(\varphi\)</span> is a <span class="arithmatex">\(3CNF\)</span> formula with <span class="arithmatex">\(n\)</span> variables and <span class="arithmatex">\(m\)</span> clauses.</p>
 <p>Note that <span class="arithmatex">\(\psi\)</span> is true iff
@@ -11623,7 +11669,7 @@ The extension of the Sumcheck protocol:</p>
 <p>......</p>
 </li>
 </ul>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 49. <span class="arithmatex">\(IP=PSPACE\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 49. <span class="arithmatex">\(\mathsf{IP}=\mathsf{PSPACE}\)</span>.</p>
 <p>Two interesting observation:</p>
 <ol>
 <li>The completeness of the extended Sumcheck protocol is <span class="arithmatex">\(1\)</span>. Any interactive proof system may be converted into an equivalent interactive proof system with completeness <span class="arithmatex">\(1\)</span>.</li>
@@ -11734,8 +11780,6 @@ The extension of the Sumcheck protocol:</p>
         <script src="../../../javascripts/config.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

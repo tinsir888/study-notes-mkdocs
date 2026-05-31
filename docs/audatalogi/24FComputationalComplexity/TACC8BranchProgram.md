@@ -14,9 +14,9 @@ categories:
 abbrlink: 5782b241
 ---
 
-$NC^1\subseteq L/poly\subseteq NL/poly\subseteq AC^1$.
+$\mathsf{NC}^1\subseteq L/poly\subseteq \mathsf{NL}/poly\subseteq AC^1$.
 
-The model of **branching programs** that give a precise characterization of $L/poly$ and $NL/poly$.
+The model of **branching programs** that give a precise characterization of $L/poly$ and $\mathsf{NL}/poly$.
 
 Deterministic / non-deterministic branching program
 
@@ -71,9 +71,9 @@ Then define complexity classes of languages computed by **size-bounded** branchi
 
 :book:Definition 34. Let $S:\mathbb N\to\mathbb N$. $BPSIZE(S(n))$ is the class of languages computed by families of deterministic Boolean branching program of size $O(S(n))$. Similarly, $NPBSIZE(S(n))$ is the class of languages computed by families of non-deterministic Boolean branching program of size $O(S(n))$.
 
-:thinking:Theorem 43. $L/poly=BPSIZE(n^{O(1)}),NL/poly=NBPSIZE(n^{O(1)})$.
+:thinking:Theorem 43. $L/poly=BPSIZE(n^{O(1)}),\mathsf{NL}/poly=NBPSIZE(n^{O(1)})$.
 
-:thinking:Theorem 44. $L=U_L-BPSIZE(n^{O(1)}),NL=U_L-NBPSIZE(n^{O(1)})$.
+:thinking:Theorem 44. $L=\mathsf{U}_L-BPSIZE(n^{O(1)}),\mathsf{NL}=\mathsf{U}_L-NBPSIZE(n^{O(1)})$.
 
 # Programs over Monoids and Bounded Width Branching Programs
 
@@ -95,7 +95,7 @@ It's easy to show $AC^0\subseteq BWBP$ (:question:)
 
 Conjecture: $MAJ\not\in BWBP$.
 
-Fact: $BWBP=NC^1$.
+Fact: $BWBP=\mathsf{NC}^1$.
 
 Consider computation over finite algebraic structures, finite groups.
 
@@ -131,15 +131,15 @@ A program $P$ over $M$ with $n$ inputs define a Boolean function $f:\{0,1\}^n\to
 
 
 
-:thinking:Proposition 10: Let $f$ be a Boolean function computed by a family of polynomial length programs over a finite monoid $M$. Then $f\in NC^1$.
+:thinking:Proposition 10: Let $f$ be a Boolean function computed by a family of polynomial length programs over a finite monoid $M$. Then $f\in \mathsf{NC}^1$.
 
-:thinking:Proposition 11. $BWBP\subseteq NC^1$.
+:thinking:Proposition 11. $BWBP\subseteq \mathsf{NC}^1$.
 
 # Barrington's Theorem
 
-Any language in $NC^1$ can be computed by polynomial size constant width branching programs.
+Any language in $\mathsf{NC}^1$ can be computed by polynomial size constant width branching programs.
 
-Theorem 45 (Barrington's Theorem). $BWBP=NC^1$.
+Theorem 45 (Barrington's Theorem). $BWBP=\mathsf{NC}^1$.
 
 
 

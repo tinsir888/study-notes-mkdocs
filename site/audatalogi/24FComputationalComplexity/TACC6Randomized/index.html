@@ -839,6 +839,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Quantum Application in Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11329,6 +11352,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Tempo libero
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11578,10 +11624,10 @@
 <li>Constant factor saving in space</li>
 </ul>
 <p>Because of hardness-based pseudo-random generator.</p>
-<p>Exponential time: <span class="arithmatex">\(E=\mathsf{DTIME}(2^{O(n)})=U_L-SIZE(2^{O(n)})\)</span>. (By corollary 2)</p>
-<p>Recall that <span class="arithmatex">\(SIZE(2^n/n)\)</span> includes every Boolean function on <span class="arithmatex">\(n\)</span> variables, making non-uniform inclusion <span class="arithmatex">\(E\subseteq SIZE(2^{O(n)})\)</span>.</p>
-<p>Corresponding randomized complexity class <span class="arithmatex">\(BPP\)</span>.</p>
-<p>Theorem 33 (Impagliazzo and Wigderson). If there exists <span class="arithmatex">\(L\in E\)</span> s.t. for every <span class="arithmatex">\(n\)</span> and every Boolean circuit <span class="arithmatex">\(C\)</span> computing <span class="arithmatex">\(L\)</span> on input length <span class="arithmatex">\(n\)</span>, the size of <span class="arithmatex">\(C\)</span> must be <span class="arithmatex">\(2^{\Omega(n)}\)</span>, then <span class="arithmatex">\(P=BPP\)</span>.</p>
+<p>Exponential time: <span class="arithmatex">\(E=\mathsf{DTIME}(2^{O(n)})=\mathsf{U}_L-\mathsf{SIZE}(2^{O(n)})\)</span>. (By corollary 2)</p>
+<p>Recall that <span class="arithmatex">\(\mathsf{SIZE}(2^n/n)\)</span> includes every Boolean function on <span class="arithmatex">\(n\)</span> variables, making non-uniform inclusion <span class="arithmatex">\(E\subseteq \mathsf{SIZE}(2^{O(n)})\)</span>.</p>
+<p>Corresponding randomized complexity class <span class="arithmatex">\(\mathsf{BPP}\)</span>.</p>
+<p>Theorem 33 (Impagliazzo and Wigderson). If there exists <span class="arithmatex">\(L\in E\)</span> s.t. for every <span class="arithmatex">\(n\)</span> and every Boolean circuit <span class="arithmatex">\(C\)</span> computing <span class="arithmatex">\(L\)</span> on input length <span class="arithmatex">\(n\)</span>, the size of <span class="arithmatex">\(C\)</span> must be <span class="arithmatex">\(2^{\Omega(n)}\)</span>, then <span class="arithmatex">\(\mathsf{P}=\mathsf{BPP}\)</span>.</p>
 <h1 id="probabilistic-turing-machines">Probabilistic Turing Machines</h1>
 <p>Give a probabilistic Turing machine an extra read-only and read-once tape which is pre-initialized with uniform and independent random bits. The tape head is allow to only stop or move forward.</p>
 <p>Thus everything related to the Turing machines becomes a random variable.</p>
@@ -11621,11 +11667,11 @@ ZPP=ZPTIME(n^{O(1)})\\
 RP=RTIME(n^{O(1)})\\
 \]</div>
 <div class="arithmatex">\[
-BPP=BPTIME(n^{O(1)})
+\mathsf{BPP}=BPTIME(n^{O(1)})
 \]</div>
-<p>Trivially, <span class="arithmatex">\(L\subseteq ZPL\subseteq RL\subseteq BPL\)</span>; <span class="arithmatex">\(P\subseteq ZPP\subseteq RP\subseteq BPP\)</span>.</p>
-<p>It's also easy to see that <span class="arithmatex">\(RL\subseteq NL\)</span> and <span class="arithmatex">\(RP\subseteq NP\)</span>.</p>
-<p>Simple upper bound for <span class="arithmatex">\(BPP\)</span> (not tight): similar to theorem 10, <span class="arithmatex">\(BPP\subseteq PSPACE\)</span>.</p>
+<p>Trivially, <span class="arithmatex">\(L\subseteq ZPL\subseteq RL\subseteq BPL\)</span>; <span class="arithmatex">\(\mathsf{P}\subseteq ZPP\subseteq RP\subseteq \mathsf{BPP}\)</span>.</p>
+<p>It's also easy to see that <span class="arithmatex">\(RL\subseteq \mathsf{NL}\)</span> and <span class="arithmatex">\(RP\subseteq NP\)</span>.</p>
+<p>Simple upper bound for <span class="arithmatex">\(\mathsf{BPP}\)</span> (not tight): similar to theorem 10, <span class="arithmatex">\(\mathsf{BPP}\subseteq \mathsf{PSPACE}\)</span>.</p>
 <p>For <span class="arithmatex">\(BPL\)</span>, <span class="arithmatex">\(BPL\subseteq \mathsf{DSPACE}(\log^{3/2}n)\)</span>.</p>
 <h1 id="success-amplification">Success Amplification</h1>
 <p>Error probability of <span class="arithmatex">\(1/4\)</span> is large, but we can reduce it by independently running multiple times.</p>
@@ -11726,8 +11772,8 @@ BPP=BPTIME(n^{O(1)})
 <p><del>Det kan jeg ikke forstår</del></p>
 </blockquote>
 <h1 id="an-alternative-characterization-of-time-bounded-classes">An Alternative Characterization of Time Bounded Classes</h1>
-<p>We have alternative characterization of <span class="arithmatex">\(BPP\)</span>. Also there are similar alternatives of <span class="arithmatex">\(ZPP\)</span> and <span class="arithmatex">\(RP\)</span>.</p>
-<p>Proposition 4. Let <span class="arithmatex">\(L\)</span> be a language. Then <span class="arithmatex">\(L\in BPP\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in P\)</span> s.t. <span class="arithmatex">\(\forall x\)</span>:</p>
+<p>We have alternative characterization of <span class="arithmatex">\(\mathsf{BPP}\)</span>. Also there are similar alternatives of <span class="arithmatex">\(ZPP\)</span> and <span class="arithmatex">\(RP\)</span>.</p>
+<p>Proposition 4. Let <span class="arithmatex">\(L\)</span> be a language. Then <span class="arithmatex">\(L\in \mathsf{BPP}\)</span> iff there is a polynomial <span class="arithmatex">\(q\)</span> and another language <span class="arithmatex">\(L'\in P\)</span> s.t. <span class="arithmatex">\(\forall x\)</span>:</p>
 <div class="arithmatex">\[
 x\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge\frac{3}{4}\\
 \]</div>
@@ -11738,14 +11784,14 @@ x\not\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\not\in L']\ge
 <p>Using success amplification a randomized algorithm using <span class="arithmatex">\(R\)</span> random bits and having error probability less than <span class="arithmatex">\(1/4\)</span> can be transformed to a randomized algorithm using <span class="arithmatex">\(kR\)</span> random bits and having error probability less than <span class="arithmatex">\(\exp(-k/8)\)</span> by running <span class="arithmatex">\(k\)</span> trials and taking the majority vote.</p>
 <h1 id="randomized-computation-and-the-polynomial-time-hierarchy">Randomized Computation and the Polynomial-time Hierarchy</h1>
 <p>By definition, <span class="arithmatex">\(RP\subseteq NP\)</span>.</p>
-<p>But we don't know whether <span class="arithmatex">\(BPP\subseteq NP\)</span> or <span class="arithmatex">\(NP\subseteq BPP\)</span>.</p>
-<p>We just guess: <span class="arithmatex">\(BPP=P\)</span> thus <span class="arithmatex">\(BPP\subseteq NP\)</span>.</p>
-<p>But we can prove that <span class="arithmatex">\(BPP\)</span> is contained in <strong>the second level of polynomial-time hierarchy</strong>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 36. <span class="arithmatex">\(BPP\subseteq \Sigma_2^P\cap\Pi_2^P\)</span>.</p>
+<p>But we don't know whether <span class="arithmatex">\(\mathsf{BPP}\subseteq NP\)</span> or <span class="arithmatex">\(NP\subseteq \mathsf{BPP}\)</span>.</p>
+<p>We just guess: <span class="arithmatex">\(\mathsf{BPP}=P\)</span> thus <span class="arithmatex">\(\mathsf{BPP}\subseteq NP\)</span>.</p>
+<p>But we can prove that <span class="arithmatex">\(\mathsf{BPP}\)</span> is contained in <strong>the second level of polynomial-time hierarchy</strong>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 36. <span class="arithmatex">\(\mathsf{BPP}\subseteq \Sigma_2^P\cap\Pi_2^P\)</span>.</p>
 <blockquote>
-<p>Prove that <span class="arithmatex">\(BPP\subseteq\Sigma_2^P\)</span>. From this also we get <span class="arithmatex">\(BPP\subseteq\Pi_2^P\)</span>.</p>
+<p>Prove that <span class="arithmatex">\(\mathsf{BPP}\subseteq\Sigma_2^P\)</span>. From this also we get <span class="arithmatex">\(\mathsf{BPP}\subseteq\Pi_2^P\)</span>.</p>
 <ul>
-<li>Let <span class="arithmatex">\(L\in BPP\)</span>. We have a polynomial <span class="arithmatex">\(q(n)\)</span> and a language <span class="arithmatex">\(L'\in P\)</span> s.t. for all <span class="arithmatex">\(x\)</span> we have</li>
+<li>Let <span class="arithmatex">\(L\in \mathsf{BPP}\)</span>. We have a polynomial <span class="arithmatex">\(q(n)\)</span> and a language <span class="arithmatex">\(L'\in P\)</span> s.t. for all <span class="arithmatex">\(x\)</span> we have</li>
 </ul>
 <p>$$
   x\in L\Rightarrow\Pr_{y\in{0,1}^{q(|x|)}}[\langle x,y\rangle\in L']\ge1-\frac{1}{2q(|x|)},\
@@ -11777,7 +11823,7 @@ x\not\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\not\in L']\ge
 </blockquote>
 <h1 id="randomized-computation-and-boolean-circuits">Randomized Computation and Boolean Circuits</h1>
 <p>Everything that can be computed in polynomial-time by randomized algorithm can also be computed using Boolean circuits.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 37. (Adleman's Theorem). <span class="arithmatex">\(BPP\subseteq P/poly\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 37. (Adleman's Theorem). <span class="arithmatex">\(\mathsf{BPP}\subseteq \mathsf{P/poly}\)</span>.</p>
 <p><del>证明也不太懂</del></p>
 
 
@@ -11884,8 +11930,6 @@ x\not\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\not\in L']\ge
         <script src="../../../javascripts/config.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

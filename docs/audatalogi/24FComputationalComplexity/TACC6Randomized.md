@@ -25,13 +25,13 @@ Current consensus: Randomization only gives
 
 Because of hardness-based pseudo-random generator.
 
-Exponential time: $E=\mathsf{DTIME}(2^{O(n)})=U_L-SIZE(2^{O(n)})$. (By corollary 2)
+Exponential time: $E=\mathsf{DTIME}(2^{O(n)})=\mathsf{U}_L-\mathsf{SIZE}(2^{O(n)})$. (By corollary 2)
 
-Recall that $SIZE(2^n/n)$ includes every Boolean function on $n$ variables, making non-uniform inclusion $E\subseteq SIZE(2^{O(n)})$.
+Recall that $\mathsf{SIZE}(2^n/n)$ includes every Boolean function on $n$ variables, making non-uniform inclusion $E\subseteq \mathsf{SIZE}(2^{O(n)})$.
 
-Corresponding randomized complexity class $BPP$.
+Corresponding randomized complexity class $\mathsf{BPP}$.
 
-Theorem 33 (Impagliazzo and Wigderson). If there exists $L\in E$ s.t. for every $n$ and every Boolean circuit $C$ computing $L$ on input length $n$, the size of $C$ must be $2^{\Omega(n)}$, then $P=BPP$.
+Theorem 33 (Impagliazzo and Wigderson). If there exists $L\in E$ s.t. for every $n$ and every Boolean circuit $C$ computing $L$ on input length $n$, the size of $C$ must be $2^{\Omega(n)}$, then $\mathsf{P}=\mathsf{BPP}$.
 
 # Probabilistic Turing Machines
 
@@ -87,14 +87,14 @@ RP=RTIME(n^{O(1)})\\
 $$
 
 $$
-BPP=BPTIME(n^{O(1)})
+\mathsf{BPP}=BPTIME(n^{O(1)})
 $$
 
-Trivially, $L\subseteq ZPL\subseteq RL\subseteq BPL$; $P\subseteq ZPP\subseteq RP\subseteq BPP$.
+Trivially, $L\subseteq ZPL\subseteq RL\subseteq BPL$; $\mathsf{P}\subseteq ZPP\subseteq RP\subseteq \mathsf{BPP}$.
 
-It's also easy to see that $RL\subseteq NL$ and $RP\subseteq NP$.
+It's also easy to see that $RL\subseteq \mathsf{NL}$ and $RP\subseteq NP$.
 
-Simple upper bound for $BPP$ (not tight): similar to theorem 10, $BPP\subseteq PSPACE$.
+Simple upper bound for $\mathsf{BPP}$ (not tight): similar to theorem 10, $\mathsf{BPP}\subseteq \mathsf{PSPACE}$.
 
 For $BPL$, $BPL\subseteq \mathsf{DSPACE}(\log^{3/2}n)$.
 
@@ -244,9 +244,9 @@ $$
 
 # An Alternative Characterization of Time Bounded Classes
 
-We have alternative characterization of $BPP$. Also there are similar alternatives of $ZPP$ and $RP$.
+We have alternative characterization of $\mathsf{BPP}$. Also there are similar alternatives of $ZPP$ and $RP$.
 
-Proposition 4. Let $L$ be a language. Then $L\in BPP$ iff there is a polynomial $q$ and another language $L'\in P$ s.t. $\forall x$:
+Proposition 4. Let $L$ be a language. Then $L\in \mathsf{BPP}$ iff there is a polynomial $q$ and another language $L'\in P$ s.t. $\forall x$:
 
 $$
 x\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge\frac{3}{4}\\
@@ -264,17 +264,17 @@ Using success amplification a randomized algorithm using $R$ random bits and hav
 
 By definition, $RP\subseteq NP$.
 
-But we don't know whether $BPP\subseteq NP$ or $NP\subseteq BPP$.
+But we don't know whether $\mathsf{BPP}\subseteq NP$ or $NP\subseteq \mathsf{BPP}$.
 
-We just guess: $BPP=P$ thus $BPP\subseteq NP$.
+We just guess: $\mathsf{BPP}=P$ thus $\mathsf{BPP}\subseteq NP$.
 
-But we can prove that $BPP$ is contained in **the second level of polynomial-time hierarchy**.
+But we can prove that $\mathsf{BPP}$ is contained in **the second level of polynomial-time hierarchy**.
 
-:dart:Theorem 36. $BPP\subseteq \Sigma_2^P\cap\Pi_2^P$.
+:dart:Theorem 36. $\mathsf{BPP}\subseteq \Sigma_2^P\cap\Pi_2^P$.
 
-> Prove that $BPP\subseteq\Sigma_2^P$. From this also we get $BPP\subseteq\Pi_2^P$.
+> Prove that $\mathsf{BPP}\subseteq\Sigma_2^P$. From this also we get $\mathsf{BPP}\subseteq\Pi_2^P$.
 >
-> - Let $L\in BPP$. We have a polynomial $q(n)$ and a language $L'\in P$ s.t. for all $x$ we have
+> - Let $L\in \mathsf{BPP}$. We have a polynomial $q(n)$ and a language $L'\in P$ s.t. for all $x$ we have
 >
 >   $$
 >   x\in L\Rightarrow\Pr_{y\in\{0,1\}^{q(|x|)}}[\langle x,y\rangle\in L']\ge1-\frac{1}{2q(|x|)},\\
@@ -314,7 +314,7 @@ But we can prove that $BPP$ is contained in **the second level of polynomial-tim
 
 Everything that can be computed in polynomial-time by randomized algorithm can also be computed using Boolean circuits.
 
-:dart:Theorem 37. (Adleman's Theorem). $BPP\subseteq P/poly$.
+:dart:Theorem 37. (Adleman's Theorem). $\mathsf{BPP}\subseteq \mathsf{P/poly}$.
 
 ~~证明也不太懂~~
 

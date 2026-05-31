@@ -58,20 +58,20 @@ Implicit negation such as $\overline{x_i}$ can be made explicit by introducing a
 
 If we want to apply non-Boolean alphabet, we just encode these letters into $\{0,1\}^k$ for some fixed $k$.
 
-:book:Definition of $SIZE$. Let $S:\mathbb N\to\mathbb N$. $SIZE(S(n))$ is the class of languages computed by family of Boolean circuit of size $O(S(n))$,
+:book:Definition of $\mathsf{SIZE}$. Let $S:\mathbb N\to\mathbb N$. $\mathsf{SIZE}(S(n))$ is the class of languages computed by family of Boolean circuit of size $O(S(n))$,
 
 We interested in class of languages computed by a family of polynomial size.
 
 $$
-P/poly=\bigcup_{k>0}SIZE(n^k).
+\mathsf{P/poly}=\bigcup_{k>0}\mathsf{SIZE}(n^k).
 $$
 
 :book:Definition of **log-space/polynomial-time uniform**. Let $(C_n)_{n=0}^\infty$ be a family of Boolean circuits of size $O(S(n))$. We say that the family is *log-space uniform* if the function $1^n\mapsto C_n$ is computable in space $O(\log S(n))$. The family is *polynomial-time uniform* if the function is computable in time $(S(n))^{O(1)}$.
 
 :book:Definition of complexity classes of languages computed by families of Boolean circuits. Let $S:\mathbb N\to\mathbb N$.
 
-- $U_L-SIZE(S(n))$ is the class of languages computed by log-space uniform families of Boolean circuits of size $O(S(n))$.
-- $U_P-SIZE(S(n))$ is the class of languages computed by polynomial-time uniform families of Boolean circuits of size $O(S(n))$.
+- $\mathsf{U}_L-\mathsf{SIZE}(S(n))$ is the class of languages computed by log-space uniform families of Boolean circuits of size $O(S(n))$.
+- $U_P-\mathsf{SIZE}(S(n))$ is the class of languages computed by polynomial-time uniform families of Boolean circuits of size $O(S(n))$.
 
 # Boolean Formulas
 
@@ -133,7 +133,7 @@ Shannon proved that $L(n)=\Theta(2^n/n)$.
 
 Oblivious Turing machine can efficiently be converted to a family of Boolean circuits.
 
-:thinking:Proposition 1. Let $T(n)\ge n$ and suppose $L$ is computed by a $O(T(n))$ time-bounded oblivious Turing machine. Then $L\in SIZE(T(n))$.
+:thinking:Proposition 1. Let $T(n)\ge n$ and suppose $L$ is computed by a $O(T(n))$ time-bounded oblivious Turing machine. Then $L\in \mathsf{SIZE}(T(n))$.
 
 > Any configuration of oblivious Turing machine on input $x$ can be encoded by a binary string of length $O(T(n))$ s.t. every symbol of every work tape corresponds to a fixed number of positions of the encoding.
 >
@@ -141,13 +141,13 @@ Oblivious Turing machine can efficiently be converted to a family of Boolean cir
 
 Proposition 1 and Theorem 4 result in some inclusion relation.
 
-:dart:Theorem 16. $\mathsf{DTIME}(T(n))\subseteq SIZE(T(n)\log T(n))$ for $T(n)\ge n$.
+:dart:Theorem 16. $\mathsf{DTIME}(T(n))\subseteq \mathsf{SIZE}(T(n)\log T(n))$ for $T(n)\ge n$.
 
 Turing machine is supplied with an *advice string* in addition to the input, where the advice string is specific to the input length.
 
 :book:Definition of **Advice classes**. Let $\mathcal C$ be a class of languages and $f:\mathbb N\to\mathbb N$ a function. Define $\mathcal C/f(n)$ to be the class of languages $L$ for which there exist $L'\in\mathcal C$ satisfying that for all input lengths $n$, there is an **advice string** $y_n$ of length $f(n)$ s.t. for all $x$ of length $n$, we have $x\in L$ iff $\langle x,y_n\rangle\in L'$. For a family $\mathcal F$ of functions $F:\mathbb N\to\mathbb N$, we let $\mathcal C/\mathcal F=\bigcup_{f\in\mathcal F}\mathcal C/f(n)$.
 
-:dart:Theorem 17. Let $S(n)\ge n$. Then $SIZE(S(n))\subseteq \mathsf{DTIME}(S(n)^2)/O(S(n)\log S(n))$.
+:dart:Theorem 17. Let $S(n)\ge n$. Then $\mathsf{SIZE}(S(n))\subseteq \mathsf{DTIME}(S(n)^2)/O(S(n)\log S(n))$.
 
 > The advice string (length $n$) is an encoding of the circuit $C_n$, which is a string of length $O(S(n)\log S(n))$.
 >
@@ -155,14 +155,14 @@ Turing machine is supplied with an *advice string* in addition to the input, whe
 >
 > To evaluate each gate we need to retrieve the computed value of its inputs, which will take $O(S(n))$ time. Doing this for all $O(S(n))$ gates leads to $O(S(n)^2)$.
 
-:dart:Corollary 1. Let $T(n)\ge n$. Then $\mathsf{DTIME}(T(n)^{O(1)})/T(n)^{O(1)}=SIZE(T(n)^{O(1)})$
+:dart:Corollary 1. Let $T(n)\ge n$. Then $\mathsf{DTIME}(T(n)^{O(1)})/T(n)^{O(1)}=\mathsf{SIZE}(T(n)^{O(1)})$
 
 > Proof by Definition of advice class and Theorem 17.
 
-:dart:Theorem 18. Let $T(n)\ge n$ and suppose the function $1^n\mapsto T(n)$ is computable in space $O(\log T(n))$. Then $\mathsf{DTIME}(T(n))\subseteq U_L-SIZE(T(n)\log T(n))$.
+:dart:Theorem 18. Let $T(n)\ge n$ and suppose the function $1^n\mapsto T(n)$ is computable in space $O(\log T(n))$. Then $\mathsf{DTIME}(T(n))\subseteq \mathsf{U}_L-\mathsf{SIZE}(T(n)\log T(n))$.
 
-:dart:Theorem 19. Let $(S(n))\ge n$. Then $U_L-SIZE(S(n))\subseteq \mathsf{DTIME}(S(n)^{O(1)})$.
+:dart:Theorem 19. Let $(S(n))\ge n$. Then $\mathsf{U}_L-\mathsf{SIZE}(S(n))\subseteq \mathsf{DTIME}(S(n)^{O(1)})$.
 
-:dart:Corollary 2. Let $T(n)\ge n$ and suppose that function $1^n\mapsto T(n)$ is computable in space $O(\log T(n))$. Then $\mathsf{DTIME}(T(n)^{O(1)})=U_L-SIZE(T(n)^{O(1)})$.
+:dart:Corollary 2. Let $T(n)\ge n$ and suppose that function $1^n\mapsto T(n)$ is computable in space $O(\log T(n))$. Then $\mathsf{DTIME}(T(n)^{O(1)})=\mathsf{U}_L-\mathsf{SIZE}(T(n)^{O(1)})$.
 
-In particular, we have $P=U_L-SIZE(n^{O(1)})$.
+In particular, we have $\mathsf{P}=\mathsf{U}_L-\mathsf{SIZE}(n^{O(1)})$.

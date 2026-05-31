@@ -839,6 +839,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Quantum Application in Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11338,6 +11361,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Tempo libero
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11588,8 +11634,8 @@
 
 
 
-<p><span class="arithmatex">\(NC^1\subseteq L/poly\subseteq NL/poly\subseteq AC^1\)</span>.</p>
-<p>The model of <strong>branching programs</strong> that give a precise characterization of <span class="arithmatex">\(L/poly\)</span> and <span class="arithmatex">\(NL/poly\)</span>.</p>
+<p><span class="arithmatex">\(\mathsf{NC}^1\subseteq L/poly\subseteq \mathsf{NL}/poly\subseteq AC^1\)</span>.</p>
+<p>The model of <strong>branching programs</strong> that give a precise characterization of <span class="arithmatex">\(L/poly\)</span> and <span class="arithmatex">\(\mathsf{NL}/poly\)</span>.</p>
 <p>Deterministic / non-deterministic branching program</p>
 <h1 id="boolean-branching-program">Boolean Branching Program</h1>
 <h2 id="deterministic">Deterministic</h2>
@@ -11624,8 +11670,8 @@
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 33. The <strong>size of a branching program</strong> is the number of nodes in the branching program. The <strong>length of a branching program</strong> is the length of the longest path from <span class="arithmatex">\(s\)</span> to a node to out degree <span class="arithmatex">\(0\)</span>.</p>
 <p>Then define complexity classes of languages computed by <strong>size-bounded</strong> branching programs.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 34. Let <span class="arithmatex">\(S:\mathbb N\to\mathbb N\)</span>. <span class="arithmatex">\(BPSIZE(S(n))\)</span> is the class of languages computed by families of deterministic Boolean branching program of size <span class="arithmatex">\(O(S(n))\)</span>. Similarly, <span class="arithmatex">\(NPBSIZE(S(n))\)</span> is the class of languages computed by families of non-deterministic Boolean branching program of size <span class="arithmatex">\(O(S(n))\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Theorem 43. <span class="arithmatex">\(L/poly=BPSIZE(n^{O(1)}),NL/poly=NBPSIZE(n^{O(1)})\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Theorem 44. <span class="arithmatex">\(L=U_L-BPSIZE(n^{O(1)}),NL=U_L-NBPSIZE(n^{O(1)})\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Theorem 43. <span class="arithmatex">\(L/poly=BPSIZE(n^{O(1)}),\mathsf{NL}/poly=NBPSIZE(n^{O(1)})\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Theorem 44. <span class="arithmatex">\(L=\mathsf{U}_L-BPSIZE(n^{O(1)}),\mathsf{NL}=\mathsf{U}_L-NBPSIZE(n^{O(1)})\)</span>.</p>
 <h1 id="programs-over-monoids-and-bounded-width-branching-programs">Programs over Monoids and Bounded Width Branching Programs</h1>
 <p>monoid 含幺半群</p>
 <p>What if we <strong>restrict the width</strong> of branching programs?</p>
@@ -11636,7 +11682,7 @@
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 37. <span class="arithmatex">\(BWBP\)</span> is the class of languages computed by families of Boolean branching programs <strong>polynomial size</strong> and <strong>width</strong> <span class="arithmatex">\(O(1)\)</span>.</p>
 <p>It's easy to show <span class="arithmatex">\(AC^0\subseteq BWBP\)</span> (<img alt="❓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2753.svg" title=":question:" />)</p>
 <p>Conjecture: <span class="arithmatex">\(MAJ\not\in BWBP\)</span>.</p>
-<p>Fact: <span class="arithmatex">\(BWBP=NC^1\)</span>.</p>
+<p>Fact: <span class="arithmatex">\(BWBP=\mathsf{NC}^1\)</span>.</p>
 <p>Consider computation over finite algebraic structures, finite groups.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 38. A <strong>monoid</strong> is a set <span class="arithmatex">\(M\)</span> closed under an associative binary operation s.t. <span class="arithmatex">\(M\)</span> has an identity element:</p>
 <ol>
@@ -11661,11 +11707,11 @@
 <li>Finally <span class="arithmatex">\(f(x)=1\)</span> iff <span class="arithmatex">\(P(x)\in A\)</span>.</li>
 </ul>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 40. The length of a program <span class="arithmatex">\(P\)</span> is the number of instructions of <span class="arithmatex">\(P\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 10: Let <span class="arithmatex">\(f\)</span> be a Boolean function computed by a family of polynomial length programs over a finite monoid <span class="arithmatex">\(M\)</span>. Then <span class="arithmatex">\(f\in NC^1\)</span>.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 11. <span class="arithmatex">\(BWBP\subseteq NC^1\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 10: Let <span class="arithmatex">\(f\)</span> be a Boolean function computed by a family of polynomial length programs over a finite monoid <span class="arithmatex">\(M\)</span>. Then <span class="arithmatex">\(f\in \mathsf{NC}^1\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 11. <span class="arithmatex">\(BWBP\subseteq \mathsf{NC}^1\)</span>.</p>
 <h1 id="barringtons-theorem">Barrington's Theorem</h1>
-<p>Any language in <span class="arithmatex">\(NC^1\)</span> can be computed by polynomial size constant width branching programs.</p>
-<p>Theorem 45 (Barrington's Theorem). <span class="arithmatex">\(BWBP=NC^1\)</span>.</p>
+<p>Any language in <span class="arithmatex">\(\mathsf{NC}^1\)</span> can be computed by polynomial size constant width branching programs.</p>
+<p>Theorem 45 (Barrington's Theorem). <span class="arithmatex">\(BWBP=\mathsf{NC}^1\)</span>.</p>
 <p>By constructing polynomial length programs over group <span class="arithmatex">\(S_5\)</span> of permutations of <span class="arithmatex">\(5\)</span> elements.</p>
 <p>The width is fixed <span class="arithmatex">\(5\)</span>.</p>
 <p>We denote the identity permutation by <span class="arithmatex">\(e\in S_5\)</span>.</p>
@@ -11785,8 +11831,6 @@
         <script src="../../../javascripts/config.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

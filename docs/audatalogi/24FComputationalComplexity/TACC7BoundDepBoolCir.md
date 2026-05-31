@@ -22,21 +22,21 @@ It's a model of *parallel* computation where depth corresponds to parallel time.
 
 Parallel model of random access machine PRAM ~~痛苦的计算几何课的回忆~~
 
-:book:Definition of $SIZE-DEPTH$. Let $S:\mathbb N\to\mathbb N$ and $d:\mathbb N\to\mathbb N$. $SIZE-DEPTH(S(n),d(n))$ is the class of languages computed by families of Boolean circuits of size $O(S(n))$ and depth $O(d(n))$.
+:book:Definition of $\mathsf{SIZE}-DEPTH$. Let $S:\mathbb N\to\mathbb N$ and $d:\mathbb N\to\mathbb N$. $\mathsf{SIZE}-DEPTH(S(n),d(n))$ is the class of languages computed by families of Boolean circuits of size $O(S(n))$ and depth $O(d(n))$.
 
-:book:Definition of $NC^i$. For $i\ge0$, define $NC^i=SIZE-DEPTH(n^{O(1)},\log^i(n))$, and further define $NC=\cup_{i\ge1}NC^i$.
+:book:Definition of $\mathsf{NC}^i$. For $i\ge0$, define $\mathsf{NC}^i=\mathsf{SIZE}-DEPTH(n^{O(1)},\log^i(n))$, and further define $\mathsf{NC}=\cup_{i\ge1}\mathsf{NC}^i$.
 
 These circuit classes is restrict to polynomial size and **poly-logarithmic** depth.
 
-By definition, $NC\subseteq P/poly$, hence $U_L-NC\subseteq P$.
+By definition, $\mathsf{NC}\subseteq \mathsf{P/poly}$, hence $\mathsf{U}_L-\mathsf{NC}\subseteq P$.
 
 !!! info
 
-    为什么呢？回顾定义 $P/poly=\bigcup_{k\gt0}SIZE(n^k)$，发现它的多了一个深度的限制。
+    为什么呢？回顾定义 $\mathsf{P/poly}=\bigcup_{k\gt0}\mathsf{SIZE}(n^k)$，发现它的多了一个深度的限制。
 
 
 
-In fact $P\not\subseteq NC$ is expected to hold. This means not all languages in $P$ can benefit greatly from parallelism.
+In fact $\mathsf{P}\not\subseteq \mathsf{NC}$ is expected to hold. This means not all languages in $\mathsf{P}$ can benefit greatly from parallelism.
 
 # General Boolean Circuits
 
@@ -106,13 +106,13 @@ $$
 
 :book:Definition of $AC^i$. For $i\ge0$, $AC^i$ is the class of languages computed by families of Boolean circuits of polynomial size and depth $O(\log^in)$ using **unbounded fanin** $AND$ and $OR$ gates.
 
-$AC^i$ is similar to $NC^i$.
+$AC^i$ is similar to $\mathsf{NC}^i$.
 
-:thinking:Proposition 5. Hierarchy relation between $NC$ and $AC$. $NC^i\subseteq AC^i\subseteq NC^{i+1}$ for all $i\ge0$.
+:thinking:Proposition 5. Hierarchy relation between $\mathsf{NC}$ and $AC$. $\mathsf{NC}^i\subseteq AC^i\subseteq \mathsf{NC}^{i+1}$ for all $i\ge0$.
 
-> $NC^i\subseteq AC^i$ is obtained by definition.
+> $\mathsf{NC}^i\subseteq AC^i$ is obtained by definition.
 >
-> For $AC^i\subseteq NC^{i+1}$: $AND$ and $OR$ gates of fanin $k$ can be replaced by a binary tree of depth $\lceil\log_2k\rceil$ of corresponding fanin $2$ gates. Thus the depth increases by a factor $O(\log n)$.
+> For $AC^i\subseteq \mathsf{NC}^{i+1}$: $AND$ and $OR$ gates of fanin $k$ can be replaced by a binary tree of depth $\lceil\log_2k\rceil$ of corresponding fanin $2$ gates. Thus the depth increases by a factor $O(\log n)$.
 
 :book:Definition of $AC^0,ACC^0$. Let $m\gt1$. $AC^0[m]$ is the class of languages computed by families of Boolean circuits of polynomial size and depth $O(1)$ using unbounded fanin $AND,OR,MOD_m$ gates. Define $ACC^0=\bigcup_{m\gt1}AC^0[m]$.
 
@@ -128,7 +128,7 @@ $AC^i$ is similar to $NC^i$.
 
 **log-space** can be roughly the same as **log-depth** circuits.
 
-:dart:Theorem 38. $U_L-NC^1\subseteq L$.
+:dart:Theorem 38. $\mathsf{U}_L-\mathsf{NC}^1\subseteq L$.
 
 > Circuit $C$ with depth $(\log n)$ is computable by a $O(\log n)$ space Turing Machine.
 
@@ -148,15 +148,15 @@ A $n\times n$ Boolean matrix corresponds to a directed graph. The transitive clo
 
 :book:Definition of transitive closure. Transitive closure $A^*$ of $A$ is the $n\times n$ Boolean matrix given by $A^*=\bigvee_{i\ge0}A^i$, where $A^0$ is the identity matrix $I$.
 
-:dart:Theorem 39. $NL\subseteq U_L-AC^1$
+:dart:Theorem 39. $\mathsf{NL}\subseteq \mathsf{U}_L-AC^1$
 
 > ~~懒得看证明了，到学的时候再来~~
 
-:thinking:Corollary 6. $U_L-NC^1\subseteq L\subseteq NL\subseteq U_L-AC^1$.
+:thinking:Corollary 6. $\mathsf{U}_L-\mathsf{NC}^1\subseteq L\subseteq \mathsf{NL}\subseteq \mathsf{U}_L-AC^1$.
 
 !!! info
 
-    其实这里也存在层次结构：$NL\subseteq U_L-AC^1\subseteq U_L-NC^2\subseteq L^2(=\mathsf{DSPACE}(\log^2n))$.
+    其实这里也存在层次结构：$\mathsf{NL}\subseteq \mathsf{U}_L-AC^1\subseteq \mathsf{U}_L-\mathsf{NC}^2\subseteq L^2(=\mathsf{DSPACE}(\log^2n))$.
 
 
 
@@ -190,11 +190,11 @@ A generalization of $ADD$: iterated addition of $n$ numbers each of $n$ bits.
 
 $ITADD$: given $n$ numbers $x^1,\cdots,x^n$ of $n$ bits each, output $n+\lceil\log_2n\rceil$-bit number $z$ s.t. $z=x^1+\cdots+x^n$.
 
-:dart:Theorem 41. $ITADD\in NC^1$.
+:dart:Theorem 41. $ITADD\in \mathsf{NC}^1$.
 
-> We can to reduce the task to the task of add $2$ numbers each of $n+O(\log n)$ bits. These may be added in depth $O(\log n)$ by converting $AC^0$ for $ADD$ to a $NC^1$ circuit.
+> We can to reduce the task to the task of add $2$ numbers each of $n+O(\log n)$ bits. These may be added in depth $O(\log n)$ by converting $AC^0$ for $ADD$ to a $\mathsf{NC}^1$ circuit.
 
-:thinking:Corollary 7. $TC^0\subseteq NC^1$.
+:thinking:Corollary 7. $TC^0\subseteq \mathsf{NC}^1$.
 
 > Note that $MAJ\le_T^{AC^0}ITADD$ by computing the sum of the input bits and comparing to the threshold value.
 

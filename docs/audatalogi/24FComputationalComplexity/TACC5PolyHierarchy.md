@@ -50,7 +50,7 @@ Thus we define $\mathsf{NSPACE}^A(S(n))$ as the class of languages computed by a
 
 The definition can be extended to other complexity classes.
 
-$P^A$ and $NP^A$ for any oracle language $A$.
+$\mathsf{P}^A$ and $NP^A$ for any oracle language $A$.
 
 The oracle may be chosen from some class of languages. Let $\mathcal C$ be a class of languages.
 
@@ -60,7 +60,7 @@ $$
 
 Similarly we have $\mathsf{DSPACE}^\mathcal C(T(n))$, $\mathsf{NTIME}^\mathcal C(T(n))$ and $\mathsf{NSPACE}^\mathcal C(T(n))$.
 
-This again extends to all other complexity classes such as $P^{NP}$.
+This again extends to all other complexity classes such as $\mathsf{P}^{\mathsf{NP}}$.
 
 ## Turing Reductions
 
@@ -73,7 +73,7 @@ It also satisfies **transitivity**.
 - $L_1\le_T^{\log}L_2,L_2\le_T^{\log}L_3\Rightarrow L_1\le_T^{\log}L_3$
 - $L_1\le_T^{P}L_2,L_2\le_T^{P}L_3\Rightarrow L_1\le_T^{P}L_3$
 
-:thinking:Proposition 3. The class $L,NL,P,PSPACE,\mathsf{EXP}$ are all closed under log-space Turing reductions. The class $P,PSPACE,\mathsf{EXP}$ are all closed under polynomial-time Turing machine.
+:thinking:Proposition 3. The class $L,\mathsf{NL},\mathsf{P},\mathsf{PSPACE},\mathsf{EXP}$ are all closed under log-space Turing reductions. The class $\mathsf{P},\mathsf{PSPACE},\mathsf{EXP}$ are all closed under polynomial-time Turing machine.
 
 # The Polynomial-time Hierarchy via Oracles and Quantifiers
 
@@ -83,27 +83,27 @@ $$
 co\mathcal C=\{\overline L|L\in\mathcal C\}
 $$
 
-:book:Definition 18 (polynomial-time hierarchy). Let $\Delta_0^P=\Sigma_0^P=\Pi_0^P=P$. For $i\ge0$, define further $\Delta_{i+1}^P=P^{\Sigma_i^P}$, $\Sigma_{i+1}^P=NP^{\Sigma_i^P}$ and $\Pi_{i+1}^P=coNP^{\Sigma_i^P}$. Finally, let **Polynomial Hierarchy** $PH=\bigcup_{i\ge0}\Sigma_i^P$.
+:book:Definition 18 (polynomial-time hierarchy). Let $\Delta_0^P=\Sigma_0^P=\Pi_0^P=P$. For $i\ge0$, define further $\Delta_{i+1}^P=P^{\Sigma_i^\mathsf{P}}$, $\Sigma_{i+1}^P=NP^{\Sigma_i^\mathsf{P}}$ and $\Pi_{i+1}^P=coNP^{\Sigma_i^\mathsf{P}}$. Finally, let **Polynomial Hierarchy** $PH=\bigcup_{i\ge0}\Sigma_i^\mathsf{P}$.
 
-The classes $\Delta_i^P,\Sigma_i^P,\Pi_i^P$ are said to make up level $i$ of the polynomial-time hierarchy, and $PH$ denotes the entire polynomial-time hierarchy.
+The classes $\Delta_i^\mathsf{P},\Sigma_i^\mathsf{P},\Pi_i^\mathsf{P}$ are said to make up level $i$ of the polynomial-time hierarchy, and $PH$ denotes the entire polynomial-time hierarchy.
 
 Note that $\Delta_1^P=P^P=P$, $\Sigma_1^P=NP^P=NP$, $\Pi_1^P=coNP^P=coNP$.
 
-On second level, we have $P^{NP}, NP^{NP}, coNP^{NP}$, continuing ad infimum.
+On second level, we have $\mathsf{P}^{\mathsf{NP}}, NP^{\mathsf{NP}}, coNP^{\mathsf{NP}}$, continuing ad infimum.
 
 Straightforward:
 
 $$
-\Delta_i^P\subseteq\Sigma_i^P\cap\Pi_i^P\subseteq\Sigma_i^P\cup\Pi_i^P\subseteq\Delta_{i+1}^P
+\Delta_i^\mathsf{P}\subseteq\Sigma_i^\mathsf{P}\cap\Pi_i^\mathsf{P}\subseteq\Sigma_i^\mathsf{P}\cup\Pi_i^\mathsf{P}\subseteq\Delta_{i+1}^P
 $$
 
-:dart:Theorem 27. $PH\subseteq PSPACE$.
+:dart:Theorem 27. $PH\subseteq \mathsf{PSPACE}$.
 
 > Using polynomial space simply simulate the non-deterministic Turing machine same way as in proof of Theorem 10.
 
-Then prove an equivalent definition of the classes $\Sigma_i^P$ and $\Pi_i^P$ in terms of **quantifiers**.
+Then prove an equivalent definition of the classes $\Sigma_i^\mathsf{P}$ and $\Pi_i^\mathsf{P}$ in terms of **quantifiers**.
 
-:dart:Theorem 28. Let $L$ be any language and let $i\ge1$. Then $L\in\Sigma_i^P$ iff there is a polynomial $q$ and another language $L'\in\Pi_{i-1}^P$  s.t.
+:dart:Theorem 28. Let $L$ be any language and let $i\ge1$. Then $L\in\Sigma_i^\mathsf{P}$ iff there is a polynomial $q$ and another language $L'\in\Pi_{i-1}^P$  s.t.
 
 $$
 \forall x:[x\in L\Leftrightarrow\exists y:|y|\le q(|x|)\land\langle x,y\rangle\in L'].
@@ -111,19 +111,19 @@ $$
 
 > 看不懂了。
 
-:thinking:Corollary 3. Let $L$ be any language and let $i\ge1$. Then $L\in\Pi_i^P$ iff there is a polynomial $q$ and another language $L'\in\Sigma_{i-1}^P$  s.t.
+:thinking:Corollary 3. Let $L$ be any language and let $i\ge1$. Then $L\in\Pi_i^\mathsf{P}$ iff there is a polynomial $q$ and another language $L'\in\Sigma_{i-1}^P$  s.t.
 
 $$
 \forall x:[x\in L\Leftrightarrow\forall y:|y|\le q(|x|)\Rightarrow\langle x,y\rangle\in L'].
 $$
 
-:thinking:Corollary 4. Let $L$ be any language and let $i\ge1$. Then $L\in\Sigma_i^P$ iff there is a polynomial $q$ and another language $L'\in P$  s.t.
+:thinking:Corollary 4. Let $L$ be any language and let $i\ge1$. Then $L\in\Sigma_i^\mathsf{P}$ iff there is a polynomial $q$ and another language $L'\in P$  s.t.
 
 $$
 \forall x:[x\in L\Leftrightarrow\exists^qy_1\forall^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
 $$
 
-where $Q_i$ is $\exists$ if $i$ is odd, and $\forall$ if $i$ is even. Likewise, $L\in\Pi_i^P$ iff there is a polynomial $q$ and another language $L'\in P$ s.t.
+where $Q_i$ is $\exists$ if $i$ is odd, and $\forall$ if $i$ is even. Likewise, $L\in\Pi_i^\mathsf{P}$ iff there is a polynomial $q$ and another language $L'\in P$ s.t.
 
 $$
 \forall x:[x\in L\Leftrightarrow\forall^qy_1\exists^qy_2\cdots Q_i^qy_i:\langle x,y_1,y_2,\cdots,y_i\rangle\in L'],
@@ -131,9 +131,9 @@ $$
 
 where $Q_i$ is $\exists$ if $i$ is even, and $\forall$ if $i$ is odd.
 
-Generalize whether $P=NP,NP=coNP$ to question whether $\Delta_i^P=\Sigma_i^P,\Sigma_i^P=\Pi_i^P$ for $i\gt1$.
+Generalize whether $\mathsf{P}=NP,NP=coNP$ to question whether $\Delta_i^\mathsf{P}=\Sigma_i^\mathsf{P},\Sigma_i^\mathsf{P}=\Pi_i^\mathsf{P}$ for $i\gt1$.
 
-:dart:Theorem 29. If $\Sigma_i^P=\Pi_i^P$ for some $i\ge1$ then $PH=\Sigma_i^P$.
+:dart:Theorem 29. If $\Sigma_i^\mathsf{P}=\Pi_i^\mathsf{P}$ for some $i\ge1$ then $PH=\Sigma_i^\mathsf{P}$.
 
 > 继续看 天书。
 
@@ -155,7 +155,7 @@ Question: Is $\psi$ true?
 
 
 
-:dart:Theorem 30. $\Sigma_iSAT$ is complete for $\Sigma_i^P$ and $\Pi_iSAT$ is complete for $\Pi_i^P$.
+:dart:Theorem 30. $\Sigma_iSAT$ is complete for $\Sigma_i^\mathsf{P}$ and $\Pi_iSAT$ is complete for $\Pi_i^\mathsf{P}$.
 
 > 前面的推论 4 都没懂……这个证明就更不懂了
 
@@ -169,17 +169,17 @@ Question: Is $\psi$ true?
 
 :dart:Theorem 31. If $PH$ has a complete language, then $PH$ collapses.
 
-> This follows since $PSPACE$ has complete problems.
+> This follows since $\mathsf{PSPACE}$ has complete problems.
 >
 > Collapses 在此处指多项式层次结构中某一层以上的所有级别都重合的情况。
 
 # The Karp-Lipton Theorem
 
-A possible way to prove $\mathsf{P}\neq\mathsf{NP}$ would be to show that there is some language in $\mathsf{NP}$ that is not computed by a family of polynomial size Boolean circuits, i.e., that $NP\not\subseteq P/poly$.
+A possible way to prove $\mathsf{P}\neq\mathsf{NP}$ would be to show that there is some language in $\mathsf{NP}$ that is not computed by a family of polynomial size Boolean circuits, i.e., that $NP\not\subseteq \mathsf{P/poly}$.
 
-This is stronger than $\mathsf{P}\neq\mathsf{NP}$ since $P\subseteq P/poly$. It turns out that it is not stronger than the assumption that the polynomial-time hierarchy does not collapse.
+This is stronger than $\mathsf{P}\neq\mathsf{NP}$ since $\mathsf{P}\subseteq \mathsf{P/poly}$. It turns out that it is not stronger than the assumption that the polynomial-time hierarchy does not collapse.
 
-:dart:Theorem 32. Suppose that $NP\subseteq P/poly$. Then $PH=\Sigma_2^P\cap\Pi_2^P$.
+:dart:Theorem 32. Suppose that $NP\subseteq \mathsf{P/poly}$. Then $PH=\Sigma_2^P\cap\Pi_2^P$.
 
 > Proof by Theorem 29, Corollary 4.
 >

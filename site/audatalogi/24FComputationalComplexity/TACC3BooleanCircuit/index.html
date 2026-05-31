@@ -839,6 +839,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Quantum Application in Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11288,6 +11311,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Tempo libero
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11540,16 +11586,16 @@
 <p>直白一点：我们说一个布尔电路族 <span class="arithmatex">\((C_n)_{n=0}^\infty\)</span> 计算<sub>~（接受？）</sub>~语言 <span class="arithmatex">\(L\)</span>，当且仅当该布尔电路族的输入 <span class="arithmatex">\(x\)</span> 属于语言 <span class="arithmatex">\(L\)</span>时，输出结果为 <span class="arithmatex">\(1\)</span>。</p>
 </div>
 <p>If we want to apply non-Boolean alphabet, we just encode these letters into <span class="arithmatex">\(\{0,1\}^k\)</span> for some fixed <span class="arithmatex">\(k\)</span>.</p>
-<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(SIZE\)</span>. Let <span class="arithmatex">\(S:\mathbb N\to\mathbb N\)</span>. <span class="arithmatex">\(SIZE(S(n))\)</span> is the class of languages computed by family of Boolean circuit of size <span class="arithmatex">\(O(S(n))\)</span>,</p>
+<p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <span class="arithmatex">\(\mathsf{SIZE}\)</span>. Let <span class="arithmatex">\(S:\mathbb N\to\mathbb N\)</span>. <span class="arithmatex">\(\mathsf{SIZE}(S(n))\)</span> is the class of languages computed by family of Boolean circuit of size <span class="arithmatex">\(O(S(n))\)</span>,</p>
 <p>We interested in class of languages computed by a family of polynomial size.</p>
 <div class="arithmatex">\[
-P/poly=\bigcup_{k&gt;0}SIZE(n^k).
+\mathsf{P/poly}=\bigcup_{k&gt;0}\mathsf{SIZE}(n^k).
 \]</div>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>log-space/polynomial-time uniform</strong>. Let <span class="arithmatex">\((C_n)_{n=0}^\infty\)</span> be a family of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span>. We say that the family is <em>log-space uniform</em> if the function <span class="arithmatex">\(1^n\mapsto C_n\)</span> is computable in space <span class="arithmatex">\(O(\log S(n))\)</span>. The family is <em>polynomial-time uniform</em> if the function is computable in time <span class="arithmatex">\((S(n))^{O(1)}\)</span>.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of complexity classes of languages computed by families of Boolean circuits. Let <span class="arithmatex">\(S:\mathbb N\to\mathbb N\)</span>.</p>
 <ul>
-<li><span class="arithmatex">\(U_L-SIZE(S(n))\)</span> is the class of languages computed by log-space uniform families of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span>.</li>
-<li><span class="arithmatex">\(U_P-SIZE(S(n))\)</span> is the class of languages computed by polynomial-time uniform families of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span>.</li>
+<li><span class="arithmatex">\(\mathsf{U}_L-\mathsf{SIZE}(S(n))\)</span> is the class of languages computed by log-space uniform families of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span>.</li>
+<li><span class="arithmatex">\(U_P-\mathsf{SIZE}(S(n))\)</span> is the class of languages computed by polynomial-time uniform families of Boolean circuits of size <span class="arithmatex">\(O(S(n))\)</span>.</li>
 </ul>
 <h1 id="boolean-formulas">Boolean Formulas</h1>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>Boolean formulas</strong>. A Boolean formula (aka de Morgan formula) is a Boolean circuit where the underlying directed graph is a tree.</p>
@@ -11588,29 +11634,29 @@ t=|\{x\in\{0,1\}^n|f(x)=1\}|.
 </blockquote>
 <h1 id="turing-machines-versus-boolean-circuits">Turing Machines versus Boolean Circuits</h1>
 <p>Oblivious Turing machine can efficiently be converted to a family of Boolean circuits.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 1. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose <span class="arithmatex">\(L\)</span> is computed by a <span class="arithmatex">\(O(T(n))\)</span> time-bounded oblivious Turing machine. Then <span class="arithmatex">\(L\in SIZE(T(n))\)</span>.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 1. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose <span class="arithmatex">\(L\)</span> is computed by a <span class="arithmatex">\(O(T(n))\)</span> time-bounded oblivious Turing machine. Then <span class="arithmatex">\(L\in \mathsf{SIZE}(T(n))\)</span>.</p>
 <blockquote>
 <p>Any configuration of oblivious Turing machine on input <span class="arithmatex">\(x\)</span> can be encoded by a binary string of length <span class="arithmatex">\(O(T(n))\)</span> s.t. every symbol of every work tape corresponds to a fixed number of positions of the encoding.</p>
 <p>We can build the Boolean circuit for input length <span class="arithmatex">\(n\)</span> in <span class="arithmatex">\(O(T(n))\)</span> steps. Proof by induction.</p>
 </blockquote>
 <p>Proposition 1 and Theorem 4 result in some inclusion relation.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 16. <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq SIZE(T(n)\log T(n))\)</span> for <span class="arithmatex">\(T(n)\ge n\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 16. <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq \mathsf{SIZE}(T(n)\log T(n))\)</span> for <span class="arithmatex">\(T(n)\ge n\)</span>.</p>
 <p>Turing machine is supplied with an <em>advice string</em> in addition to the input, where the advice string is specific to the input length.</p>
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition of <strong>Advice classes</strong>. Let <span class="arithmatex">\(\mathcal C\)</span> be a class of languages and <span class="arithmatex">\(f:\mathbb N\to\mathbb N\)</span> a function. Define <span class="arithmatex">\(\mathcal C/f(n)\)</span> to be the class of languages <span class="arithmatex">\(L\)</span> for which there exist <span class="arithmatex">\(L'\in\mathcal C\)</span> satisfying that for all input lengths <span class="arithmatex">\(n\)</span>, there is an <strong>advice string</strong> <span class="arithmatex">\(y_n\)</span> of length <span class="arithmatex">\(f(n)\)</span> s.t. for all <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span>, we have <span class="arithmatex">\(x\in L\)</span> iff <span class="arithmatex">\(\langle x,y_n\rangle\in L'\)</span>. For a family <span class="arithmatex">\(\mathcal F\)</span> of functions <span class="arithmatex">\(F:\mathbb N\to\mathbb N\)</span>, we let <span class="arithmatex">\(\mathcal C/\mathcal F=\bigcup_{f\in\mathcal F}\mathcal C/f(n)\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 17. Let <span class="arithmatex">\(S(n)\ge n\)</span>. Then <span class="arithmatex">\(SIZE(S(n))\subseteq \mathsf{DTIME}(S(n)^2)/O(S(n)\log S(n))\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 17. Let <span class="arithmatex">\(S(n)\ge n\)</span>. Then <span class="arithmatex">\(\mathsf{SIZE}(S(n))\subseteq \mathsf{DTIME}(S(n)^2)/O(S(n)\log S(n))\)</span>.</p>
 <blockquote>
 <p>The advice string (length <span class="arithmatex">\(n\)</span>) is an encoding of the circuit <span class="arithmatex">\(C_n\)</span>, which is a string of length <span class="arithmatex">\(O(S(n)\log S(n))\)</span>.</p>
 <p>Assume that the gates of <span class="arithmatex">\(C_n\)</span> are given in the encoding in acyclic order. On input <span class="arithmatex">\(x\)</span> of length <span class="arithmatex">\(n\)</span> and advice <span class="arithmatex">\(C_n\)</span>, a Turing machine can evaluate <span class="arithmatex">\(C_n\)</span> on input <span class="arithmatex">\(x\)</span>, evaluating the gates in the given acyclic ordering and storing all intermediate outputs.</p>
 <p>To evaluate each gate we need to retrieve the computed value of its inputs, which will take <span class="arithmatex">\(O(S(n))\)</span> time. Doing this for all <span class="arithmatex">\(O(S(n))\)</span> gates leads to <span class="arithmatex">\(O(S(n)^2)\)</span>.</p>
 </blockquote>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Corollary 1. Let <span class="arithmatex">\(T(n)\ge n\)</span>. Then <span class="arithmatex">\(\mathsf{DTIME}(T(n)^{O(1)})/T(n)^{O(1)}=SIZE(T(n)^{O(1)})\)</span></p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Corollary 1. Let <span class="arithmatex">\(T(n)\ge n\)</span>. Then <span class="arithmatex">\(\mathsf{DTIME}(T(n)^{O(1)})/T(n)^{O(1)}=\mathsf{SIZE}(T(n)^{O(1)})\)</span></p>
 <blockquote>
 <p>Proof by Definition of advice class and Theorem 17.</p>
 </blockquote>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 18. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose the function <span class="arithmatex">\(1^n\mapsto T(n)\)</span> is computable in space <span class="arithmatex">\(O(\log T(n))\)</span>. Then <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq U_L-SIZE(T(n)\log T(n))\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 19. Let <span class="arithmatex">\((S(n))\ge n\)</span>. Then <span class="arithmatex">\(U_L-SIZE(S(n))\subseteq \mathsf{DTIME}(S(n)^{O(1)})\)</span>.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Corollary 2. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose that function <span class="arithmatex">\(1^n\mapsto T(n)\)</span> is computable in space <span class="arithmatex">\(O(\log T(n))\)</span>. Then <span class="arithmatex">\(\mathsf{DTIME}(T(n)^{O(1)})=U_L-SIZE(T(n)^{O(1)})\)</span>.</p>
-<p>In particular, we have <span class="arithmatex">\(P=U_L-SIZE(n^{O(1)})\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 18. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose the function <span class="arithmatex">\(1^n\mapsto T(n)\)</span> is computable in space <span class="arithmatex">\(O(\log T(n))\)</span>. Then <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq \mathsf{U}_L-\mathsf{SIZE}(T(n)\log T(n))\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 19. Let <span class="arithmatex">\((S(n))\ge n\)</span>. Then <span class="arithmatex">\(\mathsf{U}_L-\mathsf{SIZE}(S(n))\subseteq \mathsf{DTIME}(S(n)^{O(1)})\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Corollary 2. Let <span class="arithmatex">\(T(n)\ge n\)</span> and suppose that function <span class="arithmatex">\(1^n\mapsto T(n)\)</span> is computable in space <span class="arithmatex">\(O(\log T(n))\)</span>. Then <span class="arithmatex">\(\mathsf{DTIME}(T(n)^{O(1)})=\mathsf{U}_L-\mathsf{SIZE}(T(n)^{O(1)})\)</span>.</p>
+<p>In particular, we have <span class="arithmatex">\(\mathsf{P}=\mathsf{U}_L-\mathsf{SIZE}(n^{O(1)})\)</span>.</p>
 
 
 
@@ -11716,8 +11762,6 @@ t=|\{x\in\{0,1\}^n|f(x)=1\}|.
         <script src="../../../javascripts/config.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

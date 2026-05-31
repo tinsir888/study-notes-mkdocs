@@ -101,7 +101,7 @@ $$
 # Non-deterministic Time and Space Complexity Classes
 
 $$
-NL=\mathsf{NSPACE}(\log n)\\
+\mathsf{NL}=\mathsf{NSPACE}(\log n)\\
 $$
 
 $$
@@ -116,27 +116,27 @@ Relations:
 
 - Due to Savitch's theorem, there is no need for defining $\mathsf{NSPACE}$.
 
-- $NL\subseteq NP\subseteq PSPACE\subseteq \mathsf{NEXP}$.
-- By non-deterministic time and space hierarchy theorems: $NL\subsetneq PSPACE$, $NP\subsetneq \mathsf{NEXP}$.
+- $\mathsf{NL}\subseteq NP\subseteq \mathsf{PSPACE}\subseteq \mathsf{NEXP}$.
+- By non-deterministic time and space hierarchy theorems: $\mathsf{NL}\subsetneq \mathsf{PSPACE}$, $NP\subsetneq \mathsf{NEXP}$.
 
-Thus, $L\subseteq NL\subseteq P\subseteq NP\subseteq PSPACE\subseteq \mathsf{EXP}\subseteq \mathsf{NEXP}$.
+Thus, $L\subseteq \mathsf{NL}\subseteq P\subseteq NP\subseteq \mathsf{PSPACE}\subseteq \mathsf{EXP}\subseteq \mathsf{NEXP}$.
 
 ## Summary of Complexity Classes
 
 1. **L (Logarithmic Space)**
    - **Definition**: $L$ consists of all decision problems that can be solved by a deterministic Turing machine using $O(\log n)$ space.
    - **Example**: Determining if a path exists between two nodes in an undirected graph using depth-first search with a space-efficient representation.
-2. **NL (Non-deterministic Logarithmic Space)**
-   - **Definition**: $NL$ consists of all decision problems that can be solved by a non-deterministic Turing machine using $O(\log n)$ space.
+2. **\mathsf{NL} (Non-deterministic Logarithmic Space)**
+   - **Definition**: $\mathsf{NL}$ consists of all decision problems that can be solved by a non-deterministic Turing machine using $O(\log n)$ space.
    - **Example**: Determining if a path exists between two nodes in a directed graph (also known as the reachability problem).
 3. **P (Polynomial Time)**
-   - **Definition**: $P$ consists of all decision problems that can be solved by a deterministic Turing machine in polynomial time, $O(n^k)$ for some constant $k$.
+   - **Definition**: $\mathsf{P}$ consists of all decision problems that can be solved by a deterministic Turing machine in polynomial time, $O(n^k)$ for some constant $k$.
    - **Example**: Sorting an array using algorithms like Merge Sort or Quick Sort.
 4. **NP (Non-deterministic Polynomial Time)**
    - **Definition**: $\mathsf{NP}$ consists of all decision problems for which a given solution can be verified in polynomial time by a deterministic Turing machine. Equivalently, problems solvable by a non-deterministic Turing machine in polynomial time.
    - **Example**: The Boolean satisfiability problem (SAT).
 5. **PSPACE (Polynomial Space)**
-   - **Definition**: $PSPACE$ consists of all decision problems that can be solved by a deterministic Turing machine using polynomial space.
+   - **Definition**: $\mathsf{PSPACE}$ consists of all decision problems that can be solved by a deterministic Turing machine using polynomial space.
    - **Example**: Generalized games like chess, checkers, and go with a polynomial bound on the number of moves.
 6. **EXP (Exponential Time)**
    - **Definition**: $\mathsf{EXP}$ consists of all decision problems that can be solved by a deterministic Turing machine in exponential time, $O(2^{p(n)})$ for some polynomial $p(n)$.

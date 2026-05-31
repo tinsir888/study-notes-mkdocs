@@ -32,7 +32,7 @@ Important parameters of PCP verifier:
 1. Number of random bits used during computation
 2. Number of queries made to the proof tape.
 
-:book:Definition 49 (PCP languages). Let $r:\mathbb N\to\mathbb N,q:\mathbb N\to\mathbb N$ be functions, let $\Sigma$ be a non-empty finite set, and let $0\le s\lt c\le1$ be reals. $PCP_{c,s}^\Sigma(r(n),q(n))$ is the class of languages $L$ for which there exist a PCP verifier $V$ that on input $x$ of length $n$ uses at most $r(n)$ random bits and queries at most $q(n)$ positions of a proof $\pi\in\Sigma^*$ s.t.
+:book:Definition 49 (PCP languages). Let $r:\mathbb N\to\mathbb N,q:\mathbb N\to\mathbb N$ be functions, let $\Sigma$ be a non-empty finite set, and let $0\le s\lt c\le1$ be reals. $\mathsf{PCP}_{c,s}^\Sigma(r(n),q(n))$ is the class of languages $L$ for which there exist a PCP verifier $V$ that on input $x$ of length $n$ uses at most $r(n)$ random bits and queries at most $q(n)$ positions of a proof $\pi\in\Sigma^*$ s.t.
 
 $$
 \forall x\in L,\exists\pi\in\Sigma^*:\Pr[V^\pi(x)=yes]\ge c\\
@@ -46,27 +46,27 @@ $c$ for completeness, $s$ for soundness.
 
 We often use the notion as follows:
 
-- $PCP_{c,s}(r(n),q(n))$ when $\Sigma=\{0,1\}$
+- $\mathsf{PCP}_{c,s}(r(n),q(n))$ when $\Sigma=\{0,1\}$
 - $\mathsf{PCP}^\Sigma(r(n),q(n))$ when $c=1,s=1/2$
 - $\mathsf{PCP}(r(n),q(n))$ when both $\Sigma=\{0,1\}$ and $c=1,s=1/2$.
 
 :thinking:Proposition 17.
 
-1. $P=PCP(0,0)$
-2. $NP=PCP(0,n^{O(1)})$
-3. $coRP=PCP(n^{O(1)},0)$
+1. $\mathsf{P}=\mathsf{PCP}(0,0)$
+2. $NP=\mathsf{PCP}(0,n^{O(1)})$
+3. $coRP=\mathsf{PCP}(n^{O(1)},0)$
 
-By enumerating over all strings of $O(\log n)$ bits and using these in place of the random bits one obtain the slightly stronger statements $P=PCP(O(\log n),0)$ and $NP=PCP(O(\log n),n^{O(1)})$.
+By enumerating over all strings of $O(\log n)$ bits and using these in place of the random bits one obtain the slightly stronger statements $\mathsf{P}=\mathsf{PCP}(O(\log n),0)$ and $NP=\mathsf{PCP}(O(\log n),n^{O(1)})$.
 
-By enumerating over all possible proofs of length $O(\log n)$ one obtains $P=PCP(0,O(\log n))$.
+By enumerating over all possible proofs of length $O(\log n)$ one obtains $\mathsf{P}=\mathsf{PCP}(0,O(\log n))$.
 
 Verifier of $\mathsf{PCP}(r(n),q(n))$ is able to access at most $2^{r(n)}q(n)$ different positions of the proof string $\pi$.
 
 :thinking:Proposition 18. $\mathsf{PCP}(r(n),q(n))\subseteq \mathsf{NTIME}(n^{O(1)}2^{r(n)})$.
 
-:dart:Theorem 50 (PCP theorem). $NP=PCP(O(\log n),O(1))$.
+:dart:Theorem 50 (PCP theorem). $NP=\mathsf{PCP}(O(\log n),O(1))$.
 
-:dart:Theorem 51. $\mathsf{NEXP}=PCP(n^{O(1)},n^{O(1)})$.
+:dart:Theorem 51. $\mathsf{NEXP}=\mathsf{PCP}(n^{O(1)},n^{O(1)})$.
 
 ## A weak version of the PCP theorem
 
@@ -78,7 +78,7 @@ Some observations about interactive proofs and probabilistically checkable proof
 
    Then verifier $V$ may be viewed as an adaptive PCP verifier that instead of communicating with $P$ simply queries the proof $\pi$.
 
-   In Sumcheck protocol, all msg of $V$ consist of uniformly random bits, which means that all queries may be made non-adaptively. Together with Theorem 49, this gives that $IP\subseteq PCP(n^{O(1)},n^{O(1)})$.
+   In Sumcheck protocol, all msg of $V$ consist of uniformly random bits, which means that all queries may be made non-adaptively. Together with Theorem 49, this gives that $\mathsf{IP}\subseteq PCP(n^{O(1)},n^{O(1)})$.
 
 2. Arithmetic formula $F$ in Sumcheck is only evaluated once, at the end of the protocol, and on a uniformly chosen random input $(a_1,\cdots,a_n)\in\mathbb Z_p^n$.
 

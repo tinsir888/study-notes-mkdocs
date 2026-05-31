@@ -255,24 +255,24 @@ P=\bigcup_{k>0}\mathsf{DTIME}(n^k)\\
 $$
 
 $$
-PSPACE=\bigcup_{k>0}\mathsf{DSPACE}(n^k)\\
+\mathsf{PSPACE}=\bigcup_{k>0}\mathsf{DSPACE}(n^k)\\
 $$
 
 $$
 \mathsf{EXP}=\bigcup_{k>0}\mathsf{DTIME}(2^{n^k})
 $$
-Trivially, $L\subseteq P\subseteq PSPACE\subseteq \mathsf{EXP}$.
+Trivially, $L\subseteq P\subseteq \mathsf{PSPACE}\subseteq \mathsf{EXP}$.
 
 A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus $\mathsf{DSPACE}(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})$ for $S(n)>\log n$.
 
-**Unknown: whether any of the inclusions are strict.** But time and space hierarchy theorems give that $L\subsetneq PSPACE$ and $P\subsetneq \mathsf{EXP}$.
+**Unknown: whether any of the inclusions are strict.** But time and space hierarchy theorems give that $L\subsetneq \mathsf{PSPACE}$ and $\mathsf{P}\subsetneq \mathsf{EXP}$.
 
-$L$ means $LOGSPACE$, $P$ denotes $PTIME$, $\mathsf{EXP}$ denotes $EXPTIME$.
+$L$ means $LOGSPACE$, $\mathsf{P}$ denotes $PTIME$, $\mathsf{EXP}$ denotes $EXPTIME$.
 
 Obviously(???really???), $\mathsf{DTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n))$, showing that space is more "valuable than" time. More precisely, $\mathsf{DTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n)/\log T(n))$ for $T(n)\ge n$.
 
 # The Padding Technique
 
-Whether $L\subseteq P$ and $PSPACE\subseteq \mathsf{EXP}$ are strict is related.
+Whether $L\subseteq P$ and $\mathsf{PSPACE}\subseteq \mathsf{EXP}$ are strict is related.
 
-:dart:Theorem 6: If $L=P$, then $PSPACE=\mathsf{EXP}$.
+:dart:Theorem 6: If $L=P$, then $\mathsf{PSPACE}=\mathsf{EXP}$.

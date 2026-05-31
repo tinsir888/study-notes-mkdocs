@@ -839,6 +839,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Quantum Application in Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11288,6 +11311,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Tempo libero
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11695,19 +11741,19 @@ L=\mathsf{DSPACE}(\log n)\\
 P=\bigcup_{k&gt;0}\mathsf{DTIME}(n^k)\\
 \]</div>
 <div class="arithmatex">\[
-PSPACE=\bigcup_{k&gt;0}\mathsf{DSPACE}(n^k)\\
+\mathsf{PSPACE}=\bigcup_{k&gt;0}\mathsf{DSPACE}(n^k)\\
 \]</div>
 <p>$$
 \mathsf{EXP}=\bigcup_{k&gt;0}\mathsf{DTIME}(2<sup>{n</sup>k})
 $$
-Trivially, <span class="arithmatex">\(L\subseteq P\subseteq PSPACE\subseteq \mathsf{EXP}\)</span>.</p>
+Trivially, <span class="arithmatex">\(L\subseteq P\subseteq \mathsf{PSPACE}\subseteq \mathsf{EXP}\)</span>.</p>
 <p>A space bounded Turing machine cannot repeat a configuration without entering an infinite loop, thus <span class="arithmatex">\(\mathsf{DSPACE}(S(n))\subseteq \mathsf{DTIME}(2^{O(S(n))})\)</span> for <span class="arithmatex">\(S(n)&gt;\log n\)</span>.</p>
-<p><strong>Unknown: whether any of the inclusions are strict.</strong> But time and space hierarchy theorems give that <span class="arithmatex">\(L\subsetneq PSPACE\)</span> and <span class="arithmatex">\(P\subsetneq \mathsf{EXP}\)</span>.</p>
-<p><span class="arithmatex">\(L\)</span> means <span class="arithmatex">\(LOGSPACE\)</span>, <span class="arithmatex">\(P\)</span> denotes <span class="arithmatex">\(PTIME\)</span>, <span class="arithmatex">\(\mathsf{EXP}\)</span> denotes <span class="arithmatex">\(EXPTIME\)</span>.</p>
+<p><strong>Unknown: whether any of the inclusions are strict.</strong> But time and space hierarchy theorems give that <span class="arithmatex">\(L\subsetneq \mathsf{PSPACE}\)</span> and <span class="arithmatex">\(\mathsf{P}\subsetneq \mathsf{EXP}\)</span>.</p>
+<p><span class="arithmatex">\(L\)</span> means <span class="arithmatex">\(LOGSPACE\)</span>, <span class="arithmatex">\(\mathsf{P}\)</span> denotes <span class="arithmatex">\(PTIME\)</span>, <span class="arithmatex">\(\mathsf{EXP}\)</span> denotes <span class="arithmatex">\(EXPTIME\)</span>.</p>
 <p>Obviously(???really???), <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n))\)</span>, showing that space is more "valuable than" time. More precisely, <span class="arithmatex">\(\mathsf{DTIME}(T(n))\subseteq \mathsf{DSPACE}(T(n)/\log T(n))\)</span> for <span class="arithmatex">\(T(n)\ge n\)</span>.</p>
 <h1 id="the-padding-technique">The Padding Technique</h1>
-<p>Whether <span class="arithmatex">\(L\subseteq P\)</span> and <span class="arithmatex">\(PSPACE\subseteq \mathsf{EXP}\)</span> are strict is related.</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 6: If <span class="arithmatex">\(L=P\)</span>, then <span class="arithmatex">\(PSPACE=\mathsf{EXP}\)</span>.</p>
+<p>Whether <span class="arithmatex">\(L\subseteq P\)</span> and <span class="arithmatex">\(\mathsf{PSPACE}\subseteq \mathsf{EXP}\)</span> are strict is related.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 6: If <span class="arithmatex">\(L=P\)</span>, then <span class="arithmatex">\(\mathsf{PSPACE}=\mathsf{EXP}\)</span>.</p>
 
 
 
@@ -11813,8 +11859,6 @@ Trivially, <span class="arithmatex">\(L\subseteq P\subseteq PSPACE\subseteq \mat
         <script src="../../../javascripts/config.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

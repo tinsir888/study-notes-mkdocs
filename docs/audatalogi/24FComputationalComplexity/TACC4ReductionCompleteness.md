@@ -51,7 +51,7 @@ Complexity class has an important property: the complexity class is **closed** u
 
 We say $\mathcal C$ is closed w.r.t. $\preceq$ reductions, if whenever $L'\preceq L$ and $L\in\mathcal C$, we also have $L'\in C$. Proof omitted.
 
-:thinking:Proposition 2. The classes $L,NL,P,NP,PSPACE,\mathsf{EXP},\mathsf{NEXP}$ are all closed under log-space many-one reductions. The classes $P,NP,PSPACE,\mathsf{EXP},\mathsf{NEXP}$ are all closed under polynomial-time many-one reductions.
+:thinking:Proposition 2. The classes $\mathsf{L},\mathsf{NL},\mathsf{P},\mathsf{NP},\mathsf{PSPACE},\mathsf{EXP},\mathsf{NEXP}$ are all closed under log-space many-one reductions. The classes $\mathsf{P},\mathsf{NP},\mathsf{PSPACE},\mathsf{EXP},\mathsf{NEXP}$ are all closed under polynomial-time many-one reductions.
 
 # NL-completeness
 
@@ -67,7 +67,7 @@ Question: Is there a directed path in $D$ from $s$ to $t$?
 
 > A non-deterministic log-space Turing machine can guess a path from $s$ to $t$ one node at a time, reusing space.
 >
-> To show NL-hardness, Let $L\in NL$ be accepted by non-deterministic log-space Turing machine $M$.
+> To show NL-hardness, Let $L\in \mathsf{NL}$ be accepted by non-deterministic log-space Turing machine $M$.
 >
 > Given input $x$ s.t. $M$ accepts $x$ iff there is a path in the configuration graph of $M$ on input $x$ from the initial configuration to an accepting configuration.
 >
@@ -77,11 +77,11 @@ Question: Is there a directed path in $D$ from $s$ to $t$?
 >
 > Next generate all arcs between configurations corresponding to a single step of the Turing machine and finally arcs between all accepting configurations to the new node $t$. We then have that the resulting directed graph $D$ has a path from $s$ to $t$ iff $M$ accepts $x$.
 
-By Savitch's Theorem and Immerman-Szelepcsényi Theorem, $STCON\in \mathsf{DSPACE}(\log^2n)$ and $\overline{STCON}\in NL$, respectively.
+By Savitch's Theorem and Immerman-Szelepcsényi Theorem, $STCON\in \mathsf{DSPACE}(\log^2n)$ and $\overline{STCON}\in \mathsf{NL}$, respectively.
 
 # P/NP-completeness
 
-Basic $P$ and $\mathsf{NP}$-complete problems are given by the ability of Boolean circuits to simulate Turing machines on fixed input length. For $P$ this gives the circuit value problem.
+Basic $\mathsf{P}$ and $\mathsf{NP}$-complete problems are given by the ability of Boolean circuits to simulate Turing machines on fixed input length. For $\mathsf{P}$ this gives the circuit value problem.
 
 ## CVP problem
 
@@ -89,7 +89,7 @@ Instance: Boolean circuit $C$ on $n$ inputs and input $x\in\{0,1\}^n$.
 
 Question: Is $C(x)=1$?
 
-:dart:Theorem 21. $CVP$ is complete for $P$.
+:dart:Theorem 21. $CVP$ is complete for $\mathsf{P}$.
 
 ## SAT problem
 
@@ -137,9 +137,9 @@ Instance: Quantified Boolean formula with no free variable $\psi=Q_1x_1Q_2x_2\cd
 
 Question: Is $\psi$ true?
 
-:dart:Theorem 24. $TQBF$ is complete for $PSPACE$.
+:dart:Theorem 24. $TQBF$ is complete for $\mathsf{PSPACE}$.
 
-> To see $TQBF\in PSPACE$: The algorithm is a recursion. At the bottom of the recursion, if $Q_i=\forall$, return $1$ iff both returned $1$; if $Q_i=\exists$, return $0$ iff both returned $0$. We of course need a stack with length $O(n)$ for evaluating $\varphi$.
+> To see $TQBF\in \mathsf{PSPACE}$: The algorithm is a recursion. At the bottom of the recursion, if $Q_i=\forall$, return $1$ iff both returned $1$; if $Q_i=\exists$, return $0$ iff both returned $0$. We of course need a stack with length $O(n)$ for evaluating $\varphi$.
 >
 > To show hardness, proof similar to Savitch's theorem.
 >
@@ -147,7 +147,7 @@ Question: Is $\psi$ true?
 
 # EXP/NEXP-completeness
 
-Consider so-called **succinct** versions of complete problems of $P$ and $\mathsf{NP}$.
+Consider so-called **succinct** versions of complete problems of $\mathsf{P}$ and $\mathsf{NP}$.
 
 Let $C$ be a Boolean circuit with $n$ input gates and one output gate. The truthtable of $C$ is the string $tt(C)\in\{0,1\}^{2^n}$ giving the evaluation of $C$ on all possible inputs.
 

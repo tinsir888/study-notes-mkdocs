@@ -839,6 +839,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Quantum Application in Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11288,6 +11311,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Tempo libero
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11567,7 +11613,7 @@ Hard proof</p>
 \]</div>
 <h1 id="non-deterministic-time-and-space-complexity-classes">Non-deterministic Time and Space Complexity Classes</h1>
 <div class="arithmatex">\[
-NL=\mathsf{NSPACE}(\log n)\\
+\mathsf{NL}=\mathsf{NSPACE}(\log n)\\
 \]</div>
 <div class="arithmatex">\[
 NP=\bigcup_{k\gt0}\mathsf{NTIME}(n^k)\\
@@ -11581,27 +11627,27 @@ NP=\bigcup_{k\gt0}\mathsf{NTIME}(n^k)\\
 <p>Due to Savitch's theorem, there is no need for defining <span class="arithmatex">\(\mathsf{NSPACE}\)</span>.</p>
 </li>
 <li>
-<p><span class="arithmatex">\(NL\subseteq NP\subseteq PSPACE\subseteq \mathsf{NEXP}\)</span>.</p>
+<p><span class="arithmatex">\(\mathsf{NL}\subseteq NP\subseteq \mathsf{PSPACE}\subseteq \mathsf{NEXP}\)</span>.</p>
 </li>
-<li>By non-deterministic time and space hierarchy theorems: <span class="arithmatex">\(NL\subsetneq PSPACE\)</span>, <span class="arithmatex">\(NP\subsetneq \mathsf{NEXP}\)</span>.</li>
+<li>By non-deterministic time and space hierarchy theorems: <span class="arithmatex">\(\mathsf{NL}\subsetneq \mathsf{PSPACE}\)</span>, <span class="arithmatex">\(NP\subsetneq \mathsf{NEXP}\)</span>.</li>
 </ul>
-<p>Thus, <span class="arithmatex">\(L\subseteq NL\subseteq P\subseteq NP\subseteq PSPACE\subseteq \mathsf{EXP}\subseteq \mathsf{NEXP}\)</span>.</p>
+<p>Thus, <span class="arithmatex">\(L\subseteq \mathsf{NL}\subseteq P\subseteq NP\subseteq \mathsf{PSPACE}\subseteq \mathsf{EXP}\subseteq \mathsf{NEXP}\)</span>.</p>
 <h2 id="summary-of-complexity-classes">Summary of Complexity Classes</h2>
 <ol>
 <li><strong>L (Logarithmic Space)</strong></li>
 <li><strong>Definition</strong>: <span class="arithmatex">\(L\)</span> consists of all decision problems that can be solved by a deterministic Turing machine using <span class="arithmatex">\(O(\log n)\)</span> space.</li>
 <li><strong>Example</strong>: Determining if a path exists between two nodes in an undirected graph using depth-first search with a space-efficient representation.</li>
-<li><strong>NL (Non-deterministic Logarithmic Space)</strong></li>
-<li><strong>Definition</strong>: <span class="arithmatex">\(NL\)</span> consists of all decision problems that can be solved by a non-deterministic Turing machine using <span class="arithmatex">\(O(\log n)\)</span> space.</li>
+<li><strong>\mathsf{NL} (Non-deterministic Logarithmic Space)</strong></li>
+<li><strong>Definition</strong>: <span class="arithmatex">\(\mathsf{NL}\)</span> consists of all decision problems that can be solved by a non-deterministic Turing machine using <span class="arithmatex">\(O(\log n)\)</span> space.</li>
 <li><strong>Example</strong>: Determining if a path exists between two nodes in a directed graph (also known as the reachability problem).</li>
 <li><strong>P (Polynomial Time)</strong></li>
-<li><strong>Definition</strong>: <span class="arithmatex">\(P\)</span> consists of all decision problems that can be solved by a deterministic Turing machine in polynomial time, <span class="arithmatex">\(O(n^k)\)</span> for some constant <span class="arithmatex">\(k\)</span>.</li>
+<li><strong>Definition</strong>: <span class="arithmatex">\(\mathsf{P}\)</span> consists of all decision problems that can be solved by a deterministic Turing machine in polynomial time, <span class="arithmatex">\(O(n^k)\)</span> for some constant <span class="arithmatex">\(k\)</span>.</li>
 <li><strong>Example</strong>: Sorting an array using algorithms like Merge Sort or Quick Sort.</li>
 <li><strong>NP (Non-deterministic Polynomial Time)</strong></li>
 <li><strong>Definition</strong>: <span class="arithmatex">\(\mathsf{NP}\)</span> consists of all decision problems for which a given solution can be verified in polynomial time by a deterministic Turing machine. Equivalently, problems solvable by a non-deterministic Turing machine in polynomial time.</li>
 <li><strong>Example</strong>: The Boolean satisfiability problem (SAT).</li>
 <li><strong>PSPACE (Polynomial Space)</strong></li>
-<li><strong>Definition</strong>: <span class="arithmatex">\(PSPACE\)</span> consists of all decision problems that can be solved by a deterministic Turing machine using polynomial space.</li>
+<li><strong>Definition</strong>: <span class="arithmatex">\(\mathsf{PSPACE}\)</span> consists of all decision problems that can be solved by a deterministic Turing machine using polynomial space.</li>
 <li><strong>Example</strong>: Generalized games like chess, checkers, and go with a polynomial bound on the number of moves.</li>
 <li><strong>EXP (Exponential Time)</strong></li>
 <li><strong>Definition</strong>: <span class="arithmatex">\(\mathsf{EXP}\)</span> consists of all decision problems that can be solved by a deterministic Turing machine in exponential time, <span class="arithmatex">\(O(2^{p(n)})\)</span> for some polynomial <span class="arithmatex">\(p(n)\)</span>.</li>
@@ -11717,8 +11763,6 @@ NP=\bigcup_{k\gt0}\mathsf{NTIME}(n^k)\\
         <script src="../../../javascripts/config.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

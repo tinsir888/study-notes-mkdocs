@@ -839,6 +839,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/ADA/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 Quantum Application in Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11288,6 +11311,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lingua/ItalianoAppunti/A1/Unit%C3%A03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Tempo libero
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11535,7 +11581,7 @@
 <p><img alt="📖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4d6.svg" title=":book:" />Definition 16. A language <span class="arithmatex">\(L\)</span> is hard for <span class="arithmatex">\(\mathcal C\)</span> under <span class="arithmatex">\(\preceq\)</span> reductions if for all <span class="arithmatex">\(L'\in\mathcal C\)</span> we have <span class="arithmatex">\(L'\preceq L\)</span>. A language <span class="arithmatex">\(L\)</span> is complete for <span class="arithmatex">\(\mathcal C\)</span> under <span class="arithmatex">\(\preceq\)</span> reductions if <span class="arithmatex">\(L\in\mathcal C\)</span> in addition to begin hard for <span class="arithmatex">\(\mathcal C\)</span> under <span class="arithmatex">\(\preceq\)</span> reductions.</p>
 <p>Complexity class has an important property: the complexity class is <strong>closed</strong> under reductions.</p>
 <p>We say <span class="arithmatex">\(\mathcal C\)</span> is closed w.r.t. <span class="arithmatex">\(\preceq\)</span> reductions, if whenever <span class="arithmatex">\(L'\preceq L\)</span> and <span class="arithmatex">\(L\in\mathcal C\)</span>, we also have <span class="arithmatex">\(L'\in C\)</span>. Proof omitted.</p>
-<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 2. The classes <span class="arithmatex">\(L,NL,P,NP,PSPACE,\mathsf{EXP},\mathsf{NEXP}\)</span> are all closed under log-space many-one reductions. The classes <span class="arithmatex">\(P,NP,PSPACE,\mathsf{EXP},\mathsf{NEXP}\)</span> are all closed under polynomial-time many-one reductions.</p>
+<p><img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f914.svg" title=":thinking:" />Proposition 2. The classes <span class="arithmatex">\(\mathsf{L},\mathsf{NL},\mathsf{P},\mathsf{NP},\mathsf{PSPACE},\mathsf{EXP},\mathsf{NEXP}\)</span> are all closed under log-space many-one reductions. The classes <span class="arithmatex">\(\mathsf{P},\mathsf{NP},\mathsf{PSPACE},\mathsf{EXP},\mathsf{NEXP}\)</span> are all closed under polynomial-time many-one reductions.</p>
 <h1 id="nl-completeness">NL-completeness</h1>
 <p>The basic NL-complete problem is given by <em>connectivity in a directed graph</em> (<span class="arithmatex">\(STCON\)</span>).</p>
 <h2 id="stcon">STCON</h2>
@@ -11544,19 +11590,19 @@
 <p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 20. <span class="arithmatex">\(STCON\)</span> is complete for NL.</p>
 <blockquote>
 <p>A non-deterministic log-space Turing machine can guess a path from <span class="arithmatex">\(s\)</span> to <span class="arithmatex">\(t\)</span> one node at a time, reusing space.</p>
-<p>To show NL-hardness, Let <span class="arithmatex">\(L\in NL\)</span> be accepted by non-deterministic log-space Turing machine <span class="arithmatex">\(M\)</span>.</p>
+<p>To show NL-hardness, Let <span class="arithmatex">\(L\in \mathsf{NL}\)</span> be accepted by non-deterministic log-space Turing machine <span class="arithmatex">\(M\)</span>.</p>
 <p>Given input <span class="arithmatex">\(x\)</span> s.t. <span class="arithmatex">\(M\)</span> accepts <span class="arithmatex">\(x\)</span> iff there is a path in the configuration graph of <span class="arithmatex">\(M\)</span> on input <span class="arithmatex">\(x\)</span> from the initial configuration to an accepting configuration.</p>
 <p>A log-space reduction from <span class="arithmatex">\(L\)</span> to <span class="arithmatex">\(STCON\)</span> is:</p>
 <p>On input <span class="arithmatex">\(x\)</span> we generate all configurations of <span class="arithmatex">\(M\)</span> on input <span class="arithmatex">\(x\)</span>, which then forms the set of nodes together with an additional node <span class="arithmatex">\(t\)</span>. Initial configuration becomes the node <span class="arithmatex">\(s\)</span>.</p>
 <p>Next generate all arcs between configurations corresponding to a single step of the Turing machine and finally arcs between all accepting configurations to the new node <span class="arithmatex">\(t\)</span>. We then have that the resulting directed graph <span class="arithmatex">\(D\)</span> has a path from <span class="arithmatex">\(s\)</span> to <span class="arithmatex">\(t\)</span> iff <span class="arithmatex">\(M\)</span> accepts <span class="arithmatex">\(x\)</span>.</p>
 </blockquote>
-<p>By Savitch's Theorem and Immerman-Szelepcsényi Theorem, <span class="arithmatex">\(STCON\in \mathsf{DSPACE}(\log^2n)\)</span> and <span class="arithmatex">\(\overline{STCON}\in NL\)</span>, respectively.</p>
+<p>By Savitch's Theorem and Immerman-Szelepcsényi Theorem, <span class="arithmatex">\(STCON\in \mathsf{DSPACE}(\log^2n)\)</span> and <span class="arithmatex">\(\overline{STCON}\in \mathsf{NL}\)</span>, respectively.</p>
 <h1 id="pnp-completeness">P/NP-completeness</h1>
-<p>Basic <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(\mathsf{NP}\)</span>-complete problems are given by the ability of Boolean circuits to simulate Turing machines on fixed input length. For <span class="arithmatex">\(P\)</span> this gives the circuit value problem.</p>
+<p>Basic <span class="arithmatex">\(\mathsf{P}\)</span> and <span class="arithmatex">\(\mathsf{NP}\)</span>-complete problems are given by the ability of Boolean circuits to simulate Turing machines on fixed input length. For <span class="arithmatex">\(\mathsf{P}\)</span> this gives the circuit value problem.</p>
 <h2 id="cvp-problem">CVP problem</h2>
 <p>Instance: Boolean circuit <span class="arithmatex">\(C\)</span> on <span class="arithmatex">\(n\)</span> inputs and input <span class="arithmatex">\(x\in\{0,1\}^n\)</span>.</p>
 <p>Question: Is <span class="arithmatex">\(C(x)=1\)</span>?</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 21. <span class="arithmatex">\(CVP\)</span> is complete for <span class="arithmatex">\(P\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 21. <span class="arithmatex">\(CVP\)</span> is complete for <span class="arithmatex">\(\mathsf{P}\)</span>.</p>
 <h2 id="sat-problem">SAT problem</h2>
 <h3 id="circuitsat">CircuitSAT</h3>
 <p>Instance: Boolean circuit <span class="arithmatex">\(C\)</span> on <span class="arithmatex">\(n\)</span> inputs</p>
@@ -11584,14 +11630,14 @@
 <p>Basic PSPACE-completeness is given by the problem of deciding validity of true quantified Boolean formulas as shown by Stockmeyer and Meyer. (<span class="arithmatex">\(TQBF\)</span>)</p>
 <p>Instance: Quantified Boolean formula with no free variable <span class="arithmatex">\(\psi=Q_1x_1Q_2x_2\cdots Q_nx_n\varphi(x_1,\cdots,x_n)\)</span>, where <span class="arithmatex">\(Q_i\in\{\forall,\exists\}\)</span> and <span class="arithmatex">\(x_i\in\{0,1\}\)</span> for all <span class="arithmatex">\(i\)</span>.</p>
 <p>Question: Is <span class="arithmatex">\(\psi\)</span> true?</p>
-<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 24. <span class="arithmatex">\(TQBF\)</span> is complete for <span class="arithmatex">\(PSPACE\)</span>.</p>
+<p><img alt="🎯" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" title=":dart:" />Theorem 24. <span class="arithmatex">\(TQBF\)</span> is complete for <span class="arithmatex">\(\mathsf{PSPACE}\)</span>.</p>
 <blockquote>
-<p>To see <span class="arithmatex">\(TQBF\in PSPACE\)</span>: The algorithm is a recursion. At the bottom of the recursion, if <span class="arithmatex">\(Q_i=\forall\)</span>, return <span class="arithmatex">\(1\)</span> iff both returned <span class="arithmatex">\(1\)</span>; if <span class="arithmatex">\(Q_i=\exists\)</span>, return <span class="arithmatex">\(0\)</span> iff both returned <span class="arithmatex">\(0\)</span>. We of course need a stack with length <span class="arithmatex">\(O(n)\)</span> for evaluating <span class="arithmatex">\(\varphi\)</span>.</p>
+<p>To see <span class="arithmatex">\(TQBF\in \mathsf{PSPACE}\)</span>: The algorithm is a recursion. At the bottom of the recursion, if <span class="arithmatex">\(Q_i=\forall\)</span>, return <span class="arithmatex">\(1\)</span> iff both returned <span class="arithmatex">\(1\)</span>; if <span class="arithmatex">\(Q_i=\exists\)</span>, return <span class="arithmatex">\(0\)</span> iff both returned <span class="arithmatex">\(0\)</span>. We of course need a stack with length <span class="arithmatex">\(O(n)\)</span> for evaluating <span class="arithmatex">\(\varphi\)</span>.</p>
 <p>To show hardness, proof similar to Savitch's theorem.</p>
 <p>......</p>
 </blockquote>
 <h1 id="expnexp-completeness">EXP/NEXP-completeness</h1>
-<p>Consider so-called <strong>succinct</strong> versions of complete problems of <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(\mathsf{NP}\)</span>.</p>
+<p>Consider so-called <strong>succinct</strong> versions of complete problems of <span class="arithmatex">\(\mathsf{P}\)</span> and <span class="arithmatex">\(\mathsf{NP}\)</span>.</p>
 <p>Let <span class="arithmatex">\(C\)</span> be a Boolean circuit with <span class="arithmatex">\(n\)</span> input gates and one output gate. The truthtable of <span class="arithmatex">\(C\)</span> is the string <span class="arithmatex">\(tt(C)\in\{0,1\}^{2^n}\)</span> giving the evaluation of <span class="arithmatex">\(C\)</span> on all possible inputs.</p>
 <p>Consider a language <span class="arithmatex">\(L\subseteq\{0,1\}^*\)</span>. Then define the <strong>succinct</strong> version <span class="arithmatex">\(SuccinctL\)</span> of <span class="arithmatex">\(L\)</span> simply by <span class="arithmatex">\(SuccinctL=\{C|tt(C)\in L\}\)</span>. Note that when <span class="arithmatex">\(L\in P\)</span> we have that <span class="arithmatex">\(SuccinctL\in \mathsf{EXP}\)</span> simply by decompressing the input <span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(tt(C)\)</span> in exponential time and then using the polynomial-time Turing machine to check for membership in <span class="arithmatex">\(L\)</span>.</p>
 <p>简而言之，把上面这些玩意的真值表算出来，就是属于 <span class="arithmatex">\(\mathsf{EXP}/\mathsf{NEXP}\)</span> 的复杂度类。</p>
@@ -11706,8 +11752,6 @@
         <script src="../../../javascripts/config.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

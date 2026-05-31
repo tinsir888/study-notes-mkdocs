@@ -34,13 +34,13 @@ x\in L\Rightarrow\Pr[(V,P)(x)=yes]\ge c\\
 \land\\
 x\not\in L\Rightarrow\Pr[(V,\hat P)(x)=yes]\le s\forall \hat P
 $$
-Define $IP$ as the class of all languages that has an interactive proof system with completeness $3/4$ and soundness error $1/4$. We say that $V$ is the verifier and $P$ the prover of the interactive proof system $(V,P)$.
+Define $\mathsf{IP}$ as the class of all languages that has an interactive proof system with completeness $3/4$ and soundness error $1/4$. We say that $V$ is the verifier and $P$ the prover of the interactive proof system $(V,P)$.
 
 
 
 We can view $\mathsf{NP}$ as a proof system without randomness or interaction other than a single message.
 
-:thinking:Proposition 14. $NP\subseteq IP$.
+:thinking:Proposition 14. $NP\subseteq \mathsf{IP}$.
 
 An example of a non-trivial interactive proof system for checking that two graph are not isomorphic ($GNI$).
 
@@ -61,7 +61,7 @@ A very interesting property of this proof system is that it is a so-called zero-
 
 ~~零知识证明，扯到密码学上去~~
 
-:dart:Theorem 48. $GNI\in IP$.
+:dart:Theorem 48. $GNI\in \mathsf{IP}$.
 
 > GMW Protocol for $GNI$:
 >
@@ -82,7 +82,7 @@ A very interesting property of this proof system is that it is a so-called zero-
 
 It is not known whether $GNI\in NP$.
 
-:thinking:Proposition 15. $IP\in PSPACE$.
+:thinking:Proposition 15. $\mathsf{IP}\in \mathsf{PSPACE}$.
 
 > Hard proof.
 
@@ -92,11 +92,11 @@ How to utilize the power of interactive proofs? **Converting Boolean formulas to
 
 **Arithmetization**: The process of converting a Boolean formula into an arithmetic formula.
 
-By arithmetization, we can prove that $P^{\#P}\subseteq IP$, where $\#P$ is a class capturing the complexity of **counting the number of satisfying assignments of a Boolean formula**.
+By arithmetization, we can prove that $P^{\#P}\subseteq \mathsf{IP}$, where $\#P$ is a class capturing the complexity of **counting the number of satisfying assignments of a Boolean formula**.
 
-A weaker result: $coNP\subseteq IP$.
+A weaker result: $coNP\subseteq \mathsf{IP}$.
 
-The method can be generalized to show $PSPACE\subseteq IP$.
+The method can be generalized to show $\mathsf{PSPACE}\subseteq \mathsf{IP}$.
 
 :book:Definition 46 (Arithmetization). Let $\varphi$ be a $3CNF$ formula with $m$ classes $C_1,\cdots,C_m$ and $n$ variables $x_1,\cdots,x_n$. We define the arithmetic formula $A_\varphi$, aka arithmetization of $\varphi$, recursively. For a variable $x_i$ we let $A(x_i)=x_i$, for a negated variable $\neg x_i$ we let $A(\neg x_i)=1-x_i$. For a clause $C_j=(\ell_{j,1}\lor\ell_{j,2}\lor\ell_{j,3})$ we let
 $$
@@ -113,7 +113,7 @@ $$
 \#\varphi=\sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1A_\varphi(x_1,\cdots,x_n)
 $$
 
-Then we define an **interactive proof** for proving $\#\varphi=K$, for given $K$. For $K=0$ allow us prove that $coNP\subseteq IP$. The protocol is called **Sumcheck** protocol:
+Then we define an **interactive proof** for proving $\#\varphi=K$, for given $K$. For $K=0$ allow us prove that $coNP\subseteq \mathsf{IP}$. The protocol is called **Sumcheck** protocol:
 
 - Input: Arithmetic formula $F(x_1,\cdots,x_n)$ of total degree $d$, prime $p$, number $K$.
 - Goal: Prove $\sum_{x_1=0}^1\sum_{x_2=0}^1\cdots\sum_{x_n=0}^1F(x_1,\cdots,x_n)\equiv K\mod p$.
@@ -129,15 +129,15 @@ $$
 
 with completeness $1$ and soundness error at most $nd/p$.
 
-:thinking:Corollary 11. $coNP\subseteq IP$.
+:thinking:Corollary 11. $coNP\subseteq \mathsf{IP}$.
 
-> Show that $\overline{3SAT}\in IP$.
+> Show that $\overline{3SAT}\in \mathsf{IP}$.
 
 # Interactive Proof for Polynomial Space
 
-$PSPACE\subseteq IP$
+$\mathsf{PSPACE}\subseteq \mathsf{IP}$
 
-Consider $PSPACE$-complete $TQBF$.
+Consider $\mathsf{PSPACE}$-complete $TQBF$.
 
 Consider whether $\psi=\exists x_1\in\{0,1\}\forall x_2\in\{0,1\}\cdots\exists x_n\in\{0,1\}\varphi(x_1,\cdots,x_n)$ is true.
 
@@ -169,7 +169,7 @@ The extension of the Sumcheck protocol:
 
 - ......
 
-:dart:Theorem 49. $IP=PSPACE$.
+:dart:Theorem 49. $\mathsf{IP}=\mathsf{PSPACE}$.
 
 Two interesting observation:
 
