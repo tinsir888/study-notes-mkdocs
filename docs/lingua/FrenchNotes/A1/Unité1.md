@@ -421,7 +421,7 @@ au revoir = a bientôt 再见
 
 72 = 60 + 12 soixante-douze
 
-79 = 60 + 19 soixante-neuf
+79 = 60 + 19 soixante-dix-neuf
 
 80 = 4 * 20 quatre-vingt
 
