@@ -61,11 +61,11 @@ Static Reversing
 
 - IDA Pro
 - Function Call
-  - Stack: ESP EBP
-  - Stack Frame
+    - Stack: ESP EBP
+    - Stack Frame
 - Calling Convention:warning:
-  - \_\_cdecl
-  - \_\_stdcall
+    - \_\_cdecl
+    - \_\_stdcall
 
 Software Protection
 
@@ -268,18 +268,18 @@ IDA Pro
 
 - Calling Convention:warning:
 
-  - \_\_cdecl
-    1. C/C++
-    2. passing args from right to left
-    3. caller function pop stack.
-  - \_\_stdcall
-    1. Win32 API
-    2. passing args from left to right
-    3. callee function pop stack.
+    - \_\_cdecl
+      1. C/C++
+      2. passing args from right to left
+      3. caller function pop stack.
+    - \_\_stdcall
+      1. Win32 API
+      2. passing args from left to right
+      3. callee function pop stack.
 
-  How to identify?
+    How to identify?
 
-  > check whether ESP is changed after calling, if true, \_\_cdecl; else, \_\_stdcall.
+    > check whether ESP is changed after calling, if true, \_\_cdecl; else, \_\_stdcall.
 
 # Software Protection
 

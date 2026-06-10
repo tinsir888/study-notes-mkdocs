@@ -2401,6 +2401,75 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/PC/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Bounded Graph Width
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/PC/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Computing Good Edge Labelings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/PC/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Algorithmic Meta-Theorems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11757,9 +11826,11 @@
 <p>当输入数组长度小于等于 <code>k</code> 时，答案就是当前数组的中位数。</p>
 <p><img alt="❓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2753.svg" title=":question:" />如何在不排序的情况下求出一个数组的中位数呢？二分查找。</p>
 <ul>
-<li>对每一个给定的值 <code>x</code>，建立另一个和 <code>a</code> 一样大的标签数组 <code>b</code>。</li>
+<li>对每一个给定的值 <code>x</code>，建立另一个和 <code>a</code> 一样大的标签数组 <code>b</code>。<ul>
 <li>当 <code>x&lt;=a[i]</code> 时，标记 <code>b[i]=1</code>；反之 <code>b[i]=-1</code>。</li>
 <li>这样通过判断 <code>b</code> 数组和的正负性，我们就能判断 <code>x</code> 是否比中位数小了。</li>
+</ul>
+</li>
 </ul>
 <p>当 <code>n&gt;k</code> 时，同理进行二分搜索答案。为了检查当前值是否小于最优可能解，我们只需使用动态规划求出 <code>b</code> 数组最大的和，检查其正负性。</p>
 <p><img alt="❓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2753.svg" title=":question:" />如何用动归求 <code>b</code> 数组最大的和呢？</p>
@@ -11788,9 +11859,11 @@ i_{m-1}\equiv m-1\mod k
 <ul>
 <li><code>dp[0]=b[0]</code></li>
 <li>如果 <code>i%k==0&amp;&amp;i&gt;0</code>，<code>dp[i]=max(dp[i-k],b[i])</code>（有可能把 <code>i</code> 之前的所有全删除了，从 <code>i</code> 开始）</li>
-<li>否则</li>
+<li>否则<ul>
 <li>如果 <code>i&lt;=k</code>，<code>dp[i]=dp[i-1]+b[i]</code>。（只有选上当前数字）</li>
 <li>如果 <code>i&gt;k</code>，<code>dp[i]=max(dp[i-1]+b[i],dp[i-k])</code>。（要么选当前数字，要么把包括这个数字之前总共 <code>k</code> 个数字都删了，选第 <code>i-k</code> 个数字）</li>
+</ul>
+</li>
 </ul>
 <p>最后只需检查 <code>dp[n-1]</code> 是否大于零即可。</p>
 <h2 id="_3">参考代码</h2>

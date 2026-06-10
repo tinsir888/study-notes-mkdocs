@@ -2401,6 +2401,75 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/PC/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Bounded Graph Width
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/PC/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Computing Good Edge Labelings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/PC/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Algorithmic Meta-Theorems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11698,12 +11767,16 @@
 <p>Static Reversing</p>
 <ul>
 <li>IDA Pro</li>
-<li>Function Call</li>
+<li>Function Call<ul>
 <li>Stack: ESP EBP</li>
 <li>Stack Frame</li>
-<li>Calling Convention<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /></li>
+</ul>
+</li>
+<li>Calling Convention<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /><ul>
 <li>__cdecl</li>
 <li>__stdcall</li>
+</ul>
+</li>
 </ul>
 <p>Software Protection</p>
 <ul>
@@ -11876,26 +11949,22 @@ INT 21H
 </li>
 <li>
 <p>Calling Convention<img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /></p>
-</li>
-<li>
-<p>__cdecl</p>
-<ol>
+<ul>
+<li>__cdecl</li>
 <li>C/C++</li>
 <li>passing args from right to left</li>
 <li>caller function pop stack.</li>
-</ol>
-</li>
-<li>__stdcall<ol>
+<li>__stdcall</li>
 <li>Win32 API</li>
 <li>passing args from left to right</li>
 <li>callee function pop stack.</li>
-</ol>
-</li>
 </ul>
 <p>How to identify?</p>
 <blockquote>
 <p>check whether ESP is changed after calling, if true, __cdecl; else, __stdcall.</p>
 </blockquote>
+</li>
+</ul>
 <h1 id="software-protection">Software Protection</h1>
 <ul>
 <li>Sequence ID Protection</li>

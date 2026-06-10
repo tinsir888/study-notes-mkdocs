@@ -2401,6 +2401,75 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/PC/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 Bounded Graph Width
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/PC/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 Computing Good Edge Labelings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../informaticagssi/PC/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 Algorithmic Meta-Theorems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -11670,9 +11739,11 @@
 <li>先对树进行 DFS，标注出每个节点的深度。 </li>
 <li>找出 ld 和 rd。ld：遍历每个节点，取最深的点。rd：遍历每个节点，取最深的并且满足不和 ld 在同一边（即 <span class="arithmatex">\(LCA(ld,rd)!=rd\)</span>）的节点。如果查询时凑巧所有的点都在同一颗子树的一条链上，即 rd 不存在，直接判定结果为 YES。</li>
 <li>计算出节点 r 为 <span class="arithmatex">\(LCA(ld,rd)\)</span> 。</li>
-<li>遍历每个节点 pi，检查 pi 是否满足 <span class="arithmatex">\(LCA(p,ld)==p\&amp;\&amp;LCA(p,rd)==r\)</span>（当 pi 在 r 左子树的一条链上）或 <span class="arithmatex">\(LCA(p,rd)==p\&amp;\&amp;LCA(p,ld)==r\)</span>（当 pi 在 r 右子树的一条链上）。</li>
+<li>遍历每个节点 pi，检查 pi 是否满足 <span class="arithmatex">\(LCA(p,ld)==p\&amp;\&amp;LCA(p,rd)==r\)</span>（当 pi 在 r 左子树的一条链上）或 <span class="arithmatex">\(LCA(p,rd)==p\&amp;\&amp;LCA(p,ld)==r\)</span>（当 pi 在 r 右子树的一条链上）。<ul>
 <li>如果有一个节点不满足条件，则最终结果判定为 NO。</li>
 <li>如果所有节点满足条件，则最终结果判定为 YES 。</li>
+</ul>
+</li>
 </ol>
 <h1 id="_4">参考代码</h1>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
