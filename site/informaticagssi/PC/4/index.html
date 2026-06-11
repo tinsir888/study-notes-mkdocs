@@ -16,7 +16,7 @@
         <link rel="prev" href="../3/">
       
       
-        <link rel="next" href="../../SPA/1/">
+        <link rel="next" href="../5/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -2482,6 +2482,29 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 Fixed-Parameter Intractability
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -11883,6 +11906,65 @@ f(tw(\mathcal{A}), |\phi|) \cdot |\mathcal{A}| + O(\|\mathcal{A}\|)
 <li>First‑order logic admits its own meta‑theorems under structural restrictions (e.g., bounded degree).</li>
 <li>Meta‑theorems give quick FPT membership proofs, but the hidden constants are usually enormous; ad‑hoc dynamic programming is often much more practical.</li>
 </ul>
+<h1 id="exercises">Exercises</h1>
+<p>For these problems, we use:</p>
+<ul>
+<li><span class="arithmatex">\(\tau_G\)</span>: The standard graph vocabulary where the universe consists of vertices, and there is a binary relation <span class="arithmatex">\(E(x,y)\)</span> representing edges.</li>
+<li><span class="arithmatex">\(\tau_{HG}\)</span>: The incidence graph vocabulary where the universe consists of both vertices and edges, and there is a binary relation <span class="arithmatex">\(I(v,e)\)</span> indicating that vertex <span class="arithmatex">\(v\)</span> is incident to edge <span class="arithmatex">\(e\)</span>.</li>
+<li><span class="arithmatex">\(MSO_1\)</span>: Monadic Second-Order logic allowing quantification over vertices and sets of vertices.</li>
+<li><span class="arithmatex">\(MSO_2\)</span>: Monadic Second-Order logic allowing quantification over vertices, sets of vertices, edges, and sets of edges.</li>
+</ul>
+<h2 id="1-cycle-of-length-precisely-k-first-order-logic-over-tau_g">1. Cycle of length precisely <span class="arithmatex">\(k\)</span> (First-Order Logic over <span class="arithmatex">\(\tau_G\)</span>)</h2>
+<p>To express that a graph contains a cycle of length exactly <span class="arithmatex">\(k\)</span> as a subgraph, we assert the existence of <span class="arithmatex">\(k\)</span> distinct vertices that are sequentially adjacent, with the last vertex connecting back to the first.</p>
+<div class="arithmatex">\[\exists x_1 \exists x_2 \dots \exists x_k \left( \bigwedge_{1 \le i &lt; j \le k} x_i \neq x_j \land \left( \bigwedge_{i=1}^{k-1} E(x_i, x_{i+1}) \right) \land E(x_k, x_1) \right)\]</div>
+<blockquote>
+<p><strong>Note:</strong> If you need an <em>induced</em> cycle (meaning no chordal edges exist between the cycle vertices), you would append:</p>
+<p><span class="arithmatex">\(\dots \land \bigwedge_{|i-j| \pmod k \neq 1} \neg E(x_i, x_j)\)</span></p>
+</blockquote>
+<h2 id="2-dominating-set-of-le-k-elements-mso_1-over-tau_g">2. Dominating set of <span class="arithmatex">\(\le k\)</span> elements (<span class="arithmatex">\(MSO_1\)</span> over <span class="arithmatex">\(\tau_G\)</span>)</h2>
+<p>A set of vertices <span class="arithmatex">\(D\)</span> is a dominating set if every vertex in the graph is either in <span class="arithmatex">\(D\)</span> or adjacent to a vertex in <span class="arithmatex">\(D\)</span>. We can express that <span class="arithmatex">\(D\)</span> has at most <span class="arithmatex">\(k\)</span> elements by asserting there exist <span class="arithmatex">\(k\)</span> vertices that cover all members of <span class="arithmatex">\(D\)</span>.</p>
+<div class="arithmatex">\[
+\exists D \left( \left[ \exists x_1 \dots \exists x_k \forall y (y \in D \rightarrow \bigvee_{i=1}^k y = x_i) \right] \land \forall v \left( v \in D \lor \exists u (u \in D \land E(u, v)) \right) \right)
+\]</div>
+<h2 id="3-feedback-vertex-set-mso_2-over-tau_hg">3. Feedback Vertex Set (<span class="arithmatex">\(MSO_2\)</span> over <span class="arithmatex">\(\tau_{HG}\)</span>)</h2>
+<p>A vertex set <span class="arithmatex">\(S\)</span> is a feedback vertex set if its removal leaves the graph acyclic (a forest). Equivalently, every cycle in the graph must contain at least one vertex from <span class="arithmatex">\(S\)</span>.</p>
+<p>In <span class="arithmatex">\(MSO_2\)</span>, a cycle can be identified by the existence of a non-empty set of edges <span class="arithmatex">\(F\)</span> where every vertex incident to <span class="arithmatex">\(F\)</span> is connected to at least two edges in <span class="arithmatex">\(F\)</span>. Therefore, <span class="arithmatex">\(feedback(S)\)</span> asserts that no such cycle exists entirely outside of <span class="arithmatex">\(S\)</span>:</p>
+<div class="arithmatex">\[
+feedback(S) \equiv \neg \exists F \left( \exists e (e \in F) \land \forall e (e \in F \rightarrow \forall v (I(v,e) \rightarrow v \notin S)) \land \forall v (\text{Inc}(v, F) \rightarrow \text{Deg}_{\ge 2}(v, F)) \right)
+\]</div>
+<p>Where the helper predicates are defined as:</p>
+<ul>
+<li><span class="arithmatex">\(\text{Inc}(v, F) \equiv \exists e (e \in F \land I(v, e))\)</span></li>
+<li><span class="arithmatex">\(\text{Deg}_{\ge 2}(v, F) \equiv \exists e_1 \exists e_2 (e_1 \in F \land e_2 \in F \land e_1 \neq e_2 \land I(v, e_1) \land I(v, e_2))\)</span></li>
+</ul>
+<h2 id="4-connected-graph-mso_1-over-tau_g">4. Connected Graph (<span class="arithmatex">\(MSO_1\)</span> over <span class="arithmatex">\(\tau_G\)</span>)</h2>
+<p>A graph is connected if there is no way to partition the vertices into two non-empty sets with no edges between them. In other words, for every non-empty proper subset of vertices <span class="arithmatex">\(A\)</span>, there must be an edge connecting a vertex in <span class="arithmatex">\(A\)</span> to a vertex outside of <span class="arithmatex">\(A\)</span>.</p>
+<div class="arithmatex">\[
+\forall A \left( \left[ \exists x (x \in A) \land \exists y (y \notin A) \right] \rightarrow \exists u \exists v (u \in A \land v \notin A \land E(u, v)) \right)
+\]</div>
+<h2 id="5-path-from-x-to-y-mso_2-over-tau_hg">5. Path from <span class="arithmatex">\(x\)</span> to <span class="arithmatex">\(y\)</span> (<span class="arithmatex">\(MSO_2\)</span> over <span class="arithmatex">\(\tau_{HG}\)</span>)</h2>
+<p>For a set of edges <span class="arithmatex">\(Z\)</span> to form a simple path from <span class="arithmatex">\(x\)</span> to <span class="arithmatex">\(y\)</span>, it must satisfy three conditions:</p>
+<ol>
+<li>If <span class="arithmatex">\(x = y\)</span>, <span class="arithmatex">\(Z\)</span> must be empty.</li>
+<li>If <span class="arithmatex">\(x \neq y\)</span>, the endpoints <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> must have a degree of exactly 1 within <span class="arithmatex">\(Z\)</span>, and all other vertices incident to <span class="arithmatex">\(Z\)</span> must have a degree of exactly 2.</li>
+<li>The edge set <span class="arithmatex">\(Z\)</span> must be connected (to prevent isolated cycles detached from the main path).</li>
+</ol>
+<div class="arithmatex">\[
+path(x, y, Z) \equiv (x = y \land \forall e (e \notin Z)) \lor \left( x \neq y \land \text{Deg}_1(x, Z) \land \text{Deg}_1(y, Z) \land \forall v ((\text{Inc}(v, Z) \land v \neq x \land v \neq y) \rightarrow \text{Deg}_2(v, Z)) \land \text{Connected}(Z) \right)
+\]</div>
+<p>Where the helper predicates are defined as:</p>
+<ul>
+<li><span class="arithmatex">\(\text{Inc}(v, Z) \equiv \exists e (e \in Z \land I(v, e))\)</span></li>
+<li><span class="arithmatex">\(\text{Deg}_1(v, Z) \equiv \exists e (e \in Z \land I(v, e) \land \forall e' ((e' \in Z \land I(v, e')) \rightarrow e' = e))\)</span></li>
+<li><span class="arithmatex">\(\text{Deg}_2(v, Z) \equiv \exists e_1 \exists e_2 (e_1 \in Z \land e_2 \in Z \land e_1 \neq e_2 \land I(v, e_1) \land I(v, e_2) \land \forall e' ((e' \in Z \land I(v, e')) \rightarrow (e' = e_1 \lor e' = e_2)))\)</span></li>
+<li><span class="arithmatex">\(\text{Connected}(Z) \equiv \forall A \left( (\exists u (u \in A \land \text{Inc}(u, Z)) \land \exists v (v \notin A \land \text{Inc}(v, Z))) \rightarrow \exists e (e \in Z \land \exists u' \exists v' (I(u', e) \land I(v', e) \land u' \in A \land v' \notin A)) \right)\)</span></li>
+</ul>
+<h2 id="6-hamiltonicity-mso_2-over-tau_hg">6. Hamiltonicity (<span class="arithmatex">\(MSO_2\)</span> over <span class="arithmatex">\(\tau_{HG}\)</span>)</h2>
+<p>A graph is Hamiltonian if it contains a spanning cycle—a cycle that visits every vertex exactly once. This means we can find a subset of edges <span class="arithmatex">\(H\)</span> such that every vertex in the graph has a degree of exactly 2 in <span class="arithmatex">\(H\)</span>, and <span class="arithmatex">\(H\)</span> is fully connected across any possible vertex cut.</p>
+<div class="arithmatex">\[
+\exists H \left( \forall v \text{Deg}_2(v, H) \land \forall A \left( [ \exists x (x \in A) \land \exists y (y \notin A) ] \rightarrow \exists e (e \in H \land \exists u \exists v (I(u, e) \land I(v, e) \land u \in A \land v \notin A)) \right) \right)
+\]</div>
+<p><em>(Note: <span class="arithmatex">\(\text{Deg}_2(v, H)\)</span> uses the exact same definition outlined in Problem 5).</em></p>
 
 
 
@@ -11938,13 +12020,13 @@ f(tw(\mathcal{A}), |\phi|) \cdot |\mathcal{A}| + O(\|\mathcal{A}\|)
         
         
           
-          <a href="../../SPA/1/" class="md-footer__link md-footer__link--next" aria-label="Next: 1 Propositional Logic">
+          <a href="../5/" class="md-footer__link md-footer__link--next" aria-label="Next: 5 Fixed-Parameter Intractability">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                1 Propositional Logic
+                5 Fixed-Parameter Intractability
               </div>
             </div>
             <div class="md-footer__button md-icon">

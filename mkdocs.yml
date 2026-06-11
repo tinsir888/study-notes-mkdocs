@@ -78,6 +78,7 @@ nav:
       - 2 Bounded Graph Width: "informaticagssi/PC/2.md"
       - 3 Computing Good Edge Labelings: "informaticagssi/PC/3.md"
       - 4 Algorithmic Meta-Theorems: "informaticagssi/PC/4.md"
+      - 5 Fixed-Parameter Intractability: "informaticagssi/PC/5.md"
     - Satisfiability Problems and Applications: #"informaticagssi/SPA/*"
       - 1 Propositional Logic: "informaticagssi/SPA/1.md"
       - 2 Conflict-Driven Clause Learning: "informaticagssi/SPA/2.md"
